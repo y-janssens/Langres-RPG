@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 use crate::classes::game::game::Game;
 
 pub fn new_game(name: String) -> Result<Game, Box<dyn std::error::Error>> {
