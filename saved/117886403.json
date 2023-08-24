@@ -1,0 +1,29 @@
+{
+  "player": "Haral Mortenuit",
+  "id": 117886403,
+  "date_created": "2023-08-22 21:46:56.132705 +02:00",
+  "last_save_date": "2023-08-28 14:36:55.332543 +02:00",
+  "save_count": 4,
+  "character": {
+    "name": "Haral Mortenuit",
+    "_end": 8,
+    "_for": 8,
+    "_hab": 8,
+    "_cha": 8,
+    "_int": 8,
+    "_ini": 8,
+    "_pv": 8,
+    "xp": 349,
+    "max_xp": 650,
+    "gold": 10,
+    "lvl": 15,
+    "inventory": {
+      "right_hand": "Sword",
+      "left_hand": "Shield",
+      "head": "Helmet",
+      "torso": "Armor",
+      "legs": "Legs",
+      "objects": []
+    }
+  }
+}

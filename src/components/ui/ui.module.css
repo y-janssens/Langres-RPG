@@ -1,0 +1,52 @@
+.close-button {
+  color: darkred;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.loading-container {
+  position: relative;
+  width: 100%;
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 250ms all;
+  cursor: wait;
+}
+
+.loading-spinner,
+.loading-background {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border: 3px solid;
+  border-radius: 50%;
+  cursor: wait;
+}
+
+.loading-spinner {
+  border-color: #0076b8 transparent transparent transparent;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+}
+
+.loading-background {
+  border-color: rgba(128, 128, 128, 0.25);
+}
+
+.loading-container span {
+  color: #0076b8;
+  margin-top: 100px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

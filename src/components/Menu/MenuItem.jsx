@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./menu.module.css";
 
 export const MenuItem = ({ name, onClick = () => {} }) => {

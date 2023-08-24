@@ -1,34 +1,15 @@
-import { useEffect, useState } from "react";
-import { invoke } from "@tauri-apps/api/tauri";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainMenu } from "./components/Menu/MainMenu";
+import { Game } from "./components/Game/Game";
 function App() {
-  const [greetMsg, setGreetMsg] = useState([]);
-
-  async function greet() {
-    let saved_games = [];
-    const response = await invoke("load");
-
-    const games = response
-      .replace(/Ok\(\[Game |]\)|Some\(/g, "")
-      .replaceAll("{ ", '{ "')
-      .replaceAll(", ", ', "')
-      .replaceAll(": ", '": ')
-      .replaceAll('"),', '",')
-      .split(', "Game ');
-
-    games.forEach((fn) => {
-      saved_games.push(JSON.parse(fn));
-    });
-    setGreetMsg(saved_games);
-  }
-
-  useEffect(() => {
-    greet();
-  }, []);
-
   return (
     <div className="main-container">
-      <MainMenu />
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainMenu />} />
+          <Route path="/game/:id" element={<Game />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
