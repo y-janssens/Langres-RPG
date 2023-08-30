@@ -6,7 +6,7 @@ function App() {
     <div className="main-container">
       <Router>
         <Routes>
-          <Route path="/" element={<MainMenu />} />
+          <Route path="" element={<MainMenu />} />
           <Route path="/game/:id" element={<Game />} />
         </Routes>
       </Router>

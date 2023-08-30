@@ -30,7 +30,7 @@ pub mod character {
                 _cha: 8,
                 _int: 8,
                 _ini: 8,
-                _pv: 8,
+                _pv: 60,
                 xp: 0,
                 max_xp: 150,
                 gold: 10,

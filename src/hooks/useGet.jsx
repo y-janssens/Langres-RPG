@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
-import { formatGames } from "../components/functions/format";
 
 const useGet = ({
   func,
@@ -20,14 +19,12 @@ const useGet = ({
       .then((response) => {
         setErrors(null);
         if (id) {
-          const game = formatGames(response).find(
-            (game) => game.id === Number(id)
-          );
+          const game = response.find((game) => game.id === Number(id));
           setData(game);
           onSuccess(game);
         } else {
-          setData(formatGames(response));
-          onSuccess(formatGames(response));
+          setData(response);
+          onSuccess(response);
         }
       })
       .catch((error) => {

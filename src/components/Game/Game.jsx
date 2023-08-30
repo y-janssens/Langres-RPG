@@ -4,6 +4,7 @@ import { useGet } from "../../hooks/useGet";
 import { useForm } from "../../hooks/useForm";
 import { Loading } from "../ui/Loading";
 import { GameModel, Character } from "../classes";
+import { CharInfos } from "./InfoBubbles/CharInfos";
 
 export const Game = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ export const Game = () => {
       _cha: 8,
       _int: 8,
       _ini: 8,
-      _pv: 8,
+      _pv: 60,
       xp: 0,
       gold: 10,
       max_xp: 150,
@@ -43,6 +44,7 @@ export const Game = () => {
     id,
     launch: id,
     onSuccess: (response) => {
+      console.log(response);
       setFormObject(response);
     }
   });
@@ -62,17 +64,7 @@ export const Game = () => {
 
   return (
     <Loading loading={!form.id || loadingGame}>
-      <div
-        onClick={handleXp}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center"
-        }}
-      >
-        <span>{form.player}</span>
-        <span>{`lvl: ${form.character.lvl} - xp: ${form.character.xp} - max_xp: ${form.character.max_xp}`}</span>
-      </div>
+      <CharInfos character={form.character} />
     </Loading>
   );
 };

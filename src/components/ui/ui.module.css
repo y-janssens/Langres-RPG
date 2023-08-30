@@ -4,6 +4,7 @@
   font-size: 16px;
 }
 
+/* Loader */
 .loading-container {
   position: relative;
   width: 100%;
@@ -49,4 +50,32 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Gauges */
+.gauge-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  height: 12px;
+  margin: 3px;
+  border-radius: 2px;
+  /* border: 2px solid #3d332f; */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75);
+  background-color: transparent;
+  z-index: 10;
+}
+
+.gauge-container p {
+  font-size: 12px;
+  z-index: 2;
+}
+
+.gauge-content {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-radius: 2px;
+  box-shadow: inset 0 0 8px #000000;
 }

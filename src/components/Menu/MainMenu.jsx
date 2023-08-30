@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { invoke } from "@tauri-apps/api/tauri";
 import { MenuItem } from "./MenuItem";
 import { Modal } from "./Modal/Modal";
-import { formatGames } from "../functions/format.js";
 import { useGet } from "../../hooks/useGet";
 import { GameModel } from "../classes";
 import css from "./menu.module.css";
@@ -19,7 +18,8 @@ export const MainMenu = () => {
 
   async function handleNewGame(name) {
     await invoke("new", { name }).then((data) => {
-      let game = new GameModel(formatGames(data));
+      console.log(data);
+      let game = new GameModel(data);
       game.save();
       navigate(`/game/${game.id}`);
     });

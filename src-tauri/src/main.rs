@@ -14,21 +14,15 @@ mod classes {
 }
 
 #[tauri::command]
-fn load_saves() -> std::string::String {
+fn load_saves() -> Vec<classes::game::game::Game> {
     let _load = functions::load_game::load_saved_games();
-    format!("{:?}", _load)
+    _load.unwrap()
 }
 
 #[tauri::command]
-fn load(id: u32) -> std::string::String {
-    let _load = functions::load_game::load_game(id);
-    format!("{:?}", _load)
-}
-
-#[tauri::command]
-fn new(name: String) -> std::string::String {
+fn new(name: String) -> classes::game::game::Game {
     let _new = functions::new_game::new_game(name);
-    format!("{:?}", _new)
+    _new.unwrap()
 }
 
 #[tauri::command]
@@ -37,17 +31,14 @@ fn delete(id: u32) {
 }
 
 #[tauri::command]
-fn save(data: classes::game::game::Game) -> std::string::String {
+fn save(data: classes::game::game::Game) {
     let _save = functions::save_game::save_game(data);
-    format!("{:?}", _save)
 }
 
 fn main() {
     // env::set_var("RUST_BACKTRACE", "1");
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![
-            load, load_saves, new, delete, save
-        ])
+        .invoke_handler(tauri::generate_handler![load_saves, new, delete, save])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
