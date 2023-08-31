@@ -5,7 +5,7 @@
   background-color: #808080;
   border-radius: 5px;
   overflow-y: hidden;
-  z-index: 2;
+  z-index: 200;
 }
 
 .modal-header {

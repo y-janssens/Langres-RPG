@@ -1,13 +1,15 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useGet } from "../../hooks/useGet";
 import { useForm } from "../../hooks/useForm";
 import { Loading } from "../ui/Loading";
-import { GameModel, Character } from "../classes";
+import { GameModel, Character } from "../classes"; // eslint disable-line
 import { CharInfos } from "./InfoBubbles/CharInfos";
+import useGameContext from "../../hooks/useGameContext";
 
 export const Game = () => {
   const { id } = useParams();
+  const [, setContext] = useGameContext();
 
   const [form, setForm, setFormObject] = useForm({
     player: "",
@@ -39,21 +41,21 @@ export const Game = () => {
     }
   });
 
-  const [, loadingGame, , sync] = useGet({
+  const [, loadingGame] = useGet({
     func: "load_saves",
     id,
     launch: id,
     onSuccess: (response) => {
-      console.log(response);
       setFormObject(response);
+      setContext({ gameId: parseInt(id) });
     }
   });
 
-  const handleXp = useCallback(() => {
-    let char = new Character(form.character);
-    char.compute_xp(153);
-    setFormObject({ ...form, character: char });
-  }, [form, form.character, setFormObject]);
+  // const handleXp = useCallback(() => {
+  //   let char = new Character(form.character);
+  //   char.compute_xp(153);
+  //   setFormObject({ ...form, character: char });
+  // }, [form, form.character, setFormObject]);
 
   useEffect(() => {
     if (id && form.id) {

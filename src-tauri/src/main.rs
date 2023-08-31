@@ -1,5 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use std::env;
+use tauri::{utils::config::AppUrl, WindowUrl};
 
 mod functions {
     pub mod load_game;
@@ -36,9 +37,15 @@ fn save(data: classes::game::game::Game) {
 }
 
 fn main() {
-    // env::set_var("RUST_BACKTRACE", "1");
+    let port = portpicker::pick_unused_port().expect("failed to find unused port");
+
+    let mut context = tauri::generate_context!();
+    let url = format!("http://localhost:{}", port).parse().unwrap();
+    let window_url = WindowUrl::External(url);
+    context.config_mut().build.dist_dir = AppUrl::Url(window_url.clone());
+
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![load_saves, new, delete, save])
-        .run(tauri::generate_context!())
+        .run(context)
         .expect("error while running tauri application");
 }

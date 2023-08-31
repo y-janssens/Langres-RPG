@@ -10,14 +10,13 @@ export const Gauge = ({ stat, max, type }) => {
       className={css["gauge-container"]}
       style={{
         height: type === "pv" ? "12px" : "8px",
-        border: `${type === "pv" ? 2 : 1}px solid #3d332f`
+        border: `${type === "pv" ? 1.5 : 1}px solid #3d332f`
       }}
     >
       <span
         className={css["gauge-content"]}
         style={{
           width: fill,
-          //   height: type === "pv" ? "100%" : "75%",
           backgroundColor: type === "pv" ? "red" : "blue"
         }}
       />
@@ -28,7 +27,7 @@ export const Gauge = ({ stat, max, type }) => {
 
 export const XpGauge = ({ stat, max }) => {
   const fill = useMemo(() => {
-    return `${(stat / 6) * 100}%`;
+    return `${(stat / max) * 100}%`;
   }, [stat, max]);
   return (
     <div

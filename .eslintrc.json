@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+    "react/prop-types": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {
+        "react/display-name": [0, { "ignoreTranspilerName": false }]
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["./src/"],
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      },
+    "react": {
+      "version": "detect"
+    }
+  }
+}
+
