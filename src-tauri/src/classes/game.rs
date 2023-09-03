@@ -2,6 +2,7 @@
 
 pub mod game {
     use crate::classes::character::character::Character;
+    use crate::classes::world::world::World;
     use chrono::{DateTime, Local};
     use clipboard::ClipboardContext;
     use clipboard::ClipboardProvider;
@@ -17,6 +18,7 @@ pub mod game {
         last_save_date: Option<String>,
         save_count: i32,
         pub character: Character,
+        pub world: World,
     }
 
     impl Game {
@@ -27,6 +29,7 @@ pub mod game {
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
                 last_save_date: None,
+                world: World::new(150),
                 character: Character::new(),
             }
         }
@@ -79,6 +82,12 @@ pub mod game {
             let import = decrypt.decrypt_base64_to_string(&data).unwrap();
             let imported_game: Game = serde_json::from_str(&import)?;
             Ok(imported_game)
+        }
+
+        pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
+            let world = &mut self.world;
+            World::regenerate(world);
+            return Self::save(self);
         }
 
         fn encrypt() -> Result<MagicCrypt256, Box<dyn std::error::Error>> {

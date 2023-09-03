@@ -15,17 +15,12 @@ const useGet = ({
   const fetch = useCallback(async () => {
     setLoading(true);
 
-    await invoke(func)
+    await invoke(func, { id })
       .then((response) => {
+        console.log(response);
         setErrors(null);
-        if (id) {
-          const game = response.find((game) => game.id === Number(id));
-          setData(game);
-          onSuccess(game);
-        } else {
-          setData(response);
-          onSuccess(response);
-        }
+        setData(response);
+        onSuccess(response);
       })
       .catch((error) => {
         setErrors(error.message);

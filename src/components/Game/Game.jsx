@@ -1,15 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import { useGet } from "../../hooks/useGet";
+import { GameModel, World } from "../../models";
+
 import { useForm } from "../../hooks/useForm";
-import { Loading } from "../ui/Loading";
-import { GameModel, Character } from "../classes"; // eslint disable-line
-import { CharInfos } from "./InfoBubbles/CharInfos";
 import useGameContext from "../../hooks/useGameContext";
 
-export const Game = () => {
+import { Loading } from "../ui/Loading";
+import { Hud } from "./Interface/Hud";
+import { MapLayout } from "./map/MapLayout"; // eslint-disable-line
+
+import css from "./game.module.css";
+
+export const Game = ({ display }) => {
   const { id } = useParams();
   const [, setContext] = useGameContext();
+  const [gameMap, setGameMap] = useState([]);
 
   const [form, setForm, setFormObject] = useForm({
     player: "",
@@ -41,15 +48,18 @@ export const Game = () => {
     }
   });
 
-  const [, loadingGame] = useGet({
-    func: "load_saves",
-    id,
-    launch: id,
-    onSuccess: (response) => {
-      setFormObject(response);
-      setContext({ gameId: parseInt(id) });
-    }
-  });
+  const [, loadingGame, , syncGame] = useGet(
+    {
+      func: "load_game",
+      id: parseInt(id),
+      launch: id,
+      onSuccess: (response) => {
+        setFormObject(response);
+        setContext({ gameId: parseInt(id) });
+      }
+    },
+    [id]
+  );
 
   // const handleXp = useCallback(() => {
   //   let char = new Character(form.character);
@@ -60,13 +70,19 @@ export const Game = () => {
   useEffect(() => {
     if (id && form.id) {
       let game = new GameModel(form);
+      let world = new World(form.world);
+      let _world = world.parse();
+      setGameMap(_world);
       game.save();
     }
-  }, [form]);
+  }, [form, id]);
 
   return (
     <Loading loading={!form.id || loadingGame}>
-      <CharInfos character={form.character} />
+      <Hud game={form} sync={syncGame} display={display} />
+      <div className={css["game-container"]}>
+        <MapLayout world={form.world} data={gameMap} />
+      </div>
     </Loading>
   );
 };

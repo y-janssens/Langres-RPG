@@ -3,37 +3,20 @@ use std::env;
 use tauri::{utils::config::AppUrl, WindowUrl};
 
 mod functions {
-    pub mod load_game;
-    pub mod new_game;
-    pub mod save_game;
+    pub mod games;
+    pub mod world;
 }
 
 mod classes {
     pub mod character;
     pub mod game;
     pub mod inventory;
+    pub mod world;
 }
 
-#[tauri::command]
-fn load_saves() -> Vec<classes::game::game::Game> {
-    let _load = functions::load_game::load_saved_games();
-    _load.unwrap()
-}
-
-#[tauri::command]
-fn new(name: String) -> classes::game::game::Game {
-    let _new = functions::new_game::new_game(name);
-    _new.unwrap()
-}
-
-#[tauri::command]
-fn delete(id: u32) {
-    let _delete = functions::load_game::delete_saved_game(id);
-}
-
-#[tauri::command]
-fn save(data: classes::game::game::Game) {
-    let _save = functions::save_game::save_game(data);
+mod commands {
+    pub mod games;
+    pub mod world;
 }
 
 fn main() {
@@ -45,7 +28,14 @@ fn main() {
     context.config_mut().build.dist_dir = AppUrl::Url(window_url.clone());
 
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![load_saves, new, delete, save])
+        .invoke_handler(tauri::generate_handler![
+            commands::games::new,
+            commands::games::load_game,
+            commands::games::load_saves,
+            commands::games::save,
+            commands::games::delete,
+            commands::world::regenerate
+        ])
         .run(context)
         .expect("error while running tauri application");
 }

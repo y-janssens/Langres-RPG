@@ -1,16 +1,15 @@
 import { useState } from "react";
+import { Loading } from "../../ui/Loading";
 import { Close } from "../../ui/Close";
 import { SavedGame } from "./SavedGame";
-import { DeletionModal } from "../../ui/DeletionModal";
-import { useGet } from "../../../hooks/useGet";
-import { Loading } from "../../ui/Loading";
+
 import css from "./modal.module.css";
 
 export const Modal = ({
   name = null,
   loading = false,
   items = [],
-  state = null ,
+  state = null,
   onClose = () => {},
   onClick = () => {},
   sync = () => {}

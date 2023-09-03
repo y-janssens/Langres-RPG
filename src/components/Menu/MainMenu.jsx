@@ -1,11 +1,15 @@
 import { useCallback, useMemo, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+
+import { GameModel } from "../../models";
+import { useGet } from "../../hooks/useGet";
+
 import { invoke } from "@tauri-apps/api/tauri";
 import { exit } from "@tauri-apps/api/process";
+
 import { MenuItem } from "./MenuItem";
 import { Modal } from "./Modal/Modal";
-import { useGet } from "../../hooks/useGet";
-import { GameModel } from "../classes";
+
 import css from "./menu.module.css";
 
 export const MainMenu = ({ context = {} }) => {
@@ -31,7 +35,7 @@ export const MainMenu = ({ context = {} }) => {
   }, []);
 
   const handleSaveGame = useCallback(() => {
-    const data = savedGames.find((gm) => gm.id === context.gameId);
+    const data = savedGames?.find((gm) => gm.id === context.gameId);
     let game = new GameModel(data);
     game.save();
   }, [savedGames, context]);
@@ -54,35 +58,43 @@ export const MainMenu = ({ context = {} }) => {
     return games.sort((a, b) => a.date < b.date)[0];
   }, [savedGames, loadingGames]);
 
+  const items = useMemo(() => {
+    let menu_items = [
+      { id: 0, name: "New Game", onClick: () => setOpenModal("new_game") },
+      {
+        id: 1,
+        name: "Load Game",
+        onClick: () => setOpenModal("saved_games")
+      },
+      { id: 3, name: "Save Game", onClick: () => handleSaveGame() },
+      { id: 4, name: "Settings", onClick: () => {} },
+      {
+        id: 5,
+        name: inGameContext ? "Main Menu" : "Exit Game",
+        onClick: () => exitGame()
+      }
+    ];
+
+    if (inGameContext) {
+      let itemsToExclude = ["New Game", "Load Game"];
+      return menu_items.filter((item) => !itemsToExclude.includes(item.name));
+    }
+    if (Boolean(lastPlayedGame)) {
+      menu_items.unshift({
+        id: 6,
+        name: "Continue",
+        onClick: () => navigate(`/game/${lastPlayedGame.id}`)
+      });
+    }
+    return menu_items.filter((it) => it.name !== "Save Game");
+  }, [inGameContext, lastPlayedGame, exitGame, handleSaveGame]);
+
   return (
     <>
       <div className={css["menu-items-container"]}>
-        {Boolean(lastPlayedGame) && (
-          <MenuItem
-            name="Continue"
-            onClick={() => navigate(`/game/${lastPlayedGame.id}`)}
-          />
-        )}
-        {!inGameContext && (
-          <>
-            <MenuItem
-              name="New Game"
-              onClick={() => setOpenModal("new_game")}
-            />
-            <MenuItem
-              name="Load Game"
-              onClick={() => setOpenModal("saved_games")}
-            />
-          </>
-        )}
-        {inGameContext && "gameId" in context && (
-          <MenuItem name="Save Game" onClick={handleSaveGame} />
-        )}
-        <MenuItem name="Settings" />
-        <MenuItem
-          name={inGameContext ? "Main Menu" : "Exit Game"}
-          onClick={exitGame}
-        />
+        {items.map((it) => {
+          return <MenuItem key={it.id} name={it.name} onClick={it.onClick} />;
+        })}
       </div>
 
       <Modal

@@ -1,13 +1,19 @@
 import React, { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+import KeyControls from "./controls";
 import GameContext from "./GameContext";
+
 import { Game } from "../components/Game/Game";
 import { MainMenu } from "../components/Menu/MainMenu";
+
+import css from "../components/Game/game.module.css";
 
 export const Controler = () => {
   const location = useLocation();
   const [context, _setContext] = useState({});
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [controls] = useState(() => new KeyControls());
+  const [toggles, setToggles] = useState(controls.toggles);
 
   const setContext = React.useCallback((ctx = {}) => {
     _setContext((context) => {
@@ -23,13 +29,12 @@ export const Controler = () => {
     });
   }, []);
 
-  const handleMenu = useCallback(
+  const handleControls = useCallback(
     (event) => {
-      if (event.code === "Escape" && location.pathname !== "/") {
-        setToggleMenu((prevToggle) => !prevToggle);
-      }
+      controls.setToggles(event);
+      setToggles(controls.toggles);
     },
-    [location, toggleMenu]
+    [controls]
   );
 
   return (
@@ -41,12 +46,14 @@ export const Controler = () => {
       }}
     >
       <div
-        style={{ position: "absolute", width: "100%", height: "100%" }}
-        onKeyDown={handleMenu}
+        className={css["game-main-block"]}
+        onKeyDown={handleControls}
         tabIndex={0}
       >
-        {toggleMenu && <MainMenu context={context} />}
-        <Game />
+        {toggles.menu && location.pathname !== "/" && (
+          <MainMenu context={context} />
+        )}
+        <Game display={toggles} />
       </div>
     </GameContext.Provider>
   );

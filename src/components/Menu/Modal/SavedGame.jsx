@@ -1,8 +1,11 @@
 import { useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { GameModel } from "../../../models";
+
 import { Close } from "../../ui/Close";
+
 import css from "./modal.module.css";
-import { GameModel } from "../../classes";
 
 export const SavedGame = ({ item, onLoad = () => {} }) => {
   const navigate = useNavigate();

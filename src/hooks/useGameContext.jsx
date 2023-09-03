@@ -1,5 +1,4 @@
 import React from "react";
-
 import GameContext from "../Controler/GameContext";
 
 export default function useGameContext() {
