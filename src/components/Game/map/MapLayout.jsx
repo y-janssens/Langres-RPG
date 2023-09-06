@@ -1,25 +1,16 @@
 import { useCallback, useState } from "react";
 import css from "./map.module.css";
+import MapAssets from "../../../models/map";
 
 export const MapLayout = ({ world, data }) => {
   const initialState = { valid: [], invalid: [] };
   const [items, setItems] = useState(initialState);
+  const [assets] = useState(() => new MapAssets());
 
   const getItemsIds = useCallback(
     (item) => {
-      let id = item.id;
-      const ids = [id, id + 1, id - 1, id + 150, id - 150];
-      let validIds = [];
-      let invalidIds = [];
-
-      ids.forEach((it) => {
-        if (world.content[it] === "-") {
-          validIds.push(it);
-        } else {
-          invalidIds.push(it);
-        }
-      });
-      setItems({ valid: validIds, invalid: invalidIds });
+      const ids = assets.get_items_ids(item, world);
+      setItems({ valid: ids.validIds, invalid: ids.invalidIds });
     },
     [world]
   );
@@ -37,7 +28,7 @@ export const MapLayout = ({ world, data }) => {
               onMouseEnter={() => getItemsIds(item)}
               onMouseLeave={() => setItems(initialState)}
             >
-              {item.value}
+              {`${item.value}`}
             </div>
           );
         })}

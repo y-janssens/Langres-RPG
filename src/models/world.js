@@ -9,7 +9,7 @@ export default class World {
   parse() {
     let content = this.content;
     let size = this.width;
-    let output = Array.from(
+    return Array.from(
       { length: Math.ceil(content.length / size) },
       (_, index) => {
         const start = index * size;
@@ -17,13 +17,6 @@ export default class World {
         return content.slice(start, end);
       }
     );
-
-    let id = 0;
-    return output.map((row, index) => {
-      return row.map((item, subindex) => {
-        return { id: id++, y: index, x: subindex, value: item };
-      });
-    });
   }
 
   async regenerate(data) {

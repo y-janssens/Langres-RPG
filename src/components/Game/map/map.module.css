@@ -10,6 +10,7 @@
   justify-content: center;
   width: 100px;
   height: 100px;
+  font-size: 10px;
   border: 0.5px solid rgba(255, 255, 255, 0.05);
   background-color: #303030;
   transition: 1000ms all;

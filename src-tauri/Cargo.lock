@@ -2883,6 +2883,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "round"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b02705db4fa872ae37e464fc803b7ffa574e6c4a5e112c52a82550f9dd63b657"
+
+[[package]]
 name = "rustc-demangle"
 version = "0.1.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3712,6 +3718,7 @@ dependencies = [
  "magic-crypt",
  "portpicker",
  "rand 0.8.5",
+ "round",
  "serde",
  "serde_json",
  "tauri",

@@ -29,7 +29,7 @@ pub mod game {
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
                 last_save_date: None,
-                world: World::new(150),
+                world: World::new(50),
                 character: Character::new(),
             }
         }

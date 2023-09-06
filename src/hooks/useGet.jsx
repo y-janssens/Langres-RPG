@@ -17,7 +17,6 @@ const useGet = ({
 
     await invoke(func, { id })
       .then((response) => {
-        console.log(response);
         setErrors(null);
         setData(response);
         onSuccess(response);
