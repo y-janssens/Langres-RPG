@@ -13,7 +13,7 @@ export const CharInfos = ({ game, character, sync }) => {
     <div className={css["character-infos-container"]}>
       <div
         className={css["character-infos-border"]}
-        onClick={handleRegenerate}
+        onClick={() => window.location.reload()}
       />
       <div className={css["character-infos-level"]}>{character.lvl}</div>
       <div className={css["character-infos-bubble"]} />

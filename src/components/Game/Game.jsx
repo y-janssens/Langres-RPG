@@ -1,22 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { Canvas } from "@react-three/fiber";
+import { MapControls, PerspectiveCamera } from "@react-three/drei";
 
 import { useGet } from "../../hooks/useGet";
-import { GameModel, World } from "../../models";
+import { GameModel, World, Npcs } from "../../models";
 
 import { useForm } from "../../hooks/useForm";
 import useGameContext from "../../hooks/useGameContext";
 
 import { Loading } from "../ui/Loading";
 import { Hud } from "./Interface/Hud";
-import { MapLayout } from "./map/MapLayout"; // eslint-disable-line
+import { MapLayout as Map } from "./map/MapLayout"; // eslint-disable-line
 
-import css from "./game.module.css";
-
-export const Game = ({ display }) => {
+export const Game = ({ display, position }) => {
   const { id } = useParams();
-  const [, setContext] = useGameContext();
+  const [context, setContext] = useGameContext();
   const [gameMap, setGameMap] = useState([]);
+  const [npcs] = useState(() => new Npcs());
+  const [loading, setLoading] = useState(false);
+  const [startingPoint, setStartingPoint] = useState([0, 0, 0]);
+
+  const cameraRef = useRef();
+  const characterRef = useRef();
 
   const [form, setForm, setFormObject] = useForm({
     player: "",
@@ -48,7 +54,7 @@ export const Game = ({ display }) => {
     }
   });
 
-  const [, loadingGame, , syncGame] = useGet(
+  const [, , , syncGame] = useGet(
     {
       func: "load_game",
       id: parseInt(id),
@@ -69,20 +75,51 @@ export const Game = ({ display }) => {
 
   useEffect(() => {
     if (id && form.id) {
+      setLoading(true);
       let game = new GameModel(form);
       let world = new World(form.world);
       let _world = world.parse();
+      setContext({ world });
       setGameMap(_world);
-      game.save();
+      setStartingPoint(world.pick_starting_point(game));
+
+      if (form.save_count < 1) {
+        game.save();
+      }
+      setLoading(false);
     }
   }, [form, id]);
 
   return (
-    <Loading loading={!form.id || loadingGame}>
+    <Loading loading={!form.id || loading || !npcs}>
       <Hud game={form} sync={syncGame} display={display} />
-      <div className={css["game-container"]}>
-        <MapLayout world={form.world} data={gameMap} />
-      </div>
+      <Canvas
+        camera={{
+          position: [0, 15, -15],
+          fov: 25,
+          zoom: 1
+        }}
+      >
+        <MapControls
+          makeDefault
+          // enableZoom={false}
+          // enableRotate={false}
+          minPolarAngle={Math.PI / 3.5}
+          maxPolarAngle={Math.PI / 3.5}
+          minAzimuthAngle={Math.PI}
+          maxAzimuthAngle={Math.PI}
+          ref={cameraRef}
+        />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[-100, 100, 100]} intensity={1} />
+        <Map
+          world={form.world}
+          data={gameMap}
+          position={position}
+          cameraRef={cameraRef}
+          characterRef={characterRef}
+        />
+      </Canvas>
     </Loading>
   );
 };

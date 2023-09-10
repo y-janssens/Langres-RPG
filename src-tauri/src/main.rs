@@ -4,6 +4,7 @@ use tauri::{utils::config::AppUrl, WindowUrl};
 
 mod functions {
     pub mod games;
+    pub mod npcs;
     pub mod world;
 }
 
@@ -11,11 +12,13 @@ mod classes {
     pub mod character;
     pub mod game;
     pub mod inventory;
+    pub mod npc;
     pub mod world;
 }
 
 mod commands {
     pub mod games;
+    pub mod npcs;
     pub mod world;
 }
 
@@ -34,7 +37,8 @@ fn main() {
             commands::games::load_saves,
             commands::games::save,
             commands::games::delete,
-            commands::world::regenerate
+            commands::world::regenerate,
+            commands::npcs::get_npcs,
         ])
         .run(context)
         .expect("error while running tauri application");

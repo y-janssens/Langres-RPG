@@ -95,9 +95,5 @@ pub mod game {
             let key = std::env::var("KEY").unwrap();
             Ok(new_magic_crypt!(key, 256))
         }
-
-        pub fn log(&self) {
-            println!("{:?}", { self })
-        }
     }
 }

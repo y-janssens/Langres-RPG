@@ -14,6 +14,7 @@ export const Controler = () => {
   const [context, _setContext] = useState({});
   const [controls] = useState(() => new KeyControls());
   const [toggles, setToggles] = useState(controls.toggles);
+  const [position, setPosition] = useState(controls.positions);
 
   const setContext = React.useCallback((ctx = {}) => {
     _setContext((context) => {
@@ -33,8 +34,12 @@ export const Controler = () => {
     (event) => {
       controls.setToggles(event);
       setToggles(controls.toggles);
+      if ("world" in context) {
+        controls.setPosition(event, context.world);
+        setPosition(controls.positions);
+      }
     },
-    [controls]
+    [controls, context]
   );
 
   return (
@@ -53,7 +58,7 @@ export const Controler = () => {
         {toggles.menu && location.pathname !== "/" && (
           <MainMenu context={context} />
         )}
-        <Game display={toggles} />
+        <Game display={toggles} position={position} />
       </div>
     </GameContext.Provider>
   );

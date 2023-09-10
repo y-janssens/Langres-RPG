@@ -1,3 +1,5 @@
+import MapAssets from "../models/map";
+
 export default class KeyControls {
   constructor() {
     this.allowedKeys = [
@@ -7,7 +9,16 @@ export default class KeyControls {
       { name: "map", key: "m", value: false },
       { name: "inventory", key: "i", value: false }
     ];
+
+    this.controlsKeys = [
+      { name: "up", key: "z" },
+      { name: "down", key: "s" },
+      { name: "left", key: "q" },
+      { name: "right", key: "d" }
+    ];
+    this.validKeys = new MapAssets().validKeys;
     this.toggles = {};
+    this.positions = [25, 0.75, 25];
     this.generateControls();
   }
 
@@ -29,5 +40,41 @@ export default class KeyControls {
       toggles[key.name] = !this.toggles[key.name];
       this.toggles = toggles;
     }
+  }
+
+  setPosition(event, world) {
+    const key = this.controlsKeys.find((k) => k.key === event.key);
+    let [x, y, z] = this.positions;
+    let position = { x, y, z };
+    const nextItems = {
+      xplus: world.content.find((tile) => tile.x === x + 1 && tile.y === z),
+      xminus: world.content.find((tile) => tile.x === x - 1 && tile.y === z),
+      zplus: world.content.find((tile) => tile.x === x && tile.y === z + 1),
+      zminus: world.content.find((tile) => tile.x === x && tile.y === z - 1)
+    };
+    if (key) {
+      switch (key.key) {
+        case "z":
+          this.validKeys.includes(nextItems.zplus.value)
+            ? (position.z += 1)
+            : position.z;
+          break;
+        case "s":
+          this.validKeys.includes(nextItems.zminus.value)
+            ? (position.z -= 1)
+            : position.z;
+          break;
+        case "q":
+          this.validKeys.includes(nextItems.xplus.value)
+            ? (position.x += 1)
+            : position.x;
+          break;
+        case "d":
+          this.validKeys.includes(nextItems.xminus.value)
+            ? (position.x -= 1)
+            : position.x;
+      }
+    }
+    this.positions = [position.x, position.y, position.z];
   }
 }

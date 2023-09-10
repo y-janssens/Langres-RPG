@@ -18,6 +18,7 @@ export default class GameModel {
     this.save_count = save_count;
     this.world = new World(world);
     this.character = new Character({ ...character, name: this.player });
+    this.last_known_position = [25, 0.75, 25];
   }
 
   async save() {
