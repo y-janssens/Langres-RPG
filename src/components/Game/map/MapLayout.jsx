@@ -1,10 +1,7 @@
-import { useState, useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
-import css from "./map.module.css";
-import MapAssets from "../../../models/map";
 import { Tiles } from "../Scene/Tiles";
 import Character from "../Character";
-import { MathUtils } from "three";
+import useGameContext from "../../../hooks/useGameContext";
 
 export const MapLayout = ({
   world,
@@ -12,33 +9,39 @@ export const MapLayout = ({
   data,
   position,
   characterRef,
-  cameraRef
+  cameraRef,
+  lightRef
 }) => {
-  // const initialState = { valid: [], invalid: [] };
-  // const [items, setItems] = useState(initialState);
-  // const [assets] = useState(() => new MapAssets());
-
-  // const getItemsIds = useCallback(
-  //   (item) => {
-  //     const ids = assets.get_items_ids(item, world);
-  //     setItems({ valid: ids.validIds, invalid: ids.invalidIds });
-  //   },
-  //   [world]
-  // );
-
-  const updateCameraPosition = () => {
-    if (cameraRef.current && characterRef.current) {
-      const characterPosition = characterRef.current.position;
-      const distance = 25;
-      cameraRef.current.object.position.x = characterPosition.x - distance;
-      cameraRef.current.object.position.y = 15;
-      cameraRef.current.object.position.z =
-        -(distance - characterPosition.z) - distance / 1.325;
-    }
-  };
+  const [context] = useGameContext();
 
   useFrame(() => {
-    updateCameraPosition();
+    if (cameraRef.current && characterRef.current && lightRef.current) {
+      const characterPosition = characterRef.current.position;
+      const distance = world.width / 2;
+
+      let x = characterPosition.x - distance;
+      let z = -(distance - characterPosition.z) - distance / 1.325;
+
+      cameraRef.current.object.position.set(x, 15, z);
+      lightRef.current.position.set(x, 10, -(distance - characterPosition.z));
+
+      if (context.direction) {
+        switch (context.direction) {
+          case "up":
+            characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
+            break;
+          case "down":
+            characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
+            break;
+          case "left":
+            characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+            break;
+          case "right":
+            characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+            break;
+        }
+      }
+    }
   });
 
   return (

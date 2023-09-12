@@ -1,7 +1,12 @@
 export default function Character({ position, characterRef }) {
   return (
-    <mesh ref={characterRef} scale={[0.55, 1.25, 0.55]} position={position}>
-      <boxGeometry args={[1, 1, 1]} />
+    <mesh
+      ref={characterRef}
+      scale={[0.25, 0.25, 0.25]}
+      rotation={[Math.PI / 2, 0, Math.PI]}
+      position={position}
+    >
+      <coneGeometry attach="geometry" args={[1, 2.5, 10]} smoothness={5} />
       <meshStandardMaterial color="red" />
     </mesh>
   );

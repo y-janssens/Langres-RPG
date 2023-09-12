@@ -1,21 +1,21 @@
 import { useState, useRef, useMemo } from "react";
+import useGameContext from "../../../hooks/useGameContext";
+import { DoubleSide } from "three";
 
 export const Tiles = ({ data }) => {
+  const [context] = useGameContext();
+  const keys = context.controls.borderKeys;
   return data.map((row) =>
     row.map((item, index) => (
       <group key={index}>
-        {item.value === "T" && (
+        {keys.includes(item.value) && (
           <Tile
             position={[item.x, 0.75, item.y]}
             scale={[0.55, 1.25, 0.55]}
             item={item}
           />
         )}
-        <Tile
-          position={[item.x, 0, item.y]}
-          item={item}
-          scale={[0.95, 0.25, 0.95]}
-        />
+        <Tile position={[item.x, 0, item.y]} item={item} flat />
       </group>
     ))
   );
@@ -48,6 +48,25 @@ function Tile(props) {
     }
     return color;
   }, [item]);
+
+  if (props.flat) {
+    return (
+      <mesh
+        {...props}
+        ref={meshRef}
+        onPointerOver={() => setHover(true)}
+        onPointerOut={() => setHover(false)}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.99, 0.99, 1]}
+      >
+        <planeGeometry args={[1, 1, 1]} />
+        <meshStandardMaterial
+          color={hovered ? "blue" : tileColor}
+          side={DoubleSide}
+        />
+      </mesh>
+    );
+  }
 
   return (
     <mesh

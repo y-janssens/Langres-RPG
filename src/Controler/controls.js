@@ -12,11 +12,17 @@ export default class KeyControls {
 
     this.controlsKeys = [
       { name: "up", key: "z" },
+      { name: "up_arrow", key: "ArrowUp" },
       { name: "down", key: "s" },
+      { name: "down_arrow", key: "ArrowDown" },
       { name: "left", key: "q" },
-      { name: "right", key: "d" }
+      { name: "left_arrow", key: "ArrowLeft" },
+      { name: "right", key: "d" },
+      { name: "right_arrow", key: "ArrowRight" }
     ];
-    this.validKeys = new MapAssets().validKeys;
+    this.assets = new MapAssets();
+    this.validKeys = this.assets.validKeys;
+    this.borderKeys = this.assets.borderKeys;
     this.toggles = {};
     this.positions = [25, 0.75, 25];
     this.generateControls();
@@ -42,8 +48,34 @@ export default class KeyControls {
     }
   }
 
-  setPosition(event, world) {
+  getKey(event) {
+    let direction = "down";
     const key = this.controlsKeys.find((k) => k.key === event.key);
+    if (key) {
+      switch (event.key) {
+        case "z":
+        case "ArrowUp":
+          direction = "up";
+          break;
+        case "s":
+        case "ArrowDown":
+          direction = "down";
+          break;
+        case "q":
+        case "ArrowLeft":
+          direction = "left";
+          break;
+        case "d":
+        case "ArrowRight":
+          direction = "right";
+          break;
+      }
+      return direction;
+    }
+  }
+
+  setPosition(event, world) {
+    const key = this.getKey(event);
     let [x, y, z] = this.positions;
     let position = { x, y, z };
     const nextItems = {
@@ -52,29 +84,31 @@ export default class KeyControls {
       zplus: world.content.find((tile) => tile.x === x && tile.y === z + 1),
       zminus: world.content.find((tile) => tile.x === x && tile.y === z - 1)
     };
+
     if (key) {
-      switch (key.key) {
-        case "z":
+      switch (key) {
+        case "up":
           this.validKeys.includes(nextItems.zplus.value)
             ? (position.z += 1)
             : position.z;
           break;
-        case "s":
+        case "down":
           this.validKeys.includes(nextItems.zminus.value)
             ? (position.z -= 1)
             : position.z;
           break;
-        case "q":
+        case "left":
           this.validKeys.includes(nextItems.xplus.value)
             ? (position.x += 1)
             : position.x;
           break;
-        case "d":
+        case "right":
           this.validKeys.includes(nextItems.xminus.value)
             ? (position.x -= 1)
             : position.x;
       }
     }
+
     this.positions = [position.x, position.y, position.z];
   }
 }

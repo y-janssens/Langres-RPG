@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
-import { MapControls, PerspectiveCamera } from "@react-three/drei";
+import { MapControls } from "@react-three/drei";
 
 import { useGet } from "../../hooks/useGet";
 import { GameModel, World, Npcs } from "../../models";
@@ -13,45 +13,19 @@ import { Loading } from "../ui/Loading";
 import { Hud } from "./Interface/Hud";
 import { MapLayout as Map } from "./map/MapLayout"; // eslint-disable-line
 
-export const Game = ({ display, position }) => {
+export const Game = ({ game, controls, display, position }) => {
   const { id } = useParams();
-  const [context, setContext] = useGameContext();
+  const [, setContext] = useGameContext();
   const [gameMap, setGameMap] = useState([]);
   const [npcs] = useState(() => new Npcs());
   const [loading, setLoading] = useState(false);
-  const [startingPoint, setStartingPoint] = useState([0, 0, 0]);
 
   const cameraRef = useRef();
   const characterRef = useRef();
+  const pointLightRef = useRef();
 
-  const [form, setForm, setFormObject] = useForm({
-    player: "",
-    id: null,
-    date_created: "",
-    last_save_date: "",
-    save_count: 0,
-    character: {
-      name: "",
-      _end: 8,
-      _for: 8,
-      _hab: 8,
-      _cha: 8,
-      _int: 8,
-      _ini: 8,
-      _pv: 60,
-      xp: 0,
-      gold: 10,
-      max_xp: 150,
-      lvl: 1,
-      inventory: {
-        right_hand: "Sword",
-        left_hand: "Shield",
-        head: "Helmet",
-        torso: "Armor",
-        legs: "Legs",
-        objects: []
-      }
-    }
+  const [form, , setFormObject] = useForm({
+    id: null
   });
 
   const [, , , syncGame] = useGet(
@@ -79,15 +53,15 @@ export const Game = ({ display, position }) => {
       let game = new GameModel(form);
       let world = new World(form.world);
       let _world = world.parse();
-      setContext({ world });
       setGameMap(_world);
-      setStartingPoint(world.pick_starting_point(game));
+      setContext({ world, controls });
 
       if (form.save_count < 1) {
         game.save();
       }
       setLoading(false);
     }
+    game.current.focus();
   }, [form, id]);
 
   return (
@@ -100,25 +74,37 @@ export const Game = ({ display, position }) => {
           zoom: 1
         }}
       >
+        <color attach="background" args={[0, 0, 0]} />
+        <fogExp2 attach="fog" color="black" density={0.05} />
+        {/* <fog attach="fog" color="black" near={1} far={40} /> */}
         <MapControls
           makeDefault
-          // enableZoom={false}
-          // enableRotate={false}
           minPolarAngle={Math.PI / 3.5}
           maxPolarAngle={Math.PI / 3.5}
           minAzimuthAngle={Math.PI}
           maxAzimuthAngle={Math.PI}
           ref={cameraRef}
         />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[-100, 100, 100]} intensity={1} />
+        <ambientLight intensity={0.1} />
+        <pointLight
+          intensity={2500}
+          position={[0, 10, 0]}
+          decay={2.75}
+          distance={12}
+          ref={pointLightRef}
+        />
+
+        {/* <directionalLight position={[-100, 100, 100]} intensity={1} /> */}
         <Map
           world={form.world}
           data={gameMap}
+          npcs={npcs}
           position={position}
           cameraRef={cameraRef}
           characterRef={characterRef}
+          lightRef={pointLightRef}
         />
+        {/* </fog> */}
       </Canvas>
     </Loading>
   );

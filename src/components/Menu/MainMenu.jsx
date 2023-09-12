@@ -15,12 +15,15 @@ import css from "./menu.module.css";
 export const MainMenu = ({ context = {} }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const initialState = null;
-  const [openModal, setOpenModal] = useState(initialState);
+  const [openModal, setOpenModal] = useState(null);
 
   const inGameContext = useMemo(() => {
     return Boolean(location.pathname !== "/");
-  }, [location]);
+  }, [location, context]);
+
+  const displayInGameMenu = useMemo(() => {
+    return "toggles" in context && context.toggles.menu;
+  }, [context]);
 
   const [savedGames, loadingGames, , sync] = useGet({
     func: "load_saves"
@@ -75,7 +78,7 @@ export const MainMenu = ({ context = {} }) => {
       }
     ];
 
-    if (inGameContext) {
+    if (inGameContext && displayInGameMenu) {
       let itemsToExclude = ["New Game", "Load Game"];
       return menu_items.filter((item) => !itemsToExclude.includes(item.name));
     }
@@ -87,7 +90,17 @@ export const MainMenu = ({ context = {} }) => {
       });
     }
     return menu_items.filter((it) => it.name !== "Save Game");
-  }, [inGameContext, lastPlayedGame, exitGame, handleSaveGame]);
+  }, [
+    inGameContext,
+    displayInGameMenu,
+    lastPlayedGame,
+    exitGame,
+    handleSaveGame
+  ]);
+
+  if (inGameContext && !displayInGameMenu) {
+    return null;
+  }
 
   return (
     <>
@@ -101,7 +114,7 @@ export const MainMenu = ({ context = {} }) => {
         name="new_game"
         state={openModal}
         onClick={handleNewGame}
-        onClose={() => setOpenModal(initialState)}
+        onClose={() => setOpenModal(null)}
       />
 
       <Modal
@@ -111,7 +124,7 @@ export const MainMenu = ({ context = {} }) => {
         loading={loadingGames}
         sync={sync}
         onClose={() => {
-          setOpenModal(initialState);
+          setOpenModal(null);
         }}
       />
     </>

@@ -1,6 +1,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use std::env;
-use tauri::{utils::config::AppUrl, WindowUrl};
 
 mod functions {
     pub mod games;
@@ -23,13 +22,6 @@ mod commands {
 }
 
 fn main() {
-    let port = portpicker::pick_unused_port().expect("failed to find unused port");
-
-    let mut context = tauri::generate_context!();
-    let url = format!("http://localhost:{}", port).parse().unwrap();
-    let window_url = WindowUrl::External(url);
-    context.config_mut().build.dist_dir = AppUrl::Url(window_url.clone());
-
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             commands::games::new,
@@ -40,6 +32,6 @@ fn main() {
             commands::world::regenerate,
             commands::npcs::get_npcs,
         ])
-        .run(context)
+        .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

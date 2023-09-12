@@ -48,6 +48,7 @@ export default class MapAssets {
       }
     ];
     this.validKeys = ["-", "C"];
+    this.borderKeys = ["F", "T"];
   }
 
   get_asset(item) {
