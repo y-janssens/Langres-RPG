@@ -29,7 +29,14 @@ export const Modal = ({
         {name === "saved_games" && (
           <Loading loading={loading}>
             {items?.map((save) => {
-              return <SavedGame key={save.id} item={save} onLoad={sync} />;
+              return (
+                <SavedGame
+                  key={save.id}
+                  item={save}
+                  onLoad={sync}
+                  onClose={onClose}
+                />
+              );
             })}
           </Loading>
         )}

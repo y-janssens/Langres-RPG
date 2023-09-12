@@ -4,7 +4,7 @@ import { DoubleSide } from "three";
 
 export const Tiles = ({ data }) => {
   const [context] = useGameContext();
-  const keys = context.controls.borderKeys;
+  const keys = context?.controls?.borderKeys;
   return data.map((row) =>
     row.map((item, index) => (
       <group key={index}>

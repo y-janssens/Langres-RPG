@@ -1,11 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useState,
-  useRef,
-  useMemo
-} from "react";
-import { useLocation } from "react-router-dom";
+import React, { useCallback, useState, useRef } from "react";
 
 import KeyControls from "./controls";
 import GameContext from "./GameContext";
@@ -17,7 +10,6 @@ import css from "../components/Game/game.module.css";
 
 export const Controler = () => {
   const gameRef = useRef();
-  const location = useLocation();
   const [context, _setContext] = useState({ direction: "s" });
   const [controls] = useState(() => new KeyControls());
   const [toggles, setToggles] = useState(controls.toggles);
@@ -26,6 +18,14 @@ export const Controler = () => {
   const setContext = React.useCallback((ctx = {}) => {
     _setContext((context) => {
       return { ...context, ...ctx };
+    });
+  }, []);
+
+  const removeFromContext = React.useCallback((name) => {
+    _setContext((context) => {
+      let newContext = { ...context };
+      delete newContext[name];
+      return newContext;
     });
   }, []);
 
@@ -44,16 +44,17 @@ export const Controler = () => {
     <GameContext.Provider
       value={{
         context,
-        setContext
+        setContext,
+        removeFromContext
       }}
     >
+      <MainMenu />
       <div
         className={css["game-main-block"]}
         onKeyDown={handleControls}
         tabIndex={0}
         ref={gameRef}
       >
-        <MainMenu context={context} />
         <Game
           display={toggles}
           position={position}

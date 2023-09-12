@@ -2,6 +2,14 @@ import MapAssets from "../models/map";
 
 export default class KeyControls {
   constructor() {
+    this.defaultKeys = [
+      { name: "menu", key: "Escape", value: false },
+      { name: "character", key: "c", value: false },
+      { name: "interface", key: "h", value: true },
+      { name: "map", key: "m", value: false },
+      { name: "inventory", key: "i", value: false }
+    ];
+
     this.allowedKeys = [
       { name: "menu", key: "Escape", value: false },
       { name: "character", key: "c", value: false },
@@ -110,5 +118,9 @@ export default class KeyControls {
     }
 
     this.positions = [position.x, position.y, position.z];
+  }
+
+  resetControls() {
+    return (this.toggles = this.defaultKeys);
   }
 }

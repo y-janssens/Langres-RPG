@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import useGameContext from "../../hooks/useGameContext";
 
 import { GameModel } from "../../models";
 import { useGet } from "../../hooks/useGet";
@@ -12,18 +12,9 @@ import { Modal } from "./Modal/Modal";
 
 import css from "./menu.module.css";
 
-export const MainMenu = ({ context = {} }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+export const MainMenu = () => {
   const [openModal, setOpenModal] = useState(null);
-
-  const inGameContext = useMemo(() => {
-    return Boolean(location.pathname !== "/");
-  }, [location, context]);
-
-  const displayInGameMenu = useMemo(() => {
-    return "toggles" in context && context.toggles.menu;
-  }, [context]);
+  const [context, setContext] = useGameContext();
 
   const [savedGames, loadingGames, , sync] = useGet({
     func: "load_saves"
@@ -33,7 +24,8 @@ export const MainMenu = ({ context = {} }) => {
     await invoke("new", { name }).then((data) => {
       let game = new GameModel(data);
       game.save();
-      navigate(`/game/${game.id}`);
+      setContext({ gameId: game.id });
+      setOpenModal(null);
     });
   }, []);
 
@@ -44,11 +36,8 @@ export const MainMenu = ({ context = {} }) => {
   }, [savedGames, context]);
 
   const exitGame = useCallback(async () => {
-    if (!inGameContext) {
-      return await exit(1);
-    }
-    return navigate("/");
-  }, [inGameContext]);
+    return await exit(1);
+  }, []);
 
   const lastPlayedGame = useMemo(() => {
     if (loadingGames || !savedGames?.some((gm) => Boolean(gm.last_save_date))) {
@@ -69,36 +58,25 @@ export const MainMenu = ({ context = {} }) => {
         name: "Load Game",
         onClick: () => setOpenModal("saved_games")
       },
-      { id: 3, name: "Save Game", onClick: () => handleSaveGame() },
-      { id: 4, name: "Settings", onClick: () => {} },
+      { id: 3, name: "Settings", onClick: () => {} },
       {
-        id: 5,
-        name: inGameContext ? "Main Menu" : "Exit Game",
+        id: 4,
+        name: "Exit Game",
         onClick: () => exitGame()
       }
     ];
 
-    if (inGameContext && displayInGameMenu) {
-      let itemsToExclude = ["New Game", "Load Game"];
-      return menu_items.filter((item) => !itemsToExclude.includes(item.name));
-    }
     if (Boolean(lastPlayedGame)) {
       menu_items.unshift({
-        id: 6,
+        id: 5,
         name: "Continue",
-        onClick: () => navigate(`/game/${lastPlayedGame.id}`)
+        onClick: () => setContext({ gameId: lastPlayedGame.id })
       });
     }
-    return menu_items.filter((it) => it.name !== "Save Game");
-  }, [
-    inGameContext,
-    displayInGameMenu,
-    lastPlayedGame,
-    exitGame,
-    handleSaveGame
-  ]);
+    return menu_items;
+  }, [lastPlayedGame, exitGame, handleSaveGame]);
 
-  if (inGameContext && !displayInGameMenu) {
+  if (context?.gameId) {
     return null;
   }
 

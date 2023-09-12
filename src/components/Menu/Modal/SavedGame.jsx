@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import useGameContext from "../../../hooks/useGameContext";
 
 import { GameModel } from "../../../models";
 
@@ -7,8 +7,8 @@ import { Close } from "../../ui/Close";
 
 import css from "./modal.module.css";
 
-export const SavedGame = ({ item, onLoad = () => {} }) => {
-  const navigate = useNavigate();
+export const SavedGame = ({ item, onLoad = () => {}, onClose = () => {} }) => {
+  const [context, setContext] = useGameContext();
   const lastSavedDate = useMemo(() => {
     const date = item.last_save_date.split(".");
     return date[0];
@@ -25,7 +25,10 @@ export const SavedGame = ({ item, onLoad = () => {} }) => {
     <div className={css["saved-game-block"]}>
       <span
         className={css["saved-game-item"]}
-        onClick={() => navigate(`/game/${item.id}`)}
+        onClick={() => {
+          setContext({ gameId: item.id });
+          onClose();
+        }}
       >
         <p>{item.player}</p>
         <p>{`Last save date: ${lastSavedDate}`}</p>

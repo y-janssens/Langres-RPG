@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { MapControls } from "@react-three/drei";
 
@@ -12,13 +11,20 @@ import useGameContext from "../../hooks/useGameContext";
 import { Loading } from "../ui/Loading";
 import { Hud } from "./Interface/Hud";
 import { MapLayout as Map } from "./map/MapLayout"; // eslint-disable-line
+import { InGameMenu } from "../Menu/InGameMenu";
 
 export const Game = ({ game, controls, display, position }) => {
-  const { id } = useParams();
-  const [, setContext] = useGameContext();
+  const [context, setContext] = useGameContext();
   const [gameMap, setGameMap] = useState([]);
   const [npcs] = useState(() => new Npcs());
   const [loading, setLoading] = useState(false);
+
+  const id = useMemo(() => {
+    if (!Object.keys(context).length || !("gameId" in context)) {
+      return null;
+    }
+    return context.gameId;
+  }, [context]);
 
   const cameraRef = useRef();
   const characterRef = useRef();
@@ -62,50 +68,57 @@ export const Game = ({ game, controls, display, position }) => {
       setLoading(false);
     }
     game.current.focus();
-  }, [form, id]);
+  }, [id, form]);
+
+  if (!id) {
+    return null;
+  }
 
   return (
-    <Loading loading={!form.id || loading || !npcs}>
-      <Hud game={form} sync={syncGame} display={display} />
-      <Canvas
-        camera={{
-          position: [0, 15, -15],
-          fov: 25,
-          zoom: 1
-        }}
-      >
-        <color attach="background" args={[0, 0, 0]} />
-        <fogExp2 attach="fog" color="black" density={0.05} />
-        {/* <fog attach="fog" color="black" near={1} far={40} /> */}
-        <MapControls
-          makeDefault
-          minPolarAngle={Math.PI / 3.5}
-          maxPolarAngle={Math.PI / 3.5}
-          minAzimuthAngle={Math.PI}
-          maxAzimuthAngle={Math.PI}
-          ref={cameraRef}
-        />
-        <ambientLight intensity={0.1} />
-        <pointLight
-          intensity={2500}
-          position={[0, 10, 0]}
-          decay={2.75}
-          distance={12}
-          ref={pointLightRef}
-        />
+    <>
+      <InGameMenu id={id} controls={controls} game={game} />
+      <Loading loading={!form.id || loading || !npcs || !id}>
+        <Hud game={form} sync={syncGame} display={display} />
+        <Canvas
+          camera={{
+            position: [0, 15, -15],
+            fov: 25,
+            zoom: 1
+          }}
+        >
+          <color attach="background" args={[0, 0, 0]} />
+          <fogExp2 attach="fog" color="black" density={0.05} />
+          {/* <fog attach="fog" color="black" near={1} far={40} /> */}
+          <MapControls
+            makeDefault
+            minPolarAngle={Math.PI / 3.5}
+            maxPolarAngle={Math.PI / 3.5}
+            minAzimuthAngle={Math.PI}
+            maxAzimuthAngle={Math.PI}
+            ref={cameraRef}
+          />
+          <ambientLight intensity={0.1} />
+          <pointLight
+            intensity={2500}
+            position={[0, 10, 0]}
+            decay={2.75}
+            distance={12}
+            ref={pointLightRef}
+          />
 
-        {/* <directionalLight position={[-100, 100, 100]} intensity={1} /> */}
-        <Map
-          world={form.world}
-          data={gameMap}
-          npcs={npcs}
-          position={position}
-          cameraRef={cameraRef}
-          characterRef={characterRef}
-          lightRef={pointLightRef}
-        />
-        {/* </fog> */}
-      </Canvas>
-    </Loading>
+          {/* <directionalLight position={[-100, 100, 100]} intensity={1} /> */}
+          <Map
+            world={form.world}
+            data={gameMap}
+            npcs={npcs}
+            position={position}
+            cameraRef={cameraRef}
+            characterRef={characterRef}
+            lightRef={pointLightRef}
+          />
+          {/* </fog> */}
+        </Canvas>
+      </Loading>
+    </>
   );
 };
