@@ -3,7 +3,6 @@ use std::env;
 
 mod functions {
     pub mod games;
-    pub mod npcs;
     pub mod world;
 }
 

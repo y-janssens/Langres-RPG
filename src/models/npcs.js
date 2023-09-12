@@ -27,7 +27,6 @@ export default class Npcs {
 
 export class Npc {
   constructor(item) {
-    // const { id, character_name, content } = item;
     this.id = item.id;
     this.character_name = item.character_name;
     this.content = item.content;

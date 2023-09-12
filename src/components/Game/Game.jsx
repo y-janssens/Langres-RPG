@@ -12,10 +12,12 @@ import { Loading } from "../ui/Loading";
 import { Hud } from "./Interface/Hud";
 import { MapLayout as Map } from "./map/MapLayout"; // eslint-disable-line
 import { InGameMenu } from "../Menu/InGameMenu";
+import MapAssets from "../../models/map";
 
 export const Game = ({ game, controls, display, position }) => {
   const [context, setContext] = useGameContext();
   const [gameMap, setGameMap] = useState([]);
+  const [assets] = useState(() => new MapAssets());
   const [npcs] = useState(() => new Npcs());
   const [loading, setLoading] = useState(false);
 
@@ -60,7 +62,7 @@ export const Game = ({ game, controls, display, position }) => {
       let world = new World(form.world);
       let _world = world.parse();
       setGameMap(_world);
-      setContext({ world, controls });
+      setContext({ world, controls, assets });
 
       if (form.save_count < 1) {
         game.save();
@@ -97,16 +99,16 @@ export const Game = ({ game, controls, display, position }) => {
             maxAzimuthAngle={Math.PI}
             ref={cameraRef}
           />
-          <ambientLight intensity={0.1} />
+          <ambientLight intensity={0.5} />
           <pointLight
             intensity={2500}
             position={[0, 10, 0]}
-            decay={2.75}
+            decay={2.25}
             distance={12}
             ref={pointLightRef}
           />
 
-          {/* <directionalLight position={[-100, 100, 100]} intensity={1} /> */}
+          {/* <directionalLight position={[-100, 100, 100]} intensity={0.25} /> */}
           <Map
             world={form.world}
             data={gameMap}

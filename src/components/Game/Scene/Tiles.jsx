@@ -1,28 +1,32 @@
 import { useState, useRef, useMemo } from "react";
 import useGameContext from "../../../hooks/useGameContext";
-import { DoubleSide } from "three";
+import { useLoader } from "@react-three/fiber";
+import { DoubleSide, TextureLoader } from "three";
+import { Tree } from "./Tree";
 
 export const Tiles = ({ data }) => {
   const [context] = useGameContext();
   const keys = context?.controls?.borderKeys;
+  const grassColorMap = useLoader(TextureLoader, context.assets.get_grass());
+
   return data.map((row) =>
     row.map((item, index) => (
       <group key={index}>
         {keys.includes(item.value) && (
-          <Tile
-            position={[item.x, 0.75, item.y]}
-            scale={[0.55, 1.25, 0.55]}
-            item={item}
-          />
+          <Tree position={[item.x, 1, item.y]} item={item} />
         )}
-        <Tile position={[item.x, 0, item.y]} item={item} flat />
+        <Tile
+          position={[item.x, 0, item.y]}
+          item={item}
+          colorMap={grassColorMap}
+        />
       </group>
     ))
   );
 };
 
 function Tile(props) {
-  const { item } = props;
+  const { item, colorMap } = props;
   const meshRef = useRef();
   const [hovered, setHover] = useState(false);
 
@@ -49,34 +53,23 @@ function Tile(props) {
     return color;
   }, [item]);
 
-  if (props.flat) {
-    return (
-      <mesh
-        {...props}
-        ref={meshRef}
-        onPointerOver={() => setHover(true)}
-        onPointerOut={() => setHover(false)}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={[0.99, 0.99, 1]}
-      >
-        <planeGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial
-          color={hovered ? "blue" : tileColor}
-          side={DoubleSide}
-        />
-      </mesh>
-    );
-  }
-
   return (
     <mesh
       {...props}
       ref={meshRef}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
+      rotation={[Math.PI / 2, 0, 0]}
+      scale={[0.99, 0.99, 1]}
     >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "blue" : tileColor} />
+      <planeGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial
+        color={hovered ? "blue" : "white"}
+        side={DoubleSide}
+        map={colorMap}
+        emissive={0xffffff}
+        emissiveIntensity={0.01}
+      />
     </mesh>
   );
 }

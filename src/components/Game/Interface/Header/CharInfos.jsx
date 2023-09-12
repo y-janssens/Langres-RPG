@@ -18,7 +18,6 @@ export const CharInfos = ({ game, character, sync }) => {
       <div className={css["character-infos-level"]}>{character.lvl}</div>
       <div className={css["character-infos-bubble"]} />
       <div className={css["character-infos-header"]}>
-        {/* <div>{character.name}</div> */}
         <Gauge stat={character._pv} max={character._pv} type={"pv"} />
         <XpGauge stat={character.xp} max={character.max_xp} />
       </div>

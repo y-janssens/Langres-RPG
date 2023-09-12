@@ -14,19 +14,26 @@ export default class MapAssets {
         name: "tree",
         key: "T",
         src: [
-          "./assets/map/trees/{}.png",
-          "./assets/map/trees/{}.png",
-          "./assets/map/trees/{}.png"
+          "./assets/map/trees/1.png",
+          "./assets/map/trees/2.png",
+          "./assets/map/trees/3.png",
+          "./assets/map/trees/3.png",
+          "./assets/map/trees/5.png",
+          "./assets/map/trees/6.png",
+          "./assets/map/trees/7.png",
+          "./assets/map/trees/8.png",
+          "./assets/map/trees/9.png",
+          "./assets/map/trees/10.png",
+          "./assets/map/trees/11.png",
+          "./assets/map/trees/12.png",
+          "./assets/map/trees/13.png",
+          "./assets/map/trees/14.png"
         ]
       },
       {
         name: "grass",
         key: "-",
-        src: [
-          "./assets/map/grass/{}.png",
-          "./assets/map/grass/{}.png",
-          "./assets/map/grass/{}.png"
-        ]
+        src: ["./assets/map/grass/grass-1.jpg"]
       },
       {
         name: "rock",
@@ -53,7 +60,17 @@ export default class MapAssets {
 
   get_asset(item) {
     const asset = this.assets.find((as) => as.key === item.value);
-    return asset.src[Math.floor(Math.random() * asset.length)];
+    return asset.src[Math.floor(Math.random() * asset.src.length)];
+  }
+
+  get_grass() {
+    const asset = this.assets.find((as) => as.key === "-");
+    return asset.src[0];
+  }
+
+  get_tree() {
+    const asset = this.assets.find((as) => as.key === "T");
+    return asset.src[0];
   }
 
   get_items_ids(item, world) {

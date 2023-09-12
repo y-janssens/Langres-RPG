@@ -7,8 +7,6 @@ const AnimatedText = ({ npc, delay = 150 }) => {
   const [result, setResult] = useState(() => npc.get_dialogs());
   const [parsing, setParsing] = useState(false);
 
-  // const result = npc.get_dialogs();
-
   const handleNext = useCallback(() => {
     if (result.next) {
       setResult(npc.get_dialogs(result.next));

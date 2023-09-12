@@ -60,13 +60,6 @@ pub mod character {
             self._pv = _pv;
         }
 
-        // pub fn level_up(&mut self, xp: u32) {
-        //     let max_xp = 150 + ((self.lvl * 100) / 3);
-        //     self.max_xp = 150 + (((self.lvl + 1) * 100) / 3);
-        //     self.lvl += 1;
-        //     self.xp = self.xp + xp - max_xp;
-        // }
-
         pub fn compute_xp(&mut self, xp: u32) {
             let new_xp = self.xp + xp;
             let max_xp = self.max_xp;
