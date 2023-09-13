@@ -55,14 +55,14 @@ pub mod game {
             self.last_save_date = Some(Self::get_date());
             let json = serde_json::to_string_pretty(&self)?;
             let mut file_path = std::path::PathBuf::new();
-            file_path.push("../saved");
+            file_path.push("../datas/saved");
             file_path.push(format!("{}.json", self.id));
             std::fs::write(&file_path, json)?;
             Ok(())
         }
 
         pub fn load(id: u32) -> Result<Game, Box<dyn std::error::Error>> {
-            let file_name = format!("../saved/{}.json", { &id });
+            let file_name = format!("../datas/saved/{}.json", { &id });
             let json_content = std::fs::read_to_string(file_name)?;
             let saved_game: Game = serde_json::from_str(&json_content)?;
             Ok(saved_game)

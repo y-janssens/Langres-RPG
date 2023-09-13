@@ -9,7 +9,7 @@ pub fn new_game(name: String) -> Result<Game, Box<dyn std::error::Error>> {
 }
 
 pub fn load_saved_games() -> Result<Vec<Game>, Box<dyn std::error::Error>> {
-    let paths = fs::read_dir("../saved")?;
+    let paths = fs::read_dir("../datas/saved")?;
     let mut json_contents = Vec::new();
 
     for path in paths {
@@ -28,7 +28,7 @@ pub fn load_saved_game(id: u32) -> Result<Game, Box<dyn std::error::Error>> {
 
 pub fn delete_saved_game(id: u32) -> std::io::Result<()> {
     let mut file_path = std::path::PathBuf::new();
-    file_path.push("../saved");
+    file_path.push("../datas/saved");
     file_path.push(format!("{}.json", id));
     fs::remove_file(file_path)?;
     Ok(())

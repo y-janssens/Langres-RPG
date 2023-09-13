@@ -37,14 +37,14 @@ pub mod npc {
 
     impl Npcs {
         pub fn get(name: String) -> Result<Npc, Box<dyn std::error::Error>> {
-            let file_name = format!("../npcs/{}.json", { &name });
+            let file_name = format!("../datas/npcs/{}.json", { &name });
             let json_content = std::fs::read_to_string(file_name)?;
             let npc: Npc = serde_json::from_str(&json_content)?;
             Ok(npc)
         }
 
         pub fn load() -> Result<Option<Vec<Npc>>, Box<dyn std::error::Error>> {
-            let paths = fs::read_dir("../npcs")?;
+            let paths = fs::read_dir("../datas/npcs")?;
             let mut npcs: Vec<Npc> = Vec::new();
 
             for path in paths {

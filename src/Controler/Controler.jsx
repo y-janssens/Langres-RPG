@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState, useRef, useMemo } from "react";
 
 import KeyControls from "./controls";
 import GameContext from "./GameContext";
@@ -40,6 +40,13 @@ export const Controler = () => {
     [controls, context]
   );
 
+  const displayGame = useMemo(() => {
+    // if (!context || !('gameId' in context)) {
+    //   return false
+    // }
+    return Boolean(context?.gameId);
+  }, [context]);
+
   return (
     <GameContext.Provider
       value={{
@@ -55,12 +62,14 @@ export const Controler = () => {
         tabIndex={0}
         ref={gameRef}
       >
-        <Game
-          display={toggles}
-          position={position}
-          game={gameRef}
-          controls={controls}
-        />
+        {displayGame && (
+          <Game
+            display={toggles}
+            position={position}
+            game={gameRef}
+            controls={controls}
+          />
+        )}
       </div>
     </GameContext.Provider>
   );

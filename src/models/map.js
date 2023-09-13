@@ -1,3 +1,6 @@
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
+
 export default class MapAssets {
   constructor() {
     this.assets = [
@@ -65,12 +68,22 @@ export default class MapAssets {
 
   get_grass() {
     const asset = this.assets.find((as) => as.key === "-");
-    return asset.src[0];
+    return useLoader(TextureLoader, asset.src[0]);
   }
 
-  get_tree() {
-    const asset = this.assets.find((as) => as.key === "T");
-    return asset.src[0];
+  get_trees(data) {
+    let items = [];
+    data.forEach((row) =>
+      row.forEach((item, index) => {
+        if (item.value === "T") {
+          items.push({
+            id: item.id,
+            map: useLoader(TextureLoader, this.get_asset(item))
+          });
+        }
+      })
+    );
+    return items;
   }
 
   get_items_ids(item, world) {

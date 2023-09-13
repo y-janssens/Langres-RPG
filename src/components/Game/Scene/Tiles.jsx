@@ -1,70 +1,43 @@
-import { useState, useRef, useMemo } from "react";
+import { useState, useRef } from "react";
 import useGameContext from "../../../hooks/useGameContext";
-import { useLoader } from "@react-three/fiber";
-import { DoubleSide, TextureLoader } from "three";
+import { DoubleSide } from "three";
 import { Tree } from "./Tree";
 
 export const Tiles = ({ data }) => {
   const [context] = useGameContext();
-  const keys = context?.controls?.borderKeys;
-  const grassColorMap = useLoader(TextureLoader, context.assets.get_grass());
+  const [treeColorMap] = useState(() => context.assets.get_trees(data));
+  const [grassColorMap] = useState(() => context.assets.get_grass());
 
   return data.map((row) =>
-    row.map((item, index) => (
-      <group key={index}>
-        {keys.includes(item.value) && (
-          <Tree position={[item.x, 1, item.y]} item={item} />
-        )}
-        <Tile
-          position={[item.x, 0, item.y]}
-          item={item}
-          colorMap={grassColorMap}
-        />
-      </group>
-    ))
+    row.map((item, index) => {
+      return (
+        <group key={index}>
+          {item.value === "T" && (
+            <Tree
+              position={[item.x, 1, item.y]}
+              colorMap={treeColorMap.find((it) => it.id === item.id).map}
+            />
+          )}
+          <Tile position={[item.x, 0, item.y]} colorMap={grassColorMap} />
+        </group>
+      );
+    })
   );
 };
 
-function Tile(props) {
-  const { item, colorMap } = props;
+function Tile({ position, colorMap }) {
   const meshRef = useRef();
-  const [hovered, setHover] = useState(false);
-
-  const tileColor = useMemo(() => {
-    let color;
-    switch (item.value) {
-      case "-":
-        color = "lightgreen";
-        break;
-      case "F":
-        color = "darkgreen";
-        break;
-      case "T":
-        color = "green";
-        break;
-      case "C":
-        color = "beige";
-        break;
-      case "R":
-        color = "darkgray";
-      default:
-        color = "#808080";
-    }
-    return color;
-  }, [item]);
 
   return (
     <mesh
-      {...props}
       ref={meshRef}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
+      position={position}
       rotation={[Math.PI / 2, 0, 0]}
       scale={[0.99, 0.99, 1]}
     >
       <planeGeometry args={[1, 1, 1]} />
       <meshStandardMaterial
-        color={hovered ? "blue" : "white"}
+        color={"white"}
         side={DoubleSide}
         map={colorMap}
         emissive={0xffffff}
