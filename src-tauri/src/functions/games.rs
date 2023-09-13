@@ -21,12 +21,12 @@ pub fn load_saved_games() -> Result<Vec<Game>, Box<dyn std::error::Error>> {
     Ok(json_contents)
 }
 
-pub fn load_saved_game(id: u32) -> Result<Game, Box<dyn std::error::Error>> {
+pub fn load_saved_game(id: i32) -> Result<Game, Box<dyn std::error::Error>> {
     let load = Game::load(id)?;
     Ok(load)
 }
 
-pub fn delete_saved_game(id: u32) -> std::io::Result<()> {
+pub fn delete_saved_game(id: i32) -> std::io::Result<()> {
     let mut file_path = std::path::PathBuf::new();
     file_path.push("../datas/saved");
     file_path.push(format!("{}.json", id));

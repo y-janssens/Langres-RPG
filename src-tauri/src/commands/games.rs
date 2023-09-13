@@ -13,13 +13,13 @@ pub fn load_saves() -> Vec<classes::game::game::Game> {
 }
 
 #[tauri::command]
-pub fn load_game(id: u32) -> classes::game::game::Game {
+pub fn load_game(id: i32) -> classes::game::game::Game {
     let _load = functions::games::load_saved_game(id);
     _load.unwrap()
 }
 
 #[tauri::command]
-pub fn delete(id: u32) {
+pub fn delete(id: i32) {
     let _delete = functions::games::delete_saved_game(id);
 }
 

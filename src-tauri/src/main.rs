@@ -1,6 +1,8 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 use std::env;
+extern crate diesel;
 
+mod schema;
 mod functions {
     pub mod games;
     pub mod world;

@@ -6,14 +6,16 @@ pub mod game {
     use chrono::{DateTime, Local};
     use clipboard::ClipboardContext;
     use clipboard::ClipboardProvider;
+    use diesel::prelude::*;
     use dotenv::dotenv;
     use magic_crypt::{new_magic_crypt, MagicCrypt256, MagicCryptTrait};
     use serde::{Deserialize, Serialize};
 
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable)]
+    #[diesel(table_name = crate::schema::game)]
     pub struct Game {
         player: String,
-        id: u32,
+        id: i32,
         date_created: String,
         last_save_date: Option<String>,
         save_count: i32,
@@ -34,10 +36,10 @@ pub mod game {
             }
         }
 
-        fn generate_id() -> u32 {
+        fn generate_id() -> i32 {
             use rand::Rng;
             let mut rng = rand::thread_rng();
-            rng.gen::<u32>()
+            rng.gen_range(1..=i32::MAX)
         }
 
         fn get_date() -> String {
@@ -61,7 +63,7 @@ pub mod game {
             Ok(())
         }
 
-        pub fn load(id: u32) -> Result<Game, Box<dyn std::error::Error>> {
+        pub fn load(id: i32) -> Result<Game, Box<dyn std::error::Error>> {
             let file_name = format!("../datas/saved/{}.json", { &id });
             let json_content = std::fs::read_to_string(file_name)?;
             let saved_game: Game = serde_json::from_str(&json_content)?;

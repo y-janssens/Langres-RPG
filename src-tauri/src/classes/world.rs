@@ -1,10 +1,13 @@
 #[allow(dead_code)]
 
 pub mod world {
+    use diesel::{deserialize::FromSqlRow, expression::AsExpression, sql_types::Text};
     use rand::{seq::SliceRandom, Rng};
     use round::round;
     use serde::{Deserialize, Serialize};
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+
+    #[derive(Debug, Serialize, Deserialize, Clone, FromSqlRow, AsExpression)]
+    #[diesel(sql_type = Text)]
     pub struct World {
         width: u32,
         height: u32,
