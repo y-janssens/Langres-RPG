@@ -1,32 +1,66 @@
-.menu-items-container {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #2f2f2f;
-  z-index: 100;
+.menu-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu-item {
-  width: 60%;
-  padding: 20px;
-  margin: 15px;
-  background-color: #0f0f0f98;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: 250ms all;
-  letter-spacing: 2px;
+.menu-items-container,
+.ingame-menu-items-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
 }
 
-.menu-item:hover {
-  filter: brightness(1.5);
-  border: 2px solid rgba(150, 150, 0, 0.5);
-  background-color: rgba(100, 100, 0, 0.5);
-  letter-spacing: 5px;
+.ingame-menu-items-container {
+    background: url('/assets/background.png');
+    background-size: cover;
+}
+
+.menu-item,
+.menu-item-modal {
+    width: 60%;
+    padding: 20px;
+    margin: 15px;
+    background-color: #5f9ea0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    transition: 350ms all;
+    letter-spacing: 2px;
+    font-size: 16px;
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+}
+
+.menu-item:not(:hover) {
+    background-color: rgba(95, 158, 160, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 4px ridge rgba(199, 169, 126, 0.25);
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px rgba(31, 218, 255, 0.5), inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px rgba(31, 218, 255, 0.5), inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+}
+
+.menu-item-modal {
+    position: absolute;
+    bottom: 10px;
+    padding: 12px;
+}
+
+.menu-item-modal[disabled] {
+    filter: grayscale(0.75);
+    cursor: unset;
+}
+
+.menu-item-modal:hover:not([disabled]) {
+    filter: brightness(1.1);
 }

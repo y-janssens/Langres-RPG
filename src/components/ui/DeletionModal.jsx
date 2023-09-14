@@ -1,3 +1,3 @@
-export const DeletionModal = ({ item, open, onClick, onClose }) => {
-  return <div>DeletionModal</div>;
+export const DeletionModal = () => {
+    return <div>DeletionModal</div>;
 };

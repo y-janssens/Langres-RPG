@@ -1,0 +1,30 @@
+.mini-map-container {
+    position: absolute;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    z-index: 100;
+    border-radius: 50%;
+    opacity: 0.25;
+    background-color: darkgray;
+    transition: 250ms all;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mini-map-block {
+    position: relative;
+    display: flex;
+    transform: rotate(90deg) scaleX(-1) scaleY(1);
+}
+
+.mini-map-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    margin: 0.5px;
+    background-color: #505050;
+}
