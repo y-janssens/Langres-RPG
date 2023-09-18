@@ -3,7 +3,6 @@ import css from './ui.module.css';
 export const LoadingScreen = ({ context = {}, loading = false, children = null }) => {
     const [progress, setProgress] = useState(0);
     const [ready, setReady] = useState(false);
-    const [displayLoadingScreen] = useState(!context.devMode);
 
     useEffect(() => {
         if (progress < 100) {
@@ -23,7 +22,7 @@ export const LoadingScreen = ({ context = {}, loading = false, children = null }
 
     return (
         <>
-            {!ready && displayLoadingScreen && <LoadingBar state={progress} />}
+            {!ready && !context.devMode && <LoadingBar state={progress} />}
             {!loading && children}
         </>
     );

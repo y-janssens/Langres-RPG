@@ -2,10 +2,8 @@
 pub mod character {
 
     use crate::classes::inventory::inventory::Inventory;
-    use diesel::{deserialize::FromSqlRow, expression::AsExpression, sql_types::Text};
     use serde::{Deserialize, Serialize};
-    #[derive(Debug, Serialize, Deserialize, Clone, FromSqlRow, AsExpression)]
-    #[diesel(sql_type = Text)]
+    #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct Character {
         name: String,
         _end: u32,

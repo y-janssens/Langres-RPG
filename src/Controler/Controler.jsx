@@ -5,12 +5,13 @@ import GameContext from './GameContext';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
+import Title from '../components/ui/Title';
 
 import css from '../components/Game/game.module.css';
 
-export const Controler = () => {
+export const Controler = ({ applicationData }) => {
     const gameRef = useRef();
-    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true });
+    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, applicationData });
     const [controls] = useState(() => new KeyControls());
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
@@ -30,18 +31,15 @@ export const Controler = () => {
     }, []);
 
     const pauseGame = useMemo(() => {
-        if (!context?.controls?.toggles) {
-            return true;
-        }
-        return context.controls.toggles.pause === true;
-    }, [context, context?.controls?.toggles]);
+        return Boolean(context?.controls?.toggles?.pause);
+    }, [context]);
 
     const handleControls = useCallback(
         (event) => {
             if (!pauseGame) {
                 controls.setPosition(event, context.world);
                 setPosition(controls.positions);
-                setContext({ direction: controls.getKey(event) });
+                setContext({ direction: controls.getKey(event), previousDirection: context.direction });
             }
             controls.setToggles(event);
             setToggles(controls.toggles);
@@ -61,10 +59,11 @@ export const Controler = () => {
                 removeFromContext
             }}
         >
+            <Title display={false} />
             <MainMenu />
             {displayGame && (
                 <div className={css['game-main-block']} onKeyDown={handleControls} tabIndex={0} ref={gameRef}>
-                    <Game display3d={context?.display3d} pause={pauseGame} keyToggles={toggles} position={position} game={gameRef} controls={controls} />
+                    <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} controls={controls} />
                 </div>
             )}
         </GameContext.Provider>

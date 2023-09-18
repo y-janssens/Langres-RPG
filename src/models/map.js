@@ -7,7 +7,23 @@ export default class MapAssets {
             {
                 name: 'border',
                 key: 'F',
-                src: ['./assets/map/borders/{}.png', './assets/map/borders/{}.png', './assets/map/borders/{}.png']
+                src: [
+                    './assets/map/trees/1.png',
+                    './assets/map/trees/2.png',
+                    './assets/map/trees/3.png',
+                    './assets/map/trees/3.png',
+                    './assets/map/trees/5.png',
+                    './assets/map/trees/6.png',
+                    './assets/map/trees/7.png',
+                    './assets/map/trees/8.png',
+                    './assets/map/trees/9.png',
+                    './assets/map/trees/10.png',
+                    './assets/map/trees/11.png',
+                    './assets/map/trees/12.png',
+                    './assets/map/trees/13.png',
+                    './assets/map/trees/14.png'
+                ],
+                color: 'darkGreen'
             },
             {
                 name: 'tree',
@@ -27,26 +43,48 @@ export default class MapAssets {
                     './assets/map/trees/12.png',
                     './assets/map/trees/13.png',
                     './assets/map/trees/14.png'
-                ]
+                ],
+                color: 'green'
             },
             {
                 name: 'grass',
                 key: '-',
-                src: ['./assets/map/grass/grass-1.jpg']
+                src: ['./assets/map/grass/grass-1.jpg', './assets/map/grass/1.png', './assets/map/grass/2.png', './assets/map/grass/3.png'],
+                color: '#505050'
             },
             {
                 name: 'rock',
                 key: 'R',
-                src: ['./assets/map/rocks/{}.png', './assets/map/rocks/{}.png', './assets/map/rocks/{}.png']
+                src: ['./assets/map/rocks/{}.png', './assets/map/rocks/{}.png', './assets/map/rocks/{}.png'],
+                color: 'darkgray'
             },
             {
                 name: 'ground',
                 key: 'C',
-                src: ['./assets/map/grounds/{}.png', './assets/map/grounds/{}.png', './assets/map/grounds/{}.png']
+                src: ['./assets/map/grounds/{}.png', './assets/map/grounds/{}.png', './assets/map/grounds/{}.png'],
+                color: 'beige'
+            },
+            {
+                name: 'water',
+                key: 'W',
+                src: ['./assets/map/water/water_b.png', './assets/map/water/water_l.png', './assets/map/water/water_r.png'],
+                color: 'blue'
+            },
+            {
+                name: 'bank',
+                key: 'B',
+                src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
+                color: 'lightblue'
+            },
+            {
+                name: 'bridge',
+                key: 'BR',
+                src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
+                color: 'brown'
             }
         ];
-        this.validKeys = ['-', 'C'];
-        this.borderKeys = ['F', 'T'];
+        this.validKeys = ['-', 'C', 'BR'];
+        this.borderKeys = ['F', 'T', 'W', 'B'];
     }
 
     get_asset(item) {
@@ -63,7 +101,7 @@ export default class MapAssets {
         let items = [];
         data.forEach((row) =>
             row.forEach((item) => {
-                if (item.value === 'T') {
+                if (item.value === 'T' || item.value === 'F') {
                     items.push({
                         id: item.id,
                         map: useLoader(TextureLoader, this.get_asset(item))
@@ -72,6 +110,28 @@ export default class MapAssets {
             })
         );
         return items;
+    }
+
+    get_water() {
+        const asset = this.assets.find((as) => as.key === 'W');
+        return useLoader(TextureLoader, asset.src[0]);
+        // let items = [];
+        // data.forEach((row) => {
+        //     const riverRow = row.filter((it) => it.value === 'W');
+        //     if (riverRow.length) {
+        //         riverRow[0]['position'] = '_b';
+        //         riverRow[1]['position'] = '_l';
+        //         riverRow[riverRow.length - 1]['position'] = '_b';
+        //         riverRow[riverRow.length - 2]['position'] = '_r';
+        //         riverRow.forEach((it) => {
+        //             items.push({
+        //                 id: it.id,
+        //                 map: useLoader(TextureLoader, `./assets/map/water/water${it.position || '_c'}.png`)
+        //             });
+        //         });
+        //     }
+        // });
+        // return items;
     }
 
     get_items_ids(item, world) {
@@ -89,5 +149,9 @@ export default class MapAssets {
         });
 
         return { validIds, invalidIds };
+    }
+
+    get_color(item) {
+        return this.assets.find((k) => k.key === item.value).color;
     }
 }

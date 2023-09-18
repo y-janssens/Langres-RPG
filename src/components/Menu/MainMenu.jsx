@@ -1,43 +1,24 @@
 import { useCallback, useMemo, useState } from 'react';
 import useGameContext from '../../hooks/useGameContext';
-
-import { GameModel } from '../../models';
+import { useTranslation } from 'react-i18next';
 import { useGet } from '../../hooks/useGet';
-
-import { invoke } from '@tauri-apps/api/tauri';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
-import { Modal } from './Modal/Modal';
+import SavedGames from './SavedGames';
+import NewGame from './NewGame';
 
 import css from './menu.module.css';
+import Settings from './Settings';
 
 export const MainMenu = () => {
+    const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
     const [context, setContext] = useGameContext();
 
     const [savedGames, loadingGames, , sync] = useGet({
         func: 'load_saves'
     });
-
-    const handleNewGame = useCallback(async (name) => {
-        await invoke('new', { name }).then((data) => {
-            let game = new GameModel(data);
-            game.save();
-            setContext({ gameId: game.id });
-            setOpenModal(null);
-        });
-    }, []);
-
-    const handleSaveGame = useCallback(() => {
-        const data = savedGames?.find((gm) => gm.id === context.gameId);
-        let game = new GameModel(data);
-        game.save();
-    }, [savedGames, context]);
-
-    const exitGame = useCallback(async () => {
-        return await exit(1);
-    }, []);
 
     const handleMenu = useCallback(
         (event) => {
@@ -63,22 +44,22 @@ export const MainMenu = () => {
 
     const items = useMemo(() => {
         let menu_items = [
-            { id: 3, name: 'Settings', onClick: () => {} },
+            { id: 3, name: t('menu.items.settings'), onClick: () => setOpenModal('settings') },
             {
                 id: 4,
-                name: 'Exit Game',
-                onClick: () => exitGame()
+                name: t('menu.items.exit'),
+                onClick: async () => await exit(1)
             }
         ];
 
         if (savedGames?.length < 3) {
-            menu_items.unshift({ id: 0, name: 'New Game', onClick: () => setOpenModal('new_game') });
+            menu_items.unshift({ id: 0, name: t('menu.items.new'), onClick: () => setOpenModal('new_game') });
         }
 
         if (savedGames?.length >= 1) {
             menu_items.unshift({
                 id: 1,
-                name: 'Load Game',
+                name: t('menu.items.load'),
                 onClick: () => setOpenModal('saved_games')
             });
         }
@@ -86,12 +67,12 @@ export const MainMenu = () => {
         if (lastPlayedGame) {
             menu_items.unshift({
                 id: 5,
-                name: 'Continue',
+                name: t('menu.items.continue'),
                 onClick: () => setContext({ gameId: lastPlayedGame.id })
             });
         }
         return menu_items;
-    }, [savedGames, lastPlayedGame, exitGame, handleSaveGame]);
+    }, [savedGames, lastPlayedGame]);
 
     if (context?.gameId) {
         return null;
@@ -107,10 +88,9 @@ export const MainMenu = () => {
                 </div>
             )}
 
-            <Modal name="new_game" state={openModal} onClick={handleNewGame} onClose={() => setOpenModal(null)} />
+            <NewGame state={openModal} sync={sync} onClose={() => setOpenModal(null)} />
 
-            <Modal
-                name="saved_games"
+            <SavedGames
                 state={openModal}
                 items={savedGames}
                 loading={loadingGames}
@@ -118,6 +98,15 @@ export const MainMenu = () => {
                 onClose={() => {
                     setOpenModal(null);
                 }}
+            />
+
+            <Settings
+                state={openModal}
+                onClose={() => {
+                    setOpenModal(null);
+                    sync();
+                }}
+                context={context}
             />
         </div>
     );

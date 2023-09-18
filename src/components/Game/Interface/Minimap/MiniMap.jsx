@@ -1,25 +1,39 @@
-import { useMemo, useState, useRef, useEffect } from 'react'; // eslint-disable-line
-import { World } from '../../../../models';
+import { useMemo, useState, useRef, useEffect } from 'react';
 import css from './minimap.module.css';
 
-export default function MiniMap({ game, position }) {
-    const [world] = useState(() => new World(game.world).parse());
-    const mapRef = useRef();
+export default function MiniMap({ position, context }) {
+    const { map } = context;
+    const [active, setActive] = useState(false);
+    const mapContainerRef = useRef();
+    const mapInnerContainerRef = useRef();
 
-    // useEffect(() => {
-    //     if (mapRef.current) {
-    //         mapRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-    //     }
-    // }, [mapRef.current]);
+    const characterPosition = useMemo(() => {
+        return { x: position[0] * 11 - 148 * 1.8, y: position[2] * 11 - 526 / 2.05 };
+    }, [position, mapInnerContainerRef, mapInnerContainerRef?.current]);
+
+    useEffect(() => {
+        if (mapContainerRef.current && mapInnerContainerRef.current) {
+            mapInnerContainerRef.current.style.left = `${characterPosition.x}px`;
+            mapInnerContainerRef.current.style.top = `${characterPosition.y}px`;
+        }
+    }, [mapContainerRef, mapInnerContainerRef, characterPosition]);
 
     return (
-        <div className={css['mini-map-container']}>
-            <div className={css['mini-map-block']}>
-                {world.map((row, i) => {
+        <div
+            className={css['mini-map-container']}
+            ref={mapContainerRef}
+            onClick={() => setActive(!active)}
+            style={{
+                width: active ? '200px' : '148px',
+                height: active ? '200px' : '148px'
+            }}
+        >
+            <div className={css['mini-map-block']} ref={mapInnerContainerRef}>
+                {map.map((row, i) => {
                     return (
                         <div key={i}>
                             {row.map((item, index) => {
-                                return <Item key={index} item={item} mapRef={mapRef} position={position} />;
+                                return <Item key={index} item={item} position={position} context={context} />;
                             })}
                         </div>
                     );
@@ -29,37 +43,61 @@ export default function MiniMap({ game, position }) {
     );
 }
 
-function Item({ item, position, mapRef }) {
-    const pos = useMemo(() => {
-        return { x: position[0], y: position[2] };
-    }, [position]);
+function Item({ item, position, context }) {
+    const pointer = useMemo(() => {
+        return Boolean(position[0] === item.x && position[2] === item.y);
+    }, [position, item]);
 
-    const validRef = useMemo(() => {
-        if (pos.x !== item.x && pos.y !== item.y) {
-            return null;
-        }
-        return mapRef;
-    }, [mapRef, item, pos]);
-
-    const itemColor = useMemo(() => {
-        const defaultKeys = [
-            { key: 'F', value: 'darkgreen' },
-            { key: 'T', value: 'green' },
-            { key: 'C', value: 'beige' },
-            { key: 'R', value: 'darkgray' },
-            { key: '-', value: '#505050' }
-        ];
-        return defaultKeys.find((k) => k.key === item.value).value;
-    }, [item]);
     return (
         <div
             className={css['mini-map-item']}
-            ref={validRef}
             style={{
-                backgroundColor: itemColor
+                backgroundColor: context.assets.get_color(item)
             }}
         >
-            {pos.x === item.x && pos.y === item.y && <div style={{ width: '8px', height: '8px', backgroundColor: 'chartreuse', borderRadius: '50%' }} />}
+            {pointer && <Pointer context={context} />}
         </div>
+    );
+}
+
+function Pointer({ context }) {
+    const cone = useMemo(() => {
+        let rotation;
+        let position;
+        switch (context.direction) {
+            case 'down':
+                rotation = context.previousDirection === 'right' ? '-270deg' : '90deg';
+                position = '0px 0px 0px -40px';
+                break;
+            case 'up':
+                rotation = '-90deg';
+                position = '0px 0px 0px 40px';
+                break;
+            case 'right':
+                rotation = context.previousDirection === 'down' || !('previousDirection' in context) ? '180deg' : '-180deg';
+                position = '-40px 0px 0px 0px';
+                break;
+            case 'left':
+                rotation = '0deg';
+                position = '40px 0px 0px 0px';
+                break;
+            default:
+                rotation = '90deg';
+                position = '0px 0px 0px -40px';
+        }
+        return { rotation, position };
+    }, [context, context.direction, context.previousDirection]);
+
+    return (
+        <>
+            <div className={css['mini-map-character']} />
+            <div
+                className={css['mini-map-character-arrow']}
+                style={{
+                    transform: `rotateZ(${cone.rotation})`,
+                    margin: cone.position
+                }}
+            />
+        </>
     );
 }

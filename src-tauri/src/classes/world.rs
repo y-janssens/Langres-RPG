@@ -1,13 +1,11 @@
 #[allow(dead_code)]
 
 pub mod world {
-    use diesel::{deserialize::FromSqlRow, expression::AsExpression, sql_types::Text};
     use rand::{seq::SliceRandom, Rng};
     use round::round;
     use serde::{Deserialize, Serialize};
 
-    #[derive(Debug, Serialize, Deserialize, Clone, FromSqlRow, AsExpression)]
-    #[diesel(sql_type = Text)]
+    #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct World {
         width: u32,
         height: u32,
@@ -36,6 +34,7 @@ pub mod world {
         }
 
         fn generate(size: u32) -> Vec<Item> {
+            println!("Generating world data...");
             let grid: u32 = size * size;
 
             let mut content = Vec::new();
@@ -46,48 +45,136 @@ pub mod world {
                     id: i,
                     x,
                     y,
-                    value: Self::get_borders(x, y, size),
+                    value: Self::generate_borders(x, y, size),
                 };
                 content.push(item);
             }
-            let generate_content = Self::get_content(content, size);
-            generate_content
+            let generated_content = Self::generate_content(content, size);
+            generated_content
         }
 
-        fn get_borders(x: u32, y: u32, size: u32) -> String {
-            let items = Self::get_items("map");
-            if x == 0 || x == size - 1 || y == 0 || y == size - 1 {
+        // Map content generation
+
+        fn generate_content(content: Vec<Item>, size: u32) -> Vec<Item> {
+            let max_attemps: u32 = 25;
+            let map_with_trees = Self::generate_trees(content);
+            let map_with_river = Self::generate_river(map_with_trees, size);
+            let map_with_clearing = Self::generate_clearing(map_with_river, size, max_attemps);
+            map_with_clearing
+        }
+
+        fn generate_borders(x: u32, y: u32, size: u32) -> String {
+            if (x <= 1 || x >= size - 2) || (y <= 1 || y >= size - 2) {
                 return String::from("F");
             }
-            return String::from(*items.choose(&mut rand::thread_rng()).unwrap());
+            String::from("-")
         }
 
-        fn get_content(content: Vec<Item>, size: u32) -> Vec<Item> {
-            let mut rng = rand::thread_rng();
+        fn generate_trees(content: Vec<Item>) -> Vec<Item> {
+            println!("Generating game trees...");
+            let items = Self::get_items("map");
             let mut new_content = Vec::new();
-            let items = Self::get_items("clearing");
-
-            let clearing_width: u32 = rng.gen_range((size / 5) - 3..(size / 5) + 3);
-            let clearing_height: u32 = rng.gen_range((size / 5) - 3..(size / 5) + 3);
-            let start_x: u32 = rng.gen_range(2..(size / 3));
-            let start_y: u32 = rng.gen_range(2..(size / 3));
 
             for mut item in content {
-                if item.y >= rng.gen_range(start_y - 1..start_y + 1)
-                    && item.y <= rng.gen_range(start_y - 1..start_y + 1) + clearing_height
-                    && item.x >= rng.gen_range(start_x - 1..start_x + 1)
-                    && item.x <= (rng.gen_range(start_x - 1..start_x + 1) + clearing_width)
-                {
+                if item.value != "F" {
                     item.value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
                 }
                 new_content.push(item);
             }
-            return new_content;
+            new_content
+        }
+
+        fn generate_clearing(mut content: Vec<Item>, size: u32, max_attempts: u32) -> Vec<Item> {
+            println!("Generating map clearing...");
+            let mut rng = rand::thread_rng();
+            let items = Self::get_items("clearing");
+
+            for _ in 0..max_attempts {
+                // let clearing: Vec<Item> = Vec::new();
+                let mut clearing_spot = Vec::new();
+
+                let clearing_width: u32 = rng.gen_range((size / 5) - 3..(size / 5) + 3);
+                let clearing_height: u32 = rng.gen_range((size / 5) - 3..(size / 5) + 3);
+                let start_x: u32 = rng.gen_range(2..(size / 3));
+                let start_y: u32 = rng.gen_range(2..(size / 3));
+
+                for item in &content {
+                    if item.y >= rng.gen_range(start_y - 1..start_y + 1)
+                        && item.y <= rng.gen_range(start_y - 1..start_y + 1) + clearing_height
+                        && item.x >= rng.gen_range(start_x - 1..start_x + 1)
+                        && item.x <= (rng.gen_range(start_x - 1..start_x + 1) + clearing_width)
+                    {
+                        clearing_spot.push(item.clone());
+                    }
+                }
+
+                if clearing_spot
+                    .iter()
+                    .any(|x| x.value == 'F'.to_string() || x.value == 'W'.to_string())
+                {
+                    println!("Clearing location already occupied, trying again...");
+                } else {
+                    for clearing_item in &mut content {
+                        if let Some(_clearing_spot_item) = clearing_spot
+                            .iter()
+                            .find(|item| item.id == clearing_item.id)
+                        {
+                            clearing_item.value =
+                                String::from(*items.choose(&mut rand::thread_rng()).unwrap());
+                        }
+                    }
+
+                    return content;
+                }
+            }
+            println!("Failed to find clearing spot, skipping...");
+            content
+        }
+
+        fn generate_river(content: Vec<Item>, size: u32) -> Vec<Item> {
+            println!("Generating map river...");
+            let mut rng = rand::thread_rng();
+            let mut river = Vec::new();
+            let river_width: u32 = rng.gen_range((size / 8) - 1..(size / 8) + 1);
+            let start_x: u32 = rng.gen_range(5..(size - river_width - 5));
+
+            for mut item in content {
+                if item.value != "F" {
+                    let range = rng.gen_range(start_x - 1..start_x + 1);
+
+                    if item.x >= range && item.x <= range + river_width {
+                        item.value = String::from('W')
+                    } else if (item.x >= range && item.x <= range + river_width + 2)
+                        || (item.x == range - 1 || item.x == range - 2)
+                    {
+                        item.value = String::from('-')
+                    }
+                }
+
+                river.push(item);
+            }
+            return Self::generate_bridge(river, size);
+        }
+
+        fn generate_bridge(content: Vec<Item>, size: u32) -> Vec<Item> {
+            println!("Generating map bridge...");
+            let mut bridge: Vec<Item> = Vec::new();
+            let mut rng = rand::thread_rng();
+            let start_y: u32 = rng.gen_range(2..(size / 3));
+            for mut item in content {
+                if item.value == 'W'.to_string() {
+                    if item.y == start_y || item.y == start_y + 1 {
+                        item.value = String::from("BR")
+                    }
+                }
+                bridge.push(item)
+            }
+            bridge
         }
 
         fn get_items(name: &str) -> Vec<&'static str> {
             match name {
-                "map" => vec!["T", "-", "-", "-", "-"],
+                "map" => vec!["T", "-", "-", "-", "-", "-"],
                 "clearing" => vec!["C", "C", "C", "C", "C", "C", "C", "C", "C", "R"],
                 _ => vec![],
             }

@@ -8,7 +8,6 @@ export default class KeyControls {
             { name: 'minimap', key: 'l', value: true },
             { name: 'interface', key: 'h', value: true },
             { name: 'map', key: 'm', value: false },
-            { name: 'inventory', key: 'i', value: false },
             { name: 'pause', key: 'p', value: false }
         ];
 
@@ -37,6 +36,13 @@ export default class KeyControls {
             _toggles[key.name] = key.value;
         });
         this.toggles = _toggles;
+    }
+
+    pick_starting_point(data) {
+        const cleared_data = data.content.filter((it) => this.validKeys.includes(it.value));
+        const item = Math.floor(Math.random() * cleared_data.length);
+        this.positions = [cleared_data[item].x, 0.75, cleared_data[item].y];
+        return this.positions;
     }
 
     setToggles(event) {
@@ -103,15 +109,19 @@ export default class KeyControls {
         if (key) {
             switch (key) {
                 case 'up':
+                    // position.z += 1;
                     this.validKeys.includes(nextItems.zplus.value) ? (position.z += 1) : position.z;
                     break;
                 case 'down':
+                    // position.z -= 1;
                     this.validKeys.includes(nextItems.zminus.value) ? (position.z -= 1) : position.z;
                     break;
                 case 'left':
+                    // position.x += 1;
                     this.validKeys.includes(nextItems.xplus.value) ? (position.x += 1) : position.x;
                     break;
                 case 'right':
+                    // position.x -= 1;
                     this.validKeys.includes(nextItems.xminus.value) ? (position.x -= 1) : position.x;
             }
         }

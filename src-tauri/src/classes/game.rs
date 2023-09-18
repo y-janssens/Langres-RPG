@@ -6,13 +6,11 @@ pub mod game {
     use chrono::{DateTime, Local};
     use clipboard::ClipboardContext;
     use clipboard::ClipboardProvider;
-    use diesel::prelude::*;
     use dotenv::dotenv;
     use magic_crypt::{new_magic_crypt, MagicCrypt256, MagicCryptTrait};
     use serde::{Deserialize, Serialize};
 
-    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable)]
-    #[diesel(table_name = crate::schema::game)]
+    #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct Game {
         player: String,
         id: i32,
@@ -25,6 +23,7 @@ pub mod game {
 
     impl Game {
         pub fn new() -> Game {
+            println!("Generating game data...");
             Game {
                 player: String::new(),
                 save_count: 0,
@@ -48,6 +47,7 @@ pub mod game {
         }
 
         pub fn initiate(&mut self, name: String) {
+            println!("Generating character {}...", name);
             self.player = name;
             Self::get_date();
         }

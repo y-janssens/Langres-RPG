@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
-
 import { useGet } from '../../hooks/useGet';
 import { GameModel, World, Npcs } from '../../models';
-
 import { useForm } from '../../hooks/useForm';
 import useGameContext from '../../hooks/useGameContext';
 
@@ -15,7 +13,8 @@ import { InGameMenu } from '../Menu/InGameMenu';
 import MapAssets from '../../models/map';
 import PauseScreen from '../ui/PauseScreen';
 
-export const Game = ({ game, controls, keyToggles, pause, display3d, position }) => {
+// eslint-disable-next-line
+export const Game = ({ game, controls, keyToggles, pause, position, setPosition }) => {
     const [context, setContext] = useGameContext();
     const [gameMap, setGameMap] = useState([]);
     const [assets] = useState(() => new MapAssets());
@@ -25,6 +24,8 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
     const cameraRef = useRef();
     const characterRef = useRef();
     const pointLightRef = useRef();
+
+    const { display3d } = context;
 
     const id = useMemo(() => {
         if (!Object.keys(context).length || !('gameId' in context)) {
@@ -37,7 +38,7 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
         id: null
     });
     // eslint-disable-next-line
-    const [, , , _syncGame] = useGet(
+    const [, , , syncGame] = useGet(
         {
             func: 'load_game',
             id: parseInt(id),
@@ -49,6 +50,14 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
         },
         [id]
     );
+
+    const contextReady = useMemo(() => {
+        if (!context) {
+            return false;
+        }
+        const expectedKeys = ['assets', 'controls', 'gameId', 'world', 'map', 'applicationData'];
+        return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(context, key)));
+    }, [context]);
 
     // const handleXp = useCallback(() => {
     //   let char = new Character(form.character);
@@ -63,15 +72,20 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
             let world = new World(form.world);
             let _world = world.parse();
             setGameMap(_world);
-            setContext({ world, controls, assets });
+            setContext({ game, world, controls, assets, map: _world });
+            // setPosition(() => controls.pick_starting_point(world));
 
             if (form.save_count < 1) {
                 game.save();
             }
             setLoading(false);
         }
-        game.current.focus();
     }, [id, form]);
+
+    useEffect(() => {
+        // Keep game focus to avoid losing keyboard controls
+        game.current.focus();
+    }, [context]);
 
     if (!id) {
         return null;
@@ -80,16 +94,17 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
     return (
         <>
             <InGameMenu id={id} controls={controls} game={game} />
-            <PauseScreen context={context} />
-            <LoadingScreen context={context} loading={!form.id || loading || !npcs || !id || !context}>
-                <Hud game={form} display={keyToggles} position={position} />
+            <PauseScreen ready={contextReady} context={context} />
+            <LoadingScreen context={context} loading={!form.id || loading || !contextReady}>
+                <Hud context={context} game={form} display={keyToggles} position={position} sync={syncGame} />
                 {display3d && (
                     <Canvas
+                        shadows
                         frameloop={pause ? 'never' : 'always'}
                         camera={{
                             position: [0, 15, -18.86],
                             fov: 25,
-                            zoom: 1
+                            zoom: 1.25
                         }}
                     >
                         <color attach="background" args={[0, 0, 0]} />
@@ -97,7 +112,18 @@ export const Game = ({ game, controls, keyToggles, pause, display3d, position })
                         {/* <fog attach="fog" color="black" near={1} far={40} /> */}
                         <MapControls makeDefault minPolarAngle={Math.PI / 3.5} maxPolarAngle={Math.PI / 3.5} minAzimuthAngle={Math.PI} maxAzimuthAngle={Math.PI} ref={cameraRef} />
                         <ambientLight intensity={0.5} />
-                        <pointLight intensity={2500} position={[0, 10, 0]} decay={2.25} distance={12} ref={pointLightRef} />
+                        <pointLight
+                            castShadow
+                            shadow-mapSize-height={2048}
+                            shadow-mapSize-width={2048}
+                            shadow-radius={10}
+                            shadow-bias={-0.01}
+                            intensity={2500}
+                            position={[0, 10, 0]}
+                            decay={2.25}
+                            distance={12}
+                            ref={pointLightRef}
+                        />
 
                         {/* <directionalLight position={[-100, 100, 100]} intensity={0.25} /> */}
                         <MapLayout world={form.world} data={gameMap} npcs={npcs} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />

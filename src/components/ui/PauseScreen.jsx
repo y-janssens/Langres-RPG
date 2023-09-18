@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import css from './ui.module.Css';
+import css from './ui.module.css';
 
-function PauseScreen({ context }) {
+function PauseScreen({ context, ready }) {
     const pause = useMemo(() => {
-        if (!context || !context?.controls?.toggles) {
+        if (!ready) {
             return false;
         }
         return (
@@ -12,9 +12,9 @@ function PauseScreen({ context }) {
                 .filter((k) => k[0] !== 'interface' && k[0] !== 'pause' && k[0] !== 'minimap')
                 .every((k) => k[1] === false)
         );
-    }, [context, context?.controls?.toggles]);
+    }, [ready, context, context?.controls?.toggles]);
 
-    if (!pause) {
+    if (!pause || !ready) {
         return null;
     }
 
