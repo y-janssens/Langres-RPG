@@ -11,7 +11,7 @@ import css from '../components/Game/game.module.css';
 
 export const Controler = ({ applicationData }) => {
     const gameRef = useRef();
-    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, applicationData });
+    const [context, _setContext] = useState({ direction: 's', devMode: false, display3d: true, applicationData });
     const [controls] = useState(() => new KeyControls());
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
