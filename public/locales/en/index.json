@@ -1,0 +1,31 @@
+{
+  "actions": {
+    "save": "Save",
+    "load": "Load",
+    "start": "Start",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "menu": {
+    "items": {
+      "continue": "Continue",
+      "load": "Load Game",
+      "new": "New Game",
+      "save": "Save Game",
+      "settings": "Settings",
+      "exit": "Exit Game",
+      "exit-game": "Main Menu"
+    },
+    "deletion-modal": {
+      "header": "Do you really wish to delete this game?",
+      "message": "This action cannot be undone"
+    },
+    "settings": {
+      "language": "Language: ",
+      "sound": "Sound: ",
+      "volume": "Volume: ",
+      "music": "Music: "
+    }
+  }
+}

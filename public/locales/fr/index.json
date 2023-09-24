@@ -1,0 +1,31 @@
+{
+  "actions": {
+    "save": "Enregistrer",
+    "load": "Charger",
+    "start": "Commencer",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  },
+  "menu": {
+    "items": {
+      "continue": "Continuer",
+      "load": "Charger une partie",
+      "new": "Nouvelle partie",
+      "save": "Enregistrer la partie",
+      "settings": "Paramètres",
+      "exit": "Quitter le jeu",
+      "exit-game": "Menu Principal"
+    },
+    "deletion-modal": {
+      "header": "Voulez-vous vraiment supprimer cette partie?",
+      "message": "Cette action est irréversible"
+    },
+    "settings": {
+      "language": "Langage: ",
+      "sound": "Son: ",
+      "volume": "Volume: ",
+      "music": "Musique: "
+    }
+  }
+}

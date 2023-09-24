@@ -14,6 +14,7 @@ pub mod inventory {
 
     impl Inventory {
         pub fn new() -> Inventory {
+            println!("Generating inventory...");
             Inventory {
                 right_hand: String::from("Sword"),
                 left_hand: String::from("Shield"),

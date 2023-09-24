@@ -1,0 +1,53 @@
+.character-screen-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.character-screen-block {
+    position: relative;
+    height: 70%;
+    max-height: 1000px;
+    width: 32%;
+    max-width: 550px;
+    margin: 20px;
+    border-radius: 4px;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    background-color: #282828;
+    background-image: url(/assets/pattern.png);
+    z-index: 200;
+}
+
+.inventory-block {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 22%;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+}
+
+.inventory-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border-top: 4px ridge rgba(199, 169, 126, 0.75);
+}
+
+.inventory-grid-item {
+    border-radius: 3px;
+    border: 3px ridge #303030;
+    cursor: pointer;
+}
+
+.inventory-grid-item:hover {
+    filter: brightness(1.25);
+    -webkit-backdrop-filter: brightness(1.25);
+    backdrop-filter: brightness(1.25);
+}

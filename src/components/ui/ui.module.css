@@ -1,95 +1,319 @@
 .close-button {
-  color: darkred;
-  cursor: pointer;
-  font-size: 16px;
+    color: darkred;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
 }
 
-/* Loader */
-.loading-container {
-  position: relative;
-  width: 100%;
-  z-index: 5000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 250ms all;
-  cursor: wait;
+/* Loader and Loading Screen */
+.loading-container,
+.loading-screen-container {
+    position: relative;
+    width: 100%;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms all;
+    cursor: wait;
 }
 
-.loading-spinner,
-.loading-background {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  border: 3px solid;
-  border-radius: 50%;
-  cursor: wait;
+.loading-screen-container {
+    background: url('/assets/loading.png');
+    background-size: cover;
+    height: 100%;
 }
 
 .loading-spinner {
-  border-color: #0076b8 transparent transparent transparent;
-  animation: spin 1s linear infinite;
-  z-index: 1000;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 3px solid;
+    border-radius: 50%;
+    cursor: wait;
+}
+
+.loading-spinner {
+    border-color: #0076b8 transparent transparent transparent;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
 }
 
 .loading-background {
-  border-color: rgba(128, 128, 128, 0.25);
+    border-color: rgba(128, 128, 128, 0.25);
 }
 
 .loading-container span {
-  color: #0076b8;
-  margin-top: 100px;
-  font-size: 15px;
-  letter-spacing: 1px;
+    color: #0076b8;
+    margin-top: 100px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.loading-bar-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 30px;
+    width: 60%;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 4px;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: 250ms all;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85);
+    z-index: 100;
+}
+
+.loading-bar-text {
+    position: absolute;
+    opacity: 0.25;
+    z-index: 15;
+}
+
+.loading-bar-progress {
+    z-index: 10;
+}
+
+.loading-bar-gauge {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background-color: #5f9ea0;
+    transition: 250ms all;
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    z-index: 5;
+}
+
+.loading-bar-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #505050;
+    z-index: 0;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Gauges */
-.gauge-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 65%;
-  height: 12px;
-  margin: 3px;
-  border-radius: 2px;
-  /* border: 2px solid #3d332f; */
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75);
-  background-color: transparent;
-  z-index: 10;
+.gauge-container,
+.volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    height: 12px;
+    margin: 3px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.75);
+    background-color: transparent;
+    z-index: 10;
 }
 
 .gauge-container p {
-  font-size: 12px;
-  z-index: 2;
+    font-size: 12px;
+    z-index: 2;
 }
 
 .gauge-content {
-  position: absolute;
-  left: 0;
-  height: 100%;
-  border-radius: 2px;
-  box-shadow: inset 0 0 8px #000000;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border-radius: 2px;
+    box-shadow: inset 0 0 8px #000000;
+}
+
+.volume-container {
+    width: 150px;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: unset;
+    background-color: #606060;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+.volume-container:hover .volume-content {
+    filter: brightness(1.25);
+}
+
+.volume-content {
+    left: 0;
+    height: 100%;
+    transition: 250ms all;
+    background-color: #aaaaaa;
+    /* border-radius: 5px; */
+    /* box-shadow: inset 0 0 8px #000000; */
+}
+
+.volume-level {
+    margin-left: 5px;
+    font-size: 12px;
 }
 
 /* Dialogs */
 
 .dialogs-next-button {
-  position: absolute;
-  right: 10px;
-  font-size: 10px;
+    position: absolute;
+    right: 10px;
+    font-size: 10px;
 }
 
 .dialogs-text-container {
-  line-height: 30px;
-  padding: 10px;
-  cursor: pointer;
+    line-height: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Pause Screen */
+.pause-screen {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000;
+}
+
+/* Title */
+.game-title-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+    /* background: url('/assets/banner.png');
+    background-size: 60%;
+    background-position-x: center;
+    background-position-y: -90px;
+    background-repeat: no-repeat; */
+}
+
+.game-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.game-title::first-letter {
+    font-size: 48px;
+}
+
+.game-subtitle {
+    font-size: 16px;
+}
+
+.game-subtitle::first-letter {
+    font-size: 22px;
+}
+
+/* Modal */
+.modal {
+    position: absolute;
+    width: 70%;
+    max-width: 570px;
+    border-radius: 5px;
+    overflow-y: hidden;
+    background-color: #808080;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85);
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85);
+    z-index: 200;
+}
+
+.modal-body {
+    display: flex;
+    position: absolute;
+    top: 44px;
+    bottom: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal-body-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-modal {
+    width: 60%;
+    padding: 20px;
+    margin: 15px;
+    background-color: #5f9ea0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    transition: 350ms all;
+    letter-spacing: 2px;
+    font-size: 16px;
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+}
+
+.menu-item-modal {
+    position: absolute;
+    bottom: 10px;
+    padding: 12px;
+}
+
+.menu-item-modal[disabled] {
+    filter: grayscale(0.75);
+    cursor: unset;
+}
+
+.menu-item-modal:hover:not([disabled]) {
+    filter: brightness(1.1);
+}
+
+.modal-btns {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0px;
+    width: 100%;
+}
+
+.ui-btn {
+    width: 30%;
+    height: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5f9ea0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    border: 4px ridge rgba(199, 169, 126, 0.75);
+    transition: 350ms all;
+    letter-spacing: 2px;
+    font-size: 16px;
+    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
 }
