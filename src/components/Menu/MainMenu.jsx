@@ -5,6 +5,7 @@ import { useGet } from '../../hooks/useGet';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
+import Title from '../ui/Title';
 import SavedGames from './SavedGames';
 import NewGame from './NewGame';
 
@@ -14,6 +15,7 @@ import Settings from './Settings';
 export const MainMenu = () => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
+    const [displayTitle, setDisplayTitle] = useState(true);
     const [context, setContext] = useGameContext();
 
     const [savedGames, loadingGames, , sync] = useGet({
@@ -25,6 +27,7 @@ export const MainMenu = () => {
             if (openModal) {
                 if (event.key === 'Escape') {
                     setOpenModal(null);
+                    setDisplayTitle(false);
                 }
             }
         },
@@ -80,12 +83,16 @@ export const MainMenu = () => {
 
     return (
         <div className={css['menu-container']} onKeyDown={handleMenu} tabIndex={1}>
-            {!openModal && (
-                <div className={css['menu-items-container']}>
-                    {items.map((it) => {
-                        return <MenuItem key={it.id} name={it.name} onClick={it.onClick} />;
-                    })}
-                </div>
+            {displayTitle ? (
+                <Title title={t('flavor.main-title')} hide={() => setDisplayTitle(false)} />
+            ) : (
+                !openModal && (
+                    <div className={css['menu-items-container']}>
+                        {items.map((it) => {
+                            return <MenuItem key={it.id} name={it.name} onClick={it.onClick} />;
+                        })}
+                    </div>
+                )
             )}
 
             <NewGame state={openModal} sync={sync} onClose={() => setOpenModal(null)} />

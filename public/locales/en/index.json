@@ -27,5 +27,8 @@
       "volume": "Volume: ",
       "music": "Music: "
     }
+  },
+  "flavor": {
+    "main-title": "When the kingdom of my youth twirls and falls"
   }
 }

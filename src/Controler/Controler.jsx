@@ -1,20 +1,26 @@
 import React, { useCallback, useState, useRef, useMemo } from 'react';
+import { useGet } from '../hooks/useGet';
+import GameContext from './GameContext';
 
 import KeyControls from './controls';
-import GameContext from './GameContext';
+import MapAssets from '../models/map';
+import Settings from '../models/settings';
+import { Npcs } from '../models';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
-import Title from '../components/ui/Title';
 
 import css from '../components/Game/game.module.css';
 
-export const Controler = ({ applicationData }) => {
-    const gameRef = useRef();
-    const [context, _setContext] = useState({ direction: 's', devMode: false, display3d: true, applicationData });
+export const Controler = () => {
     const [controls] = useState(() => new KeyControls());
+    const [assets] = useState(() => new MapAssets());
+    const [npcs] = useState(() => new Npcs());
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
+
+    const [context, _setContext] = useState({ direction: 's', devMode: false, display3d: true, controls, assets, npcs });
+    const gameRef = useRef();
 
     const setContext = React.useCallback((ctx = {}) => {
         _setContext((context) => {
@@ -29,6 +35,14 @@ export const Controler = ({ applicationData }) => {
             return newContext;
         });
     }, []);
+
+    useGet({
+        func: 'load_app_datas',
+        onSuccess: (response) => {
+            const datas = new Settings(response);
+            setContext({ applicationData: datas });
+        }
+    },[]);
 
     const pauseGame = useMemo(() => {
         return Boolean(context?.controls?.toggles?.pause);
@@ -51,6 +65,10 @@ export const Controler = ({ applicationData }) => {
         return Boolean(context?.gameId);
     }, [context]);
 
+    if (!('applicationData' in context)) {
+        return null;
+    }
+
     return (
         <GameContext.Provider
             value={{
@@ -59,11 +77,10 @@ export const Controler = ({ applicationData }) => {
                 removeFromContext
             }}
         >
-            <Title display={false} />
             <MainMenu />
             {displayGame && (
                 <div className={css['game-main-block']} onKeyDown={handleControls} tabIndex={0} ref={gameRef}>
-                    <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} controls={controls} />
+                    <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} />
                 </div>
             )}
         </GameContext.Provider>

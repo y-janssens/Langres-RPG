@@ -27,5 +27,8 @@
       "volume": "Volume: ",
       "music": "Musique: "
     }
+  },
+  "flavor": {
+    "main-title": "Quand virevolte et tombe le royaume de mon enfance"
   }
 }

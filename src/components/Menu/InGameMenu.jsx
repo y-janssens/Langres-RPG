@@ -9,14 +9,14 @@ import Settings from './Settings';
 
 import css from './menu.module.css';
 
-export const InGameMenu = ({ id, game, controls }) => {
+export const InGameMenu = ({ id, game }) => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
     const [context, , removeFromContext] = useGameContext();
 
     const displayInGameMenu = useMemo(() => {
-        return id && controls.toggles.menu;
-    }, [id, controls, controls.toggles]);
+        return id && context.controls.toggles.menu;
+    }, [id, context, context.controls.toggles]);
 
     const handleMenu = useCallback(
         (event) => {
@@ -43,7 +43,7 @@ export const InGameMenu = ({ id, game, controls }) => {
                 name: t('menu.items.exit-game'),
                 onClick: () => {
                     removeFromContext('gameId');
-                    controls.generateControls();
+                    context.controls.generateControls();
                 }
             }
         ];

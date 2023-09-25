@@ -1,7 +1,7 @@
-import { useRef, useEffect, useMemo, useCallback } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import css from './map.module.css';
 
-export const Map = ({ display = false, position, context, sync }) => {
+export const Map = ({ display = false, position, context }) => {
     const { map } = context;
     const mapContainerRef = useRef();
     const mapInnerContainerRef = useRef();
@@ -28,19 +28,12 @@ export const Map = ({ display = false, position, context, sync }) => {
         }
     }, [mapContainerRef, mapInnerContainerRef, characterPosition, dimensions]);
 
-    const regen = useCallback(() => {
-        // let game = context?.game;
-        // let world = context?.world;
-        // world.regenerate(game);
-        // sync();
-    }, [context, sync]);
-
     if (!display) {
         return null;
     }
     return (
         <div className={css['map-container']} ref={mapContainerRef}>
-            <div className={css['map-block']} onClick={regen}>
+            <div className={css['map-block']} >
                 <div className={css['map-content']} ref={mapInnerContainerRef}>
                     {map.map((row, i) => {
                         return (

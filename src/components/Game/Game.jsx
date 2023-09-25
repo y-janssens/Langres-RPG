@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
 import { useGet } from '../../hooks/useGet';
-import { GameModel, World, Npcs } from '../../models';
+import { GameModel, World } from '../../models';
 import { useForm } from '../../hooks/useForm';
 import useGameContext from '../../hooks/useGameContext';
 
@@ -10,22 +10,17 @@ import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../ui/LoadingScreen';
 import { MapLayout } from './map/MapLayout';
 import { InGameMenu } from '../Menu/InGameMenu';
-import MapAssets from '../../models/map';
 import PauseScreen from '../ui/PauseScreen';
 
 // eslint-disable-next-line
-export const Game = ({ game, controls, keyToggles, pause, position, setPosition }) => {
+export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
     const [context, setContext] = useGameContext();
     const [gameMap, setGameMap] = useState([]);
-    const [assets] = useState(() => new MapAssets());
-    const [npcs] = useState(() => new Npcs());
     const [loading, setLoading] = useState(false);
 
     const cameraRef = useRef();
     const characterRef = useRef();
     const pointLightRef = useRef();
-
-    const { display3d } = context;
 
     const id = useMemo(() => {
         if (!Object.keys(context).length || !('gameId' in context)) {
@@ -37,8 +32,8 @@ export const Game = ({ game, controls, keyToggles, pause, position, setPosition 
     const [form, , setFormObject] = useForm({
         id: null
     });
-    // eslint-disable-next-line
-    const [, , , syncGame] = useGet(
+
+    useGet(
         {
             func: 'load_game',
             id: parseInt(id),
@@ -59,12 +54,6 @@ export const Game = ({ game, controls, keyToggles, pause, position, setPosition 
         return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(context, key)));
     }, [context]);
 
-    // const handleXp = useCallback(() => {
-    //   let char = new Character(form.character);
-    //   char.compute_xp(153);
-    //   setFormObject({ ...form, character: char });
-    // }, [form, form.character, setFormObject]);
-
     useEffect(() => {
         if (id && form.id) {
             setLoading(true);
@@ -72,7 +61,7 @@ export const Game = ({ game, controls, keyToggles, pause, position, setPosition 
             let world = new World(form.world);
             let _world = world.parse();
             setGameMap(_world);
-            setContext({ game, world, controls, assets, map: _world });
+            setContext({ game, world, map: _world });
             // setPosition(() => controls.pick_starting_point(world));
 
             if (form.save_count < 1) {
@@ -93,11 +82,11 @@ export const Game = ({ game, controls, keyToggles, pause, position, setPosition 
 
     return (
         <>
-            <InGameMenu id={id} controls={controls} game={game} />
+            <InGameMenu id={id} game={game} />
             <PauseScreen ready={contextReady} context={context} />
             <LoadingScreen context={context} loading={!form.id || loading || !contextReady}>
-                <Hud context={context} game={form} display={keyToggles} position={position} sync={syncGame} />
-                {display3d && (
+                <Hud context={context} game={form} display={keyToggles} position={position} />
+                {context.display3d && (
                     <Canvas
                         shadows
                         frameloop={pause ? 'never' : 'always'}
@@ -126,7 +115,7 @@ export const Game = ({ game, controls, keyToggles, pause, position, setPosition 
                         />
 
                         {/* <directionalLight position={[-100, 100, 100]} intensity={0.25} /> */}
-                        <MapLayout world={form.world} data={gameMap} npcs={npcs} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
+                        <MapLayout world={form.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
                     </Canvas>
                 )}
             </LoadingScreen>
