@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useTranslation } from 'react-i18next';
-import Modal from '../ui/Modal/Modal';
+import Modal from '../ui/Modal';
 import css from './menu.module.css';
 import { VolumeBar } from '../ui/Gauge';
 import Icon from '../ui/Icon';

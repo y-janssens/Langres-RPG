@@ -3,7 +3,7 @@ import { invoke } from '@tauri-apps/api/tauri';
 import { GameModel } from '../../models';
 import useGameContext from '../../hooks/useGameContext';
 import { useTranslation } from 'react-i18next';
-import Modal from '../ui/Modal/Modal';
+import Modal from '../ui/Modal';
 import css from './menu.module.css';
 
 export default function NewGame({ loading = false, state = null, sync = () => {}, onClose = () => {} }) {

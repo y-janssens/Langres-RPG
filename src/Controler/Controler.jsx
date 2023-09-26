@@ -28,21 +28,31 @@ export const Controler = () => {
         });
     }, []);
 
-    const removeFromContext = React.useCallback((name) => {
+    const removeFromContext = React.useCallback((names) => {
+        if (!Array.isArray(names)) {
+            names = [names];
+        }
         _setContext((context) => {
             let newContext = { ...context };
-            delete newContext[name];
+            names.forEach(name => {
+                delete newContext[name];
+            })
             return newContext;
         });
     }, []);
 
-    useGet({
-        func: 'load_app_datas',
-        onSuccess: (response) => {
-            const datas = new Settings(response);
-            setContext({ applicationData: datas });
-        }
-    },[]);
+    console.log(context);
+
+    useGet(
+        {
+            func: 'load_app_datas',
+            onSuccess: (response) => {
+                const datas = new Settings(response);
+                setContext({ applicationData: datas });
+            }
+        },
+        []
+    );
 
     const pauseGame = useMemo(() => {
         return Boolean(context?.controls?.toggles?.pause);

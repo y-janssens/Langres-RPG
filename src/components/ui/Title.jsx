@@ -44,8 +44,9 @@ function Title({ title = '', delay = 50, hide = () => {} }) {
                 opacity: visibility,
                 pointerEvents: parsing ? 'none' : 'initial'
             }}
+            onClick={handleMenu}
         >
-            <div className={css[!parsing && 'game-title-block']} onClick={handleMenu}>
+            <div className={css[!parsing && 'game-title-block']}>
                 <div className={css['game-title']}>Langres</div>
                 <span>{currentText}</span>
             </div>

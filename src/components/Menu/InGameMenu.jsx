@@ -42,12 +42,14 @@ export const InGameMenu = ({ id, game }) => {
                 id: 2,
                 name: t('menu.items.exit-game'),
                 onClick: () => {
-                    removeFromContext('gameId');
+                    // Remove game related content from context
+                    removeFromContext(['gameId', 'game', 'world', 'map']);
+                    // Reset keyboard controls default values
                     context.controls.generateControls();
                 }
             }
         ];
-    }, [handleSaveGame]);
+    }, [handleSaveGame, context, removeFromContext]);
 
     if (!displayInGameMenu) {
         return null;

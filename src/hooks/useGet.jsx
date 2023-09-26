@@ -6,23 +6,21 @@ const useGet = ({
   payload = null,
   id = null,
   launch = true,
-  onSuccess = () => {}
+  onSuccess = () => {},
 }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState(null);
 
   const fetch = useCallback(async () => {
     setLoading(true);
 
     await invoke(func, { id })
       .then((response) => {
-        setErrors(null);
         setData(response);
         onSuccess(response);
       })
       .catch((error) => {
-        setErrors(error.message);
+        console.error(error.message);
       })
       .finally(() => {
         setLoading(false);
@@ -35,7 +33,7 @@ const useGet = ({
     }
   }, [launch, id, func]); // eslint-disable-line
 
-  return [data, loading, errors, fetch];
+  return [data, loading, fetch];
 };
 
 export { useGet };

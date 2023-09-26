@@ -15,10 +15,10 @@ import Settings from './Settings';
 export const MainMenu = () => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
-    const [displayTitle, setDisplayTitle] = useState(true);
     const [context, setContext] = useGameContext();
+    const [displayTitle, setDisplayTitle] = useState(!context.devMode);
 
-    const [savedGames, loadingGames, , sync] = useGet({
+    const [savedGames, loadingGames, sync] = useGet({
         func: 'load_saves'
     });
 
