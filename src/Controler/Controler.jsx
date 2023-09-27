@@ -19,7 +19,7 @@ export const Controler = () => {
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
 
-    const [context, _setContext] = useState({ direction: 's', devMode: false, display3d: true, controls, assets, npcs });
+    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets, npcs });
     const gameRef = useRef();
 
     const setContext = React.useCallback((ctx = {}) => {
@@ -41,18 +41,13 @@ export const Controler = () => {
         });
     }, []);
 
-    console.log(context);
-
-    useGet(
-        {
+    useGet({
             func: 'load_app_datas',
             onSuccess: (response) => {
                 const datas = new Settings(response);
                 setContext({ applicationData: datas });
             }
-        },
-        []
-    );
+        },[]);
 
     const pauseGame = useMemo(() => {
         return Boolean(context?.controls?.toggles?.pause);
