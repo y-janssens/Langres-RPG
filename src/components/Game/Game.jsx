@@ -57,7 +57,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
-        game.current.focus();
+        if (!context.controls.toggles.input) {
+            game.current.focus();
+        }
     }, [context]);
 
     if (!context?.gameId) {

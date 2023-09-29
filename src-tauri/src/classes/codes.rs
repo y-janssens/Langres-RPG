@@ -7,7 +7,7 @@ pub mod codes {
         codes: Vec<Code>,
     }
     #[derive(Debug, Serialize, Deserialize, Clone)]
-    struct Code {
+    pub struct Code {
         key: String,
     }
 

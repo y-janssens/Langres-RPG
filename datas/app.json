@@ -2,5 +2,6 @@
   "language": "en",
   "sound": true,
   "volume": 100,
-  "music": 100
+  "music": 100,
+  "codes": []
 }

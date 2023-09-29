@@ -2,7 +2,9 @@ import { invoke } from '@tauri-apps/api';
 export default class Codes {
     constructor() {
         this.codes = [];
+        this.validatedKeys = [];
         this.get();
+        this.alertTimeout = null;
     }
 
     async get() {
@@ -11,14 +13,15 @@ export default class Codes {
         });
     }
 
-    match(value, input) {
-        const reg = new RegExp(input, 'gi');
-        return reg.test(value);
+    validate(input, game) {
+        const key = this.codes.find((it) => it.key === input);
+        if (key && !this.validatedKeys.includes(key)) {
+            this.validatedKeys.push(key);
+            game.activate(key);
+        }
     }
 
-    validate(input) {
-        if (this.match(item.key, input)) {
-            return item;
-        }
+    get keys() {
+        return this.validatedKeys;
     }
 }

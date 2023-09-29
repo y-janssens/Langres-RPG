@@ -34,20 +34,23 @@ export const Controler = () => {
         }
         _setContext((context) => {
             let newContext = { ...context };
-            names.forEach(name => {
+            names.forEach((name) => {
                 delete newContext[name];
-            })
+            });
             return newContext;
         });
     }, []);
 
-    useGet({
+    useGet(
+        {
             func: 'load_app_datas',
             onSuccess: (response) => {
                 const datas = new Settings(response);
                 setContext({ applicationData: datas });
             }
-        },[]);
+        },
+        []
+    );
 
     const pauseGame = useMemo(() => {
         return Boolean(context?.controls?.toggles?.pause);
