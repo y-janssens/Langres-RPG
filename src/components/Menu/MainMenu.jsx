@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import useGameContext from '../../hooks/useGameContext';
 import { useTranslation } from 'react-i18next';
 import { useGet } from '../../hooks/useGet';
@@ -76,6 +76,10 @@ export const MainMenu = () => {
         }
         return menu_items;
     }, [savedGames, lastPlayedGame]);
+
+    useEffect(() => {
+        setContext({ gameId: 1382165044 });
+    }, []);
 
     if (context?.gameId) {
         return null;

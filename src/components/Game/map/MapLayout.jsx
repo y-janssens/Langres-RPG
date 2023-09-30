@@ -1,9 +1,10 @@
 import { useFrame } from '@react-three/fiber';
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
+import Zombie from '../Ennemies/Zombie';
 import useGameContext from '../../../hooks/useGameContext';
 
-export const MapLayout = ({ world, data, position, characterRef, cameraRef, lightRef }) => {
+export const MapLayout = ({ world, data, position, characterRef, zombieRef, cameraRef, lightRef }) => {
     const [context] = useGameContext();
 
     useFrame(() => {
@@ -33,11 +34,15 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
                 }
             }
         }
+
+        if (cameraRef.current && zombieRef.current && lightRef.current) {
+        }
     });
 
     return (
         <group position={[-world.width / 2, 0, -world.width / 2]}>
             <Character position={position} characterRef={characterRef} />
+            <Zombie context={context} zombieRef={zombieRef} target={characterRef} map={world} />
             <Tiles data={data} />
         </group>
     );

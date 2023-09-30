@@ -19,6 +19,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     const cameraRef = useRef();
     const characterRef = useRef();
+    const zombieRef = useRef();
     const pointLightRef = useRef();
 
     const [form, , setFormObject] = useForm({
@@ -83,7 +84,15 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                         }}
                     >
                         <SceneSettings lightRef={pointLightRef} cameraRef={cameraRef}>
-                            <MapLayout world={form.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
+                            <MapLayout
+                                world={form.world}
+                                data={gameMap}
+                                position={position}
+                                cameraRef={cameraRef}
+                                characterRef={characterRef}
+                                zombieRef={zombieRef}
+                                lightRef={pointLightRef}
+                            />
                         </SceneSettings>
                     </Canvas>
                 )}
