@@ -2,6 +2,7 @@
 use std::env;
 mod functions {
     pub mod app;
+    pub mod codes;
     pub mod games;
     pub mod world;
 }
@@ -9,6 +10,7 @@ mod functions {
 mod classes {
     pub mod app;
     pub mod character;
+    pub mod codes;
     pub mod game;
     pub mod inventory;
     pub mod npc;
@@ -17,6 +19,7 @@ mod classes {
 
 mod commands {
     pub mod app;
+    pub mod codes;
     pub mod games;
     pub mod npcs;
     pub mod world;
@@ -33,6 +36,7 @@ fn main() {
             commands::games::delete,
             commands::world::regenerate,
             commands::npcs::get_npcs,
+            commands::codes::load_codes_datas,
             commands::app::load_app_datas,
             commands::app::save_app_datas,
         ])

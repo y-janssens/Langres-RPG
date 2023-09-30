@@ -16,7 +16,7 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
             cameraRef.current.object.position.set(x, 15, z);
             lightRef.current.position.set(x, 10, -(distance - characterPosition.z));
 
-            if (context.direction) {
+            if (context.direction && !context.controls.toggles.input) {
                 switch (context.direction) {
                     case 'up':
                         characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);

@@ -68,8 +68,6 @@ export function VolumeBar({ stat, max = 100, disabled = false, onChange = () => 
         return volume > 0 && volume <= 50 ? 'medium' : 'volume';
     }, [volume, disabled]);
 
-    console.log(volumeLevel);
-
     const handleVolume = useCallback(
         (e, vol) => {
             if (drag) {
@@ -101,7 +99,6 @@ export function VolumeBar({ stat, max = 100, disabled = false, onChange = () => 
                         style={{
                             width: disabled ? '0%' : fill
                         }}
-                        onDragStart={(e) => console.log(e)}
                     />
                 </Draggable>
             </div>

@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import { invoke } from '@tauri-apps/api';
 export default class Settings {
-    constructor({ language, sound, volume, music }) {
+    constructor({ language, sound, volume, music, codes }) {
         this.language = language;
         this.sound = sound;
         this.volume = volume;
@@ -10,6 +10,7 @@ export default class Settings {
             { key: 'en', value: 'English' },
             { key: 'fr', value: 'Français' }
         ];
+        this.codes = codes;
     }
 
     setLanguage() {
@@ -21,8 +22,19 @@ export default class Settings {
         this.sound = data.sound;
         this.volume = data.volume;
         this.music = data.music;
+        this.codes = data.codes;
 
         this.setLanguage();
+        this.save();
+    }
+
+    setCodes(data) {
+        this.language = data.language;
+        this.sound = data.sound;
+        this.volume = data.volume;
+        this.music = data.music;
+        this.codes = data.codes;
+
         this.save();
     }
 

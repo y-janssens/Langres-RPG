@@ -19,7 +19,7 @@ export const Controler = () => {
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
 
-    const [context, _setContext] = useState({ direction: 's', devMode: false, display3d: true, controls, assets, npcs });
+    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets, npcs });
     const gameRef = useRef();
 
     const setContext = React.useCallback((ctx = {}) => {
@@ -34,14 +34,12 @@ export const Controler = () => {
         }
         _setContext((context) => {
             let newContext = { ...context };
-            names.forEach(name => {
+            names.forEach((name) => {
                 delete newContext[name];
-            })
+            });
             return newContext;
         });
     }, []);
-
-    console.log(context);
 
     useGet(
         {

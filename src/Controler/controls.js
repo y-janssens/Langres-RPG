@@ -8,7 +8,8 @@ export default class KeyControls {
             { name: 'minimap', key: 'l', value: true },
             { name: 'interface', key: 'h', value: true },
             { name: 'map', key: 'm', value: false },
-            { name: 'pause', key: 'p', value: false }
+            { name: 'pause', key: 'p', value: false },
+            { name: 'input', key: '@', value: false }
         ];
 
         this.controlsKeys = [
@@ -50,7 +51,7 @@ export default class KeyControls {
         let toggles = { ...this.toggles };
 
         if (key) {
-            if (key.name !== 'pause' && this.toggles['pause'] !== true) {
+            if ((key.name !== 'pause' && !Boolean(this.toggles['pause']) && !Boolean(this.toggles['input'])) || (key.name === 'input' && Boolean(this.toggles['input']))) {
                 this.allowedKeys.forEach((key) => {
                     toggles[key.name] = key.value;
                 });
@@ -63,7 +64,7 @@ export default class KeyControls {
                     .filter((k) => k[0] !== 'interface' && k[0] !== 'pause' && k[0] !== 'minimap')
                     .every((k) => k[1] === false)
             ) {
-                toggles['pause'] = !this.toggles['pause'];
+                toggles['pause'] = !Boolean(this.toggles['pause']);
             }
             this.toggles = toggles;
         }
@@ -106,7 +107,7 @@ export default class KeyControls {
             zminus: world.content.find((tile) => tile.x === x && tile.y === z - 1)
         };
 
-        if (key) {
+        if (key && this.toggles['input'] !== true) {
             switch (key) {
                 case 'up':
                     // position.z += 1;

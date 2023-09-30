@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Check, Delete, Volume, Medium, Mute } from './Icons';
+import { Check, Checked, Delete, Volume, Medium, Mute } from './Icons';
 import css from './ui.module.css';
 
 function Icon({ tooltip = false, name = null, color = '#000', onClick, size = 'medium' }) {
@@ -7,6 +7,7 @@ function Icon({ tooltip = false, name = null, color = '#000', onClick, size = 'm
     const icons = useMemo(() => {
         return {
             Check,
+            Checked,
             Delete,
             Volume,
             Mute,

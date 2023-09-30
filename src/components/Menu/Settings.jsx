@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { useTranslation } from 'react-i18next';
 import Modal from '../ui/Modal';
@@ -8,13 +8,14 @@ import Icon from '../ui/Icon';
 
 export default function Settings({ state, onClose = () => {}, context }) {
     const { t } = useTranslation();
-    const languages = context.applicationData.languages;
+    const { languages, language, sound, volume, music, codes } = context.applicationData;
 
     const [settings, setSettings] = useForm({
-        language: context.applicationData.language,
-        sound: true,
-        volume: 100,
-        music: 100
+        language,
+        sound,
+        volume,
+        music,
+        codes
     });
 
     const handleSave = useCallback(() => {
@@ -51,6 +52,10 @@ export default function Settings({ state, onClose = () => {}, context }) {
                 <SettingsItem name={t('menu.settings.music')}>
                     <VolumeBar disabled={!settings.sound} stat={settings.music} />
                 </SettingsItem>
+                {context['gameId'] &&
+                    settings.codes.map((it) => {
+                        return <Code key={it.id} item={it} game={context.game} />;
+                    })}
             </div>
         </Modal>
     );
@@ -66,5 +71,26 @@ function SettingsItem({ name, children, display = true }) {
             <span className={css['settings-item-header']}>{name}</span>
             {children}
         </div>
+    );
+}
+
+function Code({ item, game }) {
+    const status = useMemo(() => {
+        if (!game.activated.includes(item)) {
+            return 'check';
+        }
+        return 'checked';
+    }, [item, game]);
+
+    const handleActivate = useCallback(() => {
+        if (!status || status === 'check') {
+            return game.activate(item);
+        }
+        return game.deactivate(item);
+    });
+    return (
+        <SettingsItem name={item.key}>
+            <Icon name={status} color="white" onClick={handleActivate} size="large" />
+        </SettingsItem>
     );
 }

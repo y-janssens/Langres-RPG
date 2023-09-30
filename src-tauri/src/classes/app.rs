@@ -1,6 +1,7 @@
 #[allow(dead_code)]
 
 pub mod app {
+    use crate::classes::codes::codes::Code;
     use serde::{Deserialize, Serialize};
     #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct App {
@@ -8,6 +9,7 @@ pub mod app {
         sound: bool,
         volume: u32,
         music: u32,
+        codes: Vec<Option<Code>>,
     }
 
     impl App {
@@ -18,6 +20,7 @@ pub mod app {
                 sound: true,
                 volume: 100,
                 music: 100,
+                codes: Vec::new(),
             }
         }
 

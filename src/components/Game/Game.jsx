@@ -2,7 +2,7 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
 import { useGet } from '../../hooks/useGet';
-import { GameModel, World } from '../../models';
+import { GameModel, World, Codes } from '../../models';
 import { useForm } from '../../hooks/useForm';
 import useGameContext from '../../hooks/useGameContext';
 
@@ -25,23 +25,27 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         id: null
     });
 
-    const [, loading] = useGet({
+    const [, loading] = useGet(
+        {
             func: 'load_game',
             id: parseInt(context?.gameId),
             launch: context?.gameId,
             onSuccess: (response) => {
                 setFormObject(response);
                 let game = new GameModel(response);
+                let codes = new Codes();
                 let world = new World(response.world);
                 let _world = world.parse();
                 setGameMap(_world);
-                setContext({ game, world, map: _world });
+                setContext({ game, world, map: _world, codes });
 
                 if (response.save_count < 1) {
                     game.save();
                 }
             }
-        },[context?.gameId]);
+        },
+        [context?.gameId]
+    );
 
     const contextReady = useMemo(() => {
         if (!context) {
@@ -53,7 +57,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
-        game.current.focus();
+        if (!context.controls.toggles.input) {
+            game.current.focus();
+        }
     }, [context]);
 
     if (!context?.gameId) {
@@ -104,14 +110,7 @@ function SceneSettings({ cameraRef, lightRef, children }) {
                 distance={12}
                 ref={lightRef}
             />
-            <MapControls
-                makeDefault
-                minPolarAngle={Math.PI / 3.5}
-                maxPolarAngle={Math.PI / 3.5}
-                minAzimuthAngle={Math.PI}
-                maxAzimuthAngle={Math.PI}
-                ref={cameraRef}
-            />
+            <MapControls makeDefault minPolarAngle={Math.PI / 3.5} maxPolarAngle={Math.PI / 3.5} minAzimuthAngle={Math.PI} maxAzimuthAngle={Math.PI} ref={cameraRef} />
             {children}
         </>
     );
