@@ -1,28 +1,44 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import useGameContext from '../../../hooks/useGameContext';
 import IA from '../../../models/ia/iaModel';
 
-export default function Zombie({ context, target, map, zombieRef }) {
+export default function Zombie({ index, target, map, nodes, zombieRef }) {
+    const [context, setContext] = useGameContext();
     const [ia, setIa] = useState(null);
-    const [position, setPosition] = useState([20, 0.5, 25]);
+    // const [position, setPosition] = useState(() => context.controls.generate_starting_point(map));
+    const [position] = useState([20, 0.5, 25]);
 
     const targetPosition = { ...target.current?.position };
 
     useEffect(() => {
         if (!ia && zombieRef.current) {
-            setIa(new IA({ type: 'zombie', target, self: zombieRef, map, allowedKeys: context.controls.validKeys }));
+            setIa(new IA({ type: 'zombie', target, self: zombieRef, map, nodes, allowedKeys: context.controls.validKeys }));
         }
         if (ia) {
-            const interval = setInterval(() => {
-                ia.update(targetPosition);
-                if (ia.patrolling) {
+            const interval = setInterval(
+                () => {
+                    ia.update(targetPosition);
                     ia.patrol();
-                    setPosition([ia.position.x, position[1], ia.position.y]);
-                }
-                if (ia.acknowledge) {
-                    ia.find_path();
-                    setPosition([ia.position.x, position[1], ia.position.y]);
-                }
-            }, 1000);
+                    gsap.to(zombieRef.current.position, { x: ia.position.x, z: ia.position.y, duration: 0.5 });
+                    switch (ia.direction) {
+                        case 'up':
+                            zombieRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
+                            break;
+                        case 'down':
+                            zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
+                            break;
+                        case 'left':
+                            zombieRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+                            break;
+                        case 'right':
+                            zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+                            break;
+                    }
+                    setContext({ [`zombie_${index}`]: { x: ia.position.x, z: ia.position.y } });
+                },
+                ia.acknowledged ? 100 : 500
+            );
 
             return () => {
                 clearInterval(interval);
@@ -32,7 +48,7 @@ export default function Zombie({ context, target, map, zombieRef }) {
 
     return (
         <mesh ref={zombieRef} scale={[0.25, 0.25, 0.25]} rotation={[Math.PI / 2, 0, Math.PI]} position={position} castShadow receiveShadow>
-            <boxGeometry attach="geometry" args={[2.5, 2.5, 2.5]} smoothness={5} />
+            <coneGeometry attach="geometry" args={[1, 2.5, 10]} smoothness={5} />
             <meshStandardMaterial color={'red'} />
         </mesh>
     );

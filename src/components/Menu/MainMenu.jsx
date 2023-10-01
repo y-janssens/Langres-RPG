@@ -78,7 +78,9 @@ export const MainMenu = () => {
     }, [savedGames, lastPlayedGame]);
 
     useEffect(() => {
-        setContext({ gameId: 1382165044 });
+        if (context.devMode) {
+            setContext({ gameId: 1382165055 });
+        }
     }, []);
 
     if (context?.gameId) {

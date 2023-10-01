@@ -1,17 +1,24 @@
+import { AStarFinder, Grid } from 'pathfinding';
+
 export default class IA {
-    constructor({ type, target, map, self, allowedKeys }) {
+    constructor({ type, target, map, nodes, self, allowedKeys }) {
         this.target = target;
         this.type = type;
         this.map = map;
+        this.nodes = new Grid(nodes);
         this.self = self;
         this.allowedKeys = allowedKeys;
         this.patrolRange = 5;
         this.patrolling = true;
         this.position = null;
         this.startingPosition = null;
+        this.lastKnownPosition = null;
         this.targetPosition = null;
-        this.acknowledge = false;
-        this.aggroRange = 5;
+        this.pathFinder = new Path({ grid: this.nodes });
+        this.patrolPath = [];
+        this.aggroPath = [];
+        this.direction = 'down';
+        this.acknowledged = false;
         this.init();
     }
 
@@ -19,64 +26,124 @@ export default class IA {
         this.position = { x: this.self.current.position.x, y: this.self.current.position.z };
         this.startingPosition = { x: this.self.current.position.x, y: this.self.current.position.z };
         this.targetPosition = { x: this.target.current.position.x, y: this.target.current.position.z };
-        this.aggro();
     }
 
     update(data) {
         this.targetPosition = { x: data.x, y: data.z };
-        this.aggro();
+        // const aggroRange = this.get_detection_field(this.direction);
+        // if (aggroRange.some((it) => it.x === this.targetPosition.x && it.y === this.targetPosition.y)) {
+        //     this.patrolling = false;
+        //     this.acknowledged = true;
+        //     if (this.patrolPath.length) {
+        //         this.patrolPath = [];
+        //     }
+        //     this.aggro();
+        // } else {
+        //     this.patrolling = true;
+        //     this.acknowledged = false;
+        //     if (this.aggroPath.length) {
+        //         this.aggroPath = [];
+        //     }
+        //     this.patrol();
+        // }
+    }
+
+    get_detection_field(direction) {
+        const currentItem = this.map.content.find((it) => it.x === this.position.x && it.y === this.position.y);
+        // const largeIds = this.get_items(currentItem.id);
+        const baseIds = [0, +1, -1, +50, +51, +49, -50, -51, -49];
+        const directionIds = {
+            up: [+98, +99, +100, +101, +102, +148, +149, +150, +151, +152],
+            down: [-98, -99, -100, -101, -102, -148, -149, -150, -151, -152],
+            left: [+2, +3, -48, +52, +53, +103, +102, -47, -97, -98],
+            right: [-2, -3, +48, -52, -53, -103, -102, +47, +97, +98]
+        };
+        const ids = baseIds.concat(directionIds[direction]);
+
+        return this.map.content.filter((it) => {
+            const idDiff = it.id - currentItem.id;
+            return ids.includes(idDiff);
+        });
+    }
+
+    get_items(item) {
+        const ids = [+50, +100, +150, +200, -50, -100, -150, -200];
+        const offsets = [-51, -50, -49, -1, 0, 1, 49, 50, 51];
+
+        return offsets
+            .map((offset) => {
+                return ids.map((id) => item + id + offset);
+            })
+            .flat();
     }
 
     aggro() {
-        const x = Math.abs(this.position.x - this.targetPosition.x);
-        const y = Math.abs(this.position.y - this.targetPosition.y);
+        if (this.acknowledged) {
+            if (!this.aggroPath?.length || this.aggroPath?.every((it) => Boolean(it.visited))) {
+                const destination = { x: this.targetPosition.x, y: this.targetPosition.y };
+                this.aggroPath = this.pathFinder.find_path(this.position, destination);
+            }
+            if (this.aggroPath?.length && this.aggroPath?.some((it) => !it.visited)) {
+                const nextItem = this.aggroPath.find((it) => !it.visited);
+                const nextPosition = { x: nextItem.x, y: nextItem.y };
 
-        if (x <= this.aggroRange && y <= this.aggroRange) {
-            return (this.patrolling = false), (this.acknowledge = true);
-        }
-        return (this.patrolling = true), (this.acknowledge = false);
-    }
+                this.direction = this.get_direction(nextPosition, this.position);
 
-    patrol() {
-        this.aggro();
-        if (this.patrolling) {
-            const x = this.get_position();
-            const y = this.get_position();
-
-            const nextPosition = { x: this.position.x + x, y: this.position.y + y };
-            const nextItem = this.map.content.find((it) => it.x === nextPosition.x && it.y === nextPosition.y);
-
-            if (
-                nextPosition.x <= this.startingPosition.x + this.patrolRange &&
-                nextPosition.y <= this.startingPosition.y + this.patrolRange &&
-                Math.abs(x) !== Math.abs(y) &&
-                this.allowedKeys.includes(nextItem.value)
-            ) {
-                this.position = nextPosition;
-            } else {
-                this.patrol();
+                if (this.aggroPath.indexOf(nextItem) < this.aggroPath.length - 1) {
+                    this.position = nextPosition;
+                }
+                nextItem.visited = true;
             }
         }
     }
 
-    get_position() {
-        const moves = [+1, -1, 0];
-        return moves[Math.floor(Math.random() * moves.length)];
+    patrol() {
+        if (this.patrolling) {
+            if (!this.patrolPath?.length || this.patrolPath?.every((it) => Boolean(it.visited))) {
+                const destination = { x: Math.min(this.startingPosition.x + this.get_position()), y: Math.min(this.startingPosition.y + this.get_position()) };
+                this.patrolPath = this.pathFinder.find_path(this.position, destination);
+            }
+            if (this.patrolPath?.length && this.patrolPath?.some((it) => !it.visited)) {
+                const nextItem = this.patrolPath.find((it) => !it.visited);
+                const nextPosition = { x: nextItem.x, y: nextItem.y };
+
+                this.direction = this.get_direction(nextPosition, this.position);
+                this.position = nextPosition;
+                nextItem.visited = true;
+            }
+        }
     }
 
-    find_path() {
-        let nextPosition = { ...this.position };
-        const yDiff = Math.abs(this.position.y - this.targetPosition.y);
-        const xDiff = Math.abs(this.position.x - this.targetPosition.x);
-
-        if (yDiff > xDiff) {
-            nextPosition = { x: this.position.x, y: this.targetPosition.y > this.position.y ? this.targetPosition.y + 1 : this.targetPosition.y - 1 };
-        } else {
-            nextPosition = { x: this.targetPosition.x > this.position.x ? this.position.x + 1 : this.position.x - 1, y: this.position.y };
+    get_direction(position, previousPosition) {
+        if (position.x > previousPosition.x) {
+            return 'left';
         }
-
-        if (nextPosition.x < this.targetPosition.x || nextPosition.y < this.targetPosition.y || nextPosition.x > this.targetPosition.x || nextPosition.y > this.targetPosition.y) {
-            this.position = nextPosition;
+        if (position.x < previousPosition.x) {
+            return 'right';
         }
+        if (position.y > previousPosition.y) {
+            return 'up';
+        }
+        if (position.y < previousPosition.y) {
+            return 'down';
+        }
+        return this.direction;
+    }
+
+    get_position() {
+        return Math.floor(Math.random() * this.patrolRange);
+    }
+}
+
+class Path {
+    constructor({ grid }) {
+        this.grid = grid;
+    }
+
+    find_path(start, dest) {
+        let nodes = this.grid.clone();
+        return new AStarFinder().findPath(start.x, start.y, dest.x, dest.y, nodes).map((step) => {
+            return { x: step[0], y: step[1], visited: false };
+        });
     }
 }

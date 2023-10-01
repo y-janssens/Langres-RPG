@@ -19,7 +19,6 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     const cameraRef = useRef();
     const characterRef = useRef();
-    const zombieRef = useRef();
     const pointLightRef = useRef();
 
     const [form, , setFormObject] = useForm({
@@ -37,8 +36,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                 let codes = new Codes();
                 let world = new World(response.world);
                 let _world = world.parse();
+                let grid = world.grid;
                 setGameMap(_world);
-                setContext({ game, world, map: _world, codes });
+                setContext({ game, world, map: _world, codes, grid });
 
                 if (response.save_count < 1) {
                     game.save();
@@ -84,15 +84,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                         }}
                     >
                         <SceneSettings lightRef={pointLightRef} cameraRef={cameraRef}>
-                            <MapLayout
-                                world={form.world}
-                                data={gameMap}
-                                position={position}
-                                cameraRef={cameraRef}
-                                characterRef={characterRef}
-                                zombieRef={zombieRef}
-                                lightRef={pointLightRef}
-                            />
+                            <MapLayout world={form.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
                         </SceneSettings>
                     </Canvas>
                 )}
@@ -106,7 +98,7 @@ function SceneSettings({ cameraRef, lightRef, children }) {
         <>
             <color attach="background" args={[0, 0, 0]} />
             <fogExp2 attach="fog" color="black" density={0.05} />
-            <ambientLight intensity={0.5} />
+            <ambientLight intensity={2.5} />
             <pointLight
                 castShadow
                 shadow-mapSize-height={2048}
