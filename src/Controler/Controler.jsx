@@ -60,7 +60,6 @@ export const Controler = () => {
         (event) => {
             if (!pauseGame) {
                 controls.setPosition(event, context.world);
-                setPosition(controls.positions);
                 setContext({ direction: controls.getKey(event), previousDirection: context.direction });
             }
             controls.setToggles(event);

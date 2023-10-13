@@ -1,4 +1,3 @@
-import { FcCheckmark } from 'react-icons/fc';
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from 'react-icons/ri';
 import { BsTrash } from 'react-icons/bs';

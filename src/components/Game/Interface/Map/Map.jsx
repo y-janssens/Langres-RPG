@@ -28,28 +28,18 @@ export const Map = ({ display = false, position, context }) => {
         }
     }, [mapContainerRef, mapInnerContainerRef, characterPosition, dimensions]);
 
-    if (!display) {
+    if (!display || !context) {
         return null;
     }
     return (
         <div className={css['map-container']} ref={mapContainerRef}>
-            <div className={css['map-block']} >
+            <div className={css['map-block']}>
                 <div className={css['map-content']} ref={mapInnerContainerRef}>
                     {map.map((row, i) => {
                         return (
                             <div key={i}>
                                 {row.map((item, index) => {
-                                    return (
-                                        <div
-                                            key={index}
-                                            style={{
-                                                width: `${dimensions.size - 1}px`,
-                                                height: `${dimensions.size - 1}px`,
-                                                backgroundColor: position[0] === item.x && position[2] === item.y ? 'chartreuse' : context?.assets?.get_color(item),
-                                                fontSize: '10px'
-                                            }}
-                                        />
-                                    );
+                                    return <MapTile key={index} item={item} position={position} context={context} dimensions={dimensions} />;
                                 })}
                             </div>
                         );
@@ -57,5 +47,36 @@ export const Map = ({ display = false, position, context }) => {
                 </div>
             </div>
         </div>
+    );
+};
+
+const MapTile = ({ item, position, context, dimensions }) => {
+    // const zombies = useMemo(() => {
+    //     const positions = [];
+    //     for (let i = 0; i < 25; i++) {
+    //         positions.push(context[`zombie_${i}`]);
+    //     }
+    //     return positions;
+    // }, [context]);
+
+    const tileColor = useMemo(() => {
+        // const zombie = zombies.find((zm) => zm[0] === item.x && zm[2] === item.y);
+        if (position[0] === item.x && position[2] === item.y) {
+            return 'chartreuse';
+        }
+        // if (zombie[0] === item.x && zombie[2] === item.y) {
+        //     return 'red';
+        // }
+        return context?.assets?.get_color(item);
+    }, [item, position, context]);
+
+    return (
+        <div
+            style={{
+                width: `${dimensions.size - 1}px`,
+                height: `${dimensions.size - 1}px`,
+                backgroundColor: tileColor
+            }}
+        />
     );
 };

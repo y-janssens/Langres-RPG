@@ -27,6 +27,7 @@ export default class KeyControls {
         this.borderKeys = this.assets.borderKeys;
         this.toggles = {};
         this.positions = [25, 0.75, 25];
+        this.occupiedPositions = [];
         this.pause = false;
         this.generateControls();
     }
@@ -39,10 +40,18 @@ export default class KeyControls {
         this.toggles = _toggles;
     }
 
-    pick_starting_point(data) {
+    generate_starting_point(data) {
         const cleared_data = data.content.filter((it) => this.validKeys.includes(it.value));
         const item = Math.floor(Math.random() * cleared_data.length);
+        const position = [cleared_data[item].x, 0.5, cleared_data[item].y];
+        return position;
+    }
+
+    pick_starting_point(data) {
+        const cleared_data = data.content.filter((it) => this.validKeys.includes(it.value) && !this.occupiedPositions.includes(it.id));
+        const item = Math.floor(Math.random() * cleared_data.length);
         this.positions = [cleared_data[item].x, 0.75, cleared_data[item].y];
+        this.occupiedPositions.push(cleared_data[item]);
         return this.positions;
     }
 
@@ -51,7 +60,7 @@ export default class KeyControls {
         let toggles = { ...this.toggles };
 
         if (key) {
-            if ((key.name !== 'pause' && !Boolean(this.toggles['pause']) && !Boolean(this.toggles['input'])) || (key.name === 'input' && Boolean(this.toggles['input']))) {
+            if ((key.name !== 'pause' && !this.toggles['pause'] && !this.toggles['input']) || (key.name === 'input' && Boolean(this.toggles['input']))) {
                 this.allowedKeys.forEach((key) => {
                     toggles[key.name] = key.value;
                 });
@@ -64,7 +73,7 @@ export default class KeyControls {
                     .filter((k) => k[0] !== 'interface' && k[0] !== 'pause' && k[0] !== 'minimap')
                     .every((k) => k[1] === false)
             ) {
-                toggles['pause'] = !Boolean(this.toggles['pause']);
+                toggles['pause'] = !this.toggles['pause'];
             }
             this.toggles = toggles;
         }
@@ -110,19 +119,15 @@ export default class KeyControls {
         if (key && this.toggles['input'] !== true) {
             switch (key) {
                 case 'up':
-                    // position.z += 1;
                     this.validKeys.includes(nextItems.zplus.value) ? (position.z += 1) : position.z;
                     break;
                 case 'down':
-                    // position.z -= 1;
                     this.validKeys.includes(nextItems.zminus.value) ? (position.z -= 1) : position.z;
                     break;
                 case 'left':
-                    // position.x += 1;
                     this.validKeys.includes(nextItems.xplus.value) ? (position.x += 1) : position.x;
                     break;
                 case 'right':
-                    // position.x -= 1;
                     this.validKeys.includes(nextItems.xminus.value) ? (position.x -= 1) : position.x;
             }
         }

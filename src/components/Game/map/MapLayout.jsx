@@ -3,8 +3,10 @@ import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
 import useGameContext from '../../../hooks/useGameContext';
+import { useRef } from 'react';
+import gsap from 'gsap';
 
-export const MapLayout = ({ world, data, position, characterRef, zombieRef, cameraRef, lightRef }) => {
+export const MapLayout = ({ world, data, position, characterRef, cameraRef, lightRef }) => {
     const [context] = useGameContext();
 
     useFrame(() => {
@@ -14,6 +16,11 @@ export const MapLayout = ({ world, data, position, characterRef, zombieRef, came
 
             let x = characterPosition.x - distance;
             let z = -(distance - characterPosition.z) - distance / 1.325;
+
+            // if (context.direction === context.previousDirection) {
+            gsap.to(characterRef.current.position, { x: context.controls.positions[0], z: context.controls.positions[2], duration: 0.5 });
+            // }
+
             cameraRef.current.object.position.set(x, 15, z);
             lightRef.current.position.set(x, 10, -(distance - characterPosition.z));
 
@@ -34,16 +41,21 @@ export const MapLayout = ({ world, data, position, characterRef, zombieRef, came
                 }
             }
         }
-
-        if (cameraRef.current && zombieRef.current && lightRef.current) {
-        }
     });
 
     return (
         <group position={[-world.width / 2, 0, -world.width / 2]}>
             <Character position={position} characterRef={characterRef} />
-            <Zombie context={context} zombieRef={zombieRef} target={characterRef} map={world} />
+            <Zombies target={characterRef} map={world} nodes={context.grid} />
             <Tiles data={data} />
         </group>
     );
+};
+
+const Zombies = ({ target, map, nodes }) => {
+    const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
+
+    return refs.map((ref, index) => {
+        return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
+    });
 };
