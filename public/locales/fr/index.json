@@ -13,8 +13,8 @@
       "load": "Charger une partie",
       "new": "Nouvelle partie",
       "save": "Enregistrer la partie",
-      "settings": "Paramètres",
-      "exit": "Quitter le jeu",
+      "settings": "Options",
+      "exit": "Quitter",
       "exit-game": "Menu Principal"
     },
     "deletion-modal": {

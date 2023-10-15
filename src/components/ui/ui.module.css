@@ -215,6 +215,20 @@
 .game-title-block {
     animation: bounce-title 2.5s infinite;
 }
+
+.main-title-block {
+    position: absolute;
+    top: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    filter: sepia(1);
+}
+
 @keyframes bounce-title {
     0%,
     20%,

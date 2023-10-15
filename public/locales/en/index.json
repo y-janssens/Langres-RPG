@@ -13,8 +13,8 @@
       "load": "Load Game",
       "new": "New Game",
       "save": "Save Game",
-      "settings": "Settings",
-      "exit": "Exit Game",
+      "settings": "Options",
+      "exit": "Exit",
       "exit-game": "Main Menu"
     },
     "deletion-modal": {

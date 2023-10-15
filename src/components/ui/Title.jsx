@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import css from './ui.module.css';
 
-function Title({ title = '', delay = 50, hide = () => {} }) {
+export function Title({ title = '', delay = 50, hide = () => {} }) {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibility, setVisibility] = useState(1);
@@ -54,4 +55,12 @@ function Title({ title = '', delay = 50, hide = () => {} }) {
     );
 }
 
-export default Title;
+export function MainTitle({}) {
+    const { t } = useTranslation();
+    return (
+        <div className={css['main-title-block']}>
+            <div className={css['game-title']}>Langres</div>
+            <span>{t('flavor.main-title')}</span>
+        </div>
+    );
+}

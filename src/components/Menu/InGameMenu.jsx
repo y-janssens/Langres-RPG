@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState, useEffect, useRef } from 'react';
 import useGameContext from '../../hooks/useGameContext';
 import { useTranslation } from 'react-i18next';
 
@@ -13,21 +13,12 @@ export const InGameMenu = ({ id, game }) => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
     const [context, , removeFromContext] = useGameContext();
+    const [selected, setSelected] = useState(0);
+    const activeRef = useRef();
 
     const displayInGameMenu = useMemo(() => {
         return id && context.controls.toggles.menu;
     }, [id, context, context.controls.toggles]);
-
-    const handleMenu = useCallback(
-        (event) => {
-            if (openModal) {
-                if (event.key === 'Escape') {
-                    setOpenModal(null);
-                }
-            }
-        },
-        [openModal]
-    );
 
     const handleSaveGame = useCallback(() => {
         let _game = new GameModel(game);
@@ -51,15 +42,44 @@ export const InGameMenu = ({ id, game }) => {
         ];
     }, [handleSaveGame, context, removeFromContext]);
 
+    const handleMenu = useCallback(
+        (event) => {
+            console.log(event.key);
+            if (openModal) {
+                if (event.key === 'Escape') {
+                    setOpenModal(null);
+                }
+            } else {
+                switch (event.key) {
+                    case 'ArrowDown':
+                        setSelected((slt) => (slt + 1 <= items.length - 1 ? slt + 1 : 0));
+                        break;
+                    case 'ArrowUp':
+                        setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
+                        break;
+                    case 'Enter':
+                        items.find((it) => it.id === selected).onClick();
+                }
+            }
+        },
+        [openModal, items, selected]
+    );
+
+    useEffect(() => {
+        activeRef.current?.focus();
+    }, []);
+
     if (!displayInGameMenu) {
         return null;
     }
 
     return (
-        <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1}>
+        <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1} ref={activeRef}>
+            {/* <div className={css['menu-items-block']}> */}
             {items.map((it) => {
-                return <MenuItem key={it.id} name={it.name} onClick={it.onClick} />;
+                return <MenuItem key={it.id} active={selected === it.id} name={it.name} onClick={it.onClick} />;
             })}
+            {/* </div> */}
             <Settings
                 state={openModal}
                 onClose={() => {
