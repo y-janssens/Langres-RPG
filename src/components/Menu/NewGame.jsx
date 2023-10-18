@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
 import { GameModel } from '../../models';
-import useGameContext from '../../hooks/useGameContext';
+import { useGameContext } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 import Modal from '../ui/Modal';
 import css from './menu.module.css';
@@ -16,7 +16,7 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
             await invoke('new', { name })
                 .then((data) => {
                     let game = new GameModel(data);
-                    setContext({ gameId: game.id });
+                    setContext({ gameId: game.id, builder: false });
                     game.save();
                     sync();
                 })

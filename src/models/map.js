@@ -71,12 +71,6 @@ export default class MapAssets {
                 color: 'blue'
             },
             {
-                name: 'bank',
-                key: 'B',
-                src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
-                color: 'lightblue'
-            },
-            {
                 name: 'bridge',
                 key: 'BR',
                 src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
@@ -84,7 +78,7 @@ export default class MapAssets {
             }
         ];
         this.validKeys = ['-', 'C', 'BR'];
-        this.borderKeys = ['F', 'T', 'W', 'B'];
+        this.borderKeys = ['F', 'T', 'W'];
     }
 
     get_asset(item) {

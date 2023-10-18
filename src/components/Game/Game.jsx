@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
-import { useGet } from '../../hooks/useGet';
+import { useGet, useForm, useGameContext } from '../../hooks';
 import { GameModel, World, Codes } from '../../models';
-import { useForm } from '../../hooks/useForm';
-import useGameContext from '../../hooks/useGameContext';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../ui/LoadingScreen';

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import useGameContext from '../../hooks/useGameContext';
+import { useGameContext } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 import Modal from '../ui/Modal';
 import Icon from '../ui/Icon';
@@ -14,7 +14,7 @@ export default function SavedGames({ loading = false, items = [], state = null, 
 
     const handleLoad = useCallback(() => {
         if (selectedItem) {
-            setContext({ gameId: selectedItem });
+            setContext({ gameId: selectedItem, builder: false });
             onClose();
         }
     }, [selectedItem, onclose]);

@@ -1,0 +1,82 @@
+.dialog-modal-footer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 10px;
+    margin-top: 15px;
+}
+
+.dialog-modal-footer-btn {
+    border-radius: 8px !important;
+    margin: 10px 0;
+}
+
+.dialog-modal-body {
+    transition: 250ms all !important;
+    padding: 10px 20px !important;
+    /* overflow: visible !important; */
+}
+.dialog-modal-body :global(.text-xl) {
+    text-align: center !important;
+    font-size: 14px !important;
+    margin-bottom: 5px;
+}
+
+.dialog-modal-select {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-modal-chevron {
+    font-size: 10px !important;
+    transform: scaleX(1.75);
+}
+
+.dialog-content {
+    max-height: 300px;
+    padding: 5px 10px;
+    margin-top: -5px;
+    background-color: rgb(43, 52, 64);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.dialog-sub-content {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 0px 10px;
+    grid-auto-flow: dense;
+}
+
+.dialog-content .dialog-modal-btn {
+    margin: 5px 0;
+    font-size: 12px !important;
+    line-height: 8px !important;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dialog-map-input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.dialog-map-input :global(.input-group) {
+    width: unset !important;
+}
+
+.dialog-map-input-text {
+    width: 200px !important;
+}
+.dialog-map-input-number {
+    width: 75px !important;
+}
+
+.dialog-map-items-btn {
+    font-size: 14px !important;
+}

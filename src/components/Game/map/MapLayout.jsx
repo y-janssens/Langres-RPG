@@ -2,7 +2,7 @@ import { useFrame } from '@react-three/fiber';
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
-import useGameContext from '../../../hooks/useGameContext';
+import { useGameContext } from '../../../hooks';
 import { useRef } from 'react';
 import gsap from 'gsap';
 

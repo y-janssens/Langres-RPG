@@ -14,6 +14,7 @@ mod classes {
     pub mod game;
     pub mod inventory;
     pub mod npc;
+    pub mod story;
     pub mod world;
 }
 
@@ -22,6 +23,7 @@ mod commands {
     pub mod codes;
     pub mod games;
     pub mod npcs;
+    pub mod story;
     pub mod world;
 }
 
@@ -35,10 +37,14 @@ fn main() {
             commands::games::save,
             commands::games::delete,
             commands::world::regenerate,
+            commands::world::generate,
+            commands::world::populate_trees,
             commands::npcs::get_npcs,
             commands::codes::load_codes_datas,
             commands::app::load_app_datas,
             commands::app::save_app_datas,
+            commands::story::load_storyline,
+            commands::story::save_storyline,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

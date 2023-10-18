@@ -30,7 +30,7 @@ pub mod game {
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
                 last_save_date: None,
-                world: World::new(50),
+                world: World::new(50, 0),
                 character: Character::new(),
             }
         }
@@ -86,11 +86,11 @@ pub mod game {
             Ok(imported_game)
         }
 
-        pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
-            let world = &mut self.world;
-            World::regenerate(world);
-            return Self::save(self);
-        }
+        // pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
+        //     let world = &mut self.world;
+        //     World::regenerate(world);
+        //     return Self::save(self);
+        // }
 
         fn encrypt() -> Result<MagicCrypt256, Box<dyn std::error::Error>> {
             dotenv().ok();

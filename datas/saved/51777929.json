@@ -27,8 +27,10 @@
     }
   },
   "world": {
-    "width": 50,
-    "height": 50,
+    "name": "test",
+    "size": 50,
+    "order": 0,
+    "complete": false,
     "content": [
       {
         "id": 0,

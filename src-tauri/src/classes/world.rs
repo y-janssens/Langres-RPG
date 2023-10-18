@@ -7,13 +7,15 @@ pub mod world {
 
     #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct World {
-        width: u32,
-        height: u32,
+        name: String,
+        size: u32,
+        order: u32,
+        complete: bool,
         content: Vec<Item>,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone)]
-    struct Item {
+    pub struct Item {
         id: u32,
         x: u32,
         y: u32,
@@ -21,16 +23,29 @@ pub mod world {
     }
 
     impl World {
-        pub fn new(size: u32) -> World {
+        pub fn new(size: u32, order: u32) -> World {
             World {
-                width: size,
-                height: size,
+                name: String::from(""),
+                size,
+                order,
+                complete: false,
                 content: Self::generate(size),
             }
         }
 
-        pub fn regenerate(&mut self) -> () {
-            return self.content = Self::generate(self.width);
+        pub fn create(size: u32, name: String, order: u32) -> World {
+            World {
+                name: String::from(name),
+                size,
+                order,
+                complete: false,
+                content: Self::generate(size),
+            }
+        }
+
+        pub fn regenerate(size: u32) -> Vec<Item> {
+            let content = Self::generate(size);
+            content
         }
 
         fn generate(size: u32) -> Vec<Item> {
@@ -49,8 +64,8 @@ pub mod world {
                 };
                 content.push(item);
             }
-            let generated_content = Self::generate_content(content, size);
-            generated_content
+            // let generated_content = Self::generate_content(content.clone(), size);
+            content
         }
 
         // Map content generation
@@ -70,7 +85,7 @@ pub mod world {
             String::from("-")
         }
 
-        fn generate_trees(content: Vec<Item>) -> Vec<Item> {
+        pub fn generate_trees(content: Vec<Item>) -> Vec<Item> {
             println!("Generating game trees...");
             let items = Self::get_items("map");
             let mut new_content = Vec::new();
