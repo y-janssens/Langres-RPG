@@ -1,10 +1,11 @@
 import { invoke } from '@tauri-apps/api/tauri';
 import MapAssets from './map';
 export default class World {
-    constructor({ size, content, order }) {
+    constructor({ size, content, order, complete }) {
         this.size = size;
         this.order = order;
         this.grid = this.gridify(content);
+        this.complete = complete;
         this.content = content;
     }
 

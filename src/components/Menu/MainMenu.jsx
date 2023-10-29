@@ -82,7 +82,7 @@ export const MainMenu = () => {
     }, [savedGames, lastPlayedGame]);
 
     useEffect(() => {
-        setContext({ builder: true });
+        // setContext({ builder: true });
         //     if (context.devMode) {
         //         setContext({ gameId: 1382165055 });
         //     }

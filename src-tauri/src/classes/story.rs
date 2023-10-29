@@ -19,6 +19,7 @@ pub mod story {
         name: String,
         title: String,
         content: Content,
+        complete: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -32,6 +33,14 @@ pub mod story {
             let json_content = std::fs::read_to_string(file_name)?;
             let default_data: Story = serde_json::from_str(&json_content)?;
             Ok(default_data)
+        }
+
+        pub fn load() -> Story {
+            let file_name = String::from("../datas/storyline.json");
+            let json_content = std::fs::read_to_string(file_name).expect("Failed to read file");
+            let default_data: Story =
+                serde_json::from_str(&json_content).expect("Failed to parse JSON");
+            default_data
         }
 
         pub fn save(self) -> Result<(), Box<dyn std::error::Error>> {
