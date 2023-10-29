@@ -15,7 +15,8 @@
       "save": "Save Game",
       "settings": "Settings",
       "exit": "Exit Game",
-      "exit-game": "Main Menu"
+      "exit-game": "Main Menu",
+      "builder": "Editor"
     },
     "deletion-modal": {
       "header": "Do you really wish to delete this game?",

@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef, useMemo } from 'react';
-import { useGet } from '../hooks/useGet';
+import { useGet } from '../hooks';
 import GameContext from './GameContext';
 
 import KeyControls from './controls';
@@ -11,6 +11,7 @@ import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
 
 import css from '../components/Game/game.module.css';
+import { Builder } from '../components/Builder/Builder';
 
 export const Controler = () => {
     const [controls] = useState(() => new KeyControls());
@@ -69,7 +70,7 @@ export const Controler = () => {
     );
 
     const displayGame = useMemo(() => {
-        return Boolean(context?.gameId);
+        return Boolean(context?.gameId && !context.builder);
     }, [context]);
 
     if (!('applicationData' in context)) {
@@ -90,6 +91,7 @@ export const Controler = () => {
                     <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} />
                 </div>
             )}
+            {context.builder && <Builder />}
         </GameContext.Provider>
     );
 };

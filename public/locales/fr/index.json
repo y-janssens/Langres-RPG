@@ -15,7 +15,8 @@
       "save": "Enregistrer la partie",
       "settings": "Paramètres",
       "exit": "Quitter le jeu",
-      "exit-game": "Menu Principal"
+      "exit-game": "Menu Principal",
+      "builder": "Éditeur"
     },
     "deletion-modal": {
       "header": "Voulez-vous vraiment supprimer cette partie?",

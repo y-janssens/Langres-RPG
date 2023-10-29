@@ -71,12 +71,6 @@ export default class MapAssets {
                 color: 'blue'
             },
             {
-                name: 'bank',
-                key: 'B',
-                src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
-                color: 'lightblue'
-            },
-            {
                 name: 'bridge',
                 key: 'BR',
                 src: ['./assets/map/water/{}.png', './assets/map/water/{}.png', './assets/map/water/{}.png'],
@@ -84,7 +78,7 @@ export default class MapAssets {
             }
         ];
         this.validKeys = ['-', 'C', 'BR'];
-        this.borderKeys = ['F', 'T', 'W', 'B'];
+        this.borderKeys = ['F', 'T', 'W'];
     }
 
     get_asset(item) {
@@ -138,8 +132,8 @@ export default class MapAssets {
         let validIds = [];
         let invalidIds = [];
         let id = item.id;
-        const max_index = world.width * world.height;
-        const ids = [id, id + 1, id - 1, id + world.width, id - world.width];
+        const max_index = world.size * world.size;
+        const ids = [id, id + 1, id - 1, id + world.size, id - world.size];
 
         ids.filter((i) => i > 0 && i <= max_index).map((it) => {
             if (!this.validKeys.includes(world.content[it].value)) {

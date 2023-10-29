@@ -1,6 +1,12 @@
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from 'react-icons/ri';
-import { BsTrash } from 'react-icons/bs';
+import { BsTrash, BsWater } from 'react-icons/bs';
+import { GrView, GrPowerReset } from 'react-icons/gr';
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
+import { BiSolidTree } from 'react-icons/bi';
+import { FaBridgeWater } from 'react-icons/fa6';
+import { AiOutlineClear } from 'react-icons/ai';
+import { GiForest, GiStoneBlock } from 'react-icons/gi';
 
 export { BsTrash as Delete };
 export { IoVolumeHigh as Volume };
@@ -8,3 +14,13 @@ export { IoVolumeMedium as Medium };
 export { IoVolumeMuteSharp as Mute };
 export { RiCheckboxBlankCircleLine as Check };
 export { RiCheckboxCircleLine as Checked };
+export { GrView as View };
+export { GrPowerReset as Reset };
+export { HiOutlineArrowLeft as Undo };
+export { HiOutlineArrowRight as Redo };
+export { BiSolidTree as Tree };
+export { GiForest as Trees };
+export { AiOutlineClear as Clear };
+export { FaBridgeWater as Bridge };
+export { BsWater as Water };
+export { GiStoneBlock as Rock };

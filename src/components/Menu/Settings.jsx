@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { useForm } from '../../hooks/useForm';
+import { useForm } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 import Modal from '../ui/Modal';
 import css from './menu.module.css';

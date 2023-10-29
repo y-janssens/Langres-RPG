@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import useGameContext from '../../hooks/useGameContext';
+import { useGameContext } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 
 import { GameModel } from '../../models';

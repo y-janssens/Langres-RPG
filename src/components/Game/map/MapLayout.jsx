@@ -2,7 +2,7 @@ import { useFrame } from '@react-three/fiber';
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
-import useGameContext from '../../../hooks/useGameContext';
+import { useGameContext } from '../../../hooks';
 import { useRef } from 'react';
 import gsap from 'gsap';
 
@@ -12,7 +12,7 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
     useFrame(() => {
         if (cameraRef.current && characterRef.current && lightRef.current) {
             const characterPosition = characterRef.current.position;
-            const distance = world.width / 2;
+            const distance = world.size / 2;
 
             let x = characterPosition.x - distance;
             let z = -(distance - characterPosition.z) - distance / 1.325;
@@ -42,9 +42,8 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
             }
         }
     });
-
     return (
-        <group position={[-world.width / 2, 0, -world.width / 2]}>
+        <group position={[-world.size / 2, 0, -world.size / 2]}>
             <Character position={position} characterRef={characterRef} />
             <Zombies target={characterRef} map={world} nodes={context.grid} />
             <Tiles data={data} />
