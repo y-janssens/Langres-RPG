@@ -1,6 +1,6 @@
 import { useState, useRef, useMemo } from 'react';
 import { Text } from '@react-three/drei';
-import useGameContext from '../../../hooks/useGameContext';
+import { useGameContext } from '../../../hooks';
 import { Tree } from './Tree';
 import Water from './Water';
 

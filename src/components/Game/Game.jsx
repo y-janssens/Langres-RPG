@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
-import { useGet } from '../../hooks/useGet';
+import { useGet, useForm, useGameContext } from '../../hooks';
 import { GameModel, World, Codes } from '../../models';
-import { useForm } from '../../hooks/useForm';
-import useGameContext from '../../hooks/useGameContext';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../ui/LoadingScreen';
@@ -31,10 +29,14 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
             id: parseInt(context?.gameId),
             launch: context?.gameId,
             onSuccess: (response) => {
+                // console.log(response);
+                const currentAct = response.storyline.story.acts.find((act) => !act.complete);
+                const currentMap = currentAct.content.maps.find((mp) => !mp.complete);
+                // console.log(currentMap);
                 setFormObject(response);
                 let game = new GameModel(response);
                 let codes = new Codes();
-                let world = new World(response.world);
+                let world = new World(currentMap);
                 let _world = world.parse();
                 let grid = world.grid;
                 setGameMap(_world);
@@ -84,7 +86,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                         }}
                     >
                         <SceneSettings lightRef={pointLightRef} cameraRef={cameraRef}>
-                            <MapLayout world={form.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
+                            <MapLayout world={context.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
                         </SceneSettings>
                     </Canvas>
                 )}

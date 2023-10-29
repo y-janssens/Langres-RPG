@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import gsap from 'gsap';
-import useGameContext from '../../../hooks/useGameContext';
+import { useGameContext } from '../../../hooks';
 import IA from '../../../models/ia/iaModel';
 
 export default function Zombie({ index, target, map, nodes, zombieRef }) {

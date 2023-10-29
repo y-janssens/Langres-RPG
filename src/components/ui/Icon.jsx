@@ -1,25 +1,16 @@
 import React, { useMemo, useState } from 'react';
-import { Check, Checked, Delete, Volume, Medium, Mute } from './Icons';
+import * as Icons from './Icons';
 import css from './ui.module.css';
 
 function Icon({ tooltip = false, name = null, color = '#000', onClick, size = 'medium' }) {
     const [hover, setHover] = useState(false);
-    const icons = useMemo(() => {
-        return {
-            Check,
-            Checked,
-            Delete,
-            Volume,
-            Mute,
-            Medium
-        };
-    }, []);
 
     const IconComponent = useMemo(() => {
+        const icons = { ...Icons };
         let iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
 
         return icons[iconName];
-    }, [name, icons]);
+    }, [name]);
 
     const iconSize = useMemo(() => {
         switch (size) {

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: 'medieval';
     src: url('/assets/fonts/MedievalSharp.ttf');
@@ -102,6 +106,7 @@ button {
     }
 }
 
+/* Vertical Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
     background-color: transparent;
@@ -112,6 +117,21 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
+    background-color: #505050;
+    border-radius: 20px;
+}
+
+/* Horizontal Scrollbar */
+::-webkit-scrollbar:horizontal {
+    height: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
     background-color: #505050;
     border-radius: 20px;
 }

@@ -13,9 +13,10 @@
       "load": "Charger une partie",
       "new": "Nouvelle partie",
       "save": "Enregistrer la partie",
-      "settings": "Options",
-      "exit": "Quitter",
-      "exit-game": "Menu Principal"
+      "settings": "Paramètres",
+      "exit": "Quitter le jeu",
+      "exit-game": "Menu Principal",
+      "builder": "Éditeur"
     },
     "deletion-modal": {
       "header": "Voulez-vous vraiment supprimer cette partie?",

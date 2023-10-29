@@ -2,7 +2,7 @@
 
 pub mod game {
     use crate::classes::character::character::Character;
-    use crate::classes::world::world::World;
+    use crate::classes::story::story::Story;
     use chrono::{DateTime, Local};
     use clipboard::ClipboardContext;
     use clipboard::ClipboardProvider;
@@ -18,7 +18,7 @@ pub mod game {
         last_save_date: Option<String>,
         save_count: i32,
         pub character: Character,
-        pub world: World,
+        pub storyline: Story,
     }
 
     impl Game {
@@ -30,7 +30,7 @@ pub mod game {
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
                 last_save_date: None,
-                world: World::new(50),
+                storyline: Story::load(),
                 character: Character::new(),
             }
         }
@@ -86,11 +86,11 @@ pub mod game {
             Ok(imported_game)
         }
 
-        pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
-            let world = &mut self.world;
-            World::regenerate(world);
-            return Self::save(self);
-        }
+        // pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
+        //     let world = &mut self.world;
+        //     World::regenerate(world);
+        //     return Self::save(self);
+        // }
 
         fn encrypt() -> Result<MagicCrypt256, Box<dyn std::error::Error>> {
             dotenv().ok();

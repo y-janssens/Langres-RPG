@@ -13,9 +13,10 @@
       "load": "Load Game",
       "new": "New Game",
       "save": "Save Game",
-      "settings": "Options",
-      "exit": "Exit",
-      "exit-game": "Main Menu"
+      "settings": "Settings",
+      "exit": "Exit Game",
+      "exit-game": "Main Menu",
+      "builder": "Editor"
     },
     "deletion-modal": {
       "header": "Do you really wish to delete this game?",

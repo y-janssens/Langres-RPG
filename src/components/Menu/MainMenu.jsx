@@ -1,8 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useRef } from 'react';
-import useGameContext from '../../hooks/useGameContext';
+import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
+import { useGameContext, useGet } from '../../hooks';
 import { useTranslation } from 'react-i18next';
-import { useGet } from '../../hooks/useGet';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
@@ -40,6 +38,12 @@ export const MainMenu = () => {
         let menu_items = [
             { name: t('menu.items.settings'), onClick: () => setOpenModal('settings') },
             {
+                id: 6,
+                name: t('menu.items.builder'),
+                onClick: () => setContext({ builder: true })
+            },
+            {
+                id: 4,
                 name: t('menu.items.exit'),
                 onClick: async () => await exit(1)
             }
@@ -59,7 +63,7 @@ export const MainMenu = () => {
         if (lastPlayedGame) {
             menu_items.unshift({
                 name: t('menu.items.continue'),
-                onClick: () => setContext({ gameId: lastPlayedGame.id })
+                onClick: () => setContext({ gameId: lastPlayedGame.id, builder: false })
             });
         }
 
@@ -95,12 +99,9 @@ export const MainMenu = () => {
 
     useEffect(() => {
         activeRef.current.focus();
-        // if (context.devMode) {
-        //     setContext({ gameId: 1382165055 });
-        // }
     }, []);
 
-    if (context?.gameId) {
+    if (context?.gameId || context.builder) {
         return null;
     }
 
