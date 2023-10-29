@@ -1,9 +1,9 @@
 import css from './menu.module.css';
 
-export const MenuItem = ({ name, onClick = () => {}, disabled = false }) => {
+export const MenuItem = ({ active, name, onClick = () => {}, disabled = false }) => {
     return (
-        <div className={css['menu-item']} onClick={onClick} disabled={disabled}>
-            {name}
+        <div className={active ? css['menu-item-active'] : css['menu-item']} onClick={onClick} disabled={disabled}>
+            {name.toUpperCase()}
         </div>
     );
 };
