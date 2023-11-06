@@ -5,7 +5,7 @@ import GameContext from './GameContext';
 import KeyControls from './controls';
 import MapAssets from '../models/map';
 import Settings from '../models/settings';
-import { Npcs } from '../models';
+// import { Npcs } from '../models';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
@@ -16,11 +16,11 @@ import { Builder } from '../components/Builder/Builder';
 export const Controler = () => {
     const [controls] = useState(() => new KeyControls());
     const [assets] = useState(() => new MapAssets());
-    const [npcs] = useState(() => new Npcs());
+    // const [npcs] = useState(() => new Npcs());
     const [toggles, setToggles] = useState(controls.toggles);
     const [position, setPosition] = useState(controls.positions);
 
-    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets, npcs });
+    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets });
     const gameRef = useRef();
 
     const setContext = React.useCallback((ctx = {}) => {
@@ -54,7 +54,7 @@ export const Controler = () => {
     );
 
     const pauseGame = useMemo(() => {
-        return Boolean(context?.controls?.toggles?.pause);
+        return Boolean(context?.controls?.toggles?.pause || context?.controls?.toggles?.menu);
     }, [context]);
 
     const handleControls = useCallback(
@@ -63,8 +63,13 @@ export const Controler = () => {
                 controls.setPosition(event, context.world);
                 setContext({ direction: controls.getKey(event), previousDirection: context.direction });
             }
-            controls.setToggles(event);
-            setToggles(controls.toggles);
+            if (pauseGame && event.key === 'Escape' && Boolean(context?.pauseMenu)) {
+                setContext({ pauseMenu: false });
+                return;
+            } else {
+                controls.setToggles(event);
+                setToggles(controls.toggles);
+            }
         },
         [controls, context, pauseGame]
     );
@@ -85,7 +90,7 @@ export const Controler = () => {
                 removeFromContext
             }}
         >
-            <MainMenu />
+            {!context?.gameId && !context.builder && <MainMenu />}
             {displayGame && (
                 <div className={css['game-main-block']} onKeyDown={handleControls} tabIndex={0} ref={gameRef}>
                     <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} />

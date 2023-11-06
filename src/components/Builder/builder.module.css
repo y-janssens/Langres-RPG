@@ -44,7 +44,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 700px;
 }
 
 .builder-navbar-cta {
@@ -53,12 +52,15 @@
 }
 
 .builder-navbar-actions {
-    width: 55px;
+    width: 425px;
     margin-left: 5px;
 }
 
 .builder-icon-btn {
     margin: 5px;
+    width: 30px !important;
+    height: 25px !important;
+    min-height: min-content !important;
 }
 
 .builder-icon-btn svg {
@@ -79,6 +81,19 @@
     fill: rgb(29, 35, 42);
 }
 
+.builder-navbar-toggles {
+    display: flex;
+    align-items: center;
+}
+
+.builder-navbar-exit {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: -10px;
+    margin-top: -10px;
+    min-height: min-content !important;
+}
+
 .builder-navbar-toggles input {
     font-size: 6px !important;
     margin-left: 5px;
@@ -87,11 +102,21 @@
 
 .builder-navbar-toggles label {
     padding: 5px;
+    white-space: nowrap;
+}
+
+.builder-navbar-viewport-toggles {
+    display: flex;
+}
+
+.builder-navbar-viewport-toggles label {
+    white-space: nowrap;
 }
 
 .builder-navbar-switch {
     background-color: rgb(25, 30, 36);
     padding: 0 10px;
+    margin: 0 15px;
     border-radius: 4px;
 }
 
@@ -106,8 +131,10 @@
 }
 
 .builder-header-btn {
-    width: 85px;
+    width: fit-content;
+    min-width: 85px;
     border-radius: 6px !important;
+    white-space: nowrap;
 }
 
 .builder-sidebar-container {
@@ -283,8 +310,12 @@
     margin-bottom: 10px;
 }
 .builder-map-infos-selected-detail input {
-    /* position: absolute; */
-    /* right: 10px; */
     width: 150px;
     margin-right: 5px;
 }
+
+/* @media screen and (max-width: 600px) {
+    .builder-navbar-left {
+        width: 250px;
+    }
+} */

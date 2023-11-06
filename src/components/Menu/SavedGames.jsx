@@ -14,12 +14,12 @@ export default function SavedGames({ loading = false, items = [], state = null, 
 
     const handleLoad = useCallback(() => {
         if (selectedItem) {
-            setContext({ gameId: selectedItem, builder: false });
+            setContext({ gameId: selectedItem });
             onClose();
         }
     }, [selectedItem, onclose]);
 
-    if (state !== 'saved_games') {
+    if (!state || state !== 'saved_games') {
         return null;
     }
 

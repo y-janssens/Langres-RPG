@@ -1,42 +1,37 @@
 #[allow(dead_code)]
 
 pub mod app {
-    use crate::classes::codes::codes::Code;
+    use crate::schema::settings::dsl::*;
+    use diesel::{prelude::*, sqlite::Sqlite};
     use serde::{Deserialize, Serialize};
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+    #[diesel(table_name = crate::schema::settings)]
+    #[diesel(check_for_backend(Sqlite))]
     pub struct App {
+        id: i32,
         language: String,
         sound: bool,
-        volume: u32,
-        music: u32,
-        codes: Vec<Option<Code>>,
+        volume: i32,
+        music: i32,
     }
 
     impl App {
-        pub fn new() -> App {
-            println!("Generating application datas...");
-            App {
-                language: String::from("en"),
-                sound: true,
-                volume: 100,
-                music: 100,
-                codes: Vec::new(),
-            }
+        pub fn load(connection: &mut SqliteConnection) -> QueryResult<App> {
+            let _load = crate::schema::settings::table.first(connection)?;
+            Ok(_load)
         }
 
-        pub fn save(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-            let json = serde_json::to_string_pretty(&self)?;
-            let mut file_path = std::path::PathBuf::new();
-            file_path.push("../datas/app.json");
-            std::fs::write(&file_path, json)?;
-            Ok(())
-        }
-
-        pub fn load() -> Result<App, Box<dyn std::error::Error>> {
-            let file_name = String::from("../datas/app.json");
-            let json_content = std::fs::read_to_string(file_name)?;
-            let saved_datas: App = serde_json::from_str(&json_content)?;
-            Ok(saved_datas)
+        pub fn save(_id: i32, data: App, connection: &mut SqliteConnection) -> QueryResult<usize> {
+            diesel::update(settings.find(_id))
+                .set((
+                    id.eq(_id),
+                    language.eq(&data.language),
+                    sound.eq(data.sound),
+                    volume.eq(data.volume),
+                    music.eq(data.music),
+                ))
+                .execute(connection)
         }
     }
 }

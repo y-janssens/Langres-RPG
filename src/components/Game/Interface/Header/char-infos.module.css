@@ -1,68 +1,67 @@
 .character-infos-container {
-  position: fixed;
-  display: flex;
-  align-items: flex-end;
-  top: 0px;
-  left: 0px;
-  height: 90px;
-  width: 320px;
-  padding: 20px;
-  z-index: 50;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 90px;
+    width: 320px;
+    padding: 20px;
+    z-index: 50;
 }
 
 .character-infos-bubble,
 .character-infos-border {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 4px solid #785a45;
-  background-color: transparent;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #785a45;
+    background-color: transparent;
 }
 
 .character-infos-border {
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
-  cursor: pointer;
-  z-index: 10;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.75));
+    cursor: pointer;
+    z-index: 10;
 }
 
 .character-infos-bubble {
-  background-color: #1b1716;
+    background-color: #1b1716;
 }
 
 .character-infos-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 55px;
-  width: 220px;
-  margin-left: 55px;
-  border-radius: 2px;
-  background-color: #1b1716;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 220px;
+    margin-left: 55px;
+    margin-top: 20px;
+    border-radius: 2px;
+    background-color: #1b1716;
 }
 
 .character-infos-header div {
-  position: relative;
-  font-size: 14px;
-  margin-left: 42px;
+    position: relative;
+    font-size: 14px;
+    margin-left: 42px;
 }
 
 .character-infos-level {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 70px;
-  top: 70px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 14px;
-  background-color: #1b1716;
-  border: 3px solid #785a45;
-  z-index: 50;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 70px;
+    top: 70px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 14px;
+    background-color: #1b1716;
+    border: 3px solid #785a45;
+    z-index: 50;
 }

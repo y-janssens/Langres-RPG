@@ -20,7 +20,7 @@ export const MainMenu = () => {
     const activeRef = useRef();
 
     const [savedGames, loadingGames, sync] = useGet({
-        func: 'load_saves'
+        func: 'fetch_games'
     });
 
     const lastPlayedGame = useMemo(() => {
@@ -36,7 +36,12 @@ export const MainMenu = () => {
 
     const items = useMemo(() => {
         let menu_items = [
-            { name: t('menu.items.settings'), onClick: () => setOpenModal('settings') },
+            {
+                name: t('menu.items.settings'),
+                onClick: () => {
+                    setOpenModal('settings');
+                }
+            },
             {
                 id: 6,
                 name: t('menu.items.builder'),
@@ -63,7 +68,7 @@ export const MainMenu = () => {
         if (lastPlayedGame) {
             menu_items.unshift({
                 name: t('menu.items.continue'),
-                onClick: () => setContext({ gameId: lastPlayedGame.id, builder: false })
+                onClick: () => setContext({ gameId: lastPlayedGame.id })
             });
         }
 
@@ -75,7 +80,6 @@ export const MainMenu = () => {
 
     const handleMenu = useCallback(
         (event) => {
-            console.log(event.key);
             if (openModal) {
                 if (event.key === 'Escape') {
                     setOpenModal(null);
@@ -84,9 +88,11 @@ export const MainMenu = () => {
             } else {
                 switch (event.key) {
                     case 'ArrowDown':
+                    case 's':
                         setSelected((slt) => (slt + 1 <= items.length - 1 ? slt + 1 : 0));
                         break;
                     case 'ArrowUp':
+                    case 'z':
                         setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
                         break;
                     case 'Enter':
@@ -98,7 +104,11 @@ export const MainMenu = () => {
     );
 
     useEffect(() => {
-        activeRef.current.focus();
+        if (!context?.gameId && (!context.controls?.toggles?.pause || !context.controls?.toggles?.menu)) {
+            activeRef.current.focus();
+        }
+        // setContext({ gameId: 315681868 });
+        // setContext({ builder: true });
     }, []);
 
     if (context?.gameId || context.builder) {
@@ -110,40 +120,43 @@ export const MainMenu = () => {
             {displayTitle ? (
                 <Title title={t('flavor.main-title')} hide={() => setDisplayTitle(false)} />
             ) : (
-                !openModal && (
-                    <>
-                        <MainTitle />
-                        <div className={css['menu-items-container']}>
-                            <div className={css['menu-items-block']}>
-                                {items.map((it) => {
-                                    return <MenuItem active={selected === it.id} key={it.id} name={it.name} onClick={it.onClick} />;
-                                })}
-                            </div>
+                <>
+                    <MainTitle />
+                    <div className={css['menu-items-container']}>
+                        <div className={css['menu-items-block']}>
+                            {items.map((it) => {
+                                return <MenuItem active={selected === it.id} key={it.id} name={it.name} onClick={it.onClick} />;
+                            })}
                         </div>
-                    </>
-                )
+                    </div>
+                </>
             )}
 
-            <NewGame state={openModal} sync={sync} onClose={() => setOpenModal(null)} />
+            {openModal === 'new_game' && <NewGame state={openModal} sync={sync} onClose={() => setOpenModal(null)} />}
 
-            <SavedGames
-                state={openModal}
-                items={savedGames}
-                loading={loadingGames}
-                sync={sync}
-                onClose={() => {
-                    setOpenModal(null);
-                }}
-            />
+            {openModal === 'saved_games' && (
+                <SavedGames
+                    state={openModal}
+                    items={savedGames}
+                    loading={loadingGames}
+                    sync={sync}
+                    onClose={() => {
+                        setOpenModal(null);
+                    }}
+                />
+            )}
 
-            <Settings
-                state={openModal}
-                onClose={() => {
-                    setOpenModal(null);
-                    sync();
-                }}
-                context={context}
-            />
+            {openModal === 'settings' && (
+                <Settings
+                    state={openModal}
+                    onClose={() => {
+                        setOpenModal(null);
+
+                        sync();
+                    }}
+                    context={context}
+                />
+            )}
         </div>
     );
 };

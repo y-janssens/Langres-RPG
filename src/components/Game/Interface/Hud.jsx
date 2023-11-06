@@ -3,7 +3,6 @@ import { CharInfos } from './Header/CharInfos';
 import { Character } from '../Interface/Character/Character';
 import { Map } from '../Interface/Map/Map';
 import MiniMap from './Minimap/MiniMap';
-import Input from '../../ui/Input';
 
 export const Hud = ({ game, display, position, context }) => {
     if (!display.interface) {
@@ -15,7 +14,6 @@ export const Hud = ({ game, display, position, context }) => {
             <Map display={display.map} position={position} context={context} />
             <Character display={display.character} character={game.character} />
             <MiniMap position={position} context={context} />
-            {context.controls.toggles.input && <Input context={context} />}
         </>
     );
 };

@@ -1,4 +1,3 @@
-import { invoke } from '@tauri-apps/api/tauri';
 import MapAssets from './map';
 export default class World {
     constructor({ size, content, order, complete }) {
@@ -48,8 +47,4 @@ export default class World {
     //   }
     //   return game.last_known_position;
     // }
-
-    async regenerate(data) {
-        await invoke('regenerate', { data });
-    }
 }

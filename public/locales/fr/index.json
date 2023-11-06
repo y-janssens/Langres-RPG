@@ -5,7 +5,12 @@
     "start": "Commencer",
     "delete": "Supprimer",
     "cancel": "Annuler",
-    "confirm": "Confirmer"
+    "confirm": "Confirmer",
+    "continue": "Continuer",
+    "edit": "Modifier",
+    "reset": "Réinitialiser",
+    "new": "Nouveau",
+    "search": "Rechercher"
   },
   "menu": {
     "items": {
@@ -27,6 +32,43 @@
       "sound": "Son: ",
       "volume": "Volume: ",
       "music": "Musique: "
+    }
+  },
+  "builder": {
+    "manager": "Gérez vos scénarios",
+    "modal": {
+      "title": "Créez et modifiez vos scénarios et cartes"
+    },
+    "selector": {
+      "label": "Sélectionner une carte"
+    },
+    "toggles": {
+      "ids": "Voir les ids",
+      "values": "Voir les valeurs",
+      "icons": "Voir les icônes",
+      "meshes": "Voir les meshs",
+      "viewport": "Plan 3D"
+    },
+    "menu": {
+      "map": {
+        "label": "Informations sur la carte",
+        "name": "Nom",
+        "size": "Taille"
+      },
+      "tile": {
+        "label": "Paramètres des cases"
+      },
+      "items": {
+        "label": "Éléments"
+      },
+      "functions": {
+        "label": "Fonctions",
+        "trees": "Générer des arbres",
+        "clear": "Effacer la carte"
+      },
+      "objects": {
+        "label": "Objets"
+      }
     }
   },
   "flavor": {

@@ -5,7 +5,12 @@
     "start": "Start",
     "delete": "Delete",
     "cancel": "Cancel",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "continue": "Continue",
+    "edit": "Edit",
+    "reset": "Reset",
+    "new": "New",
+    "search": "Search"
   },
   "menu": {
     "items": {
@@ -27,6 +32,43 @@
       "sound": "Sound: ",
       "volume": "Volume: ",
       "music": "Music: "
+    }
+  },
+  "builder": {
+    "manager": "Manage your storylines",
+    "modal": {
+      "title": "Create and edit storylines and maps"
+    },
+    "selector": {
+      "label": "Select a map"
+    },
+    "toggles": {
+      "ids": "Show ids",
+      "values": "Show values",
+      "icons": "Show icons",
+      "meshes": "Show meshes",
+      "viewport": "3D Viewport"
+    },
+    "menu": {
+      "map": {
+        "label": "Map informations",
+        "name": "Name",
+        "size": "Size"
+      },
+      "tile": {
+        "label": "Tiles settings"
+      },
+      "items": {
+        "label": "Items"
+      },
+      "functions": {
+        "label": "Functions",
+        "trees": "Generate trees",
+        "clear": "Clear map"
+      },
+      "objects": {
+        "label": "Objects"
+      }
     }
   },
   "flavor": {

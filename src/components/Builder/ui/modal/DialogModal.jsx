@@ -28,7 +28,6 @@ export const SettingsModal = ({
             setSelectedAct(item);
             setOpenSelect(false);
             setItemsCount(1);
-            // setStoredDatas([{ name: '', size: '', order: itemsCount + 1 }]);
         },
         [selectedAct, itemsCount]
     );
@@ -81,7 +80,7 @@ export const SettingsModal = ({
                     act.content.maps = maps;
                 })
                 .finally(() => {
-                    invoke('save_storyline', { data: storyline }).then(() => {
+                    invoke('save_storyline', { data: storyline, id: storyline.id }).then(() => {
                         sync();
                         reset();
                     });

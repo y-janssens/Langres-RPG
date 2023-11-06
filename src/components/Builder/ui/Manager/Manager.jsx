@@ -1,0 +1,48 @@
+import React, { useCallback } from 'react';
+import { Button } from 'react-daisyui';
+import { Stepper } from './Stepper/Stepper';
+import { useForm } from '../../../../hooks';
+import { useTranslation } from 'react-i18next';
+import { ActStep, StoryStep } from './Steps';
+import Storyline from '../../../../models/storyline';
+import css from './manager.module.css';
+
+export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {} }) => {
+    const { t } = useTranslation();
+    const [form, setForm] = useForm({
+        id: { ...storyline }.id,
+        story: new Storyline(storyline),
+        acts: { ...storyline }.story.acts,
+        selectedAct: null,
+        selectedMap: null
+    });
+
+    const handleSave = useCallback(() => {
+        const story = form.story;
+        story.save().then(() => {
+            sync();
+            onClose();
+        });
+    }, [form.story, sync, onClose]);
+
+    if (!open) {
+        return null;
+    }
+
+    return (
+        <div className={css['manager-container']}>
+            <div className={css['manager-body']}>
+                <div className={css['manager-body-header']}>
+                    {t('builder.modal.title')}
+                    <Button dataTheme="business" className={css['manager-body-header-exit']} size="xs" color="secondary" shape="square" onClick={onClose}>
+                        x
+                    </Button>
+                </div>
+                <Stepper handleSave={handleSave}>
+                    <StoryStep title="Storylines" subtitle="Edit and order your story's acts" onReset={() => sync()} form={form} setForm={setForm} />
+                    <ActStep title="Acts" subtitle="Edit and order your acts's maps" onReset={() => sync()} form={form} setForm={setForm} />
+                </Stepper>
+            </div>
+        </div>
+    );
+};

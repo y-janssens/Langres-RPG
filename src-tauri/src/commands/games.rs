@@ -1,29 +1,43 @@
+use diesel::{r2d2::ConnectionManager, SqliteConnection};
+
 use crate::{classes, functions};
 
 #[tauri::command]
-pub fn new(name: String) -> classes::game::game::Game {
-    let _new = functions::games::new_game(name);
+pub fn new(
+    name: String,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> classes::game::game::Game {
+    let _story = functions::story::fetch_storyline(connection).expect("error");
+    let _new = functions::games::new_game(name, _story);
     _new.unwrap()
 }
 
 #[tauri::command]
-pub fn load_saves() -> Vec<classes::game::game::Game> {
-    let _load = functions::games::load_saved_games();
+pub fn fetch_games(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Vec<classes::game::game::Game>, String> {
+    let _load = functions::games::fetch_games(connection);
+    _load
+}
+
+#[tauri::command]
+pub fn load_game(
+    id: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> classes::game::game::Game {
+    let _load = functions::games::load_saved_game(id, connection);
     _load.unwrap()
 }
 
 #[tauri::command]
-pub fn load_game(id: i32) -> classes::game::game::Game {
-    let _load = functions::games::load_saved_game(id);
-    _load.unwrap()
+pub fn delete(id: i32, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) {
+    let _delete = functions::games::delete_saved_game(id, connection);
 }
 
 #[tauri::command]
-pub fn delete(id: i32) {
-    let _delete = functions::games::delete_saved_game(id);
-}
-
-#[tauri::command]
-pub fn save(data: classes::game::game::Game) {
-    let _save = functions::games::save_game(data);
+pub fn save(
+    data: classes::game::game::Game,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let _save = functions::games::save_game(connection, data);
 }

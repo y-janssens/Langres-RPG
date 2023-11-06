@@ -17,10 +17,10 @@ export const ButtonIcon = ({ ...props }) => {
     );
 };
 
-export const ButtonToggle = ({ active = false, onClick = () => {} }) => {
+export const ButtonToggle = ({ active = false, label = '', onClick = () => {} }) => {
     return (
         <Form className={css['builder-navbar-switch']}>
-            <Form.Label title="3D Viewport">
+            <Form.Label title={label}>
                 <Checkbox
                     className={css['builder-navbar-check']}
                     size="xs"

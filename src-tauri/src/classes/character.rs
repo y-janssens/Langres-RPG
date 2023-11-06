@@ -2,8 +2,14 @@
 pub mod character {
 
     use crate::classes::inventory::inventory::Inventory;
+    use diesel::{
+        deserialize::{self, FromSql},
+        prelude::Queryable,
+        sql_types::Text,
+        sqlite::{Sqlite, SqliteValue},
+    };
     use serde::{Deserialize, Serialize};
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Character {
         name: String,
         _end: u32,
@@ -20,10 +26,26 @@ pub mod character {
         inventory: Inventory,
     }
 
+    impl FromSql<Text, Sqlite> for Character {
+        fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
+            let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
+            serde_json::from_str(&tstr)
+                .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
+        }
+    }
+
+    impl Queryable<Text, Sqlite> for Character {
+        type Row = String;
+        fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
+            serde_json::from_str(&row)
+                .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
+        }
+    }
+
     impl Character {
-        pub fn new() -> Character {
+        pub fn new(name: String) -> Character {
             Character {
-                name: String::new(),
+                name: String::from(name),
                 _end: 8,
                 _for: 8,
                 _hab: 8,
@@ -37,27 +59,6 @@ pub mod character {
                 lvl: 1,
                 inventory: Inventory::new(),
             }
-        }
-
-        pub fn initiate(
-            &mut self,
-            name: String,
-            _end: u32,
-            _for: u32,
-            _hab: u32,
-            _cha: u32,
-            _int: u32,
-            _ini: u32,
-            _pv: u32,
-        ) {
-            self.name = name;
-            self._end = _end;
-            self._for = _for;
-            self._hab = _hab;
-            self._cha = _cha;
-            self._int = _int;
-            self._ini = _ini;
-            self._pv = _pv;
         }
 
         pub fn compute_xp(&mut self, xp: u32) {
