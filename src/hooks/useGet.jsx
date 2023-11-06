@@ -14,7 +14,7 @@ const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = ()
                 onSuccess(response);
             })
             .catch((error) => {
-                console.error(error.message);
+                console.error(error);
             })
             .finally(() => {
                 setLoading(false);

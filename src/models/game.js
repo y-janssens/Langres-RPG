@@ -1,6 +1,5 @@
 import { invoke } from '@tauri-apps/api/tauri';
 import Character from './character';
-import World from './world';
 export default class GameModel {
     constructor({ player, id, date_created, last_save_date, save_count, character, storyline }) {
         this.player = player;
@@ -32,9 +31,5 @@ export default class GameModel {
         let abilities = new Set(this.activated);
         abilities.delete(ability);
         this.activated = Array.from(abilities);
-    }
-
-    regenrate_world() {
-        this.world.regenerate(this);
     }
 }

@@ -1,12 +1,20 @@
-use crate::classes;
+use crate::{classes::story::story::Story, functions};
+use diesel::r2d2::ConnectionManager;
+use diesel::SqliteConnection;
 
 #[tauri::command]
-pub fn load_storyline() -> classes::story::story::Story {
-    let _load = classes::story::story::Story::load_default();
-    _load.unwrap()
+pub fn fetch_storyline(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Story, String> {
+    let _load = functions::story::fetch_storyline(connection);
+    _load
 }
 
 #[tauri::command]
-pub fn save_storyline(data: classes::story::story::Story) {
-    let _save = classes::story::story::Story::save(data);
+pub fn save_storyline(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    data: Story,
+    id: u32,
+) {
+    let _save = functions::story::save_storyline(connection, data, id);
 }

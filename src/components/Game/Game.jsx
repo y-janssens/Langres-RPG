@@ -1,14 +1,13 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { MapControls } from '@react-three/drei';
 import { useGet, useForm, useGameContext } from '../../hooks';
-import { GameModel, World, Codes } from '../../models';
+import { GameModel, World } from '../../models';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../ui/LoadingScreen';
 import { MapLayout } from './map/MapLayout';
 import { InGameMenu } from '../Menu/InGameMenu';
 import PauseScreen from '../ui/PauseScreen';
+import Scene from './Scene/Scene';
 
 // eslint-disable-next-line
 export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
@@ -29,18 +28,15 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
             id: parseInt(context?.gameId),
             launch: context?.gameId,
             onSuccess: (response) => {
-                // console.log(response);
                 const currentAct = response.storyline.story.acts.find((act) => !act.complete);
                 const currentMap = currentAct.content.maps.find((mp) => !mp.complete);
-                // console.log(currentMap);
                 setFormObject(response);
                 let game = new GameModel(response);
-                let codes = new Codes();
                 let world = new World(currentMap);
                 let _world = world.parse();
                 let grid = world.grid;
                 setGameMap(_world);
-                setContext({ game, world, map: _world, codes, grid });
+                setContext({ game, world, map: _world, grid });
 
                 if (response.save_count < 1) {
                     game.save();
@@ -60,10 +56,10 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
-        if (!context.controls.toggles.input) {
+        if (!context.controls.toggles.input && !pause) {
             game.current.focus();
         }
-    }, [context]);
+    }, [context, pause]);
 
     if (!context?.gameId) {
         return null;
@@ -75,46 +71,10 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
             <PauseScreen ready={contextReady} context={context} />
             <LoadingScreen context={context} loading={!form.id || loading || !contextReady}>
                 <Hud context={context} game={form} display={keyToggles} position={position} />
-                {context.display3d && (
-                    <Canvas
-                        shadows
-                        frameloop={pause ? 'never' : 'always'}
-                        camera={{
-                            position: [0, 15, -18.86],
-                            fov: 25,
-                            zoom: 1.25
-                        }}
-                    >
-                        <SceneSettings lightRef={pointLightRef} cameraRef={cameraRef}>
-                            <MapLayout world={context.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
-                        </SceneSettings>
-                    </Canvas>
-                )}
+                <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
+                    <MapLayout world={context.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
+                </Scene>
             </LoadingScreen>
         </>
     );
 };
-
-function SceneSettings({ cameraRef, lightRef, children }) {
-    return (
-        <>
-            <color attach="background" args={[0, 0, 0]} />
-            <fogExp2 attach="fog" color="black" density={0.05} />
-            <ambientLight intensity={2.5} />
-            <pointLight
-                castShadow
-                shadow-mapSize-height={2048}
-                shadow-mapSize-width={2048}
-                shadow-radius={10}
-                shadow-bias={-0.01}
-                intensity={2500}
-                position={[0, 10, 0]}
-                decay={2.25}
-                distance={12}
-                ref={lightRef}
-            />
-            <MapControls makeDefault minPolarAngle={Math.PI / 3.5} maxPolarAngle={Math.PI / 3.5} minAzimuthAngle={Math.PI} maxAzimuthAngle={Math.PI} ref={cameraRef} />
-            {children}
-        </>
-    );
-}

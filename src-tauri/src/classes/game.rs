@@ -1,37 +1,51 @@
 #[allow(dead_code)]
 
 pub mod game {
-    use crate::classes::character::character::Character;
     use crate::classes::story::story::Story;
+    use crate::schema::games::dsl::*;
+    use crate::{classes::character::character::Character, schema::games};
     use chrono::{DateTime, Local};
-    use clipboard::ClipboardContext;
-    use clipboard::ClipboardProvider;
-    use dotenv::dotenv;
-    use magic_crypt::{new_magic_crypt, MagicCrypt256, MagicCryptTrait};
+    use diesel::prelude::*;
     use serde::{Deserialize, Serialize};
 
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+    #[diesel(table_name = crate::schema::games)]
+    #[diesel(check_for_backend(Sqlite))]
     pub struct Game {
-        player: String,
         id: i32,
+        player: String,
         date_created: String,
-        last_save_date: Option<String>,
+        last_save_date: String,
         save_count: i32,
         pub character: Character,
         pub storyline: Story,
     }
 
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable)]
+    #[diesel(table_name = crate::schema::games)]
+    #[diesel(check_for_backend(Sqlite))]
+    pub struct InsertableGame {
+        id: i32,
+        player: String,
+        date_created: String,
+        last_save_date: String,
+        save_count: i32,
+        character: String, // JSON string of Character
+        storyline: String, // JSON string of Story
+    }
+
     impl Game {
-        pub fn new() -> Game {
+        pub fn new(name: String, story: Story) -> Game {
             println!("Generating game data...");
+
             Game {
-                player: String::new(),
+                player: String::from(&name),
                 save_count: 0,
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
-                last_save_date: None,
-                storyline: Story::load(),
-                character: Character::new(),
+                last_save_date: Self::get_date(),
+                storyline: story,
+                character: Character::new(name),
             }
         }
 
@@ -46,56 +60,45 @@ pub mod game {
             local.to_string()
         }
 
-        pub fn initiate(&mut self, name: String) {
-            println!("Generating character {}...", name);
-            self.player = name;
-            Self::get_date();
-        }
+        pub fn save(
+            mut game: Game,
+            connection: &mut SqliteConnection,
+        ) -> Result<(), diesel::result::Error> {
+            game.save_count += 1;
+            game.last_save_date = Self::get_date();
 
-        pub fn save(&mut self) -> Result<(), Box<dyn std::error::Error>> {
-            self.save_count += 1;
-            self.last_save_date = Some(Self::get_date());
-            let json = serde_json::to_string_pretty(&self)?;
-            let mut file_path = std::path::PathBuf::new();
-            file_path.push("../datas/saved");
-            file_path.push(format!("{}.json", self.id));
-            std::fs::write(&file_path, json)?;
+            let character_json = serde_json::to_string(&game.character).expect("error");
+            let storyline_json = serde_json::to_string(&game.storyline).expect("error");
+
+            let insertable = InsertableGame {
+                id: game.id,
+                player: game.player.clone(),
+                date_created: game.date_created.clone(),
+                last_save_date: game.last_save_date.clone(),
+                save_count: game.save_count,
+                character: character_json,
+                storyline: storyline_json,
+            };
+            diesel::insert_into(games::table)
+                .values(&insertable)
+                .execute(connection)?;
+
             Ok(())
         }
 
-        pub fn load(id: i32) -> Result<Game, Box<dyn std::error::Error>> {
-            let file_name = format!("../datas/saved/{}.json", { &id });
-            let json_content = std::fs::read_to_string(file_name)?;
-            let saved_game: Game = serde_json::from_str(&json_content)?;
-            Ok(saved_game)
+        pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Game> {
+            let _load = games.find(_id).first(connection)?;
+            Ok(_load)
         }
 
-        pub fn export(self) -> Result<(), Box<dyn std::error::Error>> {
-            let encrypt = Self::encrypt()?;
-            let json = serde_json::to_string(&self)?;
-            let export = encrypt.encrypt_str_to_base64(json);
-            let mut ctx: ClipboardContext = ClipboardProvider::new()?;
-            ctx.set_contents(export.to_owned())?;
+        pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Game>> {
+            let _load = crate::schema::games::table.load(connection)?;
+            Ok(_load)
+        }
+
+        pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
+            diesel::delete(games.filter(id.eq(_id))).execute(connection)?;
             Ok(())
-        }
-
-        pub fn import(self, data: &str) -> Result<Game, Box<dyn std::error::Error>> {
-            let decrypt = Self::encrypt()?;
-            let import = decrypt.decrypt_base64_to_string(&data).unwrap();
-            let imported_game: Game = serde_json::from_str(&import)?;
-            Ok(imported_game)
-        }
-
-        // pub fn regenerate_world(&mut self) -> Result<(), Box<(dyn std::error::Error + 'static)>> {
-        //     let world = &mut self.world;
-        //     World::regenerate(world);
-        //     return Self::save(self);
-        // }
-
-        fn encrypt() -> Result<MagicCrypt256, Box<dyn std::error::Error>> {
-            dotenv().ok();
-            let key = std::env::var("KEY").unwrap();
-            Ok(new_magic_crypt!(key, 256))
         }
     }
 }

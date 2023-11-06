@@ -1,11 +1,12 @@
 #[allow(dead_code)]
 
 pub mod world {
+    use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use round::round;
     use serde::{Deserialize, Serialize};
 
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct World {
         name: String,
         size: u32,
@@ -14,7 +15,7 @@ pub mod world {
         content: Vec<Item>,
     }
 
-    #[derive(Debug, Serialize, Deserialize, Clone)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Item {
         id: u32,
         x: u32,

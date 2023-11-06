@@ -1,0 +1,101 @@
+.manager-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 250px);
+    height: calc(100% - 91px);
+    z-index: 100;
+}
+
+.manager-body {
+    position: relative;
+    height: 85%;
+    width: 65%;
+    border-radius: 10px;
+    background-color: rgb(39, 41, 53);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow-y: hidden;
+}
+
+.manager-body-header {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px !important;
+    margin-bottom: 10px;
+    background-color: rgb(43, 52, 64);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.25);
+}
+
+.manager-body-header-exit {
+    position: absolute;
+    right: 10px;
+    border-radius: 4px !important;
+}
+
+.manager-step-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.manager-act-inputs {
+    width: 100%;
+    margin: 5px;
+}
+
+.manager-act-input-text {
+    position: relative;
+    width: 40%;
+}
+
+.manager-act-input-name {
+    width: -webkit-fill-available;
+}
+
+.manager-act-input-order {
+    width: 50px;
+}
+
+.manager-selector-block {
+    position: relative;
+    margin-top: 10px;
+    width: 70%;
+}
+
+.manager-selector-content {
+    position: absolute;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    margin-top: -6px;
+    background-color: rgb(166, 173, 186);
+    z-index: 10;
+}
+
+.manager-selector-content ul {
+    margin-top: 6px;
+    padding: 3px;
+}
+
+.manager-selector-content li {
+    padding: 3px;
+}
+
+.manager-selector-content li :global(.btn) {
+    color: black !important;
+    font-size: 9px !important;
+    text-align: left !important;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    .manager-body {
+        height: 90%;
+        width: 85%;
+    }
+}

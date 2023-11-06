@@ -12,7 +12,7 @@ import css from './menu.module.css';
 export const InGameMenu = ({ id, game }) => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
-    const [context, , removeFromContext] = useGameContext();
+    const [context, setContext, removeFromContext] = useGameContext();
     const [selected, setSelected] = useState(0);
     const activeRef = useRef();
 
@@ -28,7 +28,14 @@ export const InGameMenu = ({ id, game }) => {
     const items = useMemo(() => {
         return [
             { id: 0, name: t('menu.items.save'), onClick: () => handleSaveGame() },
-            { id: 1, name: t('menu.items.settings'), onClick: () => setOpenModal('settings') },
+            {
+                id: 1,
+                name: t('menu.items.settings'),
+                onClick: () => {
+                    setOpenModal('settings');
+                    setContext({ pauseMenu: true });
+                }
+            },
             {
                 id: 2,
                 name: t('menu.items.exit-game'),
@@ -44,17 +51,18 @@ export const InGameMenu = ({ id, game }) => {
 
     const handleMenu = useCallback(
         (event) => {
-            console.log(event.key);
-            if (openModal) {
+            if (openModal && displayInGameMenu) {
                 if (event.key === 'Escape') {
                     setOpenModal(null);
                 }
             } else {
                 switch (event.key) {
                     case 'ArrowDown':
+                    case 's':
                         setSelected((slt) => (slt + 1 <= items.length - 1 ? slt + 1 : 0));
                         break;
                     case 'ArrowUp':
+                    case 'z':
                         setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
                         break;
                     case 'Enter':
@@ -62,12 +70,14 @@ export const InGameMenu = ({ id, game }) => {
                 }
             }
         },
-        [openModal, items, selected]
+        [openModal, items, selected, displayInGameMenu]
     );
 
     useEffect(() => {
-        activeRef.current?.focus();
-    }, []);
+        if (displayInGameMenu) {
+            activeRef.current?.focus();
+        }
+    }, [displayInGameMenu]);
 
     if (!displayInGameMenu) {
         return null;
@@ -75,18 +85,19 @@ export const InGameMenu = ({ id, game }) => {
 
     return (
         <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1} ref={activeRef}>
-            {/* <div className={css['menu-items-block']}> */}
-            {items.map((it) => {
-                return <MenuItem key={it.id} active={selected === it.id} name={it.name} onClick={it.onClick} />;
-            })}
-            {/* </div> */}
-            <Settings
-                state={openModal}
-                onClose={() => {
-                    setOpenModal(null);
-                }}
-                context={context}
-            />
+            <div className={css['ingame-menu-items-block']}>
+                {items.map((it) => {
+                    return <MenuItem key={it.id} active={selected === it.id} name={it.name} onClick={it.onClick} />;
+                })}
+                <Settings
+                    state={openModal}
+                    onClose={() => {
+                        setOpenModal(null);
+                        setContext({ pauseMenu: false });
+                    }}
+                    context={context}
+                />
+            </div>
         </div>
     );
 };

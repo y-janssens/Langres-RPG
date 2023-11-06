@@ -1,8 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, Input } from 'react-daisyui';
 import css from './selector.module.css';
 
 export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
+    const { t } = useTranslation();
     const [open, setOpen] = useState(false);
     const [search, setSearch] = useState('');
 
@@ -22,19 +24,14 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
 
     return (
         <div className={css['select-multi-container']}>
-            <Button dataTheme="dark" size="xs" color="neutral" variant="outline" fullWidth onClick={() => setOpen(!open)} animation={false}>
-                <div className={css['select-multi-label']}>
-                    <span>{label}</span>
-                    <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
-                </div>
-            </Button>
+            <SelectButton label={label} open={open} onClick={() => setOpen(!open)} />
             {open && datas && (
                 <div className={css['select-multi-content']}>
                     <Input
                         className={css['select-multi-searchbar']}
                         dataTheme="dark"
                         size="xs"
-                        placeholder="Search..."
+                        placeholder={`${t('actions.search')}...`}
                         bordered
                         value={search}
                         disabled={disabled}
@@ -45,6 +42,19 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
                     })}
                 </div>
             )}
+        </div>
+    );
+};
+
+export const SelectButton = ({ label, open = false, onClick = () => {}, size = 'xs' }) => {
+    return (
+        <div className={css['selector-select-btn']}>
+            <Button dataTheme="dark" size={size} color="neutral" active={open} variant="outline" fullWidth onClick={onClick} animation={false}>
+                <div className={css['select-multi-label']}>
+                    <span>{label}</span>
+                    <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                </div>
+            </Button>
         </div>
     );
 };

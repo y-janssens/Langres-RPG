@@ -55,7 +55,7 @@ export function Title({ title = '', delay = 50, hide = () => {} }) {
     );
 }
 
-export function MainTitle({}) {
+export function MainTitle() {
     const { t } = useTranslation();
     return (
         <div className={css['main-title-block']}>

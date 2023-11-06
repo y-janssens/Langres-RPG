@@ -1,0 +1,60 @@
+.stepper-body {
+    position: absolute;
+    height: calc(100% - 55px);
+    width: 100%;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.stepper-card-body {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: rgb(43, 52, 64);
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stepper-card-header,
+.stepper-card-sub-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.stepper-card-header div {
+    font-size: 14px !important;
+    font-weight: 500;
+}
+
+.stepper-card-header span {
+    margin-top: -8px;
+    opacity: 0.75;
+}
+
+.stepper-card-content,
+.stepper-card-sub-header {
+    border-top: 1px solid rgba(229, 231, 235, 0.25);
+}
+
+.stepper-card-edit {
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.stepper-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+.stepper-btns {
+    margin-left: 10px;
+}
+
+.stepper-footer :global(.btn) {
+    border-radius: 6px !important;
+    padding: 0px 15px;
+}

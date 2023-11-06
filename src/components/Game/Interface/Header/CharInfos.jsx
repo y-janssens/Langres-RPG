@@ -2,12 +2,6 @@ import { Gauge, XpGauge } from '../../../ui/Gauge';
 import css from './char-infos.module.css';
 
 export const CharInfos = ({ character }) => {
-    // const handleRegenerate = useCallback(() => {
-    //     let _game = new GameModel(game);
-    //     _game.regenrate_world();
-    //     sync();
-    // }, [game, sync]);
-
     return (
         <div className={css['character-infos-container']}>
             <div className={css['character-infos-border']} onClick={() => window.location.reload()} />
