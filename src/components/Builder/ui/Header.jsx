@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
@@ -6,20 +6,48 @@ import Icon from '../../ui/Icon';
 import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle } from '.';
 import css from '../builder.module.css';
 
-export const Header = ({ datas, form, setForm, reset, sync, setContext }) => {
+export const Header = ({ datas, form, setForm, reset, sync, setContext, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
     const handleSave = useCallback(() => {
-        invoke('save_storyline', { data: datas }).then(() => {
+        invoke('save_storyline', { data: datas, id: datas.id }).then(() => {
             sync();
+            clear();
         });
-    }, [sync, datas]);
+    }, [sync, clear, datas]);
+
+    const handleHistory = useCallback(
+        (direction) => {
+            switch (direction) {
+                case 'undo':
+                    backward();
+                    break;
+                case 'redo':
+                    forward();
+                    break;
+                default:
+                    break;
+            }
+            let map = { ...form }.selectedMap;
+            map.content = history[index];
+            setForm('selectedMap', map);
+        },
+        [backward, forward]
+    );
+
+    const selectLabel = useMemo(() => {
+        if (form.selectedMap === 'default') {
+            return t('builder.selector.label');
+        }
+        return `${form.selectedAct.name} - ${form.selectedMap.name}`;
+    });
+
     return (
         <>
             <Navbar dataTheme="dark" style={{ minHeight: '2rem' }}>
                 <div className={css['builder-navbar-top']}>
                     <div className={css['builder-navbar-left']}>
                         <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modalNew', true)} />
-                        <MultiSelect label={t('builder.selector.label')} datas={datas} onSelect={setForm} />
+                        <MultiSelect label={selectLabel} datas={datas} onSelect={setForm} />
                     </div>
                     <div className={css['builder-navbar-toggles']}>
                         <ButtonToggle label={t('builder.toggles.viewport')} active={!form.mode} onClick={() => setForm('mode', !form.mode)} />
@@ -32,8 +60,13 @@ export const Header = ({ datas, form, setForm, reset, sync, setContext }) => {
             <Navbar className={css['builder-navbar-secondary']} dataTheme="dracula" style={{ minHeight: '3rem' }}>
                 <div className={css['builder-navbar']}>
                     <div className={css['builder-navbar-actions']}>
-                        <ButtonIcon icon={<Icon name="undo" />} size="sm" disabled />
-                        <ButtonIcon icon={<Icon name="redo" />} size="sm" disabled />
+                        <ButtonIcon icon={<Icon name="undo" />} size="sm" disabled={form.selectedMap === 'default' || index === 0} onClick={() => handleHistory('undo')} />
+                        <ButtonIcon
+                            icon={<Icon name="redo" />}
+                            size="sm"
+                            disabled={form.selectedMap === 'default' || index === history.length - 1}
+                            onClick={() => handleHistory('redo')}
+                        />
                         <div className={css['builder-navbar-viewport-toggles']}>
                             <Toggle
                                 title={t('builder.toggles.ids')}

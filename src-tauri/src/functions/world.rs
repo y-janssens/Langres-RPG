@@ -11,6 +11,11 @@ pub fn generate_world(
     Ok(_world)
 }
 
+pub fn regenerate_world(size: u32) -> Result<Vec<Item>, Box<dyn std::error::Error>> {
+    let _world = World::regenerate(size);
+    Ok(_world)
+}
+
 pub fn populate_trees(data: Vec<Item>) -> Result<Vec<Item>, Box<dyn std::error::Error>> {
     let map = World::generate_trees(data);
     Ok(map)

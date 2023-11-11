@@ -33,6 +33,7 @@ fn main() {
             commands::games::delete,      // Ok
             // World building commands
             commands::world::generate,       // Ok
+            commands::world::regenerate,     // Ok
             commands::world::populate_trees, // Ok
             // Storyline commands
             commands::story::save_storyline,  // Ok

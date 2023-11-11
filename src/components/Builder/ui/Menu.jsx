@@ -6,7 +6,7 @@ import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 import { Tooltip } from './Tooltip';
 
-export const Menu = ({ form, setForm, state, storyline, sync, objects }) => {
+export const Menu = ({ form, setForm, state, storyline, sync }) => {
     const { t } = useTranslation();
     const map = useMemo(() => {
         if (form.selectedMap === 'default') {
@@ -17,13 +17,23 @@ export const Menu = ({ form, setForm, state, storyline, sync, objects }) => {
 
     const handleChange = useCallback(
         (value) => {
-            const items = form.selectedTiles.map((it) => {
-                it.value = value;
-                return it;
+            const items = form.selectedTiles.map((it) => ({ ...it, value: value }));
+
+            let act = { ...storyline.story.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+            let newMap = { ...act.content.maps[mapIndex] };
+
+            let newContent = newMap.content.map((item) => {
+                const foundItem = items.find((it) => it.id === item.id);
+                return foundItem ? { ...item, value: foundItem.value } : { ...item };
             });
-            setForm('selectedTiles', items);
+
+            newMap.content = newContent;
+            act.content.maps[mapIndex] = newMap;
+
+            setForm('selectedMap', newMap);
         },
-        [form.selectedTiles]
+        [form, storyline]
     );
 
     const handleFunction = useCallback(
@@ -41,18 +51,17 @@ export const Menu = ({ form, setForm, state, storyline, sync, objects }) => {
                     break;
             }
 
-            await invoke(command, payload)
-                .then((data) => {
-                    let act = storyline.story.acts.find((act) => act.id === form.selectedAct.id);
-                    let map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
-                    map.content = data;
-                    setForm('selectedMap', map);
-                })
-                .finally(() => {
-                    invoke('save_storyline', { data: storyline, id: storyline.id }).then(() => {
-                        sync();
-                    });
-                });
+            await invoke(command, payload).then((data) => {
+                let act = storyline.story.acts.find((act) => act.id === form.selectedAct.id);
+                let map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+                map.content = data;
+                setForm('selectedMap', map);
+            });
+            // .finally(() => {
+            //     invoke('save_storyline', { data: storyline, id: storyline.id }).then(() => {
+            //         sync();
+            //     });
+            // });
         },
         [form, storyline, sync]
     );

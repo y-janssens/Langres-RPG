@@ -9,7 +9,7 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
     const [search, setSearch] = useState('');
 
     const groups = useMemo(() => {
-        if (!datas) {
+        if (!Object.keys(datas).length) {
             return [];
         }
         if (!search || search === '') {
@@ -19,8 +19,15 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
     }, [datas, search]);
 
     const disabled = useMemo(() => {
+        if (!Object.keys(datas).length) {
+            return true;
+        }
         return datas?.story.acts.every((act) => !act.content.maps.length);
     }, [datas]);
+
+    if (!Object.keys(datas).length) {
+        return null;
+    }
 
     return (
         <div className={css['select-multi-container']}>
@@ -86,8 +93,8 @@ export const SelectGroup = ({ group, onSelect = () => {}, onClose = () => {} }) 
                 {open &&
                     group.content.maps.map((wrl, index) => {
                         return (
-                            <div key={index} className={css['select-multi-group-item']}>
-                                <span onClick={() => handleSelect(wrl)}>{`- ${wrl?.name}`}</span>
+                            <div key={index} className={css['select-multi-group-item']} onClick={() => handleSelect(wrl)}>
+                                <span>{`- ${wrl?.name}`}</span>
                             </div>
                         );
                     })}

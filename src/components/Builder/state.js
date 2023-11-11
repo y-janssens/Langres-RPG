@@ -2,7 +2,6 @@ export default class BuilderState {
     constructor() {
         this.items = [];
         (this.functions = []), (this.defaultForm = {});
-        this.storyline = {};
         this.init();
     }
 
@@ -30,7 +29,8 @@ export default class BuilderState {
             showIds: false,
             showObjects: false,
             showIcons: false,
-            world: null
+            world: null,
+            storyLine: {}
         };
     }
 }
