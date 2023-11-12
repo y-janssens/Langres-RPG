@@ -8,6 +8,7 @@ pub mod world {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct World {
+        id: i32,
         name: String,
         size: u32,
         order: u32,
@@ -26,6 +27,7 @@ pub mod world {
     impl World {
         pub fn new(size: u32, order: u32) -> World {
             World {
+                id: Self::generate_id(),
                 name: String::from(""),
                 size,
                 order,
@@ -36,6 +38,7 @@ pub mod world {
 
         pub fn create(size: u32, name: String, order: u32) -> World {
             World {
+                id: Self::generate_id(),
                 name: String::from(name),
                 size,
                 order,
@@ -194,6 +197,11 @@ pub mod world {
                 "clearing" => vec!["C", "C", "C", "C", "C", "C", "C", "C", "C", "R"],
                 _ => vec![],
             }
+        }
+
+        fn generate_id() -> i32 {
+            let mut rng = rand::thread_rng();
+            rng.gen_range(1..=i32::MAX)
         }
     }
 }

@@ -46,7 +46,7 @@ export const Header = ({ datas, form, setForm, reset, sync, setContext, history,
             <Navbar dataTheme="dark" style={{ minHeight: '2rem' }}>
                 <div className={css['builder-navbar-top']}>
                     <div className={css['builder-navbar-left']}>
-                        <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modalNew', true)} />
+                        <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modalManager', true)} />
                         <MultiSelect label={selectLabel} datas={datas} onSelect={setForm} />
                     </div>
                     <div className={css['builder-navbar-toggles']}>

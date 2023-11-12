@@ -73,7 +73,7 @@ export const ActStep = ({ form, setForm }) => {
                     <div className={css['manager-selector-content']}>
                         <ul>
                             {form.acts
-                                .sort((a, b) => a.id - b.id)
+                                .sort((a, b) => a.order - b.order)
                                 .filter((act) => !act.temp)
                                 .map((act, index) => {
                                     return (

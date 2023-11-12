@@ -1,18 +1,21 @@
 import React, { useCallback } from 'react';
+import { cloneDeep } from 'lodash';
 import { Button } from 'react-daisyui';
 import { Stepper } from './Stepper/Stepper';
 import { useForm } from '../../../../hooks';
 import { useTranslation } from 'react-i18next';
-import { ActStep, StoryStep } from './Steps';
+import { ActStep, StoryStep, SummaryStep } from './Steps';
 import Storyline from '../../../../models/storyline';
 import css from './manager.module.css';
 
 export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
+
     const [form, setForm] = useForm({
-        id: { ...storyline }.id,
-        story: new Storyline(storyline),
-        acts: { ...storyline }.story.acts,
+        id: storyline?.id,
+        story: new Storyline({ ...storyline }),
+        initialStory: cloneDeep({ ...storyline }),
+        acts: { ...storyline }?.story?.acts,
         selectedAct: null,
         selectedMap: null
     });
@@ -25,7 +28,7 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
         });
     }, [form.story, sync, onClose]);
 
-    if (!open) {
+    if (!open || !form.id) {
         return null;
     }
 
@@ -41,6 +44,7 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
                 <Stepper handleSave={handleSave}>
                     <StoryStep title="Storylines" subtitle="Edit and order your story's acts" onReset={() => sync()} form={form} setForm={setForm} />
                     <ActStep title="Acts" subtitle="Edit and order your acts's maps" onReset={() => sync()} form={form} setForm={setForm} />
+                    <SummaryStep title="Summary" subtitle="Review and validate your changes" onReset={() => sync()} form={form} />
                 </Stepper>
             </div>
         </div>

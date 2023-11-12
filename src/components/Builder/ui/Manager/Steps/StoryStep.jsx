@@ -3,18 +3,29 @@ import { Button, InputGroup, Input } from 'react-daisyui';
 import css from '../manager.module.css';
 
 export const StoryStep = ({ form, setForm }) => {
+    const generateUniquePositiveId = useCallback(() => {
+        const maxI32 = 2147483647;
+        let uniqueId;
+
+        do {
+            uniqueId = Math.floor(Math.random() * maxI32) + 1;
+        } while (form.acts.some((act) => act.id === uniqueId));
+
+        return uniqueId;
+    }, [form]);
+
     const acts = useMemo(() => {
-        let list = form.acts.sort((a, b) => a.id - b.id);
+        let list = form.acts.sort((a, b) => a.order - b.order);
         if (!list.some((act) => act.temp)) {
-            list.push({ complete: false, content: { maps: [] }, id: list.length, name: '', title: '', temp: true });
+            list.push({ complete: false, content: { maps: [] }, id: generateUniquePositiveId(), order: list.length, name: '', title: '', temp: true });
         }
         return list;
     }, [form, form.acts]);
 
     const handleSort = useCallback(
-        (act, id) => {
-            acts[id].id = act.id;
-            act.id = id;
+        (act, order) => {
+            acts[order].order = act.order;
+            act.order = order;
             if (act.temp && act.name.length && act.title.length) {
                 delete act.temp;
             }
@@ -24,10 +35,10 @@ export const StoryStep = ({ form, setForm }) => {
     );
 
     const handleChange = useCallback(
-        (key, id, value) => {
-            acts[id][key] = value;
-            if (acts[id].temp && acts[id].name.length && acts[id].title.length) {
-                delete acts[id].temp;
+        (key, order, value) => {
+            acts[order][key] = value;
+            if (acts[order].temp && acts[order].name.length && acts[order].title.length) {
+                delete acts[order].temp;
             }
             setForm('acts', acts);
         },
@@ -35,10 +46,10 @@ export const StoryStep = ({ form, setForm }) => {
     );
 
     const handleDelete = useCallback(
-        (id) => {
-            delete acts[id];
-            acts.filter((act) => act.id > id).forEach((act) => {
-                act.id--;
+        (order) => {
+            delete acts[order];
+            acts.filter((act) => act.order > order).forEach((act) => {
+                act.order--;
             });
             setForm('acts', acts);
         },
@@ -63,7 +74,7 @@ export const StoryStep = ({ form, setForm }) => {
                                 size="sm"
                                 placeholder="Map name"
                                 value={act.name}
-                                onChange={(e) => handleChange('name', act.id, e.target.value)}
+                                onChange={(e) => handleChange('name', act.order, e.target.value)}
                             />
                             <Input
                                 className={css['manager-act-input-text']}
@@ -71,16 +82,16 @@ export const StoryStep = ({ form, setForm }) => {
                                 size="sm"
                                 placeholder="Map title"
                                 value={act.title}
-                                onChange={(e) => handleChange('title', act.id, e.target.value)}
+                                onChange={(e) => handleChange('title', act.order, e.target.value)}
                             />
-                            <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={act.id} onChange={() => {}} />
+                            <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={act.order} onChange={() => {}} />
                             <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(act, index - 1)} disabled={index === 0 || act.temp}>
                                 {String.fromCharCode('8593')}
                             </Button>
                             <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(act, index + 1)} disabled={index === acts.length - 2 || act.temp}>
                                 {String.fromCharCode('8595')}
                             </Button>
-                            <Button dataTheme="autumn" color="accent" size="sm" onClick={() => handleDelete(act.id)} disabled={act.temp}>
+                            <Button dataTheme="autumn" color="accent" size="sm" onClick={() => handleDelete(act.order)} disabled={act.temp}>
                                 x
                             </Button>
                         </InputGroup>

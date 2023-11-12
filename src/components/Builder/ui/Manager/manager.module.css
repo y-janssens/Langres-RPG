@@ -93,6 +93,28 @@
     justify-content: flex-start;
 }
 
+.manager-summary-acts {
+    width: 100%;
+}
+
+.manager-summary-act {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.summary-act-label {
+    font-size: 13px !important;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.15);
+}
+
+.manager-summary-map {
+    margin-left: 15px;
+    font-size: 11px !important;
+}
+
 @media screen and (max-width: 1000px) {
     .manager-body {
         height: 90%;
