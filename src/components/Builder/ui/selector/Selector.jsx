@@ -8,15 +8,20 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
     const [open, setOpen] = useState(false);
     const [search, setSearch] = useState('');
 
+    const matchSearch = useCallback((value, search) => {
+        const rule = new RegExp(search, 'gi');
+        return rule.test(value);
+    });
+
     const groups = useMemo(() => {
         if (!Object.keys(datas).length) {
             return [];
         }
         if (!search || search === '') {
-            return datas.story.acts.map((act) => act);
+            return datas.story.acts.filter((act) => !act.temp).map((act) => act);
         }
-        return datas.story.acts.filter((act) => act.content.maps.some((wrl) => wrl.name.includes(search)));
-    }, [datas, search]);
+        return datas.story.acts.filter((act) => !act.temp && act.content.maps.filter((mp) => !mp.temp).some((wrl) => matchSearch(wrl.name, search)));
+    }, [datas, search, matchSearch]);
 
     const disabled = useMemo(() => {
         if (!Object.keys(datas).length) {
@@ -42,10 +47,10 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
                         bordered
                         value={search}
                         disabled={disabled}
-                        onChange={(e) => setSearch(e.target.value)}
+                        onChange={({ target: { value } }) => setSearch(value)}
                     />
                     {groups.map((gr, index) => {
-                        return <SelectGroup key={index} group={gr} onSelect={onSelect} onClose={() => setOpen(false)} />;
+                        return <SelectGroup key={index} group={gr} search={search} onSelect={onSelect} onClose={() => setOpen(false)} />;
                     })}
                 </div>
             )}
@@ -66,7 +71,7 @@ export const SelectButton = ({ label, open = false, onClick = () => {}, size = '
     );
 };
 
-export const SelectGroup = ({ group, onSelect = () => {}, onClose = () => {} }) => {
+export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () => {} }) => {
     const [open, setOpen] = useState(false);
 
     const handleSelect = useCallback(
@@ -82,6 +87,13 @@ export const SelectGroup = ({ group, onSelect = () => {}, onClose = () => {} }) 
         return Boolean(!group.content.maps.length);
     }, [group]);
 
+    const renderContent = useMemo(() => {
+        if (!Boolean(search)) {
+            return open;
+        }
+        return Boolean(search && group.content.maps.length > 0);
+    }, [search, open, group]);
+
     return (
         <div className={css['select-multi-group']}>
             <Button className={css['select-multi-btn']} dataTheme="business" size="xs" color="primary" disabled={disabled} active fullWidth onClick={() => setOpen(!open)}>
@@ -89,16 +101,17 @@ export const SelectGroup = ({ group, onSelect = () => {}, onClose = () => {} }) 
                 {!disabled && <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>}
             </Button>
 
-            <div className={css['select-multi-group-content']}>
-                {open &&
-                    group.content.maps.map((wrl, index) => {
+            {renderContent && (
+                <div className={css['select-multi-group-content']}>
+                    {group.content.maps.map((wrl, index) => {
                         return (
                             <div key={index} className={css['select-multi-group-item']} onClick={() => handleSelect(wrl)}>
                                 <span>{`- ${wrl?.name}`}</span>
                             </div>
                         );
                     })}
-            </div>
+                </div>
+            )}
         </div>
     );
 };
