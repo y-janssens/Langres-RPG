@@ -59,7 +59,8 @@ pub mod story {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Act {
-        id: u32,
+        id: i32,
+        order: u32,
         name: String,
         title: String,
         content: Content,

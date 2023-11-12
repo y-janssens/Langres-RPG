@@ -22,7 +22,7 @@ export default class BuilderState {
             mode: true,
             selectedMap: 'default',
             selectedAct: null,
-            modalNew: false,
+            modalManager: false,
             selectedItem: null,
             selectedTiles: [],
             showValues: true,

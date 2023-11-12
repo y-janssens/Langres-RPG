@@ -60,10 +60,10 @@ export const Builder = () => {
                 <div id="builder-body-block" className={css['builder-body-container']}>
                     {form.storyLine &&
                         !loadingStoryline &&
-                        (!form.modalNew ? (
+                        (!form.modalManager ? (
                             <Map type={form.mode} history={history} index={index} display={hasselectedMap} loading={loadingStoryline} form={form} state={state} setForm={setForm} />
                         ) : (
-                            <Manager open={form.modalNew} storyline={form.storyLine} onClose={() => setForm('modalNew', false)} sync={syncStory} />
+                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={syncStory} />
                         ))}
                 </div>
             </Theme>

@@ -49,9 +49,11 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
                         disabled={disabled}
                         onChange={({ target: { value } }) => setSearch(value)}
                     />
-                    {groups.map((gr, index) => {
-                        return <SelectGroup key={index} group={gr} search={search} onSelect={onSelect} onClose={() => setOpen(false)} />;
-                    })}
+                    {groups
+                        .sort((a, b) => a.order - b.order)
+                        .map((gr, index) => {
+                            return <SelectGroup key={index} group={gr} search={search} onSelect={onSelect} onClose={() => setOpen(false)} />;
+                        })}
                 </div>
             )}
         </div>
@@ -88,7 +90,7 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
     }, [group]);
 
     const renderContent = useMemo(() => {
-        if (!Boolean(search)) {
+        if (!search) {
             return open;
         }
         return Boolean(search && group.content.maps.length > 0);
