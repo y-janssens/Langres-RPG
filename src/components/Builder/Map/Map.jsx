@@ -8,13 +8,15 @@ import { Tiles } from './Tiles';
 import { Loading } from '../../ui/Loading';
 import css from '../builder.module.css';
 
-const Map = ({ loading, type, display, form, setForm, state }) => {
+const Map = ({ loading, type, display, form, setForm, state, history, index }) => {
     const world = useMemo(() => {
-        if (form.selectedMap === 'default') {
+        if (form.selectedMap === 'default' || !history.length) {
             return [];
         }
-        return new World(form.selectedMap).parse();
-    }, [form]);
+        let map = form.selectedMap;
+        map.content = history[index];
+        return new World(map).parse();
+    }, [form, history, index]);
 
     const handleSelect = useCallback(
         (item) => {
@@ -36,10 +38,10 @@ const Map = ({ loading, type, display, form, setForm, state }) => {
             <Loading loading={loading}>
                 {display && Boolean(type) ? (
                     <DragSelectProvider settings={{ draggability: false, area: document.querySelector('#builder-body-block') }}>
-                        {world.reverse().map((row, i) => {
+                        {world.map((row, i) => {
                             return (
                                 <div key={i}>
-                                    {row.reverse().map((item, index) => {
+                                    {row.map((item, index) => {
                                         return <Maptile key={index} item={item} form={form} setForm={setForm} handleSelect={handleSelect} state={state} />;
                                     })}
                                 </div>
