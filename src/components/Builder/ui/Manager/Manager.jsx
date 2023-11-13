@@ -17,7 +17,8 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
         initialStory: cloneDeep({ ...storyline }),
         acts: { ...storyline }?.story?.acts,
         selectedAct: null,
-        selectedMap: null
+        selectedMap: null,
+        errors: []
     });
 
     const handleSave = useCallback(() => {
@@ -42,9 +43,9 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
                     </Button>
                 </div>
                 <Stepper handleSave={handleSave}>
-                    <StoryStep title="Storylines" subtitle="Edit and order your story's acts" onReset={() => sync()} form={form} setForm={setForm} />
-                    <ActStep title="Acts" subtitle="Edit and order your acts's maps" onReset={() => sync()} form={form} setForm={setForm} />
-                    <SummaryStep title="Summary" subtitle="Review and validate your changes" onReset={() => sync()} form={form} />
+                    <StoryStep title="Storylines" subtitle="Edit and order your story's acts" onReset={() => sync()} form={form} setForm={setForm} errors={form.errors} />
+                    <ActStep title="Acts" subtitle="Edit and order your acts's maps" onReset={() => sync()} form={form} setForm={setForm} errors={form.errors} />
+                    <SummaryStep title="Summary" subtitle="Review and validate your changes" onReset={() => sync()} form={form} errors={form.errors} />
                 </Stepper>
             </div>
         </div>

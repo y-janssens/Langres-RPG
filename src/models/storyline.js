@@ -8,7 +8,7 @@ export default class Storyline {
     async save() {
         let acts = this.story.acts.filter((act) => !act.temp).filter((act) => !act.deleted);
         acts.map((act) => {
-            let maps = act.content.maps.filter((mp) => !('temp' in mp));
+            let maps = act.content.maps.filter((mp) => !('temp' in mp) && !('deleted' in mp));
             act.content.maps = maps;
             return act;
         });

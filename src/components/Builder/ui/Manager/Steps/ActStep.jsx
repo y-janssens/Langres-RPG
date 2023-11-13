@@ -5,7 +5,7 @@ import { SelectButton } from '../../selector/Selector';
 import { useTranslation } from 'react-i18next';
 import css from '../manager.module.css';
 
-export const ActStep = ({ form, setForm }) => {
+export const ActStep = ({ form, setForm, errors, ...props }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
 
@@ -39,6 +39,13 @@ export const ActStep = ({ form, setForm }) => {
         [form, maps]
     );
 
+    const handleErrors = useCallback(() => {
+        if (!maps.filter((mp) => !mp.temp).some((mp) => !mp.size || mp.size === 0)) {
+            return setForm('errors', []);
+        }
+        return setForm('errors', [{ step: props.title }]);
+    }, [maps]);
+
     const handleChange = useCallback(
         async (key, id, value) => {
             maps[id][key] = value;
@@ -51,8 +58,9 @@ export const ActStep = ({ form, setForm }) => {
             let act = form.selectedAct;
             act.content.maps = maps;
             setForm('selectedAct', act);
+            handleErrors();
         },
-        [form, maps]
+        [form, maps, handleErrors]
     );
 
     const handleDelete = useCallback(

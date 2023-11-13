@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Children } from 'react';
+import React, { useState, useCallback, Children, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'react-daisyui';
@@ -67,7 +67,14 @@ const Step = ({ index, child, steps, handleNextStep, handleSave }) => {
     const stepTitle = `${stepIndex} - ${title}`;
     const stepState = Object.values(steps)[index];
 
-    const isLastStep = React.useMemo(() => {
+    const errors = useMemo(() => {
+        if (!child.props.errors.length) {
+            return false;
+        }
+        return child.props.errors.some((err) => err.step === title);
+    }, [child, child.props, title]);
+
+    const isLastStep = useMemo(() => {
         return Object.keys(steps).length === stepIndex;
     }, [steps, stepIndex]);
 
@@ -98,7 +105,7 @@ const Step = ({ index, child, steps, handleNextStep, handleSave }) => {
                         <Button className={css['stepper-btns']} dataTheme="dark" size="sm" color="default" variant="outline" onClick={child.props.onReset}>
                             {t('actions.reset')}
                         </Button>
-                        <Button className={css['stepper-btns']} dataTheme="business" size="sm" color="primary" onClick={onChangeStep}>
+                        <Button className={css['stepper-btns']} dataTheme="business" size="sm" color="primary" disabled={errors} onClick={onChangeStep}>
                             {isLastStep ? t('actions.save') : t('actions.continue')}
                         </Button>
                     </div>
