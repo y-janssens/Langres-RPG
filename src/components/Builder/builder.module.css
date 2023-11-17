@@ -162,8 +162,7 @@
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-.builder-body,
-.builder-body-3d {
+.builder-body {
     border-radius: 6px;
     background-color: rgb(29, 35, 42);
     position: relative;
@@ -173,18 +172,16 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.builder-body-3d {
-    height: unset;
-    width: unset;
-    max-height: 85%;
-    max-width: 90%;
-}
-
 .builder-body {
     height: 85%;
     width: 85%;
     max-height: unset;
     max-width: unset;
+}
+
+.builder-map-grid {
+    display: grid;
+    grid-gap: 4px;
 }
 
 .builder-map-tile,
@@ -195,17 +192,10 @@
     align-items: center;
     user-select: none;
     cursor: pointer;
-    width: 55px;
-    height: 55px;
-    margin: 1px;
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    background-color: rgb(43, 52, 64);
-}
-
-.builder-map-tile-active {
-    border: 1px solid rgb(31, 178, 166);
-    background-color: rgb(55, 66, 81);
+    background: linear-gradient(135deg, rgba(31, 131, 178, 0.1) 0%, rgba(39, 52, 70) 100%);
+    background-color: #334359;
+    transition: 250ms all;
 }
 
 .builder-map-tile svg,
@@ -217,15 +207,19 @@
 .builder-map-tile-active svg path {
     fill: rgb(166, 173, 186);
 }
-
-.builder-map-tile:hover {
-    filter: brightness(1.25);
+.builder-map-tile-active,
+.builder-map-tile:hover,
+.builder-map-tile-active:hover {
+    border: 1px solid #019ae6;
+    background: linear-gradient(135deg, rgba(31, 131, 178, 0.5) 0%, rgb(39, 52, 70) 100%);
+    background-color: #314a6e;
+    z-index: 100;
 }
 
 .builder-map-tile-id {
     position: absolute;
     margin-top: 34px;
-    opacity: 0.25;
+    opacity: 0.35;
 }
 
 .builder-sidebar-block {
@@ -310,7 +304,7 @@
     margin-bottom: 10px;
 }
 .builder-map-infos-selected-detail input {
-    width: 150px;
+    width: 100px;
     margin-right: 5px;
 }
 

@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, Input } from 'react-daisyui';
 import css from './selector.module.css';
 
-export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
+export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }) => {
     const { t } = useTranslation();
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
     const [search, setSearch] = useState('');
 
     const matchSearch = useCallback((value, search) => {
@@ -36,8 +36,15 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
 
     return (
         <div className={css['select-multi-container']}>
-            <SelectButton label={label} open={open} onClick={() => setOpen(!open)} />
-            {open && datas && (
+            <SelectButton
+                label={label}
+                open={open}
+                onClick={() => {
+                    setForm('modalSelect', !form.modalSelect);
+                    setForm('modalManager', false);
+                }}
+            />
+            {form.modalSelect && datas && (
                 <div className={css['select-multi-content']}>
                     <Input
                         className={css['select-multi-searchbar']}
@@ -52,7 +59,7 @@ export const MultiSelect = ({ datas, label = '', onSelect = () => {} }) => {
                     {groups
                         .sort((a, b) => a.order - b.order)
                         .map((gr, index) => {
-                            return <SelectGroup key={index} group={gr} search={search} onSelect={onSelect} onClose={() => setOpen(false)} />;
+                            return <SelectGroup key={index} group={gr} search={search} onSelect={setForm} onClose={() => setForm('modalSelect', false)} />;
                         })}
                 </div>
             )}

@@ -4,16 +4,22 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './Button';
 import css from './ui.module.css';
 
-function DeletionModal({ gameToDelete, height = '200px', onLoad, onClose, disabled = false }) {
+function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose, onClear, disabled = false }) {
     const { t } = useTranslation();
 
     const handleDelete = useCallback(() => {
         const game = new GameModel(gameToDelete);
-        game.delete().then(() => {
-            onLoad();
-            onClose();
-        });
-    }, [gameToDelete, onLoad, onClose]);
+        game.delete()
+            .then(() => {
+                onLoad();
+                onClose();
+            })
+            .finally(() => {
+                if (games.length - 1 === 0) {
+                    onClear();
+                }
+            });
+    }, [gameToDelete, onLoad, onClose, onClear]);
 
     if (!gameToDelete) {
         return null;

@@ -106,7 +106,7 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
                                         size="sm"
                                         placeholder="Map name"
                                         value={mp.name}
-                                        onChange={(e) => handleChange('name', index, e.target.value)}
+                                        onChange={({ target: { value } }) => handleChange('name', index, value)}
                                     />
                                     <Input
                                         className={css['manager-act-input-order']}
@@ -114,7 +114,7 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
                                         size="sm"
                                         placeholder="Size"
                                         value={mp.size}
-                                        onChange={(e) => handleChange('size', index, parseInt(e.target.value))}
+                                        onChange={({ target: { value } }) => handleChange('size', index, parseInt(value))}
                                     />
                                     <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={mp.order} onChange={() => {}} />
                                     <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(mp, index - 1)} disabled={index === 0 || mp.temp}>

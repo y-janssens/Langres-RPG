@@ -14,6 +14,7 @@ pub mod world {
         order: u32,
         complete: bool,
         content: Vec<Item>,
+        starting_point: Location,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -22,21 +23,17 @@ pub mod world {
         x: u32,
         y: u32,
         value: String,
+        threshold: bool,
+    }
+
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+    pub struct Location {
+        x: u32,
+        y: u32,
     }
 
     impl World {
-        pub fn new(size: u32, order: u32) -> World {
-            World {
-                id: Self::generate_id(),
-                name: String::from(""),
-                size,
-                order,
-                complete: false,
-                content: Self::generate(size),
-            }
-        }
-
-        pub fn create(size: u32, name: String, order: u32) -> World {
+        pub fn new(size: u32, name: String, order: u32) -> World {
             World {
                 id: Self::generate_id(),
                 name: String::from(name),
@@ -44,6 +41,7 @@ pub mod world {
                 order,
                 complete: false,
                 content: Self::generate(size),
+                starting_point: Location { x: 5, y: 5 },
             }
         }
 
@@ -65,6 +63,7 @@ pub mod world {
                     x,
                     y,
                     value: Self::generate_borders(x, y, size),
+                    threshold: false,
                 };
                 content.push(item);
             }

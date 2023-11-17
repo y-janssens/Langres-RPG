@@ -6,7 +6,6 @@ import IA from '../../../models/ia/iaModel';
 export default function Zombie({ index, target, map, nodes, zombieRef }) {
     const [context, setContext] = useGameContext();
     const [ia, setIa] = useState(null);
-    // const [position, setPosition] = useState(() => context.controls.generate_starting_point(map));
     const [position] = useState([20, 0.5, 25]);
 
     const targetPosition = { ...target.current?.position };

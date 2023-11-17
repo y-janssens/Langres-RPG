@@ -26,7 +26,7 @@ export default class KeyControls {
         this.validKeys = this.assets.validKeys;
         this.borderKeys = this.assets.borderKeys;
         this.toggles = {};
-        this.positions = [25, 0.75, 25];
+        this.positions = [-5, 0.75, -5];
         this.occupiedPositions = [];
         this.pause = false;
         this.generateControls();
@@ -45,14 +45,6 @@ export default class KeyControls {
         const item = Math.floor(Math.random() * cleared_data.length);
         const position = [cleared_data[item].x, 0.5, cleared_data[item].y];
         return position;
-    }
-
-    pick_starting_point(data) {
-        const cleared_data = data.content.filter((it) => this.validKeys.includes(it.value) && !this.occupiedPositions.includes(it.id));
-        const item = Math.floor(Math.random() * cleared_data.length);
-        this.positions = [cleared_data[item].x, 0.75, cleared_data[item].y];
-        this.occupiedPositions.push(cleared_data[item]);
-        return this.positions;
     }
 
     setToggles(event) {
@@ -110,10 +102,10 @@ export default class KeyControls {
         let [x, y, z] = this.positions;
         let position = { x, y, z };
         const nextItems = {
-            xplus: world.content.find((tile) => tile.x === x + 1 && tile.y === z),
-            xminus: world.content.find((tile) => tile.x === x - 1 && tile.y === z),
-            zplus: world.content.find((tile) => tile.x === x && tile.y === z + 1),
-            zminus: world.content.find((tile) => tile.x === x && tile.y === z - 1)
+            xplus: world.content.find((tile) => tile.x === -x - 1 && tile.y === -z),
+            xminus: world.content.find((tile) => tile.x === -x + 1 && tile.y === -z),
+            zplus: world.content.find((tile) => tile.x === -x && tile.y === -z - 1),
+            zminus: world.content.find((tile) => tile.x === -x && tile.y === -z + 1)
         };
 
         if (key && this.toggles['input'] !== true) {

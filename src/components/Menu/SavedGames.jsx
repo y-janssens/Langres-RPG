@@ -25,7 +25,7 @@ export default function SavedGames({ loading = false, items = [], state = null, 
 
     return (
         <Modal name={t('actions.start')} loading={loading} disabled={!selectedItem} onClick={handleLoad}>
-            <DeletionModal gameToDelete={gameToDelete} onLoad={sync} onClose={() => setGameToDelete(null)} />
+            <DeletionModal games={items} gameToDelete={gameToDelete} onLoad={sync} onClose={() => setGameToDelete(null)} onClear={onClose} />
             {items?.map((save) => {
                 return <SavedGame selected={selectedItem} setSelected={setSelectedItem} key={save.id} item={save} setGameToDelete={setGameToDelete} />;
             })}
