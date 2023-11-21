@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Text } from '@react-three/drei';
 
-export const Tiles = ({ form, data, handleSelect }) => {
+export const Tiles = ({ form, data = [], handleSelect }) => {
     return data.map((row) =>
         row.map((item, index) => {
             return (

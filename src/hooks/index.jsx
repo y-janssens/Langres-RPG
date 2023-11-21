@@ -1,4 +1,4 @@
-export { useForm } from './useForm';
+export { useDynamicForm } from './useDynamicForm';
 export { useGet } from './useGet';
 export { useStateHistory } from './useStateHistory';
 export { default as useGameContext } from './useGameContext';

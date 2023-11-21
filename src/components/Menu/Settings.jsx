@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useForm } from '../../hooks';
+import { useDynamicForm } from '../../hooks';
 import { useTranslation } from 'react-i18next';
 import Modal from '../ui/Modal';
 import css from './menu.module.css';
@@ -10,7 +10,7 @@ export default function Settings({ state, onClose = () => {}, context }) {
     const { t } = useTranslation();
     const { languages, language, sound, volume, music } = context.applicationData;
 
-    const [settings, setSettings] = useForm({
+    const [settings, setSettings] = useDynamicForm({
         language,
         sound,
         volume,

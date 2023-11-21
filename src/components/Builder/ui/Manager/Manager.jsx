@@ -2,16 +2,16 @@ import React, { useCallback } from 'react';
 import { cloneDeep } from 'lodash';
 import { Button } from 'react-daisyui';
 import { Stepper } from './Stepper/Stepper';
-import { useForm } from '../../../../hooks';
+import { useDynamicForm } from '../../../../hooks';
 import { useTranslation } from 'react-i18next';
 import { ActStep, StoryStep, SummaryStep } from './Steps';
 import Storyline from '../../../../models/storyline';
 import css from './manager.module.css';
 
-export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {}, reset = () => {} }) => {
+export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
 
-    const [form, setForm] = useForm({
+    const [form, setForm] = useDynamicForm({
         id: storyline?.id,
         story: new Storyline({ ...storyline }),
         initialStory: cloneDeep({ ...storyline }),
@@ -22,13 +22,11 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
     });
 
     const handleSave = useCallback(() => {
-        const story = form.story;
-        story.save().then(() => {
+        form.story.save().then(() => {
             sync();
             onClose();
-            reset();
         });
-    }, [form.story, sync, onClose, reset]);
+    }, [form, sync, onClose]);
 
     if (!open || !form.id) {
         return null;

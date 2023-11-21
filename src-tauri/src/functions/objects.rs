@@ -1,7 +1,25 @@
 #[allow(dead_code)]
-use crate::classes::objects::objects::Objects;
+use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
-pub fn load_objects() -> Result<Objects, Box<dyn std::error::Error>> {
-    let _start = Objects::load_objects()?;
-    Ok(_start)
+use crate::classes::objects::objects::Function;
+use crate::classes::objects::objects::Object;
+
+pub fn load_objects(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Vec<Object>, String> {
+    let mut connection = connection.get().map_err(|e| e.to_string())?;
+    match Object::load(&mut connection) {
+        Ok(objects) => Ok(objects),
+        Err(err) => Err(err.to_string()),
+    }
+}
+
+pub fn load_functions(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Vec<Function>, String> {
+    let mut connection = connection.get().map_err(|e| e.to_string())?;
+    match Function::load(&mut connection) {
+        Ok(functions) => Ok(functions),
+        Err(err) => Err(err.to_string()),
+    }
 }

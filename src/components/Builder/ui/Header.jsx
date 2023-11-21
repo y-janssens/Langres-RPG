@@ -2,12 +2,13 @@ import { useCallback, useMemo } from 'react';
 import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
-import Icon from '../../ui/Icon';
 import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle } from '.';
+import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 
 export const Header = ({ datas, form, setForm, reset, sync, setContext, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
+
     const handleSave = useCallback(() => {
         invoke('save_storyline', { data: datas, id: datas.id }).then(() => {
             sync();
@@ -31,19 +32,23 @@ export const Header = ({ datas, form, setForm, reset, sync, setContext, history,
             map.content = history[index];
             setForm('selectedMap', map);
         },
-        [backward, forward]
+        [form, backward, forward]
     );
 
+    const disabled = useMemo(() => {
+        return !Boolean(form.selectedMap);
+    }, [form]);
+
     const selectLabel = useMemo(() => {
-        if (form.selectedMap === 'default') {
+        if (disabled) {
             return t('builder.selector.label');
         }
         return `${form.selectedAct.name} - ${form.selectedMap.name}`;
-    });
+    }, [form]);
 
     return (
-        <>
-            <Navbar dataTheme="dark" style={{ minHeight: '2rem' }}>
+        <div className={css['builder-navbar-container']}>
+            <Navbar dataTheme="dark">
                 <div className={css['builder-navbar-top']}>
                     <div className={css['builder-navbar-left']}>
                         <ButtonLabel
@@ -56,72 +61,74 @@ export const Header = ({ datas, form, setForm, reset, sync, setContext, history,
                         />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
                     </div>
+
                     <div className={css['builder-navbar-toggles']}>
-                        <ButtonToggle label={t('builder.toggles.viewport')} active={!form.mode} onClick={() => setForm('mode', !form.mode)} />
+                        <ButtonToggle label={t('builder.toggles.viewport')} active={!form.flatDisplay} onClick={() => setForm('flatDisplay', !form.flatDisplay)} />
                         <Button dataTheme="business" className={css['builder-navbar-exit']} size="xs" color="accent" shape="square" onClick={() => setContext({ builder: false })}>
                             x
                         </Button>
                     </div>
                 </div>
             </Navbar>
-            <Navbar className={css['builder-navbar-secondary']} dataTheme="dracula" style={{ minHeight: '3rem' }}>
+
+            <Navbar className={css['builder-navbar-secondary']} dataTheme="dracula">
                 <div className={css['builder-navbar']}>
                     <div className={css['builder-navbar-actions']}>
-                        <ButtonIcon icon={<Icon name="undo" />} size="sm" disabled={form.selectedMap === 'default' || index === 0} onClick={() => handleHistory('undo')} />
-                        <ButtonIcon
-                            icon={<Icon name="redo" />}
-                            size="sm"
-                            disabled={form.selectedMap === 'default' || index === history.length - 1}
-                            onClick={() => handleHistory('redo')}
-                        />
-                        <div className={css['builder-navbar-viewport-toggles']}>
-                            <Toggle
-                                title={t('builder.toggles.ids')}
-                                active={form.showIds}
-                                onChange={(event) => setForm('showIds', event.target.checked)}
-                                disabled={form.selectedMap === 'default'}
-                            />
+                        <HistoryIcons index={index} history={history} onChange={handleHistory} disabled={disabled} />
+
+                        <div className={css['builder-navbar-flatDisplay-toggles']}>
+                            <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={(event) => setForm('showIds', event.target.checked)} disabled={disabled} />
                             <Toggle
                                 title={t('builder.toggles.values')}
                                 active={form.showValues}
-                                onChange={(event) => {
-                                    setForm('showValues', event.target.checked);
-                                    setForm('showIcons', !event.target.checked);
+                                onChange={({ target: { checked } }) => {
+                                    setForm('showValues', checked);
+                                    setForm('showIcons', !checked);
                                 }}
-                                disabled={form.selectedMap === 'default'}
+                                disabled={disabled}
                             />
                             <Toggle
                                 title={t('builder.toggles.icons')}
                                 active={form.showIcons}
-                                onChange={(event) => {
-                                    setForm('showIcons', event.target.checked);
-                                    setForm('showValues', !event.target.checked);
+                                onChange={({ target: { checked } }) => {
+                                    setForm('showIcons', checked);
+                                    setForm('showValues', !checked);
                                 }}
-                                disabled={form.selectedMap === 'default' || !form.mode}
+                                disabled={disabled || !form.flatDisplay}
                             />
                             <Toggle
                                 title={t('builder.toggles.meshes')}
                                 active={form.showObjects}
-                                onChange={(event) => setForm('showObjects', event.target.checked)}
-                                disabled={form.selectedMap === 'default' || form.mode}
+                                onChange={({ target: { checked } }) => setForm('showObjects', checked)}
+                                disabled={disabled || form.flatDisplay}
                             />
                         </div>
                     </div>
+
                     <div className={css['builder-navbar-cta']}>
-                        <Divider style={{ margin: 0 }} horizontal />
+                        <Divider className={css['builder-navbar-divider']} horizontal />
                         <ButtonLabel
                             variant="outline"
                             label={t('actions.reset')}
-                            disabled={form.selectedMap === 'default'}
+                            disabled={disabled}
                             onClick={() => {
                                 reset();
                                 sync();
                             }}
                         />
-                        <ButtonLabel color="primary" label={t('actions.save')} disabled={form.selectedMap === 'default'} onClick={handleSave} />
+                        <ButtonLabel color="primary" label={t('actions.save')} disabled={disabled} onClick={handleSave} />
                     </div>
                 </div>
             </Navbar>
+        </div>
+    );
+};
+
+const HistoryIcons = ({ index, history, onChange, disabled }) => {
+    return (
+        <>
+            <ButtonIcon icon={<Icon name="undo" />} size="sm" disabled={disabled || index === 0} onClick={() => onChange('undo')} />
+            <ButtonIcon icon={<Icon name="redo" />} size="sm" disabled={disabled || index === history.length - 1} onClick={() => onChange('redo')} />
         </>
     );
 };

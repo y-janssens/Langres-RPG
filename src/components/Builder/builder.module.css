@@ -51,6 +51,10 @@
     margin-right: 10px;
 }
 
+.builder-navbar-cta .builder-navbar-divider {
+    margin: 0 !important;
+}
+
 .builder-navbar-actions {
     width: 425px;
     margin-left: 5px;
@@ -105,11 +109,11 @@
     white-space: nowrap;
 }
 
-.builder-navbar-viewport-toggles {
+.builder-navbar-flatDisplay-toggles {
     display: flex;
 }
 
-.builder-navbar-viewport-toggles label {
+.builder-navbar-flatDisplay-toggles label {
     white-space: nowrap;
 }
 
@@ -135,6 +139,14 @@
     min-width: 85px;
     border-radius: 6px !important;
     white-space: nowrap;
+}
+
+.builder-navbar-container :global(.navbar) {
+    min-height: 2rem !important;
+}
+
+.builder-header-navbar-secondary {
+    min-height: 3rem;
 }
 
 .builder-sidebar-container {
