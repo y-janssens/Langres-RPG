@@ -1,12 +1,14 @@
 export default class BuilderState {
     constructor() {
         this.items = [];
-        (this.functions = []), (this.defaultForm = {});
+        this.functions = [];
+        this.defaultForm = {};
         this.init();
     }
 
     init() {
         this.items = [
+            { id: 6, icon: 'start', value: null },
             { id: 0, icon: 'clear', value: '-' },
             { id: 1, icon: 'tree', value: 'F' },
             { id: 2, icon: 'tree', value: 'T' },
@@ -23,10 +25,11 @@ export default class BuilderState {
             selectedMap: 'default',
             selectedAct: null,
             modalManager: false,
+            modalSelect: false,
             selectedItem: null,
             selectedTiles: [],
             showValues: true,
-            showIds: false,
+            showIds: true,
             showObjects: false,
             showIcons: false,
             world: null,

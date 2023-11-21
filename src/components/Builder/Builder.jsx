@@ -63,7 +63,7 @@ export const Builder = () => {
                         (!form.modalManager ? (
                             <Map type={form.mode} history={history} index={index} display={hasselectedMap} loading={loadingStoryline} form={form} state={state} setForm={setForm} />
                         ) : (
-                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={syncStory} />
+                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={syncStory} reset={resetForm} />
                         ))}
                 </div>
             </Theme>

@@ -7,7 +7,7 @@ pub fn generate_world(
     name: String,
     order: u32,
 ) -> Result<World, Box<dyn std::error::Error>> {
-    let mut _world = World::create(size, name, order);
+    let mut _world = World::new(size, name, order);
     Ok(_world)
 }
 

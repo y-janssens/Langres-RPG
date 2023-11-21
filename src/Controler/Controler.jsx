@@ -18,7 +18,7 @@ export const Controler = () => {
     const [assets] = useState(() => new MapAssets());
     // const [npcs] = useState(() => new Npcs());
     const [toggles, setToggles] = useState(controls.toggles);
-    const [position, setPosition] = useState(controls.positions);
+    const [position, setPosition] = useState([controls.positions]);
 
     const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets });
     const gameRef = useRef();

@@ -6,7 +6,7 @@ export const Tiles = ({ form, data, handleSelect }) => {
         row.map((item, index) => {
             return (
                 <group key={index}>
-                    <Tile form={form} data={data} item={item} position={[item.x, 0, item.y]} handleSelect={handleSelect} />
+                    <Tile form={form} data={data} item={item} position={[-item.x, 0, -item.y]} handleSelect={handleSelect} />
                 </group>
             );
         })

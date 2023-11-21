@@ -31,7 +31,7 @@ export default function Settings({ state, onClose = () => {}, context }) {
             <div className={css['settings-block']}>
                 {!context.gameId && (
                     <SettingsItem name={t('menu.settings.language')}>
-                        <select className={css['settings-ln-selector']} value={settings.language} onChange={(e) => setSettings('language', e.target.value)}>
+                        <select className={css['settings-ln-selector']} value={settings.language} onChange={({ target: { value } }) => setSettings('language', value)}>
                             {languages.map((ln, index) => {
                                 return (
                                     <option key={index} value={ln.key}>

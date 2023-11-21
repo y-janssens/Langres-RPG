@@ -74,7 +74,7 @@ export const StoryStep = ({ form, setForm }) => {
                                 size="sm"
                                 placeholder="Map name"
                                 value={act.name}
-                                onChange={(e) => handleChange('name', act.order, e.target.value)}
+                                onChange={({ target: { value } }) => handleChange('name', act.order, value)}
                             />
                             <Input
                                 className={css['manager-act-input-text']}
@@ -82,7 +82,7 @@ export const StoryStep = ({ form, setForm }) => {
                                 size="sm"
                                 placeholder="Map title"
                                 value={act.title}
-                                onChange={(e) => handleChange('title', act.order, e.target.value)}
+                                onChange={({ target: { value } }) => handleChange('title', act.order, value)}
                             />
                             <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={act.order} onChange={() => {}} />
                             <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(act, index - 1)} disabled={index === 0 || act.temp}>

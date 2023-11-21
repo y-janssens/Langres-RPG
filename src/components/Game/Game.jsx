@@ -36,7 +36,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                 let _world = world.parse();
                 let grid = world.grid;
                 setGameMap(_world);
-                setContext({ game, world, map: _world, grid });
+                context.controls.positions = [-world.starting_point.x, 0.75, -world.starting_point.y];
+                setPosition([-world.starting_point.x, 0.75, -world.starting_point.y]);
+                setContext({ game, world, map: _world, grid, controls: context.controls });
 
                 if (response.save_count < 1) {
                     game.save();

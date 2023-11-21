@@ -14,15 +14,15 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
             const characterPosition = characterRef.current.position;
             const distance = world.size / 2;
 
-            let x = characterPosition.x - distance;
-            let z = -(distance - characterPosition.z) - distance / 1.325;
+            let x = characterPosition.x;
+            let z = characterPosition.z - 18;
 
             // if (context.direction === context.previousDirection) {
             gsap.to(characterRef.current.position, { x: context.controls.positions[0], z: context.controls.positions[2], duration: 0.5 });
             // }
 
             cameraRef.current.object.position.set(x, 15, z);
-            lightRef.current.position.set(x, 10, -(distance - characterPosition.z));
+            lightRef.current.position.set(x, 10, characterPosition.z);
 
             if (context.direction && !context.controls.toggles.input) {
                 switch (context.direction) {
@@ -43,11 +43,11 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
         }
     });
     return (
-        <group position={[-world.size / 2, 0, -world.size / 2]}>
+        <>
             <Character position={position} characterRef={characterRef} />
             <Zombies target={characterRef} map={world} nodes={context.grid} />
             <Tiles data={data} />
-        </group>
+        </>
     );
 };
 

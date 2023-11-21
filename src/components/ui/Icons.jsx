@@ -7,6 +7,7 @@ import { BiSolidTree } from 'react-icons/bi';
 import { FaBridgeWater } from 'react-icons/fa6';
 import { AiOutlineClear } from 'react-icons/ai';
 import { GiForest, GiStoneBlock } from 'react-icons/gi';
+import { FaFlagCheckered } from 'react-icons/fa';
 
 export { BsTrash as Delete };
 export { IoVolumeHigh as Volume };
@@ -24,3 +25,4 @@ export { AiOutlineClear as Clear };
 export { FaBridgeWater as Bridge };
 export { BsWater as Water };
 export { GiStoneBlock as Rock };
+export { FaFlagCheckered as Start };

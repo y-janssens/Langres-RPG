@@ -8,7 +8,7 @@ import { ActStep, StoryStep, SummaryStep } from './Steps';
 import Storyline from '../../../../models/storyline';
 import css from './manager.module.css';
 
-export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {} }) => {
+export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {}, reset = () => {} }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useForm({
@@ -26,8 +26,9 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
         story.save().then(() => {
             sync();
             onClose();
+            reset();
         });
-    }, [form.story, sync, onClose]);
+    }, [form.story, sync, onClose, reset]);
 
     if (!open || !form.id) {
         return null;
