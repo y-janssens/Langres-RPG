@@ -47,7 +47,7 @@ fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<dyn 
 }
 
 fn main() {
-    env::set_var("RUST_BACKTRACE", "full");
+    env::set_var("RUST_BACKTRACE", "1");
     let pool = initialize_db().expect("Failed to initialize database");
 
     tauri::Builder::default()
@@ -66,8 +66,10 @@ fn main() {
             commands::story::save_storyline,  // Ok
             commands::story::fetch_storyline, // Ok
             // App settings commands
-            commands::app::load_app_datas, // Ok
-            commands::app::save_app_datas, // Ok
+            commands::app::load_app_datas,     // Ok
+            commands::app::save_app_datas,     // Ok
+            commands::objects::load_objects,   // Ok
+            commands::objects::load_functions, // Ok
         ])
         .manage(pool)
         .run(tauri::generate_context!())

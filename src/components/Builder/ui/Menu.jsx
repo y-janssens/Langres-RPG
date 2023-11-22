@@ -5,18 +5,19 @@ import { useTranslation } from 'react-i18next';
 import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 
-export const Menu = ({ form, setForm, state, storyline, sync }) => {
+export const Menu = ({ form, setForm }) => {
     const { t } = useTranslation();
+
     const map = useMemo(() => {
-        if (form.selectedMap === 'default') {
+        if (!form.selectedMap) {
             return null;
         }
         return form.selectedMap;
-    }, [form.selectedMap]);
+    }, [form]);
 
     const handleChange = useCallback(
         (value) => {
-            let act = { ...storyline.story.acts.find((act) => act.id === form.selectedAct.id) };
+            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
             let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
             let newMap = { ...act.content.maps[mapIndex] };
 
@@ -35,7 +36,7 @@ export const Menu = ({ form, setForm, state, storyline, sync }) => {
 
             setForm('selectedMap', newMap);
         },
-        [form, storyline]
+        [form]
     );
 
     const handleFunction = useCallback(
@@ -54,18 +55,18 @@ export const Menu = ({ form, setForm, state, storyline, sync }) => {
             }
 
             await invoke(command, payload).then((data) => {
-                let act = storyline.story.acts.find((act) => act.id === form.selectedAct.id);
+                let act = form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id);
                 let map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
                 map.content = data;
                 setForm('selectedMap', map);
             });
         },
-        [form, storyline, sync]
+        [form]
     );
 
     return (
         <div className={css['builder-sidebar-container']}>
-            {form.selectedMap !== 'default' && (
+            {form.selectedMap && (
                 <MenuBlock title={t('builder.menu.map.label')} grid={false}>
                     <div className={css['builder-map-infos']}>
                         <div className={css['builder-map-infos-title']}>{`${form.selectedAct.name} - ${form.selectedAct.title}`}</div>
@@ -90,7 +91,7 @@ export const Menu = ({ form, setForm, state, storyline, sync }) => {
                     </div>
                 </MenuBlock>
             )}
-            {form.selectedTiles.length > 0 && (
+            {Boolean(form.selectedTiles.length) && (
                 <MenuBlock title={t('builder.menu.tile.label')} grid={false}>
                     <div className={css['builder-map-infos-selected']}>
                         {form.selectedTiles
@@ -99,44 +100,32 @@ export const Menu = ({ form, setForm, state, storyline, sync }) => {
                             })
                             .map((it) => {
                                 return (
-                                    <>
-                                        <div className={css['builder-map-infos-selected-detail']} key={it.id}>
-                                            <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
-                                            <Input dataTheme="dark" size="xs" value={it.value} color="neutral" onChange={() => {}} />
-                                        </div>
-                                    </>
+                                    <div className={css['builder-map-infos-selected-detail']} key={it.id}>
+                                        <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
+                                        <Input dataTheme="dark" size="xs" value={it.value} color="neutral" onChange={() => {}} />
+                                    </div>
                                 );
                             })}
                     </div>
                 </MenuBlock>
             )}
             <MenuBlock title={t('builder.menu.items.label')}>
-                {state?.items.map((it) => {
+                {form.objects.map((it) => {
                     return (
                         <MenuItem
                             key={it.id}
-                            icon={it.icon}
-                            disabled={form.selectedMap === 'default' || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
+                            icon={it.name}
+                            disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
                             onClick={() => handleChange(it.value)}
                         />
                     );
                 })}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
-                {state?.functions.map((it) => {
-                    return <MenuItem key={it.id} icon={it.icon} disabled={form.selectedMap === 'default'} label={it.label} onClick={() => handleFunction(it.command)} />;
+                {form.functions.map((it) => {
+                    return <MenuItem key={it.id} icon={it.icon} disabled={!form.selectedMap} label={it.label} onClick={() => handleFunction(it.command)} />;
                 })}
             </MenuBlock>
-            {/* <MenuBlock title={t('builder.menu.objects.label')}>
-                {objects &&
-                    objects?.objects.map((obj) => {
-                        return (
-                            <Tooltip key={obj.id} tooltip={obj.name} disabled={form.selectedMap === 'default'}>
-                                <MenuItem icon={obj.name} disabled={form.selectedMap === 'default'} />
-                            </Tooltip>
-                        );
-                    })}
-            </MenuBlock> */}
         </div>
     );
 };

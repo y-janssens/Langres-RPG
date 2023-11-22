@@ -8,9 +8,9 @@ import { Tiles } from './Tiles';
 import { Loading } from '../../ui/Loading';
 import css from '../builder.module.css';
 
-const Map = ({ loading, type, display, form, setForm, state, history, index }) => {
+const Map = ({ loading, type, display, form, setForm, history, index }) => {
     const world = useMemo(() => {
-        if (form.selectedMap === 'default' || !history.length) {
+        if (!form.selectedMap || !history.length) {
             return [];
         }
         let map = form.selectedMap;
@@ -21,14 +21,14 @@ const Map = ({ loading, type, display, form, setForm, state, history, index }) =
     const handleSelect = useCallback(
         (item) => {
             let selected = form.selectedTiles;
+
             if (!form.selectedTiles.length || !form.selectedTiles.find((it) => it.id === item.id)) {
                 selected.push(item);
-                setForm('selectedTiles', selected);
             } else if (form.selectedTiles.length && Boolean(form.selectedTiles.find((it) => it.id === item.id))) {
                 const index = selected.findIndex((it) => it.id === item.id);
                 selected.splice(index, 1);
-                setForm('selectedTiles', selected);
             }
+            setForm('selectedTiles', selected);
         },
         [form]
     );
@@ -45,11 +45,11 @@ const Map = ({ loading, type, display, form, setForm, state, history, index }) =
                         <div
                             className={css['builder-map-grid']}
                             style={{
-                                gridTemplateRows: `repeat(${world.size}, ${world.size + 5}px)`,
-                                gridTemplateColumns: `repeat(${world.size}, ${world.size + 5}px)`
+                                gridTemplateRows: `repeat(${world.size}, 55px)`,
+                                gridTemplateColumns: `repeat(${world.size}, 55px)`
                             }}
                         >
-                            <MapGrid form={form} setForm={setForm} data={world} state={state} handleSelect={handleSelect} />
+                            <MapGrid form={form} setForm={setForm} data={world} handleSelect={handleSelect} />
                         </div>
                     </DragSelectProvider>
                 ) : (
@@ -63,7 +63,7 @@ const Map = ({ loading, type, display, form, setForm, state, history, index }) =
                     >
                         <BuilderSettings>
                             <group position={[form.selectedMap.size / 2, 0, form.selectedMap.size / 2]}>
-                                <Tiles form={form} data={world?.parse() || []} handleSelect={handleSelect} />
+                                <Tiles form={form} data={world?.parse()} handleSelect={handleSelect} />
                             </group>
                         </BuilderSettings>
                     </Canvas>
@@ -75,41 +75,41 @@ const Map = ({ loading, type, display, form, setForm, state, history, index }) =
 
 export default Map;
 
-const MapGrid = ({ form, setForm, data, handleSelect, state }) => {
-    const items = useMemo(() => {
-        return data.content?.map((it) => {
-            if (it.x === data.starting_point.x && it.y === data.starting_point.y) {
-                it['start'] = true;
-            } else {
-                delete it['start'];
-            }
-            return it;
-        });
-    }, [data, data.starting_point]);
+const MapGrid = ({ form, setForm, data, handleSelect }) => {
+    const isStartingPoint = useCallback((item, startingPoint) => {
+        return item.x === startingPoint.x && item.y === startingPoint.y;
+    }, []);
 
-    return items.map((item, index) => {
-        return <Maptile key={index} item={item} form={form} setForm={setForm} handleSelect={handleSelect} state={state} />;
+    const mapItems = useMemo(() => {
+        return data.content?.map((item) => ({
+            ...item,
+            start: isStartingPoint(item, data.starting_point)
+        }));
+    }, [data.content, data.starting_point]);
+
+    return mapItems.map((item, index) => {
+        return <Maptile key={index} item={item} form={form} setForm={setForm} handleSelect={handleSelect} />;
     });
 };
 
-const Maptile = ({ form, setForm, item, handleSelect, state }) => {
+const Maptile = ({ form, setForm, item, handleSelect }) => {
     const ds = useDragSelect();
     const tileRef = useRef();
 
     const active = useMemo(() => {
-        if (!form.selectedTiles || !form.selectedTiles.length) {
+        if (!form.selectedTiles.length) {
             return false;
         }
         return form.selectedTiles.find((tile) => tile.id === item.id);
     }, [item, form]);
 
     const icon = useMemo(() => {
-        const name = state?.items.find((it) => it.value === item.value).icon;
+        const name = form.objects.find((it) => it.value === item.value).name;
         if (name === 'clear') {
             return null;
         }
         return name;
-    }, [state, item, item.value]);
+    }, [form, item, item.value]);
 
     useEffect(() => {
         if (!ds) return;

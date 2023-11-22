@@ -1,16 +1,27 @@
-import { useCallback, useMemo, useState } from 'react';
-import { Header, Menu, Manager } from './ui';
-import { Theme } from 'react-daisyui';
-import { useGet, useForm, useGameContext, useStateHistory } from '../../hooks';
-import BuilderState from './state';
+import { useCallback, useMemo } from 'react';
+import { Header, Menu, Manager, Theme } from './ui';
+import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
-
 import css from './builder.module.css';
 
 export const Builder = () => {
     const [, setContext] = useGameContext();
-    const [state] = useState(() => new BuilderState());
-    const [form, setForm, setFormObject] = useForm(state?.defaultForm);
+
+    const [form, setForm, , resetForm] = useDynamicForm({
+        flatDisplay: true,
+        selectedMap: null,
+        selectedAct: null,
+        modalManager: false,
+        modalSelect: false,
+        selectedTiles: [],
+        showValues: true,
+        showIds: true,
+        showObjects: false,
+        showIcons: false,
+        storyLine: {},
+        objects: [],
+        functions: []
+    });
 
     const [, loadingStoryline, syncStory] = useGet({
         func: 'fetch_storyline',
@@ -19,54 +30,68 @@ export const Builder = () => {
         }
     });
 
+    const [, , syncObjects] = useGet({
+        func: 'load_objects',
+        onSuccess: (response) => {
+            setForm('objects', response);
+        }
+    });
+
+    const [, , syncFunctions] = useGet({
+        func: 'load_functions',
+        onSuccess: (response) => {
+            setForm('functions', response);
+        }
+    });
+
     const currentMap = useMemo(() => {
-        if (form.selectedMap === 'default' || !form.selectedAct) {
+        if (!form.selectedMap) {
             return null;
         }
         return form.selectedMap.content;
-    }, [form, form.selectedMap]);
+    }, [form]);
 
     const [history, index, forward, backward, clearHistory] = useStateHistory({
-        init: form.selectedMap !== 'default',
+        init: Boolean(form.selectedMap),
         listener: currentMap
     });
 
-    const resetForm = useCallback(() => {
-        setFormObject(state.defaultForm);
+    const handleReset = useCallback(() => {
+        resetForm();
         clearHistory();
-    }, [state, clearHistory]);
+    }, [resetForm, clearHistory]);
 
-    const hasselectedMap = useMemo(() => {
-        return form.selectedMap !== 'default';
-    }, [form]);
+    const handleSync = useCallback(() => {
+        syncStory();
+        syncObjects();
+        syncFunctions();
+    }, [syncStory, syncObjects, syncFunctions]);
 
     return (
-        <>
-            <Theme dataTheme="night" className={css['builder-main-container']}>
-                <Header
-                    form={form}
-                    datas={form.storyLine}
-                    setForm={setForm}
-                    sync={syncStory}
-                    reset={resetForm}
-                    setContext={setContext}
-                    history={history}
-                    index={index}
-                    forward={forward}
-                    backward={backward}
-                    clear={clearHistory}
-                />
-                <Menu form={form} setForm={setForm} state={state} storyline={form.storyLine} sync={syncStory} objects={[]} />
-                <div id="builder-body-block" className={css['builder-body-container']}>
-                    {form.storyLine &&
-                        !loadingStoryline &&
-                        (!form.modalManager ? (
-                            <Map type={form.mode} history={history} index={index} display={hasselectedMap} loading={loadingStoryline} form={form} state={state} setForm={setForm} />
-                        ) : (
-                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={syncStory} reset={resetForm} />
-                        ))}
-                </div>
-            </Theme>
-        </>
+        <Theme dataTheme="night" className={css['builder-main-container']}>
+            <Header
+                form={form}
+                index={index}
+                sync={handleSync}
+                forward={forward}
+                setForm={setForm}
+                history={history}
+                reset={handleReset}
+                backward={backward}
+                clear={clearHistory}
+                datas={form.storyLine}
+                setContext={setContext}
+            />
+            <Menu form={form} setForm={setForm} storyline={form.storyLine} />
+            <div id="builder-body-block" className={css['builder-body-container']}>
+                {form.storyLine &&
+                    !loadingStoryline &&
+                    (!form.modalManager ? (
+                        <Map type={form.flatDisplay} history={history} index={index} display={Boolean(form.selectedMap)} loading={loadingStoryline} form={form} setForm={setForm} />
+                    ) : (
+                        <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />
+                    ))}
+            </div>
+        </Theme>
     );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { useGet, useForm, useGameContext } from '../../hooks';
+import { useGet, useDynamicForm, useGameContext } from '../../hooks';
 import { GameModel, World } from '../../models';
 
 import { Hud } from './Interface/Hud';
@@ -18,7 +18,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
     const characterRef = useRef();
     const pointLightRef = useRef();
 
-    const [form, , setFormObject] = useForm({
+    const [form, , setFormObject] = useDynamicForm({
         id: null
     });
 
