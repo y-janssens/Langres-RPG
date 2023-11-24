@@ -45,8 +45,8 @@ const Map = ({ loading, type, display, form, setForm, history, index }) => {
                         <div
                             className={css['builder-map-grid']}
                             style={{
-                                gridTemplateRows: `repeat(${world.size}, 55px)`,
-                                gridTemplateColumns: `repeat(${world.size}, 55px)`
+                                gridTemplateRows: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`,
+                                gridTemplateColumns: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`
                             }}
                         >
                             <MapGrid form={form} setForm={setForm} data={world} handleSelect={handleSelect} />

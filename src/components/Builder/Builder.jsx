@@ -7,7 +7,7 @@ import css from './builder.module.css';
 export const Builder = () => {
     const [, setContext] = useGameContext();
 
-    const [form, setForm, , resetForm] = useDynamicForm({
+    const [form, setForm, setFormObject, resetForm] = useDynamicForm({
         flatDisplay: true,
         selectedMap: null,
         selectedAct: null,
@@ -18,6 +18,7 @@ export const Builder = () => {
         showIds: true,
         showObjects: false,
         showIcons: false,
+        zoom: 100,
         storyLine: {},
         objects: [],
         functions: []
@@ -81,6 +82,7 @@ export const Builder = () => {
                 clear={clearHistory}
                 datas={form.storyLine}
                 setContext={setContext}
+                setObject={setFormObject}
             />
             <Menu form={form} setForm={setForm} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
