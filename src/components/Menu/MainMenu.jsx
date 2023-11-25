@@ -108,7 +108,7 @@ export const MainMenu = () => {
             activeRef.current.focus();
         }
         // setContext({ gameId: 315681868 });
-        // setContext({ builder: true });
+        setContext({ builder: true });
     }, []);
 
     if (context?.gameId || context.builder) {
