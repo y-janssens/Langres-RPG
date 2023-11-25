@@ -36,8 +36,12 @@
   },
   "builder": {
     "manager": "Gérez vos scénarios",
+    "json": "Éditeur Json",
     "modal": {
       "title": "Créez et modifiez vos scénarios et cartes"
+    },
+    "editor": {
+      "title": "Éditez le contenu de vos cartes"
     },
     "selector": {
       "label": "Sélectionner une carte"

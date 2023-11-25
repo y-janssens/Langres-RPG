@@ -36,8 +36,12 @@
   },
   "builder": {
     "manager": "Manage your storylines",
+    "json": "Json editor",
     "modal": {
       "title": "Create and edit storylines and maps"
+    },
+    "editor": {
+      "title": "Edit your map's content"
     },
     "selector": {
       "label": "Select a map"

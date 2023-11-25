@@ -37,7 +37,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setContex
     );
 
     const disabled = useMemo(() => {
-        return !Boolean(form.selectedMap);
+        return !form.selectedMap;
     }, [form]);
 
     const selectLabel = useMemo(() => {
@@ -55,12 +55,16 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setContex
                         <ButtonLabel
                             color="primary"
                             label={t('builder.manager')}
-                            onClick={() => {
-                                setForm('modalManager', !form.modalManager);
-                                setForm('modalSelect', false);
-                            }}
+                            onClick={() => setObject({ ...form, modalManager: !form.modalManager, modalSelect: false, modalEditor: false })}
                         />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
+                        {form.selectedMap && (
+                            <ButtonLabel
+                                color="primary"
+                                label={t('builder.json')}
+                                onClick={() => setObject({ ...form, modalManager: false, modalSelect: false, modalEditor: !form.modalEditor })}
+                            />
+                        )}
                     </div>
 
                     <div className={css['builder-navbar-toggles']}>

@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { Header, Menu, Manager, Theme } from './ui';
+import { Header, Menu, Manager, Theme, Editor } from './ui';
 import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';
@@ -13,6 +13,7 @@ export const Builder = () => {
         selectedAct: null,
         modalManager: false,
         modalSelect: false,
+        modalEditor: false,
         selectedTiles: [],
         showValues: true,
         showIds: true,
@@ -88,10 +89,13 @@ export const Builder = () => {
             <div id="builder-body-block" className={css['builder-body-container']}>
                 {form.storyLine &&
                     !loadingStoryline &&
-                    (!form.modalManager ? (
+                    (!form.modalManager && !form.modalEditor ? (
                         <Map type={form.flatDisplay} history={history} index={index} display={Boolean(form.selectedMap)} loading={loadingStoryline} form={form} setForm={setForm} />
                     ) : (
-                        <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />
+                        <>
+                            <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />
+                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />
+                        </>
                     ))}
             </div>
         </Theme>
