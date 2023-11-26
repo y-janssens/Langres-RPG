@@ -8,7 +8,7 @@ import { ActStep, StoryStep, SummaryStep } from './Steps';
 import Storyline from '../../../../models/storyline';
 import css from './manager.module.css';
 
-export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync = () => {} }) => {
+export const Manager = ({ open, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useDynamicForm({
@@ -36,15 +36,35 @@ export const Manager = ({ open = false, storyline = {}, onClose = () => {}, sync
         <div className={css['manager-container']}>
             <div className={css['manager-body']}>
                 <div className={css['manager-body-header']}>
-                    {t('builder.modal.title')}
+                    {t('builder.modals.manager.title')}
                     <Button dataTheme="business" className={css['manager-body-header-exit']} size="xs" color="secondary" shape="square" onClick={onClose}>
                         x
                     </Button>
                 </div>
                 <Stepper handleSave={handleSave}>
-                    <StoryStep title="Storylines" subtitle="Edit and order your story's acts" onReset={() => sync()} form={form} setForm={setForm} errors={form.errors} />
-                    <ActStep title="Acts" subtitle="Edit and order your acts's maps" onReset={() => sync()} form={form} setForm={setForm} errors={form.errors} />
-                    <SummaryStep title="Summary" subtitle="Review and validate your changes" onReset={() => sync()} form={form} errors={form.errors} />
+                    <StoryStep
+                        title={t(`builder.modals.steps.acts.title`)}
+                        subtitle={t(`builder.modals.steps.acts.subtitle`)}
+                        onReset={() => sync()}
+                        form={form}
+                        setForm={setForm}
+                        errors={form.errors}
+                    />
+                    <ActStep
+                        title={t(`builder.modals.steps.maps.title`)}
+                        subtitle={t(`builder.modals.steps.maps.subtitle`)}
+                        onReset={() => sync()}
+                        form={form}
+                        setForm={setForm}
+                        errors={form.errors}
+                    />
+                    <SummaryStep
+                        title={t(`builder.modals.steps.summary.title`)}
+                        subtitle={t(`builder.modals.steps.summary.subtitle`)}
+                        onReset={() => sync()}
+                        form={form}
+                        errors={form.errors}
+                    />
                 </Stepper>
             </div>
         </div>

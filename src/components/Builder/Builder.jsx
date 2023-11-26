@@ -3,6 +3,7 @@ import { Header, Menu, Manager, Theme, Editor } from './ui';
 import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';
+import { Onboarding } from './ui/Onboarding/Onboarding';
 
 export const Builder = () => {
     const [, setContext] = useGameContext();
@@ -14,6 +15,7 @@ export const Builder = () => {
         modalManager: false,
         modalSelect: false,
         modalEditor: false,
+        onboarding: { value: false, type: null },
         selectedTiles: [],
         showValues: true,
         showIds: true,
@@ -28,7 +30,18 @@ export const Builder = () => {
     const [, loadingStoryline, syncStory] = useGet({
         func: 'fetch_storyline',
         onSuccess: (response) => {
-            setForm('storyLine', { ...response });
+            setForm('storyLine', response);
+
+            switch (true) {
+                case !response.story.acts.length:
+                    setForm('onboarding', { value: true, type: 'acts' });
+                    break;
+                case response.story.acts.every((act) => !act.content.maps.length):
+                    setForm('onboarding', { value: true, type: 'maps' });
+                    break;
+                default:
+                    break;
+            }
         }
     });
 
@@ -57,6 +70,13 @@ export const Builder = () => {
         init: Boolean(form.selectedMap),
         listener: currentMap
     });
+
+    const display = useMemo(() => {
+        if (!form.storyLine) {
+            return false;
+        }
+        return !form.modalManager && !form.modalEditor && !form.onboarding.value;
+    }, [form]);
 
     const handleReset = useCallback(() => {
         resetForm();
@@ -89,10 +109,17 @@ export const Builder = () => {
             <div id="builder-body-block" className={css['builder-body-container']}>
                 {form.storyLine &&
                     !loadingStoryline &&
-                    (!form.modalManager && !form.modalEditor ? (
+                    (display ? (
                         <Map type={form.flatDisplay} history={history} index={index} display={Boolean(form.selectedMap)} loading={loadingStoryline} form={form} setForm={setForm} />
                     ) : (
                         <>
+                            <Onboarding
+                                open={form.onboarding.value}
+                                type={form.onboarding.type}
+                                storyline={form.storyLine}
+                                sync={handleSync}
+                                onClose={() => setForm('onboarding', { value: false, type: null })}
+                            />
                             <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />
                             <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />
                         </>

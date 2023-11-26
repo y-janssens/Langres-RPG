@@ -12,14 +12,10 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
     useFrame(() => {
         if (cameraRef.current && characterRef.current && lightRef.current) {
             const characterPosition = characterRef.current.position;
-            const distance = world.size / 2;
+            const x = characterPosition.x;
+            const z = characterPosition.z - 18;
 
-            let x = characterPosition.x;
-            let z = characterPosition.z - 18;
-
-            // if (context.direction === context.previousDirection) {
             gsap.to(characterRef.current.position, { x: context.controls.positions[0], z: context.controls.positions[2], duration: 0.5 });
-            // }
 
             cameraRef.current.object.position.set(x, 15, z);
             lightRef.current.position.set(x, 10, characterPosition.z);

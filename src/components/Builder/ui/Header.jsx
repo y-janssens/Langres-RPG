@@ -42,7 +42,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setContex
 
     const selectLabel = useMemo(() => {
         if (disabled) {
-            return t('builder.selector.label');
+            return t('builder.selector.map');
         }
         return `${form.selectedAct.name} - ${form.selectedMap.name}`;
     }, [form]);

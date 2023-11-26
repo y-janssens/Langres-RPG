@@ -25,7 +25,7 @@ export const Editor = ({ open, form, setForm, onClose }) => {
         <div className={css['editor-container']}>
             <div className={css['editor-body']}>
                 <div className={css['editor-body-header']}>
-                    {t('builder.editor.title')}
+                    {t('builder.modals.editor.title')}
                     <Button dataTheme="business" className={css['editor-body-header-exit']} size="xs" color="secondary" shape="square" onClick={onClose}>
                         x
                     </Button>

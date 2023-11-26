@@ -12,6 +12,12 @@
     "new": "Nouveau",
     "search": "Rechercher"
   },
+  "common": {
+    "name": "Nom",
+    "title": "Titre",
+    "size": "Taille",
+    "order": "Ordre"
+  },
   "menu": {
     "items": {
       "continue": "Continuer",
@@ -37,14 +43,31 @@
   "builder": {
     "manager": "Gérez vos scénarios",
     "json": "Éditeur Json",
-    "modal": {
-      "title": "Créez et modifiez vos scénarios et cartes"
-    },
-    "editor": {
-      "title": "Éditez le contenu de vos cartes"
+    "modals": {
+      "manager": {
+        "title": "Créez et modifiez vos scénarios et cartes"
+      },
+      "editor": {
+        "title": "Éditez le contenu de vos cartes"
+      },
+      "steps": {
+        "acts": {
+          "title": "Scénarios",
+          "subtitle": "Éditez et organisez les actes de votre scénario"
+        },
+        "maps": {
+          "title": "Actes",
+          "subtitle": "Éditez et organisez les cartes de vos actes"
+        },
+        "summary": {
+          "title": "Résumé",
+          "subtitle": "Vérifiez et validez vos changements"
+        }
+      }
     },
     "selector": {
-      "label": "Sélectionner une carte"
+      "act": "Sélectionner un acte",
+      "map": "Sélectionner une carte"
     },
     "toggles": {
       "ids": "Voir les ids",

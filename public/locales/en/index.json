@@ -12,6 +12,12 @@
     "new": "New",
     "search": "Search"
   },
+  "common": {
+    "name": "Name",
+    "title": "Title",
+    "size": "Size",
+    "order": "Order"
+  },
   "menu": {
     "items": {
       "continue": "Continue",
@@ -37,14 +43,31 @@
   "builder": {
     "manager": "Manage your storylines",
     "json": "Json editor",
-    "modal": {
-      "title": "Create and edit storylines and maps"
-    },
-    "editor": {
-      "title": "Edit your map's content"
+    "modals": {
+      "manager": {
+        "title": "Create and edit storylines and maps"
+      },
+      "editor": {
+        "title": "Edit your map's content"
+      },
+      "steps": {
+        "acts": {
+          "title": "Storylines",
+          "subtitle": "Edit and order your story's acts"
+        },
+        "maps": {
+          "title": "Acts",
+          "subtitle": "Edit and order your acts's maps"
+        },
+        "summary": {
+          "title": "Summary",
+          "subtitle": "Review and validate your changes"
+        }
+      }
     },
     "selector": {
-      "label": "Select a map"
+      "act": "Select an act",
+      "map": "Select a map"
     },
     "toggles": {
       "ids": "Show ids",

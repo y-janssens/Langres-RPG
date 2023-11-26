@@ -5,7 +5,7 @@ import { SelectButton } from '../../selector/Selector';
 import { useTranslation } from 'react-i18next';
 import css from '../manager.module.css';
 
-export const ActStep = ({ form, setForm, errors, ...props }) => {
+export const ActStep = ({ form, setForm, ...props }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
 
@@ -14,7 +14,7 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
             return [];
         }
         let list = form.selectedAct.content.maps.sort((a, b) => a.order - b.order);
-        if (!list.some((act) => act.temp)) {
+        if (!list.some((act) => act.temp) && list.every((mp) => mp.size >= 10)) {
             list.push({ complete: false, content: [], name: '', order: list.length, size: 0, temp: true });
         }
         return list;
@@ -76,7 +76,7 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
     return (
         <>
             <div className={css['manager-selector-block']}>
-                <SelectButton label={'Select an act'} open={open} onClick={() => setOpen(!open)} size="sm" />
+                <SelectButton label={'Select an act'} open={open} onClick={() => setOpen(!open)} size={props.onboarding ? 'md' : 'sm'} />
                 {open && (
                     <div className={css['manager-selector-content']}>
                         <ul>
@@ -104,7 +104,7 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
                                         className={css['manager-act-input-name']}
                                         dataTheme="dracula"
                                         size="sm"
-                                        placeholder="Map name"
+                                        placeholder={t('common.name')}
                                         value={mp.name}
                                         onChange={({ target: { value } }) => handleChange('name', index, value)}
                                     />
@@ -112,11 +112,18 @@ export const ActStep = ({ form, setForm, errors, ...props }) => {
                                         className={css['manager-act-input-order']}
                                         dataTheme="dracula"
                                         size="sm"
-                                        placeholder="Size"
+                                        placeholder={t('common.size')}
                                         value={mp.size}
                                         onChange={({ target: { value } }) => handleChange('size', index, parseInt(value))}
                                     />
-                                    <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={mp.order} onChange={() => {}} />
+                                    <Input
+                                        className={css['manager-act-input-order']}
+                                        dataTheme="dracula"
+                                        size="sm"
+                                        placeholder={t('common.order')}
+                                        value={mp.order}
+                                        onChange={() => {}}
+                                    />
                                     <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(mp, index - 1)} disabled={index === 0 || mp.temp}>
                                         {String.fromCharCode('8593')}
                                     </Button>
