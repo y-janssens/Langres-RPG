@@ -1,5 +1,5 @@
 import { Button, Form, Checkbox } from 'react-daisyui';
-import css from '../builder.module.css/';
+import css from '../builder.module.css';
 
 export const ButtonLabel = ({ ...props }) => {
     return (

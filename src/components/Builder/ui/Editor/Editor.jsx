@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'react-daisyui';
+import { Modal } from '..';
 import JSONInput from 'react-json-editor-ajrm';
 import locale from 'react-json-editor-ajrm/locale/en';
 import css from './editor.module.css';
@@ -22,36 +22,10 @@ export const Editor = ({ open, form, setForm, onClose }) => {
     }
 
     return (
-        <div className={css['editor-container']}>
-            <div className={css['editor-body']}>
-                <div className={css['editor-body-header']}>
-                    {t('builder.modals.editor.title')}
-                    <Button dataTheme="business" className={css['editor-body-header-exit']} size="xs" color="secondary" shape="square" onClick={onClose}>
-                        x
-                    </Button>
-                </div>
-                <div className={css['editor-card-block']}>
-                    <div className={css['editor-card-body']}>
-                        <div className={css['editor-card-header']}>
-                            <div>{`${form.selectedAct.name} - ${form.selectedAct.title}: ${form.selectedMap.name}`}</div>
-                        </div>
-
-                        <div className={css['editor-card-content']}>
-                            <div className={css['builder-json-editor']}>
-                                <JSONInput width="100%" locale={locale} placeholder={jsonMap.content} onChange={(value) => setJsonMap(value.jsObject)} />
-                            </div>
-                        </div>
-                        <div className={css['editor-footer']}>
-                            <Button className={css['editor-btns']} dataTheme="dark" size="sm" color="default" variant="outline" onClick={() => setJsonMap(initialMap)}>
-                                {t('actions.reset')}
-                            </Button>
-                            <Button className={css['editor-btns']} dataTheme="business" size="sm" color="primary" disabled={false} onClick={handleSave}>
-                                {t('actions.save')}
-                            </Button>
-                        </div>
-                    </div>
-                </div>
+        <Modal title={t('builder.modals.editor.title')} subtitle="test" onSave={handleSave} onClose={onClose} onReset={() => setJsonMap(initialMap)}>
+            <div className={css['builder-json-editor']}>
+                <JSONInput width="100%" locale={locale} placeholder={jsonMap.content} onChange={(value) => setJsonMap(value.jsObject)} />
             </div>
-        </div>
+        </Modal>
     );
 };
