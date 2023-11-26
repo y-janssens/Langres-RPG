@@ -1,8 +1,11 @@
 import React, { useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, InputGroup, Input } from 'react-daisyui';
 import css from '../manager.module.css';
 
 export const StoryStep = ({ form, setForm }) => {
+    const { t } = useTranslation();
+
     const generateUniquePositiveId = useCallback(() => {
         const maxI32 = 2147483647;
         let uniqueId;
@@ -72,7 +75,7 @@ export const StoryStep = ({ form, setForm }) => {
                                 className={css['manager-act-input-text']}
                                 dataTheme="dracula"
                                 size="sm"
-                                placeholder="Map name"
+                                placeholder={t('common.name')}
                                 value={act.name}
                                 onChange={({ target: { value } }) => handleChange('name', act.order, value)}
                             />
@@ -80,11 +83,11 @@ export const StoryStep = ({ form, setForm }) => {
                                 className={css['manager-act-input-text']}
                                 dataTheme="dracula"
                                 size="sm"
-                                placeholder="Map title"
+                                placeholder={t('common.title')}
                                 value={act.title}
                                 onChange={({ target: { value } }) => handleChange('title', act.order, value)}
                             />
-                            <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder="Order" value={act.order} onChange={() => {}} />
+                            <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder={t('common.order')} value={act.order} onChange={() => {}} />
                             <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(act, index - 1)} disabled={index === 0 || act.temp}>
                                 {String.fromCharCode('8593')}
                             </Button>
