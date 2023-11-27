@@ -76,6 +76,8 @@ const Map = ({ loading, type, display, form, setForm, history, index }) => {
 export default Map;
 
 const MapGrid = ({ form, setForm, data, handleSelect }) => {
+    const ds = useDragSelect();
+
     const isStartingPoint = useCallback((item, startingPoint) => {
         return item.x === startingPoint.x && item.y === startingPoint.y;
     }, []);
@@ -86,30 +88,6 @@ const MapGrid = ({ form, setForm, data, handleSelect }) => {
             start: isStartingPoint(item, data.starting_point)
         }));
     }, [data.content, data.starting_point]);
-
-    return mapItems.map((item, index) => {
-        return <Maptile key={index} item={item} form={form} setForm={setForm} handleSelect={handleSelect} />;
-    });
-};
-
-const Maptile = ({ form, setForm, item, handleSelect }) => {
-    const ds = useDragSelect();
-    const tileRef = useRef();
-
-    const active = useMemo(() => {
-        if (!form.selectedTiles.length) {
-            return false;
-        }
-        return form.selectedTiles.find((tile) => tile.id === item.id);
-    }, [item, form]);
-
-    const icon = useMemo(() => {
-        const name = form.objects.find((it) => it.value === item.value).name;
-        if (name === 'clear') {
-            return null;
-        }
-        return name;
-    }, [form, item, item.value]);
 
     useEffect(() => {
         if (!ds) return;
@@ -129,6 +107,29 @@ const Maptile = ({ form, setForm, item, handleSelect }) => {
             ds?.unsubscribe('DS:end', cb);
         };
     }, [ds]);
+
+    return mapItems.map((item, index) => {
+        return <Maptile key={index} ds={ds} item={item} form={form} handleSelect={handleSelect} />;
+    });
+};
+
+const Maptile = ({ form, ds, item, handleSelect }) => {
+    const tileRef = useRef();
+
+    const active = useMemo(() => {
+        if (!form.selectedTiles.length) {
+            return false;
+        }
+        return form.selectedTiles.find((tile) => tile.id === item.id);
+    }, [item, form]);
+
+    const icon = useMemo(() => {
+        const name = form.objects.find((it) => it.value === item.value).name;
+        if (name === 'clear') {
+            return null;
+        }
+        return name;
+    }, [form, item, item.value]);
 
     useEffect(() => {
         const element = tileRef.current;

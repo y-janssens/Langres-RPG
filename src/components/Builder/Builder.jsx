@@ -36,7 +36,7 @@ export const Builder = () => {
                 case !response.story.acts.length:
                     setForm('onboarding', { value: true, type: 'acts' });
                     break;
-                case response.story.acts.every((act) => !act.content.maps.length):
+                case response.story.acts.length && response.story.acts.every((act) => !act.content.maps.length):
                     setForm('onboarding', { value: true, type: 'maps' });
                     break;
                 default:
