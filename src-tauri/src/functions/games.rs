@@ -1,6 +1,6 @@
 #[allow(dead_code)]
-use crate::classes::game::game::Game;
-use crate::classes::story::story::Story;
+use crate::models::game::game::Game;
+use crate::models::story::story::Story;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 

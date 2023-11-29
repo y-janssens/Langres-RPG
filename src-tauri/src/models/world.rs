@@ -1,7 +1,7 @@
 #[allow(dead_code)]
 
 pub mod world {
-    use crate::classes::objects::objects::Object;
+    use crate::models::objects::objects::Object;
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use round::round;

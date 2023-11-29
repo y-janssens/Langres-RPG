@@ -1,4 +1,4 @@
-use crate::{classes::story::story::Story, functions};
+use crate::{functions, models::story::story::Story};
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 

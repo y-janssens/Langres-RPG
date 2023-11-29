@@ -1,9 +1,9 @@
 #[allow(dead_code)]
 
 pub mod game {
-    use crate::classes::story::story::Story;
+    use crate::models::story::story::Story;
     use crate::schema::games::dsl::*;
-    use crate::{classes::character::character::Character, schema::games};
+    use crate::{models::character::character::Character, schema::games};
     use chrono::{DateTime, Local};
     use diesel::prelude::*;
     use serde::{Deserialize, Serialize};

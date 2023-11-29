@@ -1,5 +1,5 @@
-use crate::classes::npc::npc::Npc;
-use crate::classes::npc::npc::Npcs;
+use crate::models::npc::npc::Npc;
+use crate::models::npc::npc::Npcs;
 
 #[tauri::command]
 pub fn get_npcs() -> Option<Vec<Npc>> {

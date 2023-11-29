@@ -1,7 +1,7 @@
 #[allow(dead_code)]
 
 pub mod story {
-    use crate::classes::world::world::World;
+    use crate::models::world::world::World;
     use crate::schema::storyline::dsl::storyline;
     use diesel::deserialize::{self, FromSql};
     use diesel::sql_types::Text;

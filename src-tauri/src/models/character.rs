@@ -1,7 +1,7 @@
 #[allow(dead_code)]
 pub mod character {
 
-    use crate::classes::inventory::inventory::Inventory;
+    use crate::models::inventory::inventory::Inventory;
     use diesel::{
         deserialize::{self, FromSql},
         prelude::Queryable,

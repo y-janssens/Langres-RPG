@@ -1,12 +1,12 @@
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
-use crate::{classes, functions};
+use crate::{functions, models};
 
 #[tauri::command]
 pub fn new(
     name: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> classes::game::game::Game {
+) -> models::game::game::Game {
     let _story = functions::story::fetch_storyline(connection).expect("error");
     let _new = functions::games::new_game(name, _story);
     _new.unwrap()
@@ -15,7 +15,7 @@ pub fn new(
 #[tauri::command]
 pub fn fetch_games(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Vec<classes::game::game::Game>, String> {
+) -> Result<Vec<models::game::game::Game>, String> {
     let _load = functions::games::fetch_games(connection);
     _load
 }
@@ -24,7 +24,7 @@ pub fn fetch_games(
 pub fn load_game(
     id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> classes::game::game::Game {
+) -> models::game::game::Game {
     let _load = functions::games::load_saved_game(id, connection);
     _load.unwrap()
 }
@@ -36,7 +36,7 @@ pub fn delete(id: i32, connection: tauri::State<r2d2::Pool<ConnectionManager<Sql
 
 #[tauri::command]
 pub fn save(
-    data: classes::game::game::Game,
+    data: models::game::game::Game,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let _save = functions::games::save_game(connection, data);

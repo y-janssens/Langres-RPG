@@ -13,9 +13,9 @@ use diesel::{
 };
 use std::env;
 
-mod classes;
 mod commands;
 mod functions;
+mod models;
 mod schema;
 
 fn run_migrations(
