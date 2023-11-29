@@ -1,4 +1,5 @@
 #[allow(dead_code)]
+use crate::models::character::character::Character;
 use crate::models::game::game::Game;
 use crate::models::story::story::Story;
 use diesel::r2d2::ConnectionManager;
@@ -48,4 +49,12 @@ pub fn save_game(
     let mut connection = connection.get().map_err(|e| e.to_string())?;
     let _save = Game::save(data, &mut connection).expect("Error");
     Ok(_save)
+}
+
+pub fn compute_xp(
+    mut character: Character,
+    xp: u32,
+) -> Result<Character, Box<dyn std::error::Error>> {
+    character.compute_xp(xp);
+    Ok(character)
 }

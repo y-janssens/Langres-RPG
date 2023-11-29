@@ -41,3 +41,12 @@ pub fn save(
 ) {
     let _save = functions::games::save_game(connection, data);
 }
+
+#[tauri::command]
+pub fn compute_xp(
+    character: models::character::character::Character,
+    xp: u32,
+) -> models::character::character::Character {
+    let _compute = functions::games::compute_xp(character, xp);
+    _compute.unwrap()
+}

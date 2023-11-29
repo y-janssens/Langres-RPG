@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod app {
     use crate::schema::settings::dsl::*;
     use diesel::{prelude::*, sqlite::Sqlite};

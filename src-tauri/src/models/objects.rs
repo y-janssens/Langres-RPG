@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod objects {
     use diesel::{
         deserialize::{self, FromSql, Queryable},

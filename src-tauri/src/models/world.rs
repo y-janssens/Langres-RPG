@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod world {
     use crate::models::objects::objects::Object;
     use diesel::prelude::Queryable;

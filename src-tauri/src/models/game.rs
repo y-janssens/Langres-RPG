@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod game {
     use crate::models::story::story::Story;
     use crate::schema::games::dsl::*;

@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 pub mod character {
 
     use crate::models::inventory::inventory::Inventory;
@@ -61,23 +60,25 @@ pub mod character {
             }
         }
 
-        pub fn compute_xp(&mut self, xp: u32) {
+        pub fn compute_xp(&mut self, xp: u32) -> &mut Character {
             let new_xp = self.xp + xp;
             let max_xp = self.max_xp;
             if new_xp >= max_xp {
                 return Self::level_up(self, new_xp - max_xp);
             }
-            return self.xp = new_xp;
+            self.xp = new_xp;
+            return self;
         }
 
-        pub fn level_up(&mut self, xp: u32) {
+        fn level_up(&mut self, xp: u32) -> &mut Character {
             let max_xp: u32 = Self::get_max_xp(&self);
             self.max_xp = max_xp;
             self.lvl += 1;
             if xp >= max_xp {
                 return Self::compute_xp(self, self.xp + xp - max_xp);
             }
-            return self.xp = xp;
+            self.xp = xp;
+            return self;
         }
 
         fn get_max_xp(&self) -> u32 {

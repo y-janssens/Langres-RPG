@@ -58,6 +58,7 @@ fn main() {
             commands::games::fetch_games, // Ok
             commands::games::save,        // Ok
             commands::games::delete,      // Ok
+            commands::games::compute_xp,  // Ok
             // World building commands
             commands::world::generate,       // Ok
             commands::world::regenerate,     // Ok

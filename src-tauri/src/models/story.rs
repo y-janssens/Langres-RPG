@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod story {
     use crate::models::world::world::World;
     use crate::schema::storyline::dsl::storyline;
