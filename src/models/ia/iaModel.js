@@ -1,13 +1,12 @@
 import { AStarFinder, Grid } from 'pathfinding';
 
 export default class IA {
-    constructor({ type, target, map, nodes, self, allowedKeys }) {
+    constructor({ type, target, map, nodes, self }) {
         this.target = target;
         this.type = type;
         this.map = map;
         this.nodes = new Grid(nodes);
         this.self = self;
-        this.allowedKeys = allowedKeys;
         this.patrolRange = 5;
         this.patrolling = true;
         this.position = null;

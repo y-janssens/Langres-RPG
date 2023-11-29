@@ -16,6 +16,7 @@ pub mod objects {
         name: String,
         value: Option<String>,
         area: Area,
+        walkable: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone)]

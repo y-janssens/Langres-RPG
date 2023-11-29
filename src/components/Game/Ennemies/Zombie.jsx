@@ -4,7 +4,7 @@ import { useGameContext } from '../../../hooks';
 import IA from '../../../models/ia/iaModel';
 
 export default function Zombie({ index, target, map, nodes, zombieRef }) {
-    const [context, setContext] = useGameContext();
+    const [, setContext] = useGameContext();
     const [ia, setIa] = useState(null);
     const [position] = useState([20, 0.5, 25]);
 
@@ -12,7 +12,7 @@ export default function Zombie({ index, target, map, nodes, zombieRef }) {
 
     useEffect(() => {
         if (!ia && zombieRef.current) {
-            setIa(new IA({ type: 'zombie', target, self: zombieRef, map, nodes, allowedKeys: context.controls.validKeys }));
+            setIa(new IA({ type: 'zombie', target, self: zombieRef, map, nodes }));
         }
         if (ia) {
             const interval = setInterval(

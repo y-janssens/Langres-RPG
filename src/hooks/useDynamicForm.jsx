@@ -39,7 +39,6 @@ export const useDynamicForm = (initialForm = {}) => {
     }, []);
 
     const resetForm = useCallback(() => {
-        console.log(initialValues);
         setObject(initialValues);
     }, [initialValues]);
 

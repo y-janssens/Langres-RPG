@@ -136,7 +136,7 @@ export default class MapAssets {
         const ids = [id, id + 1, id - 1, id + world.size, id - world.size];
 
         ids.filter((i) => i > 0 && i <= max_index).map((it) => {
-            if (!this.validKeys.includes(world.content[it].value)) {
+            if (!world.content[it].walkable) {
                 return invalidIds.push(it);
             }
             return validIds.push(it);

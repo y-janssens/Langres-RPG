@@ -27,6 +27,7 @@ diesel::table! {
         name -> Text,
         value -> Nullable<Text>,
         area -> Text,
+        walkable -> Bool,
     }
 }
 

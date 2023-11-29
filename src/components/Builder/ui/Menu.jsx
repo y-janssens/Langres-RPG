@@ -16,19 +16,19 @@ export const Menu = ({ form, setForm }) => {
     }, [form]);
 
     const handleChange = useCallback(
-        (value) => {
+        (item) => {
             let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
             let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
             let newMap = { ...act.content.maps[mapIndex] };
 
-            if (!value && form.selectedTiles.length === 1) {
+            if (!item.value && form.selectedTiles.length === 1) {
                 newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y };
             }
-            const items = form.selectedTiles.map((it) => ({ ...it, value: value ? value : it.value }));
+            const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
 
             let newContent = newMap.content.map((item) => {
                 const foundItem = items.find((it) => it.id === item.id);
-                return foundItem ? { ...item, value: foundItem.value } : { ...item };
+                return foundItem ? { ...item, value: foundItem.value, walkable: foundItem.walkable } : { ...item };
             });
 
             newMap.content = newContent;
@@ -116,7 +116,7 @@ export const Menu = ({ form, setForm }) => {
                             key={it.id}
                             icon={it.name}
                             disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
-                            onClick={() => handleChange(it.value)}
+                            onClick={() => handleChange(it)}
                         />
                     );
                 })}

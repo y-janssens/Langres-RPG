@@ -1,4 +1,3 @@
-import MapAssets from './map';
 export default class World {
     constructor({ size, content, order, complete, starting_point }) {
         this.size = size;
@@ -10,13 +9,15 @@ export default class World {
     }
 
     parse() {
-        let content = this.content;
-        return Array.from({ length: Math.ceil(content.length / this.size) }, (_, index) => content.slice(index * this.size, (index + 1) * this.size));
+        return this.chunk(this.content);
     }
 
     gridify(data) {
-        const autorisedKeys = new Set(new MapAssets().validKeys);
-        const values = data.map((item) => (autorisedKeys.has(item.value) ? 0 : 1));
-        return Array.from({ length: Math.ceil(values.length / this.size) }, (_, index) => values.slice(index * this.size, (index + 1) * this.size));
+        const values = data.map((item) => (item.walkable ? 0 : 1));
+        return this.chunk(values);
+    }
+
+    chunk(data) {
+        return Array.from({ length: Math.ceil(data.length / this.size) }, (_, index) => data.slice(index * this.size, (index + 1) * this.size));
     }
 }

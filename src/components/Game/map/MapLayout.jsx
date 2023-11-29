@@ -1,40 +1,57 @@
+import { useCallback, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { useGameContext } from '../../../hooks';
+import gsap from 'gsap';
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
-import { useGameContext } from '../../../hooks';
-import { useRef } from 'react';
-import gsap from 'gsap';
 
 export const MapLayout = ({ world, data, position, characterRef, cameraRef, lightRef }) => {
     const [context] = useGameContext();
+    const animationQueue = useRef();
+
+    const handleMove = useCallback(
+        (targetPosition) => {
+            if (animationQueue.current) {
+                animationQueue.current.kill();
+            }
+
+            animationQueue.current = gsap.to(characterRef.current.position, {
+                x: targetPosition.x,
+                z: targetPosition.z,
+                duration: 0.5,
+                lazy: false
+            });
+        },
+        [animationQueue, characterRef]
+    );
 
     useFrame(() => {
         if (cameraRef.current && characterRef.current && lightRef.current) {
             const characterPosition = characterRef.current.position;
             const x = characterPosition.x;
-            const z = characterPosition.z - 18;
+            const z = characterPosition.z;
 
-            gsap.to(characterRef.current.position, { x: context.controls.positions[0], z: context.controls.positions[2], duration: 0.5 });
+            handleMove({ x: context.controls.positions[0], z: context.controls.positions[2] });
 
-            cameraRef.current.object.position.set(x, 15, z);
-            lightRef.current.position.set(x, 10, characterPosition.z);
+            cameraRef.current.object.position.set(x, 15, z - 18);
+            lightRef.current.position.set(x, 10, z);
 
-            if (context.direction && !context.controls.toggles.input) {
-                switch (context.direction) {
-                    case 'up':
-                        characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
-                        break;
-                    case 'down':
-                        characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
-                        break;
-                    case 'left':
-                        characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
-                        break;
-                    case 'right':
-                        characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
-                        break;
-                }
+            switch (context.direction) {
+                case 'up':
+                    characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
+                    break;
+                case 'down':
+                    characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
+                    break;
+                case 'left':
+                    characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+                    break;
+                case 'right':
+                    characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+                    break;
+                default:
+                    break;
             }
         }
     });

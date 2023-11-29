@@ -10,8 +10,9 @@ const Scene = ({ context, lightRef, cameraRef, pause, children }) => {
     return (
         <Canvas
             shadows
+            // performance={{ min: 0.25 }}
             frameloop={pause ? 'never' : 'always'}
-            dpr={[1, 2]}
+            dpr={[0.5, 1]}
             camera={{
                 fov: 25,
                 zoom: 1.25
@@ -23,7 +24,7 @@ const Scene = ({ context, lightRef, cameraRef, pause, children }) => {
             <pointLight castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} intensity={2500} position={[0, 10, 0]} decay={2.25} distance={12} ref={lightRef} />
             <MapControls makeDefault minPolarAngle={Math.PI / 3.5} maxPolarAngle={Math.PI / 3.5} minAzimuthAngle={Math.PI} maxAzimuthAngle={Math.PI} ref={cameraRef} />
             <EffectComposer disableNormalPass>
-                <Pixelation granularity={4} />
+                <Pixelation granularity={2.5} />
                 {children}
             </EffectComposer>
         </Canvas>
