@@ -22,7 +22,6 @@ pub fn save_app_datas(
 
 #[tauri::command]
 pub fn load_env(date: &str) -> Environment {
-    println!("{}", date);
     let _env = functions::app::load_env(date);
     _env.unwrap()
 }

@@ -19,6 +19,14 @@
     "size": "Size",
     "order": "Order"
   },
+  "environment": {
+    "seasons": {
+      "spring": "Sprint",
+      "summer": "Summer",
+      "autumn": "Autumn",
+      "winter": "Winter"
+    }
+  },
   "menu": {
     "items": {
       "continue": "Continue",

@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { useGet, useDynamicForm, useGameContext } from '../../hooks';
-import { GameModel, World } from '../../models';
+import { useGet, useDynamicForm, useGameContext, useTranslation } from '../../hooks';
+import { GameModel, World, Environment } from '../../models';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../ui/LoadingScreen';
@@ -11,6 +11,7 @@ import Scene from './Scene/Scene';
 
 // eslint-disable-next-line
 export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
+    const { t } = useTranslation();
     const [context, setContext] = useGameContext();
     const [gameMap, setGameMap] = useState([]);
 
@@ -39,7 +40,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                 setGameMap(_world);
                 context.controls.positions = [-world.starting_point.x, 0.75, -world.starting_point.y];
                 setPosition([-world.starting_point.x, 0.75, -world.starting_point.y]);
-                setContext({ game, world, map: _world, grid, controls: context.controls });
+                setContext({ game, world, map: _world, grid, controls: context.controls, act: currentAct });
 
                 if (response.save_count < 1) {
                     game.save();
@@ -51,11 +52,14 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     const [, loadingEnvironment] = useGet({
         func: 'load_env',
-        payload: { date: '17/09/1166' },
+        payload: { date: context?.act?.date },
+        launch: form.id,
         onSuccess: (response) => {
-            setForm('environment', response);
+            setForm('environment', new Environment({ ...response, locale: context.applicationData.language, season: t(`environment.seasons.${response.season}`) }));
         }
     });
+
+    console.log(form.environment);
 
     const contextReady = useMemo(() => {
         if (!context) {
@@ -80,7 +84,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         <>
             <InGameMenu id={context?.gameId} game={game} />
             <PauseScreen ready={contextReady} context={context} />
-            <LoadingScreen context={context} loading={!form.id || loading || !contextReady}>
+            <LoadingScreen context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
                 <Hud context={context} game={form} display={keyToggles} position={position} />
                 <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
                     <MapLayout world={context.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
