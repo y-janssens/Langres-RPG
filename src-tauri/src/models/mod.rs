@@ -4,4 +4,5 @@ pub mod game;
 pub mod inventory;
 pub mod objects;
 pub mod story;
+pub mod time;
 pub mod world;

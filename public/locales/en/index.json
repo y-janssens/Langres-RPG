@@ -15,6 +15,7 @@
   "common": {
     "name": "Name",
     "title": "Title",
+    "date": "Date",
     "size": "Size",
     "order": "Order"
   },

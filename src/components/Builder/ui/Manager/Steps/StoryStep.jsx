@@ -20,7 +20,7 @@ export const StoryStep = ({ form, setForm }) => {
     const acts = useMemo(() => {
         let list = form.acts.sort((a, b) => a.order - b.order);
         if (!list.some((act) => act.temp)) {
-            list.push({ complete: false, content: { maps: [] }, id: generateUniquePositiveId(), order: list.length, name: '', title: '', temp: true });
+            list.push({ complete: false, content: { maps: [] }, id: generateUniquePositiveId(), order: list.length, name: '', title: '', date: '', temp: true });
         }
         return list;
     }, [form, form.acts]);
@@ -86,6 +86,14 @@ export const StoryStep = ({ form, setForm }) => {
                                 placeholder={t('common.title')}
                                 value={act.title}
                                 onChange={({ target: { value } }) => handleChange('title', act.order, value)}
+                            />
+                            <Input
+                                className={css['manager-act-input-text']}
+                                dataTheme="dracula"
+                                size="sm"
+                                placeholder={t('common.date')}
+                                value={act.date}
+                                onChange={({ target: { value } }) => handleChange('date', act.order, value)}
                             />
                             <Input className={css['manager-act-input-order']} dataTheme="dracula" size="sm" placeholder={t('common.order')} value={act.order} onChange={() => {}} />
                             <Button dataTheme="dracula" color="neutral" size="sm" onClick={() => handleSort(act, index - 1)} disabled={index === 0 || act.temp}>

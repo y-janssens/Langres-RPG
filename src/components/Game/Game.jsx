@@ -18,8 +18,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
     const characterRef = useRef();
     const pointLightRef = useRef();
 
-    const [form, , setFormObject] = useDynamicForm({
-        id: null
+    const [form, setForm, setFormObject] = useDynamicForm({
+        id: null,
+        environment: {}
     });
 
     const [, loading] = useGet(
@@ -47,6 +48,14 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         },
         [context?.gameId]
     );
+
+    const [, loadingEnvironment] = useGet({
+        func: 'load_env',
+        payload: { date: '17/09/1166' },
+        onSuccess: (response) => {
+            setForm('environment', response);
+        }
+    });
 
     const contextReady = useMemo(() => {
         if (!context) {

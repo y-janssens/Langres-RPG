@@ -8,7 +8,7 @@ const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = ()
     const fetch = useCallback(async () => {
         setLoading(true);
 
-        await invoke(func, { id })
+        await invoke(func, { id, ...payload })
             .then((response) => {
                 setData(response);
                 onSuccess(response);
