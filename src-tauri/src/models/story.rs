@@ -61,6 +61,7 @@ pub mod story {
         order: u32,
         name: String,
         title: String,
+        date: String,
         content: Content,
         complete: bool,
     }

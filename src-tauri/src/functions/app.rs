@@ -1,5 +1,6 @@
 #[allow(dead_code)]
 use crate::models::app::app::App;
+use crate::models::time::time::Environment;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -21,4 +22,9 @@ pub fn save_app(
     let mut connection = connection.get().map_err(|e| e.to_string())?;
     let _save = App::save(id, data, &mut connection).expect("Error");
     Ok(())
+}
+
+pub fn load_env(date: &str) -> Result<Environment, Box<dyn std::error::Error>> {
+    let _env = Environment::initialize(date);
+    Ok(_env)
 }

@@ -15,8 +15,17 @@
   "common": {
     "name": "Nom",
     "title": "Titre",
+    "date": "Date",
     "size": "Taille",
     "order": "Ordre"
+  },
+  "environment": {
+    "seasons": {
+      "spring": "Printemps",
+      "summer": "Été",
+      "autumn": "Automne",
+      "winter": "Hiver"
+    }
   },
   "menu": {
     "items": {

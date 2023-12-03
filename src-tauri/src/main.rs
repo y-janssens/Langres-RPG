@@ -53,24 +53,25 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             // Game commands
-            commands::games::new,         // Ok
-            commands::games::load_game,   // Ok
-            commands::games::fetch_games, // Ok
-            commands::games::save,        // Ok
-            commands::games::delete,      // Ok
-            commands::games::compute_xp,  // Ok
+            commands::games::new,
+            commands::games::load_game,
+            commands::games::fetch_games,
+            commands::games::save,
+            commands::games::delete,
+            commands::games::compute_xp,
             // World building commands
-            commands::world::generate,       // Ok
-            commands::world::regenerate,     // Ok
-            commands::world::populate_trees, // Ok
+            commands::world::generate,
+            commands::world::regenerate,
+            commands::world::populate_trees,
             // Storyline commands
-            commands::story::save_storyline,  // Ok
-            commands::story::fetch_storyline, // Ok
+            commands::story::save_storyline,
+            commands::story::fetch_storyline,
             // App settings commands
-            commands::app::load_app_datas,     // Ok
-            commands::app::save_app_datas,     // Ok
-            commands::objects::load_objects,   // Ok
-            commands::objects::load_functions, // Ok
+            commands::app::load_env,
+            commands::app::load_app_datas,
+            commands::app::save_app_datas,
+            commands::objects::load_objects,
+            commands::objects::load_functions,
         ])
         .manage(pool)
         .run(tauri::generate_context!())

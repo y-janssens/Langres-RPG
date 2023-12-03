@@ -1,3 +1,4 @@
+use crate::models::time::time::Environment;
 use crate::{functions, models};
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
@@ -17,4 +18,10 @@ pub fn save_app_datas(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let _save = functions::app::save_app(id, data, connection);
+}
+
+#[tauri::command]
+pub fn load_env(date: &str) -> Environment {
+    let _env = functions::app::load_env(date);
+    _env.unwrap()
 }
