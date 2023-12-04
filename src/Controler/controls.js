@@ -26,7 +26,7 @@ export default class KeyControls {
         this.validKeys = this.assets.validKeys;
         this.borderKeys = this.assets.borderKeys;
         this.toggles = {};
-        this.positions = [-5, 0.75, -5];
+        this.positions = [-15, 0.75, -15];
         this.occupiedPositions = [];
         this.pause = false;
         this.generateControls();

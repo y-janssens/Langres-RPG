@@ -10,12 +10,16 @@ const Scene = ({ context, lightRef, cameraRef, pause, children }) => {
     return (
         <Canvas
             shadows
-            // performance={{ min: 0.25 }}
+            performance={{ min: 0.25 }}
             frameloop={pause ? 'never' : 'always'}
             dpr={[0.5, 1]}
             camera={{
                 fov: 25,
-                zoom: 1.25
+                // aspect: 1,
+                // near: 20.0,
+                // far: 30.0,
+                zoom: 1.25,
+                gl: { antialias: false }
             }}
         >
             <color attach="background" args={[0, 0, 0]} />
