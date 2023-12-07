@@ -22,7 +22,7 @@ pub mod world {
         x: u32,
         y: u32,
         value: String,
-        threshold: bool,
+        threshold: Option<Threshold>,
         walkable: bool,
     }
 
@@ -32,6 +32,11 @@ pub mod world {
         value: String,
         name: String,
         assets: Vec<Option<Object>>,
+    }
+
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+    pub struct Threshold {
+        map: i32,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -73,7 +78,7 @@ pub mod world {
                     x,
                     y,
                     value: value.clone(),
-                    threshold: false,
+                    threshold: None,
                     walkable: value == "-",
                 };
                 content.push(item);

@@ -22,7 +22,7 @@ VALUES
                     "content": [
                         {
                             "id": 0,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -30,7 +30,7 @@ VALUES
                         },
                         {
                             "id": 1,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -38,7 +38,7 @@ VALUES
                         },
                         {
                             "id": 2,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 2,
@@ -46,7 +46,7 @@ VALUES
                         },
                         {
                             "id": 3,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 3,
@@ -54,7 +54,7 @@ VALUES
                         },
                         {
                             "id": 4,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 4,
@@ -62,7 +62,7 @@ VALUES
                         },
                         {
                             "id": 5,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 5,
@@ -70,7 +70,7 @@ VALUES
                         },
                         {
                             "id": 6,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 6,
@@ -78,7 +78,7 @@ VALUES
                         },
                         {
                             "id": 7,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 7,
@@ -86,7 +86,7 @@ VALUES
                         },
                         {
                             "id": 8,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 8,
@@ -94,7 +94,7 @@ VALUES
                         },
                         {
                             "id": 9,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 9,
@@ -102,7 +102,7 @@ VALUES
                         },
                         {
                             "id": 10,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 10,
@@ -110,7 +110,7 @@ VALUES
                         },
                         {
                             "id": 11,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 11,
@@ -118,7 +118,7 @@ VALUES
                         },
                         {
                             "id": 12,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 12,
@@ -126,7 +126,7 @@ VALUES
                         },
                         {
                             "id": 13,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 13,
@@ -134,7 +134,7 @@ VALUES
                         },
                         {
                             "id": 14,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 14,
@@ -142,7 +142,7 @@ VALUES
                         },
                         {
                             "id": 15,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 15,
@@ -150,7 +150,7 @@ VALUES
                         },
                         {
                             "id": 16,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 16,
@@ -158,7 +158,7 @@ VALUES
                         },
                         {
                             "id": 17,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 17,
@@ -166,7 +166,7 @@ VALUES
                         },
                         {
                             "id": 18,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 18,
@@ -174,7 +174,7 @@ VALUES
                         },
                         {
                             "id": 19,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 19,
@@ -182,7 +182,7 @@ VALUES
                         },
                         {
                             "id": 20,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 20,
@@ -190,7 +190,7 @@ VALUES
                         },
                         {
                             "id": 21,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 21,
@@ -198,7 +198,7 @@ VALUES
                         },
                         {
                             "id": 22,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 22,
@@ -206,7 +206,7 @@ VALUES
                         },
                         {
                             "id": 23,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 23,
@@ -214,7 +214,7 @@ VALUES
                         },
                         {
                             "id": 24,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 24,
@@ -222,7 +222,7 @@ VALUES
                         },
                         {
                             "id": 25,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 25,
@@ -230,7 +230,7 @@ VALUES
                         },
                         {
                             "id": 26,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 26,
@@ -238,7 +238,7 @@ VALUES
                         },
                         {
                             "id": 27,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 27,
@@ -246,7 +246,7 @@ VALUES
                         },
                         {
                             "id": 28,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 28,
@@ -254,7 +254,7 @@ VALUES
                         },
                         {
                             "id": 29,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 29,
@@ -262,7 +262,7 @@ VALUES
                         },
                         {
                             "id": 30,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 30,
@@ -270,7 +270,7 @@ VALUES
                         },
                         {
                             "id": 31,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 31,
@@ -278,7 +278,7 @@ VALUES
                         },
                         {
                             "id": 32,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 32,
@@ -286,7 +286,7 @@ VALUES
                         },
                         {
                             "id": 33,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 33,
@@ -294,7 +294,7 @@ VALUES
                         },
                         {
                             "id": 34,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 34,
@@ -302,7 +302,7 @@ VALUES
                         },
                         {
                             "id": 35,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 35,
@@ -310,7 +310,7 @@ VALUES
                         },
                         {
                             "id": 36,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 36,
@@ -318,7 +318,7 @@ VALUES
                         },
                         {
                             "id": 37,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 37,
@@ -326,7 +326,7 @@ VALUES
                         },
                         {
                             "id": 38,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 38,
@@ -334,7 +334,7 @@ VALUES
                         },
                         {
                             "id": 39,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 39,
@@ -342,7 +342,7 @@ VALUES
                         },
                         {
                             "id": 40,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 40,
@@ -350,7 +350,7 @@ VALUES
                         },
                         {
                             "id": 41,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 41,
@@ -358,7 +358,7 @@ VALUES
                         },
                         {
                             "id": 42,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 42,
@@ -366,7 +366,7 @@ VALUES
                         },
                         {
                             "id": 43,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 43,
@@ -374,7 +374,7 @@ VALUES
                         },
                         {
                             "id": 44,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 44,
@@ -382,7 +382,7 @@ VALUES
                         },
                         {
                             "id": 45,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 45,
@@ -390,7 +390,7 @@ VALUES
                         },
                         {
                             "id": 46,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 46,
@@ -398,7 +398,7 @@ VALUES
                         },
                         {
                             "id": 47,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 47,
@@ -406,7 +406,7 @@ VALUES
                         },
                         {
                             "id": 48,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -414,7 +414,7 @@ VALUES
                         },
                         {
                             "id": 49,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -422,7 +422,7 @@ VALUES
                         },
                         {
                             "id": 50,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -430,7 +430,7 @@ VALUES
                         },
                         {
                             "id": 51,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -438,7 +438,7 @@ VALUES
                         },
                         {
                             "id": 52,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 2,
@@ -446,7 +446,7 @@ VALUES
                         },
                         {
                             "id": 53,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 3,
@@ -454,7 +454,7 @@ VALUES
                         },
                         {
                             "id": 54,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 4,
@@ -462,7 +462,7 @@ VALUES
                         },
                         {
                             "id": 55,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 5,
@@ -470,7 +470,7 @@ VALUES
                         },
                         {
                             "id": 56,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 6,
@@ -478,7 +478,7 @@ VALUES
                         },
                         {
                             "id": 57,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 7,
@@ -486,7 +486,7 @@ VALUES
                         },
                         {
                             "id": 58,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 8,
@@ -494,7 +494,7 @@ VALUES
                         },
                         {
                             "id": 59,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 9,
@@ -502,7 +502,7 @@ VALUES
                         },
                         {
                             "id": 60,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 10,
@@ -510,7 +510,7 @@ VALUES
                         },
                         {
                             "id": 61,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 11,
@@ -518,7 +518,7 @@ VALUES
                         },
                         {
                             "id": 62,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 12,
@@ -526,7 +526,7 @@ VALUES
                         },
                         {
                             "id": 63,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 13,
@@ -534,7 +534,7 @@ VALUES
                         },
                         {
                             "id": 64,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 14,
@@ -542,7 +542,7 @@ VALUES
                         },
                         {
                             "id": 65,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 15,
@@ -550,7 +550,7 @@ VALUES
                         },
                         {
                             "id": 66,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 16,
@@ -558,7 +558,7 @@ VALUES
                         },
                         {
                             "id": 67,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 17,
@@ -566,7 +566,7 @@ VALUES
                         },
                         {
                             "id": 68,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 18,
@@ -574,7 +574,7 @@ VALUES
                         },
                         {
                             "id": 69,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 19,
@@ -582,7 +582,7 @@ VALUES
                         },
                         {
                             "id": 70,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 20,
@@ -590,7 +590,7 @@ VALUES
                         },
                         {
                             "id": 71,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 21,
@@ -598,7 +598,7 @@ VALUES
                         },
                         {
                             "id": 72,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 22,
@@ -606,7 +606,7 @@ VALUES
                         },
                         {
                             "id": 73,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 23,
@@ -614,7 +614,7 @@ VALUES
                         },
                         {
                             "id": 74,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 24,
@@ -622,7 +622,7 @@ VALUES
                         },
                         {
                             "id": 75,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 25,
@@ -630,7 +630,7 @@ VALUES
                         },
                         {
                             "id": 76,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 26,
@@ -638,7 +638,7 @@ VALUES
                         },
                         {
                             "id": 77,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 27,
@@ -646,7 +646,7 @@ VALUES
                         },
                         {
                             "id": 78,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 28,
@@ -654,7 +654,7 @@ VALUES
                         },
                         {
                             "id": 79,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 29,
@@ -662,7 +662,7 @@ VALUES
                         },
                         {
                             "id": 80,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 30,
@@ -670,7 +670,7 @@ VALUES
                         },
                         {
                             "id": 81,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 31,
@@ -678,7 +678,7 @@ VALUES
                         },
                         {
                             "id": 82,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 32,
@@ -686,7 +686,7 @@ VALUES
                         },
                         {
                             "id": 83,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 33,
@@ -694,7 +694,7 @@ VALUES
                         },
                         {
                             "id": 84,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 34,
@@ -702,7 +702,7 @@ VALUES
                         },
                         {
                             "id": 85,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 35,
@@ -710,7 +710,7 @@ VALUES
                         },
                         {
                             "id": 86,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 36,
@@ -718,7 +718,7 @@ VALUES
                         },
                         {
                             "id": 87,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 37,
@@ -726,7 +726,7 @@ VALUES
                         },
                         {
                             "id": 88,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 38,
@@ -734,7 +734,7 @@ VALUES
                         },
                         {
                             "id": 89,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 39,
@@ -742,7 +742,7 @@ VALUES
                         },
                         {
                             "id": 90,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 40,
@@ -750,7 +750,7 @@ VALUES
                         },
                         {
                             "id": 91,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 41,
@@ -758,7 +758,7 @@ VALUES
                         },
                         {
                             "id": 92,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 42,
@@ -766,7 +766,7 @@ VALUES
                         },
                         {
                             "id": 93,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 43,
@@ -774,7 +774,7 @@ VALUES
                         },
                         {
                             "id": 94,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 44,
@@ -782,7 +782,7 @@ VALUES
                         },
                         {
                             "id": 95,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 45,
@@ -790,7 +790,7 @@ VALUES
                         },
                         {
                             "id": 96,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 46,
@@ -798,7 +798,7 @@ VALUES
                         },
                         {
                             "id": 97,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 47,
@@ -806,7 +806,7 @@ VALUES
                         },
                         {
                             "id": 98,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -814,7 +814,7 @@ VALUES
                         },
                         {
                             "id": 99,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -822,7 +822,7 @@ VALUES
                         },
                         {
                             "id": 100,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -830,7 +830,7 @@ VALUES
                         },
                         {
                             "id": 101,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -838,7 +838,7 @@ VALUES
                         },
                         {
                             "id": 102,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -846,7 +846,7 @@ VALUES
                         },
                         {
                             "id": 103,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -854,7 +854,7 @@ VALUES
                         },
                         {
                             "id": 104,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -862,7 +862,7 @@ VALUES
                         },
                         {
                             "id": 105,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -870,7 +870,7 @@ VALUES
                         },
                         {
                             "id": 106,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -878,7 +878,7 @@ VALUES
                         },
                         {
                             "id": 107,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -886,7 +886,7 @@ VALUES
                         },
                         {
                             "id": 108,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -894,7 +894,7 @@ VALUES
                         },
                         {
                             "id": 109,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -902,7 +902,7 @@ VALUES
                         },
                         {
                             "id": 110,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -910,7 +910,7 @@ VALUES
                         },
                         {
                             "id": 111,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -918,7 +918,7 @@ VALUES
                         },
                         {
                             "id": 112,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -926,7 +926,7 @@ VALUES
                         },
                         {
                             "id": 113,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -934,7 +934,7 @@ VALUES
                         },
                         {
                             "id": 114,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -942,7 +942,7 @@ VALUES
                         },
                         {
                             "id": 115,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -950,7 +950,7 @@ VALUES
                         },
                         {
                             "id": 116,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -958,7 +958,7 @@ VALUES
                         },
                         {
                             "id": 117,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -966,7 +966,7 @@ VALUES
                         },
                         {
                             "id": 118,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -974,7 +974,7 @@ VALUES
                         },
                         {
                             "id": 119,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -982,7 +982,7 @@ VALUES
                         },
                         {
                             "id": 120,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -990,7 +990,7 @@ VALUES
                         },
                         {
                             "id": 121,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -998,7 +998,7 @@ VALUES
                         },
                         {
                             "id": 122,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -1006,7 +1006,7 @@ VALUES
                         },
                         {
                             "id": 123,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -1014,7 +1014,7 @@ VALUES
                         },
                         {
                             "id": 124,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -1022,7 +1022,7 @@ VALUES
                         },
                         {
                             "id": 125,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -1030,7 +1030,7 @@ VALUES
                         },
                         {
                             "id": 126,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -1038,7 +1038,7 @@ VALUES
                         },
                         {
                             "id": 127,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -1046,7 +1046,7 @@ VALUES
                         },
                         {
                             "id": 128,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -1054,7 +1054,7 @@ VALUES
                         },
                         {
                             "id": 129,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -1062,7 +1062,7 @@ VALUES
                         },
                         {
                             "id": 130,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -1070,7 +1070,7 @@ VALUES
                         },
                         {
                             "id": 131,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -1078,7 +1078,7 @@ VALUES
                         },
                         {
                             "id": 132,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -1086,7 +1086,7 @@ VALUES
                         },
                         {
                             "id": 133,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -1094,7 +1094,7 @@ VALUES
                         },
                         {
                             "id": 134,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -1102,7 +1102,7 @@ VALUES
                         },
                         {
                             "id": 135,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -1110,7 +1110,7 @@ VALUES
                         },
                         {
                             "id": 136,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -1118,7 +1118,7 @@ VALUES
                         },
                         {
                             "id": 137,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -1126,7 +1126,7 @@ VALUES
                         },
                         {
                             "id": 138,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -1134,7 +1134,7 @@ VALUES
                         },
                         {
                             "id": 139,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -1142,7 +1142,7 @@ VALUES
                         },
                         {
                             "id": 140,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -1150,7 +1150,7 @@ VALUES
                         },
                         {
                             "id": 141,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -1158,7 +1158,7 @@ VALUES
                         },
                         {
                             "id": 142,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -1166,7 +1166,7 @@ VALUES
                         },
                         {
                             "id": 143,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -1174,7 +1174,7 @@ VALUES
                         },
                         {
                             "id": 144,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -1182,7 +1182,7 @@ VALUES
                         },
                         {
                             "id": 145,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -1190,7 +1190,7 @@ VALUES
                         },
                         {
                             "id": 146,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -1198,7 +1198,7 @@ VALUES
                         },
                         {
                             "id": 147,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -1206,7 +1206,7 @@ VALUES
                         },
                         {
                             "id": 148,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -1214,7 +1214,7 @@ VALUES
                         },
                         {
                             "id": 149,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -1222,7 +1222,7 @@ VALUES
                         },
                         {
                             "id": 150,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -1230,7 +1230,7 @@ VALUES
                         },
                         {
                             "id": 151,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -1238,7 +1238,7 @@ VALUES
                         },
                         {
                             "id": 152,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -1246,7 +1246,7 @@ VALUES
                         },
                         {
                             "id": 153,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -1254,7 +1254,7 @@ VALUES
                         },
                         {
                             "id": 154,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -1262,7 +1262,7 @@ VALUES
                         },
                         {
                             "id": 155,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -1270,7 +1270,7 @@ VALUES
                         },
                         {
                             "id": 156,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -1278,7 +1278,7 @@ VALUES
                         },
                         {
                             "id": 157,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -1286,7 +1286,7 @@ VALUES
                         },
                         {
                             "id": 158,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -1294,7 +1294,7 @@ VALUES
                         },
                         {
                             "id": 159,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -1302,7 +1302,7 @@ VALUES
                         },
                         {
                             "id": 160,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -1310,7 +1310,7 @@ VALUES
                         },
                         {
                             "id": 161,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -1318,7 +1318,7 @@ VALUES
                         },
                         {
                             "id": 162,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -1326,7 +1326,7 @@ VALUES
                         },
                         {
                             "id": 163,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -1334,7 +1334,7 @@ VALUES
                         },
                         {
                             "id": 164,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -1342,7 +1342,7 @@ VALUES
                         },
                         {
                             "id": 165,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -1350,7 +1350,7 @@ VALUES
                         },
                         {
                             "id": 166,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -1358,7 +1358,7 @@ VALUES
                         },
                         {
                             "id": 167,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -1366,7 +1366,7 @@ VALUES
                         },
                         {
                             "id": 168,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -1374,7 +1374,7 @@ VALUES
                         },
                         {
                             "id": 169,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -1382,7 +1382,7 @@ VALUES
                         },
                         {
                             "id": 170,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -1390,7 +1390,7 @@ VALUES
                         },
                         {
                             "id": 171,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -1398,7 +1398,7 @@ VALUES
                         },
                         {
                             "id": 172,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -1406,7 +1406,7 @@ VALUES
                         },
                         {
                             "id": 173,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -1414,7 +1414,7 @@ VALUES
                         },
                         {
                             "id": 174,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -1422,7 +1422,7 @@ VALUES
                         },
                         {
                             "id": 175,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -1430,7 +1430,7 @@ VALUES
                         },
                         {
                             "id": 176,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -1438,7 +1438,7 @@ VALUES
                         },
                         {
                             "id": 177,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -1446,7 +1446,7 @@ VALUES
                         },
                         {
                             "id": 178,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -1454,7 +1454,7 @@ VALUES
                         },
                         {
                             "id": 179,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -1462,7 +1462,7 @@ VALUES
                         },
                         {
                             "id": 180,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -1470,7 +1470,7 @@ VALUES
                         },
                         {
                             "id": 181,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -1478,7 +1478,7 @@ VALUES
                         },
                         {
                             "id": 182,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -1486,7 +1486,7 @@ VALUES
                         },
                         {
                             "id": 183,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -1494,7 +1494,7 @@ VALUES
                         },
                         {
                             "id": 184,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -1502,7 +1502,7 @@ VALUES
                         },
                         {
                             "id": 185,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -1510,7 +1510,7 @@ VALUES
                         },
                         {
                             "id": 186,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -1518,7 +1518,7 @@ VALUES
                         },
                         {
                             "id": 187,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -1526,7 +1526,7 @@ VALUES
                         },
                         {
                             "id": 188,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -1534,7 +1534,7 @@ VALUES
                         },
                         {
                             "id": 189,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -1542,7 +1542,7 @@ VALUES
                         },
                         {
                             "id": 190,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -1550,7 +1550,7 @@ VALUES
                         },
                         {
                             "id": 191,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -1558,7 +1558,7 @@ VALUES
                         },
                         {
                             "id": 192,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -1566,7 +1566,7 @@ VALUES
                         },
                         {
                             "id": 193,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -1574,7 +1574,7 @@ VALUES
                         },
                         {
                             "id": 194,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -1582,7 +1582,7 @@ VALUES
                         },
                         {
                             "id": 195,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -1590,7 +1590,7 @@ VALUES
                         },
                         {
                             "id": 196,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -1598,7 +1598,7 @@ VALUES
                         },
                         {
                             "id": 197,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -1606,7 +1606,7 @@ VALUES
                         },
                         {
                             "id": 198,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -1614,7 +1614,7 @@ VALUES
                         },
                         {
                             "id": 199,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -1622,7 +1622,7 @@ VALUES
                         },
                         {
                             "id": 200,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -1630,7 +1630,7 @@ VALUES
                         },
                         {
                             "id": 201,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -1638,7 +1638,7 @@ VALUES
                         },
                         {
                             "id": 202,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -1646,7 +1646,7 @@ VALUES
                         },
                         {
                             "id": 203,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -1654,7 +1654,7 @@ VALUES
                         },
                         {
                             "id": 204,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -1662,7 +1662,7 @@ VALUES
                         },
                         {
                             "id": 205,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -1670,7 +1670,7 @@ VALUES
                         },
                         {
                             "id": 206,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -1678,7 +1678,7 @@ VALUES
                         },
                         {
                             "id": 207,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -1686,7 +1686,7 @@ VALUES
                         },
                         {
                             "id": 208,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -1694,7 +1694,7 @@ VALUES
                         },
                         {
                             "id": 209,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -1702,7 +1702,7 @@ VALUES
                         },
                         {
                             "id": 210,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -1710,7 +1710,7 @@ VALUES
                         },
                         {
                             "id": 211,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -1718,7 +1718,7 @@ VALUES
                         },
                         {
                             "id": 212,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -1726,7 +1726,7 @@ VALUES
                         },
                         {
                             "id": 213,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -1734,7 +1734,7 @@ VALUES
                         },
                         {
                             "id": 214,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -1742,7 +1742,7 @@ VALUES
                         },
                         {
                             "id": 215,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -1750,7 +1750,7 @@ VALUES
                         },
                         {
                             "id": 216,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -1758,7 +1758,7 @@ VALUES
                         },
                         {
                             "id": 217,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -1766,7 +1766,7 @@ VALUES
                         },
                         {
                             "id": 218,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -1774,7 +1774,7 @@ VALUES
                         },
                         {
                             "id": 219,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -1782,7 +1782,7 @@ VALUES
                         },
                         {
                             "id": 220,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -1790,7 +1790,7 @@ VALUES
                         },
                         {
                             "id": 221,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -1798,7 +1798,7 @@ VALUES
                         },
                         {
                             "id": 222,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -1806,7 +1806,7 @@ VALUES
                         },
                         {
                             "id": 223,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -1814,7 +1814,7 @@ VALUES
                         },
                         {
                             "id": 224,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -1822,7 +1822,7 @@ VALUES
                         },
                         {
                             "id": 225,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -1830,7 +1830,7 @@ VALUES
                         },
                         {
                             "id": 226,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -1838,7 +1838,7 @@ VALUES
                         },
                         {
                             "id": 227,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -1846,7 +1846,7 @@ VALUES
                         },
                         {
                             "id": 228,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -1854,7 +1854,7 @@ VALUES
                         },
                         {
                             "id": 229,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -1862,7 +1862,7 @@ VALUES
                         },
                         {
                             "id": 230,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -1870,7 +1870,7 @@ VALUES
                         },
                         {
                             "id": 231,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -1878,7 +1878,7 @@ VALUES
                         },
                         {
                             "id": 232,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 32,
@@ -1886,7 +1886,7 @@ VALUES
                         },
                         {
                             "id": 233,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 33,
@@ -1894,7 +1894,7 @@ VALUES
                         },
                         {
                             "id": 234,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -1902,7 +1902,7 @@ VALUES
                         },
                         {
                             "id": 235,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -1910,7 +1910,7 @@ VALUES
                         },
                         {
                             "id": 236,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -1918,7 +1918,7 @@ VALUES
                         },
                         {
                             "id": 237,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -1926,7 +1926,7 @@ VALUES
                         },
                         {
                             "id": 238,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -1934,7 +1934,7 @@ VALUES
                         },
                         {
                             "id": 239,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -1942,7 +1942,7 @@ VALUES
                         },
                         {
                             "id": 240,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -1950,7 +1950,7 @@ VALUES
                         },
                         {
                             "id": 241,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -1958,7 +1958,7 @@ VALUES
                         },
                         {
                             "id": 242,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -1966,7 +1966,7 @@ VALUES
                         },
                         {
                             "id": 243,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -1974,7 +1974,7 @@ VALUES
                         },
                         {
                             "id": 244,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -1982,7 +1982,7 @@ VALUES
                         },
                         {
                             "id": 245,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -1990,7 +1990,7 @@ VALUES
                         },
                         {
                             "id": 246,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -1998,7 +1998,7 @@ VALUES
                         },
                         {
                             "id": 247,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -2006,7 +2006,7 @@ VALUES
                         },
                         {
                             "id": 248,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -2014,7 +2014,7 @@ VALUES
                         },
                         {
                             "id": 249,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -2022,7 +2022,7 @@ VALUES
                         },
                         {
                             "id": 250,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -2030,7 +2030,7 @@ VALUES
                         },
                         {
                             "id": 251,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -2038,7 +2038,7 @@ VALUES
                         },
                         {
                             "id": 252,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -2046,7 +2046,7 @@ VALUES
                         },
                         {
                             "id": 253,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -2054,7 +2054,7 @@ VALUES
                         },
                         {
                             "id": 254,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -2062,7 +2062,7 @@ VALUES
                         },
                         {
                             "id": 255,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -2070,7 +2070,7 @@ VALUES
                         },
                         {
                             "id": 256,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -2078,7 +2078,7 @@ VALUES
                         },
                         {
                             "id": 257,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -2086,7 +2086,7 @@ VALUES
                         },
                         {
                             "id": 258,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -2094,7 +2094,7 @@ VALUES
                         },
                         {
                             "id": 259,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -2102,7 +2102,7 @@ VALUES
                         },
                         {
                             "id": 260,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -2110,7 +2110,7 @@ VALUES
                         },
                         {
                             "id": 261,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -2118,7 +2118,7 @@ VALUES
                         },
                         {
                             "id": 262,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -2126,7 +2126,7 @@ VALUES
                         },
                         {
                             "id": 263,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -2134,7 +2134,7 @@ VALUES
                         },
                         {
                             "id": 264,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -2142,7 +2142,7 @@ VALUES
                         },
                         {
                             "id": 265,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -2150,7 +2150,7 @@ VALUES
                         },
                         {
                             "id": 266,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -2158,7 +2158,7 @@ VALUES
                         },
                         {
                             "id": 267,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -2166,7 +2166,7 @@ VALUES
                         },
                         {
                             "id": 268,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -2174,7 +2174,7 @@ VALUES
                         },
                         {
                             "id": 269,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -2182,7 +2182,7 @@ VALUES
                         },
                         {
                             "id": 270,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -2190,7 +2190,7 @@ VALUES
                         },
                         {
                             "id": 271,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -2198,7 +2198,7 @@ VALUES
                         },
                         {
                             "id": 272,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -2206,7 +2206,7 @@ VALUES
                         },
                         {
                             "id": 273,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -2214,7 +2214,7 @@ VALUES
                         },
                         {
                             "id": 274,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -2222,7 +2222,7 @@ VALUES
                         },
                         {
                             "id": 275,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -2230,7 +2230,7 @@ VALUES
                         },
                         {
                             "id": 276,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -2238,7 +2238,7 @@ VALUES
                         },
                         {
                             "id": 277,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -2246,7 +2246,7 @@ VALUES
                         },
                         {
                             "id": 278,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -2254,7 +2254,7 @@ VALUES
                         },
                         {
                             "id": 279,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -2262,7 +2262,7 @@ VALUES
                         },
                         {
                             "id": 280,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -2270,7 +2270,7 @@ VALUES
                         },
                         {
                             "id": 281,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -2278,7 +2278,7 @@ VALUES
                         },
                         {
                             "id": 282,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 32,
@@ -2286,7 +2286,7 @@ VALUES
                         },
                         {
                             "id": 283,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -2294,7 +2294,7 @@ VALUES
                         },
                         {
                             "id": 284,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -2302,7 +2302,7 @@ VALUES
                         },
                         {
                             "id": 285,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -2310,7 +2310,7 @@ VALUES
                         },
                         {
                             "id": 286,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -2318,7 +2318,7 @@ VALUES
                         },
                         {
                             "id": 287,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -2326,7 +2326,7 @@ VALUES
                         },
                         {
                             "id": 288,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -2334,7 +2334,7 @@ VALUES
                         },
                         {
                             "id": 289,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -2342,7 +2342,7 @@ VALUES
                         },
                         {
                             "id": 290,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -2350,7 +2350,7 @@ VALUES
                         },
                         {
                             "id": 291,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -2358,7 +2358,7 @@ VALUES
                         },
                         {
                             "id": 292,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -2366,7 +2366,7 @@ VALUES
                         },
                         {
                             "id": 293,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -2374,7 +2374,7 @@ VALUES
                         },
                         {
                             "id": 294,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -2382,7 +2382,7 @@ VALUES
                         },
                         {
                             "id": 295,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -2390,7 +2390,7 @@ VALUES
                         },
                         {
                             "id": 296,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -2398,7 +2398,7 @@ VALUES
                         },
                         {
                             "id": 297,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -2406,7 +2406,7 @@ VALUES
                         },
                         {
                             "id": 298,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -2414,7 +2414,7 @@ VALUES
                         },
                         {
                             "id": 299,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -2422,7 +2422,7 @@ VALUES
                         },
                         {
                             "id": 300,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -2430,7 +2430,7 @@ VALUES
                         },
                         {
                             "id": 301,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -2438,7 +2438,7 @@ VALUES
                         },
                         {
                             "id": 302,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -2446,7 +2446,7 @@ VALUES
                         },
                         {
                             "id": 303,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -2454,7 +2454,7 @@ VALUES
                         },
                         {
                             "id": 304,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -2462,7 +2462,7 @@ VALUES
                         },
                         {
                             "id": 305,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -2470,7 +2470,7 @@ VALUES
                         },
                         {
                             "id": 306,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -2478,7 +2478,7 @@ VALUES
                         },
                         {
                             "id": 307,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -2486,7 +2486,7 @@ VALUES
                         },
                         {
                             "id": 308,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -2494,7 +2494,7 @@ VALUES
                         },
                         {
                             "id": 309,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -2502,7 +2502,7 @@ VALUES
                         },
                         {
                             "id": 310,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -2510,7 +2510,7 @@ VALUES
                         },
                         {
                             "id": 311,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -2518,7 +2518,7 @@ VALUES
                         },
                         {
                             "id": 312,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -2526,7 +2526,7 @@ VALUES
                         },
                         {
                             "id": 313,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 13,
@@ -2534,7 +2534,7 @@ VALUES
                         },
                         {
                             "id": 314,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -2542,7 +2542,7 @@ VALUES
                         },
                         {
                             "id": 315,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -2550,7 +2550,7 @@ VALUES
                         },
                         {
                             "id": 316,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -2558,7 +2558,7 @@ VALUES
                         },
                         {
                             "id": 317,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -2566,7 +2566,7 @@ VALUES
                         },
                         {
                             "id": 318,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -2574,7 +2574,7 @@ VALUES
                         },
                         {
                             "id": 319,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -2582,7 +2582,7 @@ VALUES
                         },
                         {
                             "id": 320,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -2590,7 +2590,7 @@ VALUES
                         },
                         {
                             "id": 321,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -2598,7 +2598,7 @@ VALUES
                         },
                         {
                             "id": 322,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -2606,7 +2606,7 @@ VALUES
                         },
                         {
                             "id": 323,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -2614,7 +2614,7 @@ VALUES
                         },
                         {
                             "id": 324,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -2622,7 +2622,7 @@ VALUES
                         },
                         {
                             "id": 325,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -2630,7 +2630,7 @@ VALUES
                         },
                         {
                             "id": 326,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 26,
@@ -2638,7 +2638,7 @@ VALUES
                         },
                         {
                             "id": 327,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -2646,7 +2646,7 @@ VALUES
                         },
                         {
                             "id": 328,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -2654,7 +2654,7 @@ VALUES
                         },
                         {
                             "id": 329,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -2662,7 +2662,7 @@ VALUES
                         },
                         {
                             "id": 330,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -2670,7 +2670,7 @@ VALUES
                         },
                         {
                             "id": 331,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -2678,7 +2678,7 @@ VALUES
                         },
                         {
                             "id": 332,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -2686,7 +2686,7 @@ VALUES
                         },
                         {
                             "id": 333,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -2694,7 +2694,7 @@ VALUES
                         },
                         {
                             "id": 334,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -2702,7 +2702,7 @@ VALUES
                         },
                         {
                             "id": 335,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -2710,7 +2710,7 @@ VALUES
                         },
                         {
                             "id": 336,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -2718,7 +2718,7 @@ VALUES
                         },
                         {
                             "id": 337,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -2726,7 +2726,7 @@ VALUES
                         },
                         {
                             "id": 338,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -2734,7 +2734,7 @@ VALUES
                         },
                         {
                             "id": 339,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -2742,7 +2742,7 @@ VALUES
                         },
                         {
                             "id": 340,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -2750,7 +2750,7 @@ VALUES
                         },
                         {
                             "id": 341,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -2758,7 +2758,7 @@ VALUES
                         },
                         {
                             "id": 342,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -2766,7 +2766,7 @@ VALUES
                         },
                         {
                             "id": 343,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -2774,7 +2774,7 @@ VALUES
                         },
                         {
                             "id": 344,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -2782,7 +2782,7 @@ VALUES
                         },
                         {
                             "id": 345,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -2790,7 +2790,7 @@ VALUES
                         },
                         {
                             "id": 346,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -2798,7 +2798,7 @@ VALUES
                         },
                         {
                             "id": 347,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -2806,7 +2806,7 @@ VALUES
                         },
                         {
                             "id": 348,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -2814,7 +2814,7 @@ VALUES
                         },
                         {
                             "id": 349,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -2822,7 +2822,7 @@ VALUES
                         },
                         {
                             "id": 350,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -2830,7 +2830,7 @@ VALUES
                         },
                         {
                             "id": 351,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -2838,7 +2838,7 @@ VALUES
                         },
                         {
                             "id": 352,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -2846,7 +2846,7 @@ VALUES
                         },
                         {
                             "id": 353,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -2854,7 +2854,7 @@ VALUES
                         },
                         {
                             "id": 354,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -2862,7 +2862,7 @@ VALUES
                         },
                         {
                             "id": 355,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -2870,7 +2870,7 @@ VALUES
                         },
                         {
                             "id": 356,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -2878,7 +2878,7 @@ VALUES
                         },
                         {
                             "id": 357,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -2886,7 +2886,7 @@ VALUES
                         },
                         {
                             "id": 358,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -2894,7 +2894,7 @@ VALUES
                         },
                         {
                             "id": 359,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -2902,7 +2902,7 @@ VALUES
                         },
                         {
                             "id": 360,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -2910,7 +2910,7 @@ VALUES
                         },
                         {
                             "id": 361,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -2918,7 +2918,7 @@ VALUES
                         },
                         {
                             "id": 362,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -2926,7 +2926,7 @@ VALUES
                         },
                         {
                             "id": 363,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -2934,7 +2934,7 @@ VALUES
                         },
                         {
                             "id": 364,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -2942,7 +2942,7 @@ VALUES
                         },
                         {
                             "id": 365,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -2950,7 +2950,7 @@ VALUES
                         },
                         {
                             "id": 366,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -2958,7 +2958,7 @@ VALUES
                         },
                         {
                             "id": 367,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -2966,7 +2966,7 @@ VALUES
                         },
                         {
                             "id": 368,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -2974,7 +2974,7 @@ VALUES
                         },
                         {
                             "id": 369,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -2982,7 +2982,7 @@ VALUES
                         },
                         {
                             "id": 370,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -2990,7 +2990,7 @@ VALUES
                         },
                         {
                             "id": 371,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -2998,7 +2998,7 @@ VALUES
                         },
                         {
                             "id": 372,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -3006,7 +3006,7 @@ VALUES
                         },
                         {
                             "id": 373,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -3014,7 +3014,7 @@ VALUES
                         },
                         {
                             "id": 374,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -3022,7 +3022,7 @@ VALUES
                         },
                         {
                             "id": 375,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -3030,7 +3030,7 @@ VALUES
                         },
                         {
                             "id": 376,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -3038,7 +3038,7 @@ VALUES
                         },
                         {
                             "id": 377,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -3046,7 +3046,7 @@ VALUES
                         },
                         {
                             "id": 378,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -3054,7 +3054,7 @@ VALUES
                         },
                         {
                             "id": 379,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -3062,7 +3062,7 @@ VALUES
                         },
                         {
                             "id": 380,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -3070,7 +3070,7 @@ VALUES
                         },
                         {
                             "id": 381,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -3078,7 +3078,7 @@ VALUES
                         },
                         {
                             "id": 382,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -3086,7 +3086,7 @@ VALUES
                         },
                         {
                             "id": 383,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -3094,7 +3094,7 @@ VALUES
                         },
                         {
                             "id": 384,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -3102,7 +3102,7 @@ VALUES
                         },
                         {
                             "id": 385,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -3110,7 +3110,7 @@ VALUES
                         },
                         {
                             "id": 386,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -3118,7 +3118,7 @@ VALUES
                         },
                         {
                             "id": 387,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -3126,7 +3126,7 @@ VALUES
                         },
                         {
                             "id": 388,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -3134,7 +3134,7 @@ VALUES
                         },
                         {
                             "id": 389,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -3142,7 +3142,7 @@ VALUES
                         },
                         {
                             "id": 390,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -3150,7 +3150,7 @@ VALUES
                         },
                         {
                             "id": 391,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -3158,7 +3158,7 @@ VALUES
                         },
                         {
                             "id": 392,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -3166,7 +3166,7 @@ VALUES
                         },
                         {
                             "id": 393,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -3174,7 +3174,7 @@ VALUES
                         },
                         {
                             "id": 394,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -3182,7 +3182,7 @@ VALUES
                         },
                         {
                             "id": 395,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -3190,7 +3190,7 @@ VALUES
                         },
                         {
                             "id": 396,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -3198,7 +3198,7 @@ VALUES
                         },
                         {
                             "id": 397,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -3206,7 +3206,7 @@ VALUES
                         },
                         {
                             "id": 398,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -3214,7 +3214,7 @@ VALUES
                         },
                         {
                             "id": 399,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -3222,7 +3222,7 @@ VALUES
                         },
                         {
                             "id": 400,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -3230,7 +3230,7 @@ VALUES
                         },
                         {
                             "id": 401,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -3238,7 +3238,7 @@ VALUES
                         },
                         {
                             "id": 402,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -3246,7 +3246,7 @@ VALUES
                         },
                         {
                             "id": 403,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -3254,7 +3254,7 @@ VALUES
                         },
                         {
                             "id": 404,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -3262,7 +3262,7 @@ VALUES
                         },
                         {
                             "id": 405,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -3270,7 +3270,7 @@ VALUES
                         },
                         {
                             "id": 406,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -3278,7 +3278,7 @@ VALUES
                         },
                         {
                             "id": 407,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -3286,7 +3286,7 @@ VALUES
                         },
                         {
                             "id": 408,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -3294,7 +3294,7 @@ VALUES
                         },
                         {
                             "id": 409,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -3302,7 +3302,7 @@ VALUES
                         },
                         {
                             "id": 410,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 10,
@@ -3310,7 +3310,7 @@ VALUES
                         },
                         {
                             "id": 411,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -3318,7 +3318,7 @@ VALUES
                         },
                         {
                             "id": 412,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -3326,7 +3326,7 @@ VALUES
                         },
                         {
                             "id": 413,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -3334,7 +3334,7 @@ VALUES
                         },
                         {
                             "id": 414,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -3342,7 +3342,7 @@ VALUES
                         },
                         {
                             "id": 415,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -3350,7 +3350,7 @@ VALUES
                         },
                         {
                             "id": 416,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -3358,7 +3358,7 @@ VALUES
                         },
                         {
                             "id": 417,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -3366,7 +3366,7 @@ VALUES
                         },
                         {
                             "id": 418,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -3374,7 +3374,7 @@ VALUES
                         },
                         {
                             "id": 419,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -3382,7 +3382,7 @@ VALUES
                         },
                         {
                             "id": 420,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -3390,7 +3390,7 @@ VALUES
                         },
                         {
                             "id": 421,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -3398,7 +3398,7 @@ VALUES
                         },
                         {
                             "id": 422,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -3406,7 +3406,7 @@ VALUES
                         },
                         {
                             "id": 423,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -3414,7 +3414,7 @@ VALUES
                         },
                         {
                             "id": 424,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -3422,7 +3422,7 @@ VALUES
                         },
                         {
                             "id": 425,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -3430,7 +3430,7 @@ VALUES
                         },
                         {
                             "id": 426,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -3438,7 +3438,7 @@ VALUES
                         },
                         {
                             "id": 427,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -3446,7 +3446,7 @@ VALUES
                         },
                         {
                             "id": 428,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -3454,7 +3454,7 @@ VALUES
                         },
                         {
                             "id": 429,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -3462,7 +3462,7 @@ VALUES
                         },
                         {
                             "id": 430,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -3470,7 +3470,7 @@ VALUES
                         },
                         {
                             "id": 431,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -3478,7 +3478,7 @@ VALUES
                         },
                         {
                             "id": 432,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 32,
@@ -3486,7 +3486,7 @@ VALUES
                         },
                         {
                             "id": 433,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -3494,7 +3494,7 @@ VALUES
                         },
                         {
                             "id": 434,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 34,
@@ -3502,7 +3502,7 @@ VALUES
                         },
                         {
                             "id": 435,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -3510,7 +3510,7 @@ VALUES
                         },
                         {
                             "id": 436,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -3518,7 +3518,7 @@ VALUES
                         },
                         {
                             "id": 437,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -3526,7 +3526,7 @@ VALUES
                         },
                         {
                             "id": 438,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -3534,7 +3534,7 @@ VALUES
                         },
                         {
                             "id": 439,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -3542,7 +3542,7 @@ VALUES
                         },
                         {
                             "id": 440,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -3550,7 +3550,7 @@ VALUES
                         },
                         {
                             "id": 441,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -3558,7 +3558,7 @@ VALUES
                         },
                         {
                             "id": 442,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -3566,7 +3566,7 @@ VALUES
                         },
                         {
                             "id": 443,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -3574,7 +3574,7 @@ VALUES
                         },
                         {
                             "id": 444,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -3582,7 +3582,7 @@ VALUES
                         },
                         {
                             "id": 445,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -3590,7 +3590,7 @@ VALUES
                         },
                         {
                             "id": 446,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -3598,7 +3598,7 @@ VALUES
                         },
                         {
                             "id": 447,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -3606,7 +3606,7 @@ VALUES
                         },
                         {
                             "id": 448,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -3614,7 +3614,7 @@ VALUES
                         },
                         {
                             "id": 449,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -3622,7 +3622,7 @@ VALUES
                         },
                         {
                             "id": 450,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -3630,7 +3630,7 @@ VALUES
                         },
                         {
                             "id": 451,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -3638,7 +3638,7 @@ VALUES
                         },
                         {
                             "id": 452,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -3646,7 +3646,7 @@ VALUES
                         },
                         {
                             "id": 453,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -3654,7 +3654,7 @@ VALUES
                         },
                         {
                             "id": 454,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -3662,7 +3662,7 @@ VALUES
                         },
                         {
                             "id": 455,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -3670,7 +3670,7 @@ VALUES
                         },
                         {
                             "id": 456,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -3678,7 +3678,7 @@ VALUES
                         },
                         {
                             "id": 457,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -3686,7 +3686,7 @@ VALUES
                         },
                         {
                             "id": 458,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -3694,7 +3694,7 @@ VALUES
                         },
                         {
                             "id": 459,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -3702,7 +3702,7 @@ VALUES
                         },
                         {
                             "id": 460,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -3710,7 +3710,7 @@ VALUES
                         },
                         {
                             "id": 461,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -3718,7 +3718,7 @@ VALUES
                         },
                         {
                             "id": 462,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -3726,7 +3726,7 @@ VALUES
                         },
                         {
                             "id": 463,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -3734,7 +3734,7 @@ VALUES
                         },
                         {
                             "id": 464,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -3742,7 +3742,7 @@ VALUES
                         },
                         {
                             "id": 465,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 15,
@@ -3750,7 +3750,7 @@ VALUES
                         },
                         {
                             "id": 466,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -3758,7 +3758,7 @@ VALUES
                         },
                         {
                             "id": 467,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -3766,7 +3766,7 @@ VALUES
                         },
                         {
                             "id": 468,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -3774,7 +3774,7 @@ VALUES
                         },
                         {
                             "id": 469,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -3782,7 +3782,7 @@ VALUES
                         },
                         {
                             "id": 470,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -3790,7 +3790,7 @@ VALUES
                         },
                         {
                             "id": 471,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -3798,7 +3798,7 @@ VALUES
                         },
                         {
                             "id": 472,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -3806,7 +3806,7 @@ VALUES
                         },
                         {
                             "id": 473,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -3814,7 +3814,7 @@ VALUES
                         },
                         {
                             "id": 474,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -3822,7 +3822,7 @@ VALUES
                         },
                         {
                             "id": 475,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -3830,7 +3830,7 @@ VALUES
                         },
                         {
                             "id": 476,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -3838,7 +3838,7 @@ VALUES
                         },
                         {
                             "id": 477,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -3846,7 +3846,7 @@ VALUES
                         },
                         {
                             "id": 478,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -3854,7 +3854,7 @@ VALUES
                         },
                         {
                             "id": 479,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -3862,7 +3862,7 @@ VALUES
                         },
                         {
                             "id": 480,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -3870,7 +3870,7 @@ VALUES
                         },
                         {
                             "id": 481,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -3878,7 +3878,7 @@ VALUES
                         },
                         {
                             "id": 482,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -3886,7 +3886,7 @@ VALUES
                         },
                         {
                             "id": 483,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -3894,7 +3894,7 @@ VALUES
                         },
                         {
                             "id": 484,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -3902,7 +3902,7 @@ VALUES
                         },
                         {
                             "id": 485,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -3910,7 +3910,7 @@ VALUES
                         },
                         {
                             "id": 486,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -3918,7 +3918,7 @@ VALUES
                         },
                         {
                             "id": 487,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -3926,7 +3926,7 @@ VALUES
                         },
                         {
                             "id": 488,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -3934,7 +3934,7 @@ VALUES
                         },
                         {
                             "id": 489,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -3942,7 +3942,7 @@ VALUES
                         },
                         {
                             "id": 490,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -3950,7 +3950,7 @@ VALUES
                         },
                         {
                             "id": 491,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -3958,7 +3958,7 @@ VALUES
                         },
                         {
                             "id": 492,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -3966,7 +3966,7 @@ VALUES
                         },
                         {
                             "id": 493,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -3974,7 +3974,7 @@ VALUES
                         },
                         {
                             "id": 494,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -3982,7 +3982,7 @@ VALUES
                         },
                         {
                             "id": 495,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -3990,7 +3990,7 @@ VALUES
                         },
                         {
                             "id": 496,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -3998,7 +3998,7 @@ VALUES
                         },
                         {
                             "id": 497,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -4006,7 +4006,7 @@ VALUES
                         },
                         {
                             "id": 498,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -4014,7 +4014,7 @@ VALUES
                         },
                         {
                             "id": 499,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -4022,7 +4022,7 @@ VALUES
                         },
                         {
                             "id": 500,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -4030,7 +4030,7 @@ VALUES
                         },
                         {
                             "id": 501,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -4038,7 +4038,7 @@ VALUES
                         },
                         {
                             "id": 502,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -4046,7 +4046,7 @@ VALUES
                         },
                         {
                             "id": 503,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -4054,7 +4054,7 @@ VALUES
                         },
                         {
                             "id": 504,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -4062,7 +4062,7 @@ VALUES
                         },
                         {
                             "id": 505,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -4070,7 +4070,7 @@ VALUES
                         },
                         {
                             "id": 506,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -4078,7 +4078,7 @@ VALUES
                         },
                         {
                             "id": 507,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -4086,7 +4086,7 @@ VALUES
                         },
                         {
                             "id": 508,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -4094,7 +4094,7 @@ VALUES
                         },
                         {
                             "id": 509,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -4102,7 +4102,7 @@ VALUES
                         },
                         {
                             "id": 510,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -4110,7 +4110,7 @@ VALUES
                         },
                         {
                             "id": 511,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -4118,7 +4118,7 @@ VALUES
                         },
                         {
                             "id": 512,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -4126,7 +4126,7 @@ VALUES
                         },
                         {
                             "id": 513,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -4134,7 +4134,7 @@ VALUES
                         },
                         {
                             "id": 514,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -4142,7 +4142,7 @@ VALUES
                         },
                         {
                             "id": 515,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -4150,7 +4150,7 @@ VALUES
                         },
                         {
                             "id": 516,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -4158,7 +4158,7 @@ VALUES
                         },
                         {
                             "id": 517,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -4166,7 +4166,7 @@ VALUES
                         },
                         {
                             "id": 518,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -4174,7 +4174,7 @@ VALUES
                         },
                         {
                             "id": 519,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -4182,7 +4182,7 @@ VALUES
                         },
                         {
                             "id": 520,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -4190,7 +4190,7 @@ VALUES
                         },
                         {
                             "id": 521,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -4198,7 +4198,7 @@ VALUES
                         },
                         {
                             "id": 522,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -4206,7 +4206,7 @@ VALUES
                         },
                         {
                             "id": 523,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -4214,7 +4214,7 @@ VALUES
                         },
                         {
                             "id": 524,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -4222,7 +4222,7 @@ VALUES
                         },
                         {
                             "id": 525,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -4230,7 +4230,7 @@ VALUES
                         },
                         {
                             "id": 526,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -4238,7 +4238,7 @@ VALUES
                         },
                         {
                             "id": 527,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -4246,7 +4246,7 @@ VALUES
                         },
                         {
                             "id": 528,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -4254,7 +4254,7 @@ VALUES
                         },
                         {
                             "id": 529,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -4262,7 +4262,7 @@ VALUES
                         },
                         {
                             "id": 530,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -4270,7 +4270,7 @@ VALUES
                         },
                         {
                             "id": 531,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -4278,7 +4278,7 @@ VALUES
                         },
                         {
                             "id": 532,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -4286,7 +4286,7 @@ VALUES
                         },
                         {
                             "id": 533,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -4294,7 +4294,7 @@ VALUES
                         },
                         {
                             "id": 534,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -4302,7 +4302,7 @@ VALUES
                         },
                         {
                             "id": 535,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -4310,7 +4310,7 @@ VALUES
                         },
                         {
                             "id": 536,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -4318,7 +4318,7 @@ VALUES
                         },
                         {
                             "id": 537,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -4326,7 +4326,7 @@ VALUES
                         },
                         {
                             "id": 538,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -4334,7 +4334,7 @@ VALUES
                         },
                         {
                             "id": 539,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -4342,7 +4342,7 @@ VALUES
                         },
                         {
                             "id": 540,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -4350,7 +4350,7 @@ VALUES
                         },
                         {
                             "id": 541,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -4358,7 +4358,7 @@ VALUES
                         },
                         {
                             "id": 542,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -4366,7 +4366,7 @@ VALUES
                         },
                         {
                             "id": 543,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -4374,7 +4374,7 @@ VALUES
                         },
                         {
                             "id": 544,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -4382,7 +4382,7 @@ VALUES
                         },
                         {
                             "id": 545,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -4390,7 +4390,7 @@ VALUES
                         },
                         {
                             "id": 546,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -4398,7 +4398,7 @@ VALUES
                         },
                         {
                             "id": 547,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -4406,7 +4406,7 @@ VALUES
                         },
                         {
                             "id": 548,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -4414,7 +4414,7 @@ VALUES
                         },
                         {
                             "id": 549,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -4422,7 +4422,7 @@ VALUES
                         },
                         {
                             "id": 550,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -4430,7 +4430,7 @@ VALUES
                         },
                         {
                             "id": 551,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -4438,7 +4438,7 @@ VALUES
                         },
                         {
                             "id": 552,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -4446,7 +4446,7 @@ VALUES
                         },
                         {
                             "id": 553,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -4454,7 +4454,7 @@ VALUES
                         },
                         {
                             "id": 554,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -4462,7 +4462,7 @@ VALUES
                         },
                         {
                             "id": 555,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -4470,7 +4470,7 @@ VALUES
                         },
                         {
                             "id": 556,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -4478,7 +4478,7 @@ VALUES
                         },
                         {
                             "id": 557,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -4486,7 +4486,7 @@ VALUES
                         },
                         {
                             "id": 558,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -4494,7 +4494,7 @@ VALUES
                         },
                         {
                             "id": 559,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -4502,7 +4502,7 @@ VALUES
                         },
                         {
                             "id": 560,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 10,
@@ -4510,7 +4510,7 @@ VALUES
                         },
                         {
                             "id": 561,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -4518,7 +4518,7 @@ VALUES
                         },
                         {
                             "id": 562,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -4526,7 +4526,7 @@ VALUES
                         },
                         {
                             "id": 563,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -4534,7 +4534,7 @@ VALUES
                         },
                         {
                             "id": 564,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -4542,7 +4542,7 @@ VALUES
                         },
                         {
                             "id": 565,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -4550,7 +4550,7 @@ VALUES
                         },
                         {
                             "id": 566,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -4558,7 +4558,7 @@ VALUES
                         },
                         {
                             "id": 567,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -4566,7 +4566,7 @@ VALUES
                         },
                         {
                             "id": 568,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -4574,7 +4574,7 @@ VALUES
                         },
                         {
                             "id": 569,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -4582,7 +4582,7 @@ VALUES
                         },
                         {
                             "id": 570,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -4590,7 +4590,7 @@ VALUES
                         },
                         {
                             "id": 571,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -4598,7 +4598,7 @@ VALUES
                         },
                         {
                             "id": 572,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -4606,7 +4606,7 @@ VALUES
                         },
                         {
                             "id": 573,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -4614,7 +4614,7 @@ VALUES
                         },
                         {
                             "id": 574,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -4622,7 +4622,7 @@ VALUES
                         },
                         {
                             "id": 575,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -4630,7 +4630,7 @@ VALUES
                         },
                         {
                             "id": 576,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -4638,7 +4638,7 @@ VALUES
                         },
                         {
                             "id": 577,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -4646,7 +4646,7 @@ VALUES
                         },
                         {
                             "id": 578,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -4654,7 +4654,7 @@ VALUES
                         },
                         {
                             "id": 579,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -4662,7 +4662,7 @@ VALUES
                         },
                         {
                             "id": 580,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -4670,7 +4670,7 @@ VALUES
                         },
                         {
                             "id": 581,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -4678,7 +4678,7 @@ VALUES
                         },
                         {
                             "id": 582,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -4686,7 +4686,7 @@ VALUES
                         },
                         {
                             "id": 583,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -4694,7 +4694,7 @@ VALUES
                         },
                         {
                             "id": 584,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -4702,7 +4702,7 @@ VALUES
                         },
                         {
                             "id": 585,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -4710,7 +4710,7 @@ VALUES
                         },
                         {
                             "id": 586,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -4718,7 +4718,7 @@ VALUES
                         },
                         {
                             "id": 587,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -4726,7 +4726,7 @@ VALUES
                         },
                         {
                             "id": 588,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -4734,7 +4734,7 @@ VALUES
                         },
                         {
                             "id": 589,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -4742,7 +4742,7 @@ VALUES
                         },
                         {
                             "id": 590,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -4750,7 +4750,7 @@ VALUES
                         },
                         {
                             "id": 591,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -4758,7 +4758,7 @@ VALUES
                         },
                         {
                             "id": 592,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -4766,7 +4766,7 @@ VALUES
                         },
                         {
                             "id": 593,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -4774,7 +4774,7 @@ VALUES
                         },
                         {
                             "id": 594,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -4782,7 +4782,7 @@ VALUES
                         },
                         {
                             "id": 595,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -4790,7 +4790,7 @@ VALUES
                         },
                         {
                             "id": 596,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -4798,7 +4798,7 @@ VALUES
                         },
                         {
                             "id": 597,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -4806,7 +4806,7 @@ VALUES
                         },
                         {
                             "id": 598,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -4814,7 +4814,7 @@ VALUES
                         },
                         {
                             "id": 599,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -4822,7 +4822,7 @@ VALUES
                         },
                         {
                             "id": 600,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -4830,7 +4830,7 @@ VALUES
                         },
                         {
                             "id": 601,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -4838,7 +4838,7 @@ VALUES
                         },
                         {
                             "id": 602,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -4846,7 +4846,7 @@ VALUES
                         },
                         {
                             "id": 603,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -4854,7 +4854,7 @@ VALUES
                         },
                         {
                             "id": 604,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -4862,7 +4862,7 @@ VALUES
                         },
                         {
                             "id": 605,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -4870,7 +4870,7 @@ VALUES
                         },
                         {
                             "id": 606,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -4878,7 +4878,7 @@ VALUES
                         },
                         {
                             "id": 607,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -4886,7 +4886,7 @@ VALUES
                         },
                         {
                             "id": 608,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -4894,7 +4894,7 @@ VALUES
                         },
                         {
                             "id": 609,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -4902,7 +4902,7 @@ VALUES
                         },
                         {
                             "id": 610,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -4910,7 +4910,7 @@ VALUES
                         },
                         {
                             "id": 611,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -4918,7 +4918,7 @@ VALUES
                         },
                         {
                             "id": 612,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -4926,7 +4926,7 @@ VALUES
                         },
                         {
                             "id": 613,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 13,
@@ -4934,7 +4934,7 @@ VALUES
                         },
                         {
                             "id": 614,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -4942,7 +4942,7 @@ VALUES
                         },
                         {
                             "id": 615,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -4950,7 +4950,7 @@ VALUES
                         },
                         {
                             "id": 616,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -4958,7 +4958,7 @@ VALUES
                         },
                         {
                             "id": 617,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -4966,7 +4966,7 @@ VALUES
                         },
                         {
                             "id": 618,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -4974,7 +4974,7 @@ VALUES
                         },
                         {
                             "id": 619,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -4982,7 +4982,7 @@ VALUES
                         },
                         {
                             "id": 620,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -4990,7 +4990,7 @@ VALUES
                         },
                         {
                             "id": 621,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -4998,7 +4998,7 @@ VALUES
                         },
                         {
                             "id": 622,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -5006,7 +5006,7 @@ VALUES
                         },
                         {
                             "id": 623,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -5014,7 +5014,7 @@ VALUES
                         },
                         {
                             "id": 624,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -5022,7 +5022,7 @@ VALUES
                         },
                         {
                             "id": 625,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -5030,7 +5030,7 @@ VALUES
                         },
                         {
                             "id": 626,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -5038,7 +5038,7 @@ VALUES
                         },
                         {
                             "id": 627,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -5046,7 +5046,7 @@ VALUES
                         },
                         {
                             "id": 628,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -5054,7 +5054,7 @@ VALUES
                         },
                         {
                             "id": 629,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -5062,7 +5062,7 @@ VALUES
                         },
                         {
                             "id": 630,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -5070,7 +5070,7 @@ VALUES
                         },
                         {
                             "id": 631,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -5078,7 +5078,7 @@ VALUES
                         },
                         {
                             "id": 632,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -5086,7 +5086,7 @@ VALUES
                         },
                         {
                             "id": 633,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -5094,7 +5094,7 @@ VALUES
                         },
                         {
                             "id": 634,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 34,
@@ -5102,7 +5102,7 @@ VALUES
                         },
                         {
                             "id": 635,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -5110,7 +5110,7 @@ VALUES
                         },
                         {
                             "id": 636,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -5118,7 +5118,7 @@ VALUES
                         },
                         {
                             "id": 637,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -5126,7 +5126,7 @@ VALUES
                         },
                         {
                             "id": 638,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -5134,7 +5134,7 @@ VALUES
                         },
                         {
                             "id": 639,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -5142,7 +5142,7 @@ VALUES
                         },
                         {
                             "id": 640,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -5150,7 +5150,7 @@ VALUES
                         },
                         {
                             "id": 641,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -5158,7 +5158,7 @@ VALUES
                         },
                         {
                             "id": 642,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -5166,7 +5166,7 @@ VALUES
                         },
                         {
                             "id": 643,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -5174,7 +5174,7 @@ VALUES
                         },
                         {
                             "id": 644,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -5182,7 +5182,7 @@ VALUES
                         },
                         {
                             "id": 645,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -5190,7 +5190,7 @@ VALUES
                         },
                         {
                             "id": 646,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -5198,7 +5198,7 @@ VALUES
                         },
                         {
                             "id": 647,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -5206,7 +5206,7 @@ VALUES
                         },
                         {
                             "id": 648,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -5214,7 +5214,7 @@ VALUES
                         },
                         {
                             "id": 649,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -5222,7 +5222,7 @@ VALUES
                         },
                         {
                             "id": 650,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -5230,7 +5230,7 @@ VALUES
                         },
                         {
                             "id": 651,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -5238,7 +5238,7 @@ VALUES
                         },
                         {
                             "id": 652,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -5246,7 +5246,7 @@ VALUES
                         },
                         {
                             "id": 653,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -5254,7 +5254,7 @@ VALUES
                         },
                         {
                             "id": 654,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -5262,7 +5262,7 @@ VALUES
                         },
                         {
                             "id": 655,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 5,
@@ -5270,7 +5270,7 @@ VALUES
                         },
                         {
                             "id": 656,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -5278,7 +5278,7 @@ VALUES
                         },
                         {
                             "id": 657,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -5286,7 +5286,7 @@ VALUES
                         },
                         {
                             "id": 658,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -5294,7 +5294,7 @@ VALUES
                         },
                         {
                             "id": 659,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -5302,7 +5302,7 @@ VALUES
                         },
                         {
                             "id": 660,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -5310,7 +5310,7 @@ VALUES
                         },
                         {
                             "id": 661,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -5318,7 +5318,7 @@ VALUES
                         },
                         {
                             "id": 662,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -5326,7 +5326,7 @@ VALUES
                         },
                         {
                             "id": 663,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -5334,7 +5334,7 @@ VALUES
                         },
                         {
                             "id": 664,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -5342,7 +5342,7 @@ VALUES
                         },
                         {
                             "id": 665,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -5350,7 +5350,7 @@ VALUES
                         },
                         {
                             "id": 666,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -5358,7 +5358,7 @@ VALUES
                         },
                         {
                             "id": 667,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -5366,7 +5366,7 @@ VALUES
                         },
                         {
                             "id": 668,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -5374,7 +5374,7 @@ VALUES
                         },
                         {
                             "id": 669,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -5382,7 +5382,7 @@ VALUES
                         },
                         {
                             "id": 670,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -5390,7 +5390,7 @@ VALUES
                         },
                         {
                             "id": 671,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 21,
@@ -5398,7 +5398,7 @@ VALUES
                         },
                         {
                             "id": 672,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -5406,7 +5406,7 @@ VALUES
                         },
                         {
                             "id": 673,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -5414,7 +5414,7 @@ VALUES
                         },
                         {
                             "id": 674,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -5422,7 +5422,7 @@ VALUES
                         },
                         {
                             "id": 675,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -5430,7 +5430,7 @@ VALUES
                         },
                         {
                             "id": 676,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -5438,7 +5438,7 @@ VALUES
                         },
                         {
                             "id": 677,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -5446,7 +5446,7 @@ VALUES
                         },
                         {
                             "id": 678,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -5454,7 +5454,7 @@ VALUES
                         },
                         {
                             "id": 679,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -5462,7 +5462,7 @@ VALUES
                         },
                         {
                             "id": 680,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -5470,7 +5470,7 @@ VALUES
                         },
                         {
                             "id": 681,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -5478,7 +5478,7 @@ VALUES
                         },
                         {
                             "id": 682,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -5486,7 +5486,7 @@ VALUES
                         },
                         {
                             "id": 683,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -5494,7 +5494,7 @@ VALUES
                         },
                         {
                             "id": 684,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 34,
@@ -5502,7 +5502,7 @@ VALUES
                         },
                         {
                             "id": 685,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -5510,7 +5510,7 @@ VALUES
                         },
                         {
                             "id": 686,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -5518,7 +5518,7 @@ VALUES
                         },
                         {
                             "id": 687,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -5526,7 +5526,7 @@ VALUES
                         },
                         {
                             "id": 688,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -5534,7 +5534,7 @@ VALUES
                         },
                         {
                             "id": 689,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -5542,7 +5542,7 @@ VALUES
                         },
                         {
                             "id": 690,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -5550,7 +5550,7 @@ VALUES
                         },
                         {
                             "id": 691,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -5558,7 +5558,7 @@ VALUES
                         },
                         {
                             "id": 692,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -5566,7 +5566,7 @@ VALUES
                         },
                         {
                             "id": 693,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -5574,7 +5574,7 @@ VALUES
                         },
                         {
                             "id": 694,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -5582,7 +5582,7 @@ VALUES
                         },
                         {
                             "id": 695,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -5590,7 +5590,7 @@ VALUES
                         },
                         {
                             "id": 696,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -5598,7 +5598,7 @@ VALUES
                         },
                         {
                             "id": 697,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -5606,7 +5606,7 @@ VALUES
                         },
                         {
                             "id": 698,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -5614,7 +5614,7 @@ VALUES
                         },
                         {
                             "id": 699,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -5622,7 +5622,7 @@ VALUES
                         },
                         {
                             "id": 700,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -5630,7 +5630,7 @@ VALUES
                         },
                         {
                             "id": 701,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -5638,7 +5638,7 @@ VALUES
                         },
                         {
                             "id": 702,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -5646,7 +5646,7 @@ VALUES
                         },
                         {
                             "id": 703,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -5654,7 +5654,7 @@ VALUES
                         },
                         {
                             "id": 704,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -5662,7 +5662,7 @@ VALUES
                         },
                         {
                             "id": 705,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -5670,7 +5670,7 @@ VALUES
                         },
                         {
                             "id": 706,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -5678,7 +5678,7 @@ VALUES
                         },
                         {
                             "id": 707,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -5686,7 +5686,7 @@ VALUES
                         },
                         {
                             "id": 708,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -5694,7 +5694,7 @@ VALUES
                         },
                         {
                             "id": 709,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -5702,7 +5702,7 @@ VALUES
                         },
                         {
                             "id": 710,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -5710,7 +5710,7 @@ VALUES
                         },
                         {
                             "id": 711,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -5718,7 +5718,7 @@ VALUES
                         },
                         {
                             "id": 712,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -5726,7 +5726,7 @@ VALUES
                         },
                         {
                             "id": 713,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -5734,7 +5734,7 @@ VALUES
                         },
                         {
                             "id": 714,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -5742,7 +5742,7 @@ VALUES
                         },
                         {
                             "id": 715,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -5750,7 +5750,7 @@ VALUES
                         },
                         {
                             "id": 716,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -5758,7 +5758,7 @@ VALUES
                         },
                         {
                             "id": 717,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -5766,7 +5766,7 @@ VALUES
                         },
                         {
                             "id": 718,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -5774,7 +5774,7 @@ VALUES
                         },
                         {
                             "id": 719,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -5782,7 +5782,7 @@ VALUES
                         },
                         {
                             "id": 720,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -5790,7 +5790,7 @@ VALUES
                         },
                         {
                             "id": 721,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -5798,7 +5798,7 @@ VALUES
                         },
                         {
                             "id": 722,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -5806,7 +5806,7 @@ VALUES
                         },
                         {
                             "id": 723,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -5814,7 +5814,7 @@ VALUES
                         },
                         {
                             "id": 724,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -5822,7 +5822,7 @@ VALUES
                         },
                         {
                             "id": 725,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -5830,7 +5830,7 @@ VALUES
                         },
                         {
                             "id": 726,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -5838,7 +5838,7 @@ VALUES
                         },
                         {
                             "id": 727,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -5846,7 +5846,7 @@ VALUES
                         },
                         {
                             "id": 728,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -5854,7 +5854,7 @@ VALUES
                         },
                         {
                             "id": 729,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -5862,7 +5862,7 @@ VALUES
                         },
                         {
                             "id": 730,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -5870,7 +5870,7 @@ VALUES
                         },
                         {
                             "id": 731,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -5878,7 +5878,7 @@ VALUES
                         },
                         {
                             "id": 732,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -5886,7 +5886,7 @@ VALUES
                         },
                         {
                             "id": 733,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -5894,7 +5894,7 @@ VALUES
                         },
                         {
                             "id": 734,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -5902,7 +5902,7 @@ VALUES
                         },
                         {
                             "id": 735,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -5910,7 +5910,7 @@ VALUES
                         },
                         {
                             "id": 736,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -5918,7 +5918,7 @@ VALUES
                         },
                         {
                             "id": 737,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -5926,7 +5926,7 @@ VALUES
                         },
                         {
                             "id": 738,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -5934,7 +5934,7 @@ VALUES
                         },
                         {
                             "id": 739,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -5942,7 +5942,7 @@ VALUES
                         },
                         {
                             "id": 740,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -5950,7 +5950,7 @@ VALUES
                         },
                         {
                             "id": 741,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -5958,7 +5958,7 @@ VALUES
                         },
                         {
                             "id": 742,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -5966,7 +5966,7 @@ VALUES
                         },
                         {
                             "id": 743,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -5974,7 +5974,7 @@ VALUES
                         },
                         {
                             "id": 744,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -5982,7 +5982,7 @@ VALUES
                         },
                         {
                             "id": 745,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -5990,7 +5990,7 @@ VALUES
                         },
                         {
                             "id": 746,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -5998,7 +5998,7 @@ VALUES
                         },
                         {
                             "id": 747,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -6006,7 +6006,7 @@ VALUES
                         },
                         {
                             "id": 748,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -6014,7 +6014,7 @@ VALUES
                         },
                         {
                             "id": 749,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -6022,7 +6022,7 @@ VALUES
                         },
                         {
                             "id": 750,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -6030,7 +6030,7 @@ VALUES
                         },
                         {
                             "id": 751,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -6038,7 +6038,7 @@ VALUES
                         },
                         {
                             "id": 752,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -6046,7 +6046,7 @@ VALUES
                         },
                         {
                             "id": 753,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -6054,7 +6054,7 @@ VALUES
                         },
                         {
                             "id": 754,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -6062,7 +6062,7 @@ VALUES
                         },
                         {
                             "id": 755,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 5,
@@ -6070,7 +6070,7 @@ VALUES
                         },
                         {
                             "id": 756,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -6078,7 +6078,7 @@ VALUES
                         },
                         {
                             "id": 757,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -6086,7 +6086,7 @@ VALUES
                         },
                         {
                             "id": 758,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -6094,7 +6094,7 @@ VALUES
                         },
                         {
                             "id": 759,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -6102,7 +6102,7 @@ VALUES
                         },
                         {
                             "id": 760,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -6110,7 +6110,7 @@ VALUES
                         },
                         {
                             "id": 761,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -6118,7 +6118,7 @@ VALUES
                         },
                         {
                             "id": 762,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -6126,7 +6126,7 @@ VALUES
                         },
                         {
                             "id": 763,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -6134,7 +6134,7 @@ VALUES
                         },
                         {
                             "id": 764,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -6142,7 +6142,7 @@ VALUES
                         },
                         {
                             "id": 765,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -6150,7 +6150,7 @@ VALUES
                         },
                         {
                             "id": 766,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -6158,7 +6158,7 @@ VALUES
                         },
                         {
                             "id": 767,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -6166,7 +6166,7 @@ VALUES
                         },
                         {
                             "id": 768,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -6174,7 +6174,7 @@ VALUES
                         },
                         {
                             "id": 769,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -6182,7 +6182,7 @@ VALUES
                         },
                         {
                             "id": 770,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -6190,7 +6190,7 @@ VALUES
                         },
                         {
                             "id": 771,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -6198,7 +6198,7 @@ VALUES
                         },
                         {
                             "id": 772,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -6206,7 +6206,7 @@ VALUES
                         },
                         {
                             "id": 773,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -6214,7 +6214,7 @@ VALUES
                         },
                         {
                             "id": 774,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -6222,7 +6222,7 @@ VALUES
                         },
                         {
                             "id": 775,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -6230,7 +6230,7 @@ VALUES
                         },
                         {
                             "id": 776,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -6238,7 +6238,7 @@ VALUES
                         },
                         {
                             "id": 777,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -6246,7 +6246,7 @@ VALUES
                         },
                         {
                             "id": 778,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -6254,7 +6254,7 @@ VALUES
                         },
                         {
                             "id": 779,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -6262,7 +6262,7 @@ VALUES
                         },
                         {
                             "id": 780,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -6270,7 +6270,7 @@ VALUES
                         },
                         {
                             "id": 781,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -6278,7 +6278,7 @@ VALUES
                         },
                         {
                             "id": 782,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -6286,7 +6286,7 @@ VALUES
                         },
                         {
                             "id": 783,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 33,
@@ -6294,7 +6294,7 @@ VALUES
                         },
                         {
                             "id": 784,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -6302,7 +6302,7 @@ VALUES
                         },
                         {
                             "id": 785,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -6310,7 +6310,7 @@ VALUES
                         },
                         {
                             "id": 786,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -6318,7 +6318,7 @@ VALUES
                         },
                         {
                             "id": 787,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -6326,7 +6326,7 @@ VALUES
                         },
                         {
                             "id": 788,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -6334,7 +6334,7 @@ VALUES
                         },
                         {
                             "id": 789,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -6342,7 +6342,7 @@ VALUES
                         },
                         {
                             "id": 790,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -6350,7 +6350,7 @@ VALUES
                         },
                         {
                             "id": 791,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -6358,7 +6358,7 @@ VALUES
                         },
                         {
                             "id": 792,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -6366,7 +6366,7 @@ VALUES
                         },
                         {
                             "id": 793,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -6374,7 +6374,7 @@ VALUES
                         },
                         {
                             "id": 794,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -6382,7 +6382,7 @@ VALUES
                         },
                         {
                             "id": 795,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -6390,7 +6390,7 @@ VALUES
                         },
                         {
                             "id": 796,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -6398,7 +6398,7 @@ VALUES
                         },
                         {
                             "id": 797,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -6406,7 +6406,7 @@ VALUES
                         },
                         {
                             "id": 798,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -6414,7 +6414,7 @@ VALUES
                         },
                         {
                             "id": 799,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -6422,7 +6422,7 @@ VALUES
                         },
                         {
                             "id": 800,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -6430,7 +6430,7 @@ VALUES
                         },
                         {
                             "id": 801,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -6438,7 +6438,7 @@ VALUES
                         },
                         {
                             "id": 802,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -6446,7 +6446,7 @@ VALUES
                         },
                         {
                             "id": 803,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -6454,7 +6454,7 @@ VALUES
                         },
                         {
                             "id": 804,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -6462,7 +6462,7 @@ VALUES
                         },
                         {
                             "id": 805,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -6470,7 +6470,7 @@ VALUES
                         },
                         {
                             "id": 806,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -6478,7 +6478,7 @@ VALUES
                         },
                         {
                             "id": 807,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -6486,7 +6486,7 @@ VALUES
                         },
                         {
                             "id": 808,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -6494,7 +6494,7 @@ VALUES
                         },
                         {
                             "id": 809,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -6502,7 +6502,7 @@ VALUES
                         },
                         {
                             "id": 810,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -6510,7 +6510,7 @@ VALUES
                         },
                         {
                             "id": 811,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -6518,7 +6518,7 @@ VALUES
                         },
                         {
                             "id": 812,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -6526,7 +6526,7 @@ VALUES
                         },
                         {
                             "id": 813,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -6534,7 +6534,7 @@ VALUES
                         },
                         {
                             "id": 814,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -6542,7 +6542,7 @@ VALUES
                         },
                         {
                             "id": 815,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -6550,7 +6550,7 @@ VALUES
                         },
                         {
                             "id": 816,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -6558,7 +6558,7 @@ VALUES
                         },
                         {
                             "id": 817,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -6566,7 +6566,7 @@ VALUES
                         },
                         {
                             "id": 818,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -6574,7 +6574,7 @@ VALUES
                         },
                         {
                             "id": 819,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -6582,7 +6582,7 @@ VALUES
                         },
                         {
                             "id": 820,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -6590,7 +6590,7 @@ VALUES
                         },
                         {
                             "id": 821,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -6598,7 +6598,7 @@ VALUES
                         },
                         {
                             "id": 822,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -6606,7 +6606,7 @@ VALUES
                         },
                         {
                             "id": 823,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -6614,7 +6614,7 @@ VALUES
                         },
                         {
                             "id": 824,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -6622,7 +6622,7 @@ VALUES
                         },
                         {
                             "id": 825,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -6630,7 +6630,7 @@ VALUES
                         },
                         {
                             "id": 826,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -6638,7 +6638,7 @@ VALUES
                         },
                         {
                             "id": 827,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -6646,7 +6646,7 @@ VALUES
                         },
                         {
                             "id": 828,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -6654,7 +6654,7 @@ VALUES
                         },
                         {
                             "id": 829,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -6662,7 +6662,7 @@ VALUES
                         },
                         {
                             "id": 830,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -6670,7 +6670,7 @@ VALUES
                         },
                         {
                             "id": 831,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -6678,7 +6678,7 @@ VALUES
                         },
                         {
                             "id": 832,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -6686,7 +6686,7 @@ VALUES
                         },
                         {
                             "id": 833,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -6694,7 +6694,7 @@ VALUES
                         },
                         {
                             "id": 834,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -6702,7 +6702,7 @@ VALUES
                         },
                         {
                             "id": 835,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -6710,7 +6710,7 @@ VALUES
                         },
                         {
                             "id": 836,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -6718,7 +6718,7 @@ VALUES
                         },
                         {
                             "id": 837,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -6726,7 +6726,7 @@ VALUES
                         },
                         {
                             "id": 838,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -6734,7 +6734,7 @@ VALUES
                         },
                         {
                             "id": 839,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -6742,7 +6742,7 @@ VALUES
                         },
                         {
                             "id": 840,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -6750,7 +6750,7 @@ VALUES
                         },
                         {
                             "id": 841,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -6758,7 +6758,7 @@ VALUES
                         },
                         {
                             "id": 842,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -6766,7 +6766,7 @@ VALUES
                         },
                         {
                             "id": 843,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -6774,7 +6774,7 @@ VALUES
                         },
                         {
                             "id": 844,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -6782,7 +6782,7 @@ VALUES
                         },
                         {
                             "id": 845,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -6790,7 +6790,7 @@ VALUES
                         },
                         {
                             "id": 846,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -6798,7 +6798,7 @@ VALUES
                         },
                         {
                             "id": 847,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -6806,7 +6806,7 @@ VALUES
                         },
                         {
                             "id": 848,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -6814,7 +6814,7 @@ VALUES
                         },
                         {
                             "id": 849,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -6822,7 +6822,7 @@ VALUES
                         },
                         {
                             "id": 850,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -6830,7 +6830,7 @@ VALUES
                         },
                         {
                             "id": 851,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -6838,7 +6838,7 @@ VALUES
                         },
                         {
                             "id": 852,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -6846,7 +6846,7 @@ VALUES
                         },
                         {
                             "id": 853,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -6854,7 +6854,7 @@ VALUES
                         },
                         {
                             "id": 854,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -6862,7 +6862,7 @@ VALUES
                         },
                         {
                             "id": 855,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -6870,7 +6870,7 @@ VALUES
                         },
                         {
                             "id": 856,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -6878,7 +6878,7 @@ VALUES
                         },
                         {
                             "id": 857,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -6886,7 +6886,7 @@ VALUES
                         },
                         {
                             "id": 858,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -6894,7 +6894,7 @@ VALUES
                         },
                         {
                             "id": 859,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -6902,7 +6902,7 @@ VALUES
                         },
                         {
                             "id": 860,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -6910,7 +6910,7 @@ VALUES
                         },
                         {
                             "id": 861,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -6918,7 +6918,7 @@ VALUES
                         },
                         {
                             "id": 862,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -6926,7 +6926,7 @@ VALUES
                         },
                         {
                             "id": 863,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -6934,7 +6934,7 @@ VALUES
                         },
                         {
                             "id": 864,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -6942,7 +6942,7 @@ VALUES
                         },
                         {
                             "id": 865,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -6950,7 +6950,7 @@ VALUES
                         },
                         {
                             "id": 866,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -6958,7 +6958,7 @@ VALUES
                         },
                         {
                             "id": 867,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -6966,7 +6966,7 @@ VALUES
                         },
                         {
                             "id": 868,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -6974,7 +6974,7 @@ VALUES
                         },
                         {
                             "id": 869,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -6982,7 +6982,7 @@ VALUES
                         },
                         {
                             "id": 870,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -6990,7 +6990,7 @@ VALUES
                         },
                         {
                             "id": 871,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -6998,7 +6998,7 @@ VALUES
                         },
                         {
                             "id": 872,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -7006,7 +7006,7 @@ VALUES
                         },
                         {
                             "id": 873,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -7014,7 +7014,7 @@ VALUES
                         },
                         {
                             "id": 874,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -7022,7 +7022,7 @@ VALUES
                         },
                         {
                             "id": 875,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -7030,7 +7030,7 @@ VALUES
                         },
                         {
                             "id": 876,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 26,
@@ -7038,7 +7038,7 @@ VALUES
                         },
                         {
                             "id": 877,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -7046,7 +7046,7 @@ VALUES
                         },
                         {
                             "id": 878,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -7054,7 +7054,7 @@ VALUES
                         },
                         {
                             "id": 879,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -7062,7 +7062,7 @@ VALUES
                         },
                         {
                             "id": 880,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -7070,7 +7070,7 @@ VALUES
                         },
                         {
                             "id": 881,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -7078,7 +7078,7 @@ VALUES
                         },
                         {
                             "id": 882,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -7086,7 +7086,7 @@ VALUES
                         },
                         {
                             "id": 883,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -7094,7 +7094,7 @@ VALUES
                         },
                         {
                             "id": 884,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 34,
@@ -7102,7 +7102,7 @@ VALUES
                         },
                         {
                             "id": 885,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -7110,7 +7110,7 @@ VALUES
                         },
                         {
                             "id": 886,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -7118,7 +7118,7 @@ VALUES
                         },
                         {
                             "id": 887,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -7126,7 +7126,7 @@ VALUES
                         },
                         {
                             "id": 888,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -7134,7 +7134,7 @@ VALUES
                         },
                         {
                             "id": 889,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -7142,7 +7142,7 @@ VALUES
                         },
                         {
                             "id": 890,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -7150,7 +7150,7 @@ VALUES
                         },
                         {
                             "id": 891,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -7158,7 +7158,7 @@ VALUES
                         },
                         {
                             "id": 892,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -7166,7 +7166,7 @@ VALUES
                         },
                         {
                             "id": 893,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -7174,7 +7174,7 @@ VALUES
                         },
                         {
                             "id": 894,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -7182,7 +7182,7 @@ VALUES
                         },
                         {
                             "id": 895,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -7190,7 +7190,7 @@ VALUES
                         },
                         {
                             "id": 896,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -7198,7 +7198,7 @@ VALUES
                         },
                         {
                             "id": 897,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -7206,7 +7206,7 @@ VALUES
                         },
                         {
                             "id": 898,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -7214,7 +7214,7 @@ VALUES
                         },
                         {
                             "id": 899,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -7222,7 +7222,7 @@ VALUES
                         },
                         {
                             "id": 900,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -7230,7 +7230,7 @@ VALUES
                         },
                         {
                             "id": 901,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -7238,7 +7238,7 @@ VALUES
                         },
                         {
                             "id": 902,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -7246,7 +7246,7 @@ VALUES
                         },
                         {
                             "id": 903,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -7254,7 +7254,7 @@ VALUES
                         },
                         {
                             "id": 904,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -7262,7 +7262,7 @@ VALUES
                         },
                         {
                             "id": 905,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 5,
@@ -7270,7 +7270,7 @@ VALUES
                         },
                         {
                             "id": 906,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -7278,7 +7278,7 @@ VALUES
                         },
                         {
                             "id": 907,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -7286,7 +7286,7 @@ VALUES
                         },
                         {
                             "id": 908,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -7294,7 +7294,7 @@ VALUES
                         },
                         {
                             "id": 909,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -7302,7 +7302,7 @@ VALUES
                         },
                         {
                             "id": 910,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 10,
@@ -7310,7 +7310,7 @@ VALUES
                         },
                         {
                             "id": 911,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -7318,7 +7318,7 @@ VALUES
                         },
                         {
                             "id": 912,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -7326,7 +7326,7 @@ VALUES
                         },
                         {
                             "id": 913,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -7334,7 +7334,7 @@ VALUES
                         },
                         {
                             "id": 914,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -7342,7 +7342,7 @@ VALUES
                         },
                         {
                             "id": 915,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -7350,7 +7350,7 @@ VALUES
                         },
                         {
                             "id": 916,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -7358,7 +7358,7 @@ VALUES
                         },
                         {
                             "id": 917,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -7366,7 +7366,7 @@ VALUES
                         },
                         {
                             "id": 918,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -7374,7 +7374,7 @@ VALUES
                         },
                         {
                             "id": 919,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -7382,7 +7382,7 @@ VALUES
                         },
                         {
                             "id": 920,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -7390,7 +7390,7 @@ VALUES
                         },
                         {
                             "id": 921,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -7398,7 +7398,7 @@ VALUES
                         },
                         {
                             "id": 922,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -7406,7 +7406,7 @@ VALUES
                         },
                         {
                             "id": 923,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -7414,7 +7414,7 @@ VALUES
                         },
                         {
                             "id": 924,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -7422,7 +7422,7 @@ VALUES
                         },
                         {
                             "id": 925,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -7430,7 +7430,7 @@ VALUES
                         },
                         {
                             "id": 926,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -7438,7 +7438,7 @@ VALUES
                         },
                         {
                             "id": 927,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -7446,7 +7446,7 @@ VALUES
                         },
                         {
                             "id": 928,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -7454,7 +7454,7 @@ VALUES
                         },
                         {
                             "id": 929,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -7462,7 +7462,7 @@ VALUES
                         },
                         {
                             "id": 930,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -7470,7 +7470,7 @@ VALUES
                         },
                         {
                             "id": 931,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 31,
@@ -7478,7 +7478,7 @@ VALUES
                         },
                         {
                             "id": 932,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -7486,7 +7486,7 @@ VALUES
                         },
                         {
                             "id": 933,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -7494,7 +7494,7 @@ VALUES
                         },
                         {
                             "id": 934,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -7502,7 +7502,7 @@ VALUES
                         },
                         {
                             "id": 935,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -7510,7 +7510,7 @@ VALUES
                         },
                         {
                             "id": 936,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -7518,7 +7518,7 @@ VALUES
                         },
                         {
                             "id": 937,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 37,
@@ -7526,7 +7526,7 @@ VALUES
                         },
                         {
                             "id": 938,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -7534,7 +7534,7 @@ VALUES
                         },
                         {
                             "id": 939,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -7542,7 +7542,7 @@ VALUES
                         },
                         {
                             "id": 940,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -7550,7 +7550,7 @@ VALUES
                         },
                         {
                             "id": 941,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -7558,7 +7558,7 @@ VALUES
                         },
                         {
                             "id": 942,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -7566,7 +7566,7 @@ VALUES
                         },
                         {
                             "id": 943,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -7574,7 +7574,7 @@ VALUES
                         },
                         {
                             "id": 944,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -7582,7 +7582,7 @@ VALUES
                         },
                         {
                             "id": 945,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -7590,7 +7590,7 @@ VALUES
                         },
                         {
                             "id": 946,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -7598,7 +7598,7 @@ VALUES
                         },
                         {
                             "id": 947,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -7606,7 +7606,7 @@ VALUES
                         },
                         {
                             "id": 948,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -7614,7 +7614,7 @@ VALUES
                         },
                         {
                             "id": 949,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -7622,7 +7622,7 @@ VALUES
                         },
                         {
                             "id": 950,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -7630,7 +7630,7 @@ VALUES
                         },
                         {
                             "id": 951,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -7638,7 +7638,7 @@ VALUES
                         },
                         {
                             "id": 952,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -7646,7 +7646,7 @@ VALUES
                         },
                         {
                             "id": 953,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -7654,7 +7654,7 @@ VALUES
                         },
                         {
                             "id": 954,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -7662,7 +7662,7 @@ VALUES
                         },
                         {
                             "id": 955,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -7670,7 +7670,7 @@ VALUES
                         },
                         {
                             "id": 956,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -7678,7 +7678,7 @@ VALUES
                         },
                         {
                             "id": 957,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -7686,7 +7686,7 @@ VALUES
                         },
                         {
                             "id": 958,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -7694,7 +7694,7 @@ VALUES
                         },
                         {
                             "id": 959,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -7702,7 +7702,7 @@ VALUES
                         },
                         {
                             "id": 960,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -7710,7 +7710,7 @@ VALUES
                         },
                         {
                             "id": 961,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -7718,7 +7718,7 @@ VALUES
                         },
                         {
                             "id": 962,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -7726,7 +7726,7 @@ VALUES
                         },
                         {
                             "id": 963,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -7734,7 +7734,7 @@ VALUES
                         },
                         {
                             "id": 964,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -7742,7 +7742,7 @@ VALUES
                         },
                         {
                             "id": 965,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -7750,7 +7750,7 @@ VALUES
                         },
                         {
                             "id": 966,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -7758,7 +7758,7 @@ VALUES
                         },
                         {
                             "id": 967,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -7766,7 +7766,7 @@ VALUES
                         },
                         {
                             "id": 968,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -7774,7 +7774,7 @@ VALUES
                         },
                         {
                             "id": 969,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -7782,7 +7782,7 @@ VALUES
                         },
                         {
                             "id": 970,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -7790,7 +7790,7 @@ VALUES
                         },
                         {
                             "id": 971,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -7798,7 +7798,7 @@ VALUES
                         },
                         {
                             "id": 972,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -7806,7 +7806,7 @@ VALUES
                         },
                         {
                             "id": 973,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -7814,7 +7814,7 @@ VALUES
                         },
                         {
                             "id": 974,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -7822,7 +7822,7 @@ VALUES
                         },
                         {
                             "id": 975,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -7830,7 +7830,7 @@ VALUES
                         },
                         {
                             "id": 976,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -7838,7 +7838,7 @@ VALUES
                         },
                         {
                             "id": 977,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -7846,7 +7846,7 @@ VALUES
                         },
                         {
                             "id": 978,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -7854,7 +7854,7 @@ VALUES
                         },
                         {
                             "id": 979,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -7862,7 +7862,7 @@ VALUES
                         },
                         {
                             "id": 980,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -7870,7 +7870,7 @@ VALUES
                         },
                         {
                             "id": 981,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -7878,7 +7878,7 @@ VALUES
                         },
                         {
                             "id": 982,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -7886,7 +7886,7 @@ VALUES
                         },
                         {
                             "id": 983,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -7894,7 +7894,7 @@ VALUES
                         },
                         {
                             "id": 984,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -7902,7 +7902,7 @@ VALUES
                         },
                         {
                             "id": 985,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -7910,7 +7910,7 @@ VALUES
                         },
                         {
                             "id": 986,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -7918,7 +7918,7 @@ VALUES
                         },
                         {
                             "id": 987,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -7926,7 +7926,7 @@ VALUES
                         },
                         {
                             "id": 988,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -7934,7 +7934,7 @@ VALUES
                         },
                         {
                             "id": 989,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -7942,7 +7942,7 @@ VALUES
                         },
                         {
                             "id": 990,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -7950,7 +7950,7 @@ VALUES
                         },
                         {
                             "id": 991,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -7958,7 +7958,7 @@ VALUES
                         },
                         {
                             "id": 992,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -7966,7 +7966,7 @@ VALUES
                         },
                         {
                             "id": 993,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -7974,7 +7974,7 @@ VALUES
                         },
                         {
                             "id": 994,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -7982,7 +7982,7 @@ VALUES
                         },
                         {
                             "id": 995,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -7990,7 +7990,7 @@ VALUES
                         },
                         {
                             "id": 996,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -7998,7 +7998,7 @@ VALUES
                         },
                         {
                             "id": 997,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -8006,7 +8006,7 @@ VALUES
                         },
                         {
                             "id": 998,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -8014,7 +8014,7 @@ VALUES
                         },
                         {
                             "id": 999,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -8022,7 +8022,7 @@ VALUES
                         },
                         {
                             "id": 1000,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -8030,7 +8030,7 @@ VALUES
                         },
                         {
                             "id": 1001,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -8038,7 +8038,7 @@ VALUES
                         },
                         {
                             "id": 1002,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -8046,7 +8046,7 @@ VALUES
                         },
                         {
                             "id": 1003,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -8054,7 +8054,7 @@ VALUES
                         },
                         {
                             "id": 1004,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -8062,7 +8062,7 @@ VALUES
                         },
                         {
                             "id": 1005,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -8070,7 +8070,7 @@ VALUES
                         },
                         {
                             "id": 1006,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -8078,7 +8078,7 @@ VALUES
                         },
                         {
                             "id": 1007,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -8086,7 +8086,7 @@ VALUES
                         },
                         {
                             "id": 1008,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -8094,7 +8094,7 @@ VALUES
                         },
                         {
                             "id": 1009,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -8102,7 +8102,7 @@ VALUES
                         },
                         {
                             "id": 1010,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -8110,7 +8110,7 @@ VALUES
                         },
                         {
                             "id": 1011,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -8118,7 +8118,7 @@ VALUES
                         },
                         {
                             "id": 1012,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -8126,7 +8126,7 @@ VALUES
                         },
                         {
                             "id": 1013,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -8134,7 +8134,7 @@ VALUES
                         },
                         {
                             "id": 1014,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -8142,7 +8142,7 @@ VALUES
                         },
                         {
                             "id": 1015,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -8150,7 +8150,7 @@ VALUES
                         },
                         {
                             "id": 1016,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -8158,7 +8158,7 @@ VALUES
                         },
                         {
                             "id": 1017,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -8166,7 +8166,7 @@ VALUES
                         },
                         {
                             "id": 1018,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -8174,7 +8174,7 @@ VALUES
                         },
                         {
                             "id": 1019,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -8182,7 +8182,7 @@ VALUES
                         },
                         {
                             "id": 1020,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -8190,7 +8190,7 @@ VALUES
                         },
                         {
                             "id": 1021,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -8198,7 +8198,7 @@ VALUES
                         },
                         {
                             "id": 1022,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -8206,7 +8206,7 @@ VALUES
                         },
                         {
                             "id": 1023,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -8214,7 +8214,7 @@ VALUES
                         },
                         {
                             "id": 1024,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -8222,7 +8222,7 @@ VALUES
                         },
                         {
                             "id": 1025,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -8230,7 +8230,7 @@ VALUES
                         },
                         {
                             "id": 1026,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 26,
@@ -8238,7 +8238,7 @@ VALUES
                         },
                         {
                             "id": 1027,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -8246,7 +8246,7 @@ VALUES
                         },
                         {
                             "id": 1028,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -8254,7 +8254,7 @@ VALUES
                         },
                         {
                             "id": 1029,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -8262,7 +8262,7 @@ VALUES
                         },
                         {
                             "id": 1030,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -8270,7 +8270,7 @@ VALUES
                         },
                         {
                             "id": 1031,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 31,
@@ -8278,7 +8278,7 @@ VALUES
                         },
                         {
                             "id": 1032,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -8286,7 +8286,7 @@ VALUES
                         },
                         {
                             "id": 1033,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -8294,7 +8294,7 @@ VALUES
                         },
                         {
                             "id": 1034,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -8302,7 +8302,7 @@ VALUES
                         },
                         {
                             "id": 1035,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -8310,7 +8310,7 @@ VALUES
                         },
                         {
                             "id": 1036,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -8318,7 +8318,7 @@ VALUES
                         },
                         {
                             "id": 1037,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -8326,7 +8326,7 @@ VALUES
                         },
                         {
                             "id": 1038,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -8334,7 +8334,7 @@ VALUES
                         },
                         {
                             "id": 1039,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -8342,7 +8342,7 @@ VALUES
                         },
                         {
                             "id": 1040,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -8350,7 +8350,7 @@ VALUES
                         },
                         {
                             "id": 1041,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -8358,7 +8358,7 @@ VALUES
                         },
                         {
                             "id": 1042,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -8366,7 +8366,7 @@ VALUES
                         },
                         {
                             "id": 1043,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -8374,7 +8374,7 @@ VALUES
                         },
                         {
                             "id": 1044,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -8382,7 +8382,7 @@ VALUES
                         },
                         {
                             "id": 1045,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -8390,7 +8390,7 @@ VALUES
                         },
                         {
                             "id": 1046,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -8398,7 +8398,7 @@ VALUES
                         },
                         {
                             "id": 1047,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -8406,7 +8406,7 @@ VALUES
                         },
                         {
                             "id": 1048,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -8414,7 +8414,7 @@ VALUES
                         },
                         {
                             "id": 1049,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -8422,7 +8422,7 @@ VALUES
                         },
                         {
                             "id": 1050,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -8430,7 +8430,7 @@ VALUES
                         },
                         {
                             "id": 1051,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -8438,7 +8438,7 @@ VALUES
                         },
                         {
                             "id": 1052,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -8446,7 +8446,7 @@ VALUES
                         },
                         {
                             "id": 1053,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -8454,7 +8454,7 @@ VALUES
                         },
                         {
                             "id": 1054,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -8462,7 +8462,7 @@ VALUES
                         },
                         {
                             "id": 1055,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -8470,7 +8470,7 @@ VALUES
                         },
                         {
                             "id": 1056,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -8478,7 +8478,7 @@ VALUES
                         },
                         {
                             "id": 1057,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -8486,7 +8486,7 @@ VALUES
                         },
                         {
                             "id": 1058,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -8494,7 +8494,7 @@ VALUES
                         },
                         {
                             "id": 1059,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -8502,7 +8502,7 @@ VALUES
                         },
                         {
                             "id": 1060,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -8510,7 +8510,7 @@ VALUES
                         },
                         {
                             "id": 1061,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -8518,7 +8518,7 @@ VALUES
                         },
                         {
                             "id": 1062,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -8526,7 +8526,7 @@ VALUES
                         },
                         {
                             "id": 1063,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -8534,7 +8534,7 @@ VALUES
                         },
                         {
                             "id": 1064,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -8542,7 +8542,7 @@ VALUES
                         },
                         {
                             "id": 1065,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -8550,7 +8550,7 @@ VALUES
                         },
                         {
                             "id": 1066,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -8558,7 +8558,7 @@ VALUES
                         },
                         {
                             "id": 1067,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -8566,7 +8566,7 @@ VALUES
                         },
                         {
                             "id": 1068,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -8574,7 +8574,7 @@ VALUES
                         },
                         {
                             "id": 1069,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -8582,7 +8582,7 @@ VALUES
                         },
                         {
                             "id": 1070,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -8590,7 +8590,7 @@ VALUES
                         },
                         {
                             "id": 1071,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -8598,7 +8598,7 @@ VALUES
                         },
                         {
                             "id": 1072,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -8606,7 +8606,7 @@ VALUES
                         },
                         {
                             "id": 1073,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -8614,7 +8614,7 @@ VALUES
                         },
                         {
                             "id": 1074,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -8622,7 +8622,7 @@ VALUES
                         },
                         {
                             "id": 1075,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -8630,7 +8630,7 @@ VALUES
                         },
                         {
                             "id": 1076,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -8638,7 +8638,7 @@ VALUES
                         },
                         {
                             "id": 1077,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -8646,7 +8646,7 @@ VALUES
                         },
                         {
                             "id": 1078,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -8654,7 +8654,7 @@ VALUES
                         },
                         {
                             "id": 1079,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -8662,7 +8662,7 @@ VALUES
                         },
                         {
                             "id": 1080,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -8670,7 +8670,7 @@ VALUES
                         },
                         {
                             "id": 1081,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -8678,7 +8678,7 @@ VALUES
                         },
                         {
                             "id": 1082,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -8686,7 +8686,7 @@ VALUES
                         },
                         {
                             "id": 1083,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -8694,7 +8694,7 @@ VALUES
                         },
                         {
                             "id": 1084,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -8702,7 +8702,7 @@ VALUES
                         },
                         {
                             "id": 1085,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -8710,7 +8710,7 @@ VALUES
                         },
                         {
                             "id": 1086,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -8718,7 +8718,7 @@ VALUES
                         },
                         {
                             "id": 1087,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -8726,7 +8726,7 @@ VALUES
                         },
                         {
                             "id": 1088,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -8734,7 +8734,7 @@ VALUES
                         },
                         {
                             "id": 1089,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -8742,7 +8742,7 @@ VALUES
                         },
                         {
                             "id": 1090,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -8750,7 +8750,7 @@ VALUES
                         },
                         {
                             "id": 1091,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -8758,7 +8758,7 @@ VALUES
                         },
                         {
                             "id": 1092,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -8766,7 +8766,7 @@ VALUES
                         },
                         {
                             "id": 1093,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -8774,7 +8774,7 @@ VALUES
                         },
                         {
                             "id": 1094,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -8782,7 +8782,7 @@ VALUES
                         },
                         {
                             "id": 1095,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -8790,7 +8790,7 @@ VALUES
                         },
                         {
                             "id": 1096,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -8798,7 +8798,7 @@ VALUES
                         },
                         {
                             "id": 1097,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -8806,7 +8806,7 @@ VALUES
                         },
                         {
                             "id": 1098,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -8814,7 +8814,7 @@ VALUES
                         },
                         {
                             "id": 1099,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -8822,7 +8822,7 @@ VALUES
                         },
                         {
                             "id": 1100,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -8830,7 +8830,7 @@ VALUES
                         },
                         {
                             "id": 1101,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -8838,7 +8838,7 @@ VALUES
                         },
                         {
                             "id": 1102,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 2,
@@ -8846,7 +8846,7 @@ VALUES
                         },
                         {
                             "id": 1103,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -8854,7 +8854,7 @@ VALUES
                         },
                         {
                             "id": 1104,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -8862,7 +8862,7 @@ VALUES
                         },
                         {
                             "id": 1105,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -8870,7 +8870,7 @@ VALUES
                         },
                         {
                             "id": 1106,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -8878,7 +8878,7 @@ VALUES
                         },
                         {
                             "id": 1107,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -8886,7 +8886,7 @@ VALUES
                         },
                         {
                             "id": 1108,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -8894,7 +8894,7 @@ VALUES
                         },
                         {
                             "id": 1109,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -8902,7 +8902,7 @@ VALUES
                         },
                         {
                             "id": 1110,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -8910,7 +8910,7 @@ VALUES
                         },
                         {
                             "id": 1111,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -8918,7 +8918,7 @@ VALUES
                         },
                         {
                             "id": 1112,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -8926,7 +8926,7 @@ VALUES
                         },
                         {
                             "id": 1113,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -8934,7 +8934,7 @@ VALUES
                         },
                         {
                             "id": 1114,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -8942,7 +8942,7 @@ VALUES
                         },
                         {
                             "id": 1115,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -8950,7 +8950,7 @@ VALUES
                         },
                         {
                             "id": 1116,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -8958,7 +8958,7 @@ VALUES
                         },
                         {
                             "id": 1117,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -8966,7 +8966,7 @@ VALUES
                         },
                         {
                             "id": 1118,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -8974,7 +8974,7 @@ VALUES
                         },
                         {
                             "id": 1119,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -8982,7 +8982,7 @@ VALUES
                         },
                         {
                             "id": 1120,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -8990,7 +8990,7 @@ VALUES
                         },
                         {
                             "id": 1121,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -8998,7 +8998,7 @@ VALUES
                         },
                         {
                             "id": 1122,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -9006,7 +9006,7 @@ VALUES
                         },
                         {
                             "id": 1123,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -9014,7 +9014,7 @@ VALUES
                         },
                         {
                             "id": 1124,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -9022,7 +9022,7 @@ VALUES
                         },
                         {
                             "id": 1125,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -9030,7 +9030,7 @@ VALUES
                         },
                         {
                             "id": 1126,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -9038,7 +9038,7 @@ VALUES
                         },
                         {
                             "id": 1127,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -9046,7 +9046,7 @@ VALUES
                         },
                         {
                             "id": 1128,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -9054,7 +9054,7 @@ VALUES
                         },
                         {
                             "id": 1129,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -9062,7 +9062,7 @@ VALUES
                         },
                         {
                             "id": 1130,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -9070,7 +9070,7 @@ VALUES
                         },
                         {
                             "id": 1131,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 31,
@@ -9078,7 +9078,7 @@ VALUES
                         },
                         {
                             "id": 1132,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -9086,7 +9086,7 @@ VALUES
                         },
                         {
                             "id": 1133,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -9094,7 +9094,7 @@ VALUES
                         },
                         {
                             "id": 1134,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -9102,7 +9102,7 @@ VALUES
                         },
                         {
                             "id": 1135,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -9110,7 +9110,7 @@ VALUES
                         },
                         {
                             "id": 1136,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -9118,7 +9118,7 @@ VALUES
                         },
                         {
                             "id": 1137,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -9126,7 +9126,7 @@ VALUES
                         },
                         {
                             "id": 1138,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -9134,7 +9134,7 @@ VALUES
                         },
                         {
                             "id": 1139,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -9142,7 +9142,7 @@ VALUES
                         },
                         {
                             "id": 1140,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -9150,7 +9150,7 @@ VALUES
                         },
                         {
                             "id": 1141,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -9158,7 +9158,7 @@ VALUES
                         },
                         {
                             "id": 1142,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -9166,7 +9166,7 @@ VALUES
                         },
                         {
                             "id": 1143,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -9174,7 +9174,7 @@ VALUES
                         },
                         {
                             "id": 1144,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -9182,7 +9182,7 @@ VALUES
                         },
                         {
                             "id": 1145,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -9190,7 +9190,7 @@ VALUES
                         },
                         {
                             "id": 1146,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -9198,7 +9198,7 @@ VALUES
                         },
                         {
                             "id": 1147,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -9206,7 +9206,7 @@ VALUES
                         },
                         {
                             "id": 1148,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -9214,7 +9214,7 @@ VALUES
                         },
                         {
                             "id": 1149,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -9222,7 +9222,7 @@ VALUES
                         },
                         {
                             "id": 1150,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -9230,7 +9230,7 @@ VALUES
                         },
                         {
                             "id": 1151,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -9238,7 +9238,7 @@ VALUES
                         },
                         {
                             "id": 1152,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -9246,7 +9246,7 @@ VALUES
                         },
                         {
                             "id": 1153,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -9254,7 +9254,7 @@ VALUES
                         },
                         {
                             "id": 1154,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -9262,7 +9262,7 @@ VALUES
                         },
                         {
                             "id": 1155,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -9270,7 +9270,7 @@ VALUES
                         },
                         {
                             "id": 1156,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -9278,7 +9278,7 @@ VALUES
                         },
                         {
                             "id": 1157,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -9286,7 +9286,7 @@ VALUES
                         },
                         {
                             "id": 1158,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -9294,7 +9294,7 @@ VALUES
                         },
                         {
                             "id": 1159,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -9302,7 +9302,7 @@ VALUES
                         },
                         {
                             "id": 1160,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -9310,7 +9310,7 @@ VALUES
                         },
                         {
                             "id": 1161,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -9318,7 +9318,7 @@ VALUES
                         },
                         {
                             "id": 1162,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -9326,7 +9326,7 @@ VALUES
                         },
                         {
                             "id": 1163,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -9334,7 +9334,7 @@ VALUES
                         },
                         {
                             "id": 1164,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -9342,7 +9342,7 @@ VALUES
                         },
                         {
                             "id": 1165,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -9350,7 +9350,7 @@ VALUES
                         },
                         {
                             "id": 1166,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -9358,7 +9358,7 @@ VALUES
                         },
                         {
                             "id": 1167,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -9366,7 +9366,7 @@ VALUES
                         },
                         {
                             "id": 1168,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -9374,7 +9374,7 @@ VALUES
                         },
                         {
                             "id": 1169,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -9382,7 +9382,7 @@ VALUES
                         },
                         {
                             "id": 1170,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -9390,7 +9390,7 @@ VALUES
                         },
                         {
                             "id": 1171,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -9398,7 +9398,7 @@ VALUES
                         },
                         {
                             "id": 1172,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -9406,7 +9406,7 @@ VALUES
                         },
                         {
                             "id": 1173,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -9414,7 +9414,7 @@ VALUES
                         },
                         {
                             "id": 1174,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -9422,7 +9422,7 @@ VALUES
                         },
                         {
                             "id": 1175,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -9430,7 +9430,7 @@ VALUES
                         },
                         {
                             "id": 1176,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -9438,7 +9438,7 @@ VALUES
                         },
                         {
                             "id": 1177,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -9446,7 +9446,7 @@ VALUES
                         },
                         {
                             "id": 1178,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -9454,7 +9454,7 @@ VALUES
                         },
                         {
                             "id": 1179,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -9462,7 +9462,7 @@ VALUES
                         },
                         {
                             "id": 1180,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -9470,7 +9470,7 @@ VALUES
                         },
                         {
                             "id": 1181,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -9478,7 +9478,7 @@ VALUES
                         },
                         {
                             "id": 1182,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -9486,7 +9486,7 @@ VALUES
                         },
                         {
                             "id": 1183,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -9494,7 +9494,7 @@ VALUES
                         },
                         {
                             "id": 1184,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -9502,7 +9502,7 @@ VALUES
                         },
                         {
                             "id": 1185,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -9510,7 +9510,7 @@ VALUES
                         },
                         {
                             "id": 1186,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -9518,7 +9518,7 @@ VALUES
                         },
                         {
                             "id": 1187,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -9526,7 +9526,7 @@ VALUES
                         },
                         {
                             "id": 1188,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -9534,7 +9534,7 @@ VALUES
                         },
                         {
                             "id": 1189,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -9542,7 +9542,7 @@ VALUES
                         },
                         {
                             "id": 1190,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 40,
@@ -9550,7 +9550,7 @@ VALUES
                         },
                         {
                             "id": 1191,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -9558,7 +9558,7 @@ VALUES
                         },
                         {
                             "id": 1192,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -9566,7 +9566,7 @@ VALUES
                         },
                         {
                             "id": 1193,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -9574,7 +9574,7 @@ VALUES
                         },
                         {
                             "id": 1194,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -9582,7 +9582,7 @@ VALUES
                         },
                         {
                             "id": 1195,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -9590,7 +9590,7 @@ VALUES
                         },
                         {
                             "id": 1196,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -9598,7 +9598,7 @@ VALUES
                         },
                         {
                             "id": 1197,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -9606,7 +9606,7 @@ VALUES
                         },
                         {
                             "id": 1198,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -9614,7 +9614,7 @@ VALUES
                         },
                         {
                             "id": 1199,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -9622,7 +9622,7 @@ VALUES
                         },
                         {
                             "id": 1200,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -9630,7 +9630,7 @@ VALUES
                         },
                         {
                             "id": 1201,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -9638,7 +9638,7 @@ VALUES
                         },
                         {
                             "id": 1202,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -9646,7 +9646,7 @@ VALUES
                         },
                         {
                             "id": 1203,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -9654,7 +9654,7 @@ VALUES
                         },
                         {
                             "id": 1204,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -9662,7 +9662,7 @@ VALUES
                         },
                         {
                             "id": 1205,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -9670,7 +9670,7 @@ VALUES
                         },
                         {
                             "id": 1206,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -9678,7 +9678,7 @@ VALUES
                         },
                         {
                             "id": 1207,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -9686,7 +9686,7 @@ VALUES
                         },
                         {
                             "id": 1208,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -9694,7 +9694,7 @@ VALUES
                         },
                         {
                             "id": 1209,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -9702,7 +9702,7 @@ VALUES
                         },
                         {
                             "id": 1210,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -9710,7 +9710,7 @@ VALUES
                         },
                         {
                             "id": 1211,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -9718,7 +9718,7 @@ VALUES
                         },
                         {
                             "id": 1212,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -9726,7 +9726,7 @@ VALUES
                         },
                         {
                             "id": 1213,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -9734,7 +9734,7 @@ VALUES
                         },
                         {
                             "id": 1214,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -9742,7 +9742,7 @@ VALUES
                         },
                         {
                             "id": 1215,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -9750,7 +9750,7 @@ VALUES
                         },
                         {
                             "id": 1216,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -9758,7 +9758,7 @@ VALUES
                         },
                         {
                             "id": 1217,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -9766,7 +9766,7 @@ VALUES
                         },
                         {
                             "id": 1218,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -9774,7 +9774,7 @@ VALUES
                         },
                         {
                             "id": 1219,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -9782,7 +9782,7 @@ VALUES
                         },
                         {
                             "id": 1220,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -9790,7 +9790,7 @@ VALUES
                         },
                         {
                             "id": 1221,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -9798,7 +9798,7 @@ VALUES
                         },
                         {
                             "id": 1222,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -9806,7 +9806,7 @@ VALUES
                         },
                         {
                             "id": 1223,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -9814,7 +9814,7 @@ VALUES
                         },
                         {
                             "id": 1224,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -9822,7 +9822,7 @@ VALUES
                         },
                         {
                             "id": 1225,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -9830,7 +9830,7 @@ VALUES
                         },
                         {
                             "id": 1226,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -9838,7 +9838,7 @@ VALUES
                         },
                         {
                             "id": 1227,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -9846,7 +9846,7 @@ VALUES
                         },
                         {
                             "id": 1228,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -9854,7 +9854,7 @@ VALUES
                         },
                         {
                             "id": 1229,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -9862,7 +9862,7 @@ VALUES
                         },
                         {
                             "id": 1230,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -9870,7 +9870,7 @@ VALUES
                         },
                         {
                             "id": 1231,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -9878,7 +9878,7 @@ VALUES
                         },
                         {
                             "id": 1232,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -9886,7 +9886,7 @@ VALUES
                         },
                         {
                             "id": 1233,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -9894,7 +9894,7 @@ VALUES
                         },
                         {
                             "id": 1234,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -9902,7 +9902,7 @@ VALUES
                         },
                         {
                             "id": 1235,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -9910,7 +9910,7 @@ VALUES
                         },
                         {
                             "id": 1236,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -9918,7 +9918,7 @@ VALUES
                         },
                         {
                             "id": 1237,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -9926,7 +9926,7 @@ VALUES
                         },
                         {
                             "id": 1238,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -9934,7 +9934,7 @@ VALUES
                         },
                         {
                             "id": 1239,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -9942,7 +9942,7 @@ VALUES
                         },
                         {
                             "id": 1240,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -9950,7 +9950,7 @@ VALUES
                         },
                         {
                             "id": 1241,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -9958,7 +9958,7 @@ VALUES
                         },
                         {
                             "id": 1242,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -9966,7 +9966,7 @@ VALUES
                         },
                         {
                             "id": 1243,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -9974,7 +9974,7 @@ VALUES
                         },
                         {
                             "id": 1244,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -9982,7 +9982,7 @@ VALUES
                         },
                         {
                             "id": 1245,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -9990,7 +9990,7 @@ VALUES
                         },
                         {
                             "id": 1246,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -9998,7 +9998,7 @@ VALUES
                         },
                         {
                             "id": 1247,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -10006,7 +10006,7 @@ VALUES
                         },
                         {
                             "id": 1248,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -10014,7 +10014,7 @@ VALUES
                         },
                         {
                             "id": 1249,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -10022,7 +10022,7 @@ VALUES
                         },
                         {
                             "id": 1250,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -10030,7 +10030,7 @@ VALUES
                         },
                         {
                             "id": 1251,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -10038,7 +10038,7 @@ VALUES
                         },
                         {
                             "id": 1252,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 2,
@@ -10046,7 +10046,7 @@ VALUES
                         },
                         {
                             "id": 1253,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -10054,7 +10054,7 @@ VALUES
                         },
                         {
                             "id": 1254,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -10062,7 +10062,7 @@ VALUES
                         },
                         {
                             "id": 1255,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -10070,7 +10070,7 @@ VALUES
                         },
                         {
                             "id": 1256,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -10078,7 +10078,7 @@ VALUES
                         },
                         {
                             "id": 1257,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -10086,7 +10086,7 @@ VALUES
                         },
                         {
                             "id": 1258,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -10094,7 +10094,7 @@ VALUES
                         },
                         {
                             "id": 1259,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -10102,7 +10102,7 @@ VALUES
                         },
                         {
                             "id": 1260,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -10110,7 +10110,7 @@ VALUES
                         },
                         {
                             "id": 1261,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -10118,7 +10118,7 @@ VALUES
                         },
                         {
                             "id": 1262,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -10126,7 +10126,7 @@ VALUES
                         },
                         {
                             "id": 1263,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -10134,7 +10134,7 @@ VALUES
                         },
                         {
                             "id": 1264,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -10142,7 +10142,7 @@ VALUES
                         },
                         {
                             "id": 1265,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -10150,7 +10150,7 @@ VALUES
                         },
                         {
                             "id": 1266,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -10158,7 +10158,7 @@ VALUES
                         },
                         {
                             "id": 1267,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -10166,7 +10166,7 @@ VALUES
                         },
                         {
                             "id": 1268,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -10174,7 +10174,7 @@ VALUES
                         },
                         {
                             "id": 1269,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -10182,7 +10182,7 @@ VALUES
                         },
                         {
                             "id": 1270,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -10190,7 +10190,7 @@ VALUES
                         },
                         {
                             "id": 1271,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -10198,7 +10198,7 @@ VALUES
                         },
                         {
                             "id": 1272,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -10206,7 +10206,7 @@ VALUES
                         },
                         {
                             "id": 1273,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -10214,7 +10214,7 @@ VALUES
                         },
                         {
                             "id": 1274,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -10222,7 +10222,7 @@ VALUES
                         },
                         {
                             "id": 1275,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -10230,7 +10230,7 @@ VALUES
                         },
                         {
                             "id": 1276,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -10238,7 +10238,7 @@ VALUES
                         },
                         {
                             "id": 1277,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -10246,7 +10246,7 @@ VALUES
                         },
                         {
                             "id": 1278,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -10254,7 +10254,7 @@ VALUES
                         },
                         {
                             "id": 1279,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -10262,7 +10262,7 @@ VALUES
                         },
                         {
                             "id": 1280,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -10270,7 +10270,7 @@ VALUES
                         },
                         {
                             "id": 1281,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -10278,7 +10278,7 @@ VALUES
                         },
                         {
                             "id": 1282,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -10286,7 +10286,7 @@ VALUES
                         },
                         {
                             "id": 1283,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -10294,7 +10294,7 @@ VALUES
                         },
                         {
                             "id": 1284,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -10302,7 +10302,7 @@ VALUES
                         },
                         {
                             "id": 1285,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -10310,7 +10310,7 @@ VALUES
                         },
                         {
                             "id": 1286,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -10318,7 +10318,7 @@ VALUES
                         },
                         {
                             "id": 1287,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -10326,7 +10326,7 @@ VALUES
                         },
                         {
                             "id": 1288,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -10334,7 +10334,7 @@ VALUES
                         },
                         {
                             "id": 1289,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -10342,7 +10342,7 @@ VALUES
                         },
                         {
                             "id": 1290,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -10350,7 +10350,7 @@ VALUES
                         },
                         {
                             "id": 1291,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -10358,7 +10358,7 @@ VALUES
                         },
                         {
                             "id": 1292,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -10366,7 +10366,7 @@ VALUES
                         },
                         {
                             "id": 1293,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -10374,7 +10374,7 @@ VALUES
                         },
                         {
                             "id": 1294,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -10382,7 +10382,7 @@ VALUES
                         },
                         {
                             "id": 1295,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -10390,7 +10390,7 @@ VALUES
                         },
                         {
                             "id": 1296,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -10398,7 +10398,7 @@ VALUES
                         },
                         {
                             "id": 1297,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -10406,7 +10406,7 @@ VALUES
                         },
                         {
                             "id": 1298,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -10414,7 +10414,7 @@ VALUES
                         },
                         {
                             "id": 1299,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -10422,7 +10422,7 @@ VALUES
                         },
                         {
                             "id": 1300,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -10430,7 +10430,7 @@ VALUES
                         },
                         {
                             "id": 1301,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -10438,7 +10438,7 @@ VALUES
                         },
                         {
                             "id": 1302,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -10446,7 +10446,7 @@ VALUES
                         },
                         {
                             "id": 1303,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -10454,7 +10454,7 @@ VALUES
                         },
                         {
                             "id": 1304,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -10462,7 +10462,7 @@ VALUES
                         },
                         {
                             "id": 1305,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -10470,7 +10470,7 @@ VALUES
                         },
                         {
                             "id": 1306,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -10478,7 +10478,7 @@ VALUES
                         },
                         {
                             "id": 1307,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -10486,7 +10486,7 @@ VALUES
                         },
                         {
                             "id": 1308,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -10494,7 +10494,7 @@ VALUES
                         },
                         {
                             "id": 1309,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -10502,7 +10502,7 @@ VALUES
                         },
                         {
                             "id": 1310,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -10510,7 +10510,7 @@ VALUES
                         },
                         {
                             "id": 1311,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -10518,7 +10518,7 @@ VALUES
                         },
                         {
                             "id": 1312,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -10526,7 +10526,7 @@ VALUES
                         },
                         {
                             "id": 1313,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -10534,7 +10534,7 @@ VALUES
                         },
                         {
                             "id": 1314,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -10542,7 +10542,7 @@ VALUES
                         },
                         {
                             "id": 1315,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -10550,7 +10550,7 @@ VALUES
                         },
                         {
                             "id": 1316,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -10558,7 +10558,7 @@ VALUES
                         },
                         {
                             "id": 1317,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -10566,7 +10566,7 @@ VALUES
                         },
                         {
                             "id": 1318,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -10574,7 +10574,7 @@ VALUES
                         },
                         {
                             "id": 1319,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -10582,7 +10582,7 @@ VALUES
                         },
                         {
                             "id": 1320,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -10590,7 +10590,7 @@ VALUES
                         },
                         {
                             "id": 1321,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 21,
@@ -10598,7 +10598,7 @@ VALUES
                         },
                         {
                             "id": 1322,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -10606,7 +10606,7 @@ VALUES
                         },
                         {
                             "id": 1323,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -10614,7 +10614,7 @@ VALUES
                         },
                         {
                             "id": 1324,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -10622,7 +10622,7 @@ VALUES
                         },
                         {
                             "id": 1325,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -10630,7 +10630,7 @@ VALUES
                         },
                         {
                             "id": 1326,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -10638,7 +10638,7 @@ VALUES
                         },
                         {
                             "id": 1327,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -10646,7 +10646,7 @@ VALUES
                         },
                         {
                             "id": 1328,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -10654,7 +10654,7 @@ VALUES
                         },
                         {
                             "id": 1329,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -10662,7 +10662,7 @@ VALUES
                         },
                         {
                             "id": 1330,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -10670,7 +10670,7 @@ VALUES
                         },
                         {
                             "id": 1331,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -10678,7 +10678,7 @@ VALUES
                         },
                         {
                             "id": 1332,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -10686,7 +10686,7 @@ VALUES
                         },
                         {
                             "id": 1333,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -10694,7 +10694,7 @@ VALUES
                         },
                         {
                             "id": 1334,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -10702,7 +10702,7 @@ VALUES
                         },
                         {
                             "id": 1335,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -10710,7 +10710,7 @@ VALUES
                         },
                         {
                             "id": 1336,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -10718,7 +10718,7 @@ VALUES
                         },
                         {
                             "id": 1337,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -10726,7 +10726,7 @@ VALUES
                         },
                         {
                             "id": 1338,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -10734,7 +10734,7 @@ VALUES
                         },
                         {
                             "id": 1339,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -10742,7 +10742,7 @@ VALUES
                         },
                         {
                             "id": 1340,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -10750,7 +10750,7 @@ VALUES
                         },
                         {
                             "id": 1341,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -10758,7 +10758,7 @@ VALUES
                         },
                         {
                             "id": 1342,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -10766,7 +10766,7 @@ VALUES
                         },
                         {
                             "id": 1343,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -10774,7 +10774,7 @@ VALUES
                         },
                         {
                             "id": 1344,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -10782,7 +10782,7 @@ VALUES
                         },
                         {
                             "id": 1345,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -10790,7 +10790,7 @@ VALUES
                         },
                         {
                             "id": 1346,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -10798,7 +10798,7 @@ VALUES
                         },
                         {
                             "id": 1347,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -10806,7 +10806,7 @@ VALUES
                         },
                         {
                             "id": 1348,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -10814,7 +10814,7 @@ VALUES
                         },
                         {
                             "id": 1349,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -10822,7 +10822,7 @@ VALUES
                         },
                         {
                             "id": 1350,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -10830,7 +10830,7 @@ VALUES
                         },
                         {
                             "id": 1351,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -10838,7 +10838,7 @@ VALUES
                         },
                         {
                             "id": 1352,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -10846,7 +10846,7 @@ VALUES
                         },
                         {
                             "id": 1353,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -10854,7 +10854,7 @@ VALUES
                         },
                         {
                             "id": 1354,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -10862,7 +10862,7 @@ VALUES
                         },
                         {
                             "id": 1355,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -10870,7 +10870,7 @@ VALUES
                         },
                         {
                             "id": 1356,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -10878,7 +10878,7 @@ VALUES
                         },
                         {
                             "id": 1357,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -10886,7 +10886,7 @@ VALUES
                         },
                         {
                             "id": 1358,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -10894,7 +10894,7 @@ VALUES
                         },
                         {
                             "id": 1359,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -10902,7 +10902,7 @@ VALUES
                         },
                         {
                             "id": 1360,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -10910,7 +10910,7 @@ VALUES
                         },
                         {
                             "id": 1361,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -10918,7 +10918,7 @@ VALUES
                         },
                         {
                             "id": 1362,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -10926,7 +10926,7 @@ VALUES
                         },
                         {
                             "id": 1363,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -10934,7 +10934,7 @@ VALUES
                         },
                         {
                             "id": 1364,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -10942,7 +10942,7 @@ VALUES
                         },
                         {
                             "id": 1365,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -10950,7 +10950,7 @@ VALUES
                         },
                         {
                             "id": 1366,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -10958,7 +10958,7 @@ VALUES
                         },
                         {
                             "id": 1367,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -10966,7 +10966,7 @@ VALUES
                         },
                         {
                             "id": 1368,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -10974,7 +10974,7 @@ VALUES
                         },
                         {
                             "id": 1369,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -10982,7 +10982,7 @@ VALUES
                         },
                         {
                             "id": 1370,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -10990,7 +10990,7 @@ VALUES
                         },
                         {
                             "id": 1371,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -10998,7 +10998,7 @@ VALUES
                         },
                         {
                             "id": 1372,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -11006,7 +11006,7 @@ VALUES
                         },
                         {
                             "id": 1373,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -11014,7 +11014,7 @@ VALUES
                         },
                         {
                             "id": 1374,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -11022,7 +11022,7 @@ VALUES
                         },
                         {
                             "id": 1375,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -11030,7 +11030,7 @@ VALUES
                         },
                         {
                             "id": 1376,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -11038,7 +11038,7 @@ VALUES
                         },
                         {
                             "id": 1377,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -11046,7 +11046,7 @@ VALUES
                         },
                         {
                             "id": 1378,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -11054,7 +11054,7 @@ VALUES
                         },
                         {
                             "id": 1379,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -11062,7 +11062,7 @@ VALUES
                         },
                         {
                             "id": 1380,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -11070,7 +11070,7 @@ VALUES
                         },
                         {
                             "id": 1381,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -11078,7 +11078,7 @@ VALUES
                         },
                         {
                             "id": 1382,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -11086,7 +11086,7 @@ VALUES
                         },
                         {
                             "id": 1383,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -11094,7 +11094,7 @@ VALUES
                         },
                         {
                             "id": 1384,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -11102,7 +11102,7 @@ VALUES
                         },
                         {
                             "id": 1385,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -11110,7 +11110,7 @@ VALUES
                         },
                         {
                             "id": 1386,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -11118,7 +11118,7 @@ VALUES
                         },
                         {
                             "id": 1387,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -11126,7 +11126,7 @@ VALUES
                         },
                         {
                             "id": 1388,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -11134,7 +11134,7 @@ VALUES
                         },
                         {
                             "id": 1389,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -11142,7 +11142,7 @@ VALUES
                         },
                         {
                             "id": 1390,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -11150,7 +11150,7 @@ VALUES
                         },
                         {
                             "id": 1391,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -11158,7 +11158,7 @@ VALUES
                         },
                         {
                             "id": 1392,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -11166,7 +11166,7 @@ VALUES
                         },
                         {
                             "id": 1393,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -11174,7 +11174,7 @@ VALUES
                         },
                         {
                             "id": 1394,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -11182,7 +11182,7 @@ VALUES
                         },
                         {
                             "id": 1395,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -11190,7 +11190,7 @@ VALUES
                         },
                         {
                             "id": 1396,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -11198,7 +11198,7 @@ VALUES
                         },
                         {
                             "id": 1397,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -11206,7 +11206,7 @@ VALUES
                         },
                         {
                             "id": 1398,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -11214,7 +11214,7 @@ VALUES
                         },
                         {
                             "id": 1399,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -11222,7 +11222,7 @@ VALUES
                         },
                         {
                             "id": 1400,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -11230,7 +11230,7 @@ VALUES
                         },
                         {
                             "id": 1401,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -11238,7 +11238,7 @@ VALUES
                         },
                         {
                             "id": 1402,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -11246,7 +11246,7 @@ VALUES
                         },
                         {
                             "id": 1403,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -11254,7 +11254,7 @@ VALUES
                         },
                         {
                             "id": 1404,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -11262,7 +11262,7 @@ VALUES
                         },
                         {
                             "id": 1405,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -11270,7 +11270,7 @@ VALUES
                         },
                         {
                             "id": 1406,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -11278,7 +11278,7 @@ VALUES
                         },
                         {
                             "id": 1407,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -11286,7 +11286,7 @@ VALUES
                         },
                         {
                             "id": 1408,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -11294,7 +11294,7 @@ VALUES
                         },
                         {
                             "id": 1409,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -11302,7 +11302,7 @@ VALUES
                         },
                         {
                             "id": 1410,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -11310,7 +11310,7 @@ VALUES
                         },
                         {
                             "id": 1411,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -11318,7 +11318,7 @@ VALUES
                         },
                         {
                             "id": 1412,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -11326,7 +11326,7 @@ VALUES
                         },
                         {
                             "id": 1413,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -11334,7 +11334,7 @@ VALUES
                         },
                         {
                             "id": 1414,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -11342,7 +11342,7 @@ VALUES
                         },
                         {
                             "id": 1415,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -11350,7 +11350,7 @@ VALUES
                         },
                         {
                             "id": 1416,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -11358,7 +11358,7 @@ VALUES
                         },
                         {
                             "id": 1417,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -11366,7 +11366,7 @@ VALUES
                         },
                         {
                             "id": 1418,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -11374,7 +11374,7 @@ VALUES
                         },
                         {
                             "id": 1419,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -11382,7 +11382,7 @@ VALUES
                         },
                         {
                             "id": 1420,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -11390,7 +11390,7 @@ VALUES
                         },
                         {
                             "id": 1421,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -11398,7 +11398,7 @@ VALUES
                         },
                         {
                             "id": 1422,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -11406,7 +11406,7 @@ VALUES
                         },
                         {
                             "id": 1423,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -11414,7 +11414,7 @@ VALUES
                         },
                         {
                             "id": 1424,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -11422,7 +11422,7 @@ VALUES
                         },
                         {
                             "id": 1425,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -11430,7 +11430,7 @@ VALUES
                         },
                         {
                             "id": 1426,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -11438,7 +11438,7 @@ VALUES
                         },
                         {
                             "id": 1427,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -11446,7 +11446,7 @@ VALUES
                         },
                         {
                             "id": 1428,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -11454,7 +11454,7 @@ VALUES
                         },
                         {
                             "id": 1429,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -11462,7 +11462,7 @@ VALUES
                         },
                         {
                             "id": 1430,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -11470,7 +11470,7 @@ VALUES
                         },
                         {
                             "id": 1431,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -11478,7 +11478,7 @@ VALUES
                         },
                         {
                             "id": 1432,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -11486,7 +11486,7 @@ VALUES
                         },
                         {
                             "id": 1433,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -11494,7 +11494,7 @@ VALUES
                         },
                         {
                             "id": 1434,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -11502,7 +11502,7 @@ VALUES
                         },
                         {
                             "id": 1435,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -11510,7 +11510,7 @@ VALUES
                         },
                         {
                             "id": 1436,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -11518,7 +11518,7 @@ VALUES
                         },
                         {
                             "id": 1437,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -11526,7 +11526,7 @@ VALUES
                         },
                         {
                             "id": 1438,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -11534,7 +11534,7 @@ VALUES
                         },
                         {
                             "id": 1439,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -11542,7 +11542,7 @@ VALUES
                         },
                         {
                             "id": 1440,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -11550,7 +11550,7 @@ VALUES
                         },
                         {
                             "id": 1441,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -11558,7 +11558,7 @@ VALUES
                         },
                         {
                             "id": 1442,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -11566,7 +11566,7 @@ VALUES
                         },
                         {
                             "id": 1443,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -11574,7 +11574,7 @@ VALUES
                         },
                         {
                             "id": 1444,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -11582,7 +11582,7 @@ VALUES
                         },
                         {
                             "id": 1445,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -11590,7 +11590,7 @@ VALUES
                         },
                         {
                             "id": 1446,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -11598,7 +11598,7 @@ VALUES
                         },
                         {
                             "id": 1447,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -11606,7 +11606,7 @@ VALUES
                         },
                         {
                             "id": 1448,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -11614,7 +11614,7 @@ VALUES
                         },
                         {
                             "id": 1449,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -11622,7 +11622,7 @@ VALUES
                         },
                         {
                             "id": 1450,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -11630,7 +11630,7 @@ VALUES
                         },
                         {
                             "id": 1451,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -11638,7 +11638,7 @@ VALUES
                         },
                         {
                             "id": 1452,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -11646,7 +11646,7 @@ VALUES
                         },
                         {
                             "id": 1453,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -11654,7 +11654,7 @@ VALUES
                         },
                         {
                             "id": 1454,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -11662,7 +11662,7 @@ VALUES
                         },
                         {
                             "id": 1455,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -11670,7 +11670,7 @@ VALUES
                         },
                         {
                             "id": 1456,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -11678,7 +11678,7 @@ VALUES
                         },
                         {
                             "id": 1457,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -11686,7 +11686,7 @@ VALUES
                         },
                         {
                             "id": 1458,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -11694,7 +11694,7 @@ VALUES
                         },
                         {
                             "id": 1459,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -11702,7 +11702,7 @@ VALUES
                         },
                         {
                             "id": 1460,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -11710,7 +11710,7 @@ VALUES
                         },
                         {
                             "id": 1461,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -11718,7 +11718,7 @@ VALUES
                         },
                         {
                             "id": 1462,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -11726,7 +11726,7 @@ VALUES
                         },
                         {
                             "id": 1463,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -11734,7 +11734,7 @@ VALUES
                         },
                         {
                             "id": 1464,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -11742,7 +11742,7 @@ VALUES
                         },
                         {
                             "id": 1465,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -11750,7 +11750,7 @@ VALUES
                         },
                         {
                             "id": 1466,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -11758,7 +11758,7 @@ VALUES
                         },
                         {
                             "id": 1467,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -11766,7 +11766,7 @@ VALUES
                         },
                         {
                             "id": 1468,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -11774,7 +11774,7 @@ VALUES
                         },
                         {
                             "id": 1469,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -11782,7 +11782,7 @@ VALUES
                         },
                         {
                             "id": 1470,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -11790,7 +11790,7 @@ VALUES
                         },
                         {
                             "id": 1471,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -11798,7 +11798,7 @@ VALUES
                         },
                         {
                             "id": 1472,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -11806,7 +11806,7 @@ VALUES
                         },
                         {
                             "id": 1473,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -11814,7 +11814,7 @@ VALUES
                         },
                         {
                             "id": 1474,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -11822,7 +11822,7 @@ VALUES
                         },
                         {
                             "id": 1475,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -11830,7 +11830,7 @@ VALUES
                         },
                         {
                             "id": 1476,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -11838,7 +11838,7 @@ VALUES
                         },
                         {
                             "id": 1477,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -11846,7 +11846,7 @@ VALUES
                         },
                         {
                             "id": 1478,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -11854,7 +11854,7 @@ VALUES
                         },
                         {
                             "id": 1479,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -11862,7 +11862,7 @@ VALUES
                         },
                         {
                             "id": 1480,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -11870,7 +11870,7 @@ VALUES
                         },
                         {
                             "id": 1481,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -11878,7 +11878,7 @@ VALUES
                         },
                         {
                             "id": 1482,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -11886,7 +11886,7 @@ VALUES
                         },
                         {
                             "id": 1483,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -11894,7 +11894,7 @@ VALUES
                         },
                         {
                             "id": 1484,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -11902,7 +11902,7 @@ VALUES
                         },
                         {
                             "id": 1485,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -11910,7 +11910,7 @@ VALUES
                         },
                         {
                             "id": 1486,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -11918,7 +11918,7 @@ VALUES
                         },
                         {
                             "id": 1487,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 37,
@@ -11926,7 +11926,7 @@ VALUES
                         },
                         {
                             "id": 1488,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -11934,7 +11934,7 @@ VALUES
                         },
                         {
                             "id": 1489,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -11942,7 +11942,7 @@ VALUES
                         },
                         {
                             "id": 1490,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -11950,7 +11950,7 @@ VALUES
                         },
                         {
                             "id": 1491,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -11958,7 +11958,7 @@ VALUES
                         },
                         {
                             "id": 1492,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -11966,7 +11966,7 @@ VALUES
                         },
                         {
                             "id": 1493,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -11974,7 +11974,7 @@ VALUES
                         },
                         {
                             "id": 1494,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -11982,7 +11982,7 @@ VALUES
                         },
                         {
                             "id": 1495,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -11990,7 +11990,7 @@ VALUES
                         },
                         {
                             "id": 1496,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -11998,7 +11998,7 @@ VALUES
                         },
                         {
                             "id": 1497,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -12006,7 +12006,7 @@ VALUES
                         },
                         {
                             "id": 1498,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -12014,7 +12014,7 @@ VALUES
                         },
                         {
                             "id": 1499,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -12022,7 +12022,7 @@ VALUES
                         },
                         {
                             "id": 1500,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -12030,7 +12030,7 @@ VALUES
                         },
                         {
                             "id": 1501,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -12038,7 +12038,7 @@ VALUES
                         },
                         {
                             "id": 1502,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -12046,7 +12046,7 @@ VALUES
                         },
                         {
                             "id": 1503,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -12054,7 +12054,7 @@ VALUES
                         },
                         {
                             "id": 1504,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -12062,7 +12062,7 @@ VALUES
                         },
                         {
                             "id": 1505,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -12070,7 +12070,7 @@ VALUES
                         },
                         {
                             "id": 1506,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -12078,7 +12078,7 @@ VALUES
                         },
                         {
                             "id": 1507,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -12086,7 +12086,7 @@ VALUES
                         },
                         {
                             "id": 1508,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -12094,7 +12094,7 @@ VALUES
                         },
                         {
                             "id": 1509,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -12102,7 +12102,7 @@ VALUES
                         },
                         {
                             "id": 1510,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -12110,7 +12110,7 @@ VALUES
                         },
                         {
                             "id": 1511,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -12118,7 +12118,7 @@ VALUES
                         },
                         {
                             "id": 1512,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -12126,7 +12126,7 @@ VALUES
                         },
                         {
                             "id": 1513,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -12134,7 +12134,7 @@ VALUES
                         },
                         {
                             "id": 1514,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -12142,7 +12142,7 @@ VALUES
                         },
                         {
                             "id": 1515,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -12150,7 +12150,7 @@ VALUES
                         },
                         {
                             "id": 1516,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -12158,7 +12158,7 @@ VALUES
                         },
                         {
                             "id": 1517,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -12166,7 +12166,7 @@ VALUES
                         },
                         {
                             "id": 1518,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -12174,7 +12174,7 @@ VALUES
                         },
                         {
                             "id": 1519,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -12182,7 +12182,7 @@ VALUES
                         },
                         {
                             "id": 1520,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -12190,7 +12190,7 @@ VALUES
                         },
                         {
                             "id": 1521,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -12198,7 +12198,7 @@ VALUES
                         },
                         {
                             "id": 1522,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -12206,7 +12206,7 @@ VALUES
                         },
                         {
                             "id": 1523,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -12214,7 +12214,7 @@ VALUES
                         },
                         {
                             "id": 1524,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -12222,7 +12222,7 @@ VALUES
                         },
                         {
                             "id": 1525,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -12230,7 +12230,7 @@ VALUES
                         },
                         {
                             "id": 1526,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -12238,7 +12238,7 @@ VALUES
                         },
                         {
                             "id": 1527,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -12246,7 +12246,7 @@ VALUES
                         },
                         {
                             "id": 1528,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -12254,7 +12254,7 @@ VALUES
                         },
                         {
                             "id": 1529,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -12262,7 +12262,7 @@ VALUES
                         },
                         {
                             "id": 1530,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -12270,7 +12270,7 @@ VALUES
                         },
                         {
                             "id": 1531,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -12278,7 +12278,7 @@ VALUES
                         },
                         {
                             "id": 1532,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -12286,7 +12286,7 @@ VALUES
                         },
                         {
                             "id": 1533,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -12294,7 +12294,7 @@ VALUES
                         },
                         {
                             "id": 1534,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -12302,7 +12302,7 @@ VALUES
                         },
                         {
                             "id": 1535,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -12310,7 +12310,7 @@ VALUES
                         },
                         {
                             "id": 1536,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -12318,7 +12318,7 @@ VALUES
                         },
                         {
                             "id": 1537,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -12326,7 +12326,7 @@ VALUES
                         },
                         {
                             "id": 1538,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -12334,7 +12334,7 @@ VALUES
                         },
                         {
                             "id": 1539,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -12342,7 +12342,7 @@ VALUES
                         },
                         {
                             "id": 1540,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -12350,7 +12350,7 @@ VALUES
                         },
                         {
                             "id": 1541,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -12358,7 +12358,7 @@ VALUES
                         },
                         {
                             "id": 1542,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -12366,7 +12366,7 @@ VALUES
                         },
                         {
                             "id": 1543,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -12374,7 +12374,7 @@ VALUES
                         },
                         {
                             "id": 1544,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -12382,7 +12382,7 @@ VALUES
                         },
                         {
                             "id": 1545,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -12390,7 +12390,7 @@ VALUES
                         },
                         {
                             "id": 1546,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -12398,7 +12398,7 @@ VALUES
                         },
                         {
                             "id": 1547,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -12406,7 +12406,7 @@ VALUES
                         },
                         {
                             "id": 1548,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -12414,7 +12414,7 @@ VALUES
                         },
                         {
                             "id": 1549,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -12422,7 +12422,7 @@ VALUES
                         },
                         {
                             "id": 1550,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -12430,7 +12430,7 @@ VALUES
                         },
                         {
                             "id": 1551,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -12438,7 +12438,7 @@ VALUES
                         },
                         {
                             "id": 1552,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -12446,7 +12446,7 @@ VALUES
                         },
                         {
                             "id": 1553,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -12454,7 +12454,7 @@ VALUES
                         },
                         {
                             "id": 1554,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -12462,7 +12462,7 @@ VALUES
                         },
                         {
                             "id": 1555,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -12470,7 +12470,7 @@ VALUES
                         },
                         {
                             "id": 1556,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -12478,7 +12478,7 @@ VALUES
                         },
                         {
                             "id": 1557,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -12486,7 +12486,7 @@ VALUES
                         },
                         {
                             "id": 1558,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -12494,7 +12494,7 @@ VALUES
                         },
                         {
                             "id": 1559,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -12502,7 +12502,7 @@ VALUES
                         },
                         {
                             "id": 1560,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -12510,7 +12510,7 @@ VALUES
                         },
                         {
                             "id": 1561,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -12518,7 +12518,7 @@ VALUES
                         },
                         {
                             "id": 1562,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -12526,7 +12526,7 @@ VALUES
                         },
                         {
                             "id": 1563,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -12534,7 +12534,7 @@ VALUES
                         },
                         {
                             "id": 1564,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -12542,7 +12542,7 @@ VALUES
                         },
                         {
                             "id": 1565,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -12550,7 +12550,7 @@ VALUES
                         },
                         {
                             "id": 1566,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -12558,7 +12558,7 @@ VALUES
                         },
                         {
                             "id": 1567,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -12566,7 +12566,7 @@ VALUES
                         },
                         {
                             "id": 1568,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -12574,7 +12574,7 @@ VALUES
                         },
                         {
                             "id": 1569,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -12582,7 +12582,7 @@ VALUES
                         },
                         {
                             "id": 1570,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -12590,7 +12590,7 @@ VALUES
                         },
                         {
                             "id": 1571,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -12598,7 +12598,7 @@ VALUES
                         },
                         {
                             "id": 1572,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -12606,7 +12606,7 @@ VALUES
                         },
                         {
                             "id": 1573,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -12614,7 +12614,7 @@ VALUES
                         },
                         {
                             "id": 1574,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -12622,7 +12622,7 @@ VALUES
                         },
                         {
                             "id": 1575,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -12630,7 +12630,7 @@ VALUES
                         },
                         {
                             "id": 1576,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -12638,7 +12638,7 @@ VALUES
                         },
                         {
                             "id": 1577,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -12646,7 +12646,7 @@ VALUES
                         },
                         {
                             "id": 1578,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -12654,7 +12654,7 @@ VALUES
                         },
                         {
                             "id": 1579,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -12662,7 +12662,7 @@ VALUES
                         },
                         {
                             "id": 1580,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -12670,7 +12670,7 @@ VALUES
                         },
                         {
                             "id": 1581,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -12678,7 +12678,7 @@ VALUES
                         },
                         {
                             "id": 1582,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -12686,7 +12686,7 @@ VALUES
                         },
                         {
                             "id": 1583,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -12694,7 +12694,7 @@ VALUES
                         },
                         {
                             "id": 1584,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -12702,7 +12702,7 @@ VALUES
                         },
                         {
                             "id": 1585,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -12710,7 +12710,7 @@ VALUES
                         },
                         {
                             "id": 1586,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -12718,7 +12718,7 @@ VALUES
                         },
                         {
                             "id": 1587,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -12726,7 +12726,7 @@ VALUES
                         },
                         {
                             "id": 1588,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -12734,7 +12734,7 @@ VALUES
                         },
                         {
                             "id": 1589,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -12742,7 +12742,7 @@ VALUES
                         },
                         {
                             "id": 1590,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -12750,7 +12750,7 @@ VALUES
                         },
                         {
                             "id": 1591,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -12758,7 +12758,7 @@ VALUES
                         },
                         {
                             "id": 1592,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -12766,7 +12766,7 @@ VALUES
                         },
                         {
                             "id": 1593,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -12774,7 +12774,7 @@ VALUES
                         },
                         {
                             "id": 1594,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -12782,7 +12782,7 @@ VALUES
                         },
                         {
                             "id": 1595,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -12790,7 +12790,7 @@ VALUES
                         },
                         {
                             "id": 1596,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -12798,7 +12798,7 @@ VALUES
                         },
                         {
                             "id": 1597,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -12806,7 +12806,7 @@ VALUES
                         },
                         {
                             "id": 1598,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -12814,7 +12814,7 @@ VALUES
                         },
                         {
                             "id": 1599,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -12822,7 +12822,7 @@ VALUES
                         },
                         {
                             "id": 1600,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -12830,7 +12830,7 @@ VALUES
                         },
                         {
                             "id": 1601,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -12838,7 +12838,7 @@ VALUES
                         },
                         {
                             "id": 1602,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -12846,7 +12846,7 @@ VALUES
                         },
                         {
                             "id": 1603,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -12854,7 +12854,7 @@ VALUES
                         },
                         {
                             "id": 1604,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -12862,7 +12862,7 @@ VALUES
                         },
                         {
                             "id": 1605,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -12870,7 +12870,7 @@ VALUES
                         },
                         {
                             "id": 1606,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -12878,7 +12878,7 @@ VALUES
                         },
                         {
                             "id": 1607,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -12886,7 +12886,7 @@ VALUES
                         },
                         {
                             "id": 1608,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -12894,7 +12894,7 @@ VALUES
                         },
                         {
                             "id": 1609,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -12902,7 +12902,7 @@ VALUES
                         },
                         {
                             "id": 1610,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -12910,7 +12910,7 @@ VALUES
                         },
                         {
                             "id": 1611,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -12918,7 +12918,7 @@ VALUES
                         },
                         {
                             "id": 1612,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -12926,7 +12926,7 @@ VALUES
                         },
                         {
                             "id": 1613,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -12934,7 +12934,7 @@ VALUES
                         },
                         {
                             "id": 1614,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -12942,7 +12942,7 @@ VALUES
                         },
                         {
                             "id": 1615,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -12950,7 +12950,7 @@ VALUES
                         },
                         {
                             "id": 1616,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -12958,7 +12958,7 @@ VALUES
                         },
                         {
                             "id": 1617,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -12966,7 +12966,7 @@ VALUES
                         },
                         {
                             "id": 1618,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -12974,7 +12974,7 @@ VALUES
                         },
                         {
                             "id": 1619,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -12982,7 +12982,7 @@ VALUES
                         },
                         {
                             "id": 1620,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -12990,7 +12990,7 @@ VALUES
                         },
                         {
                             "id": 1621,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -12998,7 +12998,7 @@ VALUES
                         },
                         {
                             "id": 1622,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -13006,7 +13006,7 @@ VALUES
                         },
                         {
                             "id": 1623,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -13014,7 +13014,7 @@ VALUES
                         },
                         {
                             "id": 1624,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -13022,7 +13022,7 @@ VALUES
                         },
                         {
                             "id": 1625,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -13030,7 +13030,7 @@ VALUES
                         },
                         {
                             "id": 1626,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -13038,7 +13038,7 @@ VALUES
                         },
                         {
                             "id": 1627,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -13046,7 +13046,7 @@ VALUES
                         },
                         {
                             "id": 1628,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -13054,7 +13054,7 @@ VALUES
                         },
                         {
                             "id": 1629,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -13062,7 +13062,7 @@ VALUES
                         },
                         {
                             "id": 1630,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -13070,7 +13070,7 @@ VALUES
                         },
                         {
                             "id": 1631,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -13078,7 +13078,7 @@ VALUES
                         },
                         {
                             "id": 1632,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -13086,7 +13086,7 @@ VALUES
                         },
                         {
                             "id": 1633,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -13094,7 +13094,7 @@ VALUES
                         },
                         {
                             "id": 1634,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -13102,7 +13102,7 @@ VALUES
                         },
                         {
                             "id": 1635,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -13110,7 +13110,7 @@ VALUES
                         },
                         {
                             "id": 1636,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -13118,7 +13118,7 @@ VALUES
                         },
                         {
                             "id": 1637,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 37,
@@ -13126,7 +13126,7 @@ VALUES
                         },
                         {
                             "id": 1638,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -13134,7 +13134,7 @@ VALUES
                         },
                         {
                             "id": 1639,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -13142,7 +13142,7 @@ VALUES
                         },
                         {
                             "id": 1640,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -13150,7 +13150,7 @@ VALUES
                         },
                         {
                             "id": 1641,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -13158,7 +13158,7 @@ VALUES
                         },
                         {
                             "id": 1642,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -13166,7 +13166,7 @@ VALUES
                         },
                         {
                             "id": 1643,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -13174,7 +13174,7 @@ VALUES
                         },
                         {
                             "id": 1644,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -13182,7 +13182,7 @@ VALUES
                         },
                         {
                             "id": 1645,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -13190,7 +13190,7 @@ VALUES
                         },
                         {
                             "id": 1646,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -13198,7 +13198,7 @@ VALUES
                         },
                         {
                             "id": 1647,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -13206,7 +13206,7 @@ VALUES
                         },
                         {
                             "id": 1648,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -13214,7 +13214,7 @@ VALUES
                         },
                         {
                             "id": 1649,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -13222,7 +13222,7 @@ VALUES
                         },
                         {
                             "id": 1650,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -13230,7 +13230,7 @@ VALUES
                         },
                         {
                             "id": 1651,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -13238,7 +13238,7 @@ VALUES
                         },
                         {
                             "id": 1652,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -13246,7 +13246,7 @@ VALUES
                         },
                         {
                             "id": 1653,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -13254,7 +13254,7 @@ VALUES
                         },
                         {
                             "id": 1654,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -13262,7 +13262,7 @@ VALUES
                         },
                         {
                             "id": 1655,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -13270,7 +13270,7 @@ VALUES
                         },
                         {
                             "id": 1656,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -13278,7 +13278,7 @@ VALUES
                         },
                         {
                             "id": 1657,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -13286,7 +13286,7 @@ VALUES
                         },
                         {
                             "id": 1658,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -13294,7 +13294,7 @@ VALUES
                         },
                         {
                             "id": 1659,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -13302,7 +13302,7 @@ VALUES
                         },
                         {
                             "id": 1660,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 10,
@@ -13310,7 +13310,7 @@ VALUES
                         },
                         {
                             "id": 1661,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -13318,7 +13318,7 @@ VALUES
                         },
                         {
                             "id": 1662,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -13326,7 +13326,7 @@ VALUES
                         },
                         {
                             "id": 1663,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -13334,7 +13334,7 @@ VALUES
                         },
                         {
                             "id": 1664,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -13342,7 +13342,7 @@ VALUES
                         },
                         {
                             "id": 1665,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -13350,7 +13350,7 @@ VALUES
                         },
                         {
                             "id": 1666,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -13358,7 +13358,7 @@ VALUES
                         },
                         {
                             "id": 1667,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -13366,7 +13366,7 @@ VALUES
                         },
                         {
                             "id": 1668,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -13374,7 +13374,7 @@ VALUES
                         },
                         {
                             "id": 1669,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -13382,7 +13382,7 @@ VALUES
                         },
                         {
                             "id": 1670,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -13390,7 +13390,7 @@ VALUES
                         },
                         {
                             "id": 1671,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -13398,7 +13398,7 @@ VALUES
                         },
                         {
                             "id": 1672,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -13406,7 +13406,7 @@ VALUES
                         },
                         {
                             "id": 1673,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -13414,7 +13414,7 @@ VALUES
                         },
                         {
                             "id": 1674,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -13422,7 +13422,7 @@ VALUES
                         },
                         {
                             "id": 1675,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -13430,7 +13430,7 @@ VALUES
                         },
                         {
                             "id": 1676,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -13438,7 +13438,7 @@ VALUES
                         },
                         {
                             "id": 1677,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -13446,7 +13446,7 @@ VALUES
                         },
                         {
                             "id": 1678,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -13454,7 +13454,7 @@ VALUES
                         },
                         {
                             "id": 1679,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -13462,7 +13462,7 @@ VALUES
                         },
                         {
                             "id": 1680,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -13470,7 +13470,7 @@ VALUES
                         },
                         {
                             "id": 1681,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -13478,7 +13478,7 @@ VALUES
                         },
                         {
                             "id": 1682,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -13486,7 +13486,7 @@ VALUES
                         },
                         {
                             "id": 1683,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -13494,7 +13494,7 @@ VALUES
                         },
                         {
                             "id": 1684,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -13502,7 +13502,7 @@ VALUES
                         },
                         {
                             "id": 1685,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -13510,7 +13510,7 @@ VALUES
                         },
                         {
                             "id": 1686,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -13518,7 +13518,7 @@ VALUES
                         },
                         {
                             "id": 1687,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -13526,7 +13526,7 @@ VALUES
                         },
                         {
                             "id": 1688,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -13534,7 +13534,7 @@ VALUES
                         },
                         {
                             "id": 1689,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -13542,7 +13542,7 @@ VALUES
                         },
                         {
                             "id": 1690,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -13550,7 +13550,7 @@ VALUES
                         },
                         {
                             "id": 1691,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -13558,7 +13558,7 @@ VALUES
                         },
                         {
                             "id": 1692,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -13566,7 +13566,7 @@ VALUES
                         },
                         {
                             "id": 1693,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -13574,7 +13574,7 @@ VALUES
                         },
                         {
                             "id": 1694,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -13582,7 +13582,7 @@ VALUES
                         },
                         {
                             "id": 1695,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -13590,7 +13590,7 @@ VALUES
                         },
                         {
                             "id": 1696,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -13598,7 +13598,7 @@ VALUES
                         },
                         {
                             "id": 1697,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -13606,7 +13606,7 @@ VALUES
                         },
                         {
                             "id": 1698,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -13614,7 +13614,7 @@ VALUES
                         },
                         {
                             "id": 1699,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -13622,7 +13622,7 @@ VALUES
                         },
                         {
                             "id": 1700,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -13630,7 +13630,7 @@ VALUES
                         },
                         {
                             "id": 1701,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -13638,7 +13638,7 @@ VALUES
                         },
                         {
                             "id": 1702,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -13646,7 +13646,7 @@ VALUES
                         },
                         {
                             "id": 1703,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -13654,7 +13654,7 @@ VALUES
                         },
                         {
                             "id": 1704,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -13662,7 +13662,7 @@ VALUES
                         },
                         {
                             "id": 1705,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -13670,7 +13670,7 @@ VALUES
                         },
                         {
                             "id": 1706,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -13678,7 +13678,7 @@ VALUES
                         },
                         {
                             "id": 1707,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -13686,7 +13686,7 @@ VALUES
                         },
                         {
                             "id": 1708,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -13694,7 +13694,7 @@ VALUES
                         },
                         {
                             "id": 1709,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -13702,7 +13702,7 @@ VALUES
                         },
                         {
                             "id": 1710,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -13710,7 +13710,7 @@ VALUES
                         },
                         {
                             "id": 1711,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -13718,7 +13718,7 @@ VALUES
                         },
                         {
                             "id": 1712,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -13726,7 +13726,7 @@ VALUES
                         },
                         {
                             "id": 1713,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -13734,7 +13734,7 @@ VALUES
                         },
                         {
                             "id": 1714,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -13742,7 +13742,7 @@ VALUES
                         },
                         {
                             "id": 1715,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -13750,7 +13750,7 @@ VALUES
                         },
                         {
                             "id": 1716,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -13758,7 +13758,7 @@ VALUES
                         },
                         {
                             "id": 1717,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -13766,7 +13766,7 @@ VALUES
                         },
                         {
                             "id": 1718,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -13774,7 +13774,7 @@ VALUES
                         },
                         {
                             "id": 1719,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -13782,7 +13782,7 @@ VALUES
                         },
                         {
                             "id": 1720,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -13790,7 +13790,7 @@ VALUES
                         },
                         {
                             "id": 1721,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -13798,7 +13798,7 @@ VALUES
                         },
                         {
                             "id": 1722,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -13806,7 +13806,7 @@ VALUES
                         },
                         {
                             "id": 1723,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -13814,7 +13814,7 @@ VALUES
                         },
                         {
                             "id": 1724,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -13822,7 +13822,7 @@ VALUES
                         },
                         {
                             "id": 1725,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -13830,7 +13830,7 @@ VALUES
                         },
                         {
                             "id": 1726,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -13838,7 +13838,7 @@ VALUES
                         },
                         {
                             "id": 1727,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -13846,7 +13846,7 @@ VALUES
                         },
                         {
                             "id": 1728,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -13854,7 +13854,7 @@ VALUES
                         },
                         {
                             "id": 1729,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -13862,7 +13862,7 @@ VALUES
                         },
                         {
                             "id": 1730,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -13870,7 +13870,7 @@ VALUES
                         },
                         {
                             "id": 1731,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -13878,7 +13878,7 @@ VALUES
                         },
                         {
                             "id": 1732,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -13886,7 +13886,7 @@ VALUES
                         },
                         {
                             "id": 1733,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -13894,7 +13894,7 @@ VALUES
                         },
                         {
                             "id": 1734,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -13902,7 +13902,7 @@ VALUES
                         },
                         {
                             "id": 1735,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -13910,7 +13910,7 @@ VALUES
                         },
                         {
                             "id": 1736,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -13918,7 +13918,7 @@ VALUES
                         },
                         {
                             "id": 1737,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -13926,7 +13926,7 @@ VALUES
                         },
                         {
                             "id": 1738,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -13934,7 +13934,7 @@ VALUES
                         },
                         {
                             "id": 1739,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -13942,7 +13942,7 @@ VALUES
                         },
                         {
                             "id": 1740,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -13950,7 +13950,7 @@ VALUES
                         },
                         {
                             "id": 1741,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -13958,7 +13958,7 @@ VALUES
                         },
                         {
                             "id": 1742,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -13966,7 +13966,7 @@ VALUES
                         },
                         {
                             "id": 1743,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -13974,7 +13974,7 @@ VALUES
                         },
                         {
                             "id": 1744,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -13982,7 +13982,7 @@ VALUES
                         },
                         {
                             "id": 1745,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -13990,7 +13990,7 @@ VALUES
                         },
                         {
                             "id": 1746,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -13998,7 +13998,7 @@ VALUES
                         },
                         {
                             "id": 1747,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -14006,7 +14006,7 @@ VALUES
                         },
                         {
                             "id": 1748,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -14014,7 +14014,7 @@ VALUES
                         },
                         {
                             "id": 1749,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -14022,7 +14022,7 @@ VALUES
                         },
                         {
                             "id": 1750,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -14030,7 +14030,7 @@ VALUES
                         },
                         {
                             "id": 1751,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -14038,7 +14038,7 @@ VALUES
                         },
                         {
                             "id": 1752,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -14046,7 +14046,7 @@ VALUES
                         },
                         {
                             "id": 1753,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -14054,7 +14054,7 @@ VALUES
                         },
                         {
                             "id": 1754,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -14062,7 +14062,7 @@ VALUES
                         },
                         {
                             "id": 1755,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -14070,7 +14070,7 @@ VALUES
                         },
                         {
                             "id": 1756,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -14078,7 +14078,7 @@ VALUES
                         },
                         {
                             "id": 1757,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -14086,7 +14086,7 @@ VALUES
                         },
                         {
                             "id": 1758,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -14094,7 +14094,7 @@ VALUES
                         },
                         {
                             "id": 1759,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -14102,7 +14102,7 @@ VALUES
                         },
                         {
                             "id": 1760,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 10,
@@ -14110,7 +14110,7 @@ VALUES
                         },
                         {
                             "id": 1761,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -14118,7 +14118,7 @@ VALUES
                         },
                         {
                             "id": 1762,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -14126,7 +14126,7 @@ VALUES
                         },
                         {
                             "id": 1763,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -14134,7 +14134,7 @@ VALUES
                         },
                         {
                             "id": 1764,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -14142,7 +14142,7 @@ VALUES
                         },
                         {
                             "id": 1765,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 15,
@@ -14150,7 +14150,7 @@ VALUES
                         },
                         {
                             "id": 1766,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -14158,7 +14158,7 @@ VALUES
                         },
                         {
                             "id": 1767,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -14166,7 +14166,7 @@ VALUES
                         },
                         {
                             "id": 1768,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -14174,7 +14174,7 @@ VALUES
                         },
                         {
                             "id": 1769,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -14182,7 +14182,7 @@ VALUES
                         },
                         {
                             "id": 1770,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -14190,7 +14190,7 @@ VALUES
                         },
                         {
                             "id": 1771,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -14198,7 +14198,7 @@ VALUES
                         },
                         {
                             "id": 1772,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -14206,7 +14206,7 @@ VALUES
                         },
                         {
                             "id": 1773,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -14214,7 +14214,7 @@ VALUES
                         },
                         {
                             "id": 1774,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -14222,7 +14222,7 @@ VALUES
                         },
                         {
                             "id": 1775,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -14230,7 +14230,7 @@ VALUES
                         },
                         {
                             "id": 1776,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -14238,7 +14238,7 @@ VALUES
                         },
                         {
                             "id": 1777,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -14246,7 +14246,7 @@ VALUES
                         },
                         {
                             "id": 1778,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -14254,7 +14254,7 @@ VALUES
                         },
                         {
                             "id": 1779,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -14262,7 +14262,7 @@ VALUES
                         },
                         {
                             "id": 1780,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -14270,7 +14270,7 @@ VALUES
                         },
                         {
                             "id": 1781,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -14278,7 +14278,7 @@ VALUES
                         },
                         {
                             "id": 1782,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -14286,7 +14286,7 @@ VALUES
                         },
                         {
                             "id": 1783,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -14294,7 +14294,7 @@ VALUES
                         },
                         {
                             "id": 1784,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -14302,7 +14302,7 @@ VALUES
                         },
                         {
                             "id": 1785,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -14310,7 +14310,7 @@ VALUES
                         },
                         {
                             "id": 1786,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -14318,7 +14318,7 @@ VALUES
                         },
                         {
                             "id": 1787,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -14326,7 +14326,7 @@ VALUES
                         },
                         {
                             "id": 1788,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -14334,7 +14334,7 @@ VALUES
                         },
                         {
                             "id": 1789,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -14342,7 +14342,7 @@ VALUES
                         },
                         {
                             "id": 1790,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -14350,7 +14350,7 @@ VALUES
                         },
                         {
                             "id": 1791,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -14358,7 +14358,7 @@ VALUES
                         },
                         {
                             "id": 1792,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -14366,7 +14366,7 @@ VALUES
                         },
                         {
                             "id": 1793,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -14374,7 +14374,7 @@ VALUES
                         },
                         {
                             "id": 1794,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -14382,7 +14382,7 @@ VALUES
                         },
                         {
                             "id": 1795,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -14390,7 +14390,7 @@ VALUES
                         },
                         {
                             "id": 1796,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -14398,7 +14398,7 @@ VALUES
                         },
                         {
                             "id": 1797,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -14406,7 +14406,7 @@ VALUES
                         },
                         {
                             "id": 1798,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -14414,7 +14414,7 @@ VALUES
                         },
                         {
                             "id": 1799,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -14422,7 +14422,7 @@ VALUES
                         },
                         {
                             "id": 1800,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -14430,7 +14430,7 @@ VALUES
                         },
                         {
                             "id": 1801,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -14438,7 +14438,7 @@ VALUES
                         },
                         {
                             "id": 1802,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -14446,7 +14446,7 @@ VALUES
                         },
                         {
                             "id": 1803,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -14454,7 +14454,7 @@ VALUES
                         },
                         {
                             "id": 1804,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -14462,7 +14462,7 @@ VALUES
                         },
                         {
                             "id": 1805,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -14470,7 +14470,7 @@ VALUES
                         },
                         {
                             "id": 1806,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -14478,7 +14478,7 @@ VALUES
                         },
                         {
                             "id": 1807,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -14486,7 +14486,7 @@ VALUES
                         },
                         {
                             "id": 1808,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 8,
@@ -14494,7 +14494,7 @@ VALUES
                         },
                         {
                             "id": 1809,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -14502,7 +14502,7 @@ VALUES
                         },
                         {
                             "id": 1810,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -14510,7 +14510,7 @@ VALUES
                         },
                         {
                             "id": 1811,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -14518,7 +14518,7 @@ VALUES
                         },
                         {
                             "id": 1812,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -14526,7 +14526,7 @@ VALUES
                         },
                         {
                             "id": 1813,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -14534,7 +14534,7 @@ VALUES
                         },
                         {
                             "id": 1814,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -14542,7 +14542,7 @@ VALUES
                         },
                         {
                             "id": 1815,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -14550,7 +14550,7 @@ VALUES
                         },
                         {
                             "id": 1816,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -14558,7 +14558,7 @@ VALUES
                         },
                         {
                             "id": 1817,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -14566,7 +14566,7 @@ VALUES
                         },
                         {
                             "id": 1818,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -14574,7 +14574,7 @@ VALUES
                         },
                         {
                             "id": 1819,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -14582,7 +14582,7 @@ VALUES
                         },
                         {
                             "id": 1820,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -14590,7 +14590,7 @@ VALUES
                         },
                         {
                             "id": 1821,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -14598,7 +14598,7 @@ VALUES
                         },
                         {
                             "id": 1822,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -14606,7 +14606,7 @@ VALUES
                         },
                         {
                             "id": 1823,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -14614,7 +14614,7 @@ VALUES
                         },
                         {
                             "id": 1824,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -14622,7 +14622,7 @@ VALUES
                         },
                         {
                             "id": 1825,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -14630,7 +14630,7 @@ VALUES
                         },
                         {
                             "id": 1826,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -14638,7 +14638,7 @@ VALUES
                         },
                         {
                             "id": 1827,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -14646,7 +14646,7 @@ VALUES
                         },
                         {
                             "id": 1828,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -14654,7 +14654,7 @@ VALUES
                         },
                         {
                             "id": 1829,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -14662,7 +14662,7 @@ VALUES
                         },
                         {
                             "id": 1830,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -14670,7 +14670,7 @@ VALUES
                         },
                         {
                             "id": 1831,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -14678,7 +14678,7 @@ VALUES
                         },
                         {
                             "id": 1832,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 32,
@@ -14686,7 +14686,7 @@ VALUES
                         },
                         {
                             "id": 1833,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -14694,7 +14694,7 @@ VALUES
                         },
                         {
                             "id": 1834,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 34,
@@ -14702,7 +14702,7 @@ VALUES
                         },
                         {
                             "id": 1835,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -14710,7 +14710,7 @@ VALUES
                         },
                         {
                             "id": 1836,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -14718,7 +14718,7 @@ VALUES
                         },
                         {
                             "id": 1837,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -14726,7 +14726,7 @@ VALUES
                         },
                         {
                             "id": 1838,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -14734,7 +14734,7 @@ VALUES
                         },
                         {
                             "id": 1839,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -14742,7 +14742,7 @@ VALUES
                         },
                         {
                             "id": 1840,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -14750,7 +14750,7 @@ VALUES
                         },
                         {
                             "id": 1841,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -14758,7 +14758,7 @@ VALUES
                         },
                         {
                             "id": 1842,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -14766,7 +14766,7 @@ VALUES
                         },
                         {
                             "id": 1843,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 43,
@@ -14774,7 +14774,7 @@ VALUES
                         },
                         {
                             "id": 1844,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -14782,7 +14782,7 @@ VALUES
                         },
                         {
                             "id": 1845,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -14790,7 +14790,7 @@ VALUES
                         },
                         {
                             "id": 1846,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -14798,7 +14798,7 @@ VALUES
                         },
                         {
                             "id": 1847,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -14806,7 +14806,7 @@ VALUES
                         },
                         {
                             "id": 1848,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -14814,7 +14814,7 @@ VALUES
                         },
                         {
                             "id": 1849,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -14822,7 +14822,7 @@ VALUES
                         },
                         {
                             "id": 1850,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -14830,7 +14830,7 @@ VALUES
                         },
                         {
                             "id": 1851,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -14838,7 +14838,7 @@ VALUES
                         },
                         {
                             "id": 1852,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -14846,7 +14846,7 @@ VALUES
                         },
                         {
                             "id": 1853,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -14854,7 +14854,7 @@ VALUES
                         },
                         {
                             "id": 1854,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -14862,7 +14862,7 @@ VALUES
                         },
                         {
                             "id": 1855,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -14870,7 +14870,7 @@ VALUES
                         },
                         {
                             "id": 1856,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -14878,7 +14878,7 @@ VALUES
                         },
                         {
                             "id": 1857,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -14886,7 +14886,7 @@ VALUES
                         },
                         {
                             "id": 1858,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -14894,7 +14894,7 @@ VALUES
                         },
                         {
                             "id": 1859,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -14902,7 +14902,7 @@ VALUES
                         },
                         {
                             "id": 1860,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -14910,7 +14910,7 @@ VALUES
                         },
                         {
                             "id": 1861,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -14918,7 +14918,7 @@ VALUES
                         },
                         {
                             "id": 1862,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -14926,7 +14926,7 @@ VALUES
                         },
                         {
                             "id": 1863,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -14934,7 +14934,7 @@ VALUES
                         },
                         {
                             "id": 1864,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -14942,7 +14942,7 @@ VALUES
                         },
                         {
                             "id": 1865,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -14950,7 +14950,7 @@ VALUES
                         },
                         {
                             "id": 1866,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -14958,7 +14958,7 @@ VALUES
                         },
                         {
                             "id": 1867,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -14966,7 +14966,7 @@ VALUES
                         },
                         {
                             "id": 1868,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -14974,7 +14974,7 @@ VALUES
                         },
                         {
                             "id": 1869,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -14982,7 +14982,7 @@ VALUES
                         },
                         {
                             "id": 1870,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -14990,7 +14990,7 @@ VALUES
                         },
                         {
                             "id": 1871,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -14998,7 +14998,7 @@ VALUES
                         },
                         {
                             "id": 1872,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -15006,7 +15006,7 @@ VALUES
                         },
                         {
                             "id": 1873,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -15014,7 +15014,7 @@ VALUES
                         },
                         {
                             "id": 1874,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -15022,7 +15022,7 @@ VALUES
                         },
                         {
                             "id": 1875,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -15030,7 +15030,7 @@ VALUES
                         },
                         {
                             "id": 1876,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -15038,7 +15038,7 @@ VALUES
                         },
                         {
                             "id": 1877,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -15046,7 +15046,7 @@ VALUES
                         },
                         {
                             "id": 1878,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -15054,7 +15054,7 @@ VALUES
                         },
                         {
                             "id": 1879,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -15062,7 +15062,7 @@ VALUES
                         },
                         {
                             "id": 1880,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -15070,7 +15070,7 @@ VALUES
                         },
                         {
                             "id": 1881,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -15078,7 +15078,7 @@ VALUES
                         },
                         {
                             "id": 1882,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -15086,7 +15086,7 @@ VALUES
                         },
                         {
                             "id": 1883,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -15094,7 +15094,7 @@ VALUES
                         },
                         {
                             "id": 1884,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -15102,7 +15102,7 @@ VALUES
                         },
                         {
                             "id": 1885,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -15110,7 +15110,7 @@ VALUES
                         },
                         {
                             "id": 1886,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -15118,7 +15118,7 @@ VALUES
                         },
                         {
                             "id": 1887,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -15126,7 +15126,7 @@ VALUES
                         },
                         {
                             "id": 1888,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -15134,7 +15134,7 @@ VALUES
                         },
                         {
                             "id": 1889,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -15142,7 +15142,7 @@ VALUES
                         },
                         {
                             "id": 1890,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -15150,7 +15150,7 @@ VALUES
                         },
                         {
                             "id": 1891,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -15158,7 +15158,7 @@ VALUES
                         },
                         {
                             "id": 1892,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -15166,7 +15166,7 @@ VALUES
                         },
                         {
                             "id": 1893,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -15174,7 +15174,7 @@ VALUES
                         },
                         {
                             "id": 1894,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -15182,7 +15182,7 @@ VALUES
                         },
                         {
                             "id": 1895,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -15190,7 +15190,7 @@ VALUES
                         },
                         {
                             "id": 1896,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -15198,7 +15198,7 @@ VALUES
                         },
                         {
                             "id": 1897,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -15206,7 +15206,7 @@ VALUES
                         },
                         {
                             "id": 1898,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -15214,7 +15214,7 @@ VALUES
                         },
                         {
                             "id": 1899,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -15222,7 +15222,7 @@ VALUES
                         },
                         {
                             "id": 1900,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -15230,7 +15230,7 @@ VALUES
                         },
                         {
                             "id": 1901,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -15238,7 +15238,7 @@ VALUES
                         },
                         {
                             "id": 1902,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -15246,7 +15246,7 @@ VALUES
                         },
                         {
                             "id": 1903,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -15254,7 +15254,7 @@ VALUES
                         },
                         {
                             "id": 1904,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -15262,7 +15262,7 @@ VALUES
                         },
                         {
                             "id": 1905,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -15270,7 +15270,7 @@ VALUES
                         },
                         {
                             "id": 1906,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -15278,7 +15278,7 @@ VALUES
                         },
                         {
                             "id": 1907,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -15286,7 +15286,7 @@ VALUES
                         },
                         {
                             "id": 1908,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -15294,7 +15294,7 @@ VALUES
                         },
                         {
                             "id": 1909,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -15302,7 +15302,7 @@ VALUES
                         },
                         {
                             "id": 1910,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -15310,7 +15310,7 @@ VALUES
                         },
                         {
                             "id": 1911,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -15318,7 +15318,7 @@ VALUES
                         },
                         {
                             "id": 1912,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -15326,7 +15326,7 @@ VALUES
                         },
                         {
                             "id": 1913,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 13,
@@ -15334,7 +15334,7 @@ VALUES
                         },
                         {
                             "id": 1914,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -15342,7 +15342,7 @@ VALUES
                         },
                         {
                             "id": 1915,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -15350,7 +15350,7 @@ VALUES
                         },
                         {
                             "id": 1916,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -15358,7 +15358,7 @@ VALUES
                         },
                         {
                             "id": 1917,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -15366,7 +15366,7 @@ VALUES
                         },
                         {
                             "id": 1918,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -15374,7 +15374,7 @@ VALUES
                         },
                         {
                             "id": 1919,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -15382,7 +15382,7 @@ VALUES
                         },
                         {
                             "id": 1920,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -15390,7 +15390,7 @@ VALUES
                         },
                         {
                             "id": 1921,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -15398,7 +15398,7 @@ VALUES
                         },
                         {
                             "id": 1922,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -15406,7 +15406,7 @@ VALUES
                         },
                         {
                             "id": 1923,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -15414,7 +15414,7 @@ VALUES
                         },
                         {
                             "id": 1924,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -15422,7 +15422,7 @@ VALUES
                         },
                         {
                             "id": 1925,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -15430,7 +15430,7 @@ VALUES
                         },
                         {
                             "id": 1926,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -15438,7 +15438,7 @@ VALUES
                         },
                         {
                             "id": 1927,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -15446,7 +15446,7 @@ VALUES
                         },
                         {
                             "id": 1928,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -15454,7 +15454,7 @@ VALUES
                         },
                         {
                             "id": 1929,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -15462,7 +15462,7 @@ VALUES
                         },
                         {
                             "id": 1930,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -15470,7 +15470,7 @@ VALUES
                         },
                         {
                             "id": 1931,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -15478,7 +15478,7 @@ VALUES
                         },
                         {
                             "id": 1932,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -15486,7 +15486,7 @@ VALUES
                         },
                         {
                             "id": 1933,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -15494,7 +15494,7 @@ VALUES
                         },
                         {
                             "id": 1934,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -15502,7 +15502,7 @@ VALUES
                         },
                         {
                             "id": 1935,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -15510,7 +15510,7 @@ VALUES
                         },
                         {
                             "id": 1936,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -15518,7 +15518,7 @@ VALUES
                         },
                         {
                             "id": 1937,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 37,
@@ -15526,7 +15526,7 @@ VALUES
                         },
                         {
                             "id": 1938,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -15534,7 +15534,7 @@ VALUES
                         },
                         {
                             "id": 1939,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -15542,7 +15542,7 @@ VALUES
                         },
                         {
                             "id": 1940,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -15550,7 +15550,7 @@ VALUES
                         },
                         {
                             "id": 1941,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -15558,7 +15558,7 @@ VALUES
                         },
                         {
                             "id": 1942,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -15566,7 +15566,7 @@ VALUES
                         },
                         {
                             "id": 1943,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -15574,7 +15574,7 @@ VALUES
                         },
                         {
                             "id": 1944,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -15582,7 +15582,7 @@ VALUES
                         },
                         {
                             "id": 1945,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -15590,7 +15590,7 @@ VALUES
                         },
                         {
                             "id": 1946,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -15598,7 +15598,7 @@ VALUES
                         },
                         {
                             "id": 1947,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -15606,7 +15606,7 @@ VALUES
                         },
                         {
                             "id": 1948,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -15614,7 +15614,7 @@ VALUES
                         },
                         {
                             "id": 1949,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -15622,7 +15622,7 @@ VALUES
                         },
                         {
                             "id": 1950,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -15630,7 +15630,7 @@ VALUES
                         },
                         {
                             "id": 1951,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -15638,7 +15638,7 @@ VALUES
                         },
                         {
                             "id": 1952,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -15646,7 +15646,7 @@ VALUES
                         },
                         {
                             "id": 1953,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -15654,7 +15654,7 @@ VALUES
                         },
                         {
                             "id": 1954,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -15662,7 +15662,7 @@ VALUES
                         },
                         {
                             "id": 1955,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -15670,7 +15670,7 @@ VALUES
                         },
                         {
                             "id": 1956,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -15678,7 +15678,7 @@ VALUES
                         },
                         {
                             "id": 1957,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -15686,7 +15686,7 @@ VALUES
                         },
                         {
                             "id": 1958,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -15694,7 +15694,7 @@ VALUES
                         },
                         {
                             "id": 1959,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -15702,7 +15702,7 @@ VALUES
                         },
                         {
                             "id": 1960,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -15710,7 +15710,7 @@ VALUES
                         },
                         {
                             "id": 1961,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -15718,7 +15718,7 @@ VALUES
                         },
                         {
                             "id": 1962,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -15726,7 +15726,7 @@ VALUES
                         },
                         {
                             "id": 1963,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -15734,7 +15734,7 @@ VALUES
                         },
                         {
                             "id": 1964,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -15742,7 +15742,7 @@ VALUES
                         },
                         {
                             "id": 1965,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -15750,7 +15750,7 @@ VALUES
                         },
                         {
                             "id": 1966,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -15758,7 +15758,7 @@ VALUES
                         },
                         {
                             "id": 1967,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -15766,7 +15766,7 @@ VALUES
                         },
                         {
                             "id": 1968,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -15774,7 +15774,7 @@ VALUES
                         },
                         {
                             "id": 1969,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -15782,7 +15782,7 @@ VALUES
                         },
                         {
                             "id": 1970,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -15790,7 +15790,7 @@ VALUES
                         },
                         {
                             "id": 1971,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -15798,7 +15798,7 @@ VALUES
                         },
                         {
                             "id": 1972,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -15806,7 +15806,7 @@ VALUES
                         },
                         {
                             "id": 1973,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -15814,7 +15814,7 @@ VALUES
                         },
                         {
                             "id": 1974,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -15822,7 +15822,7 @@ VALUES
                         },
                         {
                             "id": 1975,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -15830,7 +15830,7 @@ VALUES
                         },
                         {
                             "id": 1976,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -15838,7 +15838,7 @@ VALUES
                         },
                         {
                             "id": 1977,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -15846,7 +15846,7 @@ VALUES
                         },
                         {
                             "id": 1978,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -15854,7 +15854,7 @@ VALUES
                         },
                         {
                             "id": 1979,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -15862,7 +15862,7 @@ VALUES
                         },
                         {
                             "id": 1980,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -15870,7 +15870,7 @@ VALUES
                         },
                         {
                             "id": 1981,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -15878,7 +15878,7 @@ VALUES
                         },
                         {
                             "id": 1982,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -15886,7 +15886,7 @@ VALUES
                         },
                         {
                             "id": 1983,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 33,
@@ -15894,7 +15894,7 @@ VALUES
                         },
                         {
                             "id": 1984,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -15902,7 +15902,7 @@ VALUES
                         },
                         {
                             "id": 1985,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -15910,7 +15910,7 @@ VALUES
                         },
                         {
                             "id": 1986,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -15918,7 +15918,7 @@ VALUES
                         },
                         {
                             "id": 1987,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -15926,7 +15926,7 @@ VALUES
                         },
                         {
                             "id": 1988,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -15934,7 +15934,7 @@ VALUES
                         },
                         {
                             "id": 1989,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -15942,7 +15942,7 @@ VALUES
                         },
                         {
                             "id": 1990,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -15950,7 +15950,7 @@ VALUES
                         },
                         {
                             "id": 1991,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -15958,7 +15958,7 @@ VALUES
                         },
                         {
                             "id": 1992,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -15966,7 +15966,7 @@ VALUES
                         },
                         {
                             "id": 1993,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -15974,7 +15974,7 @@ VALUES
                         },
                         {
                             "id": 1994,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -15982,7 +15982,7 @@ VALUES
                         },
                         {
                             "id": 1995,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -15990,7 +15990,7 @@ VALUES
                         },
                         {
                             "id": 1996,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -15998,7 +15998,7 @@ VALUES
                         },
                         {
                             "id": 1997,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -16006,7 +16006,7 @@ VALUES
                         },
                         {
                             "id": 1998,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -16014,7 +16014,7 @@ VALUES
                         },
                         {
                             "id": 1999,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -16022,7 +16022,7 @@ VALUES
                         },
                         {
                             "id": 2000,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -16030,7 +16030,7 @@ VALUES
                         },
                         {
                             "id": 2001,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -16038,7 +16038,7 @@ VALUES
                         },
                         {
                             "id": 2002,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -16046,7 +16046,7 @@ VALUES
                         },
                         {
                             "id": 2003,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -16054,7 +16054,7 @@ VALUES
                         },
                         {
                             "id": 2004,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -16062,7 +16062,7 @@ VALUES
                         },
                         {
                             "id": 2005,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -16070,7 +16070,7 @@ VALUES
                         },
                         {
                             "id": 2006,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -16078,7 +16078,7 @@ VALUES
                         },
                         {
                             "id": 2007,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -16086,7 +16086,7 @@ VALUES
                         },
                         {
                             "id": 2008,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -16094,7 +16094,7 @@ VALUES
                         },
                         {
                             "id": 2009,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -16102,7 +16102,7 @@ VALUES
                         },
                         {
                             "id": 2010,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -16110,7 +16110,7 @@ VALUES
                         },
                         {
                             "id": 2011,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -16118,7 +16118,7 @@ VALUES
                         },
                         {
                             "id": 2012,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -16126,7 +16126,7 @@ VALUES
                         },
                         {
                             "id": 2013,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -16134,7 +16134,7 @@ VALUES
                         },
                         {
                             "id": 2014,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -16142,7 +16142,7 @@ VALUES
                         },
                         {
                             "id": 2015,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -16150,7 +16150,7 @@ VALUES
                         },
                         {
                             "id": 2016,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -16158,7 +16158,7 @@ VALUES
                         },
                         {
                             "id": 2017,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -16166,7 +16166,7 @@ VALUES
                         },
                         {
                             "id": 2018,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -16174,7 +16174,7 @@ VALUES
                         },
                         {
                             "id": 2019,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -16182,7 +16182,7 @@ VALUES
                         },
                         {
                             "id": 2020,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -16190,7 +16190,7 @@ VALUES
                         },
                         {
                             "id": 2021,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -16198,7 +16198,7 @@ VALUES
                         },
                         {
                             "id": 2022,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -16206,7 +16206,7 @@ VALUES
                         },
                         {
                             "id": 2023,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -16214,7 +16214,7 @@ VALUES
                         },
                         {
                             "id": 2024,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -16222,7 +16222,7 @@ VALUES
                         },
                         {
                             "id": 2025,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -16230,7 +16230,7 @@ VALUES
                         },
                         {
                             "id": 2026,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -16238,7 +16238,7 @@ VALUES
                         },
                         {
                             "id": 2027,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -16246,7 +16246,7 @@ VALUES
                         },
                         {
                             "id": 2028,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -16254,7 +16254,7 @@ VALUES
                         },
                         {
                             "id": 2029,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -16262,7 +16262,7 @@ VALUES
                         },
                         {
                             "id": 2030,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -16270,7 +16270,7 @@ VALUES
                         },
                         {
                             "id": 2031,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -16278,7 +16278,7 @@ VALUES
                         },
                         {
                             "id": 2032,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -16286,7 +16286,7 @@ VALUES
                         },
                         {
                             "id": 2033,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -16294,7 +16294,7 @@ VALUES
                         },
                         {
                             "id": 2034,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -16302,7 +16302,7 @@ VALUES
                         },
                         {
                             "id": 2035,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -16310,7 +16310,7 @@ VALUES
                         },
                         {
                             "id": 2036,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -16318,7 +16318,7 @@ VALUES
                         },
                         {
                             "id": 2037,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -16326,7 +16326,7 @@ VALUES
                         },
                         {
                             "id": 2038,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -16334,7 +16334,7 @@ VALUES
                         },
                         {
                             "id": 2039,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -16342,7 +16342,7 @@ VALUES
                         },
                         {
                             "id": 2040,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -16350,7 +16350,7 @@ VALUES
                         },
                         {
                             "id": 2041,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -16358,7 +16358,7 @@ VALUES
                         },
                         {
                             "id": 2042,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -16366,7 +16366,7 @@ VALUES
                         },
                         {
                             "id": 2043,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -16374,7 +16374,7 @@ VALUES
                         },
                         {
                             "id": 2044,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -16382,7 +16382,7 @@ VALUES
                         },
                         {
                             "id": 2045,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -16390,7 +16390,7 @@ VALUES
                         },
                         {
                             "id": 2046,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -16398,7 +16398,7 @@ VALUES
                         },
                         {
                             "id": 2047,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -16406,7 +16406,7 @@ VALUES
                         },
                         {
                             "id": 2048,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -16414,7 +16414,7 @@ VALUES
                         },
                         {
                             "id": 2049,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -16422,7 +16422,7 @@ VALUES
                         },
                         {
                             "id": 2050,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -16430,7 +16430,7 @@ VALUES
                         },
                         {
                             "id": 2051,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -16438,7 +16438,7 @@ VALUES
                         },
                         {
                             "id": 2052,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -16446,7 +16446,7 @@ VALUES
                         },
                         {
                             "id": 2053,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -16454,7 +16454,7 @@ VALUES
                         },
                         {
                             "id": 2054,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -16462,7 +16462,7 @@ VALUES
                         },
                         {
                             "id": 2055,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -16470,7 +16470,7 @@ VALUES
                         },
                         {
                             "id": 2056,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -16478,7 +16478,7 @@ VALUES
                         },
                         {
                             "id": 2057,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -16486,7 +16486,7 @@ VALUES
                         },
                         {
                             "id": 2058,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -16494,7 +16494,7 @@ VALUES
                         },
                         {
                             "id": 2059,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -16502,7 +16502,7 @@ VALUES
                         },
                         {
                             "id": 2060,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -16510,7 +16510,7 @@ VALUES
                         },
                         {
                             "id": 2061,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -16518,7 +16518,7 @@ VALUES
                         },
                         {
                             "id": 2062,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -16526,7 +16526,7 @@ VALUES
                         },
                         {
                             "id": 2063,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 13,
@@ -16534,7 +16534,7 @@ VALUES
                         },
                         {
                             "id": 2064,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -16542,7 +16542,7 @@ VALUES
                         },
                         {
                             "id": 2065,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -16550,7 +16550,7 @@ VALUES
                         },
                         {
                             "id": 2066,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -16558,7 +16558,7 @@ VALUES
                         },
                         {
                             "id": 2067,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -16566,7 +16566,7 @@ VALUES
                         },
                         {
                             "id": 2068,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -16574,7 +16574,7 @@ VALUES
                         },
                         {
                             "id": 2069,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -16582,7 +16582,7 @@ VALUES
                         },
                         {
                             "id": 2070,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -16590,7 +16590,7 @@ VALUES
                         },
                         {
                             "id": 2071,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -16598,7 +16598,7 @@ VALUES
                         },
                         {
                             "id": 2072,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -16606,7 +16606,7 @@ VALUES
                         },
                         {
                             "id": 2073,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -16614,7 +16614,7 @@ VALUES
                         },
                         {
                             "id": 2074,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -16622,7 +16622,7 @@ VALUES
                         },
                         {
                             "id": 2075,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -16630,7 +16630,7 @@ VALUES
                         },
                         {
                             "id": 2076,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -16638,7 +16638,7 @@ VALUES
                         },
                         {
                             "id": 2077,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -16646,7 +16646,7 @@ VALUES
                         },
                         {
                             "id": 2078,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -16654,7 +16654,7 @@ VALUES
                         },
                         {
                             "id": 2079,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -16662,7 +16662,7 @@ VALUES
                         },
                         {
                             "id": 2080,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -16670,7 +16670,7 @@ VALUES
                         },
                         {
                             "id": 2081,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -16678,7 +16678,7 @@ VALUES
                         },
                         {
                             "id": 2082,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -16686,7 +16686,7 @@ VALUES
                         },
                         {
                             "id": 2083,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -16694,7 +16694,7 @@ VALUES
                         },
                         {
                             "id": 2084,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -16702,7 +16702,7 @@ VALUES
                         },
                         {
                             "id": 2085,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -16710,7 +16710,7 @@ VALUES
                         },
                         {
                             "id": 2086,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 36,
@@ -16718,7 +16718,7 @@ VALUES
                         },
                         {
                             "id": 2087,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -16726,7 +16726,7 @@ VALUES
                         },
                         {
                             "id": 2088,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -16734,7 +16734,7 @@ VALUES
                         },
                         {
                             "id": 2089,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -16742,7 +16742,7 @@ VALUES
                         },
                         {
                             "id": 2090,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -16750,7 +16750,7 @@ VALUES
                         },
                         {
                             "id": 2091,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 41,
@@ -16758,7 +16758,7 @@ VALUES
                         },
                         {
                             "id": 2092,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -16766,7 +16766,7 @@ VALUES
                         },
                         {
                             "id": 2093,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -16774,7 +16774,7 @@ VALUES
                         },
                         {
                             "id": 2094,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -16782,7 +16782,7 @@ VALUES
                         },
                         {
                             "id": 2095,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -16790,7 +16790,7 @@ VALUES
                         },
                         {
                             "id": 2096,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -16798,7 +16798,7 @@ VALUES
                         },
                         {
                             "id": 2097,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -16806,7 +16806,7 @@ VALUES
                         },
                         {
                             "id": 2098,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -16814,7 +16814,7 @@ VALUES
                         },
                         {
                             "id": 2099,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -16822,7 +16822,7 @@ VALUES
                         },
                         {
                             "id": 2100,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -16830,7 +16830,7 @@ VALUES
                         },
                         {
                             "id": 2101,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -16838,7 +16838,7 @@ VALUES
                         },
                         {
                             "id": 2102,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -16846,7 +16846,7 @@ VALUES
                         },
                         {
                             "id": 2103,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -16854,7 +16854,7 @@ VALUES
                         },
                         {
                             "id": 2104,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -16862,7 +16862,7 @@ VALUES
                         },
                         {
                             "id": 2105,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 5,
@@ -16870,7 +16870,7 @@ VALUES
                         },
                         {
                             "id": 2106,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -16878,7 +16878,7 @@ VALUES
                         },
                         {
                             "id": 2107,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -16886,7 +16886,7 @@ VALUES
                         },
                         {
                             "id": 2108,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -16894,7 +16894,7 @@ VALUES
                         },
                         {
                             "id": 2109,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -16902,7 +16902,7 @@ VALUES
                         },
                         {
                             "id": 2110,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -16910,7 +16910,7 @@ VALUES
                         },
                         {
                             "id": 2111,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -16918,7 +16918,7 @@ VALUES
                         },
                         {
                             "id": 2112,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -16926,7 +16926,7 @@ VALUES
                         },
                         {
                             "id": 2113,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -16934,7 +16934,7 @@ VALUES
                         },
                         {
                             "id": 2114,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -16942,7 +16942,7 @@ VALUES
                         },
                         {
                             "id": 2115,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 15,
@@ -16950,7 +16950,7 @@ VALUES
                         },
                         {
                             "id": 2116,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 16,
@@ -16958,7 +16958,7 @@ VALUES
                         },
                         {
                             "id": 2117,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -16966,7 +16966,7 @@ VALUES
                         },
                         {
                             "id": 2118,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -16974,7 +16974,7 @@ VALUES
                         },
                         {
                             "id": 2119,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -16982,7 +16982,7 @@ VALUES
                         },
                         {
                             "id": 2120,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -16990,7 +16990,7 @@ VALUES
                         },
                         {
                             "id": 2121,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -16998,7 +16998,7 @@ VALUES
                         },
                         {
                             "id": 2122,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -17006,7 +17006,7 @@ VALUES
                         },
                         {
                             "id": 2123,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -17014,7 +17014,7 @@ VALUES
                         },
                         {
                             "id": 2124,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -17022,7 +17022,7 @@ VALUES
                         },
                         {
                             "id": 2125,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 25,
@@ -17030,7 +17030,7 @@ VALUES
                         },
                         {
                             "id": 2126,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 26,
@@ -17038,7 +17038,7 @@ VALUES
                         },
                         {
                             "id": 2127,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -17046,7 +17046,7 @@ VALUES
                         },
                         {
                             "id": 2128,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -17054,7 +17054,7 @@ VALUES
                         },
                         {
                             "id": 2129,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -17062,7 +17062,7 @@ VALUES
                         },
                         {
                             "id": 2130,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -17070,7 +17070,7 @@ VALUES
                         },
                         {
                             "id": 2131,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -17078,7 +17078,7 @@ VALUES
                         },
                         {
                             "id": 2132,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -17086,7 +17086,7 @@ VALUES
                         },
                         {
                             "id": 2133,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 33,
@@ -17094,7 +17094,7 @@ VALUES
                         },
                         {
                             "id": 2134,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -17102,7 +17102,7 @@ VALUES
                         },
                         {
                             "id": 2135,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -17110,7 +17110,7 @@ VALUES
                         },
                         {
                             "id": 2136,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -17118,7 +17118,7 @@ VALUES
                         },
                         {
                             "id": 2137,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -17126,7 +17126,7 @@ VALUES
                         },
                         {
                             "id": 2138,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -17134,7 +17134,7 @@ VALUES
                         },
                         {
                             "id": 2139,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -17142,7 +17142,7 @@ VALUES
                         },
                         {
                             "id": 2140,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -17150,7 +17150,7 @@ VALUES
                         },
                         {
                             "id": 2141,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -17158,7 +17158,7 @@ VALUES
                         },
                         {
                             "id": 2142,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -17166,7 +17166,7 @@ VALUES
                         },
                         {
                             "id": 2143,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -17174,7 +17174,7 @@ VALUES
                         },
                         {
                             "id": 2144,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -17182,7 +17182,7 @@ VALUES
                         },
                         {
                             "id": 2145,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -17190,7 +17190,7 @@ VALUES
                         },
                         {
                             "id": 2146,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -17198,7 +17198,7 @@ VALUES
                         },
                         {
                             "id": 2147,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -17206,7 +17206,7 @@ VALUES
                         },
                         {
                             "id": 2148,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -17214,7 +17214,7 @@ VALUES
                         },
                         {
                             "id": 2149,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -17222,7 +17222,7 @@ VALUES
                         },
                         {
                             "id": 2150,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -17230,7 +17230,7 @@ VALUES
                         },
                         {
                             "id": 2151,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -17238,7 +17238,7 @@ VALUES
                         },
                         {
                             "id": 2152,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -17246,7 +17246,7 @@ VALUES
                         },
                         {
                             "id": 2153,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -17254,7 +17254,7 @@ VALUES
                         },
                         {
                             "id": 2154,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -17262,7 +17262,7 @@ VALUES
                         },
                         {
                             "id": 2155,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -17270,7 +17270,7 @@ VALUES
                         },
                         {
                             "id": 2156,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -17278,7 +17278,7 @@ VALUES
                         },
                         {
                             "id": 2157,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -17286,7 +17286,7 @@ VALUES
                         },
                         {
                             "id": 2158,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -17294,7 +17294,7 @@ VALUES
                         },
                         {
                             "id": 2159,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -17302,7 +17302,7 @@ VALUES
                         },
                         {
                             "id": 2160,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -17310,7 +17310,7 @@ VALUES
                         },
                         {
                             "id": 2161,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -17318,7 +17318,7 @@ VALUES
                         },
                         {
                             "id": 2162,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -17326,7 +17326,7 @@ VALUES
                         },
                         {
                             "id": 2163,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -17334,7 +17334,7 @@ VALUES
                         },
                         {
                             "id": 2164,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -17342,7 +17342,7 @@ VALUES
                         },
                         {
                             "id": 2165,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -17350,7 +17350,7 @@ VALUES
                         },
                         {
                             "id": 2166,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -17358,7 +17358,7 @@ VALUES
                         },
                         {
                             "id": 2167,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -17366,7 +17366,7 @@ VALUES
                         },
                         {
                             "id": 2168,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -17374,7 +17374,7 @@ VALUES
                         },
                         {
                             "id": 2169,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -17382,7 +17382,7 @@ VALUES
                         },
                         {
                             "id": 2170,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -17390,7 +17390,7 @@ VALUES
                         },
                         {
                             "id": 2171,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -17398,7 +17398,7 @@ VALUES
                         },
                         {
                             "id": 2172,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -17406,7 +17406,7 @@ VALUES
                         },
                         {
                             "id": 2173,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -17414,7 +17414,7 @@ VALUES
                         },
                         {
                             "id": 2174,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -17422,7 +17422,7 @@ VALUES
                         },
                         {
                             "id": 2175,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -17430,7 +17430,7 @@ VALUES
                         },
                         {
                             "id": 2176,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -17438,7 +17438,7 @@ VALUES
                         },
                         {
                             "id": 2177,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -17446,7 +17446,7 @@ VALUES
                         },
                         {
                             "id": 2178,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -17454,7 +17454,7 @@ VALUES
                         },
                         {
                             "id": 2179,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -17462,7 +17462,7 @@ VALUES
                         },
                         {
                             "id": 2180,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -17470,7 +17470,7 @@ VALUES
                         },
                         {
                             "id": 2181,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -17478,7 +17478,7 @@ VALUES
                         },
                         {
                             "id": 2182,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -17486,7 +17486,7 @@ VALUES
                         },
                         {
                             "id": 2183,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -17494,7 +17494,7 @@ VALUES
                         },
                         {
                             "id": 2184,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -17502,7 +17502,7 @@ VALUES
                         },
                         {
                             "id": 2185,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -17510,7 +17510,7 @@ VALUES
                         },
                         {
                             "id": 2186,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -17518,7 +17518,7 @@ VALUES
                         },
                         {
                             "id": 2187,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -17526,7 +17526,7 @@ VALUES
                         },
                         {
                             "id": 2188,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -17534,7 +17534,7 @@ VALUES
                         },
                         {
                             "id": 2189,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -17542,7 +17542,7 @@ VALUES
                         },
                         {
                             "id": 2190,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -17550,7 +17550,7 @@ VALUES
                         },
                         {
                             "id": 2191,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -17558,7 +17558,7 @@ VALUES
                         },
                         {
                             "id": 2192,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 42,
@@ -17566,7 +17566,7 @@ VALUES
                         },
                         {
                             "id": 2193,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -17574,7 +17574,7 @@ VALUES
                         },
                         {
                             "id": 2194,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -17582,7 +17582,7 @@ VALUES
                         },
                         {
                             "id": 2195,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -17590,7 +17590,7 @@ VALUES
                         },
                         {
                             "id": 2196,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -17598,7 +17598,7 @@ VALUES
                         },
                         {
                             "id": 2197,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -17606,7 +17606,7 @@ VALUES
                         },
                         {
                             "id": 2198,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -17614,7 +17614,7 @@ VALUES
                         },
                         {
                             "id": 2199,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -17622,7 +17622,7 @@ VALUES
                         },
                         {
                             "id": 2200,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -17630,7 +17630,7 @@ VALUES
                         },
                         {
                             "id": 2201,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -17638,7 +17638,7 @@ VALUES
                         },
                         {
                             "id": 2202,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -17646,7 +17646,7 @@ VALUES
                         },
                         {
                             "id": 2203,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -17654,7 +17654,7 @@ VALUES
                         },
                         {
                             "id": 2204,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -17662,7 +17662,7 @@ VALUES
                         },
                         {
                             "id": 2205,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -17670,7 +17670,7 @@ VALUES
                         },
                         {
                             "id": 2206,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -17678,7 +17678,7 @@ VALUES
                         },
                         {
                             "id": 2207,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -17686,7 +17686,7 @@ VALUES
                         },
                         {
                             "id": 2208,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -17694,7 +17694,7 @@ VALUES
                         },
                         {
                             "id": 2209,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -17702,7 +17702,7 @@ VALUES
                         },
                         {
                             "id": 2210,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -17710,7 +17710,7 @@ VALUES
                         },
                         {
                             "id": 2211,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -17718,7 +17718,7 @@ VALUES
                         },
                         {
                             "id": 2212,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -17726,7 +17726,7 @@ VALUES
                         },
                         {
                             "id": 2213,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -17734,7 +17734,7 @@ VALUES
                         },
                         {
                             "id": 2214,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -17742,7 +17742,7 @@ VALUES
                         },
                         {
                             "id": 2215,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -17750,7 +17750,7 @@ VALUES
                         },
                         {
                             "id": 2216,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -17758,7 +17758,7 @@ VALUES
                         },
                         {
                             "id": 2217,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -17766,7 +17766,7 @@ VALUES
                         },
                         {
                             "id": 2218,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -17774,7 +17774,7 @@ VALUES
                         },
                         {
                             "id": 2219,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -17782,7 +17782,7 @@ VALUES
                         },
                         {
                             "id": 2220,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -17790,7 +17790,7 @@ VALUES
                         },
                         {
                             "id": 2221,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -17798,7 +17798,7 @@ VALUES
                         },
                         {
                             "id": 2222,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -17806,7 +17806,7 @@ VALUES
                         },
                         {
                             "id": 2223,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 23,
@@ -17814,7 +17814,7 @@ VALUES
                         },
                         {
                             "id": 2224,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -17822,7 +17822,7 @@ VALUES
                         },
                         {
                             "id": 2225,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -17830,7 +17830,7 @@ VALUES
                         },
                         {
                             "id": 2226,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -17838,7 +17838,7 @@ VALUES
                         },
                         {
                             "id": 2227,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 27,
@@ -17846,7 +17846,7 @@ VALUES
                         },
                         {
                             "id": 2228,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 28,
@@ -17854,7 +17854,7 @@ VALUES
                         },
                         {
                             "id": 2229,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -17862,7 +17862,7 @@ VALUES
                         },
                         {
                             "id": 2230,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -17870,7 +17870,7 @@ VALUES
                         },
                         {
                             "id": 2231,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 31,
@@ -17878,7 +17878,7 @@ VALUES
                         },
                         {
                             "id": 2232,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -17886,7 +17886,7 @@ VALUES
                         },
                         {
                             "id": 2233,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -17894,7 +17894,7 @@ VALUES
                         },
                         {
                             "id": 2234,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -17902,7 +17902,7 @@ VALUES
                         },
                         {
                             "id": 2235,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -17910,7 +17910,7 @@ VALUES
                         },
                         {
                             "id": 2236,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -17918,7 +17918,7 @@ VALUES
                         },
                         {
                             "id": 2237,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -17926,7 +17926,7 @@ VALUES
                         },
                         {
                             "id": 2238,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -17934,7 +17934,7 @@ VALUES
                         },
                         {
                             "id": 2239,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -17942,7 +17942,7 @@ VALUES
                         },
                         {
                             "id": 2240,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -17950,7 +17950,7 @@ VALUES
                         },
                         {
                             "id": 2241,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -17958,7 +17958,7 @@ VALUES
                         },
                         {
                             "id": 2242,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -17966,7 +17966,7 @@ VALUES
                         },
                         {
                             "id": 2243,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -17974,7 +17974,7 @@ VALUES
                         },
                         {
                             "id": 2244,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -17982,7 +17982,7 @@ VALUES
                         },
                         {
                             "id": 2245,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 45,
@@ -17990,7 +17990,7 @@ VALUES
                         },
                         {
                             "id": 2246,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -17998,7 +17998,7 @@ VALUES
                         },
                         {
                             "id": 2247,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -18006,7 +18006,7 @@ VALUES
                         },
                         {
                             "id": 2248,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -18014,7 +18014,7 @@ VALUES
                         },
                         {
                             "id": 2249,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -18022,7 +18022,7 @@ VALUES
                         },
                         {
                             "id": 2250,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -18030,7 +18030,7 @@ VALUES
                         },
                         {
                             "id": 2251,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -18038,7 +18038,7 @@ VALUES
                         },
                         {
                             "id": 2252,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 2,
@@ -18046,7 +18046,7 @@ VALUES
                         },
                         {
                             "id": 2253,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -18054,7 +18054,7 @@ VALUES
                         },
                         {
                             "id": 2254,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 4,
@@ -18062,7 +18062,7 @@ VALUES
                         },
                         {
                             "id": 2255,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -18070,7 +18070,7 @@ VALUES
                         },
                         {
                             "id": 2256,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -18078,7 +18078,7 @@ VALUES
                         },
                         {
                             "id": 2257,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -18086,7 +18086,7 @@ VALUES
                         },
                         {
                             "id": 2258,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -18094,7 +18094,7 @@ VALUES
                         },
                         {
                             "id": 2259,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -18102,7 +18102,7 @@ VALUES
                         },
                         {
                             "id": 2260,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -18110,7 +18110,7 @@ VALUES
                         },
                         {
                             "id": 2261,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 11,
@@ -18118,7 +18118,7 @@ VALUES
                         },
                         {
                             "id": 2262,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 12,
@@ -18126,7 +18126,7 @@ VALUES
                         },
                         {
                             "id": 2263,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -18134,7 +18134,7 @@ VALUES
                         },
                         {
                             "id": 2264,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 14,
@@ -18142,7 +18142,7 @@ VALUES
                         },
                         {
                             "id": 2265,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -18150,7 +18150,7 @@ VALUES
                         },
                         {
                             "id": 2266,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -18158,7 +18158,7 @@ VALUES
                         },
                         {
                             "id": 2267,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 17,
@@ -18166,7 +18166,7 @@ VALUES
                         },
                         {
                             "id": 2268,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -18174,7 +18174,7 @@ VALUES
                         },
                         {
                             "id": 2269,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -18182,7 +18182,7 @@ VALUES
                         },
                         {
                             "id": 2270,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -18190,7 +18190,7 @@ VALUES
                         },
                         {
                             "id": 2271,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -18198,7 +18198,7 @@ VALUES
                         },
                         {
                             "id": 2272,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -18206,7 +18206,7 @@ VALUES
                         },
                         {
                             "id": 2273,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -18214,7 +18214,7 @@ VALUES
                         },
                         {
                             "id": 2274,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 24,
@@ -18222,7 +18222,7 @@ VALUES
                         },
                         {
                             "id": 2275,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -18230,7 +18230,7 @@ VALUES
                         },
                         {
                             "id": 2276,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -18238,7 +18238,7 @@ VALUES
                         },
                         {
                             "id": 2277,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -18246,7 +18246,7 @@ VALUES
                         },
                         {
                             "id": 2278,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -18254,7 +18254,7 @@ VALUES
                         },
                         {
                             "id": 2279,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -18262,7 +18262,7 @@ VALUES
                         },
                         {
                             "id": 2280,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 30,
@@ -18270,7 +18270,7 @@ VALUES
                         },
                         {
                             "id": 2281,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -18278,7 +18278,7 @@ VALUES
                         },
                         {
                             "id": 2282,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -18286,7 +18286,7 @@ VALUES
                         },
                         {
                             "id": 2283,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -18294,7 +18294,7 @@ VALUES
                         },
                         {
                             "id": 2284,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -18302,7 +18302,7 @@ VALUES
                         },
                         {
                             "id": 2285,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 35,
@@ -18310,7 +18310,7 @@ VALUES
                         },
                         {
                             "id": 2286,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -18318,7 +18318,7 @@ VALUES
                         },
                         {
                             "id": 2287,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -18326,7 +18326,7 @@ VALUES
                         },
                         {
                             "id": 2288,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -18334,7 +18334,7 @@ VALUES
                         },
                         {
                             "id": 2289,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 39,
@@ -18342,7 +18342,7 @@ VALUES
                         },
                         {
                             "id": 2290,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 40,
@@ -18350,7 +18350,7 @@ VALUES
                         },
                         {
                             "id": 2291,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -18358,7 +18358,7 @@ VALUES
                         },
                         {
                             "id": 2292,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -18366,7 +18366,7 @@ VALUES
                         },
                         {
                             "id": 2293,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -18374,7 +18374,7 @@ VALUES
                         },
                         {
                             "id": 2294,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 44,
@@ -18382,7 +18382,7 @@ VALUES
                         },
                         {
                             "id": 2295,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -18390,7 +18390,7 @@ VALUES
                         },
                         {
                             "id": 2296,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 46,
@@ -18398,7 +18398,7 @@ VALUES
                         },
                         {
                             "id": 2297,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 47,
@@ -18406,7 +18406,7 @@ VALUES
                         },
                         {
                             "id": 2298,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -18414,7 +18414,7 @@ VALUES
                         },
                         {
                             "id": 2299,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -18422,7 +18422,7 @@ VALUES
                         },
                         {
                             "id": 2300,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -18430,7 +18430,7 @@ VALUES
                         },
                         {
                             "id": 2301,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -18438,7 +18438,7 @@ VALUES
                         },
                         {
                             "id": 2302,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -18446,7 +18446,7 @@ VALUES
                         },
                         {
                             "id": 2303,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 3,
@@ -18454,7 +18454,7 @@ VALUES
                         },
                         {
                             "id": 2304,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -18462,7 +18462,7 @@ VALUES
                         },
                         {
                             "id": 2305,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -18470,7 +18470,7 @@ VALUES
                         },
                         {
                             "id": 2306,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 6,
@@ -18478,7 +18478,7 @@ VALUES
                         },
                         {
                             "id": 2307,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 7,
@@ -18486,7 +18486,7 @@ VALUES
                         },
                         {
                             "id": 2308,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -18494,7 +18494,7 @@ VALUES
                         },
                         {
                             "id": 2309,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 9,
@@ -18502,7 +18502,7 @@ VALUES
                         },
                         {
                             "id": 2310,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -18510,7 +18510,7 @@ VALUES
                         },
                         {
                             "id": 2311,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -18518,7 +18518,7 @@ VALUES
                         },
                         {
                             "id": 2312,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -18526,7 +18526,7 @@ VALUES
                         },
                         {
                             "id": 2313,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 13,
@@ -18534,7 +18534,7 @@ VALUES
                         },
                         {
                             "id": 2314,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -18542,7 +18542,7 @@ VALUES
                         },
                         {
                             "id": 2315,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -18550,7 +18550,7 @@ VALUES
                         },
                         {
                             "id": 2316,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -18558,7 +18558,7 @@ VALUES
                         },
                         {
                             "id": 2317,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -18566,7 +18566,7 @@ VALUES
                         },
                         {
                             "id": 2318,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 18,
@@ -18574,7 +18574,7 @@ VALUES
                         },
                         {
                             "id": 2319,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 19,
@@ -18582,7 +18582,7 @@ VALUES
                         },
                         {
                             "id": 2320,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 20,
@@ -18590,7 +18590,7 @@ VALUES
                         },
                         {
                             "id": 2321,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -18598,7 +18598,7 @@ VALUES
                         },
                         {
                             "id": 2322,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 22,
@@ -18606,7 +18606,7 @@ VALUES
                         },
                         {
                             "id": 2323,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -18614,7 +18614,7 @@ VALUES
                         },
                         {
                             "id": 2324,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -18622,7 +18622,7 @@ VALUES
                         },
                         {
                             "id": 2325,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -18630,7 +18630,7 @@ VALUES
                         },
                         {
                             "id": 2326,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -18638,7 +18638,7 @@ VALUES
                         },
                         {
                             "id": 2327,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -18646,7 +18646,7 @@ VALUES
                         },
                         {
                             "id": 2328,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -18654,7 +18654,7 @@ VALUES
                         },
                         {
                             "id": 2329,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 29,
@@ -18662,7 +18662,7 @@ VALUES
                         },
                         {
                             "id": 2330,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -18670,7 +18670,7 @@ VALUES
                         },
                         {
                             "id": 2331,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -18678,7 +18678,7 @@ VALUES
                         },
                         {
                             "id": 2332,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -18686,7 +18686,7 @@ VALUES
                         },
                         {
                             "id": 2333,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -18694,7 +18694,7 @@ VALUES
                         },
                         {
                             "id": 2334,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -18702,7 +18702,7 @@ VALUES
                         },
                         {
                             "id": 2335,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -18710,7 +18710,7 @@ VALUES
                         },
                         {
                             "id": 2336,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -18718,7 +18718,7 @@ VALUES
                         },
                         {
                             "id": 2337,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 37,
@@ -18726,7 +18726,7 @@ VALUES
                         },
                         {
                             "id": 2338,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 38,
@@ -18734,7 +18734,7 @@ VALUES
                         },
                         {
                             "id": 2339,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -18742,7 +18742,7 @@ VALUES
                         },
                         {
                             "id": 2340,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -18750,7 +18750,7 @@ VALUES
                         },
                         {
                             "id": 2341,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -18758,7 +18758,7 @@ VALUES
                         },
                         {
                             "id": 2342,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -18766,7 +18766,7 @@ VALUES
                         },
                         {
                             "id": 2343,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -18774,7 +18774,7 @@ VALUES
                         },
                         {
                             "id": 2344,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -18782,7 +18782,7 @@ VALUES
                         },
                         {
                             "id": 2345,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -18790,7 +18790,7 @@ VALUES
                         },
                         {
                             "id": 2346,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -18798,7 +18798,7 @@ VALUES
                         },
                         {
                             "id": 2347,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -18806,7 +18806,7 @@ VALUES
                         },
                         {
                             "id": 2348,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -18814,7 +18814,7 @@ VALUES
                         },
                         {
                             "id": 2349,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -18822,7 +18822,7 @@ VALUES
                         },
                         {
                             "id": 2350,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -18830,7 +18830,7 @@ VALUES
                         },
                         {
                             "id": 2351,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -18838,7 +18838,7 @@ VALUES
                         },
                         {
                             "id": 2352,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 2,
@@ -18846,7 +18846,7 @@ VALUES
                         },
                         {
                             "id": 2353,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 3,
@@ -18854,7 +18854,7 @@ VALUES
                         },
                         {
                             "id": 2354,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 4,
@@ -18862,7 +18862,7 @@ VALUES
                         },
                         {
                             "id": 2355,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 5,
@@ -18870,7 +18870,7 @@ VALUES
                         },
                         {
                             "id": 2356,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 6,
@@ -18878,7 +18878,7 @@ VALUES
                         },
                         {
                             "id": 2357,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 7,
@@ -18886,7 +18886,7 @@ VALUES
                         },
                         {
                             "id": 2358,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 8,
@@ -18894,7 +18894,7 @@ VALUES
                         },
                         {
                             "id": 2359,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 9,
@@ -18902,7 +18902,7 @@ VALUES
                         },
                         {
                             "id": 2360,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 10,
@@ -18910,7 +18910,7 @@ VALUES
                         },
                         {
                             "id": 2361,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 11,
@@ -18918,7 +18918,7 @@ VALUES
                         },
                         {
                             "id": 2362,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 12,
@@ -18926,7 +18926,7 @@ VALUES
                         },
                         {
                             "id": 2363,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 13,
@@ -18934,7 +18934,7 @@ VALUES
                         },
                         {
                             "id": 2364,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 14,
@@ -18942,7 +18942,7 @@ VALUES
                         },
                         {
                             "id": 2365,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 15,
@@ -18950,7 +18950,7 @@ VALUES
                         },
                         {
                             "id": 2366,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 16,
@@ -18958,7 +18958,7 @@ VALUES
                         },
                         {
                             "id": 2367,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 17,
@@ -18966,7 +18966,7 @@ VALUES
                         },
                         {
                             "id": 2368,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 18,
@@ -18974,7 +18974,7 @@ VALUES
                         },
                         {
                             "id": 2369,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 19,
@@ -18982,7 +18982,7 @@ VALUES
                         },
                         {
                             "id": 2370,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 20,
@@ -18990,7 +18990,7 @@ VALUES
                         },
                         {
                             "id": 2371,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 21,
@@ -18998,7 +18998,7 @@ VALUES
                         },
                         {
                             "id": 2372,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 22,
@@ -19006,7 +19006,7 @@ VALUES
                         },
                         {
                             "id": 2373,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 23,
@@ -19014,7 +19014,7 @@ VALUES
                         },
                         {
                             "id": 2374,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 24,
@@ -19022,7 +19022,7 @@ VALUES
                         },
                         {
                             "id": 2375,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 25,
@@ -19030,7 +19030,7 @@ VALUES
                         },
                         {
                             "id": 2376,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 26,
@@ -19038,7 +19038,7 @@ VALUES
                         },
                         {
                             "id": 2377,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 27,
@@ -19046,7 +19046,7 @@ VALUES
                         },
                         {
                             "id": 2378,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 28,
@@ -19054,7 +19054,7 @@ VALUES
                         },
                         {
                             "id": 2379,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 29,
@@ -19062,7 +19062,7 @@ VALUES
                         },
                         {
                             "id": 2380,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 30,
@@ -19070,7 +19070,7 @@ VALUES
                         },
                         {
                             "id": 2381,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 31,
@@ -19078,7 +19078,7 @@ VALUES
                         },
                         {
                             "id": 2382,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 32,
@@ -19086,7 +19086,7 @@ VALUES
                         },
                         {
                             "id": 2383,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 33,
@@ -19094,7 +19094,7 @@ VALUES
                         },
                         {
                             "id": 2384,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 34,
@@ -19102,7 +19102,7 @@ VALUES
                         },
                         {
                             "id": 2385,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 35,
@@ -19110,7 +19110,7 @@ VALUES
                         },
                         {
                             "id": 2386,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 36,
@@ -19118,7 +19118,7 @@ VALUES
                         },
                         {
                             "id": 2387,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "T",
                             "walkable": false,
                             "x": 37,
@@ -19126,7 +19126,7 @@ VALUES
                         },
                         {
                             "id": 2388,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 38,
@@ -19134,7 +19134,7 @@ VALUES
                         },
                         {
                             "id": 2389,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 39,
@@ -19142,7 +19142,7 @@ VALUES
                         },
                         {
                             "id": 2390,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 40,
@@ -19150,7 +19150,7 @@ VALUES
                         },
                         {
                             "id": 2391,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 41,
@@ -19158,7 +19158,7 @@ VALUES
                         },
                         {
                             "id": 2392,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 42,
@@ -19166,7 +19166,7 @@ VALUES
                         },
                         {
                             "id": 2393,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 43,
@@ -19174,7 +19174,7 @@ VALUES
                         },
                         {
                             "id": 2394,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 44,
@@ -19182,7 +19182,7 @@ VALUES
                         },
                         {
                             "id": 2395,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 45,
@@ -19190,7 +19190,7 @@ VALUES
                         },
                         {
                             "id": 2396,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 46,
@@ -19198,7 +19198,7 @@ VALUES
                         },
                         {
                             "id": 2397,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "-",
                             "walkable": true,
                             "x": 47,
@@ -19206,7 +19206,7 @@ VALUES
                         },
                         {
                             "id": 2398,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -19214,7 +19214,7 @@ VALUES
                         },
                         {
                             "id": 2399,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -19222,7 +19222,7 @@ VALUES
                         },
                         {
                             "id": 2400,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -19230,7 +19230,7 @@ VALUES
                         },
                         {
                             "id": 2401,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -19238,7 +19238,7 @@ VALUES
                         },
                         {
                             "id": 2402,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 2,
@@ -19246,7 +19246,7 @@ VALUES
                         },
                         {
                             "id": 2403,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 3,
@@ -19254,7 +19254,7 @@ VALUES
                         },
                         {
                             "id": 2404,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 4,
@@ -19262,7 +19262,7 @@ VALUES
                         },
                         {
                             "id": 2405,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 5,
@@ -19270,7 +19270,7 @@ VALUES
                         },
                         {
                             "id": 2406,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 6,
@@ -19278,7 +19278,7 @@ VALUES
                         },
                         {
                             "id": 2407,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 7,
@@ -19286,7 +19286,7 @@ VALUES
                         },
                         {
                             "id": 2408,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 8,
@@ -19294,7 +19294,7 @@ VALUES
                         },
                         {
                             "id": 2409,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 9,
@@ -19302,7 +19302,7 @@ VALUES
                         },
                         {
                             "id": 2410,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 10,
@@ -19310,7 +19310,7 @@ VALUES
                         },
                         {
                             "id": 2411,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 11,
@@ -19318,7 +19318,7 @@ VALUES
                         },
                         {
                             "id": 2412,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 12,
@@ -19326,7 +19326,7 @@ VALUES
                         },
                         {
                             "id": 2413,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 13,
@@ -19334,7 +19334,7 @@ VALUES
                         },
                         {
                             "id": 2414,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 14,
@@ -19342,7 +19342,7 @@ VALUES
                         },
                         {
                             "id": 2415,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 15,
@@ -19350,7 +19350,7 @@ VALUES
                         },
                         {
                             "id": 2416,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 16,
@@ -19358,7 +19358,7 @@ VALUES
                         },
                         {
                             "id": 2417,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 17,
@@ -19366,7 +19366,7 @@ VALUES
                         },
                         {
                             "id": 2418,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 18,
@@ -19374,7 +19374,7 @@ VALUES
                         },
                         {
                             "id": 2419,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 19,
@@ -19382,7 +19382,7 @@ VALUES
                         },
                         {
                             "id": 2420,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 20,
@@ -19390,7 +19390,7 @@ VALUES
                         },
                         {
                             "id": 2421,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 21,
@@ -19398,7 +19398,7 @@ VALUES
                         },
                         {
                             "id": 2422,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 22,
@@ -19406,7 +19406,7 @@ VALUES
                         },
                         {
                             "id": 2423,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 23,
@@ -19414,7 +19414,7 @@ VALUES
                         },
                         {
                             "id": 2424,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 24,
@@ -19422,7 +19422,7 @@ VALUES
                         },
                         {
                             "id": 2425,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 25,
@@ -19430,7 +19430,7 @@ VALUES
                         },
                         {
                             "id": 2426,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 26,
@@ -19438,7 +19438,7 @@ VALUES
                         },
                         {
                             "id": 2427,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 27,
@@ -19446,7 +19446,7 @@ VALUES
                         },
                         {
                             "id": 2428,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 28,
@@ -19454,7 +19454,7 @@ VALUES
                         },
                         {
                             "id": 2429,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 29,
@@ -19462,7 +19462,7 @@ VALUES
                         },
                         {
                             "id": 2430,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 30,
@@ -19470,7 +19470,7 @@ VALUES
                         },
                         {
                             "id": 2431,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 31,
@@ -19478,7 +19478,7 @@ VALUES
                         },
                         {
                             "id": 2432,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 32,
@@ -19486,7 +19486,7 @@ VALUES
                         },
                         {
                             "id": 2433,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 33,
@@ -19494,7 +19494,7 @@ VALUES
                         },
                         {
                             "id": 2434,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 34,
@@ -19502,7 +19502,7 @@ VALUES
                         },
                         {
                             "id": 2435,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 35,
@@ -19510,7 +19510,7 @@ VALUES
                         },
                         {
                             "id": 2436,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 36,
@@ -19518,7 +19518,7 @@ VALUES
                         },
                         {
                             "id": 2437,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 37,
@@ -19526,7 +19526,7 @@ VALUES
                         },
                         {
                             "id": 2438,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 38,
@@ -19534,7 +19534,7 @@ VALUES
                         },
                         {
                             "id": 2439,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 39,
@@ -19542,7 +19542,7 @@ VALUES
                         },
                         {
                             "id": 2440,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 40,
@@ -19550,7 +19550,7 @@ VALUES
                         },
                         {
                             "id": 2441,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 41,
@@ -19558,7 +19558,7 @@ VALUES
                         },
                         {
                             "id": 2442,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 42,
@@ -19566,7 +19566,7 @@ VALUES
                         },
                         {
                             "id": 2443,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 43,
@@ -19574,7 +19574,7 @@ VALUES
                         },
                         {
                             "id": 2444,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 44,
@@ -19582,7 +19582,7 @@ VALUES
                         },
                         {
                             "id": 2445,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 45,
@@ -19590,7 +19590,7 @@ VALUES
                         },
                         {
                             "id": 2446,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 46,
@@ -19598,7 +19598,7 @@ VALUES
                         },
                         {
                             "id": 2447,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 47,
@@ -19606,7 +19606,7 @@ VALUES
                         },
                         {
                             "id": 2448,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -19614,7 +19614,7 @@ VALUES
                         },
                         {
                             "id": 2449,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
@@ -19622,7 +19622,7 @@ VALUES
                         },
                         {
                             "id": 2450,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 0,
@@ -19630,7 +19630,7 @@ VALUES
                         },
                         {
                             "id": 2451,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 1,
@@ -19638,7 +19638,7 @@ VALUES
                         },
                         {
                             "id": 2452,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 2,
@@ -19646,7 +19646,7 @@ VALUES
                         },
                         {
                             "id": 2453,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 3,
@@ -19654,7 +19654,7 @@ VALUES
                         },
                         {
                             "id": 2454,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 4,
@@ -19662,7 +19662,7 @@ VALUES
                         },
                         {
                             "id": 2455,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 5,
@@ -19670,7 +19670,7 @@ VALUES
                         },
                         {
                             "id": 2456,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 6,
@@ -19678,7 +19678,7 @@ VALUES
                         },
                         {
                             "id": 2457,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 7,
@@ -19686,7 +19686,7 @@ VALUES
                         },
                         {
                             "id": 2458,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 8,
@@ -19694,7 +19694,7 @@ VALUES
                         },
                         {
                             "id": 2459,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 9,
@@ -19702,7 +19702,7 @@ VALUES
                         },
                         {
                             "id": 2460,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 10,
@@ -19710,7 +19710,7 @@ VALUES
                         },
                         {
                             "id": 2461,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 11,
@@ -19718,7 +19718,7 @@ VALUES
                         },
                         {
                             "id": 2462,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 12,
@@ -19726,7 +19726,7 @@ VALUES
                         },
                         {
                             "id": 2463,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 13,
@@ -19734,7 +19734,7 @@ VALUES
                         },
                         {
                             "id": 2464,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 14,
@@ -19742,7 +19742,7 @@ VALUES
                         },
                         {
                             "id": 2465,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 15,
@@ -19750,7 +19750,7 @@ VALUES
                         },
                         {
                             "id": 2466,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 16,
@@ -19758,7 +19758,7 @@ VALUES
                         },
                         {
                             "id": 2467,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 17,
@@ -19766,7 +19766,7 @@ VALUES
                         },
                         {
                             "id": 2468,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 18,
@@ -19774,7 +19774,7 @@ VALUES
                         },
                         {
                             "id": 2469,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 19,
@@ -19782,7 +19782,7 @@ VALUES
                         },
                         {
                             "id": 2470,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 20,
@@ -19790,7 +19790,7 @@ VALUES
                         },
                         {
                             "id": 2471,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 21,
@@ -19798,7 +19798,7 @@ VALUES
                         },
                         {
                             "id": 2472,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 22,
@@ -19806,7 +19806,7 @@ VALUES
                         },
                         {
                             "id": 2473,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 23,
@@ -19814,7 +19814,7 @@ VALUES
                         },
                         {
                             "id": 2474,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 24,
@@ -19822,7 +19822,7 @@ VALUES
                         },
                         {
                             "id": 2475,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 25,
@@ -19830,7 +19830,7 @@ VALUES
                         },
                         {
                             "id": 2476,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 26,
@@ -19838,7 +19838,7 @@ VALUES
                         },
                         {
                             "id": 2477,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 27,
@@ -19846,7 +19846,7 @@ VALUES
                         },
                         {
                             "id": 2478,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 28,
@@ -19854,7 +19854,7 @@ VALUES
                         },
                         {
                             "id": 2479,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 29,
@@ -19862,7 +19862,7 @@ VALUES
                         },
                         {
                             "id": 2480,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 30,
@@ -19870,7 +19870,7 @@ VALUES
                         },
                         {
                             "id": 2481,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 31,
@@ -19878,7 +19878,7 @@ VALUES
                         },
                         {
                             "id": 2482,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 32,
@@ -19886,7 +19886,7 @@ VALUES
                         },
                         {
                             "id": 2483,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 33,
@@ -19894,7 +19894,7 @@ VALUES
                         },
                         {
                             "id": 2484,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 34,
@@ -19902,7 +19902,7 @@ VALUES
                         },
                         {
                             "id": 2485,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 35,
@@ -19910,7 +19910,7 @@ VALUES
                         },
                         {
                             "id": 2486,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 36,
@@ -19918,7 +19918,7 @@ VALUES
                         },
                         {
                             "id": 2487,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 37,
@@ -19926,7 +19926,7 @@ VALUES
                         },
                         {
                             "id": 2488,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 38,
@@ -19934,7 +19934,7 @@ VALUES
                         },
                         {
                             "id": 2489,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 39,
@@ -19942,7 +19942,7 @@ VALUES
                         },
                         {
                             "id": 2490,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 40,
@@ -19950,7 +19950,7 @@ VALUES
                         },
                         {
                             "id": 2491,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 41,
@@ -19958,7 +19958,7 @@ VALUES
                         },
                         {
                             "id": 2492,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 42,
@@ -19966,7 +19966,7 @@ VALUES
                         },
                         {
                             "id": 2493,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 43,
@@ -19974,7 +19974,7 @@ VALUES
                         },
                         {
                             "id": 2494,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 44,
@@ -19982,7 +19982,7 @@ VALUES
                         },
                         {
                             "id": 2495,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 45,
@@ -19990,7 +19990,7 @@ VALUES
                         },
                         {
                             "id": 2496,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 46,
@@ -19998,7 +19998,7 @@ VALUES
                         },
                         {
                             "id": 2497,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 47,
@@ -20006,7 +20006,7 @@ VALUES
                         },
                         {
                             "id": 2498,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 48,
@@ -20014,7 +20014,7 @@ VALUES
                         },
                         {
                             "id": 2499,
-                            "threshold": false,
+                            "threshold": null,
                             "value": "F",
                             "walkable": false,
                             "x": 49,
