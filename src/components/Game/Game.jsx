@@ -59,8 +59,6 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         }
     });
 
-    console.log(form.environment);
-
     const contextReady = useMemo(() => {
         if (!context) {
             return false;
