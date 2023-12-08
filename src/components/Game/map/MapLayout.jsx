@@ -7,7 +7,7 @@ import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
 
 export const MapLayout = ({ world, data, position, characterRef, cameraRef, lightRef }) => {
-    const [context] = useGameContext();
+    const [context, setContext] = useGameContext();
     const animationQueue = useRef();
 
     const handleMove = useCallback(
@@ -22,6 +22,11 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
                 duration: 0.5,
                 lazy: false
             });
+            const tile = data.flat()?.find((it) => it.x === Math.abs(targetPosition.x) && it.y === Math.abs(targetPosition.z));
+
+            if (Boolean(tile?.threshold) && Object.keys(tile?.threshold).length) {
+                setContext({ mapId: tile.threshold.map })
+            }
         },
         [animationQueue, characterRef]
     );

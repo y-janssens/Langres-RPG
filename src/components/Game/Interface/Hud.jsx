@@ -4,7 +4,7 @@ import { Character } from '../Interface/Character/Character';
 import { Map } from '../Interface/Map/Map'; // eslint-disable-line
 import MiniMap from './Minimap/MiniMap'; // eslint-disable-line
 
-export const Hud = ({ game, display, position, context }) => {
+export const Hud = ({ game, display, position, context }) => { // eslint-disable-line
     if (!display.interface) {
         return null;
     }

@@ -21,6 +21,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     const [form, setForm, setFormObject] = useDynamicForm({
         id: null,
+        mapId: null,
         environment: {}
     });
 
@@ -28,10 +29,13 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         {
             func: 'load_game',
             id: parseInt(context?.gameId),
-            launch: context?.gameId,
+            launch: context?.gameId || context?.mapId,
             onSuccess: (response) => {
                 const currentAct = response.storyline.story.acts.find((act) => !act.complete);
-                const currentMap = currentAct.content.maps.find((mp) => !mp.complete);
+                let currentMap = currentAct.content.maps.find((mp) => !mp.complete);
+                if (context?.mapId) {
+                    currentMap = currentAct.content.maps.find((mp) => mp.id === context?.mapId);
+                }
                 setFormObject(response);
                 let game = new GameModel(response);
                 let world = new World(currentMap);
@@ -47,7 +51,7 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
                 }
             }
         },
-        [context?.gameId]
+        [context?.gameId, context?.mapId]
     );
 
     const [, loadingEnvironment] = useGet({
@@ -85,7 +89,14 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
             <LoadingScreen context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
                 <Hud context={context} game={form} display={keyToggles} position={position} />
                 <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
-                    <MapLayout world={context.world} data={gameMap} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} />
+                    <MapLayout
+                        world={context.world}
+                        data={gameMap}
+                        position={position}
+                        cameraRef={cameraRef}
+                        characterRef={characterRef}
+                        lightRef={pointLightRef}
+                    />
                 </Scene>
             </LoadingScreen>
         </>

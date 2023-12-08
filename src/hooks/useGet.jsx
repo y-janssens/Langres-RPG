@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { invoke } from '@tauri-apps/api/tauri';
 
-const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = () => {} }) => {
+const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = () => {} }, deps = []) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -25,7 +25,7 @@ const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = ()
         if (launch) {
             fetch();
         }
-    }, [launch, id, func]); // eslint-disable-line
+    }, [launch, id, func, ...deps]); // eslint-disable-line
 
     return [data, loading, fetch];
 };

@@ -72,6 +72,10 @@
           "title": "Summary",
           "subtitle": "Review and validate your changes"
         }
+      },
+      "gateway": {
+        "title": "Manage gateways between your maps",
+        "subtitle": "Select a map"
       }
     },
     "selector": {

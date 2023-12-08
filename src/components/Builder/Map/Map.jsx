@@ -131,6 +131,13 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
         return name;
     }, [form, item, item.value]);
 
+    const colors = useMemo(() => {
+        if (!item.start && !item.threshold) {
+            return 'unset';
+        }
+        return `hue-rotate(${item.start ? '-25deg' : '25deg'}) brightness(1.25) saturate(1.5)`;
+    }, [item]);
+
     useEffect(() => {
         const element = tileRef.current;
         if (!element || !ds) return;
@@ -144,7 +151,9 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
             ref={tileRef}
             onClick={() => handleSelect(item)}
             aria-labelledby="Selectable"
-            style={{ filter: item.start ? 'hue-rotate(-25deg) brightness(1.25) saturate(1.5)' : 'unset' }}
+            style={{
+                filter: colors
+            }}
         >
             {form.showIcons && <Icon name={icon} />}
             {form.showValues && !form.showIcons && <span>{item.value}</span>}
