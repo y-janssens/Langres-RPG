@@ -5,7 +5,6 @@ import css from './selector.module.css';
 
 export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }) => {
     const { t } = useTranslation();
-    // const [open, setOpen] = useState(false);
     const [search, setSearch] = useState('');
 
     const matchSearch = useCallback((value, search) => {

@@ -42,9 +42,6 @@ export const useStateHistory = ({ init = false, listener = null, size = 10 }) =>
 
     useEffect(() => {
         if (init) {
-            // if (!Array.isArray(listener)) {
-            //     listener = [listener];
-            // }
             handleState(listener);
         }
     }, [init, listener]);

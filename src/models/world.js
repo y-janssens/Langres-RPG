@@ -8,16 +8,8 @@ export default class World {
         this.starting_point = starting_point;
     }
 
-    parse() {
-        return this.chunk(this.content);
-    }
-
     gridify(data) {
         const values = data.map((item) => (item.walkable ? 0 : 1));
-        return this.chunk(values);
-    }
-
-    chunk(data) {
-        return Array.from({ length: Math.ceil(data.length / this.size) }, (_, index) => data.slice(index * this.size, (index + 1) * this.size));
+        return Array.from({ length: Math.ceil(values.length / this.size) }, (_, index) => values.slice(index * this.size, (index + 1) * this.size));
     }
 }

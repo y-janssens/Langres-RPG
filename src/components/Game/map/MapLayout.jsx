@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useRef, memo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGameContext } from '../../../hooks';
 import gsap from 'gsap';
@@ -6,8 +6,8 @@ import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
 
-export const MapLayout = ({ world, data, position, characterRef, cameraRef, lightRef }) => {
-    const [context, setContext] = useGameContext();
+export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
+    const [context] = useGameContext();
     const animationQueue = useRef();
 
     const handleMove = useCallback(
@@ -22,13 +22,13 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
                 duration: 0.5,
                 lazy: false
             });
-            const tile = data.flat()?.find((it) => it.x === Math.abs(targetPosition.x) && it.y === Math.abs(targetPosition.z));
+            const tile = form.world.content.find((it) => it.x === Math.abs(targetPosition.x) && it.y === Math.abs(targetPosition.z));
 
             if (Boolean(tile?.threshold) && Object.keys(tile?.threshold).length) {
-                setContext({ mapId: tile.threshold.map })
+                handleGateWay(tile.threshold.map);
             }
         },
-        [animationQueue, characterRef]
+        [animationQueue, characterRef, form]
     );
 
     useFrame(() => {
@@ -60,14 +60,15 @@ export const MapLayout = ({ world, data, position, characterRef, cameraRef, ligh
             }
         }
     });
+
     return (
         <>
             <Character position={position} characterRef={characterRef} />
-            <Zombies target={characterRef} map={world} nodes={context.grid} />
-            <Tiles data={data} />
+            <Zombies target={characterRef} map={form.world} nodes={form.world.grid} />
+            <Tiles data={form.world.content} />
         </>
     );
-};
+});
 
 const Zombies = ({ target, map, nodes }) => {
     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line

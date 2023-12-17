@@ -21,10 +21,6 @@ mod schema;
 fn run_migrations(
     connection: &mut impl MigrationHarness<Sqlite>,
 ) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    // This will run the necessary migrations.
-    //
-    // See the documentation for `MigrationHarness` for
-    // all available methods.
     connection.run_pending_migrations(MIGRATIONS)?;
 
     Ok(())
@@ -37,10 +33,7 @@ fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<dyn 
         .build(manager)
         .expect("Failed to create pool.");
 
-    // Get a connection from the pool
     let mut conn = pool.get()?;
-
-    // Run migrations
     run_migrations(&mut *conn).expect("Error while migrating...");
 
     Ok(pool)

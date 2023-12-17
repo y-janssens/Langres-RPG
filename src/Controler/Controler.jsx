@@ -1,26 +1,19 @@
-import React, { useCallback, useState, useRef, useMemo } from 'react';
+import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
 import { useGet } from '../hooks';
 import GameContext from './GameContext';
 
 import KeyControls from './controls';
-import MapAssets from '../models/map';
 import Settings from '../models/settings';
-// import { Npcs } from '../models';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
 
-import css from '../components/Game/game.module.css';
 import { Builder } from '../components/Builder/Builder';
+import css from '../components/Game/game.module.css';
 
 export const Controler = () => {
-    const [controls] = useState(() => new KeyControls());
-    const [assets] = useState(() => new MapAssets());
-    // const [npcs] = useState(() => new Npcs());
-    const [toggles, setToggles] = useState(controls.toggles);
-    const [position, setPosition] = useState([controls.positions]);
-
-    const [context, _setContext] = useState({ direction: 's', devMode: true, display3d: true, controls, assets });
+    const [position, setPosition] = useState();
+    const [context, _setContext] = useState({ devMode: true, controls: new KeyControls() });
     const gameRef = useRef();
 
     const setContext = React.useCallback((ctx = {}) => {
@@ -60,23 +53,28 @@ export const Controler = () => {
     const handleControls = useCallback(
         (event) => {
             if (!pauseGame) {
-                controls.setPosition(event, context.world);
-                setContext({ direction: controls.getKey(event), previousDirection: context.direction });
+                context?.controls.setPosition(event, context.world);
+                setContext({ direction: context?.controls.getKey(event), previousDirection: context.direction });
             }
             if (pauseGame && event.key === 'Escape' && Boolean(context?.pauseMenu)) {
-                setContext({ pauseMenu: false });
-                return;
+                return setContext({ pauseMenu: false });
             } else {
-                controls.setToggles(event);
-                setToggles(controls.toggles);
+                context?.controls.setToggles(event);
             }
         },
-        [controls, context, pauseGame]
+        [context, pauseGame]
     );
 
     const displayGame = useMemo(() => {
         return Boolean(context?.gameId && !context.builder);
     }, [context]);
+
+    useEffect(() => {
+        // Keep game focus to avoid losing keyboard controls
+        if (!context.controls.toggles.input && !pauseGame) {
+            gameRef.current?.focus();
+        }
+    }, [context, pauseGame]);
 
     if (!('applicationData' in context)) {
         return null;
@@ -93,7 +91,7 @@ export const Controler = () => {
             {!context?.gameId && !context.builder && <MainMenu />}
             {displayGame && (
                 <div className={css['game-main-block']} onKeyDown={handleControls} tabIndex={0} ref={gameRef}>
-                    <Game pause={pauseGame} keyToggles={toggles} position={position} setPosition={setPosition} game={gameRef} />
+                    <Game pause={pauseGame} keyToggles={context?.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}
             {context.builder && <Builder />}

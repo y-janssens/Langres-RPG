@@ -6,7 +6,7 @@ import IA from '../../../models/ia/iaModel';
 export default function Zombie({ index, target, map, nodes, zombieRef }) {
     const [, setContext] = useGameContext();
     const [ia, setIa] = useState(null);
-    const [position] = useState([20, 0.5, 25]);
+    const [position] = useState([5, 0.75, 7]);
 
     const targetPosition = { ...target.current?.position };
 
@@ -19,19 +19,19 @@ export default function Zombie({ index, target, map, nodes, zombieRef }) {
                 () => {
                     ia.update(targetPosition);
                     ia.patrol();
-                    gsap.to(zombieRef.current.position, { x: ia.position.x, z: ia.position.y, duration: 0.5 });
+                    gsap.to(zombieRef.current.position, { x: -ia.position.x, z: -ia.position.y, duration: 0.5 });
                     switch (ia.direction) {
                         case 'up':
-                            zombieRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
-                            break;
-                        case 'down':
                             zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
                             break;
+                        case 'down':
+                            zombieRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
+                            break;
                         case 'left':
-                            zombieRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+                            zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
                             break;
                         case 'right':
-                            zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+                            zombieRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
                             break;
                     }
                     setContext({ [`zombie_${index}`]: { x: ia.position.x, z: ia.position.y } });

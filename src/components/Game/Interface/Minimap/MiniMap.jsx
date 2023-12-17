@@ -52,7 +52,7 @@ function Item({ item, position, context }) {
         <div
             className={css['mini-map-item']}
             style={{
-                backgroundColor: context.assets.get_color(item)
+                backgroundColor: context.controls.assets.get_color(item)
             }}
         >
             {pointer && <Pointer context={context} />}

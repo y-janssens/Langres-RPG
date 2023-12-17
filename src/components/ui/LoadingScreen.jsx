@@ -1,28 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import css from './ui.module.css';
-export const LoadingScreen = ({ context = {}, loading = false, children = null }) => {
-    const [progress, setProgress] = useState(0);
-    const [ready, setReady] = useState(false);
+export const LoadingScreen = ({ form, setForm, context = {}, loading = false, children = null }) => {
+    const progress = useMemo(() => {
+        return form.loadingProgress;
+    }, [form]);
 
     useEffect(() => {
-        if (progress < 100) {
-            const interval = setInterval(() => {
-                setProgress((pgr) => pgr + 2);
-            }, 100);
+        if (!context.devMode && !form.loadingReady) {
+            if (progress < 100) {
+                const interval = setInterval(() => {
+                    setForm('loadingProgress', progress + 2);
+                }, 50);
 
-            return () => {
-                clearInterval(interval);
-            };
-        } else {
-            setTimeout(() => {
-                setReady(true);
-            }, 1000);
+                return () => {
+                    clearInterval(interval);
+                };
+            } else {
+                setTimeout(() => {
+                    setForm('loadingReady', true);
+                }, 1000);
+            }
         }
     }, [progress]);
 
     return (
         <>
-            {!ready && !context.devMode && <LoadingBar state={progress} />}
+            {!form.loadingReady && !context.devMode && <LoadingBar state={progress} />}
             {!loading && children}
         </>
     );

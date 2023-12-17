@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useRef, useMemo, useCallback } from 'react';
 import { useGet, useDynamicForm, useGameContext, useTranslation } from '../../hooks';
 import { GameModel, World, Environment } from '../../models';
 
@@ -9,11 +9,9 @@ import { InGameMenu } from '../Menu/InGameMenu';
 import PauseScreen from '../ui/PauseScreen';
 import Scene from './Scene/Scene';
 
-// eslint-disable-next-line
-export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
+export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();
     const [context, setContext] = useGameContext();
-    const [gameMap, setGameMap] = useState([]);
 
     const cameraRef = useRef();
     const characterRef = useRef();
@@ -21,8 +19,9 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
 
     const [form, setForm, setFormObject] = useDynamicForm({
         id: null,
-        mapId: null,
-        environment: {}
+        environment: {},
+        loadingProgress: 0,
+        loadingReady: false
     });
 
     const [, loading] = useGet(
@@ -31,35 +30,48 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
             id: parseInt(context?.gameId),
             launch: context?.gameId || context?.mapId,
             onSuccess: (response) => {
+                let resp = new GameModel(response);
                 const currentAct = response.storyline.story.acts.find((act) => !act.complete);
-                let currentMap = currentAct.content.maps.find((mp) => !mp.complete);
-                if (context?.mapId) {
-                    currentMap = currentAct.content.maps.find((mp) => mp.id === context?.mapId);
-                }
-                setFormObject(response);
-                let game = new GameModel(response);
-                let world = new World(currentMap);
-                let _world = world.parse();
-                let grid = world.grid;
-                setGameMap(_world);
-                context.controls.positions = [-world.starting_point.x, 0.75, -world.starting_point.y];
-                setPosition([-world.starting_point.x, 0.75, -world.starting_point.y]);
-                setContext({ game, world, map: _world, grid, controls: context.controls, act: currentAct });
+                const currentMap = currentAct.content.maps.find((mp) => (context.mapId ? mp.id === context?.mapId : !mp.complete));
+                const world = new World(currentMap);
+                const position = resp.has_position ? resp.last_known_position : world.starting_point;
 
-                if (response.save_count < 1) {
-                    game.save();
+                if (!resp.has_position) {
+                    resp.last_known_position = { x: world.starting_point.x, y: 0.75, z: world.starting_point.y };
+                }
+
+                context.controls.positions = [-position.x, 0.75, -position.z];
+                setPosition(context.controls.positions);
+                setContext({ controls: context.controls, world });
+                setFormObject({ ...form, ...resp, world, act: currentAct });
+
+                if (response.save_count <= 1) {
+                    resp.save();
                 }
             }
         },
         [context?.gameId, context?.mapId]
     );
 
+    const handleGateWay = useCallback(
+        (id) => {
+            setContext({ mapId: id });
+            setFormObject({ ...form, loadingProgress: 0, loadingReady: false });
+        },
+        [form]
+    );
+
     const [, loadingEnvironment] = useGet({
         func: 'load_env',
-        payload: { date: context?.act?.date },
+        payload: { date: form?.act?.date },
         launch: form.id,
         onSuccess: (response) => {
-            setForm('environment', new Environment({ ...response, locale: context.applicationData.language, season: t(`environment.seasons.${response.season}`) }));
+            const environment = new Environment({
+                ...response,
+                locale: context.applicationData.language,
+                season: t(`environment.seasons.${response.season}`)
+            });
+            setForm('environment', environment);
         }
     });
 
@@ -67,36 +79,18 @@ export const Game = ({ game, keyToggles, pause, position, setPosition }) => {
         if (!context) {
             return false;
         }
-        const expectedKeys = ['assets', 'controls', 'gameId', 'world', 'map', 'applicationData'];
+        const expectedKeys = ['controls', 'gameId', 'applicationData'];
         return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(context, key)));
     }, [context]);
 
-    useEffect(() => {
-        // Keep game focus to avoid losing keyboard controls
-        if (!context.controls.toggles.input && !pause) {
-            game.current.focus();
-        }
-    }, [context, pause]);
-
-    if (!context?.gameId) {
-        return null;
-    }
-
     return (
         <>
-            <InGameMenu id={context?.gameId} game={game} />
+            {context?.gameId && context.controls.toggles.menu && <InGameMenu id={context?.gameId} form={form} />}
             <PauseScreen ready={contextReady} context={context} />
-            <LoadingScreen context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
+            <LoadingScreen form={form} setForm={setForm} context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
                 <Hud context={context} game={form} display={keyToggles} position={position} />
                 <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
-                    <MapLayout
-                        world={context.world}
-                        data={gameMap}
-                        position={position}
-                        cameraRef={cameraRef}
-                        characterRef={characterRef}
-                        lightRef={pointLightRef}
-                    />
+                    <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
                 </Scene>
             </LoadingScreen>
         </>

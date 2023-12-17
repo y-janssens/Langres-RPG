@@ -63,7 +63,7 @@ const Map = ({ loading, type, display, form, setForm, history, index }) => {
                     >
                         <BuilderSettings>
                             <group position={[form.selectedMap.size / 2, 0, form.selectedMap.size / 2]}>
-                                <Tiles form={form} data={world?.parse()} handleSelect={handleSelect} />
+                                <Tiles form={form} data={world?.content} handleSelect={handleSelect} />
                             </group>
                         </BuilderSettings>
                     </Canvas>
