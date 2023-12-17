@@ -6,7 +6,7 @@ import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { BiSolidTree } from 'react-icons/bi';
 import { FaBridgeWater } from 'react-icons/fa6';
 import { AiOutlineClear } from 'react-icons/ai';
-import { GiForest, GiStoneBlock } from 'react-icons/gi';
+import { GiForest, GiStoneBlock, GiDungeonGate } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { HiZoomIn, HiZoomOut } from 'react-icons/hi';
 
@@ -29,3 +29,4 @@ export { GiStoneBlock as Rock };
 export { FaFlagCheckered as Start };
 export { HiZoomIn as Zoomin };
 export { HiZoomOut as Zoomout };
+export { GiDungeonGate as Gate };

@@ -72,6 +72,10 @@
           "title": "Résumé",
           "subtitle": "Vérifiez et validez vos changements"
         }
+      },
+      "gateway": {
+        "title": "Éditez et organisez les passages entre vos cartes",
+        "subtitle": "Sélectionner une carte"
       }
     },
     "selector": {

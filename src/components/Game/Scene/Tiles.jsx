@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, memo } from 'react';
+import { useState, useRef, useMemo, memo, useEffect } from 'react';
 import { useThree } from '@react-three/fiber';
 import { useGameContext } from '../../../hooks';
 import { Text } from '@react-three/drei';
@@ -9,30 +9,43 @@ export const Tiles = memo(({ data }) => {
     const { camera } = useThree();
     const { x, z } = camera.position;
     const [context] = useGameContext();
-    const [treeColorMap] = useState(() => context.assets.get_trees(data));
+    const [treeColorMap, setTreeColorMap] = useState(() => context.assets.get_trees(data));
     const [grassColorMap] = useState(() => context.assets.get_grass());
     const [waterColorMap] = useState(() => context.assets.get_water());
 
-    return data.flat().map((item, index) => {
-        if (-item.x < x + 11 && -item.x > x - 11 && -item.y < z + 29 && -item.y > z + 11) {
-            return (
-                <group key={index}>
-                    {(item.value === 'T' || item.value === 'F') && (
-                        <Tree item={item} position={[-item.x + 0.5, 1, -item.y - 0.5]} colorMap={treeColorMap.find((it) => it.id === item.id).map} />
-                    )}
-                    <Tile context={context} data={data} item={item} position={[-item.x, 0, -item.y]} colorMap={grassColorMap} />
-                    {item.value === 'W' && <Water position={[-item.x, -0.5, -item.y]} colorMap={waterColorMap} />}
-                </group>
-            );
-        }
-    });
+    useEffect(() => {
+        setTreeColorMap(context.assets.get_trees(data));
+    }, [data, context.assets]);
+
+    if (!treeColorMap || treeColorMap.length === 0) {
+        return null;
+    }
+
+    return data.map((row) =>
+        row.map((item, index) => {
+            if (-item.x < x + 11 && -item.x > x - 11 && -item.y < z + 29 && -item.y > z + 11) {
+                return (
+                    <group key={index}>
+                        {(item.value === 'T' || item.value === 'F') && (
+                            <Tree item={item} position={[-item.x + 0.5, 1, -item.y - 0.5]} colorMap={treeColorMap.find((it) => it.id === item.id).map} />
+                        )}
+                        {item.value !== 'W' && <Tile context={context} data={data} item={item} position={[-item.x, 0, -item.y]} colorMap={grassColorMap} />}
+                        {item.value === 'W' && <Water position={[-item.x, -0.5, -item.y]} colorMap={waterColorMap} />}
+                    </group>
+                );
+            }
+        })
+    );
 });
 
 const Tile = memo(({ context, data, item, position, colorMap }) => {
     const meshRef = useRef();
 
     const nearWater = useMemo(() => {
-        return data.filter((it) => [item.id + 1, item.id - 1, item.id + 50, item.id - 50].includes(it.id)).some((it) => it.value === 'W');
+        return data
+            .flat()
+            .filter((it) => [item.id + 1, item.id - 1, item.id + 50, item.id - 50].includes(it.id))
+            .some((it) => it.value === 'W');
     }, [data, item]);
 
     return (

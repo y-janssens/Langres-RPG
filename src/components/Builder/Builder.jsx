@@ -1,9 +1,10 @@
 import { useCallback, useMemo } from 'react';
-import { Header, Menu, Manager, Theme, Editor } from './ui';
+import { Header, SideBar, Manager, Theme, Editor } from './ui';
 import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';
 import { Onboarding } from './ui/Onboarding/Onboarding';
+import { Gateway } from './ui/Gateway';
 
 export const Builder = () => {
     const [, setContext] = useGameContext();
@@ -15,6 +16,7 @@ export const Builder = () => {
         modalManager: false,
         modalSelect: false,
         modalEditor: false,
+        modalGateway: false,
         onboarding: { value: false, type: null },
         selectedTiles: [],
         showValues: true,
@@ -75,7 +77,7 @@ export const Builder = () => {
         if (!form.storyLine) {
             return false;
         }
-        return !form.modalManager && !form.modalEditor && !form.onboarding.value;
+        return !form.modalManager && !form.modalEditor && !form.onboarding.value && !form.modalGateway;
     }, [form]);
 
     const handleReset = useCallback(() => {
@@ -105,7 +107,7 @@ export const Builder = () => {
                 setContext={setContext}
                 setObject={setFormObject}
             />
-            <Menu form={form} setForm={setForm} storyline={form.storyLine} />
+            <SideBar form={form} setForm={setForm} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
                 {form.storyLine &&
                     !loadingStoryline &&
@@ -120,8 +122,11 @@ export const Builder = () => {
                                 sync={handleSync}
                                 onClose={() => setForm('onboarding', { value: false, type: null })}
                             />
-                            <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />
-                            <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />
+                            {form.modalEditor && <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />}
+                            {form.modalManager && <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />}
+                            {form.modalGateway && (
+                                <Gateway open={form.modalGateway} form={form} setForm={setForm} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
+                            )}
                         </>
                     ))}
             </div>

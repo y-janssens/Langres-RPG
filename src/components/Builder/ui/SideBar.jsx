@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 
-export const Menu = ({ form, setForm }) => {
+export const SideBar = ({ form, setForm }) => {
     const { t } = useTranslation();
 
     const map = useMemo(() => {
@@ -17,6 +17,10 @@ export const Menu = ({ form, setForm }) => {
 
     const handleChange = useCallback(
         (item) => {
+            if (item.name === 'gate') {
+                return setForm('modalGateway', !form.modalGateway);
+            }
+
             let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
             let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
             let newMap = { ...act.content.maps[mapIndex] };
@@ -25,7 +29,6 @@ export const Menu = ({ form, setForm }) => {
                 newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y };
             }
             const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
-
             let newContent = newMap.content.map((item) => {
                 const foundItem = items.find((it) => it.id === item.id);
                 return foundItem ? { ...item, value: foundItem.value, walkable: foundItem.walkable } : { ...item };
