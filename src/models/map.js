@@ -77,8 +77,6 @@ export default class MapAssets {
                 color: 'brown'
             }
         ];
-        this.validKeys = ['-', 'C', 'BR'];
-        this.borderKeys = ['F', 'T', 'W'];
     }
 
     get_asset(item) {
@@ -93,16 +91,14 @@ export default class MapAssets {
 
     get_trees(data) {
         let items = [];
-        data.forEach((row) =>
-            row.forEach((item) => {
-                if (item.value === 'T' || item.value === 'F') {
-                    items.push({
-                        id: item.id,
-                        map: useLoader(TextureLoader, this.get_asset(item))
-                    });
-                }
-            })
-        );
+        data.forEach((item) => {
+            if (item.value === 'T' || item.value === 'F') {
+                items.push({
+                    id: item.id,
+                    map: useLoader(TextureLoader, this.get_asset(item))
+                });
+            }
+        });
         return items;
     }
 

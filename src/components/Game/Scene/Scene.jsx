@@ -2,11 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
 import { Pixelation, EffectComposer } from '@react-three/postprocessing';
 
-const Scene = ({ context, lightRef, cameraRef, pause, children }) => {
-    if (!context.display3d) {
-        return null;
-    }
-
+const Scene = ({ lightRef, cameraRef, pause, children }) => {
     return (
         <Canvas
             shadows
@@ -15,9 +11,6 @@ const Scene = ({ context, lightRef, cameraRef, pause, children }) => {
             dpr={[0.5, 1]}
             camera={{
                 fov: 25,
-                // aspect: 1,
-                // near: 20.0,
-                // far: 30.0,
                 zoom: 1.25,
                 gl: { antialias: false }
             }}

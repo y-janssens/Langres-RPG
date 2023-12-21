@@ -2,15 +2,13 @@ import { useRef } from 'react';
 import { Text } from '@react-three/drei';
 
 export const Tiles = ({ form, data = [], handleSelect }) => {
-    return data.map((row) =>
-        row.map((item, index) => {
-            return (
-                <group key={index}>
-                    <Tile form={form} data={data} item={item} position={[-item.x, 0, -item.y]} handleSelect={handleSelect} />
-                </group>
-            );
-        })
-    );
+    return data.map((item, index) => {
+        return (
+            <group key={index}>
+                <Tile form={form} data={data} item={item} position={[-item.x, 0, -item.y]} handleSelect={handleSelect} />
+            </group>
+        );
+    });
 };
 
 function Tile({ form, item, position, handleSelect }) {

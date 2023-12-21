@@ -3,8 +3,34 @@ pub mod game {
     use crate::schema::games::dsl::*;
     use crate::{models::character::character::Character, schema::games};
     use chrono::{DateTime, Local};
+    use diesel::deserialize::{self, FromSql};
     use diesel::prelude::*;
+    use diesel::sql_types::Text;
+    use diesel::sqlite::{Sqlite, SqliteValue};
     use serde::{Deserialize, Serialize};
+
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+    pub struct Position {
+        x: f32,
+        y: f32,
+        z: f32,
+    }
+
+    impl FromSql<Text, Sqlite> for Position {
+        fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
+            let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
+            serde_json::from_str(&tstr)
+                .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
+        }
+    }
+
+    impl Queryable<Text, Sqlite> for Position {
+        type Row = String;
+        fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
+            serde_json::from_str(&row)
+                .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
+        }
+    }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     #[diesel(table_name = crate::schema::games)]
@@ -17,9 +43,10 @@ pub mod game {
         save_count: i32,
         pub character: Character,
         pub storyline: Story,
+        last_known_position: Position,
     }
 
-    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable, AsChangeset)]
     #[diesel(table_name = crate::schema::games)]
     #[diesel(check_for_backend(Sqlite))]
     pub struct InsertableGame {
@@ -28,8 +55,9 @@ pub mod game {
         date_created: String,
         last_save_date: String,
         save_count: i32,
-        character: String, // JSON string of Character
-        storyline: String, // JSON string of Story
+        character: String,
+        storyline: String,
+        last_known_position: String,
     }
 
     impl Game {
@@ -44,6 +72,11 @@ pub mod game {
                 last_save_date: Self::get_date(),
                 storyline: story,
                 character: Character::new(name),
+                last_known_position: Position {
+                    x: 0.0,
+                    y: 0.0,
+                    z: 0.0,
+                },
             }
         }
 
@@ -67,6 +100,8 @@ pub mod game {
 
             let character_json = serde_json::to_string(&game.character).expect("error");
             let storyline_json = serde_json::to_string(&game.storyline).expect("error");
+            let last_known_position_json =
+                serde_json::to_string(&game.last_known_position).expect("error");
 
             let insertable = InsertableGame {
                 id: game.id,
@@ -76,10 +111,22 @@ pub mod game {
                 save_count: game.save_count,
                 character: character_json,
                 storyline: storyline_json,
+                last_known_position: last_known_position_json,
             };
-            diesel::insert_into(games::table)
-                .values(&insertable)
-                .execute(connection)?;
+            let exists = games
+                .filter(id.eq(game.id))
+                .first::<Game>(connection)
+                .is_ok();
+
+            if exists {
+                diesel::update(games.find(game.id))
+                    .set(&insertable)
+                    .execute(connection)?;
+            } else {
+                diesel::insert_into(games::table)
+                    .values(&insertable)
+                    .execute(connection)?;
+            }
 
             Ok(())
         }

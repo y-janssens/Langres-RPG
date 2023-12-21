@@ -9,7 +9,7 @@ import Settings from './Settings';
 
 import css from './menu.module.css';
 
-export const InGameMenu = ({ id, game }) => {
+export const InGameMenu = ({ id, form }) => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
     const [context, setContext, removeFromContext] = useGameContext();
@@ -21,9 +21,13 @@ export const InGameMenu = ({ id, game }) => {
     }, [id, context, context.controls.toggles]);
 
     const handleSaveGame = useCallback(() => {
-        let _game = new GameModel(game);
-        _game.save();
-    }, [game]);
+        let game = new GameModel(form);
+        if (!context.mapId) {
+            game.last_known_position = { x: Math.abs(context.controls.positions[0]), y: 0.75, z: Math.abs(context.controls.positions[2]) };
+        }
+        game.save();
+        context.controls.generateControls();
+    }, [form, context]);
 
     const items = useMemo(() => {
         return [
@@ -41,7 +45,7 @@ export const InGameMenu = ({ id, game }) => {
                 name: t('menu.items.exit-game'),
                 onClick: () => {
                     // Remove game related content from context
-                    removeFromContext(['gameId', 'game', 'world', 'map']);
+                    removeFromContext(['gameId', 'world']);
                     // Reset keyboard controls default values
                     context.controls.generateControls();
                 }
@@ -78,10 +82,6 @@ export const InGameMenu = ({ id, game }) => {
             activeRef.current?.focus();
         }
     }, [displayInGameMenu]);
-
-    if (!displayInGameMenu) {
-        return null;
-    }
 
     return (
         <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1} ref={activeRef}>

@@ -8,8 +8,7 @@ export default class KeyControls {
             { name: 'minimap', key: 'l', value: true },
             { name: 'interface', key: 'h', value: true },
             { name: 'map', key: 'm', value: false },
-            { name: 'pause', key: 'p', value: false },
-            { name: 'input', key: '@', value: false }
+            { name: 'pause', key: 'p', value: false }
         ];
 
         this.controlsKeys = [
@@ -23,11 +22,8 @@ export default class KeyControls {
             { name: 'right_arrow', key: 'ArrowRight' }
         ];
         this.assets = new MapAssets();
-        this.validKeys = this.assets.validKeys;
-        this.borderKeys = this.assets.borderKeys;
         this.toggles = {};
         this.positions = [-15, 0.75, -15];
-        this.occupiedPositions = [];
         this.pause = false;
         this.generateControls();
     }

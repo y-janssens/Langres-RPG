@@ -8,8 +8,8 @@ import { Title, MainTitle } from '../ui/Title';
 import SavedGames from './SavedGames';
 import NewGame from './NewGame';
 
-import css from './menu.module.css';
 import Settings from './Settings';
+import css from './menu.module.css';
 
 export const MainMenu = () => {
     const { t } = useTranslation();
@@ -107,7 +107,6 @@ export const MainMenu = () => {
         if (!context?.gameId && (!context.controls?.toggles?.pause || !context.controls?.toggles?.menu)) {
             activeRef.current.focus();
         }
-        // setContext({ gameId: 315681868 });
         // setContext({ builder: true });
     }, []);
 
