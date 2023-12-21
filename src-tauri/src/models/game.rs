@@ -41,8 +41,8 @@ pub mod game {
         date_created: String,
         last_save_date: String,
         save_count: i32,
-        pub character: Character,
-        pub storyline: Story,
+        character: Character,
+        storyline: Story,
         last_known_position: Position,
     }
 
