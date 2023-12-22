@@ -25,7 +25,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
             const tile = form.world.content.find((it) => it.x === Math.abs(targetPosition.x) && it.y === Math.abs(targetPosition.z));
 
             if (Boolean(tile?.threshold) && Object.keys(tile?.threshold).length) {
-                handleGateWay(tile.threshold.map);
+                handleGateWay(tile.threshold);
             }
         },
         [animationQueue, characterRef, form]

@@ -1,11 +1,14 @@
 export default class World {
-    constructor({ size, content, order, complete, starting_point }) {
+    constructor({ id, name, size, content, order, complete, starting_point, primary }) {
+        this.id = id;
+        this.name = name;
         this.size = size;
         this.order = order;
         this.grid = this.gridify(content);
         this.complete = complete;
         this.content = content;
         this.starting_point = starting_point;
+        this.primary = primary;
     }
 
     gridify(data) {

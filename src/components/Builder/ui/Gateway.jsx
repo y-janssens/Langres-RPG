@@ -6,7 +6,7 @@ import { Button } from 'react-daisyui';
 import css from './Manager/manager.module.css';
 import Storyline from '../../../models/storyline';
 
-export const Gateway = ({ form, setForm, open = false, onClose = () => {}, sync = () => {} }) => {
+export const Gateway = ({ form, setFormObject, open = false, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
     const [toggle, setToggle] = useState(false);
     const [selectedMap, setSelectedMap] = useState(null);
@@ -15,11 +15,14 @@ export const Gateway = ({ form, setForm, open = false, onClose = () => {}, sync 
         if (!form.storyLine || !form.selectedAct || !form.selectedMap) {
             return [];
         }
-        return form.selectedAct.content.maps.filter((mp) => mp.id !== form.selectedMap.id).map((mp) => ({ id: mp.id, name: mp.name }));
+        return form.storyLine.story.acts.reduce((acc, act) => {
+            const filteredMaps = act.content.maps.filter((mp) => mp.id !== form.selectedMap.id);
+            return acc.concat(filteredMaps);
+        }, []);
     }, [form]);
 
     const handleGateWay = useCallback(
-        (id) => {
+        (map) => {
             if (!form.selectedTiles.length) {
                 return;
             }
@@ -31,13 +34,13 @@ export const Gateway = ({ form, setForm, open = false, onClose = () => {}, sync 
                 if (item.id !== form.selectedTiles[0].id) {
                     return item;
                 }
-                return { ...item, threshold: { map: id } };
+                return { ...item, threshold: { map: map.id, is_final: Boolean(map.primary && form.selectedMap.primary) } };
             });
 
             newMap.content = newContent;
             act.content.maps[mapIndex] = newMap;
 
-            setForm('selectedMap', newMap);
+            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
             setToggle(false);
         },
         [form]
@@ -78,7 +81,7 @@ export const Gateway = ({ form, setForm, open = false, onClose = () => {}, sync 
                                             size="xs"
                                             fullWidth
                                             onClick={() => {
-                                                handleGateWay(map.id);
+                                                handleGateWay(map);
                                                 setSelectedMap(map);
                                             }}
                                         >

@@ -1,8 +1,8 @@
 use crate::{functions, models};
 
 #[tauri::command]
-pub fn generate(size: u32, name: String, order: u32) -> models::world::world::World {
-    let _regenerate = functions::world::generate_world(size, name, order);
+pub fn generate(size: u32, name: String, order: u32, primary: bool) -> models::world::world::World {
+    let _regenerate = functions::world::generate_world(size, name, order, primary);
     _regenerate.unwrap()
 }
 

@@ -93,7 +93,8 @@
       "map": {
         "label": "Map informations",
         "name": "Name",
-        "size": "Size"
+        "size": "Size",
+        "primary": "Primary"
       },
       "tile": {
         "label": "Tiles settings"

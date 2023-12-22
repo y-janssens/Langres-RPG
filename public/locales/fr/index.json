@@ -93,7 +93,8 @@
       "map": {
         "label": "Informations sur la carte",
         "name": "Nom",
-        "size": "Taille"
+        "size": "Taille",
+        "primary": "Principale"
       },
       "tile": {
         "label": "Paramètres des cases"

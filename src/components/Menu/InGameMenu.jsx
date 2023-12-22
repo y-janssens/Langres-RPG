@@ -22,8 +22,8 @@ export const InGameMenu = ({ id, form }) => {
 
     const handleSaveGame = useCallback(() => {
         let game = new GameModel(form);
-        if (!context.mapId) {
-            game.last_known_position = { x: Math.abs(context.controls.positions[0]), y: 0.75, z: Math.abs(context.controls.positions[2]) };
+        if (!context.mapId || context.mapId?.is_final) {
+            game.last_known_position = { x: Math.abs(context.controls.positions[0]), y: Math.abs(context.controls.positions[2]) };
         }
         game.save();
         context.controls.generateControls();
