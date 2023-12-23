@@ -48,16 +48,4 @@ export default class GameModel {
     get current_world() {
         return new World(this.current_map);
     }
-
-    validate_acts() {
-        let datas = { ...this.storyline };
-        let acts = datas.story.acts.map((act) => {
-            if (act.content.maps.filter((mp) => Boolean(mp.primary)).every((mp) => Boolean(mp.complete))) {
-                act.complete = true;
-            }
-            return act;
-        });
-        datas.story.acts = [...acts];
-        return datas;
-    }
 }

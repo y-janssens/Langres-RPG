@@ -14,11 +14,11 @@ pub fn fetch_storyline(
 
 pub fn save_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-    data: Story,
+    mut data: Story,
     id: u32,
 ) -> Result<(), String> {
     let mut connection = connection.get().map_err(|e| e.to_string())?;
-    match Story::save(&mut connection, id as i32, &data) {
+    match Story::save(&mut connection, id as i32, &mut data) {
         Ok(rows_affected) => {
             if rows_affected > 0 {
                 Ok(())

@@ -12,7 +12,7 @@ pub mod story {
     #[diesel(check_for_backend(Sqlite))]
     pub struct Story {
         id: i32,
-        story: Acts,
+        pub story: Acts,
     }
 
     impl FromSql<Text, Sqlite> for Story {
@@ -52,7 +52,7 @@ pub mod story {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Acts {
-        acts: Vec<Act>,
+        pub acts: Vec<Act>,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -66,6 +66,22 @@ pub mod story {
         complete: bool,
     }
 
+    impl Act {
+        pub fn validate_acts(&mut self) {
+            let all_primary_maps_complete = self
+                .content
+                .maps
+                .iter()
+                .filter_map(|map_option| map_option.as_ref())
+                .filter(|map| map.primary)
+                .all(|map| map.complete);
+
+            if all_primary_maps_complete {
+                self.complete = true;
+            }
+        }
+    }
+
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Content {
         maps: Vec<Option<World>>,
@@ -73,15 +89,18 @@ pub mod story {
 
     impl Story {
         pub fn load(connection: &mut SqliteConnection) -> QueryResult<Story> {
-            let _load = crate::schema::storyline::table.first(connection)?;
+            let mut _load: Story = crate::schema::storyline::table.first(connection)?;
             Ok(_load)
         }
 
         pub fn save(
             connection: &mut SqliteConnection,
             id: i32,
-            data: &Story,
+            data: &mut Story,
         ) -> QueryResult<usize> {
+            for act in &mut data.story.acts {
+                act.validate_acts();
+            }
             let updated_json = serde_json::to_string(&data.story.acts).map_err(|e| {
                 diesel::result::Error::DatabaseError(
                     diesel::result::DatabaseErrorKind::UnableToSendCommand,

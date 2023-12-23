@@ -127,7 +127,10 @@ pub mod game {
         }
 
         pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Game> {
-            let _load = games.find(_id).first(connection)?;
+            let mut _load: Game = games.find(_id).first(connection)?;
+            for act in &mut _load.storyline.story.acts {
+                act.validate_acts();
+            }
             Ok(_load)
         }
 

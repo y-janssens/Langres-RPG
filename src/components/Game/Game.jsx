@@ -54,7 +54,6 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             if (gateway.map && Boolean(gateway.is_final)) {
                 let act = game.storyline.story.acts.find((act) => act.id === form.act.id);
                 act.content.maps.find((mp) => mp.id === form.world.id).complete = true;
-                game.validate_acts();
             }
             game.save().then(() => {
                 if (form.world.primary) {

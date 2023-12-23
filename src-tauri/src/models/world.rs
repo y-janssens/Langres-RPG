@@ -11,10 +11,10 @@ pub mod world {
         name: String,
         size: u32,
         order: u32,
-        complete: bool,
+        pub complete: bool,
         content: Vec<Item>,
         starting_point: Location,
-        primary: bool,
+        pub primary: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
