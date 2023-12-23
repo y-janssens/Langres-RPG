@@ -20028,7 +20028,8 @@ VALUES
                     "starting_point": {
                         "x": 5,
                         "y": 5
-                    }
+                    },
+                    "primary": true
                 }
             ]
         },

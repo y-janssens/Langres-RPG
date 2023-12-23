@@ -1,11 +1,12 @@
 import { useCallback, useState, useMemo } from 'react';
 import { invoke } from '@tauri-apps/api';
 import { Button, Input } from 'react-daisyui';
+import { Toggle } from './Toggle';
 import { useTranslation } from 'react-i18next';
 import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 
-export const SideBar = ({ form, setForm }) => {
+export const SideBar = ({ form, setForm, setFormObject }) => {
     const { t } = useTranslation();
 
     const map = useMemo(() => {
@@ -16,7 +17,7 @@ export const SideBar = ({ form, setForm }) => {
     }, [form]);
 
     const handleChange = useCallback(
-        (item) => {
+        (item, primary = false) => {
             if (item.name === 'gate') {
                 return setForm('modalGateway', !form.modalGateway);
             }
@@ -25,19 +26,22 @@ export const SideBar = ({ form, setForm }) => {
             let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
             let newMap = { ...act.content.maps[mapIndex] };
 
-            if (!item.value && form.selectedTiles.length === 1) {
-                newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y };
+            if (!primary) {
+                if (!item.value && form.selectedTiles.length === 1) {
+                    newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y };
+                }
+                const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
+                let newContent = newMap.content.map((item) => {
+                    const foundItem = items.find((it) => it.id === item.id);
+                    return foundItem ? { ...item, value: foundItem.value, walkable: foundItem.walkable } : { ...item };
+                });
+
+                newMap.content = newContent;
+            } else {
+                newMap.primary = item;
             }
-            const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
-            let newContent = newMap.content.map((item) => {
-                const foundItem = items.find((it) => it.id === item.id);
-                return foundItem ? { ...item, value: foundItem.value, walkable: foundItem.walkable } : { ...item };
-            });
-
-            newMap.content = newContent;
             act.content.maps[mapIndex] = newMap;
-
-            setForm('selectedMap', newMap);
+            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
         },
         [form]
     );
@@ -89,6 +93,9 @@ export const SideBar = ({ form, setForm }) => {
                             <span>
                                 <p>{`${t('builder.menu.map.size')}:`}</p>
                                 <span>{map.size}</span>
+                            </span>
+                            <span>
+                                <Toggle title={`${t('builder.menu.map.primary')}:`} active={map.primary} onChange={({ target: { checked } }) => handleChange(checked, true)} />
                             </span>
                         </span>
                     </div>

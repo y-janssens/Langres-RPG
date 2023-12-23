@@ -15,7 +15,7 @@ export const ActStep = ({ form, setForm, ...props }) => {
         }
         let list = form.selectedAct.content.maps.sort((a, b) => a.order - b.order);
         if (!list.some((act) => act.temp) && list.every((mp) => mp.size >= 10)) {
-            list.push({ complete: false, content: [], name: '', order: list.length, size: 0, temp: true });
+            list.push({ complete: false, content: [], name: '', order: list.length, size: 0, primary: true, temp: true });
         }
         return list;
     });
@@ -52,7 +52,7 @@ export const ActStep = ({ form, setForm, ...props }) => {
             if (maps[id].temp && maps[id].name.length && maps[id].size && maps[id].size >= 10) {
                 delete maps[id].temp;
             }
-            await invoke('generate', { name: maps[id].name, size: maps[id].size, order: parseInt(maps[id].order) }).then((data) => {
+            await invoke('generate', { name: maps[id].name, size: maps[id].size, order: parseInt(maps[id].order), primary: maps[id].primary }).then((data) => {
                 maps[id] = data;
             });
             let act = form.selectedAct;

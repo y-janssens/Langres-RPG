@@ -107,7 +107,7 @@ export const Builder = () => {
                 setContext={setContext}
                 setObject={setFormObject}
             />
-            <SideBar form={form} setForm={setForm} storyline={form.storyLine} />
+            <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
                 {form.storyLine &&
                     !loadingStoryline &&
@@ -125,7 +125,7 @@ export const Builder = () => {
                             {form.modalEditor && <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />}
                             {form.modalManager && <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />}
                             {form.modalGateway && (
-                                <Gateway open={form.modalGateway} form={form} setForm={setForm} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
+                                <Gateway open={form.modalGateway} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
                             )}
                         </>
                     ))}

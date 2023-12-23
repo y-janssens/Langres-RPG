@@ -321,6 +321,10 @@
 .builder-map-infos-item span {
     flex-direction: row;
 }
+.builder-map-infos-item span .builder-navbar-toggles {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
 .builder-map-infos-item p {
     font-weight: 500;

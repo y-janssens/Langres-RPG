@@ -14,6 +14,7 @@ pub mod world {
         complete: bool,
         content: Vec<Item>,
         starting_point: Location,
+        primary: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -37,6 +38,7 @@ pub mod world {
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Threshold {
         map: i32,
+        is_final: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -46,7 +48,7 @@ pub mod world {
     }
 
     impl World {
-        pub fn new(size: u32, name: String, order: u32) -> World {
+        pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {
             World {
                 id: Self::generate_id(),
                 name: String::from(name),
@@ -55,6 +57,7 @@ pub mod world {
                 complete: false,
                 content: Self::generate(size),
                 starting_point: Location { x: 5, y: 5 },
+                primary,
             }
         }
 
