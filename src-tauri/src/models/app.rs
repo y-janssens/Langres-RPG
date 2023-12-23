@@ -1,4 +1,4 @@
-pub mod app {
+pub mod application {
     use crate::schema::settings::dsl::*;
     use diesel::{prelude::*, sqlite::Sqlite};
     use serde::{Deserialize, Serialize};

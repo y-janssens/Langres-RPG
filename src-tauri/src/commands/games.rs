@@ -6,7 +6,7 @@ use crate::{functions, models};
 pub fn new(
     name: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> models::game::game::Game {
+) -> models::game::games::Game {
     let _story = functions::story::fetch_storyline(connection).expect("error");
     let _new = functions::games::new_game(name, _story);
     _new.unwrap()
@@ -15,16 +15,15 @@ pub fn new(
 #[tauri::command]
 pub fn fetch_games(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Vec<models::game::game::Game>, String> {
-    let _load = functions::games::fetch_games(connection);
-    _load
+) -> Result<Vec<models::game::games::Game>, String> {
+    functions::games::fetch_games(connection)
 }
 
 #[tauri::command]
 pub fn load_game(
     id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> models::game::game::Game {
+) -> models::game::games::Game {
     let _load = functions::games::load_saved_game(id, connection);
     _load.unwrap()
 }
@@ -36,7 +35,7 @@ pub fn delete(id: i32, connection: tauri::State<r2d2::Pool<ConnectionManager<Sql
 
 #[tauri::command]
 pub fn save(
-    data: models::game::game::Game,
+    data: models::game::games::Game,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let _save = functions::games::save_game(connection, data);
@@ -44,9 +43,9 @@ pub fn save(
 
 #[tauri::command]
 pub fn compute_xp(
-    character: models::character::character::Character,
+    character: models::character::characters::Character,
     xp: u32,
-) -> models::character::character::Character {
+) -> models::character::characters::Character {
     let _compute = functions::games::compute_xp(character, xp);
     _compute.unwrap()
 }

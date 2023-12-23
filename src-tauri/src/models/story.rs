@@ -1,5 +1,5 @@
-pub mod story {
-    use crate::models::world::world::World;
+pub mod storyline {
+    use crate::models::world::maps::World;
     use crate::schema::storyline::dsl::storyline;
     use diesel::deserialize::{self, FromSql};
     use diesel::sql_types::Text;

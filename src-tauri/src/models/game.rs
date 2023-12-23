@@ -1,7 +1,7 @@
-pub mod game {
-    use crate::models::story::story::Story;
+pub mod games {
+    use crate::models::story::storyline::Story;
     use crate::schema::games::dsl::*;
-    use crate::{models::character::character::Character, schema::games};
+    use crate::{models::character::characters::Character, schema::games};
     use chrono::{DateTime, Local};
     use diesel::deserialize::{self, FromSql};
     use diesel::prelude::*;

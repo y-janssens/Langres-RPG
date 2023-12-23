@@ -1,4 +1,4 @@
-pub mod time {
+pub mod env {
     use chrono::{Datelike, Local, NaiveDate, Timelike};
     use rand::{seq::SliceRandom, thread_rng, Rng};
     use serde::{Deserialize, Serialize};
@@ -31,7 +31,7 @@ pub mod time {
         pub fn initialize(date: &str) -> Environment {
             let hour = Local::now().hour();
             let _date = NaiveDate::parse_from_str(date, "%d/%m/%Y").expect("Wrong date");
-            let daytime = hour >= 5 && hour <= 18;
+            let daytime = (5..=18).contains(&hour);
             let temperature = Self::get_temperature(_date.month(), &daytime);
             let weather_state = Self::get_weather(_date.month(), temperature);
             let (danger, wind_force) = Self::get_environmental_factors(&weather_state);

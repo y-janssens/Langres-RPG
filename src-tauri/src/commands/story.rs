@@ -1,4 +1,4 @@
-use crate::{functions, models::story::story::Story};
+use crate::{functions, models::story::storyline::Story};
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -6,8 +6,7 @@ use diesel::SqliteConnection;
 pub fn fetch_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Story, String> {
-    let _load = functions::story::fetch_storyline(connection);
-    _load
+    functions::story::fetch_storyline(connection)
 }
 
 #[tauri::command]

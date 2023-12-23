@@ -1,5 +1,5 @@
-use crate::models::world::world::Item;
-use crate::models::world::world::World;
+use crate::models::world::maps::Item;
+use crate::models::world::maps::World;
 #[allow(dead_code)]
 
 pub fn generate_world(

@@ -1,7 +1,6 @@
-#[allow(dead_code)]
-use crate::models::character::character::Character;
-use crate::models::game::game::Game;
-use crate::models::story::story::Story;
+use crate::models::character::characters::Character;
+use crate::models::game::games::Game;
+use crate::models::story::storyline::Story;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -47,8 +46,8 @@ pub fn save_game(
     data: Game,
 ) -> Result<(), String> {
     let mut connection = connection.get().map_err(|e| e.to_string())?;
-    let _save = Game::save(data, &mut connection).expect("Error");
-    Ok(_save)
+    Game::save(data, &mut connection).expect("Error");
+    Ok(())
 }
 
 pub fn compute_xp(

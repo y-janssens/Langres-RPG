@@ -31,6 +31,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             launch: context?.gameId || context?.mapId,
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, context });
+                console.log(game);
                 const currentAct = game.current_act;
                 const currentWorld = game.current_world;
                 const openingTitle = game.title;

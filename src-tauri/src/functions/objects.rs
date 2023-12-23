@@ -1,8 +1,6 @@
-#[allow(dead_code)]
+use crate::models::objects::assets::Function;
+use crate::models::objects::assets::Object;
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
-
-use crate::models::objects::objects::Function;
-use crate::models::objects::objects::Object;
 
 pub fn load_objects(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,

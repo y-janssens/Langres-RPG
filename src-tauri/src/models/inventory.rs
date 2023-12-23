@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 
-pub mod inventory {
+pub mod inventories {
     use serde::{Deserialize, Serialize};
     #[derive(Debug, Serialize, Deserialize, Clone)]
     pub struct Inventory {
@@ -27,7 +27,7 @@ pub mod inventory {
 
         pub fn add_objects(&mut self, items: Vec<String>) {
             for item in items {
-                self.objects.push(String::from(item))
+                self.objects.push(item)
             }
         }
     }

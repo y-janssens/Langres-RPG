@@ -1,4 +1,4 @@
-pub mod objects {
+pub mod assets {
     use diesel::{
         deserialize::{self, FromSql, Queryable},
         sql_types::Text,

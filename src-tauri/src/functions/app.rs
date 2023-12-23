@@ -1,6 +1,5 @@
-#[allow(dead_code)]
-use crate::models::app::app::App;
-use crate::models::time::time::Environment;
+use crate::models::app::application::App;
+use crate::models::time::env::Environment;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 

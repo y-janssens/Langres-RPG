@@ -1,5 +1,5 @@
-pub mod world {
-    use crate::models::objects::objects::Object;
+pub mod maps {
+    use crate::models::objects::assets::Object;
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use round::round;
@@ -51,7 +51,7 @@ pub mod world {
         pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {
             World {
                 id: Self::generate_id(),
-                name: String::from(name),
+                name,
                 size,
                 order,
                 complete: false,
@@ -62,8 +62,7 @@ pub mod world {
         }
 
         pub fn regenerate(size: u32) -> Vec<Item> {
-            let content = Self::generate(size);
-            content
+            Self::generate(size)
         }
 
         fn generate(size: u32) -> Vec<Item> {
@@ -72,7 +71,7 @@ pub mod world {
 
             let mut content = Vec::new();
             for i in 0..grid {
-                let x = (i % size) as u32;
+                let x = i % size;
                 let y = round((i / size) as f64, 1) as u32;
                 let value = Self::generate_borders(x, y, size);
 

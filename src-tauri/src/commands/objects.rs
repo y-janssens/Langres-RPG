@@ -1,6 +1,6 @@
 use crate::functions;
-use crate::models::objects::objects::Function;
-use crate::models::objects::objects::Object;
+use crate::models::objects::assets::Function;
+use crate::models::objects::assets::Object;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 

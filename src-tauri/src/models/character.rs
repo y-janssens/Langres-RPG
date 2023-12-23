@@ -1,6 +1,6 @@
-pub mod character {
+pub mod characters {
 
-    use crate::models::inventory::inventory::Inventory;
+    use crate::models::inventory::inventories::Inventory;
     use diesel::{
         deserialize::{self, FromSql},
         prelude::Queryable,
@@ -44,7 +44,7 @@ pub mod character {
     impl Character {
         pub fn new(name: String) -> Character {
             Character {
-                name: String::from(name),
+                name,
                 _end: 8,
                 _for: 8,
                 _hab: 8,
@@ -71,7 +71,7 @@ pub mod character {
         }
 
         fn level_up(&mut self, xp: u32) -> &mut Character {
-            let max_xp: u32 = Self::get_max_xp(&self);
+            let max_xp: u32 = Self::get_max_xp(self);
             self.max_xp = max_xp;
             self.lvl += 1;
             if xp >= max_xp {
