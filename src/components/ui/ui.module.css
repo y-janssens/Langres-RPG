@@ -363,3 +363,29 @@
     background-color: rgba(128, 128, 128, 0.25);
     font-size: 20px;
 }
+
+/* Opening Title */
+
+.opening-title-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    /* width: 100%; */
+    height: auto;
+    z-index: 100;
+    padding: 25px;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+    transform: translateX(-50%);
+    transition: 50ms all;
+    white-space: nowrap;
+}
+
+.opening-title-separator {
+    width: 33%;
+    color: white;
+    margin: 2px 0;
+}
