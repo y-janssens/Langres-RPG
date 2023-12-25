@@ -8,6 +8,7 @@ import { MapLayout } from './map/MapLayout';
 import { InGameMenu } from '../Menu/InGameMenu';
 import PauseScreen from '../ui/PauseScreen';
 import Scene from './Scene/Scene';
+import { OpeningTitle } from '../ui/OpeningTitle';
 
 export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();
@@ -31,7 +32,6 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             launch: context?.gameId || context?.mapId,
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, context });
-                console.log(game);
                 const currentAct = game.current_act;
                 const currentWorld = game.current_world;
                 const openingTitle = game.title;
@@ -95,6 +95,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             {context?.gameId && context.controls.toggles.menu && <InGameMenu id={context?.gameId} form={form} />}
             <PauseScreen ready={contextReady} context={context} />
             <LoadingScreen form={form} setForm={setForm} context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
+                <OpeningTitle title={form.openingTitle} environment={form.environment} />
                 <Hud context={context} game={form} display={keyToggles} position={position} />
                 <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
                     <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
