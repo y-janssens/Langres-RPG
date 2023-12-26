@@ -53,13 +53,13 @@ export const Controler = () => {
     const handleControls = useCallback(
         (event) => {
             if (!pauseGame) {
-                context?.controls.setPosition(event, context.world);
-                setContext({ direction: context?.controls.getKey(event), previousDirection: context.direction });
+                context.controls.setDirections(event, true);
             }
             if (pauseGame && event.key === 'Escape' && Boolean(context?.pauseMenu)) {
                 return setContext({ pauseMenu: false });
             } else {
                 context?.controls.setToggles(event);
+                setContext({ controls: context.controls });
             }
         },
         [context, pauseGame]
@@ -74,7 +74,7 @@ export const Controler = () => {
         if (!context.controls.toggles.input && !pauseGame) {
             gameRef.current?.focus();
         }
-    }, [context, pauseGame]);
+    }, [context, pauseGame, gameRef]);
 
     if (!('applicationData' in context)) {
         return null;
@@ -90,7 +90,15 @@ export const Controler = () => {
         >
             {!context?.gameId && !context.builder && <MainMenu />}
             {displayGame && (
-                <div className={css['game-main-block']} onKeyDown={handleControls} tabIndex={0} ref={gameRef}>
+                <div
+                    className={css['game-main-block']}
+                    onKeyDown={handleControls}
+                    onKeyUp={(event) => {
+                        context.controls.setDirections(event, false);
+                    }}
+                    tabIndex={0}
+                    ref={gameRef}
+                >
                     <Game pause={pauseGame} keyToggles={context?.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}

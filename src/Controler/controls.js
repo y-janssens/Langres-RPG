@@ -10,22 +10,17 @@ export default class KeyControls {
             { name: 'map', key: 'm', value: false },
             { name: 'pause', key: 'p', value: false }
         ];
-
-        this.controlsKeys = [
-            { name: 'up', key: 'z' },
-            { name: 'up_arrow', key: 'ArrowUp' },
-            { name: 'down', key: 's' },
-            { name: 'down_arrow', key: 'ArrowDown' },
-            { name: 'left', key: 'q' },
-            { name: 'left_arrow', key: 'ArrowLeft' },
-            { name: 'right', key: 'd' },
-            { name: 'right_arrow', key: 'ArrowRight' }
-        ];
         this.assets = new MapAssets();
         this.toggles = {};
-        this.positions = [-15, 0.75, -15];
+        this.positions = [];
         this.pause = false;
         this.generateControls();
+        this.directions = { up: false, down: false, left: false, right: false };
+        this.camera = { x: 0, z: 0 };
+        this.SPEED = 5;
+        this.speed = 5;
+        this.delta = 1.5;
+        this.threshold = 0.5;
     }
 
     generateControls() {
@@ -61,65 +56,57 @@ export default class KeyControls {
     }
 
     getKey(event) {
-        let direction = 'down';
-        const key = this.controlsKeys.find((k) => k.key === event.key);
-        if (key) {
-            switch (event.key) {
-                case 'z':
-                case 'ArrowUp':
-                    direction = 'up';
-                    break;
-                case 's':
-                case 'ArrowDown':
-                    direction = 'down';
-                    break;
-                case 'q':
-                case 'ArrowLeft':
-                    direction = 'left';
-                    break;
-                case 'd':
-                case 'ArrowRight':
-                    direction = 'right';
-                    break;
-            }
-            return direction;
+        switch (event.key) {
+            case 'z':
+            case 'ArrowUp':
+                return 'up';
+            case 's':
+            case 'ArrowDown':
+                return 'down';
+            case 'q':
+            case 'ArrowLeft':
+                return 'left';
+            case 'd':
+            case 'ArrowRight':
+                return 'right';
+            default:
+                return;
         }
     }
 
-    setPosition(event, world) {
-        const key = this.getKey(event);
-        let [x, y, z] = this.positions;
-        let position = { x, y, z };
-        const nextItems = {
-            xplus: world.content.find((tile) => tile.x === -x - 1 && tile.y === -z),
-            xminus: world.content.find((tile) => tile.x === -x + 1 && tile.y === -z),
-            zplus: world.content.find((tile) => tile.x === -x && tile.y === -z - 1),
-            zminus: world.content.find((tile) => tile.x === -x && tile.y === -z + 1)
-        };
-
-        if (key) {
-            switch (key) {
-                case 'up':
-                    nextItems.zplus.walkable ? (position.z += 1) : position.z;
-                    break;
-                case 'down':
-                    nextItems.zminus.walkable ? (position.z -= 1) : position.z;
-                    break;
-                case 'left':
-                    nextItems.xplus.walkable ? (position.x += 1) : position.x;
-                    break;
-                case 'right':
-                    nextItems.xminus.walkable ? (position.x -= 1) : position.x;
-            }
-        }
-
-        this.positions = [position.x, position.y, position.z];
+    setPosition(position) {
+        const positions = [position.x, 0.75, position.z];
+        this.positions = positions;
     }
 
     handle_pause(event) {
         if (event.key === 'Escape') {
-            this.pause = !this.pause;
-            return this.pause;
+            const pause = !this.pause;
+            this.pause = pause;
         }
+    }
+
+    setDirections(event, value) {
+        const directions = this.directions;
+        const key = this.getKey(event);
+        if (key) {
+            directions[key] = value;
+            this.directions = directions;
+        }
+        const speed = event.ctrlKey ? 2 : this.SPEED;
+        this.speed = speed;
+    }
+
+    setCamera(camera) {
+        const positions = { x: camera.x, z: camera.z };
+        this.camera = positions;
+    }
+
+    getDelta(position) {
+        return Math.hypot(position.x - this.camera.x, position.z - this.camera.z) > this.delta;
+    }
+
+    get moving() {
+        return Object.values(this.directions).some((key) => Boolean(key));
     }
 }
