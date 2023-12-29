@@ -64,7 +64,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     return (
         <>
             <Character position={position} characterRef={characterRef} />
-            <Zombies target={characterRef} map={form.world} nodes={form.world.grid} />
+            {/* <Zombies target={characterRef} map={form.world} nodes={form.world.grid} /> */}
             <Tiles data={form.world.content} />
         </>
     );
