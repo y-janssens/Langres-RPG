@@ -32,17 +32,17 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             launch: context?.gameId || context?.mapId,
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, context });
-                const currentAct = game.current_act;
                 const currentWorld = game.current_world;
-                const openingTitle = game.title;
                 if (!game.has_position || context.mapId) {
                     game.last_known_position = { x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
                 }
 
-                context.controls.positions = [-game.last_known_position.x, 0.75, -game.last_known_position.y];
+                context.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
+                context.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
+
                 setPosition(context.controls.positions);
                 setContext({ controls: context.controls, world: currentWorld });
-                setFormObject({ ...form, ...game, world: currentWorld, act: currentAct, openingTitle });
+                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
                 game.save();
             }
         },
@@ -90,12 +90,16 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(context, key)));
     }, [context]);
 
+    const isLoading = useMemo(() => {
+        return !form.id || loading || !contextReady || loadingEnvironment;
+    }, [form, loading, !contextReady, loadingEnvironment]);
+
     return (
         <>
             {context?.gameId && context.controls.toggles.menu && <InGameMenu id={context?.gameId} form={form} />}
             <PauseScreen ready={contextReady} context={context} />
-            <LoadingScreen form={form} setForm={setForm} context={context} loading={!form.id || loading || !contextReady || loadingEnvironment}>
-                <OpeningTitle title={form.openingTitle} environment={form.environment} />
+            <LoadingScreen form={form} setForm={setForm} context={context} loading={isLoading}>
+                {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}
                 <Hud context={context} game={form} display={keyToggles} position={position} />
                 <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
                     <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />

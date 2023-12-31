@@ -8,16 +8,14 @@ export default function Zombie({ index, target, map, nodes, zombieRef }) {
     const [ia, setIa] = useState(null);
     const [position] = useState([5, 0.75, 7]);
 
-    const targetPosition = { ...target.current?.position };
-
     useEffect(() => {
         if (!ia && zombieRef.current) {
-            setIa(new IA({ type: 'zombie', target, self: zombieRef, map, nodes }));
+            setIa(new IA({ type: 'zombie', target, self: zombieRef, ...map, nodes: [...nodes] }));
         }
         if (ia) {
             const interval = setInterval(
                 () => {
-                    ia.update(targetPosition);
+                    ia.update({ ...target.current?.position });
                     ia.patrol();
                     gsap.to(zombieRef.current.position, { x: -ia.position.x, z: -ia.position.y, duration: 0.5 });
                     switch (ia.direction) {
@@ -43,7 +41,7 @@ export default function Zombie({ index, target, map, nodes, zombieRef }) {
                 clearInterval(interval);
             };
         }
-    }, [ia, zombieRef, targetPosition]);
+    }, [ia, zombieRef, target.current?.position]);
 
     return (
         <mesh ref={zombieRef} scale={[0.25, 0.25, 0.25]} rotation={[Math.PI / 2, 0, Math.PI]} position={position} castShadow receiveShadow>
