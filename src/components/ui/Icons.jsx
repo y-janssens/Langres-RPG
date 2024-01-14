@@ -1,6 +1,6 @@
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from 'react-icons/ri';
-import { BsTrash, BsWater } from 'react-icons/bs';
+import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
 import { GrView, GrPowerReset } from 'react-icons/gr';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { BiSolidTree } from 'react-icons/bi';
@@ -30,3 +30,4 @@ export { FaFlagCheckered as Start };
 export { HiZoomIn as Zoomin };
 export { HiZoomOut as Zoomout };
 export { GiDungeonGate as Gate };
+export { BsHexagonFill as Hex };

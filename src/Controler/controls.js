@@ -1,5 +1,5 @@
 import MapAssets from '../models/map';
-
+const SPEED = 5;
 export default class KeyControls {
     constructor() {
         this.allowedKeys = [
@@ -17,10 +17,8 @@ export default class KeyControls {
         this.generateControls();
         this.directions = { up: false, down: false, left: false, right: false };
         this.camera = { x: 0, z: 0 };
-        this.SPEED = 5;
         this.speed = 5;
         this.delta = 1.5;
-        this.threshold = 0.5;
     }
 
     generateControls() {
@@ -87,13 +85,11 @@ export default class KeyControls {
     }
 
     setDirections(event, value) {
-        const directions = this.directions;
         const key = this.getKey(event);
         if (key) {
-            directions[key] = value;
-            this.directions = directions;
+            this.directions[key] = value;
         }
-        const speed = event.ctrlKey ? 2 : this.SPEED;
+        const speed = event.ctrlKey ? 2 : SPEED;
         this.speed = speed;
     }
 
@@ -107,6 +103,16 @@ export default class KeyControls {
     }
 
     get moving() {
-        return Object.values(this.directions).some((key) => Boolean(key));
+        return Object.values(this.directions).some((key) => key === true);
+    }
+
+    rayCasterResolver({ positionCaster, collisionCaster, scene }) {
+        const current = positionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
+        const next = collisionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
+        return {
+            current: current,
+            next: next,
+            canMove: Boolean(current?.walkable && next)
+        };
     }
 }

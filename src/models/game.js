@@ -12,6 +12,7 @@ export default class GameModel {
         this.character = new Character({ ...character, name: this.player });
         this.last_known_position = last_known_position;
         this.context = context;
+        this.init();
     }
 
     async save() {
@@ -20,6 +21,10 @@ export default class GameModel {
 
     async delete() {
         await invoke('delete', { id: this.id });
+    }
+
+    init() {
+        console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
     }
 
     get title() {

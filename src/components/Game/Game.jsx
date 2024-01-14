@@ -39,7 +39,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
 
                 context.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 context.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
-
+                context.controls.items = currentWorld.content;
                 setPosition(context.controls.positions);
                 setContext({ controls: context.controls, world: currentWorld });
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });

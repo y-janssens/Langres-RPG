@@ -1,8 +1,8 @@
 pub mod maps {
     use crate::models::objects::assets::Object;
     use diesel::prelude::Queryable;
+    use hexagonal_pathfinding_astar::*;
     use rand::{seq::SliceRandom, Rng};
-    use round::round;
     use serde::{Deserialize, Serialize};
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -68,12 +68,15 @@ pub mod maps {
         fn generate(size: u32) -> Vec<Item> {
             println!("Generating world data...");
             let grid: u32 = size * size;
-
             let mut content = Vec::new();
+
             for i in 0..grid {
-                let x = i % size;
-                let y = round((i / size) as f64, 1) as u32;
-                let value = Self::generate_borders(x, y, size);
+                let col = i % size;
+                let row = i / size;
+                let x = if row % 2 == 0 { (col * 2) + 1 } else { col * 2 };
+                let y = row;
+
+                let value = Self::generate_borders(col, row, size);
 
                 let item = Item {
                     id: i,
@@ -125,6 +128,10 @@ pub mod maps {
         fn generate_id() -> i32 {
             let mut rng = rand::thread_rng();
             rng.gen_range(1..=i32::MAX)
+        }
+
+        fn find_path(x: f32, y: f32) {
+            let orientation = HexOrientation::PointyTopOddRight;
         }
     }
 }

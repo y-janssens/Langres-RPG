@@ -5,13 +5,17 @@ import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie';
 
+import { Raycaster, Vector3 } from 'three';
+
+const positionCaster = new Raycaster();
+const collisionCaster = new Raycaster();
+
 export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [context, setContext] = useGameContext();
     const [isInitialized, setIsInitialized] = useState(false);
+    const [focus] = useState(() => new Vector3(0, -1, 1));
 
-    const directions = useMemo(() => {
-        return context.controls.directions;
-    }, [context]);
+    const directions = useMemo(() => context.controls.directions, [context]);
 
     const computePositions = useCallback(() => {
         const character = characterRef.current.position;
@@ -25,53 +29,56 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         }
     }, [cameraRef, lightRef, context, characterRef]);
 
-    useFrame(() => {
+    useFrame(({ scene }) => {
         if (isInitialized) {
             const character = characterRef.current.position;
 
             if (context.controls.moving) {
-                const adjustedX = Math.abs(character.x) + (directions.right ? context.controls.threshold : directions.left ? -context.controls.threshold : 0);
-                const adjustedZ = Math.abs(character.z) + (directions.down ? context.controls.threshold : directions.up ? -context.controls.threshold : 0);
-                const actualTile = context.world.content.find((tile) => tile.x === Math.ceil(adjustedX - 0.5) && tile.y === Math.ceil(adjustedZ - 0.5));
+                positionCaster.set(character, new Vector3(0, -1, 0).normalize());
+                collisionCaster.set(character, focus);
 
-                const nextItems = {
-                    xplus: context.world.content.find((tile) => tile.x === actualTile.x - 1 && tile.y === actualTile.y),
-                    xminus: context.world.content.find((tile) => tile.x === actualTile.x + 1 && tile.y === actualTile.y),
-                    zplus: context.world.content.find((tile) => tile.x === actualTile.x && tile.y === actualTile.y - 1),
-                    zminus: context.world.content.find((tile) => tile.x === actualTile.x && tile.y === actualTile.y + 1)
-                };
+                const tiles = context.controls.rayCasterResolver({
+                    positionCaster,
+                    collisionCaster,
+                    scene
+                });
 
                 switch (true) {
                     case directions.up:
-                        if (actualTile?.walkable || (nextItems.zplus?.walkable && Math.abs(character.z) < actualTile.y)) {
+                        focus.set(0, -1, 1);
+                        if (tiles.canMove) {
                             character.z += 0.015 * context.controls.speed;
                         }
                         characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
                         break;
 
                     case directions.down:
-                        if (actualTile?.walkable || (nextItems.zminus?.walkable && Math.abs(character.z) >= actualTile.y)) {
+                        focus.set(0, -1, -1);
+                        if (tiles.canMove) {
                             character.z -= 0.015 * context.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
                         break;
 
                     case directions.left:
-                        if (actualTile?.walkable || (nextItems.xplus?.walkable && Math.abs(character.x) < actualTile.x)) {
+                        focus.set(1, -1, 0);
+                        if (tiles.canMove) {
                             character.x += 0.015 * context.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
                         break;
 
                     case directions.right:
-                        if (actualTile?.walkable || (nextItems.xminus?.walkable && Math.abs(character.x) >= actualTile.x)) {
+                        focus.set(-1, -1, 0);
+                        if (tiles.canMove) {
                             character.x -= 0.015 * context.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
                         break;
                 }
-                if (Boolean(actualTile?.threshold) && Object.keys(actualTile?.threshold).length) {
-                    handleGateWay(actualTile.threshold);
+
+                if (Boolean(tiles.current?.threshold) && Object.keys(tiles.current?.threshold).length) {
+                    handleGateWay(tiles.current?.threshold);
                 }
             }
             computePositions();
