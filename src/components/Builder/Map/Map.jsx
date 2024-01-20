@@ -7,7 +7,7 @@ import Icon from '../../ui/Icon';
 import { Tiles } from './Tiles';
 import { Loading } from '../../ui/Loading';
 import css from '../builder.module.css';
-
+import { Hex } from '../../ui/Icons';
 const Map = ({ loading, type, display, form, setForm, history, index }) => {
     const world = useMemo(() => {
         if (!form.selectedMap || !history.length) {
@@ -152,9 +152,13 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
             onClick={() => handleSelect(item)}
             aria-labelledby="Selectable"
             style={{
-                filter: colors
+                filter: colors,
+                marginLeft: item.y % 2 !== 0 && `${30 * (form.zoom / 100) + 1}px`,
+                height: `${70 * (form.zoom / 100)}px`,
+                width: `${((70 * Math.sqrt(3)) / 2) * (form.zoom / 100)}px`
             }}
         >
+            <Hex className={css['builder-map-tile-hex']} />
             {form.showIcons && <Icon name={icon} />}
             {form.showValues && !form.showIcons && <span>{item.value}</span>}
             {form.showIds && <span className={css['builder-map-tile-id']}>{item.start ? 'Start' : item.id}</span>}

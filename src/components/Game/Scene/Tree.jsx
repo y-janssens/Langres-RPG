@@ -1,11 +1,8 @@
-import { useRef } from 'react';
 import { DoubleSide } from 'three';
 
 export function Tree({ position, colorMap }) {
-    const treeRef = useRef();
-
     return (
-        <mesh position={position} rotation={[0, 0, 0]} scale={[3, 3, 1]} ref={treeRef}>
+        <mesh position={position} rotation={[0, 0, 0]} scale={[3.5, 3.5, 1]}>
             <planeGeometry args={[1, 1, 1]} />
             <meshStandardMaterial side={DoubleSide} map={colorMap} transparent />
         </mesh>

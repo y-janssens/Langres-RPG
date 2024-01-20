@@ -1478,6 +1478,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
+name = "hexagonal_pathfinding_astar"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b54cbb9368fbe123909c1c5e138712cd88e5ae88e60a622745dfe003ddc6b55a"
+
+[[package]]
 name = "html5ever"
 version = "0.25.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3709,6 +3715,7 @@ dependencies = [
  "chrono",
  "diesel",
  "diesel_migrations",
+ "hexagonal_pathfinding_astar",
  "json-fmt",
  "r2d2",
  "rand 0.8.5",
