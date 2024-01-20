@@ -11,23 +11,23 @@ import css from './menu.module.css';
 export const InGameMenu = ({ id, form }) => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
-    const [context, setContext, removeFromContext] = useGameContext();
+    const [engine, setEngine, removeFromEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
     const activeRef = useRef();
 
     const displayInGameMenu = useMemo(() => {
-        return id && context.controls.toggles.menu;
-    }, [id, context, context.controls.toggles]);
+        return id && engine.controls.toggles.menu;
+    }, [id, engine, engine.controls.toggles]);
 
     const handleSaveGame = useCallback(() => {
         let game = new GameModel(form);
-        if (!context.mapId || context.mapId?.is_final) {
-            game.last_known_position = { x: Math.abs(context.controls.positions[0]), y: Math.abs(context.controls.positions[2]) };
+        if (!engine.mapid || engine.mapid?.is_final) {
+            game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]) };
         }
         game.save();
-        context.controls.generateControls();
-        setContext({ controls: context.controls });
-    }, [form, context]);
+        engine.controls.generateControls();
+        setEngine({ controls: engine.controls });
+    }, [form, engine]);
 
     const items = useMemo(() => {
         return [
@@ -37,21 +37,21 @@ export const InGameMenu = ({ id, form }) => {
                 name: t('menu.items.settings'),
                 onClick: () => {
                     setOpenModal('settings');
-                    setContext({ pauseMenu: true });
+                    setEngine({ pauseMenu: true });
                 }
             },
             {
                 id: 2,
                 name: t('menu.items.exit-game'),
                 onClick: () => {
-                    // Remove game related content from context
-                    removeFromContext(['gameId', 'world']);
+                    // Remove game related content from engine
+                    removeFromEngine(['gameId', 'world']);
                     // Reset keyboard controls default values
-                    context.controls.generateControls();
+                    engine.controls.generateControls();
                 }
             }
         ];
-    }, [handleSaveGame, context, removeFromContext]);
+    }, [handleSaveGame, engine, removeFromEngine]);
 
     const handleMenu = useCallback(
         (event) => {
@@ -93,9 +93,9 @@ export const InGameMenu = ({ id, form }) => {
                     state={openModal}
                     onClose={() => {
                         setOpenModal(null);
-                        setContext({ pauseMenu: false });
+                        setEngine({ pauseMenu: false });
                     }}
-                    context={context}
+                    engine={engine}
                 />
             </div>
         </div>

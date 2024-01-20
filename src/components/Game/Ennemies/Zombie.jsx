@@ -4,7 +4,7 @@ import { useGameContext } from '../../../hooks';
 import IA from '../../../models/ia/iaModel';
 
 export default function Zombie({ index, target, map, nodes, zombieRef }) {
-    const [, setContext] = useGameContext();
+    const [, setEngine] = useGameContext();
     const [ia, setIa] = useState(null);
     const [position] = useState([5, 0.75, 7]);
 
@@ -32,7 +32,7 @@ export default function Zombie({ index, target, map, nodes, zombieRef }) {
                             zombieRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
                             break;
                     }
-                    setContext({ [`zombie_${index}`]: { x: ia.position.x, z: ia.position.y } });
+                    setEngine({ [`zombie_${index}`]: { x: ia.position.x, z: ia.position.y } });
                 },
                 ia.acknowledged ? 100 : 500
             );

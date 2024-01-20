@@ -3,4 +3,5 @@ pub mod games;
 pub mod maps;
 pub mod objects;
 pub mod story;
+pub mod utils;
 pub mod world;

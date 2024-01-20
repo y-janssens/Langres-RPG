@@ -12,7 +12,7 @@ import { OpeningTitle } from '../ui/OpeningTitle';
 
 export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();
-    const [context, setContext, removeFromContext] = useGameContext();
+    const [engine, setEngine, removeFromEngine] = useGameContext();
 
     const cameraRef = useRef();
     const characterRef = useRef();
@@ -28,25 +28,25 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const [, loading] = useGet(
         {
             func: 'load_game',
-            id: parseInt(context?.gameId),
-            launch: context?.gameId || context?.mapId,
+            id: parseInt(engine.gameId),
+            launch: engine.gameId || engine.mapId,
             onSuccess: (response) => {
-                let game = new GameModel({ ...response, context });
+                let game = new GameModel({ ...response, engine });
                 const currentWorld = game.current_world;
-                if (!game.has_position || context.mapId) {
+                if (!game.has_position || engine.mapid) {
                     game.last_known_position = { x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
                 }
 
-                context.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
-                context.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
-                context.controls.items = currentWorld.content;
-                setPosition(context.controls.positions);
-                setContext({ controls: context.controls, world: currentWorld });
+                engine.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
+                engine.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
+                engine.controls.items = currentWorld.content;
+                setPosition(engine.controls.positions);
+                setEngine({ controls: engine.controls });
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
                 // game.save();
             }
         },
-        [context?.gameId, context?.mapId]
+        [engine.gameId, engine?.mapId]
     );
 
     const handleGateWay = useCallback(
@@ -58,9 +58,9 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             }
             game.save().then(() => {
                 if (form.world.primary) {
-                    setContext({ mapId: { id: gateway.map, is_final: gateway.is_final } });
+                    setEngine({ mapId: { id: gateway.map, is_final: gateway.is_final } });
                 } else {
-                    removeFromContext('mapId');
+                    removeFromEngine('mapId');
                 }
                 setFormObject({ ...form, loadingProgress: 0, loadingReady: false });
             });
@@ -75,7 +75,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         onSuccess: (response) => {
             const environment = new Environment({
                 ...response,
-                locale: context.applicationData.language,
+                locale: engine.applicationData.language,
                 season: t(`environment.seasons.${response.season}`)
             });
             setForm('environment', environment);
@@ -83,12 +83,12 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
     });
 
     const contextReady = useMemo(() => {
-        if (!context) {
+        if (!engine) {
             return false;
         }
         const expectedKeys = ['controls', 'gameId', 'applicationData'];
-        return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(context, key)));
-    }, [context]);
+        return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(engine, key)));
+    }, [engine]);
 
     const isLoading = useMemo(() => {
         return !form.id || loading || !contextReady || loadingEnvironment;
@@ -96,12 +96,12 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
 
     return (
         <>
-            {context?.gameId && context.controls.toggles.menu && <InGameMenu id={context?.gameId} form={form} />}
-            <PauseScreen ready={contextReady} context={context} />
-            <LoadingScreen form={form} setForm={setForm} context={context} loading={isLoading}>
+            {engine.gameId && engine.controls.toggles.menu && <InGameMenu id={engine.gameId} form={form} />}
+            <PauseScreen ready={contextReady} engine={engine} />
+            <LoadingScreen form={form} setForm={setForm} engine={engine} loading={isLoading}>
                 {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}
-                <Hud context={context} game={form} display={keyToggles} position={position} />
-                <Scene context={context} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
+                <Hud engine={engine} game={form} display={keyToggles} position={position} />
+                <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
                     <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
                 </Scene>
             </LoadingScreen>

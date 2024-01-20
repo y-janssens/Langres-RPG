@@ -6,4 +6,5 @@ pub mod maps;
 pub mod objects;
 pub mod story;
 pub mod time;
+pub mod utils;
 pub mod world;

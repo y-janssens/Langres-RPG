@@ -69,6 +69,8 @@ fn main() {
             commands::objects::load_functions,
             // Map generator commands
             commands::maps::generate_maps_batch
+            // Utils
+            commands::utils::throw_dice
         ])
         .manage(pool)
         .run(tauri::generate_context!())

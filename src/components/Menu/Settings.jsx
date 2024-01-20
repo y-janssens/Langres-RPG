@@ -5,9 +5,9 @@ import css from './menu.module.css';
 import { VolumeBar } from '../ui/Gauge';
 import Icon from '../ui/Icon';
 
-export default function Settings({ state, onClose = () => {}, context }) {
+export default function Settings({ state, onClose = () => {}, engine }) {
     const { t } = useTranslation();
-    const { languages, language, sound, volume, music } = context.applicationData;
+    const { languages, language, sound, volume, music } = engine.applicationData;
 
     const [settings, setSettings] = useDynamicForm({
         language,
@@ -17,10 +17,10 @@ export default function Settings({ state, onClose = () => {}, context }) {
     });
 
     const handleSave = useCallback(() => {
-        const appDatas = context.applicationData;
+        const appDatas = engine.applicationData;
         appDatas.update(settings);
         onClose();
-    }, [settings, context, onClose]);
+    }, [settings, engine, onClose]);
 
     if (state !== 'settings') {
         return null;
@@ -28,7 +28,7 @@ export default function Settings({ state, onClose = () => {}, context }) {
     return (
         <Modal height="500px" name={t('actions.save')} onClick={handleSave}>
             <div className={css['settings-block']}>
-                {!context.gameId && (
+                {!engine.gameId && (
                     <SettingsItem name={t('menu.settings.language')}>
                         <select className={css['settings-ln-selector']} value={settings.language} onChange={({ target: { value } }) => setSettings('language', value)}>
                             {languages.map((ln, index) => {

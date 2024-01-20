@@ -11,33 +11,33 @@ const positionCaster = new Raycaster();
 const collisionCaster = new Raycaster();
 
 export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
-    const [context, setContext] = useGameContext();
+    const [engine, setEngine] = useGameContext();
     const [isInitialized, setIsInitialized] = useState(false);
     const [focus] = useState(() => new Vector3(0, -1, 1));
 
-    const directions = useMemo(() => context.controls.directions, [context]);
+    const directions = useMemo(() => engine.controls.directions, [engine]);
 
     const computePositions = useCallback(() => {
         const character = characterRef.current.position;
         cameraRef.current.object.position.set(Math.max(-44, Math.min(-4.5, character.x)), 15, Math.max(-62, Math.min(-25, character.z - 18)));
         lightRef.current.position.set(character.x, 10, character.z);
-        context.controls.setPosition({ x: character.x, z: character.z });
+        engine.controls.setPosition({ x: character.x, z: character.z });
 
-        if (context.controls.getDelta(character)) {
-            context.controls.setCamera(character);
-            setContext({ controls: context.controls });
+        if (engine.controls.getDelta(character)) {
+            engine.controls.setCamera(character);
+            setEngine({ controls: engine.controls });
         }
-    }, [cameraRef, lightRef, context, characterRef]);
+    }, [cameraRef, lightRef, engine, characterRef]);
 
     useFrame(({ scene }) => {
         if (isInitialized) {
             const character = characterRef.current.position;
 
-            if (context.controls.moving) {
+            if (engine.controls.moving) {
                 positionCaster.set(character, new Vector3(0, -1, 0).normalize());
                 collisionCaster.set(character, focus);
 
-                const tiles = context.controls.rayCasterResolver({
+                const tiles = engine.controls.rayCasterResolver({
                     positionCaster,
                     collisionCaster,
                     scene
@@ -47,7 +47,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     case directions.up:
                         focus.set(0, -1, 1);
                         if (tiles.canMove) {
-                            character.z += 0.015 * context.controls.speed;
+                            character.z += 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
                         break;
@@ -55,7 +55,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     case directions.down:
                         focus.set(0, -1, -1);
                         if (tiles.canMove) {
-                            character.z -= 0.015 * context.controls.speed;
+                            character.z -= 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
                         break;
@@ -63,7 +63,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     case directions.left:
                         focus.set(1, -1, 0);
                         if (tiles.canMove) {
-                            character.x += 0.015 * context.controls.speed;
+                            character.x += 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
                         break;
@@ -71,7 +71,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     case directions.right:
                         focus.set(-1, -1, 0);
                         if (tiles.canMove) {
-                            character.x -= 0.015 * context.controls.speed;
+                            character.x -= 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
                         break;
