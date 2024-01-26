@@ -51,7 +51,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             let payload = {};
 
             switch (command) {
-                case 'populate_trees':
+                case 'generate_forest':
                     payload['data'] = form.selectedMap.content;
                     break;
                 case 'regenerate':
@@ -132,6 +132,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 })}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
+                <MenuItem icon={'map'} disabled={!form.selectedMap} label={'Generate maps'} onClick={() => setForm('modalGenerator', true)} />
                 {form.functions.map((it) => {
                     return <MenuItem key={it.id} icon={it.icon} disabled={!form.selectedMap} label={it.label} onClick={() => handleFunction(it.command)} />;
                 })}

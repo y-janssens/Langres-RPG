@@ -13,7 +13,13 @@ pub fn regenerate(size: u32) -> Vec<models::world::maps::Item> {
 }
 
 #[tauri::command]
-pub fn populate_trees(data: Vec<models::world::maps::Item>) -> Vec<models::world::maps::Item> {
-    let _generate = functions::world::populate_trees(data);
+pub fn generate_forest(data: Vec<models::world::maps::Item>) -> Vec<models::world::maps::Item> {
+    let _generate = functions::world::generate_forest(data);
+    _generate.unwrap()
+}
+
+#[tauri::command]
+pub fn generate_basic_map(data: Vec<models::world::maps::Item>) -> Vec<models::world::maps::Item> {
+    let _generate = functions::world::generate_basic_map(data);
     _generate.unwrap()
 }

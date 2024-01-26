@@ -59,6 +59,10 @@
       "editor": {
         "title": "Éditez le contenu de vos cartes"
       },
+      "generator": {
+        "title": "Générez et sélectionnez des cartes aléatoires",
+        "subtitle": "Générez un lot de cartes"
+      },
       "steps": {
         "acts": {
           "title": "Scénarios",

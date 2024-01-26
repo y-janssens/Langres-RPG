@@ -43,7 +43,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 setPosition(context.controls.positions);
                 setContext({ controls: context.controls, world: currentWorld });
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
-                game.save();
+                // game.save();
             }
         },
         [context?.gameId, context?.mapId]

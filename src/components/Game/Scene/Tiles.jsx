@@ -1,11 +1,10 @@
-import { useState, useRef, useEffect, memo, useCallback, useMemo } from 'react';
+import { useState, useRef, memo, useCallback, useMemo } from 'react';
 import { Vector2, BufferAttribute, BufferGeometry, DoubleSide } from 'three';
 import { useThree } from '@react-three/fiber';
 
 import { useGameContext } from '../../../hooks';
 import { Text } from '@react-three/drei';
 import { Tree } from './Tree';
-import Water from './Water';
 
 export const Tiles = memo(({ data, characterRef }) => {
     const [context] = useGameContext();
@@ -40,37 +39,20 @@ export const Tiles = memo(({ data, characterRef }) => {
                             colorMap={treeColorMap.find((it) => it.id === item.id).map}
                         />
                     )}
-                    {item.value !== 'W' && (
-                        <Tile
-                            context={context}
-                            data={data}
-                            item={item}
-                            position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                            colorMap={grassColorMap}
-                        />
-                    )}
-                    {item.value === 'W' && <Water position={[item.y % 2 === 0 ? -item.x : -item.x + 0.5, -0.5, -item.y]} colorMap={waterColorMap} />}
+                    <Tile
+                        context={context}
+                        item={item}
+                        position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
+                        colorMap={item.value === 'W' ? waterColorMap : grassColorMap}
+                    />
                 </group>
             );
         }
     });
 });
 
-const Tile = memo(({ context, data, item, position, colorMap }) => {
+const Tile = memo(({ context, item, position, colorMap }) => {
     const meshRef = useRef();
-    const [nearWater, setNearWater] = useState(false);
-
-    // useEffect(() => {
-    //     const isNearWater = data.filter((it) => [item.id + 1, item.id - 1, item.id + 50, item.id - 50].includes(it.id)).some((it) => it.value === 'W');
-    //     setNearWater(isNearWater);
-    // }, []);
-
-    // return (
-    //     <mesh castShadow receiveShadow ref={meshRef} position={nearWater ? [position[0], -0.5, position[2]] : position} rotation={[-(Math.PI / 2), 0, 0]} scale={[0.99, 0.99, 1]}>
-    //         {nearWater ? <boxGeometry args={[1, 1, 1]} /> : <planeGeometry args={[1, 1, 1]} />}
-    //         <meshStandardMaterial color={'white'} map={colorMap} emissive={0xffffff} emissiveIntensity={0.01} />
-    //     </mesh>
-    // );
 
     return (
         <>
@@ -80,8 +62,9 @@ const Tile = memo(({ context, data, item, position, colorMap }) => {
                 </Text>
             )}
             <Hexagon
-                position={nearWater ? [position[0], -0.5, position[2]] : position}
-                rotation={nearWater ? [-(Math.PI / 2), 0, 0] : [-(Math.PI / 2), 0, -(Math.PI / 2)]}
+                context={context}
+                position={position}
+                rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
                 scale={[0.77, 0.77, 0.77]}
                 colorMap={colorMap}
                 meshRef={meshRef}
@@ -92,7 +75,7 @@ const Tile = memo(({ context, data, item, position, colorMap }) => {
     );
 });
 
-export const Hexagon = memo(({ radius = 1, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
+export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
     const vertices = useMemo(() => {
         const points = [];
         for (let i = 0; i < 6; i++) {
@@ -128,6 +111,23 @@ export const Hexagon = memo(({ radius = 1, position, rotation, scale, colorMap =
         return geometry;
     }, [vertices, uvs]);
 
+    const color = useMemo(() => {
+        if (context) {
+            return 'white';
+        }
+        switch (item.value) {
+            case 'T':
+                return 'green';
+            case 'S':
+                return 'yellow';
+            case 'W':
+                return 'blue';
+            case '-':
+            default:
+                return 'white';
+        }
+    }, [item, context]);
+
     return (
         <mesh
             castShadow
@@ -142,7 +142,7 @@ export const Hexagon = memo(({ radius = 1, position, rotation, scale, colorMap =
             scale={scale}
             side={DoubleSide}
         >
-            <meshStandardMaterial color={'white'} map={colorMap} />
+            <meshStandardMaterial color={color} map={colorMap} />
         </mesh>
     );
 });

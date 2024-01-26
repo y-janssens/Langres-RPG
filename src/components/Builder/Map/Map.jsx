@@ -6,8 +6,9 @@ import World from '../../../models/world';
 import Icon from '../../ui/Icon';
 import { Tiles } from './Tiles';
 import { Loading } from '../../ui/Loading';
-import css from '../builder.module.css';
 import { Hex } from '../../ui/Icons';
+import css from '../builder.module.css';
+
 const Map = ({ loading, type, display, form, setForm, history, index }) => {
     const world = useMemo(() => {
         if (!form.selectedMap || !history.length) {
@@ -79,7 +80,7 @@ const MapGrid = ({ form, setForm, data, handleSelect }) => {
     const ds = useDragSelect();
 
     const isStartingPoint = useCallback((item, startingPoint) => {
-        return item.x === startingPoint.x && item.y === startingPoint.y;
+        return item.x / 1.5 === startingPoint.x && item.y + 2 === startingPoint.y;
     }, []);
 
     const mapItems = useMemo(() => {
@@ -124,7 +125,7 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
     }, [item, form]);
 
     const icon = useMemo(() => {
-        const name = form.objects.find((it) => it.value === item.value).name;
+        const name = form.objects.find((it) => it.value === item.value)?.name;
         if (name === 'clear') {
             return null;
         }
