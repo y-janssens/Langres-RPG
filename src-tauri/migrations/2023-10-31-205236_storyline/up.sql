@@ -20026,7 +20026,7 @@ VALUES
                     "order": 0,
                     "size": 50,
                     "starting_point": {
-                        "x": 5,
+                        "x": 12,
                         "y": 5
                     },
                     "primary": true
