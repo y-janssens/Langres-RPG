@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from 'react';
-import { invoke } from '@tauri-apps/api/tauri';
+import { invoke } from '@tauri-apps/api';
 import { GameModel } from '../../models';
-import { useGameContext } from '../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useGameContext, useTranslation } from '../../hooks';
 import Modal from '../ui/Modal';
 import css from './menu.module.css';
 

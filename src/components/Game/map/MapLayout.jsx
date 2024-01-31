@@ -100,7 +100,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     );
 });
 
-const Zombies = ({ target, map, nodes }) => {
+const Zombies = ({ target, map, nodes }) => {  // eslint-disable-line
     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
 
     return refs.map((ref, index) => {

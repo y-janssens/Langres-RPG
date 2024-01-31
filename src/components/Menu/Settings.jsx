@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
-import { useDynamicForm } from '../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useDynamicForm, useTranslation } from '../../hooks';
 import Modal from '../ui/Modal';
 import css from './menu.module.css';
 import { VolumeBar } from '../ui/Gauge';

@@ -26,8 +26,8 @@ pub mod map_report {
 
     pub fn generate_report(items: Vec<Tile>) -> Report {
         let analyze = analyze_map(items);
-        let mut inconsistent = vec![];
-        let mut unchanged = vec![];
+        let mut inconsistent = Vec::new();
+        let mut unchanged = Vec::new();
 
         for item in &analyze.1 {
             inconsistent.push(Some(item.id))
@@ -49,9 +49,9 @@ pub mod map_report {
     }
 
     fn analyze_map(items: Vec<Tile>) -> (Vec<Tile>, Vec<Tile>, Vec<Tile>) {
-        let mut valid = vec![];
-        let mut inconsistent = vec![];
-        let mut unchanged = vec![];
+        let mut valid = Vec::new();
+        let mut inconsistent = Vec::new();
+        let mut unchanged = Vec::new();
         let expected_values = get_tiles_values();
 
         for (index, item) in items.iter().enumerate() {

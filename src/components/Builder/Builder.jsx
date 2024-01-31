@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { Header, SideBar, Manager, Theme, Editor } from './ui';
+import { Header, SideBar, Manager, Theme } from './ui';
 import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';

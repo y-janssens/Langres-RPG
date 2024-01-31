@@ -9,12 +9,12 @@ pub mod tests_factories {
         rng.gen_range(1..=i32::MAX)
     }
 
-    pub fn world_factory(name: Option<&str>, size: Option<u32>) -> World {
-        let name = String::from(name.unwrap_or_else(|| "test"));
-        let size = size.unwrap_or_else(|| 50);
+    pub fn world_factory(name: &str, size: u32) -> World {
+        // let name = String::from(name.unwrap_or_else(|| "test"));
+        // let size = size.unwrap_or_else(|| 50);
         World {
             id: generate_id(),
-            name,
+            name: name.to_string(),
             size,
             order: 0,
             complete: false,

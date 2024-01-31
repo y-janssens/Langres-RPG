@@ -1,17 +1,17 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { useMapBatch } from '../../../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useMapBatch, useTranslation } from '../../../../hooks';
 import { Modal } from '../Modal/Modal';
 import Icon from '../../../ui/Icon';
-import { PreviewBlock, EmptyBlock } from './Blocks';
+import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
 import { ButtonIcon } from '../ButtonLabel';
 import css from './generator.module.css';
 
 export const Generator = ({ open, form, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
-    const [batchSettings] = useState(() => ({ kind: 'forest', amount: 25 }));
+    const [batchSettings] = useState(() => ({ kind: 'forest', amount: 15 }));
     const [selectedMap, setSelectedMap] = useState({ id: null, map: null });
+    const [selectedPreview, setSelectedPreview] = useState(null);
 
     const [maps, progress, loadingMaps, regenerate] = useMapBatch({
         ...batchSettings,
@@ -32,6 +32,13 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         onClose();
     }, [form, selectedMap, onClose]);
 
+    const handleReset = useCallback(() => {
+        setReady(true);
+        setSelectedMap({ id: null, map: null });
+        setSelectedPreview(null);
+        regenerate();
+    }, [regenerate]);
+
     const loading = useMemo(() => {
         return loadingMaps && progress < batchSettings.amount;
     }, [loadingMaps, progress, batchSettings]);
@@ -46,24 +53,26 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
             subtitle={
                 <GeneratorActions
                     settings={batchSettings}
-                    loading={loadingMaps}
                     total={batchSettings.amount}
+                    disabled={loadingMaps || selectedPreview}
                     progress={progress}
                     onLaunch={() => setReady(true)}
-                    sync={() => {
-                        setReady(true);
-                        regenerate();
-                    }}
+                    sync={handleReset}
                 />
             }
-            disabled={!selectedMap.id}
+            disabled={!selectedMap.id || selectedPreview}
             onSave={handleSave}
             onClose={onClose}
             canBeClosed
         >
-            <div className={css['map-preview-block']}>
+            {maps.length > 0 && selectedPreview && !loadingMaps && (
+                <div className={css['map-selected-preview']} onClick={() => setSelectedPreview(null)}>
+                    <MapThumbnail map={maps[selectedPreview - 1]} size={3} />
+                </div>
+            )}
+            <div className={css[selectedPreview ? 'map-preview-block-inactive' : 'map-preview-block']}>
                 {maps.map((mp, i) => (
-                    <PreviewBlock key={i} map={mp} index={i + 1} selected={selectedMap} setSelect={setSelectedMap} />
+                    <PreviewBlock key={i} map={mp} index={i + 1} selected={selectedMap} setPreview={setSelectedPreview} setSelect={setSelectedMap} loading={loading} />
                 ))}
                 {loading && <EmptyBlock index={progress} />}
             </div>
@@ -71,7 +80,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     );
 };
 
-const GeneratorActions = ({ loading, total, progress, onLaunch = () => {}, sync = () => {} }) => {
+const GeneratorActions = ({ disabled, total, progress, onLaunch = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
 
     const trigger = useCallback(() => {
@@ -84,7 +93,7 @@ const GeneratorActions = ({ loading, total, progress, onLaunch = () => {}, sync 
     return (
         <div className={css['map-preview-cta']}>
             <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${total}`}</span>
-            <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={loading} onClick={() => trigger()} />
+            <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => trigger()} />
         </div>
     );
 };

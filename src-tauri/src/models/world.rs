@@ -22,6 +22,7 @@ pub mod maps {
         pub id: u32,
         pub x: u32,
         pub y: u32,
+        pub z: i32,
         pub value: String,
         pub threshold: Option<Threshold>,
         pub walkable: bool,
@@ -68,7 +69,10 @@ pub mod maps {
 
         pub fn generate(size: u32) -> Vec<Item> {
             println!("Generating world data...");
-            let grid: u32 = size * size;
+            // Adjust the number of rows to keep a square map
+            let rows = (size as f32 / 0.85).ceil() as u32;
+            let threshold = rows - size;
+            let grid: u32 = size * rows;
             let mut content = Vec::new();
             let walkable_tiles = vec!["-".to_string(), "S".to_string(), "C".to_string()];
 
@@ -78,12 +82,13 @@ pub mod maps {
                 let x = if row % 2 == 0 { (col * 2) + 1 } else { col * 2 };
                 let y = row;
 
-                let value = Self::generate_borders(col, row, size);
+                let value = Self::generate_borders(col, row, size, threshold);
 
                 let item = Item {
                     id: i,
                     x,
                     y,
+                    z: 0,
                     value: value.clone(),
                     threshold: None,
                     walkable: walkable_tiles.contains(&value),
@@ -95,16 +100,16 @@ pub mod maps {
 
         // Map content generation
 
-        fn generate_borders(x: u32, y: u32, size: u32) -> String {
-            if (x <= 1 || x >= size - 2) || (y <= 1 || y >= size - 2) {
-                return String::from("F");
+        fn generate_borders(x: u32, y: u32, size: u32, threshold: u32) -> String {
+            if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
+                return String::from("T");
             }
             String::from("-")
         }
 
         pub fn generate_forest(content: Vec<Item>) -> Vec<Item> {
             println!("Generating forest...");
-            Map::generate(content, "forest", false)
+            Map::generate(content, "forest")
         }
 
         pub fn generate_basic_map(content: Vec<Item>) -> Vec<Item> {

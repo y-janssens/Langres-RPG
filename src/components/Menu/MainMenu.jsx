@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
-import { useGameContext, useGet, useMapBatch } from '../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useGameContext, useGet, useTranslation } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
@@ -102,10 +101,6 @@ export const MainMenu = () => {
         },
         [openModal, items, selected]
     );
-
-    // const [maps, progress, loadingMaps] = useMapBatch({ kind: 'forest', amount: 5 });
-
-    // console.log(maps, progress, loadingMaps);
 
     useEffect(() => {
         if (!context?.gameId && (!context.controls?.toggles?.pause || !context.controls?.toggles?.menu)) {

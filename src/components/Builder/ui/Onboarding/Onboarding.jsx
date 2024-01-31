@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDynamicForm } from '../../../../hooks';
+import { useDynamicForm, useTranslation } from '../../../../hooks';
 import Storyline from '../../../../models/storyline';
 import { StoryStep, ActStep } from '../Manager/Steps';
 import { Modal } from '..';

@@ -1478,12 +1478,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
-name = "hexagonal_pathfinding_astar"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b54cbb9368fbe123909c1c5e138712cd88e5ae88e60a622745dfe003ddc6b55a"
-
-[[package]]
 name = "html5ever"
 version = "0.25.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1775,12 +1769,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "json-fmt"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c4c02fb6210b703e0975b4c37fa2a66313456ab0d219a3660cc788a0a22676b"
-
-[[package]]
 name = "json-patch"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1802,6 +1790,25 @@ dependencies = [
  "html5ever",
  "matches",
  "selectors",
+]
+
+[[package]]
+name = "langres"
+version = "0.0.0"
+dependencies = [
+ "chrono",
+ "diesel",
+ "diesel_migrations",
+ "lazy_static",
+ "noise",
+ "r2d2",
+ "rand 0.8.5",
+ "round",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
 ]
 
 [[package]]
@@ -2077,6 +2084,17 @@ name = "nodrop"
 version = "0.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72ef4a56884ca558e5ddb05a1d1e7e1bfd9a68d9ed024c21704cc98872dae1bb"
+
+[[package]]
+name = "noise"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ba869e17168793186c10ca82c7079a4ffdeac4f1a7d9e755b9491c028180e40"
+dependencies = [
+ "num-traits",
+ "rand 0.7.3",
+ "rand_xorshift",
+]
 
 [[package]]
 name = "notify-rust"
@@ -2719,6 +2737,15 @@ name = "rand_pcg"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "16abd0c1b639e9eb4d7c50c0b8100b0d0f849be2349829c740fe8e6eb4816429"
+dependencies = [
+ "rand_core 0.5.1",
+]
+
+[[package]]
+name = "rand_xorshift"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77d416b86801d23dde1aa643023b775c3a462efc0ed96443add11546cdf1dca8"
 dependencies = [
  "rand_core 0.5.1",
 ]
@@ -3706,26 +3733,6 @@ checksum = "006851c9ccefa3c38a7646b8cec804bb429def3da10497bfa977179869c3e8e2"
 dependencies = [
  "quick-xml 0.30.0",
  "windows 0.51.1",
-]
-
-[[package]]
-name = "taurigame"
-version = "0.0.0"
-dependencies = [
- "chrono",
- "diesel",
- "diesel_migrations",
- "hexagonal_pathfinding_astar",
- "json-fmt",
- "lazy_static",
- "r2d2",
- "rand 0.8.5",
- "round",
- "rusqlite",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
 ]
 
 [[package]]

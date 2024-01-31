@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { invoke } from '@tauri-apps/api/tauri';
+import { invoke } from '@tauri-apps/api';
 
 const useMapBatch = ({ kind = 'forest', amount = 5, launch = true, onSuccess = () => {} }) => {
     const [data, setData] = useState([]);
