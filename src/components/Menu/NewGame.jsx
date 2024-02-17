@@ -7,7 +7,7 @@ import css from './menu.module.css';
 
 export default function NewGame({ loading = false, state = null, sync = () => {}, onClose = () => {} }) {
     const { t } = useTranslation();
-    const [, setContext] = useGameContext();
+    const [, setEngine] = useGameContext();
     const [playerName, setPlayerName] = useState('');
 
     const handleNewGame = useCallback(
@@ -15,7 +15,7 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
             await invoke('new', { name })
                 .then((data) => {
                     let game = new GameModel(data);
-                    setContext({ gameId: game.id, builder: false });
+                    setEngine({ gameId: game.id });
                     game.save();
                     sync();
                 })

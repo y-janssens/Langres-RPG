@@ -1,8 +1,8 @@
 import { useMemo, useState, useRef, useEffect } from 'react';
 import css from './minimap.module.css';
 
-export default function MiniMap({ position, context }) {
-    const { map } = context;
+export default function MiniMap({ position, engine }) {
+    const { map } = engine;
     const [active, setActive] = useState(false);
     const mapContainerRef = useRef();
     const mapInnerContainerRef = useRef();
@@ -33,7 +33,7 @@ export default function MiniMap({ position, context }) {
                     return (
                         <div key={i}>
                             {row.map((item, index) => {
-                                return <Item key={index} item={item} position={position} context={context} />;
+                                return <Item key={index} item={item} position={position} engine={engine} />;
                             })}
                         </div>
                     );
@@ -43,7 +43,7 @@ export default function MiniMap({ position, context }) {
     );
 }
 
-function Item({ item, position, context }) {
+function Item({ item, position, engine }) {
     const pointer = useMemo(() => {
         return Boolean(position[0] === item.x && position[2] === item.y);
     }, [position, item]);
@@ -52,21 +52,21 @@ function Item({ item, position, context }) {
         <div
             className={css['mini-map-item']}
             style={{
-                backgroundColor: context.controls.assets.get_color(item)
+                backgroundColor: engine.controls.assets.get_color(item)
             }}
         >
-            {pointer && <Pointer context={context} />}
+            {pointer && <Pointer engine={engine} />}
         </div>
     );
 }
 
-function Pointer({ context }) {
+function Pointer({ engine }) {
     const cone = useMemo(() => {
         let rotation;
         let position;
-        switch (context.direction) {
+        switch (engine.direction) {
             case 'down':
-                rotation = context.previousDirection === 'right' ? '-270deg' : '90deg';
+                rotation = engine.previousDirection === 'right' ? '-270deg' : '90deg';
                 position = '0px 0px 0px -40px';
                 break;
             case 'up':
@@ -74,7 +74,7 @@ function Pointer({ context }) {
                 position = '0px 0px 0px 40px';
                 break;
             case 'right':
-                rotation = context.previousDirection === 'down' || !('previousDirection' in context) ? '180deg' : '-180deg';
+                rotation = engine.previousDirection === 'down' || !('previousDirection' in engine) ? '180deg' : '-180deg';
                 position = '-40px 0px 0px 0px';
                 break;
             case 'left':
@@ -86,7 +86,7 @@ function Pointer({ context }) {
                 position = '0px 0px 0px -40px';
         }
         return { rotation, position };
-    }, [context, context.direction, context.previousDirection]);
+    }, [engine, engine.direction, engine.previousDirection]);
 
     return (
         <>

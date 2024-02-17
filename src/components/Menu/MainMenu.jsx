@@ -13,8 +13,8 @@ import css from './menu.module.css';
 export const MainMenu = () => {
     const { t } = useTranslation();
     const [openModal, setOpenModal] = useState(null);
-    const [context, setContext] = useGameContext();
-    const [displayTitle, setDisplayTitle] = useState(!context.devMode);
+    const [engine, setEngine] = useGameContext();
+    const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const [selected, setSelected] = useState(0);
     const activeRef = useRef();
 
@@ -44,7 +44,7 @@ export const MainMenu = () => {
             {
                 id: 6,
                 name: t('menu.items.builder'),
-                onClick: () => setContext({ builder: true })
+                onClick: () => setEngine({ builder: true })
             },
             {
                 id: 4,
@@ -67,7 +67,7 @@ export const MainMenu = () => {
         if (lastPlayedGame) {
             menu_items.unshift({
                 name: t('menu.items.continue'),
-                onClick: () => setContext({ gameId: lastPlayedGame.id })
+                onClick: () => setEngine({ gameId: lastPlayedGame.id })
             });
         }
 
@@ -103,14 +103,14 @@ export const MainMenu = () => {
     );
 
     useEffect(() => {
-        if (!context?.gameId && (!context.controls?.toggles?.pause || !context.controls?.toggles?.menu)) {
+        if (!engine.gameId && (!engine.controls?.toggles?.pause || !engine.controls?.toggles?.menu)) {
             activeRef.current.focus();
         }
-        // setContext({ builder: true });
-        // setContext({ gameId: 1091480813 });
+        // setEngine({ builder: true });
+        // setEngine({ gameId: 1091480813} );
     }, []);
 
-    if (context?.gameId || context.builder) {
+    if (engine.gameId || engine.builder) {
         return null;
     }
 
@@ -153,7 +153,7 @@ export const MainMenu = () => {
 
                         sync();
                     }}
-                    context={context}
+                    engine={engine}
                 />
             )}
         </div>

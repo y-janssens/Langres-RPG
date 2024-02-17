@@ -7,18 +7,18 @@ import { Text } from '@react-three/drei';
 import { Tree } from './Tree';
 
 export const Tiles = memo(({ data, characterRef }) => {
-    const [context] = useGameContext();
+    const [engine] = useGameContext();
     const { camera } = useThree();
-    const [treeColorMap] = useState(() => context.controls.assets.get_trees(data));
-    const [grassColorMap] = useState(() => context.controls.assets.get_grass());
-    const [waterColorMap] = useState(() => context.controls.assets.get_water());
+    const [treeColorMap] = useState(() => engine.controls.assets.get_trees(data));
+    const [grassColorMap] = useState(() => engine.controls.assets.get_grass());
+    const [waterColorMap] = useState(() => engine.controls.assets.get_water());
 
     const position = useMemo(() => {
         if (!characterRef.current) {
-            return { x: context.controls.positions[0], z: context.controls.positions[2] - 18 };
+            return { x: engine.controls.positions[0], z: engine.controls.positions[2] - 18 };
         }
         return { x: camera.position.x, z: camera.position.z };
-    }, [camera, context, characterRef]);
+    }, [camera, engine, characterRef]);
 
     const getFilter = useCallback(
         (item) => {
@@ -40,7 +40,7 @@ export const Tiles = memo(({ data, characterRef }) => {
                         />
                     )}
                     <Tile
-                        context={context}
+                        engine={engine}
                         item={item}
                         position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
                         colorMap={item.value === 'W' ? waterColorMap : grassColorMap}
@@ -51,18 +51,18 @@ export const Tiles = memo(({ data, characterRef }) => {
     });
 });
 
-const Tile = memo(({ context, item, position, colorMap }) => {
+const Tile = memo(({ engine, data, item, position, colorMap }) => {
     const meshRef = useRef();
 
     return (
         <>
-            {context.devMode && (
+            {engine.devMode && (
                 <Text scale={[-0.25, 0.25, 0.25]} position={[position[0], position[1] + 0.1, position[2]]} color="white">
                     {item.id}
                 </Text>
             )}
             <Hexagon
-                context={context}
+                engine={engine}
                 position={position}
                 rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
                 scale={[0.77, 0.77, 0.77]}
@@ -75,7 +75,7 @@ const Tile = memo(({ context, item, position, colorMap }) => {
     );
 });
 
-export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
+export const Hexagon = memo(({ radius = 1, engine, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
     const vertices = useMemo(() => {
         const points = [];
         for (let i = 0; i < 6; i++) {
@@ -112,7 +112,7 @@ export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, c
     }, [vertices, uvs]);
 
     const color = useMemo(() => {
-        if (context) {
+        if (engine) {
             return 'white';
         }
         switch (item.value) {
@@ -126,7 +126,7 @@ export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, c
             default:
                 return 'white';
         }
-    }, [item, context]);
+    }, [item, engine]);
 
     return (
         <mesh

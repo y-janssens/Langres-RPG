@@ -7,13 +7,13 @@ import DeletionModal from '../ui/DeletionModal';
 
 export default function SavedGames({ loading = false, items = [], state = null, onClose = () => {}, sync = () => {} }) {
     const { t } = useTranslation();
-    const [, setContext] = useGameContext();
+    const [, setEngine] = useGameContext();
     const [selectedItem, setSelectedItem] = useState(null);
     const [gameToDelete, setGameToDelete] = useState(null);
 
     const handleLoad = useCallback(() => {
         if (selectedItem) {
-            setContext({ gameId: selectedItem });
+            setEngine({ gameId: selectedItem });
             onClose();
         }
     }, [selectedItem, onclose]);

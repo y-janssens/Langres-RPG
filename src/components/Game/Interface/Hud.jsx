@@ -4,16 +4,16 @@ import { Character } from '../Interface/Character/Character';
 import { Map } from '../Interface/Map/Map'; // eslint-disable-line
 import MiniMap from './Minimap/MiniMap'; // eslint-disable-line
 
-export const Hud = ({ game, display, position, context }) => { // eslint-disable-line
+export const Hud = ({ game, display, position, engine }) => { // eslint-disable-line
     if (!display.interface) {
         return null;
     }
     return (
         <>
             <CharInfos character={game.character} />
-            {/* <Map display={display.map} position={position} context={context} /> */}
+            {/* <Map display={display.map} position={position} engine={engine} /> */}
             <Character display={display.character} character={game.character} />
-            {/* <MiniMap position={position} context={context} /> */}
+            {/* <MiniMap position={position} engine={engine} /> */}
         </>
     );
 };

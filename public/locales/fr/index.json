@@ -19,6 +19,14 @@
     "size": "Taille",
     "order": "Ordre"
   },
+  "engine": {
+    "dice": {
+      "success": "Réussite",
+      "failure": "Échec",
+      "critical_success": "Réussite critique",
+      "critical_failure": "Échec critique"
+    }
+  },
   "environment": {
     "seasons": {
       "spring": "Printemps",

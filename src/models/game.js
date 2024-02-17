@@ -2,7 +2,7 @@ import { invoke } from '@tauri-apps/api';
 import { Character, World } from '.';
 
 export default class GameModel {
-    constructor({ player, id, date_created, last_save_date, save_count, character, storyline, last_known_position, context }) {
+    constructor({ player, id, date_created, last_save_date, save_count, character, storyline, last_known_position, engine }) {
         this.player = player;
         this.id = id;
         this.date_created = date_created;
@@ -11,7 +11,7 @@ export default class GameModel {
         this.storyline = storyline;
         this.character = new Character({ ...character, name: this.player });
         this.last_known_position = last_known_position;
-        this.context = context;
+        this.engine = engine;
         this.init();
     }
 
@@ -47,7 +47,7 @@ export default class GameModel {
     }
 
     get current_map() {
-        return this.current_act.content.maps.find((mp) => (this.context.mapId ? mp.id === this.context?.mapId?.id : !mp.complete && mp.primary));
+        return this.current_act.content.maps.find((mp) => (this.engine.mapid ? mp.id === this.engine?.mapId?.id : !mp.complete && mp.primary));
     }
 
     get current_world() {

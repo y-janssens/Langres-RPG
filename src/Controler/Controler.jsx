@@ -2,7 +2,6 @@ import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react'
 import { useGet } from '../hooks';
 import GameContext from './GameContext';
 
-import KeyControls from './controls';
 import Settings from '../models/settings';
 
 import { Game } from '../components/Game/Game';
@@ -10,24 +9,25 @@ import { MainMenu } from '../components/Menu/MainMenu';
 
 import { Builder } from '../components/Builder/Builder';
 import css from '../components/Game/game.module.css';
+import Engine from '../models/engine';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
-    const [context, _setContext] = useState({ devMode: true, controls: new KeyControls() });
+    const [engine, _setEngine] = useState(() => new Engine());
     const gameRef = useRef();
 
-    const setContext = React.useCallback((ctx = {}) => {
-        _setContext((context) => {
-            return { ...context, ...ctx };
+    const setEngine = React.useCallback((ctx = {}) => {
+        _setEngine((engine) => {
+            return { ...engine, ...ctx };
         });
     }, []);
 
-    const removeFromContext = React.useCallback((names) => {
+    const removeFromEngine = React.useCallback((names) => {
         if (!Array.isArray(names)) {
             names = [names];
         }
-        _setContext((context) => {
-            let newContext = { ...context };
+        _setEngine((engine) => {
+            let newContext = { ...engine };
             names.forEach((name) => {
                 delete newContext[name];
             });
@@ -39,70 +39,69 @@ export const Controler = () => {
         {
             func: 'load_app_datas',
             onSuccess: (response) => {
-                const datas = new Settings(response);
-                setContext({ applicationData: datas });
+                engine?.set('applicationData', new Settings(response));
             }
         },
         []
     );
 
     const pauseGame = useMemo(() => {
-        return Boolean(context?.controls?.toggles?.pause || context?.controls?.toggles?.menu);
-    }, [context]);
+        return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu);
+    }, [engine]);
 
     const handleControls = useCallback(
         (event) => {
             if (!pauseGame) {
-                context.controls.setDirections(event, true);
+                engine.controls.setDirections(event, true);
             }
-            if (pauseGame && event.key === 'Escape' && Boolean(context?.pauseMenu)) {
-                return setContext({ pauseMenu: false });
+            if (pauseGame && event.key === 'Escape' && Boolean(engine?.pauseMenu)) {
+                return setEngine({ pauseMenu: false });
             } else {
-                context?.controls.setToggles(event);
-                setContext({ controls: context.controls });
+                engine.controls.setToggles(event);
+                setEngine({ controls: engine.controls });
             }
         },
-        [context, pauseGame]
+        [engine, pauseGame]
     );
 
     const displayGame = useMemo(() => {
-        return Boolean(context?.gameId && !context.builder);
-    }, [context]);
+        return Boolean(engine.gameId && !engine.builder);
+    }, [engine]);
 
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
-        if (!context.controls.toggles.input && !pauseGame) {
+        if (!engine.controls.toggles.input && !pauseGame) {
             gameRef.current?.focus();
         }
-    }, [context, pauseGame, gameRef]);
+    }, [engine, pauseGame, gameRef]);
 
-    if (!('applicationData' in context)) {
+    if (!('applicationData' in engine)) {
         return null;
     }
 
     return (
         <GameContext.Provider
             value={{
-                context,
-                setContext,
-                removeFromContext
+                engine,
+                setEngine,
+                removeFromEngine
             }}
         >
-            {!context?.gameId && !context.builder && <MainMenu />}
+            {!engine.gameId && !engine.builder && <MainMenu />}
             {displayGame && (
                 <div
                     className={css['game-main-block']}
                     onKeyDown={handleControls}
                     onKeyUp={(event) => {
-                        context.controls.setDirections(event, false);
+                        engine.controls.setDirections(event, false);
                     }}
                     tabIndex={0}
                     ref={gameRef}
                 >
-                    <Game pause={pauseGame} keyToggles={context?.controls?.toggles} position={position} setPosition={setPosition} />
+                    <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}
-            {context.builder && <Builder />}
+            {engine.builder && <Builder />}
         </GameContext.Provider>
     );
 };

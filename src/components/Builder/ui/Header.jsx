@@ -7,7 +7,7 @@ import Icon from '../../ui/Icon';
 import css from '../builder.module.css';
 import Zoom from './Zoom';
 
-export const Header = ({ datas, form, setForm, setObject, reset, sync, setContext, history, index, forward, backward, clear }) => {
+export const Header = ({ datas, form, setForm, setObject, reset, sync, setEngine, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
 
     const handleSave = useCallback(() => {
@@ -58,18 +58,11 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setContex
                             onClick={() => setObject({ ...form, modalManager: !form.modalManager, modalSelect: false, modalEditor: false })}
                         />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
-                        {/* {form.selectedMap && (
-                            <ButtonLabel
-                                color="primary"
-                                label={t('builder.json')}
-                                onClick={() => setObject({ ...form, modalManager: false, modalSelect: false, modalEditor: !form.modalEditor })}
-                            />
-                        )} */}
                     </div>
 
                     <div className={css['builder-navbar-toggles']}>
                         <ButtonToggle label={t('builder.toggles.viewport')} active={!form.flatDisplay} onClick={() => setForm('flatDisplay', !form.flatDisplay)} />
-                        <Button dataTheme="business" className={css['builder-navbar-exit']} size="xs" color="accent" shape="square" onClick={() => setContext({ builder: false })}>
+                        <Button dataTheme="business" className={css['builder-navbar-exit']} size="xs" color="accent" shape="square" onClick={() => setEngine({ builder: false })}>
                             x
                         </Button>
                     </div>

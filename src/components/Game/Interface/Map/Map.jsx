@@ -1,8 +1,8 @@
 import { useRef, useEffect, useMemo } from 'react';
 import css from './map.module.css';
 
-export const Map = ({ display = false, position, context }) => {
-    const { map } = context;
+export const Map = ({ display = false, position, engine }) => {
+    const { map } = engine;
     const mapContainerRef = useRef();
     const mapInnerContainerRef = useRef();
 
@@ -28,7 +28,7 @@ export const Map = ({ display = false, position, context }) => {
         }
     }, [mapContainerRef, mapInnerContainerRef, characterPosition, dimensions]);
 
-    if (!display || !context) {
+    if (!display || !engine) {
         return null;
     }
     return (
@@ -39,7 +39,7 @@ export const Map = ({ display = false, position, context }) => {
                         return (
                             <div key={i}>
                                 {row.map((item, index) => {
-                                    return <MapTile key={index} item={item} position={position} context={context} dimensions={dimensions} />;
+                                    return <MapTile key={index} item={item} position={position} engine={engine} dimensions={dimensions} />;
                                 })}
                             </div>
                         );
@@ -50,14 +50,14 @@ export const Map = ({ display = false, position, context }) => {
     );
 };
 
-const MapTile = ({ item, position, context, dimensions }) => {
+const MapTile = ({ item, position, engine, dimensions }) => {
     // const zombies = useMemo(() => {
     //     const positions = [];
     //     for (let i = 0; i < 25; i++) {
-    //         positions.push(context[`zombie_${i}`]);
+    //         positions.push(engine[`zombie_${i}`]);
     //     }
     //     return positions;
-    // }, [context]);
+    // }, [engine]);
 
     const tileColor = useMemo(() => {
         // const zombie = zombies.find((zm) => zm[0] === item.x && zm[2] === item.y);
@@ -67,8 +67,8 @@ const MapTile = ({ item, position, context, dimensions }) => {
         // if (zombie[0] === item.x && zombie[2] === item.y) {
         //     return 'red';
         // }
-        return context?.assets?.get_color(item);
-    }, [item, position, context]);
+        return engine?.assets?.get_color(item);
+    }, [item, position, engine]);
 
     return (
         <div

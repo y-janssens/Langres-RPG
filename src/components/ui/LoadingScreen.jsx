@@ -1,12 +1,12 @@
 import { useEffect, useMemo } from 'react';
 import css from './ui.module.css';
-export const LoadingScreen = ({ form, setForm, context = {}, loading = false, children = null }) => {
+export const LoadingScreen = ({ form, setForm, engine = {}, loading = false, children = null }) => {
     const progress = useMemo(() => {
         return form.loadingProgress;
     }, [form]);
 
     useEffect(() => {
-        if (!context.devMode && !form.loadingReady) {
+        if (!engine.devMode && !form.loadingReady) {
             if (progress < 100) {
                 const interval = setInterval(() => {
                     setForm('loadingProgress', progress + 2);
@@ -25,7 +25,7 @@ export const LoadingScreen = ({ form, setForm, context = {}, loading = false, ch
 
     return (
         <>
-            {!form.loadingReady && !context.devMode && <LoadingBar state={progress} />}
+            {!form.loadingReady && !engine.devMode && <LoadingBar state={progress} />}
             {!loading && children}
         </>
     );

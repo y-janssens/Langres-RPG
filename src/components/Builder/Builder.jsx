@@ -8,7 +8,7 @@ import { Gateway } from './ui/Gateway';
 import { Generator } from './ui/Generator/Generator';
 
 export const Builder = () => {
-    const [, setContext] = useGameContext();
+    const [, setEngine] = useGameContext();
 
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
         flatDisplay: true,
@@ -106,7 +106,7 @@ export const Builder = () => {
                 backward={backward}
                 clear={clearHistory}
                 datas={form.storyLine}
-                setContext={setContext}
+                setEngine={setEngine}
                 setObject={setFormObject}
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
