@@ -40,7 +40,7 @@ export const Tiles = memo(({ data, characterRef }) => {
                         />
                     )}
                     <Tile
-                        context={context}
+                        engine={engine}
                         item={item}
                         position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
                         colorMap={item.value === 'W' ? waterColorMap : grassColorMap}
@@ -62,7 +62,7 @@ const Tile = memo(({ engine, data, item, position, colorMap }) => {
                 </Text>
             )}
             <Hexagon
-                context={context}
+                engine={engine}
                 position={position}
                 rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
                 scale={[0.77, 0.77, 0.77]}
@@ -75,7 +75,7 @@ const Tile = memo(({ engine, data, item, position, colorMap }) => {
     );
 });
 
-export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
+export const Hexagon = memo(({ radius = 1, engine, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
     const vertices = useMemo(() => {
         const points = [];
         for (let i = 0; i < 6; i++) {
@@ -112,7 +112,7 @@ export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, c
     }, [vertices, uvs]);
 
     const color = useMemo(() => {
-        if (context) {
+        if (engine) {
             return 'white';
         }
         switch (item.value) {
@@ -126,7 +126,7 @@ export const Hexagon = memo(({ radius = 1, context, position, rotation, scale, c
             default:
                 return 'white';
         }
-    }, [item, context]);
+    }, [item, engine]);
 
     return (
         <mesh

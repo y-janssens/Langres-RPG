@@ -8,7 +8,7 @@ import { Gateway } from './ui/Gateway';
 import { Generator } from './ui/Generator/Generator';
 
 export const Builder = () => {
-    const [setEngine] = useGameContext();
+    const [, setEngine] = useGameContext();
 
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
         flatDisplay: true,
