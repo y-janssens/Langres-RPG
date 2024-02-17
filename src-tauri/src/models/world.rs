@@ -1,30 +1,31 @@
 pub mod maps {
+    use crate::models::maps::procedural::generation::Map;
     use crate::models::objects::assets::Object;
     use diesel::prelude::Queryable;
-    use hexagonal_pathfinding_astar::*;
     use rand::{seq::SliceRandom, Rng};
     use serde::{Deserialize, Serialize};
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct World {
-        id: i32,
-        name: String,
-        size: u32,
-        order: u32,
+        pub id: i32,
+        pub name: String,
+        pub size: u32,
+        pub order: u32,
         pub complete: bool,
-        content: Vec<Item>,
-        starting_point: Location,
+        pub content: Vec<Item>,
+        pub starting_point: Location,
         pub primary: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Item {
-        id: u32,
-        x: u32,
-        y: u32,
-        value: String,
-        threshold: Option<Threshold>,
-        walkable: bool,
+        pub id: u32,
+        pub x: u32,
+        pub y: u32,
+        pub z: i32,
+        pub value: String,
+        pub threshold: Option<Threshold>,
+        pub walkable: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -35,7 +36,7 @@ pub mod maps {
         assets: Vec<Option<Object>>,
     }
 
-    #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Copy)]
     pub struct Threshold {
         map: i32,
         is_final: bool,
@@ -43,14 +44,15 @@ pub mod maps {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Location {
-        x: u32,
-        y: u32,
+        pub x: u32,
+        pub y: u32,
     }
 
     impl World {
         pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {
+            let mut rng = rand::thread_rng();
             World {
-                id: Self::generate_id(),
+                id: rng.gen_range(1..=i32::MAX),
                 name,
                 size,
                 order,
@@ -65,10 +67,14 @@ pub mod maps {
             Self::generate(size)
         }
 
-        fn generate(size: u32) -> Vec<Item> {
+        pub fn generate(size: u32) -> Vec<Item> {
             println!("Generating world data...");
-            let grid: u32 = size * size;
+            // Adjust the number of rows to keep a square map
+            let rows = (size as f32 / 0.85).ceil() as u32;
+            let threshold = rows - size;
+            let grid: u32 = size * rows;
             let mut content = Vec::new();
+            let walkable_tiles = vec!["-".to_string(), "S".to_string(), "C".to_string()];
 
             for i in 0..grid {
                 let col = i % size;
@@ -76,15 +82,16 @@ pub mod maps {
                 let x = if row % 2 == 0 { (col * 2) + 1 } else { col * 2 };
                 let y = row;
 
-                let value = Self::generate_borders(col, row, size);
+                let value = Self::generate_borders(col, row, size, threshold);
 
                 let item = Item {
                     id: i,
                     x,
                     y,
+                    z: 0,
                     value: value.clone(),
                     threshold: None,
-                    walkable: value == "-",
+                    walkable: walkable_tiles.contains(&value),
                 };
                 content.push(item);
             }
@@ -93,14 +100,19 @@ pub mod maps {
 
         // Map content generation
 
-        fn generate_borders(x: u32, y: u32, size: u32) -> String {
-            if (x <= 1 || x >= size - 2) || (y <= 1 || y >= size - 2) {
-                return String::from("F");
+        fn generate_borders(x: u32, y: u32, size: u32, threshold: u32) -> String {
+            if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
+                return String::from("T");
             }
             String::from("-")
         }
 
-        pub fn generate_trees(content: Vec<Item>) -> Vec<Item> {
+        pub fn generate_forest(content: Vec<Item>) -> Vec<Item> {
+            println!("Generating forest...");
+            Map::generate(content, "forest")
+        }
+
+        pub fn generate_basic_map(content: Vec<Item>) -> Vec<Item> {
             println!("Generating game trees...");
             let items = Self::get_items("map");
             let mut new_content = Vec::new();
@@ -123,15 +135,6 @@ pub mod maps {
                 "map" => vec!["T", "-", "-", "-", "-", "-"],
                 _ => vec![],
             }
-        }
-
-        fn generate_id() -> i32 {
-            let mut rng = rand::thread_rng();
-            rng.gen_range(1..=i32::MAX)
-        }
-
-        fn find_path(x: f32, y: f32) {
-            let orientation = HexOrientation::PointyTopOddRight;
         }
     }
 }

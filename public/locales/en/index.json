@@ -59,6 +59,10 @@
       "editor": {
         "title": "Edit your map's content"
       },
+      "generator": {
+        "title": "Generate and select random maps",
+        "subtitle": "Generate a batch of maps"
+      },
       "steps": {
         "acts": {
           "title": "Storylines",
@@ -104,7 +108,7 @@
       },
       "functions": {
         "label": "Functions",
-        "trees": "Generate trees",
+        "trees": "Generate forest",
         "clear": "Clear map"
       },
       "objects": {

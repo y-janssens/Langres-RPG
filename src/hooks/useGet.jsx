@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { invoke } from '@tauri-apps/api/tauri';
+import { invoke } from '@tauri-apps/api';
 
 const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = () => {} }, deps = []) => {
     const [data, setData] = useState(null);

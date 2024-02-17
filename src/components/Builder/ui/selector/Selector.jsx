@@ -42,6 +42,7 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
                     setForm('modalSelect', !form.modalSelect);
                     setForm('modalManager', false);
                     setForm('modalEditor', false);
+                    setForm('modalGenerator', false);
                 }}
             />
             {form.modalSelect && datas && (

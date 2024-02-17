@@ -67,7 +67,7 @@ pub mod characters {
                 return Self::level_up(self, new_xp - max_xp);
             }
             self.xp = new_xp;
-            return self;
+            self
         }
 
         fn level_up(&mut self, xp: u32) -> &mut Character {
@@ -78,7 +78,7 @@ pub mod characters {
                 return Self::compute_xp(self, self.xp + xp - max_xp);
             }
             self.xp = xp;
-            return self;
+            self
         }
 
         fn get_max_xp(&self) -> u32 {

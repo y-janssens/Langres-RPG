@@ -29,7 +29,6 @@
     "react-draggable": "^4.4.5",
     "react-i18next": "^13.2.2",
     "react-icons": "^4.11.0",
-    "react-json-editor-ajrm": "^2.5.14",
     "three": "^0.156.1"
   },
   "devDependencies": {

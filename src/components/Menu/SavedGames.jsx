@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { useGameContext } from '../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useGameContext, useTranslation } from '../../hooks';
 import Modal from '../ui/Modal';
 import Icon from '../ui/Icon';
 import css from './menu.module.css';

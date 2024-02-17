@@ -58,13 +58,13 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setContex
                             onClick={() => setObject({ ...form, modalManager: !form.modalManager, modalSelect: false, modalEditor: false })}
                         />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
-                        {form.selectedMap && (
+                        {/* {form.selectedMap && (
                             <ButtonLabel
                                 color="primary"
                                 label={t('builder.json')}
                                 onClick={() => setObject({ ...form, modalManager: false, modalSelect: false, modalEditor: !form.modalEditor })}
                             />
-                        )}
+                        )} */}
                     </div>
 
                     <div className={css['builder-navbar-toggles']}>

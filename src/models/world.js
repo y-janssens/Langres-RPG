@@ -9,7 +9,7 @@ export default class World {
         this.complete = complete;
         this.rows = this.toRows(content);
         this.content = content;
-        this.starting_point = {x: starting_point.x / 2, y: starting_point.y - 0.5};
+        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2 };
         this.primary = primary;
     }
 

@@ -38,12 +38,10 @@ const AnimatedText = ({ npc, delay = 150 }) => {
     }
 
     return (
-        <>
-            <div className={css['dialogs-text-container']} onClick={handleDisplay}>
-                <span>{currentText}</span>
-                <Next display={!parsing && result.next} onClick={handleNext} />
-            </div>
-        </>
+        <div className={css['dialogs-text-container']} onClick={handleDisplay}>
+            <span>{currentText}</span>
+            <Next display={!parsing && result.next} onClick={handleNext} />
+        </div>
     );
 };
 

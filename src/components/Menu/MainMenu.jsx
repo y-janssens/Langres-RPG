@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
-import { useGameContext, useGet } from '../../hooks';
-import { useTranslation } from 'react-i18next';
+import { useGameContext, useGet, useTranslation } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';

@@ -17,6 +17,7 @@ mod commands;
 mod functions;
 mod models;
 mod schema;
+mod tests;
 
 fn run_migrations(
     connection: &mut impl MigrationHarness<Sqlite>,
@@ -55,7 +56,8 @@ fn main() {
             // World building commands
             commands::world::generate,
             commands::world::regenerate,
-            commands::world::populate_trees,
+            commands::world::generate_forest,
+            commands::world::generate_basic_map,
             // Storyline commands
             commands::story::save_storyline,
             commands::story::fetch_storyline,
@@ -65,6 +67,8 @@ fn main() {
             commands::app::save_app_datas,
             commands::objects::load_objects,
             commands::objects::load_functions,
+            // Map generator commands
+            commands::maps::generate_maps_batch
         ])
         .manage(pool)
         .run(tauri::generate_context!())

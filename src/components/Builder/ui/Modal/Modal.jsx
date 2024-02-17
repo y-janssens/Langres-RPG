@@ -28,9 +28,11 @@ export const Modal = ({ title = '', subtitle = '', onSave = () => {}, onReset = 
                             <div className={css['modal-card-content']}>{children}</div>
 
                             <div className={css['modal-footer']}>
-                                <Button className={css['modal-btns']} dataTheme="dark" size="sm" color="default" variant="outline" disabled={disabled} onClick={onReset}>
-                                    {t('actions.reset')}
-                                </Button>
+                                {onReset() && (
+                                    <Button className={css['modal-btns']} dataTheme="dark" size="sm" color="default" variant="outline" disabled={disabled} onClick={onReset}>
+                                        {t('actions.reset')}
+                                    </Button>
+                                )}
                                 <Button className={css['modal-btns']} dataTheme="business" size="sm" color="primary" disabled={disabled} onClick={onSave}>
                                     {t('actions.save')}
                                 </Button>

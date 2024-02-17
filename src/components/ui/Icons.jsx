@@ -1,14 +1,16 @@
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium } from 'react-icons/io5';
-import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from 'react-icons/ri';
+import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine, RiLandscapeFill } from 'react-icons/ri';
 import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
 import { GrView, GrPowerReset } from 'react-icons/gr';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { BiSolidTree } from 'react-icons/bi';
-import { FaBridgeWater } from 'react-icons/fa6';
+import { FaBridgeWater, FaMagnifyingGlass } from 'react-icons/fa6';
 import { AiOutlineClear } from 'react-icons/ai';
 import { GiForest, GiStoneBlock, GiDungeonGate } from 'react-icons/gi';
 import { FaFlagCheckered } from 'react-icons/fa';
 import { HiZoomIn, HiZoomOut } from 'react-icons/hi';
+import { GoSync } from 'react-icons/go';
+import { IoMdCreate } from 'react-icons/io';
 
 export { BsTrash as Delete };
 export { IoVolumeHigh as Volume };
@@ -31,3 +33,7 @@ export { HiZoomIn as Zoomin };
 export { HiZoomOut as Zoomout };
 export { GiDungeonGate as Gate };
 export { BsHexagonFill as Hex };
+export { RiLandscapeFill as Map };
+export { GoSync as Reload };
+export { IoMdCreate as Craft };
+export { FaMagnifyingGlass as Zoom };

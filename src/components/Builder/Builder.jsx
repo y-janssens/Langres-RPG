@@ -1,10 +1,11 @@
 import { useCallback, useMemo } from 'react';
-import { Header, SideBar, Manager, Theme, Editor } from './ui';
+import { Header, SideBar, Manager, Theme } from './ui';
 import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';
 import { Onboarding } from './ui/Onboarding/Onboarding';
 import { Gateway } from './ui/Gateway';
+import { Generator } from './ui/Generator/Generator';
 
 export const Builder = () => {
     const [, setContext] = useGameContext();
@@ -17,6 +18,7 @@ export const Builder = () => {
         modalSelect: false,
         modalEditor: false,
         modalGateway: false,
+        modalGenerator: false,
         onboarding: { value: false, type: null },
         selectedTiles: [],
         showValues: true,
@@ -77,7 +79,7 @@ export const Builder = () => {
         if (!form.storyLine) {
             return false;
         }
-        return !form.modalManager && !form.modalEditor && !form.onboarding.value && !form.modalGateway;
+        return !form.modalManager && !form.modalEditor && !form.onboarding.value && !form.modalGateway && !form.modalGenerator;
     }, [form]);
 
     const handleReset = useCallback(() => {
@@ -122,8 +124,11 @@ export const Builder = () => {
                                 sync={handleSync}
                                 onClose={() => setForm('onboarding', { value: false, type: null })}
                             />
-                            {form.modalEditor && <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />}
+                            {/* {form.modalEditor && <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />} */}
                             {form.modalManager && <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />}
+                            {form.modalGenerator && (
+                                <Generator open={form.modalGenerator} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGenerator', false)} />
+                            )}
                             {form.modalGateway && (
                                 <Gateway open={form.modalGateway} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
                             )}
