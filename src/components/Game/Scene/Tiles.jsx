@@ -1,9 +1,9 @@
 import { useState, useRef, memo, useCallback, useMemo } from 'react';
-import { Vector2, BufferAttribute, BufferGeometry, DoubleSide } from 'three';
+import { Vector2, BufferAttribute, BufferGeometry } from 'three';
 import { useThree } from '@react-three/fiber';
+import { Text } from '@react-three/drei';
 
 import { useGameContext } from '../../../hooks';
-import { Text } from '@react-three/drei';
 import { Tree } from './Tree';
 
 export const Tiles = memo(({ data, characterRef }) => {
@@ -27,13 +27,12 @@ export const Tiles = memo(({ data, characterRef }) => {
         [position]
     );
 
-    return [...data].map((item, index) => {
+    return data.map((item, index) => {
         if (getFilter(item)) {
             return (
                 <group key={index}>
                     {(item.value === 'T' || item.value === 'F') && (
                         <Tree
-                            key={`${index}_0`}
                             item={item}
                             position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]}
                             colorMap={treeColorMap.find((it) => it.id === item.id).map}
@@ -51,41 +50,32 @@ export const Tiles = memo(({ data, characterRef }) => {
     });
 });
 
-const Tile = memo(({ engine, data, item, position, colorMap }) => {
+const Tile = memo(({ engine, item, position, colorMap }) => {
     const meshRef = useRef();
 
     return (
-        <>
+        <group>
             {engine.devMode && (
                 <Text scale={[-0.25, 0.25, 0.25]} position={[position[0], position[1] + 0.1, position[2]]} color="white">
                     {item.id}
                 </Text>
             )}
-            <Hexagon
-                engine={engine}
-                position={position}
-                rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
-                scale={[0.77, 0.77, 0.77]}
-                colorMap={colorMap}
-                meshRef={meshRef}
-                item={item}
-                name={item.id}
-            />
-        </>
+            <Hexagon engine={engine} position={position} colorMap={colorMap} meshRef={meshRef} item={item} />
+        </group>
     );
 });
 
-export const Hexagon = memo(({ radius = 1, engine, position, rotation, scale, colorMap = null, meshRef = null, item, name }) => {
+export const Hexagon = memo(({ engine, position, colorMap = null, meshRef = null, item }) => {
     const vertices = useMemo(() => {
         const points = [];
         for (let i = 0; i < 6; i++) {
             const angle = (Math.PI / 3) * i;
-            const x = radius * Math.cos(angle);
-            const y = radius * Math.sin(angle);
+            const x = Math.cos(angle);
+            const y = Math.sin(angle);
             points.push(new Vector2(x, y));
         }
         return new Float32Array(points.flatMap((p) => [p.x, p.y, 0]));
-    }, [radius]);
+    }, []);
 
     const uvs = useMemo(() => {
         const vectors = [
@@ -133,14 +123,12 @@ export const Hexagon = memo(({ radius = 1, engine, position, rotation, scale, co
             castShadow
             receiveShadow
             ref={meshRef}
-            name={name}
+            name={item.id}
             userData={{ tile: item, castable: item.walkable }}
             geometry={geometry}
-            d
             position={position}
-            rotation={rotation}
-            scale={scale}
-            side={DoubleSide}
+            rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
+            scale={[0.77, 0.77, 0.77]}
         >
             <meshStandardMaterial color={color} map={colorMap} />
         </mesh>

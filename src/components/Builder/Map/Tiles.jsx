@@ -3,9 +3,7 @@ import { Hexagon } from '../../Game/Scene/Tiles';
 
 export const Tiles = ({ form, data = [], handleSelect }) => {
     return data.map((item, index) => {
-        return (
-            <Tile key={index} form={form} data={data} item={item} position={[-item.x / 2, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 2)]} handleSelect={handleSelect} />
-        );
+        return <Tile key={index} form={form} item={item} position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]} handleSelect={handleSelect} />;
     });
 };
 
@@ -17,14 +15,7 @@ function Tile({ form, item, position, handleSelect }) {
                 {form.showValues && item.value}
             </Text>
 
-            <Hexagon
-                position={[position[0], position[1], position[2]]}
-                rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
-                scale={[0.56, 0.56, 0.56]}
-                onClick={() => handleSelect(item)}
-                item={item}
-                name={item.id}
-            />
+            <Hexagon position={position} onClick={() => handleSelect(item)} item={item} />
         </>
     );
 }
