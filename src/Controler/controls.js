@@ -16,9 +16,18 @@ export default class KeyControls {
         this.pause = false;
         this.generateControls();
         this.directions = { up: false, down: false, left: false, right: false };
+        this.currentTile = null;
         this.camera = { x: 0, z: 0 };
         this.speed = 5;
         this.delta = 1.5;
+        this.instantiate();
+    }
+
+    instantiate() {
+        if (!KeyControls.instance) {
+            KeyControls.instance = this;
+        }
+        return KeyControls.instance;
     }
 
     generateControls() {
@@ -109,6 +118,7 @@ export default class KeyControls {
     rayCasterResolver({ positionCaster, collisionCaster, scene }) {
         const current = positionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
         const next = collisionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
+        this.currentTile = current;
         return {
             current: current,
             next: next,

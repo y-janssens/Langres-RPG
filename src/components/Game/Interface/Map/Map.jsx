@@ -1,82 +1,81 @@
-import { useRef, useEffect, useMemo } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import css from './map.module.css';
 
-export const Map = ({ display = false, position, engine }) => {
-    const { map } = engine;
-    const mapContainerRef = useRef();
-    const mapInnerContainerRef = useRef();
-
-    const dimensions = useMemo(() => {
-        const width = mapInnerContainerRef.current ? mapInnerContainerRef.current.clientWidth : 640;
-        const height = mapInnerContainerRef.current ? mapInnerContainerRef.current.clientHeight : 750;
-        return { width, height, size: width / 40 };
-    }, [mapInnerContainerRef, mapInnerContainerRef?.current]);
-
-    const characterPosition = useMemo(() => {
-        const x = position[0] * dimensions.size - dimensions.width / 1.63;
-        const y = position[2] * dimensions.size - dimensions.height / 1.85;
-
-        return { x, y };
-    }, [position, mapInnerContainerRef, dimensions]);
-
-    useEffect(() => {
-        if (mapContainerRef.current && mapInnerContainerRef.current) {
-            const width = dimensions.width / 11.63;
-            const height = dimensions.height / 3.48;
-            mapInnerContainerRef.current.style.left = `${Math.max(-width, Math.min(width, characterPosition.x))}px`;
-            mapInnerContainerRef.current.style.top = `${Math.max(-height, Math.min(width, characterPosition.y))}px`;
-        }
-    }, [mapContainerRef, mapInnerContainerRef, characterPosition, dimensions]);
+export const Map = ({ display = false, engine }) => {
+    const {
+        world,
+        controls: { currentTile }
+    } = engine;
 
     if (!display || !engine) {
         return null;
     }
     return (
-        <div className={css['map-container']} ref={mapContainerRef}>
+        <div className={css['map-container']}>
             <div className={css['map-block']}>
-                <div className={css['map-content']} ref={mapInnerContainerRef}>
-                    {map.map((row, i) => {
-                        return (
-                            <div key={i}>
-                                {row.map((item, index) => {
-                                    return <MapTile key={index} item={item} position={position} engine={engine} dimensions={dimensions} />;
-                                })}
-                            </div>
-                        );
-                    })}
-                </div>
+                <MapDisplay map={world.content} currentTile={currentTile} />
             </div>
         </div>
     );
 };
 
-const MapTile = ({ item, position, engine, dimensions }) => {
-    // const zombies = useMemo(() => {
-    //     const positions = [];
-    //     for (let i = 0; i < 25; i++) {
-    //         positions.push(engine[`zombie_${i}`]);
-    //     }
-    //     return positions;
-    // }, [engine]);
+const MapDisplay = ({ map, currentTile }) => {
+    const canvasRef = useRef(null);
+    const [size, setSize] = useState(null);
 
-    const tileColor = useMemo(() => {
-        // const zombie = zombies.find((zm) => zm[0] === item.x && zm[2] === item.y);
-        if (position[0] === item.x && position[2] === item.y) {
-            return 'chartreuse';
+    const getColor = useCallback((value) => {
+        switch (value) {
+            case 'T':
+                return 'olivedrab';
+            case 'W':
+                return 'lightskyblue';
+            case 'C':
+            case 'S':
+            case '-':
+                return 'darkkhaki';
+            default:
+                return 'transparent';
         }
-        // if (zombie[0] === item.x && zombie[2] === item.y) {
-        //     return 'red';
-        // }
-        return engine?.assets?.get_color(item);
-    }, [item, position, engine]);
+    }, []);
 
-    return (
-        <div
-            style={{
-                width: `${dimensions.size - 1}px`,
-                height: `${dimensions.size - 1}px`,
-                backgroundColor: tileColor
-            }}
-        />
+    const drawMap = useCallback(
+        (ctx) => {
+            const hexRadius = 1.165 * (size / 100);
+            const hexWidth = Math.sqrt(3) * hexRadius;
+            const vertDist = hexRadius * 1.5;
+
+            map.forEach((it) => {
+                const col = it.x;
+                const row = it.y;
+                const x = (col * hexWidth) / 2;
+                const y = row * vertDist;
+
+                if (it.x === currentTile?.x && it.y === currentTile?.y) {
+                    ctx.fillStyle = 'red';
+                } else {
+                    ctx.fillStyle = getColor(it.value);
+                }
+
+                ctx.beginPath();
+                for (let side = 0; side < 7; side++) {
+                    const angle = (Math.PI / 3) * side + Math.PI / 6;
+                    ctx.lineTo(x + hexRadius * Math.cos(angle), y + hexRadius * Math.sin(angle));
+                }
+                ctx.closePath();
+                ctx.fill();
+            });
+        },
+        [map, size, currentTile]
     );
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        setSize(canvasRef.current?.clientHeight);
+        const ctx = canvas.getContext('2d');
+        if (size) {
+            drawMap(ctx);
+        }
+    }, [size]);
+
+    return <canvas ref={canvasRef} width={size} height={size} />;
 };
