@@ -1,8 +1,9 @@
 import { invoke } from '@tauri-apps/api';
-import { Character, World } from '.';
+import { BaseEngine, Character, World } from '.';
 
-export default class GameModel {
+export default class GameModel extends BaseEngine {
     constructor({ player, id, date_created, last_save_date, save_count, character, storyline, last_known_position, engine }) {
+        super();
         this.player = player;
         this.id = id;
         this.date_created = date_created;
@@ -24,6 +25,7 @@ export default class GameModel {
     }
 
     init() {
+        this.instantiate(this);
         console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
     }
 

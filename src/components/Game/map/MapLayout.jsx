@@ -12,24 +12,22 @@ const collisionCaster = new Raycaster();
 
 export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [engine] = useGameContext();
-    const [isInitialized, setIsInitialized] = useState(false);
     const [focus] = useState(() => new Vector3(0, -1, 1));
-
-    const directions = useMemo(() => engine.controls.directions, [engine]);
+    // const [isInitialized, setIsInitialized] = useState(false);
 
     const computePositions = useCallback(() => {
         const character = characterRef.current.position;
         cameraRef.current.object.position.set(Math.max(-44, Math.min(-4.5, character.x)), 15, Math.max(-62, Math.min(-25, character.z - 18)));
         lightRef.current.position.set(character.x, 10, character.z);
-        engine.controls.setPosition({ x: character.x, z: character.z });
 
         if (engine.controls.getDelta(character)) {
+            engine.controls.setPosition({ x: character.x, z: character.z });
             engine.controls.setCamera(character);
         }
     }, [cameraRef, lightRef, engine, characterRef]);
 
     useFrame(({ scene }) => {
-        if (isInitialized) {
+        if (cameraRef.current && characterRef && lightRef.current) {
             const character = characterRef.current.position;
 
             if (engine.controls.moving) {
@@ -43,7 +41,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                 });
 
                 switch (true) {
-                    case directions.up:
+                    case engine.controls.directions.up:
                         focus.set(0, -1, 1);
                         if (tiles.canMove) {
                             character.z += 0.015 * engine.controls.speed;
@@ -51,7 +49,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                         characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
                         break;
 
-                    case directions.down:
+                    case engine.controls.directions.down:
                         focus.set(0, -1, -1);
                         if (tiles.canMove) {
                             character.z -= 0.015 * engine.controls.speed;
@@ -59,7 +57,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
                         break;
 
-                    case directions.left:
+                    case engine.controls.directions.left:
                         focus.set(1, -1, 0);
                         if (tiles.canMove) {
                             character.x += 0.015 * engine.controls.speed;
@@ -67,7 +65,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                         characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
                         break;
 
-                    case directions.right:
+                    case engine.controls.directions.right:
                         focus.set(-1, -1, 0);
                         if (tiles.canMove) {
                             character.x -= 0.015 * engine.controls.speed;
@@ -84,11 +82,11 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         }
     });
 
-    useEffect(() => {
-        if (cameraRef.current && characterRef && lightRef.current && !isInitialized) {
-            setIsInitialized(true);
-        }
-    }, [isInitialized]);
+    // useEffect(() => {
+    //     if (cameraRef.current && characterRef && lightRef.current && !isInitialized) {
+    //         setIsInitialized(true);
+    //     }
+    // }, []);
 
     return (
         <>

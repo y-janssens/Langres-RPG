@@ -9,9 +9,11 @@ import { Tree } from './Tree';
 export const Tiles = memo(({ data, characterRef }) => {
     const [engine] = useGameContext();
     const { camera } = useThree();
-    const [treeColorMap] = useState(() => engine.controls.assets.get_trees(data));
-    const [grassColorMap] = useState(() => engine.controls.assets.get_grass());
-    const [waterColorMap] = useState(() => engine.controls.assets.get_water());
+    const [colorMaps] = useState(() => ({
+        trees: engine.controls.assets.get_trees(data),
+        grass: engine.controls.assets.get_grass(),
+        water: engine.controls.assets.get_water()
+    }));
 
     const position = useMemo(() => {
         if (!characterRef.current) {
@@ -35,14 +37,14 @@ export const Tiles = memo(({ data, characterRef }) => {
                         <Tree
                             item={item}
                             position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]}
-                            colorMap={treeColorMap.find((it) => it.id === item.id).map}
+                            colorMap={colorMaps.trees.find((it) => it.id === item.id).map}
                         />
                     )}
                     <Tile
                         engine={engine}
                         item={item}
                         position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                        colorMap={item.value === 'W' ? waterColorMap : grassColorMap}
+                        colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
                     />
                 </group>
             );
@@ -54,14 +56,14 @@ const Tile = memo(({ engine, item, position, colorMap }) => {
     const meshRef = useRef();
 
     return (
-        <group>
+        <>
             {engine.devMode && (
                 <Text scale={[-0.25, 0.25, 0.25]} position={[position[0], position[1] + 0.1, position[2]]} color="white">
                     {item.id}
                 </Text>
             )}
             <Hexagon engine={engine} position={position} colorMap={colorMap} meshRef={meshRef} item={item} />
-        </group>
+        </>
     );
 });
 

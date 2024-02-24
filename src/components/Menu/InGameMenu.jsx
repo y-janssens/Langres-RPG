@@ -26,7 +26,6 @@ export const InGameMenu = ({ id, form }) => {
         }
         game.save();
         engine.controls.generateControls();
-        setEngine({ controls: engine.controls });
     }, [form, engine]);
 
     const items = useMemo(() => {

@@ -1,7 +1,9 @@
-import MapAssets from '../models/map';
+import { BaseEngine, MapAssets } from '../models';
+
 const SPEED = 5;
-export default class KeyControls {
+export default class KeyControls extends BaseEngine {
     constructor() {
+        super();
         this.allowedKeys = [
             { name: 'menu', key: 'Escape', value: false },
             { name: 'character', key: 'c', value: false },
@@ -20,14 +22,7 @@ export default class KeyControls {
         this.camera = { x: 0, z: 0 };
         this.speed = 5;
         this.delta = 1.5;
-        this.instantiate();
-    }
-
-    instantiate() {
-        if (!KeyControls.instance) {
-            KeyControls.instance = this;
-        }
-        return KeyControls.instance;
+        this.instantiate(this);
     }
 
     generateControls() {

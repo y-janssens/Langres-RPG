@@ -1,8 +1,10 @@
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
+import { BaseEngine } from './';
 
-export default class MapAssets {
+export default class MapAssets extends BaseEngine {
     constructor() {
+        super();
         this.assets = [
             {
                 name: 'border',
@@ -77,6 +79,7 @@ export default class MapAssets {
                 color: 'brown'
             }
         ];
+        this.instantiate(this);
     }
 
     get_asset(item) {

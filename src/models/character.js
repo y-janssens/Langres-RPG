@@ -1,6 +1,7 @@
-import Inventory from './inventory';
-export default class Character {
+import { BaseEngine, Inventory } from './';
+export default class Character extends BaseEngine {
     constructor({ name, _end, _for, _hab, _cha, _int, _ini, _pv, xp, gold, max_xp, lvl, inventory }) {
+        super();
         this.name = name;
         this._end = _end;
         this._for = _for;
@@ -14,6 +15,7 @@ export default class Character {
         this.max_xp = max_xp;
         this.lvl = lvl;
         this.inventory = new Inventory(inventory);
+        this.instantiate(this);
     }
 
     compute_xp(xp) {

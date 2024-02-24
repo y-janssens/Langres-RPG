@@ -1,11 +1,15 @@
-export default class Environment {
+import { BaseEngine } from './';
+
+export default class Environment extends BaseEngine {
     constructor({ date, daytime, weather, season, danger, locale, wind_force }) {
+        super();
         this.date = this.parseDate(date, locale);
         this.daytime = daytime;
         this.season = season;
         this.weather = weather;
         this.danger = danger;
         this.windForce = wind_force;
+        this.instantiate(this);
     }
 
     parseDate(str, locale) {

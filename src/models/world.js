@@ -1,5 +1,7 @@
-export default class World {
+import { BaseEngine } from './';
+export default class World extends BaseEngine {
     constructor({ id, name, size, content, order, complete, starting_point, primary }) {
+        super();
         this.id = id;
         this.name = name;
         this.size = size;
@@ -11,6 +13,7 @@ export default class World {
         this.content = content;
         this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2 };
         this.primary = primary;
+        this.instantiate(this);
     }
 
     gridify(data) {

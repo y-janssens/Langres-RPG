@@ -1,8 +1,11 @@
 import { invoke } from '@tauri-apps/api';
-export default class Storyline {
+import { BaseEngine } from './';
+export default class Storyline extends BaseEngine {
     constructor({ id, story }) {
+        super();
         this.id = id;
         this.story = story;
+        this.instantiate(this);
     }
 
     async save() {
