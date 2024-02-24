@@ -11,7 +11,7 @@ const positionCaster = new Raycaster();
 const collisionCaster = new Raycaster();
 
 export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
-    const [engine, setEngine] = useGameContext();
+    const [engine] = useGameContext();
     const [isInitialized, setIsInitialized] = useState(false);
     const [focus] = useState(() => new Vector3(0, -1, 1));
 
@@ -25,7 +25,6 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
         if (engine.controls.getDelta(character)) {
             engine.controls.setCamera(character);
-            setEngine({ controls: engine.controls });
         }
     }, [cameraRef, lightRef, engine, characterRef]);
 
@@ -100,7 +99,8 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     );
 });
 
-const Zombies = ({ target, map, nodes }) => {  // eslint-disable-line
+const Zombies = ({ target, map, nodes }) => {
+    // eslint-disable-line
     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
 
     return refs.map((ref, index) => {

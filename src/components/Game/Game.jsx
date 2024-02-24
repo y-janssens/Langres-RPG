@@ -40,10 +40,14 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 engine.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 engine.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 engine.controls.items = currentWorld.content;
+                engine.controls.currentTile = game.last_known_position;
+                engine.world = currentWorld;
                 setPosition(engine.controls.positions);
-                setEngine({ controls: engine.controls });
+                // setEngine({
+                //     controls: engine.controls,
+                //     world: currentWorld
+                // });
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
-                // game.save();
             }
         },
         [engine.gameId, engine?.mapId]
@@ -100,7 +104,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             <PauseScreen ready={contextReady} engine={engine} />
             <LoadingScreen form={form} setForm={setForm} engine={engine} loading={isLoading}>
                 {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}
-                <Hud engine={engine} game={form} display={keyToggles} position={position} />
+                <Hud engine={engine} game={form} display={keyToggles} />
                 <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
                     <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
                 </Scene>

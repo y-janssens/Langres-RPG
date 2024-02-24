@@ -46,7 +46,7 @@ export const Controler = () => {
     );
 
     const pauseGame = useMemo(() => {
-        return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu);
+        return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu || engine.controls?.toggles.map);
     }, [engine]);
 
     const handleControls = useCallback(

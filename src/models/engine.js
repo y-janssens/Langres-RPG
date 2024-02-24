@@ -11,6 +11,14 @@ export default class Engine extends BaseEngine {
         this.builder = false;
         this.applicationData = {};
         this.controls = new KeyControls();
+        this.instantiate();
+    }
+
+    instantiate() {
+        if (!Engine.instance) {
+            Engine.instance = this;
+        }
+        return Engine.instance;
     }
 
     roll(value, cap) {
