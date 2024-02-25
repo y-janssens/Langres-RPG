@@ -13,6 +13,7 @@ pub mod games {
     pub struct Position {
         x: f32,
         y: f32,
+        id: u32
     }
 
     impl FromSql<Text, Sqlite> for Position {
@@ -71,7 +72,7 @@ pub mod games {
                 last_save_date: Self::get_date(),
                 storyline: story,
                 character: Character::new(name),
-                last_known_position: Position { x: 0.0, y: 0.0 },
+                last_known_position: Position { x: 0.0, y: 0.0, id: 0 },
             }
         }
 

@@ -1,7 +1,5 @@
-import { BaseEngine } from './';
-export default class World extends BaseEngine {
+export default class World {
     constructor({ id, name, size, content, order, complete, starting_point, primary }) {
-        super();
         this.id = id;
         this.name = name;
         this.size = size;
@@ -11,9 +9,8 @@ export default class World extends BaseEngine {
         this.complete = complete;
         this.rows = this.toRows(content);
         this.content = content;
-        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2 };
+        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2, id: starting_point.id };
         this.primary = primary;
-        this.instantiate(this);
     }
 
     gridify(data) {
@@ -36,5 +33,9 @@ export default class World extends BaseEngine {
 
     toRows(data) {
         return Array.from({ length: Math.ceil(data.length / this.size) }, (_, index) => data.slice(index * this.size, (index + 1) * this.size));
+    }
+
+    get starting_tile() {
+        return this.content.find((it) => it.id === this.starting_point.id);
     }
 }

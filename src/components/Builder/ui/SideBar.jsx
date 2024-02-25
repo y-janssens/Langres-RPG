@@ -28,7 +28,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
 
             if (!primary) {
                 if (!item.value && form.selectedTiles.length === 1) {
-                    newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y };
+                    newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y, id: form.selectedTiles[0].id };
                 }
                 const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
                 let newContent = newMap.content.map((item) => {
@@ -88,7 +88,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                             </span>
                             <span>
                                 <p>Start: </p>
-                                <span>{`X: ${map.starting_point.x} Y: ${map.starting_point.y}`}</span>
+                                <span>{`X: ${map.starting_point.x} Y: ${map.starting_point.y} Id: ${map.starting_point.id}`}</span>
                             </span>
                             <span>
                                 <p>{`${t('builder.menu.map.size')}:`}</p>

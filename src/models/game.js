@@ -1,9 +1,8 @@
 import { invoke } from '@tauri-apps/api';
-import { BaseEngine, Character, World } from '.';
+import { Character, World } from '.';
 
-export default class GameModel extends BaseEngine {
+export default class GameModel {
     constructor({ player, id, date_created, last_save_date, save_count, character, storyline, last_known_position, engine }) {
-        super();
         this.player = player;
         this.id = id;
         this.date_created = date_created;
@@ -17,7 +16,9 @@ export default class GameModel extends BaseEngine {
     }
 
     async save() {
-        await invoke('save', { data: this });
+        let _datas = { ...this };
+        delete _datas.engine;
+        await invoke('save', { data: _datas });
     }
 
     async delete() {
@@ -25,7 +26,6 @@ export default class GameModel extends BaseEngine {
     }
 
     init() {
-        this.instantiate(this);
         console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
     }
 
@@ -54,5 +54,12 @@ export default class GameModel extends BaseEngine {
 
     get current_world() {
         return new World(this.current_map);
+    }
+
+    get current_tile() {
+        if (!this.has_position) {
+            return this.current_world.starting_tile;
+        }
+        return this.current_world.content.find((it) => it.id === this.last_known_position.id);
     }
 }

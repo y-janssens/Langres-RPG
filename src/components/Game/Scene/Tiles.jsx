@@ -1,73 +1,35 @@
-import { useState, useRef, memo, useCallback, useMemo } from 'react';
+import { useState, useRef, memo, useMemo } from 'react';
 import { Vector2, BufferAttribute, BufferGeometry } from 'three';
-import { useThree } from '@react-three/fiber';
-import { Text } from '@react-three/drei';
-
 import { useGameContext } from '../../../hooks';
 import { Tree } from './Tree';
 
-export const Tiles = memo(({ data, characterRef }) => {
+export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();
-    const { camera } = useThree();
     const [colorMaps] = useState(() => ({
-        trees: engine.controls.assets.get_trees(data),
+        trees: engine.controls.assets.get_trees(),
         grass: engine.controls.assets.get_grass(),
         water: engine.controls.assets.get_water()
     }));
 
-    const position = useMemo(() => {
-        if (!characterRef.current) {
-            return { x: engine.controls.positions[0], z: engine.controls.positions[2] - 18 };
-        }
-        return { x: camera.position.x, z: camera.position.z };
-    }, [camera, engine, characterRef]);
-
-    const getFilter = useCallback(
-        (item) => {
-            return -item.x < position.x + 20 && -item.x > position.x - 20 && -item.y < position.z + 29 && -item.y > position.z + 8;
-        },
-        [position]
-    );
-
     return data.map((item, index) => {
-        if (getFilter(item)) {
-            return (
-                <group key={index}>
-                    {(item.value === 'T' || item.value === 'F') && (
-                        <Tree
-                            item={item}
-                            position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]}
-                            colorMap={colorMaps.trees.find((it) => it.id === item.id).map}
-                        />
-                    )}
-                    <Tile
-                        engine={engine}
-                        item={item}
-                        position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                        colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
-                    />
-                </group>
-            );
-        }
+        return (
+            <group key={index}>
+                {(item.value === 'T' || item.value === 'F') && (
+                    <Tree position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]} colorMap={colorMaps.trees} />
+                )}
+                <Hexagon
+                    item={item}
+                    position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
+                    colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
+                />
+            </group>
+        );
     });
 });
 
-const Tile = memo(({ engine, item, position, colorMap }) => {
+export const Hexagon = memo(({ position, colorMap, item, builder = false, onClick = () => {} }) => {
     const meshRef = useRef();
 
-    return (
-        <>
-            {engine.devMode && (
-                <Text scale={[-0.25, 0.25, 0.25]} position={[position[0], position[1] + 0.1, position[2]]} color="white">
-                    {item.id}
-                </Text>
-            )}
-            <Hexagon engine={engine} position={position} colorMap={colorMap} meshRef={meshRef} item={item} />
-        </>
-    );
-});
-
-export const Hexagon = memo(({ engine, position, colorMap = null, meshRef = null, item }) => {
     const vertices = useMemo(() => {
         const points = [];
         for (let i = 0; i < 6; i++) {
@@ -104,7 +66,7 @@ export const Hexagon = memo(({ engine, position, colorMap = null, meshRef = null
     }, [vertices, uvs]);
 
     const color = useMemo(() => {
-        if (engine) {
+        if (!builder) {
             return 'white';
         }
         switch (item.value) {
@@ -118,19 +80,19 @@ export const Hexagon = memo(({ engine, position, colorMap = null, meshRef = null
             default:
                 return 'white';
         }
-    }, [item, engine]);
+    }, [item, builder]);
 
     return (
         <mesh
             castShadow
             receiveShadow
             ref={meshRef}
-            name={item.id}
-            userData={{ tile: item, castable: item.walkable }}
             geometry={geometry}
             position={position}
-            rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
             scale={[0.77, 0.77, 0.77]}
+            onClick={onClick}
+            rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
+            userData={{ tile: item, castable: item.walkable }}
         >
             <meshStandardMaterial color={color} map={colorMap} />
         </mesh>

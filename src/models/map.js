@@ -1,10 +1,8 @@
 import { useLoader } from '@react-three/fiber';
 import { TextureLoader } from 'three';
-import { BaseEngine } from './';
 
-export default class MapAssets extends BaseEngine {
+export default class MapAssets {
     constructor() {
-        super();
         this.assets = [
             {
                 name: 'border',
@@ -79,7 +77,6 @@ export default class MapAssets extends BaseEngine {
                 color: 'brown'
             }
         ];
-        this.instantiate(this);
     }
 
     get_asset(item) {
@@ -92,17 +89,19 @@ export default class MapAssets extends BaseEngine {
         return useLoader(TextureLoader, asset.src[0]);
     }
 
-    get_trees(data) {
-        let items = [];
-        data.forEach((item) => {
-            if (item.value === 'T' || item.value === 'F') {
-                items.push({
-                    id: item.id,
-                    map: useLoader(TextureLoader, this.get_asset(item))
-                });
-            }
-        });
-        return items;
+    get_trees() {
+        // let items = [];
+        const asset = this.assets.find((as) => as.key === 'T');
+        return useLoader(TextureLoader, asset.src[0]);
+        // data.forEach((item) => {
+        //     if (item.value === 'T' || item.value === 'F') {
+        //         items.push({
+        //             id: item.id,
+        //             map: useLoader(TextureLoader, this.get_asset(item))
+        //         });
+        //     }
+        // });
+        // return items;
     }
 
     get_water() {

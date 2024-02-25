@@ -1,23 +1,31 @@
-import { useRef, memo, useEffect, useState, useCallback, useMemo } from 'react';
+import { memo, useState, useCallback, useEffect } from 'react';
+import { Raycaster, Vector3 } from 'three';
 import { useFrame } from '@react-three/fiber';
+
 import { useGameContext } from '../../../hooks';
+
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
-import Zombie from '../Ennemies/Zombie';
-
-import { Raycaster, Vector3 } from 'three';
+import Zombie from '../Ennemies/Zombie'; // eslint-disable-line
 
 const positionCaster = new Raycaster();
 const collisionCaster = new Raycaster();
 
-export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
+export const MapLayout = memo(({ position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [engine] = useGameContext();
     const [focus] = useState(() => new Vector3(0, -1, 1));
-    // const [isInitialized, setIsInitialized] = useState(false);
+    const [filteredItems, setFilteredItems] = useState(() => engine.controls.filterItems());
+
+    const frustumCullItems = useCallback(() => {
+        setFilteredItems(engine.controls.filterItems());
+    }, [engine]);
 
     const computePositions = useCallback(() => {
         const character = characterRef.current.position;
-        cameraRef.current.object.position.set(Math.max(-44, Math.min(-4.5, character.x)), 15, Math.max(-62, Math.min(-25, character.z - 18)));
+        cameraRef.current.object.position.set(
+            Math.max(-58, Math.min(-4.5, character.x)),
+            15,
+            Math.max(-79, Math.min(-25, character.z - 18)));
         lightRef.current.position.set(character.x, 10, character.z);
 
         if (engine.controls.getDelta(character)) {
@@ -30,7 +38,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         if (cameraRef.current && characterRef && lightRef.current) {
             const character = characterRef.current.position;
 
-            if (engine.controls.moving) {
+            if (engine.controls.isMoving) {
                 positionCaster.set(character, new Vector3(0, -1, 0).normalize());
                 collisionCaster.set(character, focus);
 
@@ -77,31 +85,32 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                 if (Boolean(tiles.current?.threshold) && Object.keys(tiles.current?.threshold).length) {
                     handleGateWay(tiles.current?.threshold);
                 }
+
+                if (engine.controls.getDelta(character)) {
+                    frustumCullItems();
+                }
             }
             computePositions();
         }
     });
 
-    // useEffect(() => {
-    //     if (cameraRef.current && characterRef && lightRef.current && !isInitialized) {
-    //         setIsInitialized(true);
-    //     }
-    // }, []);
+    useEffect(() => {
+        frustumCullItems();
+    }, []);
 
     return (
         <>
             <Character position={position} characterRef={characterRef} />
             {/* <Zombies target={characterRef} map={form.world} nodes={form.world.grid} /> */}
-            <Tiles data={form.world.content} form={form} characterRef={characterRef} cameraRef={cameraRef} />
+            <Tiles data={filteredItems} />
         </>
     );
 });
 
-const Zombies = ({ target, map, nodes }) => {
-    // eslint-disable-line
-    const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
+// const Zombies = ({ target, map, nodes }) => { // eslint-disable-line
+//     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
 
-    return refs.map((ref, index) => {
-        return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
-    });
-};
+//     return refs.map((ref, index) => {
+//         return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
+//     });
+// };

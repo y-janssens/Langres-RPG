@@ -33,20 +33,17 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, engine });
                 const currentWorld = game.current_world;
+                engine.controls.currentTile = game.current_tile;
+
                 if (!game.has_position || engine.mapid) {
-                    game.last_known_position = { x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
+                    game.last_known_position = { ...game.last_known_position, x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
                 }
 
                 engine.controls.setPosition({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 engine.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 engine.controls.items = currentWorld.content;
-                engine.controls.currentTile = game.last_known_position;
                 engine.world = currentWorld;
                 setPosition(engine.controls.positions);
-                // setEngine({
-                //     controls: engine.controls,
-                //     world: currentWorld
-                // });
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
             }
         },
@@ -94,13 +91,17 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         return Boolean(expectedKeys.every((key) => Object.prototype.hasOwnProperty.call(engine, key)));
     }, [engine]);
 
+    const displayInGameMenu = useMemo(() => {
+        return engine.gameId && engine.controls.toggles.menu;
+    }, [engine, engine.controls]);
+
     const isLoading = useMemo(() => {
         return !form.id || loading || !contextReady || loadingEnvironment;
     }, [form, loading, !contextReady, loadingEnvironment]);
 
     return (
         <>
-            {engine.gameId && engine.controls.toggles.menu && <InGameMenu id={engine.gameId} form={form} />}
+            {displayInGameMenu && <InGameMenu id={engine.gameId} form={form} />}
             <PauseScreen ready={contextReady} engine={engine} />
             <LoadingScreen form={form} setForm={setForm} engine={engine} loading={isLoading}>
                 {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}

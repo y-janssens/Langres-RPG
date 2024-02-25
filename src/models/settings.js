@@ -1,9 +1,8 @@
 import i18next from 'i18next';
 import { invoke } from '@tauri-apps/api';
-import { BaseEngine } from './';
-export default class Settings extends BaseEngine {
+
+export default class Settings {
     constructor({ id, language, sound, volume, music }) {
-        super();
         this.id = id;
         this.language = language;
         this.sound = sound;
@@ -13,7 +12,6 @@ export default class Settings extends BaseEngine {
             { key: 'en', value: 'English' },
             { key: 'fr', value: 'Français' }
         ];
-        this.instantiate(this);
     }
 
     setLanguage() {

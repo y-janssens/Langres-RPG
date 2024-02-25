@@ -26577,7 +26577,8 @@ VALUES
                     "size": 50,
                     "starting_point": {
                         "x": 12,
-                        "y": 13
+                        "y": 13,
+                        "id": 656
                     },
                     "primary": true
                 }

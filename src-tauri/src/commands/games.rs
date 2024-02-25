@@ -38,6 +38,7 @@ pub fn save(
     data: models::game::games::Game,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
+    println!("Game datas: {:?}", data);
     let _save = functions::games::save_game(connection, data);
 }
 
