@@ -69,7 +69,12 @@
       },
       "generator": {
         "title": "Générez et sélectionnez des cartes aléatoires",
-        "subtitle": "Générez un lot de cartes"
+        "subtitle": "Générez un lot de cartes",
+        "select": "Type de carte",
+        "types": {
+          "forest": "Forêt",
+          "swamp": "Marécage"
+        }
       },
       "steps": {
         "acts": {

@@ -4,12 +4,18 @@ import { Modal } from '../Modal/Modal';
 import Icon from '../../../ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
 import { ButtonIcon } from '../ButtonLabel';
+import { SelectButton } from '../selector/Selector';
 import css from './generator.module.css';
+
+const MAP_TYPES = [
+    { label: 'forest', key: 0 },
+    { label: 'swamp', key: 1 }
+];
 
 export const Generator = ({ open, form, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
-    const [batchSettings] = useState(() => ({ kind: 'forest', amount: 15 }));
+    const [batchSettings, setBatchSettings] = useState(() => ({ kind: MAP_TYPES[0].label, amount: 25 }));
     const [selectedMap, setSelectedMap] = useState({ id: null, map: null });
     const [selectedPreview, setSelectedPreview] = useState(null);
 
@@ -20,6 +26,13 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
             setReady(false);
         }
     });
+
+    const handleSelect = useCallback(
+        (value) => {
+            setBatchSettings({ ...batchSettings, kind: value });
+        },
+        [batchSettings]
+    );
 
     const handleSave = useCallback(() => {
         let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
@@ -57,6 +70,8 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                     disabled={loadingMaps || selectedPreview}
                     progress={progress}
                     onLaunch={() => setReady(true)}
+                    selected={batchSettings.kind}
+                    handleSelect={handleSelect}
                     sync={handleReset}
                 />
             }
@@ -80,8 +95,9 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     );
 };
 
-const GeneratorActions = ({ disabled, total, progress, onLaunch = () => {}, sync = () => {} }) => {
+const GeneratorActions = ({ disabled, total, progress, selected, onLaunch = () => {}, sync = () => {}, handleSelect = () => {} }) => {
     const { t } = useTranslation();
+    const [open, setOpen] = useState(false);
 
     const trigger = useCallback(() => {
         if (progress === 0) {
@@ -93,7 +109,28 @@ const GeneratorActions = ({ disabled, total, progress, onLaunch = () => {}, sync
     return (
         <div className={css['map-preview-cta']}>
             <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${total}`}</span>
-            <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => trigger()} />
+            <div className={css['map-preview-cta-btns']}>
+                <SelectButton open={open} label={selected || t('builder.modals.generator.select')} onClick={() => setOpen(!open)} disabled />
+                {open && (
+                    <div className={css['map-preview-cta-content']}>
+                        {MAP_TYPES.map((type) => {
+                            return (
+                                <span
+                                    key={type.key}
+                                    className={css['map-preview-cta-content-item']}
+                                    onClick={() => {
+                                        handleSelect(type.label);
+                                        setOpen(false);
+                                    }}
+                                >
+                                    {t(`builder.modals.generator.types.${type.label}`)}
+                                </span>
+                            );
+                        })}
+                    </div>
+                )}
+                <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => trigger()} />
+            </div>
         </div>
     );
 };

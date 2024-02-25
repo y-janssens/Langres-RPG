@@ -69,7 +69,12 @@
       },
       "generator": {
         "title": "Generate and select random maps",
-        "subtitle": "Generate a batch of maps"
+        "subtitle": "Generate a batch of maps",
+        "select": "Map type",
+         "types": {
+          "forest": "Forest",
+          "swamp": "Swamp"
+        }
       },
       "steps": {
         "acts": {

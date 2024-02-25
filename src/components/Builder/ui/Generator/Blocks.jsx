@@ -54,15 +54,12 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
     const getColor = useCallback((value) => {
         switch (value) {
             case 'T':
-            case 'C':
                 return 'olivedrab';
             case 'W':
-            case 'S':
                 return 'lightskyblue';
             case '-':
-                return 'darkkhaki';
             default:
-                return 'transparent';
+                return 'darkkhaki';
         }
     }, []);
 
@@ -72,12 +69,12 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
             const hexWidth = Math.sqrt(3) * hexRadius;
             const vertDist = hexRadius * 1.5;
 
-            map.forEach((it, i) => {
+            map.forEach((it) => {
                 ctx.fillStyle = getColor(it.value);
 
-                const col = i % 50;
-                const row = Math.floor(i / 50);
-                const x = col * hexWidth + ((row % 2) * hexWidth) / 2;
+                const col = it.x;
+                const row = it.y;
+                const x = (col * hexWidth) / 2;
                 const y = row * vertDist;
 
                 ctx.beginPath();

@@ -17,7 +17,7 @@ pub mod map_config {
             values: get_tiles(10, 5, 0, 0, 1, 0),
         };
         static ref FOREST_CONFIG: Conf = Conf {
-            values: get_tiles(110, 20, 25, 10, 10, 0),
+            values: get_tiles(100, 35, 25, 10, 10, 0),
         };
         static ref SWAMP_CONFIG: Conf = Conf {
             values: get_tiles(1, 3, 5, 1, 1, 0),

@@ -36,8 +36,8 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
     return (
         <div className={css['select-multi-container']}>
             <SelectButton
+                open={form.modalSelect}
                 label={label}
-                open={open}
                 onClick={() => {
                     setForm('modalSelect', !form.modalSelect);
                     setForm('modalManager', false);
@@ -71,7 +71,7 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
 export const SelectButton = ({ label, open = false, onClick = () => {}, size = 'xs' }) => {
     return (
         <div className={css['selector-select-btn']}>
-            <Button dataTheme="dark" size={size} color="neutral" active={open} variant="outline" fullWidth onClick={onClick} animation={false}>
+            <Button dataTheme="dark" size={size} color="neutral" active variant="outline" fullWidth onClick={onClick} animation={false}>
                 <div className={css['select-multi-label']}>
                     <span>{label}</span>
                     <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
