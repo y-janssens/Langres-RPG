@@ -12,4 +12,11 @@ export default class BaseEngine {
         }
         return this[key][fn](...args);
     }
+
+    instantiate(instance) {
+        if (!instance.instance) {
+            instance.instance = this;
+        }
+        return instance.instance;
+    }
 }

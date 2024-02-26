@@ -9,7 +9,7 @@ export default class World {
         this.complete = complete;
         this.rows = this.toRows(content);
         this.content = content;
-        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2 };
+        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2, id: starting_point.id };
         this.primary = primary;
     }
 
@@ -33,5 +33,9 @@ export default class World {
 
     toRows(data) {
         return Array.from({ length: Math.ceil(data.length / this.size) }, (_, index) => data.slice(index * this.size, (index + 1) * this.size));
+    }
+
+    get starting_tile() {
+        return this.content.find((it) => it.id === this.starting_point.id);
     }
 }

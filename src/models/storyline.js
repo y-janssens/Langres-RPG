@@ -1,4 +1,5 @@
 import { invoke } from '@tauri-apps/api';
+
 export default class Storyline {
     constructor({ id, story }) {
         this.id = id;

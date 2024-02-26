@@ -8,7 +8,7 @@ function PauseScreen({ engine, ready }) {
         }
         return (
             Boolean(engine.controls?.toggles?.pause) &&
-            Object.entries({ ...engine.controls.toggles })
+            Object.entries(engine.controls.toggles)
                 .filter((k) => k[0] !== 'interface' && k[0] !== 'pause' && k[0] !== 'minimap')
                 .every((k) => k[1] === false)
         );

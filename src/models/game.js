@@ -16,7 +16,9 @@ export default class GameModel {
     }
 
     async save() {
-        await invoke('save', { data: this });
+        let _datas = { ...this };
+        delete _datas.engine;
+        await invoke('save', { data: _datas });
     }
 
     async delete() {
@@ -52,5 +54,12 @@ export default class GameModel {
 
     get current_world() {
         return new World(this.current_map);
+    }
+
+    get current_tile() {
+        if (!this.has_position) {
+            return this.current_world.starting_tile;
+        }
+        return this.current_world.content.find((it) => it.id === this.last_known_position.id);
     }
 }

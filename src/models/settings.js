@@ -1,5 +1,6 @@
 import i18next from 'i18next';
 import { invoke } from '@tauri-apps/api';
+
 export default class Settings {
     constructor({ id, language, sound, volume, music }) {
         this.id = id;

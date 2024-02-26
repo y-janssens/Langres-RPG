@@ -46,6 +46,7 @@ pub mod maps {
     pub struct Location {
         pub x: u32,
         pub y: u32,
+        pub id: u32,
     }
 
     impl World {
@@ -58,7 +59,11 @@ pub mod maps {
                 order,
                 complete: false,
                 content: Self::generate(size),
-                starting_point: Location { x: 5, y: 5 },
+                starting_point: Location {
+                    x: 9,
+                    y: 4,
+                    id: 254,
+                },
                 primary,
             }
         }

@@ -17,17 +17,17 @@ export const InGameMenu = ({ id, form }) => {
 
     const displayInGameMenu = useMemo(() => {
         return id && engine.controls.toggles.menu;
-    }, [id, engine, engine.controls.toggles]);
+    }, [id, engine, engine.controls]);
 
     const handleSaveGame = useCallback(() => {
         let game = new GameModel(form);
         if (!engine.mapid || engine.mapid?.is_final) {
-            game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]) };
+            game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
         }
         game.save();
         engine.controls.generateControls();
         setEngine({ controls: engine.controls });
-    }, [form, engine]);
+    }, [form, engine.controls]);
 
     const items = useMemo(() => {
         return [

@@ -19,7 +19,7 @@ pub mod tests_maps {
     }
 
     #[test]
-    fn test_procedural_map_generation_consistency() {
+    fn test_generate_forest() {
         let size = 50;
         let world = world_factory("test", size);
         let map = Map::generate(world.content, "forest");

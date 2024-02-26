@@ -19,7 +19,11 @@ pub mod tests_factories {
             order: 0,
             complete: false,
             content: World::generate(size),
-            starting_point: Location { x: 5, y: 5 },
+            starting_point: Location {
+                x: 9,
+                y: 4,
+                id: 254,
+            },
             primary: true,
         }
     }

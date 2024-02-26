@@ -1,4 +1,4 @@
-import Inventory from './inventory';
+import { Inventory } from './';
 export default class Character {
     constructor({ name, _end, _for, _hab, _cha, _int, _ini, _pv, xp, gold, max_xp, lvl, inventory }) {
         this.name = name;
