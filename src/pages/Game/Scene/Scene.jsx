@@ -1,7 +1,8 @@
 import { Canvas } from '@react-three/fiber';
 
-import { MapControls } from '@react-three/drei';
+import { MapControls, Sky } from '@react-three/drei';
 import { Pixelation, EffectComposer } from '@react-three/postprocessing';
+import WaterPlane from './Water';
 
 const Scene = ({ lightRef, cameraRef, pause, children }) => {
     return (
@@ -24,6 +25,8 @@ const Scene = ({ lightRef, cameraRef, pause, children }) => {
 
             <EffectComposer disableNormalPass>
                 <Pixelation granularity={2.5} />
+                <Sky scale={1000} sunPosition={[0, 500, 0]} turbidity={0.1} />
+                <WaterPlane />
                 {children}
             </EffectComposer>
         </Canvas>
