@@ -10,7 +10,7 @@ pub mod characters {
     use serde::{Deserialize, Serialize};
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Character {
-        name: String,
+        pub name: String,
         _end: u32,
         _for: u32,
         _hab: u32,

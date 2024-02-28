@@ -11,7 +11,7 @@ pub mod storyline {
     #[diesel(table_name = crate::schema::storyline)]
     #[diesel(check_for_backend(Sqlite))]
     pub struct Story {
-        id: i32,
+        pub id: i32,
         pub story: Acts,
     }
 
@@ -57,13 +57,13 @@ pub mod storyline {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Act {
-        id: i32,
-        order: u32,
-        name: String,
-        title: String,
-        date: String,
-        content: Content,
-        complete: bool,
+        pub id: i32,
+        pub order: u32,
+        pub name: String,
+        pub title: String,
+        pub date: String,
+        pub content: Content,
+        pub complete: bool,
     }
 
     impl Act {
@@ -84,7 +84,7 @@ pub mod storyline {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Content {
-        maps: Vec<Option<World>>,
+        pub maps: Vec<Option<World>>,
     }
 
     impl Story {

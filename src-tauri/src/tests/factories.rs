@@ -1,5 +1,6 @@
 #[allow(dead_code)]
 pub mod tests_factories {
+    use crate::models::story::storyline::{Act, Acts, Content, Story};
     use crate::models::world::maps::World;
     use crate::models::world::maps::*;
 
@@ -25,6 +26,32 @@ pub mod tests_factories {
                 id: 254,
             },
             primary: true,
+        }
+    }
+
+    pub fn storyline_factory(
+        act_name: &str,
+        act_title: &str,
+        act_date: &str,
+        map_name: &str,
+    ) -> Story {
+        let map = world_factory(map_name, 50);
+
+        Story {
+            id: generate_id(),
+            story: Acts {
+                acts: vec![Act {
+                    id: generate_id(),
+                    order: 0,
+                    name: act_name.to_string(),
+                    title: act_title.to_string(),
+                    date: act_date.to_string(),
+                    content: Content {
+                        maps: vec![Some(map)],
+                    },
+                    complete: false,
+                }],
+            },
         }
     }
 }

@@ -11,9 +11,9 @@ pub mod games {
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Position {
-        x: f32,
-        y: f32,
-        id: u32
+        pub x: f32,
+        pub y: f32,
+        pub id: u32,
     }
 
     impl FromSql<Text, Sqlite> for Position {
@@ -36,14 +36,14 @@ pub mod games {
     #[diesel(table_name = crate::schema::games)]
     #[diesel(check_for_backend(Sqlite))]
     pub struct Game {
-        id: i32,
-        player: String,
-        date_created: String,
-        last_save_date: String,
-        save_count: i32,
-        character: Character,
-        storyline: Story,
-        last_known_position: Position,
+        pub id: i32,
+        pub player: String,
+        pub date_created: String,
+        pub last_save_date: String,
+        pub save_count: i32,
+        pub character: Character,
+        pub storyline: Story,
+        pub last_known_position: Position,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Insertable, AsChangeset)]
@@ -72,7 +72,11 @@ pub mod games {
                 last_save_date: Self::get_date(),
                 storyline: story,
                 character: Character::new(name),
-                last_known_position: Position { x: 0.0, y: 0.0, id: 0 },
+                last_known_position: Position {
+                    x: 0.0,
+                    y: 0.0,
+                    id: 0,
+                },
             }
         }
 

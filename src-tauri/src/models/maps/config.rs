@@ -48,8 +48,10 @@ pub mod map_config {
     }
 
     pub fn get_map_size(size: u32) -> (usize, usize) {
-        let width = ((size as f32) * 0.85).sqrt() as usize;
-        let height = ((size as f32) / 0.85).sqrt().ceil() as usize;
-        (width, height)
+        let bias = (((size as f32).sqrt()).sqrt() + 1_f32).ceil();
+        let width = ((size as f32).sqrt() - (bias / 2_f32)).round();
+        let height = width + bias;
+
+        (width as usize, height as usize)
     }
 }

@@ -75,7 +75,7 @@ pub mod maps {
         pub fn generate(size: u32) -> Vec<Item> {
             println!("Generating world data...");
             // Adjust the number of rows to keep a square map
-            let rows = (size as f32 / 0.85).ceil() as u32;
+            let rows = ((size as f32 + (size as f32).sqrt()).ceil() + 1_f32) as u32;
             let threshold = rows - size;
             let grid: u32 = size * rows;
             let mut content = Vec::new();
