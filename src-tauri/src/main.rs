@@ -70,7 +70,8 @@ fn main() {
             // Map generator commands
             commands::maps::generate_maps_batch,
             // Utils
-            commands::utils::throw_dice
+            commands::utils::throw_dice,
+            commands::utils::filter_tiles
         ])
         .manage(pool)
         .run(tauri::generate_context!())

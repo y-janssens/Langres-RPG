@@ -1,4 +1,4 @@
-use crate::models::utils::utils::Dice;
+use crate::models::utils::game_utils::Dice;
 
 pub fn throw_dice(value: u32, cap: u32) -> Result<Dice, String> {
     let dice = Dice::launch(value, cap);
