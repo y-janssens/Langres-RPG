@@ -47,4 +47,9 @@ pub mod tests_fixtures {
             println!();
         }
     }
+
+    pub fn compute_map_size(size: u32) -> u32 {
+        let rows = ((size as f32 + (size as f32).sqrt()).ceil() + 1_f32) as u32;
+        (size * rows) as u32
+    }
 }
