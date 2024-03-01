@@ -28,7 +28,7 @@ pub mod tests_game {
         assert_eq!(game.storyline.story.acts[0].name, act_name);
         assert_eq!(game.storyline.story.acts[0].title, act_title);
         assert_eq!(game.storyline.story.acts[0].date, act_date);
-        assert_eq!(game.storyline.story.acts[0].content.maps.len(), 1);
+        assert_eq!(game.storyline.story.acts[0].content.maps.len(), 2);
 
         assert_eq!(map.name, map_name);
         assert_eq!(map.content.len() as u32, compute_map_size(map.size));

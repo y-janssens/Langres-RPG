@@ -11,18 +11,18 @@ pub mod characters {
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Character {
         pub name: String,
-        _end: u32,
-        _for: u32,
-        _hab: u32,
-        _cha: u32,
-        _int: u32,
-        _ini: u32,
-        _pv: u32,
-        xp: u32,
-        max_xp: u32,
-        gold: u64,
-        lvl: u32,
-        inventory: Inventory,
+        pub _end: u32,
+        pub _for: u32,
+        pub _hab: u32,
+        pub _cha: u32,
+        pub _int: u32,
+        pub _ini: u32,
+        pub _pv: u32,
+        pub xp: u32,
+        pub max_xp: u32,
+        pub gold: u64,
+        pub lvl: u32,
+        pub inventory: Inventory,
     }
 
     impl FromSql<Text, Sqlite> for Character {

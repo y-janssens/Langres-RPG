@@ -35,8 +35,6 @@ pub mod tests_factories {
         act_date: &str,
         map_name: &str,
     ) -> Story {
-        let map = world_factory(map_name, 50);
-
         Story {
             id: generate_id(),
             story: Acts {
@@ -47,7 +45,10 @@ pub mod tests_factories {
                     title: act_title.to_string(),
                     date: act_date.to_string(),
                     content: Content {
-                        maps: vec![Some(map)],
+                        maps: vec![
+                            Some(world_factory(map_name, 50)),
+                            Some(world_factory(map_name, 50)),
+                        ],
                     },
                     complete: false,
                 }],
