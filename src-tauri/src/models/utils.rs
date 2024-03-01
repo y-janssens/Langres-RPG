@@ -81,7 +81,7 @@ pub mod game_utils {
 
         fn resolve(&self) -> Vec<i32> {
             let horizontal_ids = self.horizontal_ids();
-            let resolves_ids: HashSet<i32> = HashSet::from_iter(horizontal_ids.into_iter());
+            let resolves_ids: HashSet<i32> = HashSet::from_iter(horizontal_ids);
             array_from_set(resolves_ids)
         }
     }
