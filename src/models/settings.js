@@ -12,6 +12,7 @@ export default class Settings {
             { key: 'en', value: 'English' },
             { key: 'fr', value: 'Français' }
         ];
+        this.setLanguage();
     }
 
     setLanguage() {
