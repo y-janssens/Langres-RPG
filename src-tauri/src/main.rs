@@ -14,7 +14,6 @@ use diesel::{
 use std::env;
 
 mod commands;
-mod functions;
 mod models;
 mod schema;
 mod tests;
@@ -57,7 +56,6 @@ fn main() {
             commands::world::generate,
             commands::world::regenerate,
             commands::world::generate_forest,
-            commands::world::generate_basic_map,
             // Storyline commands
             commands::story::save_storyline,
             commands::story::fetch_storyline,
@@ -70,7 +68,8 @@ fn main() {
             // Map generator commands
             commands::maps::generate_maps_batch,
             // Utils
-            commands::utils::throw_dice
+            commands::utils::throw_dice,
+            commands::utils::filter_tiles
         ])
         .manage(pool)
         .run(tauri::generate_context!())

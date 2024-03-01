@@ -1,5 +1,4 @@
 pub mod maps {
-    use crate::models::maps::procedural::generation::Map;
     use crate::models::objects::assets::Object;
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
@@ -113,11 +112,6 @@ pub mod maps {
         }
 
         pub fn generate_forest(content: Vec<Item>) -> Vec<Item> {
-            println!("Generating forest...");
-            Map::generate(content, "forest")
-        }
-
-        pub fn generate_basic_map(content: Vec<Item>) -> Vec<Item> {
             println!("Generating game trees...");
             let items = Self::get_items("map");
             let mut new_content = Vec::new();

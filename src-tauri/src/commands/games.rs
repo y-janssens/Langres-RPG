@@ -1,51 +1,47 @@
+use super::fetcher::get_connection;
+use crate::models::{character::characters::Character, game::games::Game, story::storyline::Story};
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
-
-use crate::{functions, models};
 
 #[tauri::command]
 pub fn new(
     name: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> models::game::games::Game {
-    let _story = functions::story::fetch_storyline(connection).expect("error");
-    let _new = functions::games::new_game(name, _story);
-    _new.unwrap()
+) -> Game {
+    let mut connection = get_connection(connection);
+    let story = Story::load(&mut connection).expect("Failed to load storyline");
+    Game::new(name, story)
 }
 
 #[tauri::command]
 pub fn fetch_games(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Vec<models::game::games::Game>, String> {
-    functions::games::fetch_games(connection)
+) -> Vec<Game> {
+    let mut connection = get_connection(connection);
+    Game::fetch(&mut connection).expect("Failed to load games")
 }
 
 #[tauri::command]
 pub fn load_game(
     id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> models::game::games::Game {
-    let _load = functions::games::load_saved_game(id, connection);
-    _load.unwrap()
+) -> Game {
+    let mut connection = get_connection(connection);
+    Game::load(id, &mut connection).expect("Failed to load game")
 }
 
 #[tauri::command]
 pub fn delete(id: i32, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) {
-    let _delete = functions::games::delete_saved_game(id, connection);
+    let mut connection = get_connection(connection);
+    Game::delete(id, &mut connection).expect("Failed to delete game")
 }
 
 #[tauri::command]
-pub fn save(
-    data: models::game::games::Game,
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) {
-    let _save = functions::games::save_game(connection, data);
+pub fn save(data: Game, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) {
+    let mut connection = get_connection(connection);
+    Game::save(data, &mut connection).expect("Failed to save game")
 }
 
 #[tauri::command]
-pub fn compute_xp(
-    character: models::character::characters::Character,
-    xp: u32,
-) -> models::character::characters::Character {
-    let _compute = functions::games::compute_xp(character, xp);
-    _compute.unwrap()
+pub fn compute_xp(mut character: Character, xp: u32) -> Character {
+    Character::compute_xp(&mut character, xp).clone()
 }

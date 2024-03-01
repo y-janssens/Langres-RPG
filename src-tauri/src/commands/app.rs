@@ -1,27 +1,30 @@
+use crate::models::app::application::App;
 use crate::models::time::env::Environment;
-use crate::{functions, models};
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
+
+use super::fetcher::get_connection;
 
 #[tauri::command]
 pub fn load_app_datas(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> models::app::application::App {
-    let _load = functions::app::load_app(connection);
-    _load.unwrap()
+) -> App {
+    let mut connection = get_connection(connection);
+    App::load(&mut connection).expect("Failed to load app datas")
 }
 
 #[tauri::command]
 pub fn save_app_datas(
     id: i32,
-    data: models::app::application::App,
+    data: App,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
-    let _save = functions::app::save_app(id, data, connection);
+    let mut connection = get_connection(connection);
+
+    App::save(id, data, &mut connection).expect("Failed to save app datas");
 }
 
 #[tauri::command]
 pub fn load_env(date: &str) -> Environment {
-    let _env = functions::app::load_env(date);
-    _env.unwrap()
+    Environment::initialize(date)
 }

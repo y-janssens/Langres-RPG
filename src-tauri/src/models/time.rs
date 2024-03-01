@@ -18,13 +18,13 @@ pub mod env {
 
     #[derive(Clone, Debug, Serialize, Deserialize)]
     pub struct Environment {
-        date: String,
-        daytime: bool,
-        season: String,
-        weather: String,
-        danger: u32,
-        wind_force: u32,
-        temperature: i32,
+        pub date: String,
+        pub daytime: bool,
+        pub season: String,
+        pub weather: String,
+        pub danger: u32,
+        pub wind_force: u32,
+        pub temperature: i32,
     }
 
     impl Environment {
@@ -53,14 +53,14 @@ pub mod env {
             }
 
             let mut possible_weathers = match month {
-                1 | 2 | 3 => vec![
+                1..=3 => vec![
                     WeatherState::Sunny,
                     WeatherState::SunnyWindy,
                     WeatherState::Cloudy,
                     WeatherState::CloudyWindy,
                     WeatherState::Stormy,
                 ],
-                4 | 5 | 6 | 7 | 8 | 9 => vec![
+                4..=9 => vec![
                     WeatherState::Sunny,
                     WeatherState::SunnyWindy,
                     WeatherState::Rainy,
@@ -69,7 +69,7 @@ pub mod env {
                     WeatherState::CloudyWindy,
                     WeatherState::Stormy,
                 ],
-                10 | 11 | 12 => vec![
+                10..=12 => vec![
                     WeatherState::Sunny,
                     WeatherState::SunnyWindy,
                     WeatherState::Cloudy,
@@ -118,10 +118,10 @@ pub mod env {
 
         fn get_season(month: u32) -> String {
             match month {
+                3..=5 => String::from("spring"),
+                6..=8 => String::from("summer"),
+                9..=11 => String::from("autumn"),
                 12 | 1 | 2 => String::from("winter"),
-                3 | 4 | 5 => String::from("spring"),
-                6 | 7 | 8 => String::from("summer"),
-                9 | 10 | 11 => String::from("autumn"),
                 _ => String::from("error"),
             }
         }

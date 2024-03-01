@@ -1,19 +1,23 @@
-use crate::{functions, models::story::storyline::Story};
+use crate::models::story::storyline::Story;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
+
+use super::fetcher::get_connection;
 
 #[tauri::command]
 pub fn fetch_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Story, String> {
-    functions::story::fetch_storyline(connection)
+) -> Story {
+    let mut connection = get_connection(connection);
+    Story::load(&mut connection).expect("Failed to load storyline")
 }
 
 #[tauri::command]
 pub fn save_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-    data: Story,
+    mut data: Story,
     id: u32,
 ) {
-    let _save = functions::story::save_storyline(connection, data, id);
+    let mut connection = get_connection(connection);
+    Story::save(&mut connection, id as i32, &mut data).expect("Failed to save storyline");
 }

@@ -1,7 +1,10 @@
-use crate::{functions, models::world::maps::Item};
+use crate::{
+    models::{maps::procedural::generation::Map, world::maps::Item},
+    tests::factories::tests_factories::world_factory,
+};
 
 #[tauri::command]
 pub fn generate_maps_batch(kind: String) -> Vec<Item> {
-    let batch = functions::maps::generate_map_batch(kind);
-    batch.unwrap()
+    let world = world_factory("batch", 50);
+    Map::generate(world.content, &kind)
 }

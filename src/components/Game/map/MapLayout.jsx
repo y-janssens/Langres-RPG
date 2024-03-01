@@ -14,18 +14,17 @@ const collisionCaster = new Raycaster();
 export const MapLayout = memo(({ position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [engine] = useGameContext();
     const [focus] = useState(() => new Vector3(0, -1, 1));
-    const [filteredItems, setFilteredItems] = useState(() => engine.controls.filterItems());
+    const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
 
-    const frustumCullItems = useCallback(() => {
-        setFilteredItems(engine.controls.filterItems());
+    const frustumCullItems = useCallback(async () => {
+        await engine.controls.filterItems().then((resp) => {
+            setFilteredItems(resp);
+        });
     }, [engine]);
 
     const computePositions = useCallback(() => {
         const character = characterRef.current.position;
-        cameraRef.current.object.position.set(
-            Math.max(-58, Math.min(-4.5, character.x)),
-            15,
-            Math.max(-79, Math.min(-25, character.z - 18)));
+        cameraRef.current.object.position.set(Math.max(-58, Math.min(-4.5, character.x)), 15, Math.max(-79, Math.min(-25, character.z - 18)));
         lightRef.current.position.set(character.x, 10, character.z);
 
         if (engine.controls.getDelta(character)) {

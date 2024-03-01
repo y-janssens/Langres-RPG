@@ -8,5 +8,5 @@ CREATE TABLE functions (
 
 INSERT INTO functions (icon, label, command)
 VALUES
-    ('trees', 'Generate forest', 'generate_basic_map'),
+    ('trees', 'Generate forest', 'generate_forest'),
     ('clear', 'Clear Map', 'regenerate');

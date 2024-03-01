@@ -1,4 +1,5 @@
 import { MapAssets } from '../models';
+import { invoke } from '@tauri-apps/api';
 
 const SPEED = 5;
 export default class KeyControls {
@@ -123,53 +124,14 @@ export default class KeyControls {
         };
     }
 
-    filterItems() {
+    async filterItems() {
+        let items = [];
         const id = this.currentTile.id;
         const height = Math.ceil(Math.ceil(window.innerHeight / 100) * Math.sqrt(3));
         const width = Math.ceil(Math.ceil(window.innerWidth / 100) * Math.sqrt(3));
-        const rationalizedIds = new Rationalizer(id, width, height).resolve();
-        return this.items.filter((it) => rationalizedIds.includes(it.id));
-    }
-}
-
-class Rationalizer {
-    constructor(value, horizontalThreshold, verticalThreshold) {
-        this.value = value;
-        this.horizontalThreshold = horizontalThreshold;
-        this.verticalThreshold = verticalThreshold;
-        this.verticalBias = verticalThreshold / 1.5;
-    }
-
-    get verticalIds() {
-        let ids = [this.value];
-        for (let i = 0; i < this.verticalBias; i++) {
-            ids.push(Math.abs(-this.value + i * 50));
-        }
-
-        for (let i = 0; i < this.verticalThreshold - this.verticalBias + 1; i++) {
-            ids.push(this.value + i * 50);
-        }
-        return Array.from(new Set(ids.sort()));
-    }
-
-    get horizontalIds() {
-        return Array.from(
-            new Set(
-                this.verticalIds
-                    .map((id) => {
-                        let ids = [];
-                        for (let i = 0; i < this.horizontalThreshold; i++) {
-                            ids.push(id + i);
-                            ids.push(Math.abs(-id + i));
-                        }
-                        return ids;
-                    })
-                    .sort()
-            )
-        );
-    }
-
-    resolve() {
-        return Array.from(new Set(this.horizontalIds.flat()));
+        await invoke('filter_tiles', { value: id, size: 50, horizontal: width, vertical: height }).then((response) => {
+            items = this.items.filter((it) => response.includes(it.id));
+        });
+        return items;
     }
 }
