@@ -39,7 +39,7 @@ export const Controler = () => {
         {
             func: 'load_app_datas',
             onSuccess: (response) => {
-                engine?.set('applicationData', new Settings(response));
+                engine.applicationData = new Settings(response);
             }
         },
         []

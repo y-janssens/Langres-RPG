@@ -9,7 +9,6 @@ export default class Engine extends BaseEngine {
         this.mapId = null;
         this.devMode = true;
         this.builder = false;
-        this.applicationData = {};
         this.controls = new KeyControls();
 
         if (!Engine.instance) {
