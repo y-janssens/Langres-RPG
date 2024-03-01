@@ -69,7 +69,8 @@ fn main() {
             commands::maps::generate_maps_batch,
             // Utils
             commands::utils::throw_dice,
-            commands::utils::filter_tiles
+            commands::utils::frustum_cull_ids,
+            commands::utils::frustum_cull_filter,
         ])
         .manage(pool)
         .run(tauri::generate_context!())

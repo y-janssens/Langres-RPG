@@ -129,7 +129,7 @@ export default class KeyControls {
         const id = this.currentTile.id;
         const height = Math.ceil(Math.ceil(window.innerHeight / 100) * Math.sqrt(3));
         const width = Math.ceil(Math.ceil(window.innerWidth / 100) * Math.sqrt(3));
-        await invoke('filter_tiles', { value: id, size: 50, horizontal: width, vertical: height }).then((response) => {
+        await invoke('frustum_cull_ids', { value: id, size: 50, horizontal: width, vertical: height }).then((response) => {
             items = this.items.filter((it) => response.includes(it.id));
         });
         return items;

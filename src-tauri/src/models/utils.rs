@@ -4,6 +4,8 @@ pub mod game_utils {
     use std::collections::HashSet;
     use std::iter::FromIterator;
 
+    use crate::models::world::maps::Item;
+
     #[derive(Clone, Debug, Serialize, Deserialize)]
     pub struct Dice {
         value: u32,
@@ -48,6 +50,21 @@ pub mod game_utils {
                 vertical_bias,
             };
             rationalizer.resolve()
+        }
+
+        pub fn cull_filter(
+            value: i32,
+            size: u32,
+            horizontal: usize,
+            vertical: usize,
+            content: Vec<Item>,
+        ) -> Vec<Item> {
+            let ids = Self::cull(value, size, horizontal, vertical);
+            content
+                .iter()
+                .filter(|item| ids.contains(&(item.id as i32)))
+                .cloned()
+                .collect()
         }
 
         fn vertical_ids(&self) -> Vec<i32> {
