@@ -11,7 +11,7 @@ pub mod tests_utils {
         let ids = FrustumCullingUtility::cull(1122, 50, 18, 16);
         let items = FrustumCullingUtility::cull_filter(1122, 50, 18, 16, map.content);
 
-        assert_eq!(ids.len(), 851);
-        assert_eq!(items.len(), 851);
+        assert_eq!(ids.len(), 575);
+        assert_eq!(items.len(), 575);
     }
 }

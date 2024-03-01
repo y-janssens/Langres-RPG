@@ -41,13 +41,12 @@ pub mod game_utils {
 
     impl FrustumCullingUtility {
         pub fn cull(value: i32, size: u32, horizontal: usize, vertical: usize) -> Vec<i32> {
-            let vertical_bias = (vertical as f32 / 1.5).ceil() as usize;
             let rationalizer = FrustumCullingUtility {
                 value,
                 size,
-                horizontal_threshold: horizontal,
                 vertical_threshold: vertical,
-                vertical_bias,
+                horizontal_threshold: clamp(horizontal),
+                vertical_bias: clamp(vertical),
             };
             rationalizer.resolve()
         }
@@ -87,9 +86,8 @@ pub mod game_utils {
 
             for id in self.vertical_ids() {
                 for i in 0..=self.horizontal_threshold {
-                    let i = i as i32;
-                    ids.insert(id + i);
-                    ids.insert((-id + i).abs());
+                    ids.insert(id + i as i32);
+                    ids.insert((-id + i as i32).abs());
                 }
             }
 
@@ -107,5 +105,9 @@ pub mod game_utils {
         let mut array: Vec<i32> = Vec::from_iter(values);
         array.sort();
         array
+    }
+
+    fn clamp(value: usize) -> usize {
+        (value as f32 / 1.5).ceil() as usize
     }
 }
