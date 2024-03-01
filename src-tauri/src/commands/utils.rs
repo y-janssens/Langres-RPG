@@ -1,12 +1,8 @@
-use crate::{
-    functions,
-    models::utils::game_utils::{Dice, FrustumCullingUtility},
-};
+use crate::models::utils::game_utils::{Dice, FrustumCullingUtility};
 
 #[tauri::command]
 pub fn throw_dice(value: u32, cap: u32) -> Dice {
-    let throw = functions::utils::throw_dice(value, cap);
-    throw.unwrap()
+    Dice::launch(value, cap)
 }
 
 #[tauri::command]
