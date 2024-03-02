@@ -1,5 +1,6 @@
 pub mod app;
 pub mod character;
+pub mod collection;
 pub mod game;
 pub mod inventory;
 pub mod maps;

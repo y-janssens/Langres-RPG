@@ -23,6 +23,13 @@ diesel::table! {
 }
 
 diesel::table! {
+    maps (id) {
+        id -> Integer,
+        collection -> Nullable<Text>,
+    }
+}
+
+diesel::table! {
     objects (id) {
         id -> Integer,
         name -> Text,
@@ -52,6 +59,7 @@ diesel::table! {
 diesel::allow_tables_to_appear_in_same_query!(
     functions,
     games,
+    maps,
     objects,
     settings,
     storyline,
