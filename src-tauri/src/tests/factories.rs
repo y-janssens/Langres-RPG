@@ -1,5 +1,6 @@
 #[allow(dead_code)]
 pub mod tests_factories {
+    use crate::models::collection::collections::InsertableCollection;
     use crate::models::story::storyline::{Act, Acts, Content, Story};
     use crate::models::world::maps::World;
     use crate::models::world::maps::*;
@@ -11,8 +12,6 @@ pub mod tests_factories {
     }
 
     pub fn world_factory(name: &str, size: u32) -> World {
-        // let name = String::from(name.unwrap_or_else(|| "test"));
-        // let size = size.unwrap_or_else(|| 50);
         World {
             id: generate_id(),
             name: name.to_string(),
@@ -53,6 +52,12 @@ pub mod tests_factories {
                     complete: false,
                 }],
             },
+        }
+    }
+
+    pub fn collection_factory(name: &str) -> InsertableCollection {
+        InsertableCollection {
+            map: world_factory(name, 50),
         }
     }
 }

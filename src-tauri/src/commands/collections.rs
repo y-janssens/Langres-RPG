@@ -14,15 +14,9 @@ pub fn load_collections(
 
 #[tauri::command]
 pub fn save_collections(
-    // id: Option<i32>,
     data: InsertableCollection,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    // println!("{:?}", id);
-    // if id.is_some() {
-    //     Collection::patch(id.unwrap(), data, &mut connection).expect("Failed to save collections");
-    // } else {
     Collection::save(data, &mut connection).expect("Failed to save collections");
-    // }
 }

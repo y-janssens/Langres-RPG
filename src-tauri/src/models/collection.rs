@@ -17,7 +17,7 @@ pub mod collections {
     #[diesel(table_name = crate::schema::maps)]
     #[diesel(check_for_backend(Sqlite))]
     pub struct Collection {
-        id: i32,
+        pub id: i32,
         pub map: World,
     }
 
@@ -54,7 +54,7 @@ pub mod collections {
             data: Collection,
             connection: &mut SqliteConnection,
         ) -> Result<(), diesel::result::Error> {
-            let updated_json = serde_json::to_string(&data).map_err(|e| {
+            let updated_json = serde_json::to_string(&data.map).map_err(|e| {
                 diesel::result::Error::DatabaseError(
                     diesel::result::DatabaseErrorKind::UnableToSendCommand,
                     Box::new(e.to_string()),
