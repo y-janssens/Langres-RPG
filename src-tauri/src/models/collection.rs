@@ -21,6 +21,12 @@ pub mod collections {
         pub map: World,
     }
 
+    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+    #[diesel(table_name = crate::schema::maps)]
+    pub struct InsertableCollection {
+        pub map: World,
+    }
+
     impl FromSql<Text, Sqlite> for World {
         fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
             let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
@@ -62,10 +68,10 @@ pub mod collections {
         }
 
         pub fn save(
-            data: World,
+            data: InsertableCollection,
             connection: &mut SqliteConnection,
         ) -> Result<(), diesel::result::Error> {
-            let updated_json = serde_json::to_string(&data).map_err(|e| {
+            let updated_json = serde_json::to_string(&data.map).map_err(|e| {
                 diesel::result::Error::DatabaseError(
                     diesel::result::DatabaseErrorKind::UnableToSendCommand,
                     Box::new(e.to_string()),

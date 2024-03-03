@@ -2,14 +2,14 @@ import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react'
 import { useGet } from '../hooks';
 import GameContext from './GameContext';
 
-import Settings from '../models/settings';
+import { Engine, Settings } from '../models';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
 
 import { Builder } from '../components/Builder/Builder';
+
 import css from '../components/Game/game.module.css';
-import Engine from '../models/engine';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
