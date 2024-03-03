@@ -25,7 +25,7 @@ diesel::table! {
 diesel::table! {
     maps (id) {
         id -> Integer,
-        collection -> Nullable<Text>,
+        map -> Text,
     }
 }
 

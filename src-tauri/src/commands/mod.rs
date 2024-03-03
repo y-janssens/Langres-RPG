@@ -1,4 +1,5 @@
 pub mod app;
+pub mod collections;
 pub mod fetcher;
 pub mod games;
 pub mod maps;
