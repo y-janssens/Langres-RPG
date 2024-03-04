@@ -67,6 +67,9 @@ fn main() {
             commands::objects::load_functions,
             // Map generator commands
             commands::maps::generate_maps_batch,
+            // Collections
+            commands::collections::load_collections,
+            commands::collections::save_collections,
             // Utils
             commands::utils::throw_dice,
             commands::utils::frustum_cull_ids,

@@ -25,7 +25,7 @@ jobs:
             - name: Run tests
               run: |
                   cd src-tauri
-                  cargo test --verbose
+                  cargo test -- --test-threads=1
 
             - name: Run linter
               run: |
