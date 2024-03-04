@@ -1,7 +1,8 @@
 #[cfg(test)]
 mod tests {
     use crate::models::collection::collections::Collection;
-    use crate::tests::{conf::test_conf::*, factories::tests_factories::collection_factory};
+    use crate::tests::conf::test_conf::*;
+    use crate::tests::factories::test_factories::collection_factory;
 
     #[test]
     fn test_load_collections() {

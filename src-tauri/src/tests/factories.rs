@@ -1,6 +1,9 @@
 #[allow(dead_code)]
-pub mod tests_factories {
+pub mod test_factories {
+    use diesel::SqliteConnection;
+
     use crate::models::collection::collections::InsertableCollection;
+    use crate::models::game::games::Game;
     use crate::models::story::storyline::{Act, Acts, Content, Story};
     use crate::models::world::maps::World;
     use crate::models::world::maps::*;
@@ -59,5 +62,9 @@ pub mod tests_factories {
         InsertableCollection {
             map: world_factory(name, 50),
         }
+    }
+
+    pub fn game_factory(name: &str, connection: &mut SqliteConnection) -> Game {
+        Game::new(name.to_string(), connection)
     }
 }

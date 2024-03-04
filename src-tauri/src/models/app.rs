@@ -7,11 +7,11 @@ pub mod application {
     #[diesel(table_name = crate::schema::settings)]
     #[diesel(check_for_backend(Sqlite))]
     pub struct App {
-        id: i32,
-        language: String,
-        sound: bool,
-        volume: i32,
-        music: i32,
+        pub id: i32,
+        pub language: String,
+        pub sound: bool,
+        pub volume: i32,
+        pub music: i32,
     }
 
     impl App {

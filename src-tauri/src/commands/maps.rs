@@ -1,6 +1,6 @@
 use crate::{
     models::{maps::procedural::generation::Map, world::maps::Item},
-    tests::factories::tests_factories::world_factory,
+    tests::factories::test_factories::world_factory,
 };
 
 #[tauri::command]
