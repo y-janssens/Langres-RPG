@@ -1,0 +1,56 @@
+#[cfg(test)]
+mod tests {
+    use crate::models::game::games::{Game, Position};
+    use crate::tests::conf::test_conf::*;
+    use crate::tests::factories::test_factories::game_factory;
+
+    #[test]
+    fn test_load_games() {
+        allow_db_access(|connection| {
+            let _ = game_factory("name", connection);
+            let response = Game::fetch(connection).unwrap();
+
+            assert_eq!(response.len(), 1);
+            assert_eq!(response[0].player, "name".to_string());
+            assert_eq!(response[0].character.name, "name".to_string());
+        });
+    }
+
+    #[test]
+    fn test_save_games() {
+        allow_db_access(|connection| {
+            let mut game = game_factory("name", connection);
+            let request = Game::load(game.id, connection).unwrap();
+
+            assert_eq!(request.player, "name".to_string());
+            assert_eq!(request.character.name, "name".to_string());
+
+            game.last_known_position = Position {
+                x: 8.0,
+                y: 12.0,
+                id: 633,
+            };
+
+            let _ = Game::save(game.clone(), connection).unwrap();
+            let patch_response = Game::load(game.id, connection).unwrap();
+            assert_eq!(patch_response.save_count, 1);
+            assert_eq!(patch_response.last_known_position.x, 8.0);
+            assert_eq!(patch_response.last_known_position.y, 12.0);
+            assert_eq!(patch_response.last_known_position.id, 633);
+        });
+    }
+
+    #[test]
+    fn test_delete_game() {
+        allow_db_access(|connection| {
+            let _ = game_factory("test", connection);
+            let result = Game::fetch(connection).unwrap();
+
+            assert_eq!(result.len(), 1);
+
+            let delete = Game::delete(result[0].id, connection);
+
+            assert!(delete.is_ok());
+        });
+    }
+}

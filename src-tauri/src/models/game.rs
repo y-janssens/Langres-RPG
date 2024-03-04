@@ -61,23 +61,25 @@ pub mod games {
     }
 
     impl Game {
-        pub fn new(name: String, story: Story) -> Game {
+        pub fn new(name: String, connection: &mut SqliteConnection) -> Game {
             println!("Generating game data...");
 
-            Game {
+            let game = Game {
                 player: String::from(&name),
                 save_count: 0,
                 id: Self::generate_id(),
                 date_created: Self::get_date(),
                 last_save_date: Self::get_date(),
-                storyline: story,
+                storyline: Story::load(connection).unwrap(),
                 character: Character::new(name),
                 last_known_position: Position {
                     x: 0.0,
                     y: 0.0,
                     id: 0,
                 },
-            }
+            };
+            let _ = Self::save(game.clone(), connection);
+            game
         }
 
         fn generate_id() -> i32 {

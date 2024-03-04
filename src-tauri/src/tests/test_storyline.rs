@@ -1,6 +1,6 @@
 #[cfg(test)]
-pub mod test_story {
-    use crate::tests::factories::tests_factories::storyline_factory;
+mod tests {
+    use crate::tests::factories::test_factories::storyline_factory;
 
     #[test]
     fn test_validate_act() {

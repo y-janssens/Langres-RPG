@@ -1,5 +1,5 @@
 use super::fetcher::get_connection;
-use crate::models::{character::characters::Character, game::games::Game, story::storyline::Story};
+use crate::models::{character::characters::Character, game::games::Game};
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
 #[tauri::command]
@@ -8,8 +8,7 @@ pub fn new(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Game {
     let mut connection = get_connection(connection);
-    let story = Story::load(&mut connection).expect("Failed to load storyline");
-    Game::new(name, story)
+    Game::new(name, &mut connection)
 }
 
 #[tauri::command]

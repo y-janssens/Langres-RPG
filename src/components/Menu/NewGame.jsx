@@ -16,7 +16,6 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
                 .then((data) => {
                     let game = new GameModel(data);
                     setEngine({ gameId: game.id });
-                    game.save();
                     sync();
                 })
                 .finally(() => {

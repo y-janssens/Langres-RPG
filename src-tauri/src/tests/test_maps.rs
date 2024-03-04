@@ -1,8 +1,8 @@
 #[cfg(test)]
-pub mod tests_maps {
+mod tests {
     use crate::models::maps::procedural::generation::Map;
     use crate::models::maps::tiles::map_config_tiles::get_tiles_values;
-    use crate::tests::factories::tests_factories::world_factory;
+    use crate::tests::factories::test_factories::world_factory;
     use crate::tests::fixtures::tests_fixtures::*;
 
     #[test]

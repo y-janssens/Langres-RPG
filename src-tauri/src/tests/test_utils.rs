@@ -1,9 +1,7 @@
 #[cfg(test)]
-pub mod tests_utils {
-    use crate::{
-        models::utils::game_utils::FrustumCullingUtility,
-        tests::factories::tests_factories::world_factory,
-    };
+mod tests {
+    use crate::models::utils::game_utils::FrustumCullingUtility;
+    use crate::tests::factories::test_factories::world_factory;
 
     #[test]
     fn test_frustum_cull() {
