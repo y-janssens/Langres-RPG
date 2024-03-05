@@ -2,28 +2,29 @@
 mod tests {
     use crate::models::game::games::{Game, Position};
     use crate::tests::conf::test_conf::*;
-    use crate::tests::factories::test_factories::game_factory;
+    use crate::utils::factories::factories_definitions::GameFactory;
+    use crate::utils::factory::factory_models::ApiFactory;
 
     #[test]
     fn test_load_games() {
         allow_db_access(|connection| {
-            let _ = game_factory("name", connection);
+            let _ = GameFactory.generate(connection);
             let response = Game::fetch(connection).unwrap();
 
             assert_eq!(response.len(), 1);
-            assert_eq!(response[0].player, "name".to_string());
-            assert_eq!(response[0].character.name, "name".to_string());
+            assert_eq!(response[0].player, "game".to_string());
+            assert_eq!(response[0].character.name, "game".to_string());
         });
     }
 
     #[test]
     fn test_save_games() {
         allow_db_access(|connection| {
-            let mut game = game_factory("name", connection);
+            let mut game = GameFactory.generate(connection);
             let request = Game::load(game.id, connection).unwrap();
 
-            assert_eq!(request.player, "name".to_string());
-            assert_eq!(request.character.name, "name".to_string());
+            assert_eq!(request.player, "game".to_string());
+            assert_eq!(request.character.name, "game".to_string());
 
             game.last_known_position = Position {
                 x: 8.0,
@@ -43,7 +44,7 @@ mod tests {
     #[test]
     fn test_delete_game() {
         allow_db_access(|connection| {
-            let _ = game_factory("test", connection);
+            let _ = GameFactory.generate(connection);
             let result = Game::fetch(connection).unwrap();
 
             assert_eq!(result.len(), 1);

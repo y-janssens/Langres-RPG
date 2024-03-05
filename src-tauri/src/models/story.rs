@@ -1,11 +1,17 @@
 pub mod storyline {
     use crate::models::world::maps::World;
     use crate::schema::storyline::dsl::storyline;
+    use crate::utils::factory::factory_models::AbstractModel;
     use diesel::deserialize::{self, FromSql};
     use diesel::sql_types::Text;
     use diesel::sqlite::SqliteValue;
     use diesel::{prelude::*, sqlite::Sqlite};
     use serde::{Deserialize, Serialize};
+
+    impl AbstractModel for Story {}
+    impl AbstractModel for Acts {}
+    impl AbstractModel for Act {}
+    impl AbstractModel for Content {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
     #[diesel(table_name = crate::schema::storyline)]

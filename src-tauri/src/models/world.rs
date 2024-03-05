@@ -1,8 +1,10 @@
 pub mod maps {
-    use crate::models::objects::assets::Object;
+    use crate::{models::objects::assets::Object, utils::factory::factory_models::AbstractModel};
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use serde::{Deserialize, Serialize};
+
+    impl AbstractModel for World {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct World {

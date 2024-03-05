@@ -2,7 +2,8 @@
 mod tests {
     use crate::models::story::storyline::Story;
     use crate::tests::conf::test_conf::allow_db_access;
-    use crate::tests::factories::test_factories::world_factory;
+    use crate::utils::factories::factories_definitions::WorldFactory;
+    use crate::utils::factory::factory_models::Factory;
 
     #[test]
     fn test_load_storyline() {
@@ -22,8 +23,8 @@ mod tests {
             let response = Story::load(connection).unwrap();
 
             let mut maps = vec![];
-            maps.push(Some(world_factory("test_1", 50)));
-            maps.push(Some(world_factory("test_2", 50)));
+            maps.push(Some(WorldFactory.generate()));
+            maps.push(Some(WorldFactory.generate()));
 
             let mut patch_data = response.clone();
             patch_data.story.acts[0].content.maps = maps;

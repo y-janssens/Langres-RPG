@@ -1,6 +1,7 @@
 pub mod games {
     use crate::models::story::storyline::Story;
     use crate::schema::games::dsl::*;
+    use crate::utils::factory::factory_models::AbstractModel;
     use crate::{models::character::characters::Character, schema::games};
     use chrono::{DateTime, Local};
     use diesel::deserialize::{self, FromSql};
@@ -8,6 +9,8 @@ pub mod games {
     use diesel::sql_types::Text;
     use diesel::sqlite::{Sqlite, SqliteValue};
     use serde::{Deserialize, Serialize};
+
+    impl AbstractModel for Game {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct Position {

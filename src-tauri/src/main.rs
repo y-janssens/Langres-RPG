@@ -17,6 +17,7 @@ mod commands;
 mod models;
 mod schema;
 mod tests;
+mod utils;
 
 fn run_migrations(
     connection: &mut impl MigrationHarness<Sqlite>,

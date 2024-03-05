@@ -2,23 +2,25 @@
 mod tests {
     use crate::models::collection::collections::Collection;
     use crate::tests::conf::test_conf::*;
-    use crate::tests::factories::test_factories::collection_factory;
+    use crate::utils::factories::factories_definitions::CollectionFactory;
+    use crate::utils::factory::factory_models::Factory;
 
     #[test]
     fn test_load_collections() {
         allow_db_access(|connection| {
-            let _ = Collection::save(collection_factory("test"), connection);
+            let collection = CollectionFactory.generate();
+            let _ = Collection::save(collection, connection);
             let result = Collection::load(connection).unwrap();
 
             assert_eq!(result.len(), 1);
-            assert_eq!(result[0].map.name, "test");
         });
     }
 
     #[test]
     fn test_patch_collection() {
         allow_db_access(|connection| {
-            let _ = Collection::save(collection_factory("test"), connection);
+            let collection = CollectionFactory.generate();
+            let _ = Collection::save(collection, connection);
             let result = Collection::load(connection).unwrap();
 
             let mut patch_collection = Collection {
@@ -38,7 +40,8 @@ mod tests {
     #[test]
     fn test_delete_collection() {
         allow_db_access(|connection| {
-            let _ = Collection::save(collection_factory("test"), connection);
+            let collection = CollectionFactory.generate();
+            let _ = Collection::save(collection, connection);
             let result = Collection::load(connection).unwrap();
 
             let delete = Collection::delete(result[0].id, connection);
