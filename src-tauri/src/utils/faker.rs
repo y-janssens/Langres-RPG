@@ -1,4 +1,5 @@
-pub mod faker {
+#[allow(dead_code)]
+pub mod faker_definitions {
     use rand::{distributions::Alphanumeric, Rng};
     pub trait AbstractFake {}
 
@@ -19,6 +20,36 @@ pub mod faker {
     impl AbstractFake for FakeInt {}
     impl AbstractFake for FakeFloat {}
     impl AbstractFake for FakeBool {}
+
+    impl FakeId {
+        pub fn value(&self) -> i32 {
+            self.0
+        }
+    }
+
+    impl FakeString {
+        pub fn value(&self) -> String {
+            self.0.clone()
+        }
+    }
+
+    impl FakeInt {
+        pub fn value(&self) -> i32 {
+            self.0
+        }
+    }
+
+    impl FakeFloat {
+        pub fn value(&self) -> f32 {
+            self.0
+        }
+    }
+
+    impl FakeBool {
+        pub fn value(&self) -> bool {
+            self.0
+        }
+    }
 
     pub trait Faker {
         type Output: AbstractFake;

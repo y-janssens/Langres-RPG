@@ -1,8 +1,10 @@
 pub mod maps {
-    use crate::{models::objects::assets::Object, utils::factory::factory::AbstractModel};
+    use crate::{models::objects::assets::Object, utils::factory::factory_models::AbstractModel};
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use serde::{Deserialize, Serialize};
+
+    impl AbstractModel for World {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
     pub struct World {
@@ -47,8 +49,6 @@ pub mod maps {
         pub y: u32,
         pub id: u32,
     }
-
-    impl AbstractModel for World {}
 
     impl World {
         pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {

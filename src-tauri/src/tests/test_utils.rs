@@ -1,11 +1,13 @@
 #[cfg(test)]
 mod tests {
+
     use crate::models::utils::game_utils::FrustumCullingUtility;
-    use crate::tests::factories::test_factories::world_factory;
+    use crate::utils::factories::factories_definitions::WorldFactory;
+    use crate::utils::factory::factory_models::Factory;
 
     #[test]
     fn test_frustum_cull() {
-        let map = world_factory("test", 50);
+        let map = WorldFactory.generate();
         let ids = FrustumCullingUtility::cull(1122, 50, 18, 16);
         let items = FrustumCullingUtility::cull_filter(1122, 50, 18, 16, map.content);
 

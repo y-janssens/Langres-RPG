@@ -1,8 +1,8 @@
 #[allow(dead_code)]
 
 pub mod collections {
-    use crate::models::world::maps::World;
     use crate::schema::maps::dsl::*;
+    use crate::{models::world::maps::World, utils::factory::factory_models::AbstractModel};
 
     use diesel::{
         deserialize::{self, FromSql, Queryable},
@@ -12,6 +12,8 @@ pub mod collections {
         QueryResult, RunQueryDsl, Selectable, SqliteConnection,
     };
     use serde::{Deserialize, Serialize};
+
+    impl AbstractModel for InsertableCollection {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
     #[diesel(table_name = crate::schema::maps)]

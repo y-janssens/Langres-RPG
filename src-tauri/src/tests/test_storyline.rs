@@ -1,15 +1,11 @@
 #[cfg(test)]
 mod tests {
-    use crate::tests::factories::test_factories::storyline_factory;
+    use crate::utils::factories::factories_definitions::StoryLineFactory;
+    use crate::utils::factory::factory_models::Factory;
 
     #[test]
     fn test_validate_act() {
-        let map_name = "test";
-        let act_name = "first";
-        let act_title = "act";
-        let act_date = "12/07/1163";
-
-        let mut storyline = storyline_factory(act_name, act_title, act_date, map_name);
+        let mut storyline = StoryLineFactory.generate();
 
         assert_eq!(storyline.story.acts[0].complete, false);
 
