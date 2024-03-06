@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useGameContext, useGet } from '../hooks';
+import { useAdminContext, useGameContext, useGet } from '../hooks';
 
 import { Settings } from '../models';
 
@@ -7,12 +7,14 @@ import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
 
 import { Builder } from '../components/Builder/Builder';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 
 import css from '../components/Game/game.module.css';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
     const [engine, setEngine] = useGameContext();
+    const { isAdmin } = useAdminContext();
     const gameRef = useRef();
 
     useGet(
@@ -75,7 +77,8 @@ export const Controler = () => {
                     <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}
-            {engine.builder && <Builder />}
+            {engine.builder && isAdmin && <Builder />}
+            {engine.dashboard && isAdmin && <Dashboard />}
         </>
     );
 };

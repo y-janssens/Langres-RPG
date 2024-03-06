@@ -1,11 +1,14 @@
 import { Controler } from './Controler/Controler';
+import { AdminContextLayer } from './context/AdminContextLayer';
 import { GameContextLayer } from './context/GameContextLayer';
 function App() {
     return (
         <div className="main-container">
-            <GameContextLayer>
-                <Controler />
-            </GameContextLayer>
+            <AdminContextLayer>
+                <GameContextLayer>
+                    <Controler />
+                </GameContextLayer>
+            </AdminContextLayer>
         </div>
     );
 }
