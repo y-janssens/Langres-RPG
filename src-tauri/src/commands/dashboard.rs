@@ -9,16 +9,16 @@ pub fn load_admin_dashboard() -> Value {
         Ok(dashboard_enabled_str) => {
             let dashboard_enabled: Result<bool, _> = dashboard_enabled_str.parse();
             match dashboard_enabled {
-                Ok(true) => {
-                    AdminDashboard::get().unwrap_or_else(|err| json!({
+                Ok(true) => AdminDashboard::get().unwrap_or_else(|err| {
+                    json!({
                         "error": format!("Failed to load admin dashboard: {}", err)
-                    }))
-                },
+                    })
+                }),
                 Ok(false) | Err(_) => json!({
                     "error": "Admin dashboard is disabled or configuration is invalid."
                 }),
             }
-        },
+        }
         Err(_) => json!({
             "error": "Environment variable is not set."
         }),
