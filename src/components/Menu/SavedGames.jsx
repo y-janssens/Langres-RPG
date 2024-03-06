@@ -33,6 +33,7 @@ export default function SavedGames({ loading = false, items = [], state = null, 
 }
 
 export const SavedGame = ({ item, selected = null, setSelected = () => {}, setGameToDelete = () => {} }) => {
+    const { t } = useTranslation();
     const lastSavedDate = useMemo(() => {
         const date = item.last_save_date.split('.');
         return date[0];
@@ -56,7 +57,7 @@ export const SavedGame = ({ item, selected = null, setSelected = () => {}, setGa
                 }}
             >
                 <p>{item.player}</p>
-                <p>{`Last save date: ${lastSavedDate}`}</p>
+                <p>{`${t('menu.game.save-date')}${lastSavedDate}`}</p>
             </div>
             <Icon name="delete" size="large" color="darkred" onClick={() => setGameToDelete(item)} />
         </div>

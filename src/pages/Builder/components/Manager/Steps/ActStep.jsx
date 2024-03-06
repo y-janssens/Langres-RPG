@@ -76,7 +76,7 @@ export const ActStep = ({ form, setForm, ...props }) => {
     return (
         <>
             <div className={css['manager-selector-block']}>
-                <SelectButton label={'Select an act'} open={open} onClick={() => setOpen(!open)} size={props.onboarding ? 'md' : 'sm'} />
+                <SelectButton label={t('builder.selector.act')} open={open} onClick={() => setOpen(!open)} size={props.onboarding ? 'md' : 'sm'} />
                 {open && (
                     <div className={css['manager-selector-content']}>
                         <ul>

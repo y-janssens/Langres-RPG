@@ -38,7 +38,7 @@ const NavBar = ({ current }) => {
                         color="neutral"
                         size="md"
                         onChange={({ target: { value } }) => setContext({ search: value })}
-                        placeholder={`${t('common.actions.search')} ${t(`dashboard.models.${current.name}`).toLowerCase()}`}
+                        placeholder={`${t('common.actions.search')} ${t(`dashboard.searchbar.${current.name}`)}`}
                         disabled={!current.search}
                     />
                     {current.create && (
@@ -50,9 +50,8 @@ const NavBar = ({ current }) => {
                                 color="primary"
                                 variant="outline"
                                 onClick={() => navigate(`/admin/dashboard/${current.name}/new`)}
-                                // onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
                             >
-                                <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
+                                <span className={css['dashboard-navbar-create-label']}>{t('common.actions.add')}</span>
                                 <Icon name="plus" color="white" size="small" />
                             </Button>
                             <Button dataTheme="emerald" className={css['dashboard-navbar-create']} size="md" color="primary" variant="outline" onClick={() => handleExport()}>

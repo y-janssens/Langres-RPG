@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import _ from 'lodash';
+
 import css from '../manager.module.css';
 
 export const SummaryStep = ({ form }) => {
@@ -95,6 +97,7 @@ const StoryAct = ({ story, initial, act }) => {
 };
 
 const StoryMap = ({ story, initial, act, map }) => {
+    const { t } = useTranslation();
     const statusHighlight = useMemo(() => {
         const currentAct = story.story.acts.find((ac) => ac.id === act.id);
         const initialAct = initial.story.acts.find((ac) => ac.id === act.id);
@@ -121,5 +124,9 @@ const StoryMap = ({ story, initial, act, map }) => {
             }
         }
     }, [story, act]);
-    return <span className={css['manager-summary-map']} style={{ color: statusHighlight.color }}>{`- Name: ${map.name} - Size: ${map.size}`}</span>;
+    return (
+        <span className={css['manager-summary-map']} style={{ color: statusHighlight.color }}>{`- ${t('builder.menu.map.name')}: ${map.name} - ${t('builder.menu.map.size')}: ${
+            map.size
+        }`}</span>
+    );
 };
