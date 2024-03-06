@@ -7,3 +7,4 @@ pub mod objects;
 pub mod story;
 pub mod utils;
 pub mod world;
+pub mod dashboard;

@@ -5,3 +5,4 @@ pub mod test_character;
 pub mod test_maps;
 pub mod test_storyline;
 pub mod test_utils;
+pub mod test_dashboard;

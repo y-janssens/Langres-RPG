@@ -12,6 +12,11 @@
     "new": "New",
     "search": "Search"
   },
+    "models": {
+    "story": "Scénarios",
+    "game": "Parties",
+    "collection": "Collections"
+  },
   "common": {
     "name": "Name",
     "title": "Title",
