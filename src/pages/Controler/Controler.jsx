@@ -1,15 +1,13 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useAdminContext, useGameContext, useGet } from '../hooks';
+import { useAdminContext, useGameContext, useGet } from '../../hooks';
 
-import { Settings } from '../models';
+import { Settings } from '../../models';
 
-import { Game } from '../components/Game/Game';
-import { MainMenu } from '../components/Menu/MainMenu';
+import { Game } from '../Game/Game';
+import { MainMenu } from '../../components/Menu/MainMenu';
 
-import { Builder } from '../components/Builder/Builder';
-import { Dashboard } from '../components/Dashboard/Dashboard';
-
-import css from '../components/Game/game.module.css';
+import { Builder } from '../Builder/Builder';
+import { Dashboard } from '../Dashboard/Dashboard';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
@@ -66,7 +64,7 @@ export const Controler = () => {
             {!engine.gameId && !engine.builder && <MainMenu />}
             {displayGame && (
                 <div
-                    className={css['game-main-block']}
+                    className={'game-main-block'}
                     onKeyDown={handleControls}
                     onKeyUp={(event) => {
                         engine.controls.setDirections(event, false);

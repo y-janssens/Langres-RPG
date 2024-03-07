@@ -1,14 +1,16 @@
 import { useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
 import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle } from '.';
-import Icon from '../../ui/Icon';
+import Icon from '../../../components/ui/Icon';
 import css from '../builder.module.css';
 import Zoom from './Zoom';
 
-export const Header = ({ datas, form, setForm, setObject, reset, sync, setEngine, history, index, forward, backward, clear }) => {
+export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const handleSave = useCallback(() => {
         invoke('save_storyline', { data: datas, id: datas.id }).then(() => {
@@ -62,7 +64,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, setEngine
 
                     <div className={css['builder-navbar-toggles']}>
                         <ButtonToggle label={t('builder.toggles.viewport')} active={!form.flatDisplay} onClick={() => setForm('flatDisplay', !form.flatDisplay)} />
-                        <Button dataTheme="business" className={css['builder-navbar-exit']} size="xs" color="accent" shape="square" onClick={() => setEngine({ builder: false })}>
+                        <Button dataTheme="business" className={css['builder-navbar-exit']} size="xs" color="accent" shape="square" onClick={() => navigate('/')}>
                             x
                         </Button>
                     </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CharInfos } from './Header/CharInfos';
 import { Character } from '../Interface/Character/Character';
 import { Map } from '../Interface/Map/Map'; // eslint-disable-line

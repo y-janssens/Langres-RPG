@@ -1,12 +1,20 @@
-import { Controler } from './Controler/Controler';
+import { Controler } from './pages/Controler/Controler';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AdminContextLayer } from './context/AdminContextLayer';
 import { GameContextLayer } from './context/GameContextLayer';
+import { AdminRouter } from './router/AdminRouter';
+
 function App() {
     return (
         <div className="main-container">
             <AdminContextLayer>
                 <GameContextLayer>
-                    <Controler />
+                    <Router>
+                        <Routes>
+                            <Route exact path="/" element={<Controler />} />
+                            <Route path="/admin/*" element={<AdminRouter />} />
+                        </Routes>
+                    </Router>
                 </GameContextLayer>
             </AdminContextLayer>
         </div>

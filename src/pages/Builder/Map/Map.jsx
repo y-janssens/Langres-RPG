@@ -3,10 +3,10 @@ import { DragSelectProvider, useDragSelect } from './DragSelectContext';
 import { Canvas } from '@react-three/fiber';
 import { MapControls } from '@react-three/drei';
 import World from '../../../models/world';
-import Icon from '../../ui/Icon';
+import Icon from '../../../components/ui/Icon';
 import { Tiles } from './Tiles';
-import { Loading } from '../../ui/Loading';
-import { Hex } from '../../ui/Icons';
+import { Loading } from '../../../components/ui/Loading';
+import { Hex } from '../../../components/ui/Icons';
 import css from '../builder.module.css';
 
 const Map = ({ loading, type, display, form, setForm, history, index }) => {

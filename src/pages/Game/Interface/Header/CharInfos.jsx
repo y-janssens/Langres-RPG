@@ -1,4 +1,4 @@
-import { Gauge, XpGauge } from '../../../ui/Gauge';
+import { Gauge, XpGauge } from '../../../../components/ui/Gauge';
 import css from './char-infos.module.css';
 
 export const CharInfos = ({ character }) => {

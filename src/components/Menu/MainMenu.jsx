@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGameContext, useGet, useTranslation, useAdminContext } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
@@ -13,6 +14,7 @@ import css from './menu.module.css';
 export const MainMenu = () => {
     const { t } = useTranslation();
     const { isAdmin } = useAdminContext();
+    const navigate = useNavigate();
     const [engine, setEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
     const [openModal, setOpenModal] = useState(null);
@@ -61,12 +63,12 @@ export const MainMenu = () => {
             isAdmin && {
                 id: 4,
                 name: t('menu.items.builder'),
-                onClick: () => setEngine({ builder: true })
+                onClick: () => navigate('admin/editor')
             },
             isAdmin && {
                 id: 5,
                 name: t('menu.items.dashboard'),
-                onClick: () => setEngine({ dashboard: true })
+                onClick: () => navigate('admin/dashboard')
             },
             {
                 id: 6,

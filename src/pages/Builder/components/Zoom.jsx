@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import Icon from '../../ui/Icon';
+import Icon from '../../../components/ui/Icon';
 import { ButtonIcon } from './ButtonLabel';
 import css from '../builder.module.css';
 

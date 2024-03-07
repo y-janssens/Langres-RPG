@@ -12,10 +12,12 @@
     "new": "New",
     "search": "Search"
   },
+  "dashboard": {
     "models": {
-    "story": "Scénarios",
-    "game": "Parties",
-    "collection": "Collections"
+      "story": "Storylines",
+      "game": "Games",
+      "collection": "Collections"
+    }
   },
   "common": {
     "name": "Name",

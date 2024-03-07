@@ -1,0 +1,19 @@
+.locator-block {
+    padding: 15px;
+}
+
+.locator-block span {
+    font-size: 12px !important;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.locator-block span:hover {
+    opacity: 1;
+    font-weight: 500;
+}
+
+.locator-root {
+    color: rgb(101, 204, 138);
+    font-weight: 500;
+}

@@ -4,17 +4,13 @@ import { useGet } from '../hooks';
 const AdminContext = React.createContext(null);
 
 export const AdminContextLayer = ({ children }) => {
-    const [context, setContext] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
 
     useGet(
         {
-            func: 'load_admin_dashboard',
-            onSuccess: (response) => {
-                if (!('error' in response)) {
-                    setContext(response);
-                    setIsAdmin(true);
-                }
+            func: 'load_permissions',
+            onSuccess: ({ is_admin }) => {
+                setIsAdmin(is_admin);
             },
             onError: () => {
                 setIsAdmin(false);
@@ -26,7 +22,6 @@ export const AdminContextLayer = ({ children }) => {
     return (
         <AdminContext.Provider
             value={{
-                context,
                 isAdmin
             }}
         >

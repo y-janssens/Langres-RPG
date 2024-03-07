@@ -1,4 +1,4 @@
-import KeyControls from '../Controler/controls';
+import KeyControls from './controls';
 import BaseEngine from './baseEngine';
 
 export default class Engine extends BaseEngine {
@@ -8,8 +8,6 @@ export default class Engine extends BaseEngine {
         this.gameId = null;
         this.mapId = null;
         this.devMode = true;
-        this.builder = false;
-        this.dashboard = false;
         this.controls = new KeyControls();
 
         if (!Engine.instance) {
