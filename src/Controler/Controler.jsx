@@ -1,39 +1,21 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useGet } from '../hooks';
-import GameContext from './GameContext';
+import { useAdminContext, useGameContext, useGet } from '../hooks';
 
-import { Engine, Settings } from '../models';
+import { Settings } from '../models';
 
 import { Game } from '../components/Game/Game';
 import { MainMenu } from '../components/Menu/MainMenu';
 
 import { Builder } from '../components/Builder/Builder';
+import { Dashboard } from '../components/Dashboard/Dashboard';
 
 import css from '../components/Game/game.module.css';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
-    const [engine, _setEngine] = useState(() => new Engine());
+    const [engine, setEngine] = useGameContext();
+    const { isAdmin } = useAdminContext();
     const gameRef = useRef();
-
-    const setEngine = React.useCallback((ctx = {}) => {
-        _setEngine((engine) => {
-            return { ...engine, ...ctx };
-        });
-    }, []);
-
-    const removeFromEngine = React.useCallback((names) => {
-        if (!Array.isArray(names)) {
-            names = [names];
-        }
-        _setEngine((engine) => {
-            let newContext = { ...engine };
-            names.forEach((name) => {
-                delete newContext[name];
-            });
-            return newContext;
-        });
-    }, []);
 
     useGet(
         {
@@ -80,13 +62,7 @@ export const Controler = () => {
     }
 
     return (
-        <GameContext.Provider
-            value={{
-                engine,
-                setEngine,
-                removeFromEngine
-            }}
-        >
+        <>
             {!engine.gameId && !engine.builder && <MainMenu />}
             {displayGame && (
                 <div
@@ -101,7 +77,8 @@ export const Controler = () => {
                     <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}
-            {engine.builder && <Builder />}
-        </GameContext.Provider>
+            {engine.builder && isAdmin && <Builder />}
+            {engine.dashboard && isAdmin && <Dashboard />}
+        </>
     );
 };

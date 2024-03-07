@@ -12,6 +12,11 @@
     "new": "New",
     "search": "Search"
   },
+    "models": {
+    "story": "Scénarios",
+    "game": "Parties",
+    "collection": "Collections"
+  },
   "common": {
     "name": "Name",
     "title": "Title",
@@ -44,7 +49,8 @@
       "settings": "Settings",
       "exit": "Exit Game",
       "exit-game": "Main Menu",
-      "builder": "Editor"
+      "builder": "Editor",
+      "dashboard": "Dashboard"
     },
     "deletion-modal": {
       "header": "Do you really wish to delete this game?",
