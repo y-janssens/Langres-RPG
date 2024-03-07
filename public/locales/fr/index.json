@@ -12,6 +12,13 @@
     "new": "Nouveau",
     "search": "Rechercher"
   },
+  "dashboard": {
+    "models": {
+      "story": "Scénarios",
+      "game": "Parties",
+      "collection": "Collections"
+    }
+  },
   "common": {
     "name": "Nom",
     "title": "Titre",
@@ -44,7 +51,8 @@
       "settings": "Paramètres",
       "exit": "Quitter le jeu",
       "exit-game": "Menu Principal",
-      "builder": "Éditeur"
+      "builder": "Éditeur",
+      "dashboard": "Dashboard"
     },
     "deletion-modal": {
       "header": "Voulez-vous vraiment supprimer cette partie?",

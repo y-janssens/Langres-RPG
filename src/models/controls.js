@@ -1,4 +1,4 @@
-import { MapAssets } from '../models';
+import { MapAssets } from '.';
 import { invoke } from '@tauri-apps/api';
 
 const SPEED = 5;

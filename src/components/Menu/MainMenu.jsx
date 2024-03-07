@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
-import { useGameContext, useGet, useTranslation } from '../../hooks';
+import { useNavigate } from 'react-router-dom';
+import { useGameContext, useGet, useTranslation, useAdminContext } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
@@ -12,10 +13,12 @@ import css from './menu.module.css';
 
 export const MainMenu = () => {
     const { t } = useTranslation();
-    const [openModal, setOpenModal] = useState(null);
+    const { isAdmin } = useAdminContext();
+    const navigate = useNavigate();
     const [engine, setEngine] = useGameContext();
-    const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const [selected, setSelected] = useState(0);
+    const [openModal, setOpenModal] = useState(null);
+    const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const activeRef = useRef();
 
     const [savedGames, loadingGames, sync] = useGet({
@@ -35,46 +38,69 @@ export const MainMenu = () => {
 
     const items = useMemo(() => {
         let menu_items = [
+            lastPlayedGame && {
+                id: 0,
+                name: t('menu.items.continue'),
+                onClick: () => setEngine({ gameId: lastPlayedGame.id })
+            },
+            savedGames?.length >= 1 && {
+                id: 1,
+                name: t('menu.items.load'),
+                onClick: () => setOpenModal('saved_games')
+            },
+            savedGames?.length < 3 && {
+                id: 2,
+                name: t('menu.items.new'),
+                onClick: () => setOpenModal('new_game')
+            },
             {
+                id: 3,
                 name: t('menu.items.settings'),
                 onClick: () => {
                     setOpenModal('settings');
                 }
             },
-            {
-                id: 6,
+            isAdmin && {
+                id: 4,
                 name: t('menu.items.builder'),
-                onClick: () => setEngine({ builder: true })
+                onClick: () => navigate('admin/editor')
+            },
+            isAdmin && {
+                id: 5,
+                name: t('menu.items.dashboard'),
+                onClick: () => navigate('admin/dashboard')
             },
             {
-                id: 4,
+                id: 6,
                 name: t('menu.items.exit'),
                 onClick: async () => await exit(1)
             }
         ];
 
-        if (savedGames?.length < 3) {
-            menu_items.unshift({ name: t('menu.items.new'), onClick: () => setOpenModal('new_game') });
-        }
+        // if (savedGames?.length < 3 && {
+        //     menu_items.unshift({ name: t('menu.items.new'), onClick: () => setOpenModal('new_game') });
+        // }
 
-        if (savedGames?.length >= 1) {
-            menu_items.unshift({
-                name: t('menu.items.load'),
-                onClick: () => setOpenModal('saved_games')
-            });
-        }
+        // if (savedGames?.length >= 1) {
+        //     menu_items.unshift({
+        //         id: 1,
+        //         name: t('menu.items.load'),
+        //         onClick: () => setOpenModal('saved_games')
+        //     });
+        // }
 
-        if (lastPlayedGame) {
-            menu_items.unshift({
-                name: t('menu.items.continue'),
-                onClick: () => setEngine({ gameId: lastPlayedGame.id })
-            });
-        }
+        // if (lastPlayedGame) {
+        //     menu_items.unshift({
+        //         id: 0,
+        //         name: t('menu.items.continue'),
+        //         onClick: () => setEngine({ gameId: lastPlayedGame.id })
+        //     });
+        // }
 
-        return menu_items.map((it, index) => {
-            it.id = index;
-            return it;
-        });
+        return menu_items
+            .filter(Boolean)
+            .sort((a, b) => a.id - b.id)
+            .map((it) => it);
     }, [savedGames, lastPlayedGame]);
 
     const handleMenu = useCallback(

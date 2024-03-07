@@ -1,0 +1,13 @@
+.dashboard-main-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background-color: rgb(33, 39, 42) !important;
+    overflow: hidden;
+}
+
+.dashboard-main-container * {
+    font-family: system-ui !important;
+    font-size: 10px !important;
+}

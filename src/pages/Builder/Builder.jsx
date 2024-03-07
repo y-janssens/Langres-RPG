@@ -1,15 +1,13 @@
 import { useCallback, useMemo } from 'react';
-import { Header, SideBar, Manager, Theme } from './ui';
-import { useGet, useDynamicForm, useGameContext, useStateHistory } from '../../hooks';
+import { Header, SideBar, Manager, Theme } from './components';
+import { useGet, useDynamicForm, useStateHistory } from '../../hooks';
 import Map from './Map/Map';
 import css from './builder.module.css';
-import { Onboarding } from './ui/Onboarding/Onboarding';
-import { Gateway } from './ui/Gateway';
-import { Generator } from './ui/Generator/Generator';
+import { Onboarding } from './components/Onboarding/Onboarding';
+import { Gateway } from './components/Gateway';
+import { Generator } from './components/Generator/Generator';
 
 export const Builder = () => {
-    const [, setEngine] = useGameContext();
-
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
         flatDisplay: true,
         selectedMap: null,
@@ -106,7 +104,6 @@ export const Builder = () => {
                 backward={backward}
                 clear={clearHistory}
                 datas={form.storyLine}
-                setEngine={setEngine}
                 setObject={setFormObject}
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />

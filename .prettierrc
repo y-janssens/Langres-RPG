@@ -1,11 +1,19 @@
 {
-  "printWidth": 180,
-  "tabWidth": 4,
-  "useTabs": false,
-  "trailingComma": "none",
-  "semi": true,
-  "singleQuote": true,
-  "bracketSpacing": true,
-  "jsxSingleQuote": false,
-  "jsxBracketSameLine": false
+    "printWidth": 180,
+    "tabWidth": 4,
+    "useTabs": false,
+    "trailingComma": "none",
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxSingleQuote": false,
+    "jsxBracketSameLine": false,
+    "overrides": [
+        {
+            "files": "public/locales/**/*.json",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
 }

@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useMapBatch, useTranslation } from '../../../../hooks';
 import { Modal } from '../Modal/Modal';
-import Icon from '../../../ui/Icon';
+import Icon from '../../../../components/ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
 import { ButtonIcon } from '../ButtonLabel';
 import { SelectButton } from '../selector/Selector';
