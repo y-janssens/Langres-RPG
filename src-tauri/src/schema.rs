@@ -18,6 +18,7 @@ diesel::table! {
         save_count -> Integer,
         character -> Text,
         storyline -> Text,
+        visible -> Bool,
         last_known_position -> Text,
     }
 }

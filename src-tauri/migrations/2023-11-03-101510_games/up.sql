@@ -7,5 +7,6 @@ CREATE TABLE "games" (
     save_count INTEGER NOT NULL,
     character TEXT NOT NULL,
     storyline TEXT NOT NULL,
+    visible BOOLEAN NOT NULL,
     last_known_position TEXT NOT NULL
 );
