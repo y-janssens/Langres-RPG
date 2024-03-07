@@ -9,9 +9,11 @@ const Sidebar = ({ models }) => {
     return (
         <div className={css['dashboard-sidebar']}>
             <div className={css['dashboard-sidebar-items']}>
-                {models?.map((model, index) => (
-                    <SideBarItem key={index} item={model} />
-                ))}
+                {models
+                    ?.sort((a, b) => a.id - b.id)
+                    .map((model, index) => (
+                        <SideBarItem key={index} item={model} />
+                    ))}
             </div>
         </div>
     );

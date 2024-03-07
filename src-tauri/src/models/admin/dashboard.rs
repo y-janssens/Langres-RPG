@@ -3,6 +3,7 @@ pub mod admin_dashboard {
     use serde_json::{Error, Value};
 
     pub trait AdminModel {
+        fn id(&self) -> u8;
         fn name(&self) -> &'static str;
         fn command(&self) -> &'static str;
         fn model(&self) -> &'static str;
@@ -16,6 +17,9 @@ pub mod admin_dashboard {
 
     pub struct AdminStoryLineModel;
     impl AdminModel for AdminStoryLineModel {
+        fn id(&self) -> u8 {
+            1
+        }
         fn name(&self) -> &'static str {
             "story"
         }
@@ -35,6 +39,9 @@ pub mod admin_dashboard {
 
     pub struct AdminGameModel;
     impl AdminModel for AdminGameModel {
+        fn id(&self) -> u8 {
+            0
+        }
         fn name(&self) -> &'static str {
             "game"
         }
@@ -48,6 +55,9 @@ pub mod admin_dashboard {
 
     pub struct AdminCollectionModel;
     impl AdminModel for AdminCollectionModel {
+        fn id(&self) -> u8 {
+            2
+        }
         fn name(&self) -> &'static str {
             "collection"
         }
@@ -66,8 +76,8 @@ pub mod admin_dashboard {
     impl AdminDashboard {
         pub fn get() -> Result<Value, Error> {
             let mut dashboard = AdminDashboard { models: Vec::new() };
-            dashboard.register_model(AdminStoryLineModel);
             dashboard.register_model(AdminGameModel);
+            dashboard.register_model(AdminStoryLineModel);
             dashboard.register_model(AdminCollectionModel);
 
             dashboard.export()
