@@ -1,9 +1,11 @@
 pub mod app;
 pub mod collections;
+pub mod dashboard;
 pub mod fetcher;
 pub mod games;
 pub mod maps;
 pub mod objects;
+pub mod permissions;
 pub mod story;
 pub mod utils;
 pub mod world;

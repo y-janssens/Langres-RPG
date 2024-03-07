@@ -46,6 +46,7 @@ pub mod games {
         pub save_count: i32,
         pub character: Character,
         pub storyline: Story,
+        pub visible: bool,
         pub last_known_position: Position,
     }
 
@@ -60,6 +61,7 @@ pub mod games {
         save_count: i32,
         character: String,
         storyline: String,
+        visible: bool,
         last_known_position: String,
     }
 
@@ -75,6 +77,7 @@ pub mod games {
                 last_save_date: Self::get_date(),
                 storyline: Story::load(connection).unwrap(),
                 character: Character::new(name),
+                visible: true,
                 last_known_position: Position {
                     x: 0.0,
                     y: 0.0,
@@ -116,6 +119,7 @@ pub mod games {
                 save_count: game.save_count,
                 character: character_json,
                 storyline: storyline_json,
+                visible: game.visible,
                 last_known_position: last_known_position_json,
             };
             let exists = games

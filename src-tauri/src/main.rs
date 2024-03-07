@@ -1,5 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use dotenv::dotenv;
 use std::error::Error;
 
 use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
@@ -41,6 +42,7 @@ fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<dyn 
 }
 
 fn main() {
+    dotenv().ok();
     env::set_var("RUST_BACKTRACE", "1");
     let pool = initialize_db().expect("Failed to initialize database");
 
@@ -75,6 +77,10 @@ fn main() {
             commands::utils::throw_dice,
             commands::utils::frustum_cull_ids,
             commands::utils::frustum_cull_filter,
+            // Permissions
+            commands::permissions::load_permissions,
+            // Dashboard
+            commands::dashboard::load_admin_dashboard
         ])
         .manage(pool)
         .run(tauri::generate_context!())

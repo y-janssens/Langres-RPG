@@ -9,3 +9,4 @@ pub mod story;
 pub mod time;
 pub mod utils;
 pub mod world;
+pub mod admin;
