@@ -51,7 +51,7 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
                         className={css['select-multi-searchbar']}
                         dataTheme="dark"
                         size="xs"
-                        placeholder={`${t('actions.search')}...`}
+                        placeholder={`${t('common.actions.search')}...`}
                         bordered
                         value={search}
                         disabled={disabled}

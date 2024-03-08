@@ -23,5 +23,20 @@
 
 .model-block {
     padding: 25px;
-    overflow-y: auto;
+}
+
+.model-block :global(.table) {
+    overflow: hidden;
+    filter: contrast(0.9) brightness(1.1);
+    border-radius: 8px !important;
+}
+
+.model-block :global(.table .tr) {
+    cursor: pointer;
+}
+
+.model-block :global(.table :where(thead)) {
+    height: 35px !important;
+    filter: contrast(1) brightness(1);
+    background-color: rgb(45, 51, 58) !important;
 }

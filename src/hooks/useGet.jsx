@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
 import { invoke } from '@tauri-apps/api';
 
-const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = () => {} }, deps = []) => {
+const useGet = ({ func, payload = null, id = null, launch = true, useLoader = true, onSuccess = () => {} }, deps = []) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const fetch = useCallback(async () => {
-        setLoading(true);
+        if (useLoader) {
+            setLoading(true);
+        }
 
         await invoke(func, { id, ...payload })
             .then((response) => {
@@ -17,9 +19,11 @@ const useGet = ({ func, payload = null, id = null, launch = true, onSuccess = ()
                 console.error(error);
             })
             .finally(() => {
-                setLoading(false);
+                if (useLoader) {
+                    setLoading(false);
+                }
             });
-    }, [id, func, payload, onSuccess]);
+    }, [id, func, payload, onSuccess, useLoader]);
 
     useEffect(() => {
         if (launch) {

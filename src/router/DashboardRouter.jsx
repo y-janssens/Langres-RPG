@@ -4,19 +4,20 @@ import { useGet } from '../hooks';
 import { Dashboard } from '../pages/Dashboard/Dashboard';
 
 export const DashboardRouter = () => {
-    const [models, loadingModels] = useGet(
+    const [models] = useGet(
         {
-            func: 'load_admin_dashboard'
+            func: 'load_admin_dashboard',
+            useLoader: false
         },
         []
     );
 
     const routes = useMemo(() => {
-        if (!models || loadingModels) {
+        if (!models) {
             return [];
         }
         return models;
-    }, [models, loadingModels]);
+    }, [models]);
 
     return (
         <Routes>

@@ -9,6 +9,7 @@ export const AdminContextLayer = ({ children }) => {
     useGet(
         {
             func: 'load_permissions',
+            useLoader: false,
             onSuccess: ({ is_admin }) => {
                 setIsAdmin(is_admin);
             },

@@ -1,23 +1,20 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useAdminContext, useGameContext, useGet } from '../../hooks';
+import { useGameContext, useGet } from '../../hooks';
 
 import { Settings } from '../../models';
 
 import { Game } from '../Game/Game';
 import { MainMenu } from '../../components/Menu/MainMenu';
 
-import { Builder } from '../Builder/Builder';
-import { Dashboard } from '../Dashboard/Dashboard';
-
 export const Controler = () => {
     const [position, setPosition] = useState();
     const [engine, setEngine] = useGameContext();
-    const { isAdmin } = useAdminContext();
     const gameRef = useRef();
 
     useGet(
         {
             func: 'load_app_datas',
+            useLoader: false,
             onSuccess: (response) => {
                 engine.applicationData = new Settings(response);
             }
@@ -44,10 +41,6 @@ export const Controler = () => {
         [engine, pauseGame]
     );
 
-    const displayGame = useMemo(() => {
-        return Boolean(engine.gameId && !engine.builder);
-    }, [engine]);
-
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
         if (!engine.controls.toggles.input && !pauseGame) {
@@ -61,8 +54,8 @@ export const Controler = () => {
 
     return (
         <>
-            {!engine.gameId && !engine.builder && <MainMenu />}
-            {displayGame && (
+            {!engine.gameId && <MainMenu />}
+            {engine.gameId && (
                 <div
                     className={'game-main-block'}
                     onKeyDown={handleControls}
@@ -75,8 +68,6 @@ export const Controler = () => {
                     <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
                 </div>
             )}
-            {engine.builder && isAdmin && <Builder />}
-            {engine.dashboard && isAdmin && <Dashboard />}
         </>
     );
 };

@@ -94,7 +94,7 @@ const Step = ({ index, child, steps, handleNextStep, handleSave }) => {
             {stepState === 'done' && (
                 <div className={css['stepper-card-sub-header']}>
                     <span className={css['stepper-card-edit']} onClick={() => handleNextStep(stepIndex)}>
-                        {t('actions.edit')}
+                        {t('common.actions.edit')}
                     </span>
                 </div>
             )}
@@ -103,10 +103,10 @@ const Step = ({ index, child, steps, handleNextStep, handleSave }) => {
                     <div className={css['stepper-card-content']}>{child}</div>
                     <div className={css['stepper-footer']}>
                         <Button className={css['stepper-btns']} dataTheme="dark" size="sm" color="default" variant="outline" onClick={child.props.onReset}>
-                            {t('actions.reset')}
+                            {t('common.actions.reset')}
                         </Button>
                         <Button className={css['stepper-btns']} dataTheme="business" size="sm" color="primary" disabled={errors} onClick={onChangeStep}>
-                            {isLastStep ? t('actions.save') : t('actions.continue')}
+                            {isLastStep ? t('common.actions.save') : t('common.actions.continue')}
                         </Button>
                     </div>
                 </>

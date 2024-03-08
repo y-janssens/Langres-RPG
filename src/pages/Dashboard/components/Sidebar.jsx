@@ -3,12 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'react-daisyui';
+import { AdminLogo } from '../../../components/images';
 
 import css from './ui.module.css';
 
 const Sidebar = ({ models, active, setState }) => {
+    const { t } = useTranslation();
     return (
         <div className={css['dashboard-sidebar']}>
+            <div className={css['dashboard-sidebar-logo']}>
+                <img src={AdminLogo} alt={'logo'} />
+                <div className={css['dashboard-sidebar-title']}>{t('common.game')}</div>
+            </div>
             <div className={css['dashboard-sidebar-items']}>
                 {models
                     ?.sort((a, b) => a.id - b.id)

@@ -112,14 +112,14 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                         <Divider className={css['builder-navbar-divider']} horizontal />
                         <ButtonLabel
                             variant="outline"
-                            label={t('actions.reset')}
+                            label={t('common.actions.reset')}
                             disabled={disabled}
                             onClick={() => {
                                 reset();
                                 sync();
                             }}
                         />
-                        <ButtonLabel color="primary" label={t('actions.save')} disabled={disabled} onClick={handleSave} />
+                        <ButtonLabel color="primary" label={t('common.actions.save')} disabled={disabled} onClick={handleSave} />
                     </div>
                 </div>
             </Navbar>

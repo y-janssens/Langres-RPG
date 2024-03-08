@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, Input } from 'react-daisyui';
@@ -7,7 +8,7 @@ import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
 
-const NavBar = ({ current }) => {
+const NavBar = memo(({ current }) => {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -24,7 +25,7 @@ const NavBar = ({ current }) => {
                         dataTheme="dark"
                         color="neutral"
                         size="md"
-                        placeholder={`${t('actions.search')} ${t(`dashboard.models.${current.name}`).toLowerCase()}`}
+                        placeholder={`${t('common.actions.search')} ${t(`dashboard.models.${current.name}`).toLowerCase()}`}
                         disabled={!current.search}
                     />
                     <Button dataTheme="emerald" className={css['dashboard-navbar-exit']} size="md" color="primary" shape="square" onClick={() => navigate('/')}>
@@ -37,6 +38,6 @@ const NavBar = ({ current }) => {
             </div>
         </div>
     );
-};
+});
 
 export default NavBar;

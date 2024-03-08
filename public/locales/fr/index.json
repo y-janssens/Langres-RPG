@@ -1,131 +1,62 @@
 {
-  "actions": {
-    "actions": "Actions",
-    "save": "Enregistrer",
-    "load": "Charger",
-    "start": "Commencer",
-    "delete": "Supprimer",
-    "cancel": "Annuler",
-    "confirm": "Confirmer",
-    "continue": "Continuer",
-    "edit": "Modifier",
-    "reset": "Réinitialiser",
-    "new": "Nouveau",
-    "search": "Rechercher"
-  },
-  "dashboard": {
-    "models": {
-      "story": "Scénarios",
-      "game": "Parties",
-      "collection": "Collections"
-    },
-    "table": {
-      "game": {
-        "id": "Id",
-        "player": "Nom",
-        "date_created": "Créé",
-        "last_save_date": "Modifié",
-        "visible": "Visible",
-        "actions": "Actions"
-      },
-      "story": {
-        "id": "Id",
-        "name": "Nom",
-        "created": "Créé",
-        "modified": "Modifié",
-        "actions": "Actions"
-      },
-      "collection": {
-        "id": "Id",
-        "created": "Créé",
-        "modified": "Modifié",
-        "visible": "Visible",
-        "actions": "Actions"
-      }
-    }
-  },
-  "common": {
-    "name": "Nom",
-    "title": "Titre",
-    "date": "Date",
-    "size": "Taille",
-    "order": "Ordre"
-  },
-  "engine": {
-    "dice": {
-      "success": "Réussite",
-      "failure": "Échec",
-      "critical_success": "Réussite critique",
-      "critical_failure": "Échec critique"
-    }
-  },
-  "environment": {
-    "seasons": {
-      "spring": "Printemps",
-      "summer": "Été",
-      "autumn": "Automne",
-      "winter": "Hiver"
-    }
-  },
-  "menu": {
-    "items": {
-      "continue": "Continuer",
-      "load": "Charger une partie",
-      "new": "Nouvelle partie",
-      "save": "Enregistrer la partie",
-      "settings": "Paramètres",
-      "exit": "Quitter le jeu",
-      "exit-game": "Menu Principal",
-      "builder": "Éditeur",
-      "dashboard": "Dashboard"
-    },
-    "deletion-modal": {
-      "header": "Voulez-vous vraiment supprimer cette partie?",
-      "message": "Cette action est irréversible"
-    },
-    "settings": {
-      "language": "Langage: ",
-      "sound": "Son: ",
-      "volume": "Volume: ",
-      "music": "Musique: "
-    }
-  },
   "builder": {
-    "manager": "Gérez vos scénarios",
     "json": "Éditeur Json",
-    "modals": {
-      "manager": {
-        "title": "Créez et modifiez vos scénarios et cartes"
+    "manager": "Gérez vos scénarios",
+    "menu": {
+      "functions": {
+        "clear": "Effacer la carte",
+        "label": "Fonctions",
+        "trees": "Générer des arbres"
       },
+      "items": {
+        "label": "Éléments"
+      },
+      "map": {
+        "label": "Informations sur la carte",
+        "name": "Nom",
+        "primary": "Principale",
+        "size": "Taille"
+      },
+      "objects": {
+        "label": "Objets"
+      },
+      "tile": {
+        "label": "Paramètres des cases"
+      }
+    },
+    "modals": {
       "editor": {
         "title": "Éditez le contenu de vos cartes"
       },
+      "gateway": {
+        "subtitle": "Sélectionner une carte",
+        "title": "Éditez et organisez les passages entre vos cartes"
+      },
       "generator": {
-        "title": "Générez et sélectionnez des cartes aléatoires",
-        "subtitle": "Générez un lot de cartes",
         "select": "Type de carte",
+        "subtitle": "Générez un lot de cartes",
+        "title": "Générez et sélectionnez des cartes aléatoires",
         "types": {
           "forest": "Forêt",
           "swamp": "Marécage"
         }
       },
+      "manager": {
+        "title": "Créez et modifiez vos scénarios et cartes"
+      },
       "steps": {
         "acts": {
-          "title": "Scénarios",
-          "subtitle": "Éditez et organisez les actes de votre scénario"
+          "subtitle": "Éditez et organisez les actes de votre scénario",
+          "title": "Scénarios"
         },
         "maps": {
-          "title": "Actes",
-          "subtitle": "Éditez et organisez les cartes de vos actes"
+          "subtitle": "Éditez et organisez les cartes de vos actes",
+          "title": "Actes"
         },
         "summary": {
-          "title": "Résumé",
-          "subtitle": "Vérifiez et validez vos changements"
+          "subtitle": "Vérifiez et validez vos changements",
+          "title": "Résumé"
         }
-      },
-      "gateway": {
-        "title": "Éditez et organisez les passages entre vos cartes",
-        "subtitle": "Sélectionner une carte"
       }
     },
     "selector": {
@@ -133,36 +64,106 @@
       "map": "Sélectionner une carte"
     },
     "toggles": {
-      "ids": "Voir les ids",
-      "values": "Voir les valeurs",
       "icons": "Voir les icônes",
+      "ids": "Voir les ids",
       "meshes": "Voir les meshs",
+      "values": "Voir les valeurs",
       "viewport": "Plan 3D"
+    }
+  },
+  "common": {
+    "actions": {
+      "actions": "Actions",
+      "cancel": "Annuler",
+      "confirm": "Confirmer",
+      "continue": "Continuer",
+      "delete": "Supprimer",
+      "edit": "Modifier",
+      "load": "Charger",
+      "new": "Nouveau",
+      "reset": "Réinitialiser",
+      "save": "Enregistrer",
+      "search": "Rechercher",
+      "start": "Commencer"
     },
-    "menu": {
-      "map": {
-        "label": "Informations sur la carte",
-        "name": "Nom",
-        "size": "Taille",
-        "primary": "Principale"
+    "date": "Date",
+    "game": "Langres",
+    "name": "Nom",
+    "order": "Ordre",
+    "size": "Taille",
+    "title": "Titre"
+  },
+  "dashboard": {
+    "models": {
+      "collection": "Collections",
+      "game": "Parties",
+      "story": "Scénarios"
+    },
+    "table": {
+      "collection": {
+        "actions": "Actions",
+        "created": "Créé",
+        "id": "Id",
+        "modified": "Modifié",
+        "visible": "Visible"
       },
-      "tile": {
-        "label": "Paramètres des cases"
+      "game": {
+        "actions": "Actions",
+        "date_created": "Créé",
+        "id": "Id",
+        "last_save_date": "Modifié",
+        "player": "Nom",
+        "visible": "Visible"
       },
-      "items": {
-        "label": "Éléments"
-      },
-      "functions": {
-        "label": "Fonctions",
-        "trees": "Générer des arbres",
-        "clear": "Effacer la carte"
-      },
-      "objects": {
-        "label": "Objets"
+      "story": {
+        "actions": "Actions",
+        "created": "Créé",
+        "id": "Id",
+        "modified": "Modifié",
+        "name": "Nom"
       }
+    }
+  },
+  "engine": {
+    "dice": {
+      "critical_failure": "Échec critique",
+      "critical_success": "Réussite critique",
+      "failure": "Échec",
+      "success": "Réussite"
+    }
+  },
+  "environment": {
+    "seasons": {
+      "autumn": "Automne",
+      "spring": "Printemps",
+      "summer": "Été",
+      "winter": "Hiver"
     }
   },
   "flavor": {
     "main-title": "Quand virevolte et tombe le royaume de mon enfance"
+  },
+  "menu": {
+    "deletion-modal": {
+      "header": "Voulez-vous vraiment supprimer cette partie?",
+      "message": "Cette action est irréversible"
+    },
+    "items": {
+      "builder": "Éditeur",
+      "continue": "Continuer",
+      "dashboard": "Dashboard",
+      "exit": "Quitter le jeu",
+      "exit-game": "Menu Principal",
+      "load": "Charger une partie",
+      "new": "Nouvelle partie",
+      "save": "Enregistrer la partie",
+      "settings": "Paramètres"
+    },
+    "settings": {
+      "language": "Langage: ",
+      "music": "Musique: ",
+      "sound": "Son: ",
+      "volume": "Volume: "
+    }
   }
 }
