@@ -25,6 +25,9 @@ mod tests {
 
             let mut patch_collection = Collection {
                 id: result[0].id,
+                created: result[0].clone().created,
+                modified: result[0].clone().modified,
+                visible: result[0].clone().visible,
                 map: result[0].clone().map,
             };
 

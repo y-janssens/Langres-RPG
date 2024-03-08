@@ -13,6 +13,7 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["create", "edit", "delete"]
         }
+        fn fields(&self) -> Vec<&'static str>;
     }
 
     pub struct AdminStoryLineModel;
@@ -35,6 +36,9 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit"]
         }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "name", "created", "modified", "actions"]
+        }
     }
 
     pub struct AdminGameModel;
@@ -51,6 +55,16 @@ pub mod admin_dashboard {
         fn command(&self) -> &'static str {
             "fetch_games"
         }
+        fn fields(&self) -> Vec<&'static str> {
+            vec![
+                "id",
+                "player",
+                "date_created",
+                "last_save_date",
+                "visible",
+                "actions",
+            ]
+        }
     }
 
     pub struct AdminCollectionModel;
@@ -66,6 +80,9 @@ pub mod admin_dashboard {
         }
         fn command(&self) -> &'static str {
             "load_collections"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "created", "modified", "visible", "actions"]
         }
     }
 

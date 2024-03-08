@@ -4,8 +4,6 @@ pub mod collections {
     use crate::schema::maps::dsl::*;
     use crate::{models::world::maps::World, utils::factory::factory_models::AbstractModel};
 
-
-
     use diesel::{
         deserialize::{self, FromSql, Queryable},
         prelude::*,
@@ -23,6 +21,9 @@ pub mod collections {
     pub struct Collection {
         pub id: i32,
         pub map: World,
+        pub created: String,
+        pub modified: String,
+        pub visible: bool,
     }
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]

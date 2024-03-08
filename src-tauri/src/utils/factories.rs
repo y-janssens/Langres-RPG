@@ -23,6 +23,9 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Story {
                 id: IdFaker.generate().value(),
+                name: StringFaker.generate().value(),
+                created: StringFaker.generate().value(),
+                modified: StringFaker.generate().value(),
                 story: Acts {
                     acts: vec![ActFactory.generate()],
                 },

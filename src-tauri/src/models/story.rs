@@ -18,6 +18,9 @@ pub mod storyline {
     #[diesel(check_for_backend(Sqlite))]
     pub struct Story {
         pub id: i32,
+        pub name: String,
+        pub created: String,
+        pub modified: String,
         pub story: Acts,
     }
 
