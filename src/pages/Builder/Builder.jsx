@@ -32,6 +32,7 @@ export const Builder = () => {
     const [, loadingStoryline, syncStory] = useGet({
         func: 'fetch_storyline',
         onSuccess: (response) => {
+            console.log(response);
             setForm('storyLine', response);
 
             switch (true) {

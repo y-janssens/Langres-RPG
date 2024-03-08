@@ -1,19 +1,14 @@
 import { invoke } from '@tauri-apps/api';
-import { Character, World } from '.';
+import { World } from '.';
+import AdminModel from './dashboard';
 
-export default class GameModel {
-    constructor({ player, id, date_created, last_save_date, save_count, character, storyline, last_known_position, engine, visible }) {
-        this.player = player;
-        this.id = id;
-        this.date_created = date_created;
-        this.last_save_date = last_save_date;
-        this.save_count = save_count;
-        this.storyline = storyline;
-        this.character = new Character({ ...character, name: this.player });
-        this.visible = visible;
-        this.last_known_position = last_known_position;
-        this.engine = engine;
-        this.init();
+export default class GameModel extends AdminModel {
+    constructor(options) {
+        super(options);
+        for (const [key, value] of Object.entries(options)) {
+            this[key] = value;
+        }
+        // this.init();
     }
 
     async save() {
@@ -26,9 +21,9 @@ export default class GameModel {
         await invoke('delete', { id: this.id });
     }
 
-    init() {
-        console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
-    }
+    // init() {
+    //     console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
+    // }
 
     get title() {
         return {

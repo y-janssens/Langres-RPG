@@ -1,34 +1,38 @@
-import React, { useMemo, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useCallback, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import { Button } from 'react-daisyui';
 
-import { useTranslation } from 'react-i18next';
 import css from './ui.module.css';
 
-const Sidebar = ({ models }) => {
+const Sidebar = ({ models, active, setState }) => {
     return (
         <div className={css['dashboard-sidebar']}>
             <div className={css['dashboard-sidebar-items']}>
                 {models
                     ?.sort((a, b) => a.id - b.id)
                     .map((model, index) => (
-                        <SideBarItem key={index} item={model} />
+                        <SideBarItem key={index} item={model} active={active} setState={setState} />
                     ))}
             </div>
         </div>
     );
 };
 
-const SideBarItem = ({ item }) => {
+const SideBarItem = ({ item, active, setState }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const location = useLocation();
-
     const [isHover, setIsHover] = useState(false);
 
     const isActive = useMemo(() => {
-        return location.pathname.replace('/admin/dashboard/', '') === item.name;
-    }, [location, item]);
+        return active.name === item.name;
+    }, [active, item]);
+
+    const handleRedirect = useCallback(() => {
+        setState([]);
+        navigate(`/admin/dashboard/${item.name}`);
+    }, [item]);
 
     return (
         <div className={css['dashboard-sidebar-item']}>
@@ -39,7 +43,7 @@ const SideBarItem = ({ item }) => {
                 color={isActive || isHover ? 'primary' : 'ghost'}
                 variant={!isActive && isHover && 'outline'}
                 fullWidth
-                onClick={() => navigate(`/admin/dashboard/${item.name}`)}
+                onClick={handleRedirect}
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
             >

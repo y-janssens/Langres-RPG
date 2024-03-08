@@ -1,28 +1,30 @@
+import { memo, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Theme } from './components';
 import { Sidebar, NavBar } from './components';
+import { Model } from './Model';
 
 import css from './dashboard.module.css';
 
-export const Dashboard = ({ models, current, children }) => {
+export const Dashboard = memo(({ models, current }) => {
+    const [state, setState] = useState([]);
     return (
         <Theme dataTheme="night" className={css['dashboard-main-container']}>
-            <Sidebar models={models} active={current} />
+            <Sidebar models={models} active={current} setState={setState} />
             <NavBar current={current} />
-            {children}
+            <div className={css['dashboard-model-block']}>
+                <Model current={current} model={state} setModel={setState} />
+            </div>
         </Theme>
     );
-};
+});
 
 Dashboard.propTypes = {
-    children: PropTypes.node.isRequired,
     models: PropTypes.array,
-    current: PropTypes.object
+    current: PropTypes.object.isRequired
 };
 
 Dashboard.defaultProps = {
-    children: {},
-    models: [],
-    current: null
+    models: []
 };

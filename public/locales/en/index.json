@@ -1,5 +1,6 @@
 {
   "actions": {
+    "actions": "Actions",
     "save": "Save",
     "load": "Load",
     "start": "Start",
@@ -17,6 +18,30 @@
       "story": "Storylines",
       "game": "Games",
       "collection": "Collections"
+    },
+    "table": {
+      "game": {
+        "id": "Id",
+        "player": "Name",
+        "date_created": "Created",
+        "last_save_date": "Saved",
+        "visible": "Visible",
+        "actions": "Actions"
+      },
+      "story": {
+        "id": "Id",
+        "name": "Name",
+        "created": "Created",
+        "modified": "Modified",
+        "actions": "Actions"
+      },
+      "collection": {
+        "id": "Id",
+        "created": "Created",
+        "modified": "Modified",
+        "visible": "Visible",
+        "actions": "Actions"
+      }
     }
   },
   "common": {
@@ -79,7 +104,7 @@
         "title": "Generate and select random maps",
         "subtitle": "Generate a batch of maps",
         "select": "Map type",
-         "types": {
+        "types": {
           "forest": "Forest",
           "swamp": "Swamp"
         }

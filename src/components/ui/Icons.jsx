@@ -1,4 +1,4 @@
-import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium } from 'react-icons/io5';
+import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium, IoHome } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine, RiLandscapeFill } from 'react-icons/ri';
 import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
 import { GrView, GrPowerReset } from 'react-icons/gr';
@@ -11,8 +11,11 @@ import { FaFlagCheckered } from 'react-icons/fa';
 import { HiZoomIn, HiZoomOut } from 'react-icons/hi';
 import { GoSync } from 'react-icons/go';
 import { IoMdCreate } from 'react-icons/io';
+import { RxHamburgerMenu } from 'react-icons/rx';
 
 export { BsTrash as Delete };
+export { RxHamburgerMenu as Menu };
+export { IoHome as Home };
 export { IoVolumeHigh as Volume };
 export { IoVolumeMedium as Medium };
 export { IoVolumeMuteSharp as Mute };

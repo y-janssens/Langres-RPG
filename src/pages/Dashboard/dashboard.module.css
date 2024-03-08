@@ -11,3 +11,17 @@
     font-family: system-ui !important;
     font-size: 10px !important;
 }
+
+.dashboard-model-block {
+    position: absolute;
+    width: calc(100% - 225px);
+    height: calc(100% - 135px);
+    right: 0px;
+    bottom: 0px;
+    overflow-y: auto;
+}
+
+.model-block {
+    padding: 25px;
+    overflow-y: auto;
+}

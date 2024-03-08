@@ -33,15 +33,7 @@ export const DashboardRouter = () => {
                 }}
             />
             {routes.map((model, index) => (
-                <Route
-                    key={index}
-                    path={`${model.name}`}
-                    element={
-                        <Dashboard models={models} current={model}>
-                            <p>{model.model}</p>
-                        </Dashboard>
-                    }
-                />
+                <Route key={index} path={`${model.name}/*`} element={<Dashboard models={models} current={model} />} />
             ))}
         </Routes>
     );

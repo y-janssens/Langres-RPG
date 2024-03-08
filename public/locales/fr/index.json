@@ -1,5 +1,6 @@
 {
   "actions": {
+    "actions": "Actions",
     "save": "Enregistrer",
     "load": "Charger",
     "start": "Commencer",
@@ -17,6 +18,30 @@
       "story": "Scénarios",
       "game": "Parties",
       "collection": "Collections"
+    },
+    "table": {
+      "game": {
+        "id": "Id",
+        "player": "Nom",
+        "date_created": "Créé",
+        "last_save_date": "Modifié",
+        "visible": "Visible",
+        "actions": "Actions"
+      },
+      "story": {
+        "id": "Id",
+        "name": "Nom",
+        "created": "Créé",
+        "modified": "Modifié",
+        "actions": "Actions"
+      },
+      "collection": {
+        "id": "Id",
+        "created": "Créé",
+        "modified": "Modifié",
+        "visible": "Visible",
+        "actions": "Actions"
+      }
     }
   },
   "common": {

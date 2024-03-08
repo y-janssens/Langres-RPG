@@ -8,5 +8,6 @@ export { default as Inventory } from './inventory';
 export { default as World } from './world';
 export { default as Environment } from './environment';
 export { default as MapAssets } from './map';
-export { default as Collection } from './collections';
-export { MapCollection } from './collections';
+export { default as Collection, MapCollection } from './collections';
+export { default as AdminModel } from './dashboard';
+export { default as Storyline } from './storyline';
