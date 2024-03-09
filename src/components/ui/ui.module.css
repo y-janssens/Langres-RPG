@@ -324,6 +324,22 @@
     width: 100%;
 }
 
+.ui-icon-small svg {
+    font-size: 12px !important;
+}
+
+.ui-icon-medium svg {
+    font-size: 16px !important;
+}
+
+.ui-icon-large svg {
+    font-size: 22px !important;
+}
+
+.ui-icon-xl svg {
+    font-size: 30px !important;
+}
+
 .ui-btn {
     width: 30%;
     height: 10px;

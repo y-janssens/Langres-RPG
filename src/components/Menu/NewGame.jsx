@@ -29,7 +29,7 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
         return null;
     }
     return (
-        <Modal loading={loading} height="250px" name={t('actions.start')} onClick={() => handleNewGame(playerName)} disabled={!playerName.length}>
+        <Modal loading={loading} height="250px" name={t('common.actions.start')} onClick={() => handleNewGame(playerName)} disabled={!playerName.length}>
             <div className={css['new-game-input']}>
                 <input type="text" placeholder="Enter player name" value={playerName} onChange={({ target: { value } }) => setPlayerName(value)} />
             </div>

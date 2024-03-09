@@ -27,6 +27,9 @@ diesel::table! {
     maps (id) {
         id -> Integer,
         map -> Text,
+        created -> Text,
+        modified -> Text,
+        visible -> Bool,
     }
 }
 
@@ -53,6 +56,9 @@ diesel::table! {
 diesel::table! {
     storyline (id) {
         id -> Integer,
+        name -> Text,
+        created -> Text,
+        modified -> Text,
         story -> Text,
     }
 }

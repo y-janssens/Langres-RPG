@@ -2,12 +2,12 @@
 pub mod factories_definitions {
     use diesel::SqliteConnection;
 
-    use crate::models::collection::collections::InsertableCollection;
+    use crate::models::collection::collections::Collection;
     use crate::models::game::games::Game;
     use crate::models::story::storyline::{Act, Acts, Content, Story};
     use crate::models::world::maps::World;
     use crate::utils::factory::factory_models::{ApiFactory, Factory};
-    use crate::utils::faker::faker_definitions::{Faker, IdFaker, StringFaker};
+    use crate::utils::faker::faker_definitions::{BoolFaker, Faker, IdFaker, StringFaker};
 
     pub struct StoryLineFactory;
     pub struct ActsFactory;
@@ -23,6 +23,9 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Story {
                 id: IdFaker.generate().value(),
+                name: StringFaker.generate().value(),
+                created: StringFaker.generate().value(),
+                modified: StringFaker.generate().value(),
                 story: Acts {
                     acts: vec![ActFactory.generate()],
                 },
@@ -75,11 +78,15 @@ pub mod factories_definitions {
     }
 
     impl Factory for CollectionFactory {
-        type Output = InsertableCollection;
+        type Output = Collection;
 
         fn generate(&self) -> Self::Output {
-            InsertableCollection {
+            Collection {
+                id: IdFaker.generate().value(),
                 map: WorldFactory.generate(),
+                created: StringFaker.generate().value().to_string(),
+                modified: StringFaker.generate().value().to_string(),
+                visible: BoolFaker.generate().value(),
             }
         }
     }

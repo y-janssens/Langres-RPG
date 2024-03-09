@@ -4,8 +4,6 @@ pub mod collections {
     use crate::schema::maps::dsl::*;
     use crate::{models::world::maps::World, utils::factory::factory_models::AbstractModel};
 
-
-
     use diesel::{
         deserialize::{self, FromSql, Queryable},
         prelude::*,
@@ -15,7 +13,7 @@ pub mod collections {
     };
     use serde::{Deserialize, Serialize};
 
-    impl AbstractModel for InsertableCollection {}
+    impl AbstractModel for Collection {}
 
     #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
     #[diesel(table_name = crate::schema::maps)]
@@ -23,12 +21,20 @@ pub mod collections {
     pub struct Collection {
         pub id: i32,
         pub map: World,
+        pub created: String,
+        pub modified: String,
+        pub visible: bool,
     }
 
-    #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+    #[derive(
+        Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset,
+    )]
     #[diesel(table_name = crate::schema::maps)]
     pub struct InsertableCollection {
-        pub map: World,
+        pub map: String,
+        pub created: String,
+        pub modified: String,
+        pub visible: bool,
     }
 
     impl FromSql<Text, Sqlite> for World {
@@ -53,38 +59,33 @@ pub mod collections {
             Ok(_load)
         }
 
-        pub fn patch(
-            _id: i32,
+        pub fn save(
             data: Collection,
             connection: &mut SqliteConnection,
         ) -> Result<(), diesel::result::Error> {
-            let updated_json = serde_json::to_string(&data.map).map_err(|e| {
-                diesel::result::Error::DatabaseError(
-                    diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                    Box::new(e.to_string()),
-                )
-            })?;
-            diesel::update(maps.find(_id))
-                .set(crate::schema::maps::map.eq(&updated_json))
-                .execute(connection)?;
+            let map_json = serde_json::to_string(&data.map).expect("error");
 
-            Ok(())
-        }
+            let insertable = InsertableCollection {
+                map: map_json,
+                created: data.created,
+                modified: data.modified,
+                visible: data.visible,
+            };
 
-        pub fn save(
-            data: InsertableCollection,
-            connection: &mut SqliteConnection,
-        ) -> Result<(), diesel::result::Error> {
-            let updated_json = serde_json::to_string(&data.map).map_err(|e| {
-                diesel::result::Error::DatabaseError(
-                    diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                    Box::new(e.to_string()),
-                )
-            })?;
+            let exists = maps
+                .filter(id.eq(data.id))
+                .first::<Collection>(connection)
+                .is_ok();
 
-            diesel::insert_into(crate::schema::maps::table)
-                .values((crate::schema::maps::columns::map.eq(updated_json),))
-                .execute(connection)?;
+            if exists {
+                diesel::update(maps.find(data.id))
+                    .set(insertable)
+                    .execute(connection)?;
+            } else {
+                diesel::insert_into(crate::schema::maps::table)
+                    .values(&insertable)
+                    .execute(connection)?;
+            }
 
             Ok(())
         }

@@ -49,6 +49,7 @@ export const Builder = () => {
 
     const [, , syncObjects] = useGet({
         func: 'load_objects',
+        useLoader: false,
         onSuccess: (response) => {
             setForm('objects', response);
         }
@@ -56,6 +57,7 @@ export const Builder = () => {
 
     const [, , syncFunctions] = useGet({
         func: 'load_functions',
+        useLoader: false,
         onSuccess: (response) => {
             setForm('functions', response);
         }

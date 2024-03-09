@@ -13,6 +13,7 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["create", "edit", "delete"]
         }
+        fn fields(&self) -> Vec<&'static str>;
     }
 
     pub struct AdminStoryLineModel;
@@ -35,6 +36,9 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit"]
         }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "name", "created", "modified", "actions"]
+        }
     }
 
     pub struct AdminGameModel;
@@ -50,6 +54,16 @@ pub mod admin_dashboard {
         }
         fn command(&self) -> &'static str {
             "fetch_games"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec![
+                "id",
+                "player",
+                "date_created",
+                "last_save_date",
+                "visible",
+                "actions",
+            ]
         }
     }
 
@@ -67,6 +81,47 @@ pub mod admin_dashboard {
         fn command(&self) -> &'static str {
             "load_collections"
         }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "created", "modified", "visible", "actions"]
+        }
+    }
+
+    pub struct AdminMapObjectsModel;
+    impl AdminModel for AdminMapObjectsModel {
+        fn id(&self) -> u8 {
+            3
+        }
+        fn name(&self) -> &'static str {
+            "object"
+        }
+        fn model(&self) -> &'static str {
+            "Object"
+        }
+        fn command(&self) -> &'static str {
+            "load_objects"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "name", "value", "area", "walkable", "actions"]
+        }
+    }
+
+    pub struct AdminMapFunctionsModel;
+    impl AdminModel for AdminMapFunctionsModel {
+        fn id(&self) -> u8 {
+            4
+        }
+        fn name(&self) -> &'static str {
+            "function"
+        }
+        fn model(&self) -> &'static str {
+            "Function"
+        }
+        fn command(&self) -> &'static str {
+            "load_functions"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "icon", "label", "command", "actions"]
+        }
     }
 
     pub struct AdminDashboard {
@@ -79,6 +134,8 @@ pub mod admin_dashboard {
             dashboard.register_model(AdminGameModel);
             dashboard.register_model(AdminStoryLineModel);
             dashboard.register_model(AdminCollectionModel);
+            dashboard.register_model(AdminMapObjectsModel);
+            dashboard.register_model(AdminMapFunctionsModel);
 
             dashboard.export()
         }

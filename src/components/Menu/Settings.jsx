@@ -26,7 +26,7 @@ export default function Settings({ state, onClose = () => {}, engine }) {
         return null;
     }
     return (
-        <Modal height="500px" name={t('actions.save')} onClick={handleSave}>
+        <Modal height="500px" name={t('common.actions.save')} onClick={handleSave}>
             <div className={css['settings-block']}>
                 {!engine.gameId && (
                     <SettingsItem name={t('menu.settings.language')}>

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Theme } from './components';
-import { Sidebar, NavBar } from './components';
+import { Theme, Sidebar, NavBar } from './components';
 
 import css from './dashboard.module.css';
 
@@ -10,19 +9,16 @@ export const Dashboard = ({ models, current, children }) => {
         <Theme dataTheme="night" className={css['dashboard-main-container']}>
             <Sidebar models={models} active={current} />
             <NavBar current={current} />
-            {children}
+            <div className={css['dashboard-model-block']}>{children}</div>
         </Theme>
     );
 };
 
 Dashboard.propTypes = {
-    children: PropTypes.node.isRequired,
     models: PropTypes.array,
-    current: PropTypes.object
+    current: PropTypes.object.isRequired
 };
 
 Dashboard.defaultProps = {
-    children: {},
-    models: [],
-    current: null
+    models: []
 };

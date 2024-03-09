@@ -66,6 +66,7 @@ fn main() {
             commands::app::load_env,
             commands::app::load_app_datas,
             commands::app::save_app_datas,
+            // Builder commands
             commands::objects::load_objects,
             commands::objects::load_functions,
             // Map generator commands

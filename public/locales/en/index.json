@@ -1,106 +1,62 @@
 {
-  "actions": {
-    "save": "Save",
-    "load": "Load",
-    "start": "Start",
-    "delete": "Delete",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "continue": "Continue",
-    "edit": "Edit",
-    "reset": "Reset",
-    "new": "New",
-    "search": "Search"
-  },
-  "dashboard": {
-    "models": {
-      "story": "Storylines",
-      "game": "Games",
-      "collection": "Collections"
-    }
-  },
-  "common": {
-    "name": "Name",
-    "title": "Title",
-    "date": "Date",
-    "size": "Size",
-    "order": "Order"
-  },
-  "engine": {
-    "dice": {
-      "success": "Success",
-      "failure": "Failure",
-      "critical_success": "Critical Success",
-      "critical_failure": "Critical Failure"
-    }
-  },
-  "environment": {
-    "seasons": {
-      "spring": "Sprint",
-      "summer": "Summer",
-      "autumn": "Autumn",
-      "winter": "Winter"
-    }
-  },
-  "menu": {
-    "items": {
-      "continue": "Continue",
-      "load": "Load Game",
-      "new": "New Game",
-      "save": "Save Game",
-      "settings": "Settings",
-      "exit": "Exit Game",
-      "exit-game": "Main Menu",
-      "builder": "Editor",
-      "dashboard": "Dashboard"
-    },
-    "deletion-modal": {
-      "header": "Do you really wish to delete this game?",
-      "message": "This action cannot be undone"
-    },
-    "settings": {
-      "language": "Language: ",
-      "sound": "Sound: ",
-      "volume": "Volume: ",
-      "music": "Music: "
-    }
-  },
   "builder": {
-    "manager": "Manage your storylines",
     "json": "Json editor",
-    "modals": {
-      "manager": {
-        "title": "Create and edit storylines and maps"
+    "manager": "Manage your storylines",
+    "menu": {
+      "functions": {
+        "clear": "Clear map",
+        "label": "Functions",
+        "trees": "Generate forest"
       },
+      "items": {
+        "label": "Items"
+      },
+      "map": {
+        "label": "Map informations",
+        "name": "Name",
+        "primary": "Primary",
+        "size": "Size"
+      },
+      "objects": {
+        "label": "Objects"
+      },
+      "tile": {
+        "label": "Tiles settings"
+      }
+    },
+    "modals": {
       "editor": {
         "title": "Edit your map's content"
       },
+      "gateway": {
+        "subtitle": "Select a map",
+        "title": "Manage gateways between your maps"
+      },
       "generator": {
-        "title": "Generate and select random maps",
-        "subtitle": "Generate a batch of maps",
         "select": "Map type",
-         "types": {
+        "subtitle": "Generate a batch of maps",
+        "title": "Generate and select random maps",
+        "types": {
           "forest": "Forest",
           "swamp": "Swamp"
         }
       },
+      "manager": {
+        "title": "Create and edit storylines and maps"
+      },
       "steps": {
         "acts": {
-          "title": "Storylines",
-          "subtitle": "Edit and order your story's acts"
+          "subtitle": "Edit and order your story's acts",
+          "title": "Storylines"
         },
         "maps": {
-          "title": "Acts",
-          "subtitle": "Edit and order your acts's maps"
+          "subtitle": "Edit and order your acts's maps",
+          "title": "Acts"
         },
         "summary": {
-          "title": "Summary",
-          "subtitle": "Review and validate your changes"
+          "subtitle": "Review and validate your changes",
+          "title": "Summary"
         }
-      },
-      "gateway": {
-        "title": "Manage gateways between your maps",
-        "subtitle": "Select a map"
       }
     },
     "selector": {
@@ -108,36 +64,123 @@
       "map": "Select a map"
     },
     "toggles": {
-      "ids": "Show ids",
-      "values": "Show values",
       "icons": "Show icons",
+      "ids": "Show ids",
       "meshes": "Show meshes",
+      "values": "Show values",
       "viewport": "3D Viewport"
+    }
+  },
+  "common": {
+    "actions": {
+      "actions": "Actions",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "continue": "Continue",
+      "delete": "Delete",
+      "edit": "Edit",
+      "load": "Load",
+      "new": "New",
+      "reset": "Reset",
+      "save": "Save",
+      "search": "Search",
+      "start": "Start"
     },
-    "menu": {
-      "map": {
-        "label": "Map informations",
+    "date": "Date",
+    "game": "Langres",
+    "name": "Name",
+    "order": "Order",
+    "size": "Size",
+    "title": "Title"
+  },
+  "dashboard": {
+    "models": {
+      "collection": "Collections",
+      "function": "Functions",
+      "game": "Games",
+      "object": "Objects",
+      "story": "Storylines"
+    },
+    "table": {
+      "collection": {
+        "actions": "Actions",
+        "created": "Created",
+        "id": "Id",
+        "modified": "Modified",
+        "visible": "Visible"
+      },
+      "function": {
+        "actions": "Actions",
+        "command": "Command",
+        "icon": "Icon",
+        "id": "Id",
+        "label": "Label"
+      },
+      "game": {
+        "actions": "Actions",
+        "date_created": "Created",
+        "id": "Id",
+        "last_save_date": "Saved",
+        "player": "Name",
+        "visible": "Visible"
+      },
+      "object": {
+        "actions": "Actions",
+        "area": "Area",
+        "id": "Id",
         "name": "Name",
-        "size": "Size",
-        "primary": "Primary"
+        "value": "Value",
+        "walkable": "Walkable"
       },
-      "tile": {
-        "label": "Tiles settings"
-      },
-      "items": {
-        "label": "Items"
-      },
-      "functions": {
-        "label": "Functions",
-        "trees": "Generate forest",
-        "clear": "Clear map"
-      },
-      "objects": {
-        "label": "Objects"
+      "story": {
+        "actions": "Actions",
+        "created": "Created",
+        "id": "Id",
+        "modified": "Modified",
+        "name": "Name"
       }
+    }
+  },
+  "engine": {
+    "dice": {
+      "critical_failure": "Critical Failure",
+      "critical_success": "Critical Success",
+      "failure": "Failure",
+      "success": "Success"
+    }
+  },
+  "environment": {
+    "seasons": {
+      "autumn": "Autumn",
+      "spring": "Sprint",
+      "summer": "Summer",
+      "winter": "Winter"
     }
   },
   "flavor": {
     "main-title": "When the kingdom of my youth twirls and falls"
+  },
+  "menu": {
+    "deletion-modal": {
+      "header": "Do you really wish to delete this game?",
+      "message": "This action cannot be undone"
+    },
+    "items": {
+      "builder": "Editor",
+      "continue": "Continue",
+      "dashboard": "Dashboard",
+      "exit": "Exit Game",
+      "exit-game": "Main Menu",
+      "load": "Load Game",
+      "new": "New Game",
+      "save": "Save Game",
+      "settings": "Settings"
+    },
+    "settings": {
+      "language": "Language: ",
+      "music": "Music: ",
+      "sound": "Sound: ",
+      "volume": "Volume: "
+    }
   }
 }

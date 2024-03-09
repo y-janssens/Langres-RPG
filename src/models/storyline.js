@@ -1,9 +1,12 @@
 import { invoke } from '@tauri-apps/api';
+import AdminModel from './dashboard';
 
-export default class Storyline {
-    constructor({ id, story }) {
-        this.id = id;
-        this.story = story;
+export default class Storyline extends AdminModel {
+    constructor(options) {
+        super(options);
+        for (const [key, value] of Object.entries(options)) {
+            this[key] = value;
+        }
     }
 
     async save() {

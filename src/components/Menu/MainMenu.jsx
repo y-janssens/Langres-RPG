@@ -21,12 +21,13 @@ export const MainMenu = () => {
     const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const activeRef = useRef();
 
-    const [savedGames, loadingGames, sync] = useGet({
-        func: 'fetch_games'
+    const [savedGames, , sync] = useGet({
+        func: 'fetch_games',
+        useLoader: false
     });
 
     const lastPlayedGame = useMemo(() => {
-        if (loadingGames || !savedGames?.some((gm) => Boolean(gm.last_save_date))) {
+        if (!savedGames?.some((gm) => Boolean(gm.last_save_date))) {
             return null;
         }
         let games = savedGames?.map((gm) => ({
@@ -34,7 +35,7 @@ export const MainMenu = () => {
             date: new Date(gm.last_save_date.split('.')[0])
         }));
         return games.sort((a, b) => a.date < b.date)[0];
-    }, [savedGames, loadingGames]);
+    }, [savedGames]);
 
     const items = useMemo(() => {
         let menu_items = [
@@ -77,26 +78,6 @@ export const MainMenu = () => {
             }
         ];
 
-        // if (savedGames?.length < 3 && {
-        //     menu_items.unshift({ name: t('menu.items.new'), onClick: () => setOpenModal('new_game') });
-        // }
-
-        // if (savedGames?.length >= 1) {
-        //     menu_items.unshift({
-        //         id: 1,
-        //         name: t('menu.items.load'),
-        //         onClick: () => setOpenModal('saved_games')
-        //     });
-        // }
-
-        // if (lastPlayedGame) {
-        //     menu_items.unshift({
-        //         id: 0,
-        //         name: t('menu.items.continue'),
-        //         onClick: () => setEngine({ gameId: lastPlayedGame.id })
-        //     });
-        // }
-
         return menu_items
             .filter(Boolean)
             .sort((a, b) => a.id - b.id)
@@ -132,11 +113,10 @@ export const MainMenu = () => {
         if (!engine.gameId && (!engine.controls?.toggles?.pause || !engine.controls?.toggles?.menu)) {
             activeRef.current.focus();
         }
-        // setEngine({ builder: true });
         // setEngine({ gameId: 1182534022 });
     }, []);
 
-    if (engine.gameId || engine.builder) {
+    if (engine.gameId) {
         return null;
     }
 
@@ -163,7 +143,7 @@ export const MainMenu = () => {
                 <SavedGames
                     state={openModal}
                     items={savedGames}
-                    loading={loadingGames}
+                    loading={false}
                     sync={sync}
                     onClose={() => {
                         setOpenModal(null);

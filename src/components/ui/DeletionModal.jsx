@@ -38,8 +38,8 @@ function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose,
                     <span>{t('menu.deletion-modal.message')}</span>
                 </div>
                 <div className={css['modal-btns']}>
-                    <Button name={t('actions.confirm')} onClick={handleDelete} disabled={disabled} />
-                    <Button name={t('actions.cancel')} onClick={onClose} cancel />
+                    <Button name={t('common.actions.confirm')} onClick={handleDelete} disabled={disabled} />
+                    <Button name={t('common.actions.cancel')} onClick={onClose} cancel />
                 </div>
             </div>
         </div>
