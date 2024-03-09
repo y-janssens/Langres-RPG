@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button, Input } from 'react-daisyui';
@@ -8,7 +7,7 @@ import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
 
-const NavBar = memo(({ current }) => {
+const NavBar = ({ current }) => {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -38,6 +37,6 @@ const NavBar = memo(({ current }) => {
             </div>
         </div>
     );
-});
+};
 
 export default NavBar;

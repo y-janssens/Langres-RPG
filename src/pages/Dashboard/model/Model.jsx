@@ -1,15 +1,13 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { useGet, useTranslation } from '../../../hooks';
+import { useGet, useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
 
 import { Table, Checkbox } from 'react-daisyui';
 
-import css from '../dashboard.module.css';
-
-export const Model = ({ current, model, setModel }) => {
+export const Model = ({ current }) => {
     const { t } = useTranslation();
+    const [model, setModel] = useDashboardContext();
 
     useGet(
         {
@@ -33,23 +31,21 @@ export const Model = ({ current, model, setModel }) => {
     }, [current]);
 
     return (
-        <div className={css['model-block']}>
-            <Table dataTheme="dark" zebra size="lg">
-                <Table.Head>
-                    {fields?.map((field, index) => {
-                        return <span key={index}>{field && t(`dashboard.table.${current.name}.${field}`)}</span>;
-                    })}
-                </Table.Head>
+        <Table dataTheme="dark" zebra size="lg">
+            <Table.Head>
+                {fields?.map((field, index) => {
+                    return <span key={index}>{field && t(`dashboard.table.${current.name}.${field}`)}</span>;
+                })}
+            </Table.Head>
 
-                {model?.length > 0 && (
-                    <Table.Body>
-                        {model.map((item, index) => (
-                            <ModelRow key={index} item={item} current={current} />
-                        ))}
-                    </Table.Body>
-                )}
-            </Table>
-        </div>
+            {model?.length > 0 && (
+                <Table.Body>
+                    {model.map((item, index) => (
+                        <ModelRow key={index} item={item} current={current} />
+                    ))}
+                </Table.Body>
+            )}
+        </Table>
     );
 };
 

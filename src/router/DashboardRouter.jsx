@@ -1,23 +1,11 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useGet } from '../hooks';
-import { Dashboard } from '../pages/Dashboard/Dashboard';
+import { Dashboard as Template } from '../pages/Dashboard/Dashboard';
+import { Model, Form } from '../pages/Dashboard/model';
 
 export const DashboardRouter = () => {
-    const [models] = useGet(
-        {
-            func: 'load_admin_dashboard',
-            useLoader: false
-        },
-        []
-    );
-
-    const routes = useMemo(() => {
-        if (!models) {
-            return [];
-        }
-        return models;
-    }, [models]);
+    const [models] = useGet({ func: 'load_admin_dashboard', useLoader: false });
 
     return (
         <Routes>
@@ -33,8 +21,25 @@ export const DashboardRouter = () => {
                     return <Navigate to={redirect} />;
                 }}
             />
-            {routes.map((model, index) => (
-                <Route key={index} path={`${model.name}/*`} element={<Dashboard models={models} current={model} />} />
+            {models?.map((model, index) => (
+                <React.Fragment key={index}>
+                    <Route
+                        path={`${model.name}/*`}
+                        element={
+                            <Template models={models} current={model}>
+                                <Model current={model} />
+                            </Template>
+                        }
+                    />
+                    <Route
+                        path={`${model.name}/:id/`}
+                        element={
+                            <Template models={models} current={model}>
+                                <Form current={model} />
+                            </Template>
+                        }
+                    />
+                </React.Fragment>
             ))}
         </Routes>
     );

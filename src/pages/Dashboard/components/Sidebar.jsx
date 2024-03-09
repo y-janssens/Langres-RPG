@@ -1,18 +1,22 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import useDashboardContext from '../../../hooks/useDashboardContext';
 
 import { Button } from 'react-daisyui';
 import { AdminLogo } from '../../../components/images';
 
 import css from './ui.module.css';
 
-const Sidebar = ({ models, active, setState }) => {
+const Sidebar = ({ models, active }) => {
     const { t } = useTranslation();
+    const [, setState] = useDashboardContext();
     return (
         <div className={css['dashboard-sidebar']}>
             <div className={css['dashboard-sidebar-logo']}>
-                <img src={AdminLogo} alt={'logo'} />
+                <a href="https://www.marbrume.com/admin/game/" target="_blank" rel="noreferrer">
+                    <img src={AdminLogo} alt="logo" />
+                </a>
                 <div className={css['dashboard-sidebar-title']}>{t('common.game')}</div>
             </div>
             <div className={css['dashboard-sidebar-items']}>

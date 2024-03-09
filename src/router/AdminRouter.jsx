@@ -3,28 +3,31 @@ import AdminRoute from './AdminRoute';
 import { Builder } from '../pages/Builder/Builder';
 import { useAdminContext } from '../hooks';
 import { DashboardRouter } from './DashboardRouter';
+import { DashboardContextLayer } from '../context/DashboardContext';
 
 export const AdminRouter = () => {
     const { isAdmin } = useAdminContext();
 
     return (
-        <Routes>
-            <Route
-                path="editor"
-                element={
-                    <AdminRoute allow={isAdmin} fallback="/">
-                        <Builder />
-                    </AdminRoute>
-                }
-            />
-            <Route
-                path="dashboard/*"
-                element={
-                    <AdminRoute allow={isAdmin} fallback="/">
-                        <DashboardRouter />
-                    </AdminRoute>
-                }
-            />
-        </Routes>
+        <DashboardContextLayer>
+            <Routes>
+                <Route
+                    path="editor"
+                    element={
+                        <AdminRoute allow={isAdmin} fallback="/">
+                            <Builder />
+                        </AdminRoute>
+                    }
+                />
+                <Route
+                    path="dashboard/*"
+                    element={
+                        <AdminRoute allow={isAdmin} fallback="/">
+                            <DashboardRouter />
+                        </AdminRoute>
+                    }
+                />
+            </Routes>
+        </DashboardContextLayer>
     );
 };
