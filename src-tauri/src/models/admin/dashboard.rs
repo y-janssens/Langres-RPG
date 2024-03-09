@@ -86,6 +86,44 @@ pub mod admin_dashboard {
         }
     }
 
+    pub struct AdminMapObjectsModel;
+    impl AdminModel for AdminMapObjectsModel {
+        fn id(&self) -> u8 {
+            3
+        }
+        fn name(&self) -> &'static str {
+            "object"
+        }
+        fn model(&self) -> &'static str {
+            "Object"
+        }
+        fn command(&self) -> &'static str {
+            "load_objects"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "name", "value", "area", "walkable", "actions"]
+        }
+    }
+
+    pub struct AdminMapFunctionsModel;
+    impl AdminModel for AdminMapFunctionsModel {
+        fn id(&self) -> u8 {
+            4
+        }
+        fn name(&self) -> &'static str {
+            "function"
+        }
+        fn model(&self) -> &'static str {
+            "Function"
+        }
+        fn command(&self) -> &'static str {
+            "load_functions"
+        }
+        fn fields(&self) -> Vec<&'static str> {
+            vec!["id", "icon", "label", "command", "actions"]
+        }
+    }
+
     pub struct AdminDashboard {
         models: Vec<Box<dyn AdminModel>>,
     }
@@ -96,6 +134,8 @@ pub mod admin_dashboard {
             dashboard.register_model(AdminGameModel);
             dashboard.register_model(AdminStoryLineModel);
             dashboard.register_model(AdminCollectionModel);
+            dashboard.register_model(AdminMapObjectsModel);
+            dashboard.register_model(AdminMapFunctionsModel);
 
             dashboard.export()
         }

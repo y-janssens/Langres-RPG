@@ -12,7 +12,7 @@ pub mod admin_serializer {
         where
             S: Serializer,
         {
-            let mut state = serializer.serialize_struct("AdminModel", 3)?;
+            let mut state = serializer.serialize_struct("AdminModel", 5)?;
             state.serialize_field("id", &self.model.id())?;
             state.serialize_field("name", self.model.name())?;
             state.serialize_field("command", self.model.command())?;
