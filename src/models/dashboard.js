@@ -17,9 +17,13 @@ export default class AdminModel {
     }
 
     display(key) {
+        if (typeof this[key] === 'object') {
+            return this.stringify(this[key]);
+        }
         if (!this.match(key)) {
             return this[key];
         }
+
         const date = new Date(String(this[key].split(' ')[0]));
 
         return new Intl.DateTimeFormat(i18next.language, {
@@ -27,6 +31,13 @@ export default class AdminModel {
             month: 'long',
             year: 'numeric'
         }).format(date);
+    }
+
+    stringify(value) {
+        return JSON.stringify(value)
+            .replace(/["{}]/g, '')
+            .replace(/(:)(\d+)/g, ': $2')
+            .replace(/,/g, ', ');
     }
 
     static fromAPI(data, model) {
