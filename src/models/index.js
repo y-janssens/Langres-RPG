@@ -11,3 +11,5 @@ export { default as MapAssets } from './map';
 export { default as Collection, MapCollection } from './collections';
 export { default as AdminModel } from './dashboard';
 export { default as Storyline } from './storyline';
+export { default as MapObject } from './objects';
+export { default as MapFunction } from './functions';

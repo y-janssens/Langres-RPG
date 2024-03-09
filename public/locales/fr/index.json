@@ -97,7 +97,9 @@
     "models": {
       "collection": "Collections",
       "game": "Parties",
-      "story": "Scénarios"
+      "story": "Scénarios",
+      "object": "Objets",
+      "function": "Fonctions"
     },
     "table": {
       "collection": {
@@ -107,6 +109,13 @@
         "modified": "Modifié",
         "visible": "Visible"
       },
+      "function": {
+        "actions": "Actions",
+        "command": "Commande",
+        "icon": "Icône",
+        "id": "Id",
+        "label": "Label"
+      },
       "game": {
         "actions": "Actions",
         "date_created": "Créé",
@@ -114,6 +123,14 @@
         "last_save_date": "Modifié",
         "player": "Nom",
         "visible": "Visible"
+      },
+      "object": {
+        "actions": "Actions",
+        "area": "Zone",
+        "id": "Id",
+        "name": "Nom",
+        "value": "Valeur",
+        "walkable": "Accessible"
       },
       "story": {
         "actions": "Actions",

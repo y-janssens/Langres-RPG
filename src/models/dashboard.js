@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { GameModel, Storyline, Collection } from '.';
+import { GameModel, Storyline, Collection, MapObject, MapFunction } from '.';
 export default class AdminModel {
     constructor(options) {
         for (const [key, value] of Object.entries(options)) {
@@ -40,6 +40,10 @@ export default class AdminModel {
                 return data.map((it) => new Storyline(it));
             case 'Collection':
                 return data.map((it) => new Collection(it));
+            case 'Object':
+                return data.map((it) => new MapObject(it));
+            case 'Function':
+                return data.map((it) => new MapFunction(it));
             default:
                 throw new Error('Model is undefined or not registered');
         }

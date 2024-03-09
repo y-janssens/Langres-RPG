@@ -96,7 +96,9 @@
   "dashboard": {
     "models": {
       "collection": "Collections",
+      "function": "Functions",
       "game": "Games",
+      "object": "Objects",
       "story": "Storylines"
     },
     "table": {
@@ -107,6 +109,13 @@
         "modified": "Modified",
         "visible": "Visible"
       },
+      "function": {
+        "actions": "Actions",
+        "command": "Command",
+        "icon": "Icon",
+        "id": "Id",
+        "label": "Label"
+      },
       "game": {
         "actions": "Actions",
         "date_created": "Created",
@@ -114,6 +123,14 @@
         "last_save_date": "Saved",
         "player": "Name",
         "visible": "Visible"
+      },
+      "object": {
+        "actions": "Actions",
+        "area": "Area",
+        "id": "Id",
+        "name": "Name",
+        "value": "Value",
+        "walkable": "Walkable"
       },
       "story": {
         "actions": "Actions",
