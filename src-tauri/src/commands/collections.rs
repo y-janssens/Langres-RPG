@@ -1,4 +1,4 @@
-use crate::models::collection::collections::{Collection, InsertableCollection};
+use crate::models::collection::collections::Collection;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -14,7 +14,7 @@ pub fn load_collections(
 
 #[tauri::command]
 pub fn save_collections(
-    data: InsertableCollection,
+    data: Collection,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);

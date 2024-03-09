@@ -33,7 +33,7 @@ mod tests {
 
             patch_collection.map.name = "loul".to_string();
 
-            let _ = Collection::patch(result[0].id, patch_collection, connection);
+            let _ = Collection::save(patch_collection, connection);
             let patch_result = Collection::load(connection).unwrap();
 
             assert_eq!(patch_result[0].map.name, "loul");
