@@ -73,12 +73,29 @@
     background-color: rgb(45, 51, 58);
 }
 
+.dashboard-navbar-actions {
+    justify-content: flex-end;
+    width: 80%;
+    max-width: 500px !important;
+}
+
 .dashboard-searchbar {
-    width: 400px !important;
+    width: 100%;
     border: inherit !important;
     background-color: rgb(45, 51, 58) !important;
 }
 
 .dashboard-navbar-exit {
     margin: 15px;
+}
+
+.dashboard-navbar-create {
+    margin: 15px 0px 15px 15px;
+    color: #fff !important;
+}
+
+.dashboard-navbar-create:not(:hover),
+.dashboard-navbar-create:not(:hover) svg {
+    color: #65cc8a !important;
+    fill: #65cc8a !important;
 }

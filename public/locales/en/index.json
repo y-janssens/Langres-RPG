@@ -74,6 +74,7 @@
   "common": {
     "actions": {
       "actions": "Actions",
+      "add": "Add",
       "cancel": "Cancel",
       "confirm": "Confirm",
       "continue": "Continue",

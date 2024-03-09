@@ -20,11 +20,11 @@ export default class AdminModel {
         if (typeof this[key] === 'object') {
             return this.stringify(this[key]);
         }
-        if (!this.match(key)) {
+        if (!this.match(key) || !this[key]) {
             return this[key];
         }
 
-        const date = new Date(String(this[key].split(' ')[0]));
+        const date = new Date(String(this[key]?.split(' ')[0]));
 
         return new Intl.DateTimeFormat(i18next.language, {
             day: 'numeric',

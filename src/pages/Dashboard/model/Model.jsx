@@ -1,19 +1,20 @@
 import React, { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useCommand, useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
+import { matchSearch } from '../../../components/utils';
 
 import { Table, Checkbox } from 'react-daisyui';
+import { Actions } from './Actions';
 
 export const Model = ({ current }) => {
     const { t } = useTranslation();
-    const [model, setModel] = useDashboardContext();
+    const [context, setContext] = useDashboardContext();
 
     useCommand(
         {
             func: current.command,
             onSuccess: (response) => {
-                setModel(AdminModel.fromAPI(response, current.model));
+                setContext({ model: AdminModel.fromAPI(response, current.model) });
             }
         },
         []
@@ -29,6 +30,14 @@ export const Model = ({ current }) => {
         return _fields;
     }, [current]);
 
+    const modelList = useMemo(() => {
+        if (!context || !context.model?.length) {
+            return [];
+        }
+
+        return context.model.filter((item) => matchSearch([item.name, item.id], context.search));
+    }, [context]);
+
     return (
         <Table dataTheme="dark" zebra size="lg">
             <Table.Head>
@@ -37,9 +46,9 @@ export const Model = ({ current }) => {
                 })}
             </Table.Head>
 
-            {model?.length > 0 && (
+            {context.model?.length > 0 && (
                 <Table.Body>
-                    {model.map((item, index) => (
+                    {modelList.map((item, index) => (
                         <ModelRow key={index} item={item} current={current} />
                     ))}
                 </Table.Body>
@@ -49,10 +58,9 @@ export const Model = ({ current }) => {
 };
 
 const ModelRow = ({ item, current }) => {
-    const navigate = useNavigate();
     const cells = useMemo(() => {
         let _cells = [...current.fields].filter((f) => f !== 'actions').map((field) => String(item.display(field)));
-        _cells.push('TEST');
+        _cells.push(<Actions item={item} current={current} />);
         if (current.search) {
             _cells.unshift(<Checkbox size="sm" />);
         }
@@ -60,7 +68,7 @@ const ModelRow = ({ item, current }) => {
     }, [item, current]);
 
     return (
-        <Table.Row onClick={() => navigate(`/admin/dashboard/${current.name}/${item.id}`)}>
+        <Table.Row>
             {cells.map((cell, index) => (
                 <div key={index}>{cell}</div>
             ))}

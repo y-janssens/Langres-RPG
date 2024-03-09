@@ -36,6 +36,10 @@ export default class GameModel extends AdminModel {
         };
     }
 
+    get name() {
+        return this.player;
+    }
+
     get has_position() {
         return !Object.values(this.last_known_position).every((pos) => pos === 0);
     }

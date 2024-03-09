@@ -12,3 +12,11 @@ export const extractCoordinates = (values) => {
         z: relativeNumber(values[1])
     };
 };
+
+export const matchSearch = (values, search) => {
+    if (!Array.isArray(values)) {
+        values = [values];
+    }
+    const reg = new RegExp(search, 'gi');
+    return values.some((value) => reg.test(value));
+};

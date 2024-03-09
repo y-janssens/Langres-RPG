@@ -9,6 +9,10 @@ export default class MapFunction extends AdminModel {
         });
     }
 
+    get name() {
+        return this.label;
+    }
+
     // async save(id = null) {
     //     let payload = { ...this };
     //     let command = id ? 'patch_collections' : 'save_collections';

@@ -1,3 +1,12 @@
+.dashboard-main-container * {
+    -webkit-touch-callout: initial !important;
+    -webkit-user-select: initial !important;
+    -khtml-user-select: initial !important;
+    -moz-user-select: initial !important;
+    -ms-user-select: initial !important;
+    user-select: initial !important;
+}
+
 .dashboard-main-container {
     position: absolute;
     width: 100%;
@@ -36,4 +45,10 @@
     height: 35px !important;
     filter: contrast(1) brightness(1);
     background-color: rgb(45, 51, 58) !important;
+}
+
+.dashboard-model-actions ul {
+    width: 150px;
+    right: 0;
+    z-index: 10;
 }

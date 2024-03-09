@@ -6,9 +6,11 @@ import { Locator } from './locator/Locator';
 import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
+import useDashboardContext from '../../../hooks/useDashboardContext';
 
 const NavBar = ({ current }) => {
     const navigate = useNavigate();
+    const [, setContext] = useDashboardContext();
     const { t } = useTranslation();
 
     return (
@@ -24,9 +26,16 @@ const NavBar = ({ current }) => {
                         dataTheme="dark"
                         color="neutral"
                         size="md"
+                        onChange={({ target: { value } }) => setContext({ search: value })}
                         placeholder={`${t('common.actions.search')} ${t(`dashboard.models.${current.name}`).toLowerCase()}`}
                         disabled={!current.search}
                     />
+                    {!current.unique && (
+                        <Button dataTheme="emerald" className={css['dashboard-navbar-create']} size="md" color="primary" variant="outline" onClick={() => navigate('/')}>
+                            <span className={css['dashboard-navbar-create-label']}>{t('common.actions.add')}</span>
+                            <Icon name="plus" color="white" size="small" />
+                        </Button>
+                    )}
                     <Button dataTheme="emerald" className={css['dashboard-navbar-exit']} size="md" color="primary" shape="square" onClick={() => navigate('/')}>
                         <Icon name="home" color="white" size="medium" />
                     </Button>

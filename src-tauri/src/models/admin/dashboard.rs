@@ -10,8 +10,11 @@ pub mod admin_dashboard {
         fn search(&self) -> bool {
             true
         }
+        fn unique(&self) -> bool {
+            false
+        }
         fn actions(&self) -> Vec<&'static str> {
-            vec!["create", "edit", "delete"]
+            vec!["edit", "delete"]
         }
         fn fields(&self) -> Vec<&'static str>;
     }
@@ -32,6 +35,9 @@ pub mod admin_dashboard {
         }
         fn search(&self) -> bool {
             false
+        }
+        fn unique(&self) -> bool {
+            true
         }
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit"]
