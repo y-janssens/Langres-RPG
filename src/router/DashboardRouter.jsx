@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useGet } from '../hooks';
+import { useCommand } from '../hooks';
 import { Dashboard as Template } from '../pages/Dashboard/Dashboard';
 import { Model, Form } from '../pages/Dashboard/model';
 
 export const DashboardRouter = () => {
-    const [models] = useGet({ func: 'load_admin_dashboard', useLoader: false });
+    const [models] = useCommand({ func: 'load_admin_dashboard' });
 
     return (
         <Routes>

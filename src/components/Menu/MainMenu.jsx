@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGameContext, useGet, useTranslation, useAdminContext } from '../../hooks';
+import { useGameContext, useCommand, useTranslation, useAdminContext } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
@@ -21,9 +21,8 @@ export const MainMenu = () => {
     const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const activeRef = useRef();
 
-    const [savedGames, , sync] = useGet({
-        func: 'fetch_games',
-        useLoader: false
+    const [savedGames, , sync] = useCommand({
+        func: 'fetch_games'
     });
 
     const lastPlayedGame = useMemo(() => {
@@ -115,6 +114,10 @@ export const MainMenu = () => {
         }
         // setEngine({ gameId: 1182534022 });
     }, []);
+
+    // useEffect(() => {
+    //     navigate('admin/dashboard');
+    // }, []);
 
     if (engine.gameId) {
         return null;

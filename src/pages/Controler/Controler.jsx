@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useGameContext, useGet } from '../../hooks';
+import { useGameContext, useCommand } from '../../hooks';
 
 import { Settings } from '../../models';
 
@@ -11,10 +11,9 @@ export const Controler = () => {
     const [engine, setEngine] = useGameContext();
     const gameRef = useRef();
 
-    useGet(
+    useCommand(
         {
             func: 'load_app_datas',
-            useLoader: false,
             onSuccess: (response) => {
                 engine.applicationData = new Settings(response);
             }

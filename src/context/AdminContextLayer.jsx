@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { useGet } from '../hooks';
+import { useCommand } from '../hooks';
 
 const AdminContext = React.createContext(null);
 
 export const AdminContextLayer = ({ children }) => {
     const [isAdmin, setIsAdmin] = useState(false);
 
-    useGet(
+    useCommand(
         {
             func: 'load_permissions',
-            useLoader: false,
             onSuccess: ({ is_admin }) => {
                 setIsAdmin(is_admin);
             },

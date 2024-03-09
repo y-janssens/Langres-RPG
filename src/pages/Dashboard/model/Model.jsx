@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGet, useTranslation, useDashboardContext } from '../../../hooks';
+import { useCommand, useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
 
 import { Table, Checkbox } from 'react-daisyui';
@@ -9,10 +9,9 @@ export const Model = ({ current }) => {
     const { t } = useTranslation();
     const [model, setModel] = useDashboardContext();
 
-    useGet(
+    useCommand(
         {
             func: current.command,
-            useLoader: false,
             onSuccess: (response) => {
                 setModel(AdminModel.fromAPI(response, current.model));
             }

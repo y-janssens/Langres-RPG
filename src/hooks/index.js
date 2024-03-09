@@ -1,5 +1,5 @@
 export { useDynamicForm } from './useDynamicForm';
-export { useGet } from './useGet';
+export { useCommand } from './useCommand';
 export { useMapBatch } from './useMapBatch';
 export { useDice } from './useDice';
 export { useStateHistory } from './useStateHistory';
