@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useDashboardContext from '../../../hooks/useDashboardContext';
+import { AdminModel } from '../../../models';
 
 import { Button, Input } from 'react-daisyui';
 import { Locator } from './locator/Locator';
@@ -31,7 +32,14 @@ const NavBar = ({ current }) => {
                         disabled={!current.search}
                     />
                     {current.create && (
-                        <Button dataTheme="emerald" className={css['dashboard-navbar-create']} size="md" color="primary" variant="outline" onClick={() => navigate('/')}>
+                        <Button
+                            dataTheme="emerald"
+                            className={css['dashboard-navbar-create']}
+                            size="md"
+                            color="primary"
+                            variant="outline"
+                            onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
+                        >
                             <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
                             <Icon name="plus" color="white" size="small" />
                         </Button>

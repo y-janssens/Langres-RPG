@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const DashboardContext = React.createContext(null);
 
 export const DashboardContextLayer = ({ children }) => {
-    const [context, _setContext] = useState({ model: [], search: '' });
+    const [context, _setContext] = useState({ model: [], search: '', instance: null });
 
     const setContext = React.useCallback((ctx = {}) => {
         _setContext((context) => {

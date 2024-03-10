@@ -102,6 +102,11 @@
       "object": "Objects",
       "story": "Storylines"
     },
+    "modal": {
+      "collection-title": "Create a new collection",
+      "object-title": "Create a new object",
+      "function-title": "Create a new function"
+    },
     "table": {
       "collection": {
         "actions": "Actions",

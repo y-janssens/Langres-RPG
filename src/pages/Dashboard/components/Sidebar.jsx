@@ -40,7 +40,7 @@ const SideBarItem = ({ item, active, setState }) => {
     }, [active, item]);
 
     const handleRedirect = useCallback(() => {
-        setState([]);
+        setState({ model: [], instance: null });
         navigate(`/admin/dashboard/${item.name}`);
     }, [item]);
 

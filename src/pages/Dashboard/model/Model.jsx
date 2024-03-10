@@ -3,7 +3,7 @@ import { useCommand, useTranslation, useDashboardContext } from '../../../hooks'
 import { AdminModel } from '../../../models';
 import { IsBoolean, matchSearch } from '../../../components/utils';
 
-import { Table, Checkbox } from 'react-daisyui';
+import { Table } from 'react-daisyui';
 import { ItemToggle } from '../components';
 import { Actions } from './Actions';
 
@@ -23,14 +23,6 @@ export const Model = ({ current }) => {
         []
     );
 
-    const fields = useMemo(() => {
-        if (!current.search) {
-            return current.fields;
-        }
-
-        return [null, ...current.fields];
-    }, [current]);
-
     const modelList = useMemo(() => {
         return context.model?.filter((item) => matchSearch([item.name, item.id], context.search));
     }, [context, matchSearch]);
@@ -39,7 +31,7 @@ export const Model = ({ current }) => {
         <div className={css['dashboard-model-table']}>
             <Table dataTheme="dark" zebra size="lg">
                 <Table.Head>
-                    {fields?.map((field, index) => {
+                    {current.fields?.map((field, index) => {
                         return <span key={index}>{field && t(`dashboard.table.${current.name}.${field}`)}</span>;
                     })}
                 </Table.Head>
@@ -66,7 +58,6 @@ const ModelRow = ({ item, current, sync }) => {
 
     const cells = useMemo(() => {
         return [
-            current.search && <Checkbox className={css['dashboard-model-checkbox']} size="xs" />,
             ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field), field)),
             <Actions key={`${current.name}_actions`} item={item} current={current} />
         ].filter(Boolean);
