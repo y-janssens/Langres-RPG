@@ -10,8 +10,8 @@ pub mod admin_dashboard {
         fn search(&self) -> bool {
             true
         }
-        fn unique(&self) -> bool {
-            false
+        fn create(&self) -> bool {
+            true
         }
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit", "delete"]
@@ -36,8 +36,8 @@ pub mod admin_dashboard {
         fn search(&self) -> bool {
             false
         }
-        fn unique(&self) -> bool {
-            true
+        fn create(&self) -> bool {
+            false
         }
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit"]
@@ -60,6 +60,9 @@ pub mod admin_dashboard {
         }
         fn command(&self) -> &'static str {
             "fetch_games"
+        }
+        fn create(&self) -> bool {
+            false
         }
         fn fields(&self) -> Vec<&'static str> {
             vec![

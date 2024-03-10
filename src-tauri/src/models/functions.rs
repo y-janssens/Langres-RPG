@@ -1,5 +1,11 @@
 pub mod functions_assets {
-    use crate::{schema::functions::dsl::*, utils::factory::factory_models::AbstractModel};
+    use crate::{
+        schema::functions::dsl::*,
+        utils::{
+            factory::factory_models::AbstractModel,
+            faker::faker_definitions::{Faker, IdFaker},
+        },
+    };
     use diesel::{
         deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
         SqliteConnection,
@@ -30,6 +36,15 @@ pub mod functions_assets {
     }
 
     impl Function {
+        pub fn new() -> Function {
+            Function {
+                id: IdFaker.generate().value(),
+                icon: String::from(""),
+                label: String::from(""),
+                command: String::from(""),
+            }
+        }
+
         pub fn save(
             data: Function,
             connection: &mut SqliteConnection,

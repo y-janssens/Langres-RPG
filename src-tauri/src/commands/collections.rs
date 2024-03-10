@@ -13,6 +13,11 @@ pub fn load_collections(
 }
 
 #[tauri::command]
+pub fn new_collection() -> Collection {
+    Collection::new()
+}
+
+#[tauri::command]
 pub fn save_collections(
     data: Collection,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,

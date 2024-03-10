@@ -14,6 +14,11 @@ pub fn load_objects(
 }
 
 #[tauri::command]
+pub fn new_object() -> Object {
+    Object::new()
+}
+
+#[tauri::command]
 pub fn save_object(
     data: Object,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
@@ -37,6 +42,11 @@ pub fn load_functions(
 ) -> Vec<Function> {
     let mut connection = get_connection(connection);
     Function::load(&mut connection).expect("Failed to load functions")
+}
+
+#[tauri::command]
+pub fn new_function() -> Function {
+    Function::new()
 }
 
 #[tauri::command]

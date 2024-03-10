@@ -66,16 +66,20 @@ fn main() {
             commands::app::load_env,
             commands::app::load_app_datas,
             commands::app::save_app_datas,
-            // Builder commands
+            // Objects commands
+            commands::objects::new_object,
             commands::objects::load_objects,
             commands::objects::save_object,
             commands::objects::delete_object,
+            // Functions commands
+            commands::objects::new_function,
             commands::objects::load_functions,
             commands::objects::save_function,
             commands::objects::delete_function,
             // Map generator commands
             commands::maps::generate_maps_batch,
             // Collections
+            commands::collections::new_collection,
             commands::collections::load_collections,
             commands::collections::save_collections,
             // Utils

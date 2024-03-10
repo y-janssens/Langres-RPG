@@ -1,5 +1,11 @@
 pub mod objects_assets {
-    use crate::{schema::objects::dsl::*, utils::factory::factory_models::AbstractModel};
+    use crate::{
+        schema::objects::dsl::*,
+        utils::{
+            factory::factory_models::AbstractModel,
+            faker::faker_definitions::{Faker, IdFaker},
+        },
+    };
     use diesel::{
         deserialize::{self, FromSql, Queryable},
         prelude::*,
@@ -56,6 +62,16 @@ pub mod objects_assets {
     }
 
     impl Object {
+        pub fn new() -> Object {
+            Object {
+                id: IdFaker.generate().value(),
+                name: String::from(""),
+                value: None,
+                area: Area { x: 0, y: 0 },
+                walkable: false,
+            }
+        }
+
         pub fn save(
             data: Object,
             connection: &mut SqliteConnection,
