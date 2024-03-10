@@ -11,6 +11,10 @@ export default class GameModel extends AdminModel {
         // this.init();
     }
 
+    new() {
+        return
+    }
+
     async save() {
         let _datas = { ...this };
         delete _datas.engine;

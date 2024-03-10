@@ -2,17 +2,20 @@ import { invoke } from '@tauri-apps/api';
 import AdminModel from './dashboard';
 
 export default class Collection extends AdminModel {
-    constructor(options) {
+    constructor(options = {}) {
         super(options);
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
+        this.command = 'new_collection';
     }
 
-    async save(id = null) {
-        let payload = { ...this };
-        let command = id ? 'patch_collections' : 'save_collections';
-        await invoke(command, { id, data: payload });
+    async save() {
+        await invoke('save_collection', { data: this });
+    }
+
+    async delete() {
+        await invoke('delete_collection', { id: this.id });
     }
 }
 

@@ -2,10 +2,8 @@ import i18next from 'i18next';
 import { GameModel, Storyline, Collection, MapObject, MapFunction } from '.';
 import { isArray, isObject } from '../components/utils';
 export default class AdminModel {
-    constructor(options) {
-        for (const [key, value] of Object.entries(options)) {
-            this[key] = value;
-        }
+    constructor(instance) {
+        this.instance = instance;
         this.displayFields = ['date', 'modified', 'created'];
     }
 
@@ -56,6 +54,23 @@ export default class AdminModel {
                 return data.map((it) => new MapObject(it));
             case 'Function':
                 return data.map((it) => new MapFunction(it));
+            default:
+                throw new Error('Model is undefined or not registered');
+        }
+    }
+
+    static getInstance(model) {
+        switch (model) {
+            case 'Game':
+                return GameModel;
+            case 'Storyline':
+                return Storyline;
+            case 'Collection':
+                return Collection;
+            case 'Object':
+                return MapObject;
+            case 'Function':
+                return MapFunction;
             default:
                 throw new Error('Model is undefined or not registered');
         }

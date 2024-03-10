@@ -30,9 +30,9 @@ const NavBar = ({ current }) => {
                         placeholder={`${t('common.actions.search')} ${t(`dashboard.models.${current.name}`).toLowerCase()}`}
                         disabled={!current.search}
                     />
-                    {!current.unique && (
+                    {current.create && (
                         <Button dataTheme="emerald" className={css['dashboard-navbar-create']} size="md" color="primary" variant="outline" onClick={() => navigate('/')}>
-                            <span className={css['dashboard-navbar-create-label']}>{t('common.actions.add')}</span>
+                            <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
                             <Icon name="plus" color="white" size="small" />
                         </Button>
                     )}
