@@ -3,7 +3,9 @@ pub mod factories_definitions {
     use diesel::SqliteConnection;
 
     use crate::models::collection::collections::Collection;
+    use crate::models::functions::functions_assets::Function;
     use crate::models::game::games::Game;
+    use crate::models::objects::objects_assets::{Area, Object};
     use crate::models::story::storyline::{Act, Acts, Content, Story};
     use crate::models::world::maps::World;
     use crate::utils::factory::factory_models::{ApiFactory, Factory};
@@ -16,6 +18,8 @@ pub mod factories_definitions {
     pub struct WorldFactory;
     pub struct CollectionFactory;
     pub struct GameFactory;
+    pub struct ObjectFactory;
+    pub struct FunctionFactory;
 
     impl Factory for StoryLineFactory {
         type Output = Story;
@@ -96,6 +100,33 @@ pub mod factories_definitions {
 
         fn generate(&self, connection: &mut SqliteConnection) -> Self::Output {
             Game::new("game".to_string(), connection)
+        }
+    }
+
+    impl Factory for ObjectFactory {
+        type Output = Object;
+
+        fn generate(&self) -> Self::Output {
+            Object {
+                id: IdFaker.generate().value(),
+                name: StringFaker.generate().value().to_string(),
+                value: Some(StringFaker.generate().value().to_string()),
+                area: Area { x: 1, y: 1 },
+                walkable: BoolFaker.generate().value(),
+            }
+        }
+    }
+
+    impl Factory for FunctionFactory {
+        type Output = Function;
+
+        fn generate(&self) -> Self::Output {
+            Function {
+                id: IdFaker.generate().value(),
+                icon: StringFaker.generate().value().to_string(),
+                label: StringFaker.generate().value().to_string(),
+                command: StringFaker.generate().value().to_string(),
+            }
         }
     }
 }

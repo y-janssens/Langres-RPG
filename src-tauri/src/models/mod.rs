@@ -1,6 +1,8 @@
+pub mod admin;
 pub mod app;
 pub mod character;
 pub mod collection;
+pub mod functions;
 pub mod game;
 pub mod inventory;
 pub mod maps;
@@ -9,4 +11,3 @@ pub mod story;
 pub mod time;
 pub mod utils;
 pub mod world;
-pub mod admin;

@@ -1,5 +1,7 @@
 pub mod maps {
-    use crate::{models::objects::assets::Object, utils::factory::factory_models::AbstractModel};
+    use crate::{
+        models::objects::objects_assets::Object, utils::factory::factory_models::AbstractModel,
+    };
     use diesel::prelude::Queryable;
     use rand::{seq::SliceRandom, Rng};
     use serde::{Deserialize, Serialize};

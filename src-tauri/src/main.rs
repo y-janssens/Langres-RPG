@@ -68,7 +68,11 @@ fn main() {
             commands::app::save_app_datas,
             // Builder commands
             commands::objects::load_objects,
+            commands::objects::save_object,
+            commands::objects::delete_object,
             commands::objects::load_functions,
+            commands::objects::save_function,
+            commands::objects::delete_function,
             // Map generator commands
             commands::maps::generate_maps_batch,
             // Collections

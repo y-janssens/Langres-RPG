@@ -1,5 +1,5 @@
-use crate::models::objects::assets::Function;
-use crate::models::objects::assets::Object;
+use crate::models::functions::functions_assets::Function;
+use crate::models::objects::objects_assets::Object;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -14,9 +14,45 @@ pub fn load_objects(
 }
 
 #[tauri::command]
+pub fn save_object(
+    data: Object,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    Object::save(data, &mut connection).expect("Failed to save object")
+}
+
+#[tauri::command]
+pub fn delete_object(
+    id: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    Object::delete(id, &mut connection).expect("Failed to delete object")
+}
+
+#[tauri::command]
 pub fn load_functions(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Vec<Function> {
     let mut connection = get_connection(connection);
     Function::load(&mut connection).expect("Failed to load functions")
+}
+
+#[tauri::command]
+pub fn save_function(
+    data: Function,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    Function::save(data, &mut connection).expect("Failed to save function")
+}
+
+#[tauri::command]
+pub fn delete_function(
+    id: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    Function::delete(id, &mut connection).expect("Failed to delete function")
 }

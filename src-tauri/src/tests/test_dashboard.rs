@@ -15,7 +15,7 @@ mod tests {
         assert_eq!(dashboard[0]["command"], "fetch_games".to_string());
         assert_eq!(dashboard[0]["model"], "Game".to_string());
         assert_eq!(dashboard[0]["name"], "game".to_string());
-        assert_eq!(dashboard[0]["actions"], json!(["create", "edit", "delete"]));
+        assert_eq!(dashboard[0]["actions"], json!(["edit", "delete"]));
     }
 
     #[test]
