@@ -1,5 +1,6 @@
 import i18next from 'i18next';
 import { GameModel, Storyline, Collection, MapObject, MapFunction } from '.';
+import { isArray, isObject } from '../components/utils';
 export default class AdminModel {
     constructor(options) {
         for (const [key, value] of Object.entries(options)) {
@@ -17,7 +18,7 @@ export default class AdminModel {
     }
 
     display(key) {
-        if (typeof this[key] === 'object') {
+        if (isObject(this[key])) {
             return this.stringify(this[key]);
         }
         if (!this.match(key) || !this[key]) {
@@ -41,7 +42,7 @@ export default class AdminModel {
     }
 
     static fromAPI(data, model) {
-        if (!Array.isArray(data)) {
+        if (!isArray(data)) {
             data = [data];
         }
         switch (model) {

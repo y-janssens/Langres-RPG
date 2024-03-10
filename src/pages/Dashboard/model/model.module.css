@@ -1,0 +1,47 @@
+.dashboard-model-table :global(.table) {
+    /* filter: contrast(0.9) brightness(1.1); */
+    /* overflow: hidden; */
+    border-radius: 8px !important;
+}
+
+.dashboard-model-table :global(.table :where(tr)) {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left; */
+    cursor: pointer;
+}
+
+.dashboard-model-table :global(.table :where(thead)) {
+    height: 35px !important;
+    /* filter: contrast(1) brightness(1); */
+    /* background-color: rgb(45, 51, 58) !important; */
+}
+
+.dashboard-model-actions {
+    background-color: transparent !important;
+}
+
+.dashboard-model-checkbox {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 6px !important;
+    border-radius: 6px !important;
+    margin-top: 5px;
+}
+
+.dashboard-model-actions ul {
+    width: 150px;
+    right: 0;
+    z-index: 10;
+    border-radius: 8px;
+    background-color: rgb(45, 51, 58) !important;
+}
+
+.dashboard-model-actions:first-of-type button {
+    height: 25px !important;
+    min-height: min-content;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}

@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button, Input } from 'react-daisyui';
+import useDashboardContext from '../../../hooks/useDashboardContext';
 
+import { Button, Input } from 'react-daisyui';
 import { Locator } from './locator/Locator';
 import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
-import useDashboardContext from '../../../hooks/useDashboardContext';
 
 const NavBar = ({ current }) => {
     const navigate = useNavigate();

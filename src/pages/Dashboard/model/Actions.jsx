@@ -1,15 +1,15 @@
-import { useCallback, useState } from 'react';
-import { Button, Dropdown } from 'react-daisyui'; //eslint-disable-line
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
+import { Dropdown } from 'react-daisyui';
 import Icon from '../../../components/ui/Icon';
 
-import css from '../dashboard.module.css';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import css from './model.module.css';
 
 export const Actions = ({ item, current }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const [toggle, setToggle] = useState(false); //eslint-disable-line
 
     const handleActions = useCallback((action) => {
         switch (action) {
@@ -37,8 +37,5 @@ export const Actions = ({ item, current }) => {
                 ))}
             </Dropdown.Menu>
         </Dropdown>
-        // <Button className={css['dashboard-model-actions']} dataTheme="emerald" size="xs" color="ghost" onClick={() => setToggle(!toggle)}>
-        //     <Icon name="actions" color="white" size="default" />
-        // </Button>
     );
 };

@@ -1,3 +1,7 @@
+export const IsBoolean = (value) => typeof value === 'boolean';
+export const isObject = (value) => typeof value === 'object';
+export const isArray = (value) => Array.isArray(value);
+
 export const relativeNumber = (value) => {
     if (Array.isArray(value)) {
         return value.map((i) => Math.round(Math.abs(i)));
