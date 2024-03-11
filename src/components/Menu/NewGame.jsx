@@ -12,7 +12,7 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
 
     const handleNewGame = useCallback(
         async (name) => {
-            await invoke('new', { name })
+            await invoke('new_game', { name })
                 .then((data) => {
                     let game = new GameModel(data);
                     setEngine({ gameId: game.id });

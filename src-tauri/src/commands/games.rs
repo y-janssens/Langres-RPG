@@ -3,7 +3,7 @@ use crate::models::{character::characters::Character, game::games::Game};
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
 #[tauri::command]
-pub fn new(
+pub fn new_game(
     name: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Game {
@@ -12,7 +12,7 @@ pub fn new(
 }
 
 #[tauri::command]
-pub fn fetch_games(
+pub fn load_games(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Vec<Game> {
     let mut connection = get_connection(connection);
@@ -29,13 +29,19 @@ pub fn load_game(
 }
 
 #[tauri::command]
-pub fn delete(id: i32, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) {
+pub fn delete_game(
+    id: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
     let mut connection = get_connection(connection);
     Game::delete(id, &mut connection).expect("Failed to delete game")
 }
 
 #[tauri::command]
-pub fn save(data: Game, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) {
+pub fn save_game(
+    data: Game,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
     let mut connection = get_connection(connection);
     Game::save(data, &mut connection).expect("Failed to save game")
 }

@@ -3,22 +3,17 @@ import { World } from '.';
 import AdminModel from './dashboard';
 
 export default class GameModel extends AdminModel {
-    constructor(options) {
-        super(options);
+    constructor(options = {}) {
+        super(options, 'game');
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
-        // this.init();
     }
 
     async save() {
         let _datas = { ...this };
         delete _datas.engine;
-        await invoke('save', { data: _datas });
-    }
-
-    async delete() {
-        await invoke('delete', { id: this.id });
+        await invoke('save_game', { data: _datas });
     }
 
     // init() {
@@ -34,6 +29,10 @@ export default class GameModel extends AdminModel {
             map: this.current_map.name,
             date: this.current_act.date
         };
+    }
+
+    get name() {
+        return this.player;
     }
 
     get has_position() {

@@ -49,11 +49,11 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             // Game commands
-            commands::games::new,
+            commands::games::new_game,
             commands::games::load_game,
-            commands::games::fetch_games,
-            commands::games::save,
-            commands::games::delete,
+            commands::games::load_games,
+            commands::games::save_game,
+            commands::games::delete_game,
             commands::games::compute_xp,
             // World building commands
             commands::world::generate,
@@ -66,14 +66,23 @@ fn main() {
             commands::app::load_env,
             commands::app::load_app_datas,
             commands::app::save_app_datas,
-            // Builder commands
+            // Objects commands
+            commands::objects::new_object,
             commands::objects::load_objects,
+            commands::objects::save_object,
+            commands::objects::delete_object,
+            // Functions commands
+            commands::objects::new_function,
             commands::objects::load_functions,
+            commands::objects::save_function,
+            commands::objects::delete_function,
             // Map generator commands
             commands::maps::generate_maps_batch,
             // Collections
+            commands::collections::new_collection,
             commands::collections::load_collections,
-            commands::collections::save_collections,
+            commands::collections::save_collection,
+            commands::collections::delete_collection,
             // Utils
             commands::utils::throw_dice,
             commands::utils::frustum_cull_ids,

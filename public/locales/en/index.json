@@ -74,6 +74,7 @@
   "common": {
     "actions": {
       "actions": "Actions",
+      "add": "Add",
       "cancel": "Cancel",
       "confirm": "Confirm",
       "continue": "Continue",
@@ -101,11 +102,17 @@
       "object": "Objects",
       "story": "Storylines"
     },
+    "modal": {
+      "collection-title": "Create a new collection",
+      "object-title": "Create a new object",
+      "function-title": "Create a new function"
+    },
     "table": {
       "collection": {
         "actions": "Actions",
         "created": "Created",
         "id": "Id",
+        "map": "Map",
         "modified": "Modified",
         "visible": "Visible"
       },

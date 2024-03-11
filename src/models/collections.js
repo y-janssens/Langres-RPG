@@ -1,19 +1,16 @@
-import { invoke } from '@tauri-apps/api';
 import AdminModel from './dashboard';
 
 export default class Collection extends AdminModel {
-    constructor(options) {
-        super(options);
+    constructor(options = {}) {
+        super(options, 'collection');
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
     }
 
-    async save(id = null) {
-        let payload = { ...this };
-        let command = id ? 'patch_collections' : 'save_collections';
-        await invoke(command, { id, data: payload });
-    }
+    // get map() {
+    //     return this.map.id;
+    // }
 }
 
 export class MapCollection {

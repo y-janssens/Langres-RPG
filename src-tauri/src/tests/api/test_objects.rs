@@ -1,0 +1,55 @@
+#[cfg(test)]
+mod tests {
+    use crate::models::objects::objects_assets::Object;
+    use crate::tests::conf::test_conf::*;
+    use crate::utils::factories::factories_definitions::ObjectFactory;
+    use crate::utils::factory::factory_models::Factory;
+
+    #[test]
+    fn test_load_objects() {
+        allow_db_access(|connection| {
+            let object = ObjectFactory.generate();
+            let _ = Object::save(object, connection);
+            let result = Object::load(connection).unwrap();
+
+            assert_eq!(result.len(), 9);
+        });
+    }
+
+    #[test]
+    fn test_patch_object() {
+        allow_db_access(|connection| {
+            let object = ObjectFactory.generate();
+            let _ = Object::save(object, connection);
+            let result = Object::load(connection).unwrap();
+
+            let mut patch_object = Object {
+                id: result[0].id,
+                name: result[0].clone().name,
+                value: result[0].clone().value,
+                area: result[0].clone().area,
+                walkable: result[0].clone().walkable,
+            };
+
+            patch_object.name = "loul".to_string();
+
+            let _ = Object::save(patch_object, connection);
+            let patch_result = Object::load(connection).unwrap();
+
+            assert_eq!(patch_result[0].name, "loul");
+        });
+    }
+
+    #[test]
+    fn test_delete_object() {
+        allow_db_access(|connection| {
+            let object = ObjectFactory.generate();
+            let _ = Object::save(object, connection);
+            let result = Object::load(connection).unwrap();
+
+            let delete = Object::delete(result[0].id, connection);
+
+            assert!(delete.is_ok());
+        });
+    }
+}

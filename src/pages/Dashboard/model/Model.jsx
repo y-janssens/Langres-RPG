@@ -1,68 +1,72 @@
-import React, { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useCallback, useMemo } from 'react';
 import { useCommand, useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
+import { IsBoolean, matchSearch } from '../../../components/utils';
 
-import { Table, Checkbox } from 'react-daisyui';
+import { Table } from 'react-daisyui';
+import { ItemToggle } from '../components';
+import { Actions } from './Actions';
+
+import css from './model.module.css';
 
 export const Model = ({ current }) => {
     const { t } = useTranslation();
-    const [model, setModel] = useDashboardContext();
+    const [context, setContext] = useDashboardContext();
 
-    useCommand(
+    const [, , syncModel] = useCommand(
         {
             func: current.command,
             onSuccess: (response) => {
-                setModel(AdminModel.fromAPI(response, current.model));
+                setContext({ model: AdminModel.fromAPI(response, current) });
             }
         },
         []
     );
 
-    const fields = useMemo(() => {
-        if (!current.search) {
-            return current.fields;
-        }
-
-        let _fields = [...current.fields];
-        _fields.unshift(null);
-        return _fields;
-    }, [current]);
+    const modelList = useMemo(() => {
+        return context.model?.filter((item) => matchSearch([item.name, item.id], context.search));
+    }, [context, matchSearch]);
 
     return (
-        <Table dataTheme="dark" zebra size="lg">
-            <Table.Head>
-                {fields?.map((field, index) => {
-                    return <span key={index}>{field && t(`dashboard.table.${current.name}.${field}`)}</span>;
-                })}
-            </Table.Head>
-
-            {model?.length > 0 && (
+        <div className={css['dashboard-model-table']}>
+            <Table dataTheme="dark" zebra size="lg">
+                <Table.Head>
+                    {current.fields?.map((field, index) => {
+                        return <span key={index}>{field && t(`dashboard.table.${current.name}.${field.name}`)}</span>;
+                    })}
+                </Table.Head>
                 <Table.Body>
-                    {model.map((item, index) => (
-                        <ModelRow key={index} item={item} current={current} />
+                    {modelList?.map((item, index) => (
+                        <ModelRow key={index} item={item} current={current} sync={syncModel} />
                     ))}
                 </Table.Body>
-            )}
-        </Table>
+            </Table>
+        </div>
     );
 };
 
-const ModelRow = ({ item, current }) => {
-    const navigate = useNavigate();
+const ModelRow = ({ item, current, sync }) => {
+    const getValue = useCallback(
+        (value, field) => {
+            if (!IsBoolean(value)) {
+                return value;
+            }
+            return <ItemToggle item={item} value={value} field={field} sync={sync} />;
+        },
+        [item]
+    );
+
     const cells = useMemo(() => {
-        let _cells = [...current.fields].filter((f) => f !== 'actions').map((field) => String(item.display(field)));
-        _cells.push('TEST');
-        if (current.search) {
-            _cells.unshift(<Checkbox size="sm" />);
-        }
-        return _cells;
+        return [
+            ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field.name), field.name)),
+            <Actions key={`${current.name}_actions`} item={item} current={current} sync={sync} />
+        ].filter(Boolean);
     }, [item, current]);
 
     return (
-        <Table.Row onClick={() => navigate(`/admin/dashboard/${current.name}/${item.id}`)}>
+        <Table.Row>
             {cells.map((cell, index) => (
-                <div key={index}>{cell}</div>
+                <React.Fragment key={index}>{cell}</React.Fragment>
             ))}
         </Table.Row>
     );

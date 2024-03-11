@@ -73,12 +73,51 @@
     background-color: rgb(45, 51, 58);
 }
 
+.dashboard-navbar-actions {
+    justify-content: flex-end;
+    width: 80%;
+    max-width: 500px !important;
+    margin: 0 15px;
+}
+
 .dashboard-searchbar {
-    width: 400px !important;
+    width: -webkit-fill-available;
     border: inherit !important;
     background-color: rgb(45, 51, 58) !important;
 }
 
+.dashboard-searchbar:disabled {
+    background-color: rgb(25, 30, 36) !important;
+}
+
 .dashboard-navbar-exit {
-    margin: 15px;
+    margin: 15px 0px 15px 15px;
+}
+
+.dashboard-navbar-create {
+    margin: 15px 0px 15px 15px;
+    color: #fff !important;
+}
+
+.dashboard-navbar-create:not(:hover),
+.dashboard-navbar-create:not(:hover) svg {
+    color: #65cc8a !important;
+    fill: #65cc8a !important;
+}
+
+.dashboard-model-toggle {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .dashboard-navbar {
+        justify-content: flex-end;
+    }
+    .dashboard-navbar-actions {
+        width: 100%;
+        max-width: none !important;
+    }
+    .dashboard-navbar-title {
+        display: none;
+    }
 }

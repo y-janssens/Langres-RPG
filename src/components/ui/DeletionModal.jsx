@@ -19,7 +19,7 @@ function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose,
                     onClear();
                 }
             });
-    }, [gameToDelete, onLoad, onClose, onClear]);
+    }, [games, gameToDelete, onLoad, onClose, onClear]);
 
     if (!gameToDelete) {
         return null;

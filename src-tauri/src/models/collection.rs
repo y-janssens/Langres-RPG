@@ -2,8 +2,12 @@
 
 pub mod collections {
     use crate::schema::maps::dsl::*;
+    use crate::utils::factories::factories_definitions::WorldFactory;
+    use crate::utils::factory::factory_models::Factory;
+    use crate::utils::faker::faker_definitions::{Faker, IdFaker};
     use crate::{models::world::maps::World, utils::factory::factory_models::AbstractModel};
 
+    use chrono::{DateTime, Local};
     use diesel::{
         deserialize::{self, FromSql, Queryable},
         prelude::*,
@@ -54,6 +58,16 @@ pub mod collections {
     }
 
     impl Collection {
+        pub fn new() -> Collection {
+            Collection {
+                id: IdFaker.generate().value(),
+                created: Self::get_date(),
+                modified: Self::get_date(),
+                map: WorldFactory.generate(),
+                visible: true,
+            }
+        }
+
         pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Collection>> {
             let mut _load: Vec<Collection> = crate::schema::maps::table.load(connection)?;
             Ok(_load)
@@ -68,7 +82,7 @@ pub mod collections {
             let insertable = InsertableCollection {
                 map: map_json,
                 created: data.created,
-                modified: data.modified,
+                modified: Self::get_date(),
                 visible: data.visible,
             };
 
@@ -93,6 +107,11 @@ pub mod collections {
         pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
             diesel::delete(maps.filter(id.eq(_id))).execute(connection)?;
             Ok(())
+        }
+
+        fn get_date() -> String {
+            let local: DateTime<Local> = Local::now();
+            local.to_string()
         }
     }
 }

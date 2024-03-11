@@ -22,7 +22,7 @@ export const MainMenu = () => {
     const activeRef = useRef();
 
     const [savedGames, , sync] = useCommand({
-        func: 'fetch_games'
+        func: 'load_games'
     });
 
     const lastPlayedGame = useMemo(() => {
@@ -115,9 +115,9 @@ export const MainMenu = () => {
         // setEngine({ gameId: 1182534022 });
     }, []);
 
-    // useEffect(() => {
-    //     navigate('admin/dashboard');
-    // }, []);
+    useEffect(() => {
+        navigate('admin/dashboard/object');
+    }, []);
 
     if (engine.gameId) {
         return null;

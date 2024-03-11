@@ -18,6 +18,7 @@ pub mod admin_serializer {
             state.serialize_field("command", self.model.command())?;
             state.serialize_field("model", self.model.model())?;
             state.serialize_field("search", &self.model.search())?;
+            state.serialize_field("create", &self.model.create())?;
             state.serialize_field("actions", &self.model.actions())?;
             state.serialize_field("fields", &self.model.fields())?;
             state.end()
