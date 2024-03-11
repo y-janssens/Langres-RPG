@@ -1,6 +1,13 @@
 pub mod admin_dashboard {
     use crate::models::admin::serializer::admin_serializer::AdminModelProxy;
+    use serde::Serialize;
     use serde_json::{Error, Value};
+
+    #[derive(Serialize)]
+    pub struct Field {
+        name: String,
+        field: String,
+    }
 
     pub trait AdminModel {
         fn id(&self) -> u8;
@@ -16,7 +23,7 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit", "delete"]
         }
-        fn fields(&self) -> Vec<&'static str>;
+        fn fields(&self) -> Vec<Field>;
     }
 
     pub struct AdminStoryLineModel;
@@ -42,8 +49,29 @@ pub mod admin_dashboard {
         fn actions(&self) -> Vec<&'static str> {
             vec!["edit"]
         }
-        fn fields(&self) -> Vec<&'static str> {
-            vec!["id", "name", "created", "modified", "actions"]
+        fn fields(&self) -> Vec<Field> {
+            vec![
+                Field {
+                    name: "id".into(),
+                    field: "primary_key_field".into(),
+                },
+                Field {
+                    name: "name".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "created".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "modified".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "actions".into(),
+                    field: "cta_field".into(),
+                },
+            ]
         }
     }
 
@@ -64,14 +92,32 @@ pub mod admin_dashboard {
         fn create(&self) -> bool {
             false
         }
-        fn fields(&self) -> Vec<&'static str> {
+        fn fields(&self) -> Vec<Field> {
             vec![
-                "id",
-                "player",
-                "date_created",
-                "last_save_date",
-                "visible",
-                "actions",
+                Field {
+                    name: "id".into(),
+                    field: "primary_key_field".into(),
+                },
+                Field {
+                    name: "player".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "date_created".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "last_save_date".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "visible".into(),
+                    field: "boolean_field".into(),
+                },
+                Field {
+                    name: "actions".into(),
+                    field: "cta_field".into(),
+                },
             ]
         }
     }
@@ -90,8 +136,33 @@ pub mod admin_dashboard {
         fn command(&self) -> &'static str {
             "load_collections"
         }
-        fn fields(&self) -> Vec<&'static str> {
-            vec!["id", "created", "modified", "visible", "actions"]
+        fn fields(&self) -> Vec<Field> {
+            vec![
+                Field {
+                    name: "id".into(),
+                    field: "primary_key_field".into(),
+                },
+                Field {
+                    name: "created".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "modified".into(),
+                    field: "date_field".into(),
+                },
+                Field {
+                    name: "map".into(),
+                    field: "text_field".into(),
+                },
+                Field {
+                    name: "visible".into(),
+                    field: "boolean_field".into(),
+                },
+                Field {
+                    name: "actions".into(),
+                    field: "cta_field".into(),
+                },
+            ]
         }
     }
 
@@ -109,8 +180,33 @@ pub mod admin_dashboard {
         fn command(&self) -> &'static str {
             "load_objects"
         }
-        fn fields(&self) -> Vec<&'static str> {
-            vec!["id", "name", "value", "area", "walkable", "actions"]
+        fn fields(&self) -> Vec<Field> {
+            vec![
+                Field {
+                    name: "id".into(),
+                    field: "primary_key_field".into(),
+                },
+                Field {
+                    name: "name".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "value".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "area".into(),
+                    field: "dict_field".into(),
+                },
+                Field {
+                    name: "walkable".into(),
+                    field: "boolean_field".into(),
+                },
+                Field {
+                    name: "actions".into(),
+                    field: "cta_field".into(),
+                },
+            ]
         }
     }
 
@@ -128,8 +224,29 @@ pub mod admin_dashboard {
         fn command(&self) -> &'static str {
             "load_functions"
         }
-        fn fields(&self) -> Vec<&'static str> {
-            vec!["id", "icon", "label", "command", "actions"]
+        fn fields(&self) -> Vec<Field> {
+            vec![
+                Field {
+                    name: "id".into(),
+                    field: "primary_key_field".into(),
+                },
+                Field {
+                    name: "icon".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "label".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "command".into(),
+                    field: "character_field".into(),
+                },
+                Field {
+                    name: "actions".into(),
+                    field: "cta_field".into(),
+                },
+            ]
         }
     }
 

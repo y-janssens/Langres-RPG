@@ -78,6 +78,32 @@
     padding: 0px 15px;
 }
 
+.dashboard-modal-form-block {
+    position: static;
+    width: 100%;
+    height: calc(100% - 45px);
+    overflow-y: auto;
+}
+
+.dashboard-modal-form-item {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.dashboard-modal-form-item input {
+    margin-left: 10px;
+}
+
+.dashboard-modal-form-item-label {
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.dashboard-modal-form-item-text-area {
+    height: 350px;
+}
+
 @media screen and (max-width: 1000px) {
     .dashboard-modal-body {
         height: 90%;

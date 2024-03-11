@@ -18,10 +18,19 @@ pub fn new_collection() -> Collection {
 }
 
 #[tauri::command]
-pub fn save_collections(
+pub fn save_collection(
     data: Collection,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    Collection::save(data, &mut connection).expect("Failed to save collections");
+    Collection::save(data, &mut connection).expect("Failed to save collection");
+}
+
+#[tauri::command]
+pub fn delete_collection(
+    id: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    Collection::delete(id, &mut connection).expect("Failed to delete collection")
 }

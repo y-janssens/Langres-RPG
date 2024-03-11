@@ -16,7 +16,7 @@ export default class AdminModel {
         this.delete_command = `delete_${this.model}`;
     }
 
-    async save() {
+    async save(overide = false) { // eslint-disable-line
         await invoke(this.save_command, { data: this });
     }
 
@@ -33,6 +33,9 @@ export default class AdminModel {
     }
 
     display(key) {
+        if (key === 'map') {
+            return this.map.id;
+        }
         if (isObject(this[key])) {
             return this.stringify(this[key]);
         }

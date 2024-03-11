@@ -32,7 +32,7 @@ export const Model = ({ current }) => {
             <Table dataTheme="dark" zebra size="lg">
                 <Table.Head>
                     {current.fields?.map((field, index) => {
-                        return <span key={index}>{field && t(`dashboard.table.${current.name}.${field}`)}</span>;
+                        return <span key={index}>{field && t(`dashboard.table.${current.name}.${field.name}`)}</span>;
                     })}
                 </Table.Head>
                 <Table.Body>
@@ -58,7 +58,7 @@ const ModelRow = ({ item, current, sync }) => {
 
     const cells = useMemo(() => {
         return [
-            ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field), field)),
+            ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field.name), field.name)),
             <Actions key={`${current.name}_actions`} item={item} current={current} sync={sync} />
         ].filter(Boolean);
     }, [item, current]);

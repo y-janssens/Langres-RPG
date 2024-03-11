@@ -112,6 +112,7 @@
         "actions": "Actions",
         "created": "Created",
         "id": "Id",
+        "map": "Map",
         "modified": "Modified",
         "visible": "Visible"
       },

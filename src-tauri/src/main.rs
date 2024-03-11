@@ -81,7 +81,8 @@ fn main() {
             // Collections
             commands::collections::new_collection,
             commands::collections::load_collections,
-            commands::collections::save_collections,
+            commands::collections::save_collection,
+            commands::collections::delete_collection,
             // Utils
             commands::utils::throw_dice,
             commands::utils::frustum_cull_ids,

@@ -7,6 +7,7 @@ import css from './dashboard.module.css';
 
 export const Dashboard = ({ models, current, children }) => {
     const [context] = useDashboardContext();
+
     return (
         <Theme dataTheme="night" className={css['dashboard-main-container']}>
             <Sidebar models={models} active={current} />

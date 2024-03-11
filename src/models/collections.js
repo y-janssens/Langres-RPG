@@ -7,6 +7,10 @@ export default class Collection extends AdminModel {
             this[key] = options[key];
         });
     }
+
+    // get map() {
+    //     return this.map.id;
+    // }
 }
 
 export class MapCollection {
