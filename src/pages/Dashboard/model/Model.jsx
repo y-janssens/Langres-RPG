@@ -17,7 +17,7 @@ export const Model = ({ current }) => {
         {
             func: current.command,
             onSuccess: (response) => {
-                setContext({ model: AdminModel.fromAPI(response, current.model) });
+                setContext({ model: AdminModel.fromAPI(response, current) });
             }
         },
         []
@@ -59,7 +59,7 @@ const ModelRow = ({ item, current, sync }) => {
     const cells = useMemo(() => {
         return [
             ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field), field)),
-            <Actions key={`${current.name}_actions`} item={item} current={current} />
+            <Actions key={`${current.name}_actions`} item={item} current={current} sync={sync} />
         ].filter(Boolean);
     }, [item, current]);
 

@@ -59,7 +59,7 @@ pub mod admin_dashboard {
             "Game"
         }
         fn command(&self) -> &'static str {
-            "fetch_games"
+            "load_games"
         }
         fn create(&self) -> bool {
             false

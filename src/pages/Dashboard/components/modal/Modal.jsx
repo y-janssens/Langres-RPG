@@ -10,7 +10,7 @@ export const Modal = ({ current }) => {
     const [instance, setInstance] = useState(null);
 
     const [, , syncInstance] = useCommand({
-        func: new context.instance().command,
+        func: new context.instance().new_command,
         onSuccess: (response) => setInstance(new context.instance(response))
     });
 

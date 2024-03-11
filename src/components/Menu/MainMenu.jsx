@@ -22,7 +22,7 @@ export const MainMenu = () => {
     const activeRef = useRef();
 
     const [savedGames, , sync] = useCommand({
-        func: 'fetch_games'
+        func: 'load_games'
     });
 
     const lastPlayedGame = useMemo(() => {

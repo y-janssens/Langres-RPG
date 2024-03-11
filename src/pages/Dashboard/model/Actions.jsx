@@ -7,22 +7,27 @@ import Icon from '../../../components/ui/Icon';
 
 import css from './model.module.css';
 
-export const Actions = ({ item, current }) => {
+export const Actions = ({ item, current, sync }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    const handleActions = useCallback((action) => {
-        switch (action) {
-            case 'edit':
-                navigate(`/admin/dashboard/${current.name}/${item.id}`);
-                break;
-            case 'delete':
-                //@Todo
-                break;
-            default:
-                break;
-        }
-    });
+    const handleActions = useCallback(
+        (action) => {
+            switch (action) {
+                case 'edit':
+                    navigate(`/admin/dashboard/${current.name}/${item.id}`);
+                    break;
+                case 'delete':
+                    item.delete().then(() => {
+                        sync();
+                    });
+                    break;
+                default:
+                    break;
+            }
+        },
+        [item, current, sync]
+    );
 
     return (
         <Dropdown className={css['dashboard-model-actions']} dataTheme="dark">

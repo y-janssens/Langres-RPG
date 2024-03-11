@@ -12,7 +12,7 @@ mod tests {
         let dashboard = load_admin_dashboard();
 
         assert_eq!(dashboard[0]["id"], 0);
-        assert_eq!(dashboard[0]["command"], "fetch_games".to_string());
+        assert_eq!(dashboard[0]["command"], "load_games".to_string());
         assert_eq!(dashboard[0]["model"], "Game".to_string());
         assert_eq!(dashboard[0]["name"], "game".to_string());
         assert_eq!(dashboard[0]["actions"], json!(["edit", "delete"]));

@@ -1,10 +1,27 @@
+import { invoke } from '@tauri-apps/api';
 import i18next from 'i18next';
 import { GameModel, Storyline, Collection, MapObject, MapFunction } from '.';
 import { isArray, isObject } from '../components/utils';
 export default class AdminModel {
-    constructor(instance) {
+    constructor(instance, model) {
         this.instance = instance;
+        this.model = model;
         this.displayFields = ['date', 'modified', 'created'];
+        this.init();
+    }
+
+    init() {
+        this.new_command = `new_${this.model}`;
+        this.save_command = `save_${this.model}`;
+        this.delete_command = `delete_${this.model}`;
+    }
+
+    async save() {
+        await invoke(this.save_command, { data: this });
+    }
+
+    async delete() {
+        await invoke(this.delete_command, { id: this.id });
     }
 
     match(key) {
@@ -43,17 +60,17 @@ export default class AdminModel {
         if (!isArray(data)) {
             data = [data];
         }
-        switch (model) {
+        switch (model.model) {
             case 'Game':
-                return data.map((it) => new GameModel(it));
+                return data.map((it) => new GameModel(it, model.name));
             case 'Storyline':
-                return data.map((it) => new Storyline(it));
+                return data.map((it) => new Storyline(it, model.name));
             case 'Collection':
-                return data.map((it) => new Collection(it));
+                return data.map((it) => new Collection(it, model.name));
             case 'Object':
-                return data.map((it) => new MapObject(it));
+                return data.map((it) => new MapObject(it, model.name));
             case 'Function':
-                return data.map((it) => new MapFunction(it));
+                return data.map((it) => new MapFunction(it, model.name));
             default:
                 throw new Error('Model is undefined or not registered');
         }

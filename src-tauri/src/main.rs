@@ -49,11 +49,11 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             // Game commands
-            commands::games::new,
+            commands::games::new_game,
             commands::games::load_game,
-            commands::games::fetch_games,
-            commands::games::save,
-            commands::games::delete,
+            commands::games::load_games,
+            commands::games::save_game,
+            commands::games::delete_game,
             commands::games::compute_xp,
             // World building commands
             commands::world::generate,
