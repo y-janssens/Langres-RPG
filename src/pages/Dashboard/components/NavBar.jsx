@@ -8,11 +8,22 @@ import { Locator } from './locator/Locator';
 import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
+import { useCallback } from 'react';
 
 const NavBar = ({ current }) => {
     const navigate = useNavigate();
-    const [, setContext] = useDashboardContext();
+    const [context, setContext] = useDashboardContext();
     const { t } = useTranslation();
+
+    const handleExport = useCallback(() => {
+        navigator.clipboard.writeText(
+            JSON.stringify(
+                context.model.map((it) => it.instance),
+                null,
+                2
+            )
+        );
+    }, [context.model]);
 
     return (
         <div className={css['dashboard-navbar-block']}>
@@ -32,17 +43,23 @@ const NavBar = ({ current }) => {
                         disabled={!current.search}
                     />
                     {current.create && (
-                        <Button
-                            dataTheme="emerald"
-                            className={css['dashboard-navbar-create']}
-                            size="md"
-                            color="primary"
-                            variant="outline"
-                            onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
-                        >
-                            <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
-                            <Icon name="plus" color="white" size="small" />
-                        </Button>
+                        <>
+                            <Button
+                                dataTheme="emerald"
+                                className={css['dashboard-navbar-create']}
+                                size="md"
+                                color="primary"
+                                variant="outline"
+                                onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
+                            >
+                                <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
+                                <Icon name="plus" color="white" size="small" />
+                            </Button>
+                            <Button dataTheme="emerald" className={css['dashboard-navbar-create']} size="md" color="primary" variant="outline" onClick={() => handleExport()}>
+                                <span className={css['dashboard-navbar-create-label']}>{t('common.actions.export')}</span>
+                                <Icon name="export" color="white" size="medium" />
+                            </Button>
+                        </>
                     )}
                     <Button dataTheme="emerald" className={css['dashboard-navbar-exit']} size="md" color="primary" shape="square" onClick={() => navigate('/')}>
                         <Icon name="home" color="white" size="medium" />

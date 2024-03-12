@@ -12,8 +12,10 @@ import { HiZoomIn, HiZoomOut } from 'react-icons/hi';
 import { GoSync } from 'react-icons/go';
 import { IoMdCreate } from 'react-icons/io';
 import { RxHamburgerMenu, RxDotsHorizontal } from 'react-icons/rx';
+import { PiExport } from 'react-icons/pi';
 
 export { BsTrash as Delete };
+export { PiExport as Export };
 export { RxHamburgerMenu as Menu };
 export { IoHome as Home };
 export { IoVolumeHigh as Volume };
