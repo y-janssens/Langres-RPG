@@ -20,7 +20,7 @@ pub trait AdminModel {
         true
     }
     fn actions(&self) -> Vec<&'static str> {
-        vec!["edit", "delete"]
+        vec!["edit", "export", "delete"]
     }
     fn fields(&self) -> Vec<Field>;
 }

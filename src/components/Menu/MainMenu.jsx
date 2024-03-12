@@ -115,9 +115,9 @@ export const MainMenu = () => {
         // setEngine({ gameId: 1182534022 });
     }, []);
 
-    // useEffect(() => {
-    //     navigate('admin/dashboard');
-    // }, []);
+    useEffect(() => {
+        navigate('admin/dashboard/object');
+    }, []);
 
     if (engine.gameId) {
         return null;

@@ -34,10 +34,24 @@
     background-color: rgb(45, 51, 58) !important;
 }
 
+.dashboard-model-actions ul li a {
+    font-size: 11px !important;
+}
+
 .dashboard-model-actions:first-of-type button {
     height: 25px !important;
     min-height: min-content;
     background-color: transparent;
     box-shadow: none;
     border: none;
+}
+
+.dashboard-model-actions-edit:hover,
+.dashboard-model-actions-export:hover {
+    color: rgb(128, 202, 144) !important;
+}
+
+.dashboard-model-actions-delete:hover {
+    color: crimson !important;
+    background-color: unset !important;
 }

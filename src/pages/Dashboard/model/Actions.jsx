@@ -11,11 +11,18 @@ export const Actions = ({ item, current, sync }) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
+    const handleExport = useCallback(() => {
+        navigator.clipboard.writeText(JSON.stringify(item.instance, null, 2));
+    }, [item]);
+
     const handleActions = useCallback(
         (action) => {
             switch (action) {
                 case 'edit':
                     navigate(`/admin/dashboard/${current.name}/${item.id}`);
+                    break;
+                case 'export':
+                    handleExport();
                     break;
                 case 'delete':
                     item.delete().then(() => {
@@ -34,9 +41,9 @@ export const Actions = ({ item, current, sync }) => {
             <Dropdown.Toggle>
                 <Icon name="actions" color="white" size="default" />
             </Dropdown.Toggle>
-            <Dropdown.Menu className="w-52">
+            <Dropdown.Menu>
                 {current.actions.map((act, index) => (
-                    <Dropdown.Item key={index} onClick={() => handleActions(act)}>
+                    <Dropdown.Item className={css[`dashboard-model-actions-${act}`]} key={index} onClick={() => handleActions(act)}>
                         {t(`common.actions.${act}`)}
                     </Dropdown.Item>
                 ))}
