@@ -1,4 +1,3 @@
-import { invoke } from '@tauri-apps/api';
 import { World } from '.';
 import AdminModel from './dashboard';
 
@@ -8,12 +7,6 @@ export default class GameModel extends AdminModel {
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
-    }
-
-    async save() {
-        let _datas = { ...this };
-        delete _datas.engine;
-        await invoke('save_game', { data: _datas });
     }
 
     // init() {

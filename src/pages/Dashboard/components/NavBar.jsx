@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useDashboardContext from '../../../hooks/useDashboardContext';
@@ -8,7 +9,6 @@ import { Locator } from './locator/Locator';
 import Icon from '../../../components/ui/Icon';
 
 import css from './ui.module.css';
-import { useCallback } from 'react';
 
 const NavBar = ({ current }) => {
     const navigate = useNavigate();

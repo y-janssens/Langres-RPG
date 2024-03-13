@@ -55,3 +55,9 @@
     color: crimson !important;
     background-color: unset !important;
 }
+
+.dashboard-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}

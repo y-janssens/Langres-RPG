@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 
 import { Button } from 'react-daisyui';
+import { ActionsButtons } from '../ActionsButtons';
 
 import css from './modal.module.css';
 
 export const ModalBody = ({ title, onClose, onSave, onReset, children }) => {
-    const { t } = useTranslation();
     return (
         <div className={css['dashboard-modal-container']}>
             <div className={css['dashboard-modal-body']}>
@@ -21,13 +20,7 @@ export const ModalBody = ({ title, onClose, onSave, onReset, children }) => {
                         <div className={css['dashboard-modal-card-content']}>{children}</div>
 
                         <div className={css['dashboard-modal-footer']}>
-                            <Button className={css['dashboard-modal-btns']} dataTheme="dark" size="sm" color="default" variant="outline" onClick={onReset}>
-                                {t('common.actions.reset')}
-                            </Button>
-
-                            <Button className={css['dashboard-modal-btns']} dataTheme="emerald" size="sm" color="primary" onClick={onSave}>
-                                {t('common.actions.save')}
-                            </Button>
+                            <ActionsButtons onSave={onSave} onReset={onReset} />
                         </div>
                     </div>
                 </div>

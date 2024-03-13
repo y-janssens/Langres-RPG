@@ -31,9 +31,11 @@ export const Model = ({ current }) => {
         <div className={css['dashboard-model-table']}>
             <Table dataTheme="dark" zebra size="lg">
                 <Table.Head>
-                    {current.fields?.map((field, index) => {
-                        return <span key={index}>{field && t(`dashboard.table.${current.name}.${field.name}`)}</span>;
-                    })}
+                    {current.fields
+                        ?.filter((f) => f.primary)
+                        .map((field, index) => {
+                            return <span key={index}>{field && t(`dashboard.table.${current.name}.${field.name}`)}</span>;
+                        })}
                 </Table.Head>
                 <Table.Body>
                     {modelList?.map((item, index) => (
@@ -58,7 +60,7 @@ const ModelRow = ({ item, current, sync }) => {
 
     const cells = useMemo(() => {
         return [
-            ...current.fields.filter((f) => f !== 'actions').map((field) => getValue(item.display(field.name), field.name)),
+            ...current.fields.filter((f) => f !== 'actions' && f.primary).map((field) => getValue(item.display(field.name), field.name)),
             <Actions key={`${current.name}_actions`} item={item} current={current} sync={sync} />
         ].filter(Boolean);
     }, [item, current]);

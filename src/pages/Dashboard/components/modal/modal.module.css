@@ -69,15 +69,6 @@
     padding-top: 10px;
 }
 
-.dashboard-modal-btns {
-    margin-left: 10px;
-}
-
-.dashboard-modal-footer :global(.btn) {
-    border-radius: 6px !important;
-    padding: 0px 15px;
-}
-
 .dashboard-modal-form-block {
     position: static;
     width: 100%;
