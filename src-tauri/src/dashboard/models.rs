@@ -6,6 +6,7 @@ use serde_json::{Error, Value};
 pub struct Field {
     name: String,
     field: String,
+    primary: bool,
 }
 
 pub trait AdminModel {
@@ -53,22 +54,27 @@ impl AdminModel for AdminStoryLineModel {
             Field {
                 name: "id".into(),
                 field: "primary_key_field".into(),
+                primary: true,
             },
             Field {
                 name: "name".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "created".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "modified".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "actions".into(),
                 field: "cta_field".into(),
+                primary: true,
             },
         ]
     }
@@ -88,34 +94,47 @@ impl AdminModel for AdminGameModel {
     fn command(&self) -> &'static str {
         "load_games"
     }
-    fn create(&self) -> bool {
-        false
-    }
     fn fields(&self) -> Vec<Field> {
         vec![
             Field {
                 name: "id".into(),
                 field: "primary_key_field".into(),
+                primary: true,
             },
             Field {
                 name: "player".into(),
                 field: "character_field".into(),
+                primary: true,
+            },
+            Field {
+                name: "character".into(),
+                field: "dict_field".into(),
+                primary: false,
+            },
+            Field {
+                name: "last_known_position".into(),
+                field: "dict_field".into(),
+                primary: false,
             },
             Field {
                 name: "date_created".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "last_save_date".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "visible".into(),
                 field: "boolean_field".into(),
+                primary: true,
             },
             Field {
                 name: "actions".into(),
                 field: "cta_field".into(),
+                primary: true,
             },
         ]
     }
@@ -140,26 +159,32 @@ impl AdminModel for AdminCollectionModel {
             Field {
                 name: "id".into(),
                 field: "primary_key_field".into(),
+                primary: true,
             },
             Field {
                 name: "created".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "modified".into(),
                 field: "date_field".into(),
+                primary: true,
             },
             Field {
                 name: "map".into(),
                 field: "text_field".into(),
+                primary: true,
             },
             Field {
                 name: "visible".into(),
                 field: "boolean_field".into(),
+                primary: true,
             },
             Field {
                 name: "actions".into(),
                 field: "cta_field".into(),
+                primary: true,
             },
         ]
     }
@@ -184,26 +209,32 @@ impl AdminModel for AdminMapObjectsModel {
             Field {
                 name: "id".into(),
                 field: "primary_key_field".into(),
+                primary: true,
             },
             Field {
                 name: "name".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "value".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "area".into(),
                 field: "dict_field".into(),
+                primary: true,
             },
             Field {
                 name: "walkable".into(),
                 field: "boolean_field".into(),
+                primary: true,
             },
             Field {
                 name: "actions".into(),
                 field: "cta_field".into(),
+                primary: true,
             },
         ]
     }
@@ -228,22 +259,27 @@ impl AdminModel for AdminMapFunctionsModel {
             Field {
                 name: "id".into(),
                 field: "primary_key_field".into(),
+                primary: true,
             },
             Field {
                 name: "icon".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "label".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "command".into(),
                 field: "character_field".into(),
+                primary: true,
             },
             Field {
                 name: "actions".into(),
                 field: "cta_field".into(),
+                primary: true,
             },
         ]
     }

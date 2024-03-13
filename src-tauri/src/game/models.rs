@@ -1,4 +1,3 @@
-
 use crate::character::models::Character;
 use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::games;
@@ -70,23 +69,21 @@ impl Game {
     pub fn new(name: String, connection: &mut SqliteConnection) -> Game {
         println!("Generating game data...");
 
-        let game = Game {
-            player: String::from(&name),
-            save_count: 0,
+        Game {
             id: Self::generate_id(),
+            player: String::from(&name),
             date_created: Self::get_date(),
             last_save_date: Self::get_date(),
-            storyline: Story::load(connection).unwrap(),
+            save_count: 0,
             character: Character::new(name),
+            storyline: Story::load(connection).unwrap(),
             visible: true,
             last_known_position: Position {
                 x: 0.0,
                 y: 0.0,
                 id: 0,
             },
-        };
-        let _ = Self::save(game.clone(), connection);
-        game
+        }
     }
 
     fn generate_id() -> i32 {

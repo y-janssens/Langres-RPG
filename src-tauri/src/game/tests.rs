@@ -8,7 +8,8 @@ mod tests {
     #[test]
     fn test_load_games() {
         allow_db_access(|connection| {
-            let _ = GameFactory.generate(connection);
+            let game = GameFactory.generate(connection);
+            let _ = Game::save(game, connection);
             let response = Game::fetch(connection).unwrap();
 
             assert_eq!(response.len(), 1);
@@ -21,6 +22,7 @@ mod tests {
     fn test_save_games() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
+            let _ = Game::save(game.clone(), connection);
             let request = Game::load(game.id, connection).unwrap();
 
             assert_eq!(request.player, "game".to_string());
@@ -44,7 +46,8 @@ mod tests {
     #[test]
     fn test_delete_game() {
         allow_db_access(|connection| {
-            let _ = GameFactory.generate(connection);
+            let game = GameFactory.generate(connection);
+            let _ = Game::save(game, connection);
             let result = Game::fetch(connection).unwrap();
 
             assert_eq!(result.len(), 1);

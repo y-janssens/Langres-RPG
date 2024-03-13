@@ -3,7 +3,7 @@ pub mod test_conf {
     use crate::settings::errors::messages::{
         DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
     };
-    use crate::settings::settings::variables::{MIGRATIONS, TEST_DATABASE_URL};
+    use crate::settings::variables::{MIGRATIONS, TEST_DATABASE_URL};
     use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
     use diesel_migrations::MigrationHarness;
     use r2d2::{Pool, PooledConnection};
