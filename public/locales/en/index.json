@@ -101,7 +101,7 @@
       "function": "Functions",
       "game": "Games",
       "object": "Objects",
-      "story": "Storylines"
+      "storyline": "Storylines"
     },
     "modal": {
       "collection-title": "Create a new collection",
@@ -140,7 +140,7 @@
         "value": "Value",
         "walkable": "Walkable"
       },
-      "story": {
+      "storyline": {
         "actions": "Actions",
         "created": "Created",
         "id": "Id",

@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useDashboardContext from '../../../hooks/useDashboardContext';
-import { AdminModel } from '../../../models';
 
 import { Button, Input } from 'react-daisyui';
 import { Locator } from './locator/Locator';
@@ -50,7 +49,8 @@ const NavBar = ({ current }) => {
                                 size="md"
                                 color="primary"
                                 variant="outline"
-                                onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
+                                onClick={() => navigate(`/admin/dashboard/${current.name}/new`)}
+                                // onClick={() => setContext({ instance: AdminModel.getInstance(current.model) })}
                             >
                                 <span className={css['dashboard-navbar-create-label']}>{`${t('common.actions.add')} ${current.model}`}</span>
                                 <Icon name="plus" color="white" size="small" />

@@ -114,6 +114,11 @@
     border-radius: 6px !important;
 }
 
+.dashboard-actions-btn-cancel {
+    background-color: rgb(167, 173, 185) !important;
+    color: rgb(30, 35, 41) !important;
+}
+
 .dashboard-actions-btn {
     margin-left: 10px;
 }
