@@ -62,7 +62,7 @@ fn main() {
             objects::commands::delete_object,
             // Storyline commands
             storyline::commands::save_storyline,
-            storyline::commands::fetch_storyline,
+            storyline::commands::load_storylines,
             // Utils
             utils::commands::throw_dice,
             utils::commands::frustum_cull_ids,

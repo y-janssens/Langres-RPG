@@ -1,19 +1,16 @@
-use super::serializers::AdminModelSerializer;
-use serde::Serialize;
+use super::{fields::Field, serializers::AdminModelSerializer};
 use serde_json::{Error, Value};
-
-#[derive(Serialize)]
-pub struct Field {
-    name: String,
-    field: String,
-    primary: bool,
-}
+use ucfirst::ucfirst;
 
 pub trait AdminModel {
     fn id(&self) -> u8;
     fn name(&self) -> &'static str;
-    fn command(&self) -> &'static str;
-    fn model(&self) -> &'static str;
+    fn command(&self) -> String {
+        format!("load_{}s", self.name())
+    }
+    fn model(&self) -> String {
+        ucfirst(self.name())
+    }
     fn search(&self) -> bool {
         true
     }
@@ -32,13 +29,7 @@ impl AdminModel for AdminStoryLineModel {
         1
     }
     fn name(&self) -> &'static str {
-        "story"
-    }
-    fn model(&self) -> &'static str {
-        "Storyline"
-    }
-    fn command(&self) -> &'static str {
-        "fetch_storyline"
+        "storyline"
     }
     fn search(&self) -> bool {
         false
@@ -51,31 +42,11 @@ impl AdminModel for AdminStoryLineModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field {
-                name: "id".into(),
-                field: "primary_key_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "name".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "created".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "modified".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "actions".into(),
-                field: "cta_field".into(),
-                primary: true,
-            },
+            Field::pk_field(),
+            Field::name_field("name"),
+            Field::date_field("created"),
+            Field::date_field("modified"),
+            Field::cta_field(),
         ]
     }
 }
@@ -88,54 +59,16 @@ impl AdminModel for AdminGameModel {
     fn name(&self) -> &'static str {
         "game"
     }
-    fn model(&self) -> &'static str {
-        "Game"
-    }
-    fn command(&self) -> &'static str {
-        "load_games"
-    }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field {
-                name: "id".into(),
-                field: "primary_key_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "player".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "character".into(),
-                field: "dict_field".into(),
-                primary: false,
-            },
-            Field {
-                name: "last_known_position".into(),
-                field: "dict_field".into(),
-                primary: false,
-            },
-            Field {
-                name: "date_created".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "last_save_date".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "visible".into(),
-                field: "boolean_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "actions".into(),
-                field: "cta_field".into(),
-                primary: true,
-            },
+            Field::pk_field(),
+            Field::name_field("player"),
+            Field::text_field("character", false),
+            Field::dict_field("last_known_position", false),
+            Field::date_field("date_created"),
+            Field::date_field("last_save_date"),
+            Field::boolean_field("visible", true),
+            Field::cta_field(),
         ]
     }
 }
@@ -148,44 +81,14 @@ impl AdminModel for AdminCollectionModel {
     fn name(&self) -> &'static str {
         "collection"
     }
-    fn model(&self) -> &'static str {
-        "Collection"
-    }
-    fn command(&self) -> &'static str {
-        "load_collections"
-    }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field {
-                name: "id".into(),
-                field: "primary_key_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "created".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "modified".into(),
-                field: "date_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "map".into(),
-                field: "text_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "visible".into(),
-                field: "boolean_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "actions".into(),
-                field: "cta_field".into(),
-                primary: true,
-            },
+            Field::pk_field(),
+            Field::date_field("created"),
+            Field::date_field("modified"),
+            Field::text_field("map", true),
+            Field::boolean_field("visible", true),
+            Field::cta_field(),
         ]
     }
 }
@@ -198,44 +101,14 @@ impl AdminModel for AdminMapObjectsModel {
     fn name(&self) -> &'static str {
         "object"
     }
-    fn model(&self) -> &'static str {
-        "Object"
-    }
-    fn command(&self) -> &'static str {
-        "load_objects"
-    }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field {
-                name: "id".into(),
-                field: "primary_key_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "name".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "value".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "area".into(),
-                field: "dict_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "walkable".into(),
-                field: "boolean_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "actions".into(),
-                field: "cta_field".into(),
-                primary: true,
-            },
+            Field::pk_field(),
+            Field::name_field("name"),
+            Field::char_field("value", true),
+            Field::dict_field("area", true),
+            Field::boolean_field("walkable", true),
+            Field::cta_field(),
         ]
     }
 }
@@ -248,39 +121,13 @@ impl AdminModel for AdminMapFunctionsModel {
     fn name(&self) -> &'static str {
         "function"
     }
-    fn model(&self) -> &'static str {
-        "Function"
-    }
-    fn command(&self) -> &'static str {
-        "load_functions"
-    }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field {
-                name: "id".into(),
-                field: "primary_key_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "icon".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "label".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "command".into(),
-                field: "character_field".into(),
-                primary: true,
-            },
-            Field {
-                name: "actions".into(),
-                field: "cta_field".into(),
-                primary: true,
-            },
+            Field::pk_field(),
+            Field::char_field("icon", true),
+            Field::char_field("label", true),
+            Field::char_field("command", true),
+            Field::cta_field(),
         ]
     }
 }
