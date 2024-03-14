@@ -1816,6 +1816,7 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
+ "ucfirst",
 ]
 
 [[package]]
@@ -4027,6 +4028,12 @@ name = "typenum"
 version = "1.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06d12dec6fc44a8f554c0bba"
+
+[[package]]
+name = "ucfirst"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd0756d366b29d068ab8b4f25df2ebf4b11447954b6124017650ebbd44473841"
 
 [[package]]
 name = "uds_windows"

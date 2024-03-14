@@ -1,2 +1,2 @@
 export { Model } from './Model';
-export { Form } from './Form';
+export { Form } from './form/Form';

@@ -15,6 +15,7 @@ export default function NewGame({ loading = false, state = null, sync = () => {}
             await invoke('new_game', { name })
                 .then((data) => {
                     let game = new GameModel(data);
+                    game.save();
                     setEngine({ gameId: game.id });
                     sync();
                 })

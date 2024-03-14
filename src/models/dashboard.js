@@ -16,7 +16,7 @@ export default class AdminModel {
         this.delete_command = `delete_${this.model}`;
     }
 
-    async save(overide = false) { // eslint-disable-line
+    async save(overide = false) {  // eslint-disable-line
         await invoke(this.save_command, { data: this });
     }
 

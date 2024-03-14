@@ -26,29 +26,32 @@ export const MainMenu = () => {
     });
 
     const lastPlayedGame = useMemo(() => {
-        if (!savedGames?.some((gm) => Boolean(gm.last_save_date))) {
+        if (!savedGames?.some((gm) => gm.visible && Boolean(gm.last_save_date))) {
             return null;
         }
-        let games = savedGames?.map((gm) => ({
-            id: gm.id,
-            date: new Date(gm.last_save_date.split('.')[0])
-        }));
+        let games = savedGames
+            ?.filter((gm) => gm.visible)
+            .map((gm) => ({
+                id: gm.id,
+                date: new Date(gm.last_save_date.split('.')[0])
+            }));
         return games.sort((a, b) => a.date < b.date)[0];
     }, [savedGames]);
 
     const items = useMemo(() => {
+        const games = savedGames?.filter((gm) => gm.visible);
         let menu_items = [
             lastPlayedGame && {
                 id: 0,
                 name: t('menu.items.continue'),
                 onClick: () => setEngine({ gameId: lastPlayedGame.id })
             },
-            savedGames?.length >= 1 && {
+            games?.length >= 1 && {
                 id: 1,
                 name: t('menu.items.load'),
                 onClick: () => setOpenModal('saved_games')
             },
-            savedGames?.length < 3 && {
+            games?.length < 3 && {
                 id: 2,
                 name: t('menu.items.new'),
                 onClick: () => setOpenModal('new_game')
@@ -145,7 +148,7 @@ export const MainMenu = () => {
             {openModal === 'saved_games' && (
                 <SavedGames
                     state={openModal}
-                    items={savedGames}
+                    items={savedGames.filter((gm) => gm.visible)}
                     loading={false}
                     sync={sync}
                     onClose={() => {

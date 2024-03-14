@@ -82,7 +82,7 @@
       "edit": "Modifier",
       "export": "Exporter",
       "load": "Charger",
-      "new": "Nouveau",
+      "new": "Nouvelle",
       "reset": "Réinitialiser",
       "save": "Enregistrer",
       "search": "Rechercher",
@@ -99,7 +99,7 @@
     "models": {
       "collection": "Collections",
       "game": "Parties",
-      "story": "Scénarios",
+      "storyline": "Scénarios",
       "object": "Objets",
       "function": "Fonctions"
     },
@@ -140,7 +140,7 @@
         "value": "Valeur",
         "walkable": "Accessible"
       },
-      "story": {
+      "storyline": {
         "actions": "Actions",
         "created": "Créé",
         "id": "Id",

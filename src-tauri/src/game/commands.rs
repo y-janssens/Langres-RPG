@@ -4,11 +4,12 @@ use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
 #[tauri::command]
 pub fn new_game(
-    name: String,
+    name: Option<String>,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Game {
     let mut connection = get_connection(connection);
-    Game::new(name, &mut connection)
+    let _name = name.unwrap_or("name".into());
+    Game::new(_name, &mut connection)
 }
 
 #[tauri::command]

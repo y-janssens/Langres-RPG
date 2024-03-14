@@ -14,8 +14,8 @@ impl<'a> Serialize for AdminModelSerializer<'a> {
         let mut state = serializer.serialize_struct("AdminModel", 5)?;
         state.serialize_field("id", &self.model.id())?;
         state.serialize_field("name", self.model.name())?;
-        state.serialize_field("command", self.model.command())?;
-        state.serialize_field("model", self.model.model())?;
+        state.serialize_field("command", &self.model.command())?;
+        state.serialize_field("model", &self.model.model())?;
         state.serialize_field("search", &self.model.search())?;
         state.serialize_field("create", &self.model.create())?;
         state.serialize_field("actions", &self.model.actions())?;

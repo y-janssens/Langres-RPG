@@ -30,7 +30,7 @@ export const Builder = () => {
     });
 
     const [, loadingStoryline, syncStory] = useCommand({
-        func: 'fetch_storyline',
+        func: 'load_storylines',
         useLoader: true,
         onSuccess: (response) => {
             setForm('storyLine', response);

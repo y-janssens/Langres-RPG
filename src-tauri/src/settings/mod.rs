@@ -1,3 +1,3 @@
 pub mod database;
 pub mod errors;
-pub mod settings;
+pub mod variables;

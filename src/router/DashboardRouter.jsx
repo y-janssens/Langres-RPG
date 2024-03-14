@@ -32,7 +32,15 @@ export const DashboardRouter = () => {
                         }
                     />
                     <Route
-                        path={`${model.name}/:id/`}
+                        path={`${model.name}/:id`}
+                        element={
+                            <Template models={models} current={model}>
+                                <Form current={model} />
+                            </Template>
+                        }
+                    />
+                    <Route
+                        path={`${model.name}/new`}
                         element={
                             <Template models={models} current={model}>
                                 <Form current={model} />
