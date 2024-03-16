@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AdminContextLayer } from './context/AdminContextLayer';
 import { GameContextLayer } from './context/GameContextLayer';
 import { AdminRouter } from './router/AdminRouter';
+import { useSettings } from './hooks/useSettings';
 
 function App() {
+    useSettings();
     return (
         <div className="main-container">
             <AdminContextLayer>

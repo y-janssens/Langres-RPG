@@ -23,7 +23,7 @@ export const Controler = () => {
 
     const pauseGame = useMemo(() => {
         return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu || engine.controls?.toggles.map);
-    }, [engine]);
+    }, [engine.controls?.toggles]);
 
     const handleControls = useCallback(
         (event) => {
@@ -37,12 +37,12 @@ export const Controler = () => {
                 setEngine({ controls: engine.controls });
             }
         },
-        [engine, pauseGame]
+        [pauseGame]
     );
 
     useEffect(() => {
         // Keep game focus to avoid losing keyboard controls
-        if (!engine.controls.toggles.input && !pauseGame) {
+        if (!engine.controls.toggles.input && !pauseGame && gameRef.current) {
             gameRef.current?.focus();
         }
     }, [engine, pauseGame, gameRef]);

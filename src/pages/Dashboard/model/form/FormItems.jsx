@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { displayValue } from '../../../../components/utils';
 import { Input, Textarea, Toggle } from 'react-daisyui';
@@ -6,6 +7,7 @@ import { Input, Textarea, Toggle } from 'react-daisyui';
 import css from './form.module.css';
 
 export const InstanceItem = ({ current, field, value, onChange }) => {
+    const { t } = useTranslation();
     const currentField = useMemo(() => current.fields.find((f) => f.name === field), [current, field])?.field;
     const ignoredFields = ['date_field', 'primary_key_field', 'cta_field'];
     if (!currentField || ignoredFields.some((f) => f === currentField)) {
@@ -13,7 +15,7 @@ export const InstanceItem = ({ current, field, value, onChange }) => {
     }
     return (
         <div className={css['dashboard-form-item']}>
-            <span className={css['dashboard-form-item-label']}>{field}</span>
+            <span className={css['dashboard-form-item-label']}>{t(`dashboard.form.fields.${field}`)}</span>
             <InstanceComponent value={value} field={field} currentField={currentField} onChange={onChange} />
         </div>
     );

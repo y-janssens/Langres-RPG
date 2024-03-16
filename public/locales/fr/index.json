@@ -4,18 +4,21 @@
     "manager": "Gérez vos scénarios",
     "menu": {
       "functions": {
-        "clear": "Effacer la carte",
+        "clear-map": "Effacer la carte",
         "label": "Fonctions",
-        "trees": "Générer des arbres"
+        "generate-forest": "Générer des arbres",
+        "generate-maps": "Générer des cartes"
       },
       "items": {
         "label": "Éléments"
       },
       "map": {
+        "id": "Id",
         "label": "Informations sur la carte",
         "name": "Nom",
         "primary": "Principale",
-        "size": "Taille"
+        "size": "Taille",
+        "start": "Départ"
       },
       "objects": {
         "label": "Objets"
@@ -96,6 +99,28 @@
     "title": "Titre"
   },
   "dashboard": {
+    "form": {
+      "fields": {
+        "id": "Id",
+        "player": "Nom",
+        "character": "Personnage",
+        "last_known_position": "Dernière position",
+        "date_created": "Créé",
+        "last_save_date": "Modifié",
+        "visible": "Visible",
+        "actions": "Actions",
+        "name": "Nom",
+        "created": "Créé",
+        "modified": "Modifié",
+        "map": "Carte",
+        "value": "Valeur",
+        "area": "Zone",
+        "walkable": "Accessible",
+        "icon": "Icône",
+        "label": "Label",
+        "command": "Commande"
+      }
+    },
     "models": {
       "collection": "Collections",
       "game": "Parties",
@@ -107,6 +132,13 @@
       "collection-title": "Créer une nouvelle collection",
       "object-title": "Créer un nouvel objet",
       "function-title": "Créer un nouvelle fonction"
+    },
+    "searchbar": {
+      "collection": "une collection",
+      "game": "une partie",
+      "storyline": "un scénario",
+      "object": "un objet",
+      "function": "une fonction"
     },
     "table": {
       "collection": {
@@ -172,6 +204,10 @@
     "deletion-modal": {
       "header": "Voulez-vous vraiment supprimer cette partie?",
       "message": "Cette action est irréversible"
+    },
+    "game": {
+      "new": "Entrez le nom de votre personnage",
+      "save-date": "Dernière sauvegarde: "
     },
     "items": {
       "builder": "Éditeur",

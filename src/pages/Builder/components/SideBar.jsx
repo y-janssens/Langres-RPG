@@ -83,11 +83,11 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                                 <span>{map.name}</span>
                             </span>
                             <span>
-                                <p>Id: </p>
+                                <p>{`${t('builder.menu.map.id')}:`}</p>
                                 <span>{map.id}</span>
                             </span>
                             <span>
-                                <p>Start: </p>
+                                <p>{`${t('builder.menu.map.start')}:`}</p>
                                 <span>{`X: ${map.starting_point.x} Y: ${map.starting_point.y} Id: ${map.starting_point.id}`}</span>
                             </span>
                             <span>
@@ -132,9 +132,12 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 })}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
-                <MenuItem icon={'map'} disabled={!form.selectedMap} label={'Generate maps'} onClick={() => setForm('modalGenerator', true)} />
+                <MenuItem icon={'map'} disabled={!form.selectedMap} label={t('builder.menu.functions.generate-maps')} onClick={() => setForm('modalGenerator', true)} />
                 {form.functions.map((it) => {
-                    return <MenuItem key={it.id} icon={it.icon} disabled={!form.selectedMap} label={it.label} onClick={() => handleFunction(it.command)} />;
+                    const label = it.label.toLowerCase().replaceAll(' ', '-');
+                    return (
+                        <MenuItem key={it.id} icon={it.icon} disabled={!form.selectedMap} label={t(`builder.menu.functions.${label}`)} onClick={() => handleFunction(it.command)} />
+                    );
                 })}
             </MenuBlock>
         </div>

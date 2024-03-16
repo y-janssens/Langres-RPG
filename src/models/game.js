@@ -7,11 +7,14 @@ export default class GameModel extends AdminModel {
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
+        this.init();
     }
 
-    // init() {
-    //     console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
-    // }
+    init() {
+        if (this.id) {
+            console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
+        }
+    }
 
     get title() {
         return {

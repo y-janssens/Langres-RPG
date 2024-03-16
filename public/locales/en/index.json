@@ -4,18 +4,21 @@
     "manager": "Manage your storylines",
     "menu": {
       "functions": {
-        "clear": "Clear map",
+        "clear-map": "Clear map",
         "label": "Functions",
-        "trees": "Generate forest"
+        "generate-forest": "Generate trees",
+        "generate-maps": "Generate maps"
       },
       "items": {
         "label": "Items"
       },
       "map": {
+        "id": "Id",
         "label": "Map informations",
         "name": "Name",
         "primary": "Primary",
-        "size": "Size"
+        "size": "Size",
+        "start": "Start"
       },
       "objects": {
         "label": "Objects"
@@ -96,6 +99,28 @@
     "title": "Title"
   },
   "dashboard": {
+    "form": {
+      "fields": {
+        "id": "Id",
+        "player": "Name",
+        "character": "Character",
+        "last_known_position": "Last position",
+        "date_created": "Created",
+        "last_save_date": "Modified",
+        "visible": "Visible",
+        "actions": "Actions",
+        "name": "Name",
+        "created": "Created",
+        "modified": "Modified",
+        "map": "Map",
+        "value": "Value",
+        "area": "Area",
+        "walkable": "Walkable",
+        "icon": "Icon",
+        "label": "Label",
+        "command": "Command"
+      }
+    },
     "models": {
       "collection": "Collections",
       "function": "Functions",
@@ -107,6 +132,13 @@
       "collection-title": "Create a new collection",
       "object-title": "Create a new object",
       "function-title": "Create a new function"
+    },
+    "searchbar": {
+      "collection": "a collection",
+      "game": "a game",
+      "storyline": "a storyline",
+      "object": "an object",
+      "function": "a function"
     },
     "table": {
       "collection": {
@@ -172,6 +204,10 @@
     "deletion-modal": {
       "header": "Do you really wish to delete this game?",
       "message": "This action cannot be undone"
+    },
+    "game": {
+      "new": "Enter player name",
+      "save-date": "Last save date: "
     },
     "items": {
       "builder": "Editor",

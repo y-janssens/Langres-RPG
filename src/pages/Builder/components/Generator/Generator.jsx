@@ -110,7 +110,7 @@ const GeneratorActions = ({ disabled, total, progress, selected, onLaunch = () =
         <div className={css['map-preview-cta']}>
             <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${total}`}</span>
             <div className={css['map-preview-cta-btns']}>
-                <SelectButton open={open} label={selected || t('builder.modals.generator.select')} onClick={() => setOpen(!open)} disabled />
+                <SelectButton open={open} label={t(`builder.modals.generator.types.${selected}`) || t('builder.modals.generator.select')} onClick={() => setOpen(!open)} disabled />
                 {open && (
                     <div className={css['map-preview-cta-content']}>
                         {MAP_TYPES.map((type) => {
