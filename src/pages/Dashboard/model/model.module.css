@@ -3,10 +3,15 @@
 }
 
 .dashboard-model-table :global(.table) {
+    filter: contrast(0.9) brightness(1.1);
     border-radius: 8px !important;
 }
 
 .dashboard-model-table :global(.table :where(tr)) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
     cursor: pointer;
 }
 
