@@ -7,14 +7,6 @@
     border-radius: 8px !important;
 }
 
-.dashboard-model-table :global(.table :where(tr)) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    cursor: pointer;
-}
-
 .dashboard-model-table :global(.table :where(thead)) {
     height: 35px !important;
 }
@@ -37,6 +29,7 @@
 
 .dashboard-model-actions:first-of-type button {
     height: 25px !important;
+    width: 16px;
     min-height: min-content;
     background-color: transparent;
     box-shadow: none;
