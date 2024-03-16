@@ -22,7 +22,7 @@ const LocatorItem = ({ item, current, index }) => {
         case 0:
             return <span className={css['locator-root']} onClick={() => navigate('/admin/dashboard/game')}>{`${t('menu.items.dashboard')}/ `}</span>;
         case 1:
-            return <span onClick={() => navigate(`/admin/dashboard/${current.name}`)}>{`${t(`dashboard.models.${current.name}`)}/ `}</span>;
+            return <span onClick={() => navigate(`/admin/dashboard/${current.name}`)}>{`${current.name}/`}</span>;
         default:
             return <span>{item}</span>;
     }
