@@ -1,5 +1,5 @@
 import { useRef, useMemo, useCallback } from 'react';
-import { useCommand, useDynamicForm, useGameContext, useTranslation } from '../../hooks';
+import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
 import { GameModel, Environment } from '../../models';
 
 import { Hud } from './Interface/Hud';
@@ -25,12 +25,11 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         loadingReady: false
     });
 
-    const [, loading] = useCommand(
+    const [game, loading] = GameModel.useCommand(
         {
-            func: 'load_game',
             useLoader: true,
             id: parseInt(engine.gameId),
-            launch: engine.gameId || engine.mapId,
+            launch: Boolean(engine.gameId || engine.mapId),
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, engine });
                 const currentWorld = game.current_world;
@@ -70,19 +69,18 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         [form]
     );
 
-    useCommand({
-        func: 'load_env',
-        payload: { date: form?.act?.date },
-        launch: form.id,
-        onSuccess: (response) => {
-            const environment = new Environment({
-                ...response,
-                locale: engine.applicationData.language,
-                season: t(`environment.seasons.${response.season}`)
-            });
-            setForm('environment', environment);
-        }
-    });
+    Environment.useCommand(
+        {
+            launch: game,
+            payload: { date: form?.act?.date },
+            onSuccess: (response) => {
+                let environment = response;
+                environment.season = t(`environment.seasons.${response.season}`);
+                setForm('environment', environment);
+            }
+        },
+        [game]
+    );
 
     const contextReady = useMemo(() => {
         if (!engine) {

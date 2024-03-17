@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGameContext, useCommand, useTranslation, useAdminContext } from '../../hooks';
+import { GameModel } from '../../models';
+import { useGameContext, useTranslation, useAdminContext } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
 import { MenuItem } from './MenuItem';
@@ -21,9 +22,7 @@ export const MainMenu = () => {
     const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
     const activeRef = useRef();
 
-    const [savedGames, , sync] = useCommand({
-        func: 'load_games'
-    });
+    const [savedGames, , sync] = GameModel.useCommand();
 
     const lastPlayedGame = useMemo(() => {
         if (!savedGames?.some((gm) => gm.visible && Boolean(gm.last_save_date))) {
@@ -162,7 +161,6 @@ export const MainMenu = () => {
                     state={openModal}
                     onClose={() => {
                         setOpenModal(null);
-
                         sync();
                     }}
                     engine={engine}

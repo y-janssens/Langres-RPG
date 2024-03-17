@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { invoke } from '@tauri-apps/api';
 
-const useCommand = ({ func, payload = null, id = null, launch = true, useLoader = false, onSuccess = () => {} }, deps = []) => {
+export const useNew = ({ func, payload = null, id = null, launch = true, useLoader = false, onSuccess = () => {} }, deps = []) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
 
@@ -33,5 +33,3 @@ const useCommand = ({ func, payload = null, id = null, launch = true, useLoader 
 
     return [data, loading, fetch];
 };
-
-export { useCommand };

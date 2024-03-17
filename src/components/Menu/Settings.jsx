@@ -45,10 +45,10 @@ export default function Settings({ state, onClose = () => {}, engine }) {
                     <Icon name={settings.sound ? 'volume' : 'mute'} color="white" onClick={() => setSettings('sound', !settings.sound)} size="large" />
                 </SettingsItem>
                 <SettingsItem name={t('menu.settings.volume')}>
-                    <VolumeBar disabled={!settings.sound} stat={settings.volume} />
+                    <VolumeBar disabled={!settings.sound} stat={settings.volume} name="volume" onChange={setSettings} />
                 </SettingsItem>
                 <SettingsItem name={t('menu.settings.music')}>
-                    <VolumeBar disabled={!settings.sound} stat={settings.music} />
+                    <VolumeBar disabled={!settings.sound} stat={settings.music} name="music" onChange={setSettings} />
                 </SettingsItem>
             </div>
         </Modal>

@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { Header, SideBar, Manager, Theme } from './components';
-import { useCommand, useDynamicForm, useStateHistory } from '../../hooks';
+import { useDynamicForm, useStateHistory } from '../../hooks';
+import { Storyline, MapObject, MapFunction } from '../../models';
 import Map from './Map/Map';
 import css from './builder.module.css';
 import { Onboarding } from './components/Onboarding/Onboarding';
@@ -29,8 +30,8 @@ export const Builder = () => {
         functions: []
     });
 
-    const [, loadingStoryline, syncStory] = useCommand({
-        func: 'load_storylines',
+    const [, loadingStoryline, syncStory] = Storyline.useCommand({
+        id: 1,
         useLoader: true,
         onSuccess: (response) => {
             setForm('storyLine', response);
@@ -48,15 +49,13 @@ export const Builder = () => {
         }
     });
 
-    const [, , syncObjects] = useCommand({
-        func: 'load_objects',
+    const [, , syncObjects] = MapObject.useCommand({
         onSuccess: (response) => {
             setForm('objects', response);
         }
     });
 
-    const [, , syncFunctions] = useCommand({
-        func: 'load_functions',
+    const [, , syncFunctions] = MapFunction.useCommand({
         onSuccess: (response) => {
             setForm('functions', response);
         }

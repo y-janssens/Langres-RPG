@@ -1,4 +1,4 @@
-import AdminModel from './dashboard';
+import AdminModel from './admin';
 
 export default class Collection extends AdminModel {
     constructor(options = {}) {
@@ -8,13 +8,7 @@ export default class Collection extends AdminModel {
         });
     }
 
-    // get map() {
-    //     return this.map.id;
-    // }
-}
-
-export class MapCollection {
-    constructor(items) {
-        this.maps = items.map((it) => new Collection(it)) || [];
+    static command(id) { // eslint-disable-line
+        return 'load_collections';
     }
 }

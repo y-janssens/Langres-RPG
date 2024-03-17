@@ -1,4 +1,4 @@
-import AdminModel from './dashboard';
+import AdminModel from './admin';
 
 export default class MapFunction extends AdminModel {
     constructor(options = {}) {
@@ -10,5 +10,12 @@ export default class MapFunction extends AdminModel {
 
     get name() {
         return this.label;
+    }
+
+    static command(id) {
+        if (!id) {
+            return 'load_functions';
+        }
+        return 'load_function';
     }
 }

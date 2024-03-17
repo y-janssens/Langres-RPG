@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDynamicForm, useDashboardContext, useCommand, useTranslation } from '../../../../hooks';
+import { useNew, useDynamicForm, useDashboardContext, useTranslation } from '../../../../hooks';
 import { AdminModel } from '../../../../models';
 
 import { InstanceItem } from './FormItems';
@@ -15,7 +15,7 @@ export const Form = ({ current }) => {
 
     const [form, setForm] = useDynamicForm(context.model.find((it) => it.id == id));
 
-    const [, , syncInstance] = useCommand(
+    const [, , syncInstance] = useNew(
         {
             func: new instance().new_command,
             launch: !id,
