@@ -1,18 +1,11 @@
 import { World } from '.';
-import AdminModel from './dashboard';
+import AdminModel from './admin';
 
 export default class GameModel extends AdminModel {
     constructor(options = {}) {
         super(options, 'game');
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
-        }
-        this.init();
-    }
-
-    init() {
-        if (this.id) {
-            console.log(`Game Id: %c${this.id}`, 'color:green; font-weight:bold');
         }
     }
 
@@ -52,5 +45,12 @@ export default class GameModel extends AdminModel {
             return this.current_world.starting_tile;
         }
         return this.current_world.content.find((it) => it.id === this.last_known_position.id);
+    }
+
+    static command(id) {
+        if (!id) {
+            return 'load_games';
+        }
+        return 'load_game';
     }
 }

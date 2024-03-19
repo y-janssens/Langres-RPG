@@ -52,33 +52,31 @@ export const XpGauge = ({ stat, max }) => {
     );
 };
 
-export function VolumeBar({ stat, max = 100, disabled = false, onChange = () => {} }) {
+export function VolumeBar({ name, stat, max = 100, disabled = false, onChange = () => {} }) {
     const [drag, setDrag] = useState(false);
-    const [volume, setVolume] = useState(stat);
 
     const fill = useMemo(() => {
-        return `${(volume / max) * 100}%`;
-    }, [volume, max]);
+        return `${(stat / max) * 100}%`;
+    }, [stat, max]);
 
     const volumeLevel = useMemo(() => {
-        if (!volume || volume === 0 || disabled) {
+        if (!stat || stat === 0 || disabled) {
             return 'mute';
         }
 
-        return volume > 0 && volume <= 50 ? 'medium' : 'volume';
-    }, [volume, disabled]);
+        return stat > 0 && stat <= 50 ? 'medium' : 'volume';
+    }, [stat, disabled]);
 
     const handleVolume = useCallback(
         (e, vol) => {
             if (drag) {
                 if (vol.x >= -100 && vol.x <= 0) {
                     const newVolume = 100 - Math.abs(vol.x);
-                    setVolume(newVolume >= 99 ? Math.ceil(newVolume) : Math.round(newVolume));
-                    onChange();
+                    onChange(name, newVolume >= 99 ? Math.ceil(newVolume) : Math.round(newVolume));
                 }
             }
         },
-        [drag, onChange]
+        [drag, name, onChange]
     );
 
     return (
@@ -102,7 +100,7 @@ export function VolumeBar({ stat, max = 100, disabled = false, onChange = () => 
                     />
                 </Draggable>
             </div>
-            <span className={css['volume-level']}>{disabled ? 0 : volume}</span>
+            <span className={css['volume-level']}>{disabled ? 0 : stat}</span>
         </>
     );
 }

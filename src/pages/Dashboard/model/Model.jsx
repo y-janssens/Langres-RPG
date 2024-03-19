@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { useCommand, useTranslation, useDashboardContext } from '../../../hooks';
+import { useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
 import { IsBoolean, matchSearch } from '../../../components/utils';
 
@@ -13,19 +13,22 @@ export const Model = ({ current }) => {
     const { t } = useTranslation();
     const [context, setContext] = useDashboardContext();
 
-    const [, , syncModel] = useCommand(
+    const [model, loadingModel, syncModel] = AdminModel.getInstance(current.model).useCommand(
         {
-            func: current.command,
+            useLoader: true,
             onSuccess: (response) => {
-                setContext({ model: AdminModel.fromAPI(response, current) });
+                setContext({ model: response });
             }
         },
-        []
+        [current.model]
     );
 
     const modelList = useMemo(() => {
-        return context.model?.filter((item) => matchSearch([item.name, item.id], context.search));
-    }, [context, matchSearch]);
+        if (!model || loadingModel) {
+            return [];
+        }
+        return model?.filter((item) => matchSearch([item.name, item.id], context.search));
+    }, [model, loadingModel, context, matchSearch]);
 
     return (
         <div className={css['dashboard-model-table']}>

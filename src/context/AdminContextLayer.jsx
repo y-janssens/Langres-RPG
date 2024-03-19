@@ -1,28 +1,19 @@
-import React, { useState } from 'react';
-import { useCommand } from '../hooks';
+import React from 'react';
+import { Permissions } from '../models';
 
 const AdminContext = React.createContext(null);
 
 export const AdminContextLayer = ({ children }) => {
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [permissions, loadingPermissions] = Permissions.useCommand();
 
-    useCommand(
-        {
-            func: 'load_permissions',
-            onSuccess: ({ is_admin }) => {
-                setIsAdmin(is_admin);
-            },
-            onError: () => {
-                setIsAdmin(false);
-            }
-        },
-        []
-    );
+    if (loadingPermissions) {
+        return null;
+    }
 
     return (
         <AdminContext.Provider
             value={{
-                isAdmin
+                isAdmin: permissions
             }}
         >
             {children}

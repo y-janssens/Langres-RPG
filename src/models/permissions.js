@@ -1,16 +1,18 @@
-
 import Fetcher from './fetcher';
 
-export default class DashboardModels extends Fetcher {
+export default class Permissions extends Fetcher {
     constructor(options = {}) {
-        super('admin_dashboard');
+        super(options);
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
     }
 
-
     static command(id) { // eslint-disable-line
-        return 'load_admin_dashboard';
+        return 'load_permissions';
+    }
+
+    static fromApi(id, data) { // eslint-disable-line
+        return new this(data).is_admin;
     }
 }

@@ -1,5 +1,5 @@
 import { invoke } from '@tauri-apps/api';
-import AdminModel from './dashboard';
+import AdminModel from './admin';
 
 export default class Storyline extends AdminModel {
     constructor(options = {}) {
@@ -18,5 +18,9 @@ export default class Storyline extends AdminModel {
         });
         this.story.acts = acts;
         invoke('save_storyline', { data: this, id: this.id });
+    }
+
+    static command() {
+        return 'load_storylines';
     }
 }

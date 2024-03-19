@@ -1,4 +1,4 @@
-import AdminModel from './dashboard';
+import AdminModel from './admin';
 
 export default class MapObject extends AdminModel {
     constructor(options = {}) {
@@ -10,13 +10,21 @@ export default class MapObject extends AdminModel {
 
     async save(overide) {
         if (overide) {
-            this.area = this.area.split(',').reduce((acc, pair) => {
-                const [key, value] = pair.split(':').map((part) => part.trim());
-                acc[key] = Number(value);
-                return acc;
-            }, {});
+            if (typeof this.area !== 'object')
+                this.area = this.area.split(',').reduce((acc, pair) => {
+                    const [key, value] = pair.split(':').map((part) => part.trim());
+                    acc[key] = Number(value);
+                    return acc;
+                }, {});
             this.walkable = JSON.parse(this.walkable);
         }
         await super.save();
+    }
+
+    static command(id) {
+        if (!id) {
+            return 'load_objects';
+        }
+        return 'load_object';
     }
 }

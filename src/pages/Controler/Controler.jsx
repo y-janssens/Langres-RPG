@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
-import { useGameContext, useCommand } from '../../hooks';
+import { useGameContext } from '../../hooks';
 
 import { Settings } from '../../models';
 
@@ -11,15 +11,11 @@ export const Controler = () => {
     const [engine, setEngine] = useGameContext();
     const gameRef = useRef();
 
-    useCommand(
-        {
-            func: 'load_app_datas',
-            onSuccess: (response) => {
-                engine.applicationData = new Settings(response);
-            }
-        },
-        []
-    );
+    Settings.useCommand({
+        onSuccess: (response) => {
+            engine.applicationData = response;
+        }
+    });
 
     const pauseGame = useMemo(() => {
         return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu || engine.controls?.toggles.map);

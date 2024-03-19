@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use crate::app::models::App;
+    use crate::app::models::{App, Languages, Values};
     use crate::config::conf::test_conf::allow_db_access;
 
     #[test]
@@ -22,6 +22,12 @@ mod tests {
             let patch_datas = App {
                 id: settings.id,
                 language: "en".to_string(),
+                languages: Languages {
+                    0: vec![Values {
+                        key: "Français".into(),
+                        value: "fr".into(),
+                    }],
+                },
                 sound: true,
                 volume: 100,
                 music: 100,

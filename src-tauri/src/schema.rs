@@ -47,6 +47,7 @@ diesel::table! {
     settings (id) {
         id -> Integer,
         language -> Text,
+        languages -> Text,
         sound -> Bool,
         volume -> Integer,
         music -> Integer,
