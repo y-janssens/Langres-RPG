@@ -44,6 +44,30 @@ diesel::table! {
 }
 
 diesel::table! {
+    playerquests (id) {
+        id -> Integer,
+        quest_id -> Integer,
+        game_id -> Integer,
+        name -> Text,
+        description -> Text,
+        primary -> Bool,
+        status -> Text,
+        visible -> Bool,
+    }
+}
+
+diesel::table! {
+    quests (id) {
+        id -> Integer,
+        name -> Text,
+        description -> Text,
+        primary -> Bool,
+        status -> Text,
+        visible -> Bool,
+    }
+}
+
+diesel::table! {
     settings (id) {
         id -> Integer,
         language -> Text,
@@ -69,6 +93,8 @@ diesel::allow_tables_to_appear_in_same_query!(
     games,
     maps,
     objects,
+    playerquests,
+    quests,
     settings,
     storyline,
 );

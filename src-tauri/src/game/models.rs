@@ -1,5 +1,7 @@
+use crate::app::models::App;
 use crate::character::models::Character;
 use crate::config::factory::factory_models::AbstractModel;
+use crate::player::models::PlayerQuest;
 use crate::schema::games;
 use crate::schema::games::dsl::*;
 use crate::storyline::models::Story;
@@ -130,6 +132,8 @@ impl Game {
                 .set(&insertable)
                 .execute(connection)?;
         } else {
+            let language = App::load(connection)?.language;
+            PlayerQuest::generate(game.id, &language, connection);
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;

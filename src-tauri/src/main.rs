@@ -14,10 +14,13 @@ mod functions;
 mod game;
 mod maps;
 mod objects;
+mod player;
+mod quests;
 mod schema;
 mod settings;
 mod storyline;
 mod time;
+mod translations;
 mod utils;
 mod world;
 
@@ -60,6 +63,17 @@ fn main() {
             objects::commands::load_objects,
             objects::commands::save_object,
             objects::commands::delete_object,
+            // Quests commands
+            quests::commands::new_quest,
+            quests::commands::load_quests,
+            quests::commands::save_quest,
+            quests::commands::delete_quest,
+            // Player quests commands
+            player::commands::load_player_quests,
+            player::commands::load_player_quest,
+            player::commands::save_player_quest,
+            player::commands::activate_player_quest,
+            player::commands::edit_player_quest,
             // Storyline commands
             storyline::commands::save_storyline,
             storyline::commands::load_storylines,
