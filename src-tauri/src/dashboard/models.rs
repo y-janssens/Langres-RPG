@@ -132,6 +132,27 @@ impl AdminModel for AdminMapFunctionsModel {
     }
 }
 
+pub struct AdminQuestModel;
+impl AdminModel for AdminQuestModel {
+    fn id(&self) -> u8 {
+        5
+    }
+    fn name(&self) -> &'static str {
+        "quest"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::pk_field(),
+            Field::dict_field("name", true),
+            Field::dict_field("description", true),
+            Field::boolean_field("primary", true),
+            Field::dict_field("status", false),
+            Field::boolean_field("visible", true),
+            Field::cta_field(),
+        ]
+    }
+}
+
 pub struct AdminDashboard {
     models: Vec<Box<dyn AdminModel>>,
 }
@@ -144,6 +165,7 @@ impl AdminDashboard {
         dashboard.register_model(AdminCollectionModel);
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);
+        dashboard.register_model(AdminQuestModel);
 
         dashboard.export()
     }
