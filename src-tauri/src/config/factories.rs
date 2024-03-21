@@ -2,6 +2,7 @@
 pub mod factories_definitions {
     use diesel::SqliteConnection;
 
+    use crate::achievements::models::Achievement;
     use crate::collection::models::Collection;
     use crate::functions::models::Function;
     use crate::game::models::Game;
@@ -24,6 +25,7 @@ pub mod factories_definitions {
     pub struct ObjectFactory;
     pub struct FunctionFactory;
     pub struct QuestFactory;
+    pub struct AchievementFactory;
 
     impl Factory for StoryLineFactory {
         type Output = Story;
@@ -156,6 +158,25 @@ pub mod factories_definitions {
                     abandoned: false,
                 },
                 visible: true,
+            }
+        }
+    }
+
+    impl Factory for AchievementFactory {
+        type Output = Achievement;
+
+        fn generate(&self) -> Self::Output {
+            Achievement {
+                id: IdFaker.generate().value(),
+                name: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                description: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                completed: false,
             }
         }
     }

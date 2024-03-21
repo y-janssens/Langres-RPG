@@ -5,6 +5,7 @@ use settings::database::initialize_db;
 use settings::errors::messages::{DATABASE_ERROR, RUNTIME_ERROR};
 use std::env;
 
+mod achievements;
 mod app;
 mod character;
 mod collection;
@@ -30,6 +31,11 @@ fn main() {
 
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
+            // Achievements commands
+            achievements::commands::new_achievement,
+            achievements::commands::load_achievements,
+            achievements::commands::save_achievement,
+            achievements::commands::delete_achievement,
             // Admin Dashboard
             dashboard::commands::load_admin_dashboard,
             // Application settings
@@ -63,17 +69,22 @@ fn main() {
             objects::commands::load_objects,
             objects::commands::save_object,
             objects::commands::delete_object,
+            // Player achievements commands
+            player::achievements::commands::load_player_achievements,
+            player::achievements::commands::load_player_achievement,
+            player::achievements::commands::save_player_achievement,
+            player::achievements::commands::activate_player_achievement,
+            // Player quests commands
+            player::quests::commands::load_player_quests,
+            player::quests::commands::load_player_quest,
+            player::quests::commands::save_player_quest,
+            player::quests::commands::activate_player_quest,
+            player::quests::commands::edit_player_quest,
             // Quests commands
             quests::commands::new_quest,
             quests::commands::load_quests,
             quests::commands::save_quest,
             quests::commands::delete_quest,
-            // Player quests commands
-            player::commands::load_player_quests,
-            player::commands::load_player_quest,
-            player::commands::save_player_quest,
-            player::commands::activate_player_quest,
-            player::commands::edit_player_quest,
             // Storyline commands
             storyline::commands::save_storyline,
             storyline::commands::load_storylines,

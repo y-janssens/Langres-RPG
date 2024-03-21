@@ -4,7 +4,7 @@ mod tests {
     use crate::config::factories::factories_definitions::{GameFactory, QuestFactory};
     use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::game::models::Game;
-    use crate::player::models::PlayerQuest;
+    use crate::player::quests::models::PlayerQuest;
     use crate::quests::models::Quest;
 
     #[test]

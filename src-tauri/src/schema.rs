@@ -1,6 +1,15 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
+    achievements (id) {
+        id -> Integer,
+        name -> Text,
+        description -> Text,
+        completed -> Bool,
+    }
+}
+
+diesel::table! {
     functions (id) {
         id -> Integer,
         icon -> Text,
@@ -40,6 +49,17 @@ diesel::table! {
         value -> Nullable<Text>,
         area -> Text,
         walkable -> Bool,
+    }
+}
+
+diesel::table! {
+    playerachievements (id) {
+        id -> Integer,
+        achievement_id -> Integer,
+        game_id -> Integer,
+        name -> Text,
+        description -> Text,
+        completed -> Bool,
     }
 }
 
@@ -89,10 +109,12 @@ diesel::table! {
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
+    achievements,
     functions,
     games,
     maps,
     objects,
+    playerachievements,
     playerquests,
     quests,
     settings,

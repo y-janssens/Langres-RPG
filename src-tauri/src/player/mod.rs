@@ -1,3 +1,2 @@
-pub mod models;
-pub mod tests;
-pub mod commands;
+pub mod achievements;
+pub mod quests;
