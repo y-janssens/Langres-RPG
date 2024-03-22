@@ -78,6 +78,16 @@ diesel::table! {
 }
 
 diesel::table! {
+    playerstatistics (id) {
+        id -> Integer,
+        game_id -> Integer,
+        statistic_id -> Integer,
+        name -> Text,
+        value -> Text,
+    }
+}
+
+diesel::table! {
     quests (id) {
         id -> Integer,
         name -> Text,
@@ -101,6 +111,14 @@ diesel::table! {
 }
 
 diesel::table! {
+    statistics (id) {
+        id -> Integer,
+        name -> Text,
+        value -> Text,
+    }
+}
+
+diesel::table! {
     storyline (id) {
         id -> Integer,
         name -> Text,
@@ -118,7 +136,9 @@ diesel::allow_tables_to_appear_in_same_query!(
     objects,
     playerachievements,
     playerquests,
+    playerstatistics,
     quests,
     settings,
+    statistics,
     storyline,
 );

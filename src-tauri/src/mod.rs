@@ -9,6 +9,7 @@ pub mod maps;
 pub mod objects;
 pub mod player;
 pub mod quests;
+pub mod statistics;
 pub mod storyline;
 pub mod time;
 pub mod translations;

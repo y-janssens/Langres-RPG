@@ -19,6 +19,7 @@ mod player;
 mod quests;
 mod schema;
 mod settings;
+mod statistics;
 mod storyline;
 mod time;
 mod translations;
@@ -83,6 +84,10 @@ fn main() {
             player::quests::commands::activate_player_quest,
             player::quests::commands::validate_player_quest,
             player::quests::commands::edit_player_quest,
+            // Player statistics commands
+            player::statistics::commands::load_player_statistics,
+            player::statistics::commands::load_player_statistic,
+            player::statistics::commands::save_player_statistic,
             // Quests commands
             quests::commands::new_quest,
             quests::commands::load_quests,
@@ -91,6 +96,11 @@ fn main() {
             // Storyline commands
             storyline::commands::save_storyline,
             storyline::commands::load_storylines,
+            // Statistics commands
+            statistics::commands::new_statistic,
+            statistics::commands::load_statistics,
+            statistics::commands::save_statistic,
+            statistics::commands::delete_statistic,
             // Utils
             utils::commands::throw_dice,
             utils::commands::frustum_cull_ids,

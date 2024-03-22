@@ -3,6 +3,7 @@ use crate::character::models::Character;
 use crate::config::factory::factory_models::AbstractModel;
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::quests::models::PlayerQuest;
+use crate::player::statistics::models::PlayerStatistic;
 use crate::schema::games;
 use crate::schema::games::dsl::*;
 use crate::storyline::models::Story;
@@ -136,6 +137,7 @@ impl Game {
             let language = App::load(connection)?.language;
             PlayerQuest::generate(game.id, &language, connection);
             PlayerAchievement::generate(game.id, &language, connection);
+            PlayerStatistic::generate(game.id, &language, connection);
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;

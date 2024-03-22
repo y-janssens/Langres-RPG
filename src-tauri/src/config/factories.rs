@@ -11,6 +11,7 @@ pub mod factories_definitions {
     use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::config::faker::faker_definitions::{BoolFaker, Faker, IdFaker, StringFaker};
     use crate::objects::models::{Area, Object};
+    use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
     use crate::translations::models::Translations;
     use crate::world::models::World;
@@ -26,6 +27,7 @@ pub mod factories_definitions {
     pub struct FunctionFactory;
     pub struct QuestFactory;
     pub struct AchievementFactory;
+    pub struct StatisticFactory;
 
     impl Factory for StoryLineFactory {
         type Output = Story;
@@ -178,6 +180,21 @@ pub mod factories_definitions {
                     en: StringFaker.generate().value(),
                 },
                 completed: false,
+            }
+        }
+    }
+
+    impl Factory for StatisticFactory {
+        type Output = Statistic;
+
+        fn generate(&self) -> Self::Output {
+            Statistic {
+                id: IdFaker.generate().value(),
+                name: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                value: StringFaker.generate().value(),
             }
         }
     }
