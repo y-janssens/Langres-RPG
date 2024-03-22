@@ -5,9 +5,9 @@
     "menu": {
       "functions": {
         "clear-map": "Clear map",
-        "label": "Functions",
         "generate-forest": "Generate trees",
-        "generate-maps": "Generate maps"
+        "generate-maps": "Generate maps",
+        "label": "Functions"
       },
       "items": {
         "label": "Items"
@@ -101,46 +101,65 @@
   "dashboard": {
     "form": {
       "fields": {
-        "id": "Id",
-        "player": "Name",
-        "character": "Character",
-        "last_known_position": "Last position",
-        "date_created": "Created",
-        "last_save_date": "Modified",
-        "visible": "Visible",
         "actions": "Actions",
-        "name": "Name",
-        "created": "Created",
-        "modified": "Modified",
-        "map": "Map",
-        "value": "Value",
         "area": "Area",
-        "walkable": "Walkable",
+        "character": "Character",
+        "command": "Command",
+        "created": "Created",
+        "date_created": "Created",
+        "description": "Description",
         "icon": "Icon",
+        "id": "Id",
         "label": "Label",
-        "command": "Command"
+        "last_known_position": "Last position",
+        "last_save_date": "Modified",
+        "map": "Map",
+        "modified": "Modified",
+        "name": "Name",
+        "player": "Name",
+        "primary": "Primary",
+        "reward": "Reward",
+        "status": "Status",
+        "value": "Value",
+        "visible": "Visible",
+        "walkable": "Walkable"
       }
     },
+    "modal": {
+      "achievement": "New Achievement",
+      "collection": "New Collection",
+      "function": "New Function",
+      "game": "New Game",
+      "object": "New Object",
+      "quest": "New Quest",
+      "storyline": "New Storyline"
+    },
     "models": {
+      "achievement": "Achievements",
       "collection": "Collections",
       "function": "Functions",
       "game": "Games",
       "object": "Objects",
+      "quest": "Quests",
       "storyline": "Storylines"
     },
-    "modal": {
-      "collection-title": "Create a new collection",
-      "object-title": "Create a new object",
-      "function-title": "Create a new function"
-    },
     "searchbar": {
+      "achievement": "an achievement",
       "collection": "a collection",
+      "function": "a function",
       "game": "a game",
-      "storyline": "a storyline",
       "object": "an object",
-      "function": "a function"
+      "quest": "a quest",
+      "storyline": "a storyline"
     },
     "table": {
+      "achievement": {
+        "actions": "Actions",
+        "completed": "Completed",
+        "description": "Description",
+        "id": "Id",
+        "name": "Name"
+      },
       "collection": {
         "actions": "Actions",
         "created": "Created",
@@ -171,6 +190,14 @@
         "name": "Name",
         "value": "Value",
         "walkable": "Walkable"
+      },
+      "quest": {
+        "actions": "Actions",
+        "description": "Description",
+        "id": "Id",
+        "name": "Name",
+        "primary": "Primary",
+        "visible": "Visible"
       },
       "storyline": {
         "actions": "Actions",
