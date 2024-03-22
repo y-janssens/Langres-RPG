@@ -173,6 +173,24 @@ impl AdminModel for AdminAchievementModel {
     }
 }
 
+pub struct AdminStatisticModel;
+impl AdminModel for AdminStatisticModel {
+    fn id(&self) -> u8 {
+        7
+    }
+    fn name(&self) -> &'static str {
+        "statistic"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::pk_field(),
+            Field::translatable_field("name", true),
+            Field::char_field("value", true),
+            Field::cta_field(),
+        ]
+    }
+}
+
 pub struct AdminDashboard {
     models: Vec<Box<dyn AdminModel>>,
 }
@@ -187,6 +205,7 @@ impl AdminDashboard {
         dashboard.register_model(AdminMapFunctionsModel);
         dashboard.register_model(AdminQuestModel);
         dashboard.register_model(AdminAchievementModel);
+        dashboard.register_model(AdminStatisticModel);
 
         dashboard.export()
     }
