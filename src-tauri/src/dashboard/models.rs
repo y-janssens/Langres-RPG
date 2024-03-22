@@ -153,6 +153,25 @@ impl AdminModel for AdminQuestModel {
     }
 }
 
+pub struct AdminAchievementModel;
+impl AdminModel for AdminAchievementModel {
+    fn id(&self) -> u8 {
+        6
+    }
+    fn name(&self) -> &'static str {
+        "achievement"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::pk_field(),
+            Field::dict_field("name", true),
+            Field::dict_field("description", true),
+            Field::boolean_field("completed", true),
+            Field::cta_field(),
+        ]
+    }
+}
+
 pub struct AdminDashboard {
     models: Vec<Box<dyn AdminModel>>,
 }
@@ -166,6 +185,7 @@ impl AdminDashboard {
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);
         dashboard.register_model(AdminQuestModel);
+        dashboard.register_model(AdminAchievementModel);
 
         dashboard.export()
     }
