@@ -1,6 +1,6 @@
-use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
+use crate::{config::factory::factory_models::AbstractModel, game::models::Game};
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -23,6 +23,7 @@ pub struct PlayerQuest {
     pub primary: bool,
     pub status: Status,
     pub visible: bool,
+    pub reward: i32,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -36,6 +37,7 @@ pub struct InsertablePlayerQuest {
     pub primary: bool,
     pub status: String,
     pub visible: bool,
+    pub reward: i32,
 }
 
 impl PlayerQuest {
@@ -52,6 +54,7 @@ impl PlayerQuest {
                 primary: quest.primary,
                 status: status_json,
                 visible: quest.visible,
+                reward: quest.reward,
             };
             diesel::insert_into(playerquests::table)
                 .values(&_quest)
@@ -89,6 +92,7 @@ impl PlayerQuest {
             primary: quest.primary,
             status: status_json,
             visible: quest.visible,
+            reward: quest.reward,
         };
 
         let exists = playerquests
@@ -115,10 +119,19 @@ impl PlayerQuest {
         language: &str,
         connection: &mut SqliteConnection,
     ) {
-        let base_quest = Quest::get(quest.quest_id, connection).expect("Failed to load quest");
+        let base_quest = Quest::get(quest.quest_id, connection)
+            .unwrap_or_else(|_| panic!("Failed to activate quest {}", quest.quest_id));
         quest.status.owned = true;
         quest.name = base_quest.name.resolve(true, language);
         quest.description = base_quest.description.resolve(true, language);
+        let _ = PlayerQuest::save(quest, _id, connection);
+    }
+
+    pub fn validate(mut quest: PlayerQuest, _id: i32, xp: i32, connection: &mut SqliteConnection) {
+        let player_game =
+            Game::load(_id, connection).unwrap_or_else(|_| panic!("Failed to load game {}", _id));
+        Game::compute_character_xp(xp, player_game, connection);
+        quest.status.completed = true;
         let _ = PlayerQuest::save(quest, _id, connection);
     }
 

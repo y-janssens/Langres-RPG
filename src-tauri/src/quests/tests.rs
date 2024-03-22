@@ -23,21 +23,20 @@ mod tests {
             let _ = Quest::save(quest, connection);
             let result = Quest::load(connection).unwrap();
 
-            let mut patch_quest = Quest {
+            let patch_quest = Quest {
                 id: result[0].id,
                 name: result[0].clone().name,
                 description: result[0].clone().description,
                 primary: result[0].clone().primary,
                 status: result[0].clone().status,
-                visible: result[0].clone().visible,
+                visible: true,
+                reward: result[0].clone().reward,
             };
-
-            patch_quest.visible = true;
 
             let _ = Quest::save(patch_quest, connection);
             let patch_result = Quest::load(connection).unwrap();
 
-            assert_eq!(patch_result[0].visible, true);
+            assert!(patch_result[0].visible);
         });
     }
 

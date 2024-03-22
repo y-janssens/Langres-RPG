@@ -16,6 +16,14 @@ impl Field {
         }
     }
 
+    pub fn number_field(name: &str, primary: bool) -> Self {
+        Field {
+            name: String::from(name),
+            field: "number_field".into(),
+            primary,
+        }
+    }
+
     pub fn name_field(name: &str) -> Self {
         Field {
             name: String::from(name),
@@ -52,6 +60,14 @@ impl Field {
         Field {
             name: String::from(name),
             field: "dict_field".into(),
+            primary,
+        }
+    }
+
+    pub fn translatable_field(name: &str, primary: bool) -> Self {
+        Field {
+            name: String::from(name),
+            field: "translatable_field".into(),
             primary,
         }
     }

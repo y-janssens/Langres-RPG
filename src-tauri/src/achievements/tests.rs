@@ -35,7 +35,7 @@ mod tests {
             let _ = Achievement::save(patch_achievement, connection);
             let patch_result = Achievement::load(connection).unwrap();
 
-            assert_eq!(patch_result[0].completed, true);
+            assert!(patch_result[0].completed);
         });
     }
 

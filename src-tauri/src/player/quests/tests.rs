@@ -44,9 +44,29 @@ mod tests {
             PlayerQuest::activate(player_quest.clone(), game.id, "fr", connection);
 
             let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
-            assert_eq!(patched_quest.status.owned, true);
+            assert!(patched_quest.status.owned);
             assert_ne!(patched_quest.name, "???");
             assert_ne!(patched_quest.description, "???");
+        });
+    }
+
+    #[test]
+    fn test_validate_player_quest() {
+        allow_db_access(|connection| {
+            let quest = QuestFactory.generate();
+            let game = GameFactory.generate(connection);
+            let _ = Quest::save(quest.clone(), connection);
+            let _ = Game::save(game.clone(), connection);
+
+            let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
+            let player_quest = &player_quests[0];
+
+            PlayerQuest::validate(player_quest.clone(), game.id, quest.reward, connection);
+
+            let player = Game::load(game.id, connection).expect("Error").character;
+            assert_eq!(player.lvl, 2);
+            assert_eq!(player.xp, 3);
+            assert_eq!(player.max_xp, 183);
         });
     }
 
@@ -70,7 +90,7 @@ mod tests {
             );
 
             let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
-            assert_eq!(patched_quest.status.completed, true);
+            assert!(patched_quest.status.completed);
         });
     }
 }

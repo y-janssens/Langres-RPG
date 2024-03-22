@@ -81,6 +81,7 @@ fn main() {
             player::quests::commands::load_player_quest,
             player::quests::commands::save_player_quest,
             player::quests::commands::activate_player_quest,
+            player::quests::commands::validate_player_quest,
             player::quests::commands::edit_player_quest,
             // Quests commands
             quests::commands::new_quest,

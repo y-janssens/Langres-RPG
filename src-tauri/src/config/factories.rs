@@ -158,6 +158,7 @@ pub mod factories_definitions {
                     abandoned: false,
                 },
                 visible: true,
+                reward: 153,
             }
         }
     }

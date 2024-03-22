@@ -9,7 +9,7 @@ mod tests {
             let response = App::load(connection).unwrap();
 
             assert_eq!(response.language, "en");
-            assert_eq!(response.sound, true);
+            assert!(response.sound);
             assert_eq!(response.volume, 100);
             assert_eq!(response.music, 100);
         });
@@ -37,7 +37,7 @@ mod tests {
             let patch_response = App::load(connection).unwrap();
 
             assert_eq!(patch_response.language, "en");
-            assert_eq!(patch_response.sound, true);
+            assert!(patch_response.sound);
             assert_eq!(patch_response.volume, 100);
             assert_eq!(patch_response.music, 100);
         });

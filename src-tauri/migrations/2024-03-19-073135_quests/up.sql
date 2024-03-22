@@ -5,5 +5,6 @@ CREATE TABLE quests (
     description TEXT NOT NULL,
     "primary" BOOLEAN NOT NULL,
     status TEXT NOT NULL,
-    visible BOOLEAN NOT NULL
+    visible BOOLEAN NOT NULL,
+    reward INTEGER NOT NULL
 );

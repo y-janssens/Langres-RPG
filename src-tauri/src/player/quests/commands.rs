@@ -44,6 +44,17 @@ pub fn activate_player_quest(
 }
 
 #[tauri::command]
+pub fn validate_player_quest(
+    data: PlayerQuest,
+    game_id: i32,
+    xp: i32,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) {
+    let mut connection = get_connection(connection);
+    PlayerQuest::validate(data, game_id, xp, &mut connection)
+}
+
+#[tauri::command]
 pub fn edit_player_quest(
     data: PlayerQuest,
     game_id: i32,

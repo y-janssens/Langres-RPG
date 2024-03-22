@@ -144,6 +144,11 @@ impl Game {
         Ok(())
     }
 
+    pub fn compute_character_xp(xp: i32, mut game: Game, connection: &mut SqliteConnection) {
+        game.character.compute_xp(xp as u32);
+        let _ = Game::save(game, connection);
+    }
+
     pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Game> {
         let mut _load: Game = games.find(_id).first(connection)?;
         for act in &mut _load.storyline.story.acts {

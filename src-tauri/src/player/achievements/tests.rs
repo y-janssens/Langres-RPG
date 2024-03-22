@@ -45,7 +45,7 @@ mod tests {
 
             let patched_achievement =
                 PlayerAchievement::get(player_achievement.id, connection).expect("Error");
-            assert_eq!(patched_achievement.completed, true);
+            assert!(patched_achievement.completed);
             assert_ne!(player_achievements[0].name, "???");
             assert_ne!(player_achievements[0].description, "???");
         });

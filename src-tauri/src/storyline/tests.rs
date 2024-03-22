@@ -52,6 +52,6 @@ mod tests {
         }
 
         storyline.story.acts[0].validate_acts();
-        assert_eq!(storyline.story.acts[0].complete, true);
+        assert!(storyline.story.acts[0].complete);
     }
 }

@@ -28,6 +28,7 @@ pub struct Quest {
     pub primary: bool,
     pub status: Status,
     pub visible: bool,
+    pub reward: i32,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -39,6 +40,7 @@ pub struct InsertableQuest {
     primary: bool,
     status: String,
     visible: bool,
+    reward: i32,
 }
 
 impl Queryable<Text, Sqlite> for Translations {
@@ -76,6 +78,7 @@ impl Quest {
                 abandoned: false,
             },
             visible: true,
+            reward: 0,
         }
     }
 
@@ -105,6 +108,7 @@ impl Quest {
             primary: quest.primary,
             status: status_json,
             visible: quest.visible,
+            reward: quest.reward,
         };
         let exists = quests
             .filter(id.eq(quest.id))

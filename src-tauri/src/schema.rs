@@ -73,6 +73,7 @@ diesel::table! {
         primary -> Bool,
         status -> Text,
         visible -> Bool,
+        reward -> Integer,
     }
 }
 
@@ -84,6 +85,7 @@ diesel::table! {
         primary -> Bool,
         status -> Text,
         visible -> Bool,
+        reward -> Integer,
     }
 }
 

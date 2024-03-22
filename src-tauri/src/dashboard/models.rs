@@ -143,11 +143,12 @@ impl AdminModel for AdminQuestModel {
     fn fields(&self) -> Vec<Field> {
         vec![
             Field::pk_field(),
-            Field::dict_field("name", true),
-            Field::dict_field("description", true),
+            Field::translatable_field("name", true),
+            Field::translatable_field("description", true),
             Field::boolean_field("primary", true),
             Field::dict_field("status", false),
             Field::boolean_field("visible", true),
+            Field::number_field("reward", false),
             Field::cta_field(),
         ]
     }
@@ -164,8 +165,8 @@ impl AdminModel for AdminAchievementModel {
     fn fields(&self) -> Vec<Field> {
         vec![
             Field::pk_field(),
-            Field::dict_field("name", true),
-            Field::dict_field("description", true),
+            Field::translatable_field("name", true),
+            Field::translatable_field("description", true),
             Field::boolean_field("completed", true),
             Field::cta_field(),
         ]
