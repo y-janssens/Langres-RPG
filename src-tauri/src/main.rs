@@ -74,6 +74,8 @@ fn main() {
             player::achievements::commands::load_player_achievement,
             player::achievements::commands::save_player_achievement,
             player::achievements::commands::activate_player_achievement,
+            // Player journal commands
+            player::journal::commands::load_player_journal,
             // Player quests commands
             player::quests::commands::load_player_quests,
             player::quests::commands::load_player_quest,
