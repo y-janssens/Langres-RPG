@@ -17,3 +17,4 @@ export { default as MapObject } from './objects';
 export { default as MapFunction } from './functions';
 export { default as Permissions } from './permissions';
 export { default as Quest } from './quests';
+export { default as Achievement } from './achievements';

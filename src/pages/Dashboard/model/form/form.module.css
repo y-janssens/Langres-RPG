@@ -86,3 +86,11 @@
 .dashboard-form-item-text-area {
     height: 250px;
 }
+
+.dashboard-form-item-translate-input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.dashboard-form-item-translate-input input {
+    width: -webkit-fill-available;
+}

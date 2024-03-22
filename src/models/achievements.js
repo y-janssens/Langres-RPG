@@ -1,9 +1,9 @@
 import AdminModel from './admin';
 import i18next from 'i18next';
 
-export default class Quest extends AdminModel {
+export default class Achievement extends AdminModel {
     constructor(options = {}) {
-        super(options, 'quest');
+        super(options, 'achievement');
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
@@ -18,8 +18,8 @@ export default class Quest extends AdminModel {
 
     static command(id) {
         if (!id) {
-            return 'load_quests';
+            return 'load_achievements';
         }
-        return 'load_quest';
+        return 'load_achievement';
     }
 }
