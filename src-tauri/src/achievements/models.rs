@@ -50,13 +50,6 @@ impl Achievement {
         Ok(_load)
     }
 
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Achievement> {
-        let _load = crate::schema::achievements::table
-            .filter(crate::schema::achievements::id.eq(_id))
-            .first::<Achievement>(connection)?;
-        Ok(_load)
-    }
-
     pub fn save(
         achievement: Achievement,
         connection: &mut SqliteConnection,

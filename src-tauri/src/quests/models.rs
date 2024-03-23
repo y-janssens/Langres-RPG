@@ -43,13 +43,6 @@ pub struct InsertableQuest {
     reward: i32,
 }
 
-impl Queryable<Text, Sqlite> for Translations {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
 impl Queryable<Text, Sqlite> for Status {
     type Row = String;
     fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
@@ -84,13 +77,6 @@ impl Quest {
 
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Quest>> {
         let _load = crate::schema::quests::table.load(connection)?;
-        Ok(_load)
-    }
-
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Quest> {
-        let _load = crate::schema::quests::table
-            .filter(crate::schema::quests::id.eq(_id))
-            .first::<Quest>(connection)?;
         Ok(_load)
     }
 

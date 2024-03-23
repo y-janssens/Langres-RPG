@@ -25,8 +25,6 @@ mod tests {
 
             assert_eq!(player_achievements.len(), 25);
             assert_eq!(player_achievements[0].completed, false);
-            assert_ne!(player_achievements[0].name, "???");
-            assert_ne!(player_achievements[0].description, "???");
         });
     }
 
@@ -41,13 +39,11 @@ mod tests {
             let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
             let player_achievement = &player_achievements[0];
 
-            PlayerAchievement::activate(player_achievement.clone(), game.id, "fr", connection);
+            PlayerAchievement::activate(player_achievement.clone(), connection);
 
             let patched_achievement =
                 PlayerAchievement::get(player_achievement.id, connection).expect("Error");
             assert!(patched_achievement.completed);
-            assert_ne!(player_achievements[0].name, "???");
-            assert_ne!(player_achievements[0].description, "???");
         });
     }
 }

@@ -44,13 +44,6 @@ impl Statistic {
         Ok(_load)
     }
 
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Statistic> {
-        let _load = crate::schema::statistics::table
-            .filter(crate::schema::statistics::id.eq(_id))
-            .first::<Statistic>(connection)?;
-        Ok(_load)
-    }
-
     pub fn save(
         stat: Statistic,
         connection: &mut SqliteConnection,

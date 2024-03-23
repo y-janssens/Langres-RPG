@@ -44,7 +44,7 @@ mod tests {
                 value: 1322.to_string(),
             };
 
-            let _ = PlayerStatistic::save(player_statistic.clone(), game.id, connection);
+            let _ = PlayerStatistic::save(player_statistic.clone(), connection);
 
             let patched_statistic =
                 PlayerStatistic::get(player_statistic.id, connection).expect("Error");

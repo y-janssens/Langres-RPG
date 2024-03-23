@@ -1,7 +1,9 @@
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
+use crate::translations::models::Translations;
 use crate::{config::factory::factory_models::AbstractModel, game::models::Game};
 
+use diesel::sql_types::Text;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
@@ -18,8 +20,8 @@ pub struct PlayerQuest {
     pub id: i32,
     pub quest_id: i32,
     pub game_id: i32,
-    pub name: String,
-    pub description: String,
+    pub name: Translations,
+    pub description: Translations,
     pub primary: bool,
     pub status: Status,
     pub visible: bool,
@@ -40,17 +42,28 @@ pub struct InsertablePlayerQuest {
     pub reward: i32,
 }
 
+impl Queryable<Text, Sqlite> for Translations {
+    type Row = String;
+    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
+        serde_json::from_str(&row)
+            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
+    }
+}
+
 impl PlayerQuest {
-    pub fn generate(_id: i32, language: &str, connection: &mut SqliteConnection) {
+    pub fn generate(_id: i32, connection: &mut SqliteConnection) {
+        println!("Generating game quests...");
         let base_quests = Quest::load(connection).expect("Failed to load quests");
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
             let status_json = serde_json::to_string(&quest.status).expect("error");
+            let name_json = serde_json::to_string(&quest.name).expect("error");
+            let description_json = serde_json::to_string(&quest.description).expect("error");
             let _quest = InsertablePlayerQuest {
                 quest_id: quest.id,
                 game_id: _id,
-                name: quest.name.resolve(false, language),
-                description: quest.description.resolve(false, language),
+                name: name_json,
+                description: description_json,
                 primary: quest.primary,
                 status: status_json,
                 visible: quest.visible,
@@ -79,16 +92,17 @@ impl PlayerQuest {
 
     pub fn save(
         quest: PlayerQuest,
-        _id: i32,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let status_json = serde_json::to_string(&quest.status).expect("error");
+        let name_json = serde_json::to_string(&quest.name).expect("error");
+        let description_json = serde_json::to_string(&quest.description).expect("error");
 
         let insertable = InsertablePlayerQuest {
-            game_id: _id,
+            game_id: quest.game_id,
             quest_id: quest.id,
-            name: quest.name,
-            description: quest.description,
+            name: name_json,
+            description: description_json,
             primary: quest.primary,
             status: status_json,
             visible: quest.visible,
@@ -113,31 +127,21 @@ impl PlayerQuest {
         Ok(())
     }
 
-    pub fn activate(
-        mut quest: PlayerQuest,
-        _id: i32,
-        language: &str,
-        connection: &mut SqliteConnection,
-    ) {
-        let base_quest = Quest::get(quest.quest_id, connection)
-            .unwrap_or_else(|_| panic!("Failed to activate quest {}", quest.quest_id));
+    pub fn activate(mut quest: PlayerQuest, connection: &mut SqliteConnection) {
         quest.status.owned = true;
-        quest.name = base_quest.name.resolve(true, language);
-        quest.description = base_quest.description.resolve(true, language);
-        let _ = PlayerQuest::save(quest, _id, connection);
+        let _ = PlayerQuest::save(quest, connection);
     }
 
-    pub fn validate(mut quest: PlayerQuest, _id: i32, xp: i32, connection: &mut SqliteConnection) {
-        let player_game =
-            Game::load(_id, connection).unwrap_or_else(|_| panic!("Failed to load game {}", _id));
+    pub fn validate(mut quest: PlayerQuest, xp: i32, connection: &mut SqliteConnection) {
+        let player_game = Game::load(quest.game_id, connection)
+            .unwrap_or_else(|_| panic!("Failed to load game {}", quest.game_id));
         Game::compute_character_xp(xp, player_game, connection);
         quest.status.completed = true;
-        let _ = PlayerQuest::save(quest, _id, connection);
+        let _ = PlayerQuest::save(quest, connection);
     }
 
     pub fn edit(
         mut quest: PlayerQuest,
-        _id: i32,
         _status: &str,
         value: bool,
         connection: &mut SqliteConnection,
@@ -148,6 +152,6 @@ impl PlayerQuest {
             "abandoned" => quest.status.abandoned = value,
             _ => (),
         }
-        let _ = PlayerQuest::save(quest, _id, connection);
+        let _ = PlayerQuest::save(quest, connection);
     }
 }

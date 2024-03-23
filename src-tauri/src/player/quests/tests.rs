@@ -25,8 +25,6 @@ mod tests {
 
             assert_eq!(player_quests.len(), 25);
             assert_eq!(player_quests[0].status.owned, false);
-            assert_eq!(player_quests[0].name, "???");
-            assert_eq!(player_quests[0].description, "???");
         });
     }
 
@@ -41,12 +39,10 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
             let player_quest = &player_quests[0];
 
-            PlayerQuest::activate(player_quest.clone(), game.id, "fr", connection);
+            PlayerQuest::activate(player_quest.clone(), connection);
 
             let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
             assert!(patched_quest.status.owned);
-            assert_ne!(patched_quest.name, "???");
-            assert_ne!(patched_quest.description, "???");
         });
     }
 
@@ -61,7 +57,7 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
             let player_quest = &player_quests[0];
 
-            PlayerQuest::validate(player_quest.clone(), game.id, quest.reward, connection);
+            PlayerQuest::validate(player_quest.clone(), quest.reward, connection);
 
             let player = Game::load(game.id, connection).expect("Error").character;
             assert_eq!(player.lvl, 2);
@@ -81,13 +77,7 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
             let player_quest = &player_quests[0];
 
-            PlayerQuest::edit(
-                player_quest.clone(),
-                player_quest.quest_id,
-                "completed",
-                true,
-                connection,
-            );
+            PlayerQuest::edit(player_quest.clone(), "completed", true, connection);
 
             let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
             assert!(patched_quest.status.completed);

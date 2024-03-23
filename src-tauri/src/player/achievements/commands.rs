@@ -25,20 +25,17 @@ pub fn load_player_achievement(
 #[tauri::command]
 pub fn save_player_achievement(
     data: PlayerAchievement,
-    game_id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerAchievement::save(data, game_id, &mut connection).expect("Failed to save achievement")
+    PlayerAchievement::save(data, &mut connection).expect("Failed to save achievement")
 }
 
 #[tauri::command]
 pub fn activate_player_achievement(
     data: PlayerAchievement,
-    game_id: i32,
-    language: &str,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerAchievement::activate(data, game_id, language, &mut connection)
+    PlayerAchievement::activate(data, &mut connection)
 }

@@ -1,6 +1,6 @@
-use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::playerachievements;
 use crate::schema::playerachievements::dsl::*;
+use crate::{config::factory::factory_models::AbstractModel, translations::models::Translations};
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -18,8 +18,8 @@ pub struct PlayerAchievement {
     pub id: i32,
     pub achievement_id: i32,
     pub game_id: i32,
-    pub name: String,
-    pub description: String,
+    pub name: Translations,
+    pub description: Translations,
     pub completed: bool,
 }
 
@@ -35,15 +35,18 @@ pub struct InsertablePlayerAchievement {
 }
 
 impl PlayerAchievement {
-    pub fn generate(_id: i32, language: &str, connection: &mut SqliteConnection) {
+    pub fn generate(_id: i32, connection: &mut SqliteConnection) {
+        println!("Generating game achievements...");
         let base_achievements = Achievement::load(connection).expect("Failed to load achievements");
         let mut _achievements: Vec<PlayerAchievement> = vec![];
         for achievement in base_achievements {
+            let name_json = serde_json::to_string(&achievement.name).expect("error");
+            let description_json = serde_json::to_string(&achievement.description).expect("error");
             let _achievement = InsertablePlayerAchievement {
                 achievement_id: achievement.id,
                 game_id: _id,
-                name: achievement.name.resolve(true, language),
-                description: achievement.description.resolve(true, language),
+                name: name_json,
+                description: description_json,
                 completed: achievement.completed,
             };
             diesel::insert_into(playerachievements::table)
@@ -72,14 +75,15 @@ impl PlayerAchievement {
 
     pub fn save(
         achievement: PlayerAchievement,
-        _id: i32,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
+        let name_json = serde_json::to_string(&achievement.name).expect("error");
+        let description_json = serde_json::to_string(&achievement.description).expect("error");
         let insertable = InsertablePlayerAchievement {
-            game_id: _id,
+            game_id: achievement.game_id,
             achievement_id: achievement.id,
-            name: achievement.name,
-            description: achievement.description,
+            name: name_json,
+            description: description_json,
             completed: achievement.completed,
         };
 
@@ -101,17 +105,8 @@ impl PlayerAchievement {
         Ok(())
     }
 
-    pub fn activate(
-        mut achievement: PlayerAchievement,
-        _id: i32,
-        language: &str,
-        connection: &mut SqliteConnection,
-    ) {
-        let base_achievement = Achievement::get(achievement.achievement_id, connection)
-            .expect("Failed to load achievement");
+    pub fn activate(mut achievement: PlayerAchievement, connection: &mut SqliteConnection) {
         achievement.completed = true;
-        achievement.name = base_achievement.name.resolve(true, language);
-        achievement.description = base_achievement.description.resolve(true, language);
-        let _ = PlayerAchievement::save(achievement, _id, connection);
+        let _ = PlayerAchievement::save(achievement, connection);
     }
 }

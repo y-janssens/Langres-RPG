@@ -25,9 +25,8 @@ pub fn load_player_statistic(
 #[tauri::command]
 pub fn save_player_statistic(
     data: PlayerStatistic,
-    game_id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerStatistic::save(data, game_id, &mut connection).expect("Failed to save statistic")
+    PlayerStatistic::save(data, &mut connection).expect("Failed to save statistic")
 }

@@ -1,4 +1,3 @@
-use crate::app::models::App;
 use crate::character::models::Character;
 use crate::config::factory::factory_models::AbstractModel;
 use crate::player::achievements::models::PlayerAchievement;
@@ -134,10 +133,7 @@ impl Game {
                 .set(&insertable)
                 .execute(connection)?;
         } else {
-            let language = App::load(connection)?.language;
-            PlayerQuest::generate(game.id, &language, connection);
-            PlayerAchievement::generate(game.id, &language, connection);
-            PlayerStatistic::generate(game.id, &language, connection);
+            Self::generate_player_datas(game.id, connection);
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;
@@ -167,5 +163,11 @@ impl Game {
     pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(games.filter(id.eq(_id))).execute(connection)?;
         Ok(())
+    }
+
+    pub fn generate_player_datas(game_id: i32, connection: &mut SqliteConnection) {
+        PlayerQuest::generate(game_id, connection);
+        PlayerAchievement::generate(game_id, connection);
+        PlayerStatistic::generate(game_id, connection);
     }
 }

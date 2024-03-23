@@ -25,43 +25,38 @@ pub fn load_player_quest(
 #[tauri::command]
 pub fn save_player_quest(
     data: PlayerQuest,
-    game_id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerQuest::save(data, game_id, &mut connection).expect("Failed to save quest")
+    PlayerQuest::save(data, &mut connection).expect("Failed to save quest")
 }
 
 #[tauri::command]
 pub fn activate_player_quest(
     data: PlayerQuest,
-    game_id: i32,
-    language: &str,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerQuest::activate(data, game_id, language, &mut connection)
+    PlayerQuest::activate(data, &mut connection)
 }
 
 #[tauri::command]
 pub fn validate_player_quest(
     data: PlayerQuest,
-    game_id: i32,
     xp: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerQuest::validate(data, game_id, xp, &mut connection)
+    PlayerQuest::validate(data, xp, &mut connection)
 }
 
 #[tauri::command]
 pub fn edit_player_quest(
     data: PlayerQuest,
-    game_id: i32,
     status: &str,
     value: bool,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    PlayerQuest::edit(data, game_id, status, value, &mut connection)
+    PlayerQuest::edit(data, status, value, &mut connection)
 }
