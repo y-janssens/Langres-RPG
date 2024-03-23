@@ -132,6 +132,7 @@
       "game": "Nouvelle Partie",
       "object": "Nouvel Objet",
       "quest": "Nouvelle Quête",
+      "statistic": "Nouvelle Statistique",
       "storyline": "Nouveau Scénario"
     },
     "models": {
@@ -141,6 +142,7 @@
       "game": "Parties",
       "object": "Objets",
       "quest": "Quêtes",
+      "statistic": "Statistiques",
       "storyline": "Scénarios"
     },
     "searchbar": {
@@ -150,6 +152,7 @@
       "game": "une partie",
       "object": "un objet",
       "quest": "une quête",
+      "statistic": "une statistique",
       "storyline": "un scénario"
     },
     "table": {
@@ -198,6 +201,12 @@
         "name": "Nom",
         "primary": "Principale",
         "visible": "Visible"
+      },
+      "statistic": {
+        "actions": "Actions",
+        "id": "Id",
+        "name": "Nom",
+        "value": "Valeur"
       },
       "storyline": {
         "actions": "Actions",

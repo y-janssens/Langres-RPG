@@ -132,6 +132,7 @@
       "game": "New Game",
       "object": "New Object",
       "quest": "New Quest",
+      "statistic": "New Statistic",
       "storyline": "New Storyline"
     },
     "models": {
@@ -141,6 +142,7 @@
       "game": "Games",
       "object": "Objects",
       "quest": "Quests",
+      "statistic": "Statistics",
       "storyline": "Storylines"
     },
     "searchbar": {
@@ -150,6 +152,7 @@
       "game": "a game",
       "object": "an object",
       "quest": "a quest",
+      "statistic": "a statistic",
       "storyline": "a storyline"
     },
     "table": {
@@ -198,6 +201,12 @@
         "name": "Name",
         "primary": "Primary",
         "visible": "Visible"
+      },
+      "statistic": {
+        "actions": "Actions",
+        "id": "Id",
+        "name": "Name",
+        "value": "Value"
       },
       "storyline": {
         "actions": "Actions",
