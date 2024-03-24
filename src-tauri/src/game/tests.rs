@@ -23,7 +23,7 @@ mod tests {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
             let _ = Game::save(game.clone(), connection);
-            let request = Game::load(game.id, connection).unwrap();
+            let request = Game::load(game.id.clone(), connection).unwrap();
 
             assert_eq!(request.player, "game".to_string());
             assert_eq!(request.character.name, "game".to_string());
@@ -35,7 +35,7 @@ mod tests {
             };
 
             let _ = Game::save(game.clone(), connection).unwrap();
-            let patch_response = Game::load(game.id, connection).unwrap();
+            let patch_response = Game::load(game.clone().id, connection).unwrap();
             assert_eq!(patch_response.save_count, 1);
             assert_eq!(patch_response.last_known_position.x, 8.0);
             assert_eq!(patch_response.last_known_position.y, 12.0);
@@ -52,7 +52,7 @@ mod tests {
 
             assert_eq!(result.len(), 1);
 
-            let delete = Game::delete(result[0].id, connection);
+            let delete = Game::delete(result[0].clone().id, connection);
 
             assert!(delete.is_ok());
         });

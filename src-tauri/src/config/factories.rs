@@ -9,7 +9,9 @@ pub mod factories_definitions {
     use crate::quests::models::{Quest, Status};
 
     use crate::config::factory::factory_models::{ApiFactory, Factory};
-    use crate::config::faker::faker_definitions::{BoolFaker, Faker, IdFaker, StringFaker};
+    use crate::config::faker::faker_definitions::{
+        BoolFaker, Faker, IdFaker, StringFaker, UUIdFaker,
+    };
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
@@ -143,7 +145,7 @@ pub mod factories_definitions {
 
         fn generate(&self) -> Self::Output {
             Quest {
-                id: IdFaker.generate().value(),
+                id: UUIdFaker.generate().value(),
                 name: Translations {
                     fr: StringFaker.generate().value(),
                     en: StringFaker.generate().value(),
@@ -170,7 +172,7 @@ pub mod factories_definitions {
 
         fn generate(&self) -> Self::Output {
             Achievement {
-                id: IdFaker.generate().value(),
+                id: UUIdFaker.generate().value(),
                 name: Translations {
                     fr: StringFaker.generate().value(),
                     en: StringFaker.generate().value(),
@@ -189,7 +191,7 @@ pub mod factories_definitions {
 
         fn generate(&self) -> Self::Output {
             Statistic {
-                id: IdFaker.generate().value(),
+                id: UUIdFaker.generate().value(),
                 name: Translations {
                     fr: StringFaker.generate().value(),
                     en: StringFaker.generate().value(),

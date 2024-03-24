@@ -28,7 +28,7 @@ pub fn save_quest(
 
 #[tauri::command]
 pub fn delete_quest(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);

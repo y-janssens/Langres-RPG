@@ -6,7 +6,7 @@ use super::models::PlayerJournal;
 
 #[tauri::command]
 pub fn load_player_journal(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> PlayerJournal {
     let mut connection = get_connection(connection);

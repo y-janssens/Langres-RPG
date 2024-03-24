@@ -16,9 +16,9 @@ pub struct PlayerJournal {
 }
 
 impl PlayerJournal {
-    pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<PlayerJournal> {
-        let achievements = PlayerAchievement::load(_id, connection)?;
-        let quests = PlayerQuest::load(_id, connection)?;
+    pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<PlayerJournal> {
+        let achievements = PlayerAchievement::load(_id.clone(), connection)?;
+        let quests = PlayerQuest::load(_id.clone(), connection)?;
         let statistics = PlayerStatistic::load(_id, connection)?;
         let journal = PlayerJournal {
             quests,

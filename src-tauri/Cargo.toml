@@ -25,6 +25,7 @@ lazy_static = "1.4.0"
 noise = "0.8.2"
 dotenv = "0.15.0"
 ucfirst = "0.2.1"
+uuid = { version = "1.8.0", features = ["serde", "v4"]}
 
 
 [features]

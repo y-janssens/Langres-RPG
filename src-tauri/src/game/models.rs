@@ -12,6 +12,7 @@ use diesel::prelude::*;
 use diesel::sql_types::Text;
 use diesel::sqlite::{Sqlite, SqliteValue};
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 impl AbstractModel for Game {}
 
@@ -42,7 +43,7 @@ impl Queryable<Text, Sqlite> for Position {
 #[diesel(table_name = crate::schema::games)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Game {
-    pub id: i32,
+    pub id: String,
     pub player: String,
     pub date_created: String,
     pub last_save_date: String,
@@ -57,7 +58,7 @@ pub struct Game {
 #[diesel(table_name = crate::schema::games)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableGame {
-    id: i32,
+    id: String,
     player: String,
     date_created: String,
     last_save_date: String,
@@ -73,7 +74,7 @@ impl Game {
         println!("Generating game data...");
 
         Game {
-            id: Self::generate_id(),
+            id: Uuid::new_v4().to_string(),
             player: String::from(&name),
             date_created: Self::get_date(),
             last_save_date: Self::get_date(),
@@ -87,12 +88,6 @@ impl Game {
                 id: 0,
             },
         }
-    }
-
-    fn generate_id() -> i32 {
-        use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(1..=i32::MAX)
     }
 
     fn get_date() -> String {
@@ -113,7 +108,7 @@ impl Game {
             serde_json::to_string(&game.last_known_position).expect("error");
 
         let insertable = InsertableGame {
-            id: game.id,
+            id: game.id.clone(),
             player: game.player.clone(),
             date_created: game.date_created.clone(),
             last_save_date: game.last_save_date.clone(),
@@ -124,16 +119,16 @@ impl Game {
             last_known_position: last_known_position_json,
         };
         let exists = games
-            .filter(id.eq(game.id))
+            .filter(id.eq(game.clone().id))
             .first::<Game>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(games.find(game.id))
+            diesel::update(games.find(game.clone().id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
-            Self::generate_player_datas(game.id, connection);
+            Self::generate_player_datas(game.clone().id, connection);
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;
@@ -147,7 +142,7 @@ impl Game {
         let _ = Game::save(game, connection);
     }
 
-    pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Game> {
+    pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Game> {
         let mut _load: Game = games.find(_id).first(connection)?;
         for act in &mut _load.storyline.story.acts {
             act.validate_acts();
@@ -160,14 +155,14 @@ impl Game {
         Ok(_load)
     }
 
-    pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
+    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(games.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }
 
-    pub fn generate_player_datas(game_id: i32, connection: &mut SqliteConnection) {
-        PlayerQuest::generate(game_id, connection);
-        PlayerAchievement::generate(game_id, connection);
+    pub fn generate_player_datas(game_id: String, connection: &mut SqliteConnection) {
+        PlayerQuest::generate(game_id.clone(), connection);
+        PlayerAchievement::generate(game_id.clone(), connection);
         PlayerStatistic::generate(game_id, connection);
     }
 }

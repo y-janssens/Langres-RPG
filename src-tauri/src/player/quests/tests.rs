@@ -41,7 +41,8 @@ mod tests {
 
             PlayerQuest::activate(player_quest.clone(), connection);
 
-            let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
+            let patched_quest =
+                PlayerQuest::get(player_quest.clone().id, connection).expect("Error");
             assert!(patched_quest.status.owned);
         });
     }
@@ -54,7 +55,7 @@ mod tests {
             let _ = Quest::save(quest.clone(), connection);
             let _ = Game::save(game.clone(), connection);
 
-            let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
+            let player_quests = PlayerQuest::load(game.id.clone(), connection).expect("Error");
             let player_quest = &player_quests[0];
 
             PlayerQuest::validate(player_quest.clone(), quest.reward, connection);
@@ -79,7 +80,8 @@ mod tests {
 
             PlayerQuest::edit(player_quest.clone(), "completed", true, connection);
 
-            let patched_quest = PlayerQuest::get(player_quest.id, connection).expect("Error");
+            let patched_quest =
+                PlayerQuest::get(player_quest.clone().id, connection).expect("Error");
             assert!(patched_quest.status.completed);
         });
     }

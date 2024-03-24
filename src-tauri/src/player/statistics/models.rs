@@ -8,6 +8,7 @@ use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 impl AbstractModel for PlayerStatistic {}
 
@@ -15,9 +16,9 @@ impl AbstractModel for PlayerStatistic {}
 #[diesel(table_name = crate::schema::playerstatistics)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct PlayerStatistic {
-    pub id: i32,
-    pub game_id: i32,
-    pub statistic_id: i32,
+    pub id: String,
+    pub game_id: String,
+    pub statistic_id: String,
     pub name: Translations,
     pub value: String,
 }
@@ -26,20 +27,22 @@ pub struct PlayerStatistic {
 #[diesel(table_name = crate::schema::playerstatistics)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertablePlayerStatistic {
-    pub game_id: i32,
-    pub statistic_id: i32,
+    pub id: String,
+    pub game_id: String,
+    pub statistic_id: String,
     pub name: String,
     pub value: String,
 }
 
 impl PlayerStatistic {
-    pub fn generate(_id: i32, connection: &mut SqliteConnection) {
+    pub fn generate(_id: String, connection: &mut SqliteConnection) {
         println!("Generating game statistics...");
         let base_statistics = Statistic::load(connection).expect("Failed to load statistics");
         for statistic in base_statistics {
             let name_json = serde_json::to_string(&statistic.name).expect("error");
             let _statistic = InsertablePlayerStatistic {
-                game_id: _id,
+                id: Uuid::new_v4().to_string(),
+                game_id: _id.clone(),
                 statistic_id: statistic.id,
                 name: name_json,
                 value: statistic.value,
@@ -51,14 +54,17 @@ impl PlayerStatistic {
         }
     }
 
-    pub fn load(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Vec<PlayerStatistic>> {
+    pub fn load(
+        _id: String,
+        connection: &mut SqliteConnection,
+    ) -> QueryResult<Vec<PlayerStatistic>> {
         let _load = crate::schema::playerstatistics::table
             .filter(crate::schema::playerstatistics::game_id.eq(_id))
             .load::<PlayerStatistic>(connection)?;
         Ok(_load)
     }
 
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<PlayerStatistic> {
+    pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<PlayerStatistic> {
         let _load = crate::schema::playerstatistics::table
             .filter(crate::schema::playerstatistics::id.eq(_id))
             .first::<PlayerStatistic>(connection)?;
@@ -72,14 +78,15 @@ impl PlayerStatistic {
         let name_json = serde_json::to_string(&statistic.name).expect("error");
 
         let insertable = InsertablePlayerStatistic {
-            game_id: statistic.game_id,
-            statistic_id: statistic.id,
+            id: Uuid::new_v4().to_string(),
+            game_id: statistic.clone().game_id,
+            statistic_id: statistic.clone().id,
             name: name_json,
-            value: statistic.value,
+            value: statistic.clone().value,
         };
 
         let exists = playerstatistics
-            .filter(playerstatistics::id.eq(statistic.id))
+            .filter(playerstatistics::id.eq(statistic.clone().id))
             .first::<PlayerStatistic>(connection)
             .is_ok();
 

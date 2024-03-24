@@ -6,6 +6,7 @@ use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 use crate::achievements::models::Achievement;
 
@@ -15,9 +16,9 @@ impl AbstractModel for PlayerAchievement {}
 #[diesel(table_name = crate::schema::playerachievements)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct PlayerAchievement {
-    pub id: i32,
-    pub achievement_id: i32,
-    pub game_id: i32,
+    pub id: String,
+    pub achievement_id: String,
+    pub game_id: String,
     pub name: Translations,
     pub description: Translations,
     pub completed: bool,
@@ -27,15 +28,16 @@ pub struct PlayerAchievement {
 #[diesel(table_name = crate::schema::playerachievements)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertablePlayerAchievement {
-    pub game_id: i32,
-    pub achievement_id: i32,
+    pub id: String,
+    pub game_id: String,
+    pub achievement_id: String,
     pub name: String,
     pub description: String,
     pub completed: bool,
 }
 
 impl PlayerAchievement {
-    pub fn generate(_id: i32, connection: &mut SqliteConnection) {
+    pub fn generate(_id: String, connection: &mut SqliteConnection) {
         println!("Generating game achievements...");
         let base_achievements = Achievement::load(connection).expect("Failed to load achievements");
         let mut _achievements: Vec<PlayerAchievement> = vec![];
@@ -43,8 +45,9 @@ impl PlayerAchievement {
             let name_json = serde_json::to_string(&achievement.name).expect("error");
             let description_json = serde_json::to_string(&achievement.description).expect("error");
             let _achievement = InsertablePlayerAchievement {
+                id: Uuid::new_v4().to_string(),
                 achievement_id: achievement.id,
-                game_id: _id,
+                game_id: _id.clone(),
                 name: name_json,
                 description: description_json,
                 completed: achievement.completed,
@@ -57,7 +60,7 @@ impl PlayerAchievement {
     }
 
     pub fn load(
-        _id: i32,
+        _id: String,
         connection: &mut SqliteConnection,
     ) -> QueryResult<Vec<PlayerAchievement>> {
         let _load = crate::schema::playerachievements::table
@@ -66,7 +69,7 @@ impl PlayerAchievement {
         Ok(_load)
     }
 
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<PlayerAchievement> {
+    pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<PlayerAchievement> {
         let _load = crate::schema::playerachievements::table
             .filter(crate::schema::playerachievements::id.eq(_id))
             .first::<PlayerAchievement>(connection)?;
@@ -80,15 +83,16 @@ impl PlayerAchievement {
         let name_json = serde_json::to_string(&achievement.name).expect("error");
         let description_json = serde_json::to_string(&achievement.description).expect("error");
         let insertable = InsertablePlayerAchievement {
-            game_id: achievement.game_id,
-            achievement_id: achievement.id,
+            id: Uuid::new_v4().to_string(),
+            game_id: achievement.clone().game_id,
+            achievement_id: achievement.clone().id,
             name: name_json,
             description: description_json,
             completed: achievement.completed,
         };
 
         let exists = playerachievements
-            .filter(playerachievements::id.eq(achievement.id))
+            .filter(playerachievements::id.eq(achievement.clone().id))
             .first::<PlayerAchievement>(connection)
             .is_ok();
 

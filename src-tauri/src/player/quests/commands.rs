@@ -6,7 +6,7 @@ use super::models::PlayerQuest;
 
 #[tauri::command]
 pub fn load_player_quests(
-    game_id: i32,
+    game_id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Vec<PlayerQuest> {
     let mut connection = get_connection(connection);
@@ -15,7 +15,7 @@ pub fn load_player_quests(
 
 #[tauri::command]
 pub fn load_player_quest(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> PlayerQuest {
     let mut connection = get_connection(connection);

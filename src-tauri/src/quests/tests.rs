@@ -24,7 +24,7 @@ mod tests {
             let result = Quest::load(connection).unwrap();
 
             let patch_quest = Quest {
-                id: result[0].id,
+                id: result[0].clone().id,
                 name: result[0].clone().name,
                 description: result[0].clone().description,
                 primary: result[0].clone().primary,
@@ -47,7 +47,7 @@ mod tests {
             let _ = Quest::save(quest, connection);
             let result = Quest::load(connection).unwrap();
 
-            let delete = Quest::delete(result[0].id, connection);
+            let delete = Quest::delete(result[0].clone().id, connection);
 
             assert!(delete.is_ok());
         });

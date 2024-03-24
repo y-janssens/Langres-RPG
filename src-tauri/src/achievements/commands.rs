@@ -28,7 +28,7 @@ pub fn save_achievement(
 
 #[tauri::command]
 pub fn delete_achievement(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);

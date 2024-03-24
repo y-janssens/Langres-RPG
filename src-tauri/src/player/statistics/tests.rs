@@ -35,11 +35,12 @@ mod tests {
             let _ = Statistic::save(statistic, connection);
             let _ = Game::save(game.clone(), connection);
 
-            let player_statistics = PlayerStatistic::load(game.id, connection).expect("Error");
+            let player_statistics =
+                PlayerStatistic::load(game.id.clone(), connection).expect("Error");
             let player_statistic = PlayerStatistic {
-                id: player_statistics[0].id,
+                id: player_statistics[0].id.clone(),
                 game_id: game.id,
-                statistic_id: player_statistics[0].statistic_id,
+                statistic_id: player_statistics[0].statistic_id.clone(),
                 name: player_statistics[0].clone().name,
                 value: 1322.to_string(),
             };

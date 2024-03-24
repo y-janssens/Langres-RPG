@@ -24,7 +24,7 @@ mod tests {
             let result = Achievement::load(connection).unwrap();
 
             let mut patch_achievement = Achievement {
-                id: result[0].id,
+                id: result[0].clone().id,
                 name: result[0].clone().name,
                 description: result[0].clone().description,
                 completed: result[0].clone().completed,
@@ -46,7 +46,7 @@ mod tests {
             let _ = Achievement::save(achievement, connection);
             let result = Achievement::load(connection).unwrap();
 
-            let delete = Achievement::delete(result[0].id, connection);
+            let delete = Achievement::delete(result[0].clone().id, connection);
 
             assert!(delete.is_ok());
         });

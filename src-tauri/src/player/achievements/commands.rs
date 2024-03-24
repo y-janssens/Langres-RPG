@@ -6,7 +6,7 @@ use super::models::PlayerAchievement;
 
 #[tauri::command]
 pub fn load_player_achievements(
-    game_id: i32,
+    game_id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Vec<PlayerAchievement> {
     let mut connection = get_connection(connection);
@@ -15,7 +15,7 @@ pub fn load_player_achievements(
 
 #[tauri::command]
 pub fn load_player_achievement(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> PlayerAchievement {
     let mut connection = get_connection(connection);

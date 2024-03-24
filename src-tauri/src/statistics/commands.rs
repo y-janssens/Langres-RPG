@@ -28,7 +28,7 @@ pub fn save_statistic(
 
 #[tauri::command]
 pub fn delete_statistic(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);

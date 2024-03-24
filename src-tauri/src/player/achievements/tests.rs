@@ -42,7 +42,7 @@ mod tests {
             PlayerAchievement::activate(player_achievement.clone(), connection);
 
             let patched_achievement =
-                PlayerAchievement::get(player_achievement.id, connection).expect("Error");
+                PlayerAchievement::get(player_achievement.clone().id, connection).expect("Error");
             assert!(patched_achievement.completed);
         });
     }

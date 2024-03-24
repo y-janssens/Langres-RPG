@@ -1,12 +1,12 @@
 use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::quests::dsl::*;
-use crate::utils::functions::generate_id;
 use crate::{schema::quests, translations::models::Translations};
 use diesel::{
     deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, QueryResult, RunQueryDsl,
     Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 impl AbstractModel for Quest {}
 
@@ -22,7 +22,7 @@ pub struct Status {
 #[diesel(table_name = crate::schema::quests)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Quest {
-    pub id: i32,
+    pub id: String,
     pub name: Translations,
     pub description: Translations,
     pub primary: bool,
@@ -35,6 +35,7 @@ pub struct Quest {
 #[diesel(table_name = crate::schema::quests)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableQuest {
+    id: String,
     name: String,
     description: String,
     primary: bool,
@@ -54,7 +55,7 @@ impl Queryable<Text, Sqlite> for Status {
 impl Quest {
     pub fn new() -> Quest {
         Quest {
-            id: generate_id(),
+            id: Uuid::new_v4().to_string(),
             name: Translations {
                 fr: "".into(),
                 en: "".into(),
@@ -89,6 +90,7 @@ impl Quest {
         let status_json = serde_json::to_string(&quest.status).expect("error");
 
         let insertable = InsertableQuest {
+            id: Uuid::new_v4().to_string(),
             name: name_json,
             description: description_json,
             primary: quest.primary,
@@ -97,7 +99,7 @@ impl Quest {
             reward: quest.reward,
         };
         let exists = quests
-            .filter(id.eq(quest.id))
+            .filter(id.eq(quest.clone().id))
             .first::<Quest>(connection)
             .is_ok();
 
@@ -114,7 +116,7 @@ impl Quest {
         Ok(())
     }
 
-    pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
+    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(quests.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }

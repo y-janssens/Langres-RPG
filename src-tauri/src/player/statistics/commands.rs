@@ -6,7 +6,7 @@ use super::models::PlayerStatistic;
 
 #[tauri::command]
 pub fn load_player_statistics(
-    game_id: i32,
+    game_id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Vec<PlayerStatistic> {
     let mut connection = get_connection(connection);
@@ -15,7 +15,7 @@ pub fn load_player_statistics(
 
 #[tauri::command]
 pub fn load_player_statistic(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> PlayerStatistic {
     let mut connection = get_connection(connection);

@@ -1,12 +1,12 @@
 use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::statistics::dsl::*;
-use crate::utils::functions::generate_id;
 use crate::{schema::statistics, translations::models::Translations};
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 impl AbstractModel for Statistic {}
 
@@ -14,7 +14,7 @@ impl AbstractModel for Statistic {}
 #[diesel(table_name = crate::schema::statistics)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Statistic {
-    pub id: i32,
+    pub id: String,
     pub name: Translations,
     pub value: String,
 }
@@ -23,6 +23,7 @@ pub struct Statistic {
 #[diesel(table_name = crate::schema::statistics)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableStatistic {
+    pub id: String,
     name: String,
     value: String,
 }
@@ -30,7 +31,7 @@ pub struct InsertableStatistic {
 impl Statistic {
     pub fn new() -> Statistic {
         Statistic {
-            id: generate_id(),
+            id: Uuid::new_v4().to_string(),
             name: Translations {
                 fr: "".into(),
                 en: "".into(),
@@ -51,11 +52,12 @@ impl Statistic {
         let name_json = serde_json::to_string(&stat.name).expect("error");
 
         let insertable = InsertableStatistic {
+            id: Uuid::new_v4().to_string(),
             name: name_json,
-            value: stat.value,
+            value: stat.clone().value,
         };
         let exists = statistics
-            .filter(id.eq(stat.id))
+            .filter(id.eq(stat.clone().id))
             .first::<Statistic>(connection)
             .is_ok();
 
@@ -72,7 +74,7 @@ impl Statistic {
         Ok(())
     }
 
-    pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
+    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(statistics.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }

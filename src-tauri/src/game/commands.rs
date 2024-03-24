@@ -22,7 +22,7 @@ pub fn load_games(
 
 #[tauri::command]
 pub fn load_game(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Game {
     let mut connection = get_connection(connection);
@@ -31,7 +31,7 @@ pub fn load_game(
 
 #[tauri::command]
 pub fn delete_game(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);

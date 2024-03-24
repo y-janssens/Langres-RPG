@@ -2,7 +2,7 @@
 
 diesel::table! {
     achievements (id) {
-        id -> Integer,
+        id -> Text,
         name -> Text,
         description -> Text,
         completed -> Bool,
@@ -20,7 +20,7 @@ diesel::table! {
 
 diesel::table! {
     games (id) {
-        id -> Integer,
+        id -> Text,
         player -> Text,
         date_created -> Text,
         last_save_date -> Text,
@@ -54,9 +54,9 @@ diesel::table! {
 
 diesel::table! {
     playerachievements (id) {
-        id -> Integer,
-        achievement_id -> Integer,
-        game_id -> Integer,
+        id -> Text,
+        achievement_id -> Text,
+        game_id -> Text,
         name -> Text,
         description -> Text,
         completed -> Bool,
@@ -65,9 +65,9 @@ diesel::table! {
 
 diesel::table! {
     playerquests (id) {
-        id -> Integer,
-        quest_id -> Integer,
-        game_id -> Integer,
+        id -> Text,
+        quest_id -> Text,
+        game_id -> Text,
         name -> Text,
         description -> Text,
         primary -> Bool,
@@ -79,9 +79,9 @@ diesel::table! {
 
 diesel::table! {
     playerstatistics (id) {
-        id -> Integer,
-        game_id -> Integer,
-        statistic_id -> Integer,
+        id -> Text,
+        game_id -> Text,
+        statistic_id -> Text,
         name -> Text,
         value -> Text,
     }
@@ -89,7 +89,7 @@ diesel::table! {
 
 diesel::table! {
     quests (id) {
-        id -> Integer,
+        id -> Text,
         name -> Text,
         description -> Text,
         primary -> Bool,
@@ -112,7 +112,7 @@ diesel::table! {
 
 diesel::table! {
     statistics (id) {
-        id -> Integer,
+        id -> Text,
         name -> Text,
         value -> Text,
     }

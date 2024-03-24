@@ -4,20 +4,20 @@ pub mod test_conf {
         DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
     };
     use crate::settings::variables::MIGRATIONS;
-    use crate::utils::functions::generate_id;
     use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
     use diesel_migrations::MigrationHarness;
 
     use r2d2::{Pool, PooledConnection};
     use std::panic::{self, AssertUnwindSafe};
     use std::{error::Error, fs};
+    use uuid::Uuid;
 
     /// Wrapper to allow unit tests to access local database
     pub fn allow_db_access<T>(unit_test: T)
     where
         T: FnOnce(&mut SqliteConnection) + panic::UnwindSafe,
     {
-        let unique_test_db = format!("test_db_{}.db", generate_id());
+        let unique_test_db = format!("test_db_{}.db", Uuid::new_v4().to_string());
         let mut connection = get_local_connection(unique_test_db.clone());
 
         let result = panic::catch_unwind(AssertUnwindSafe(|| {

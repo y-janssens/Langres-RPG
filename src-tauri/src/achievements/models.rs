@@ -1,12 +1,12 @@
 use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::achievements::dsl::*;
-use crate::utils::functions::generate_id;
 use crate::{schema::achievements, translations::models::Translations};
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 impl AbstractModel for Achievement {}
 
@@ -14,7 +14,7 @@ impl AbstractModel for Achievement {}
 #[diesel(table_name = crate::schema::achievements)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Achievement {
-    pub id: i32,
+    pub id: String,
     pub name: Translations,
     pub description: Translations,
     pub completed: bool,
@@ -24,6 +24,7 @@ pub struct Achievement {
 #[diesel(table_name = crate::schema::achievements)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableAchievement {
+    pub id: String,
     pub name: String,
     pub description: String,
     pub completed: bool,
@@ -32,7 +33,7 @@ pub struct InsertableAchievement {
 impl Achievement {
     pub fn new() -> Achievement {
         Achievement {
-            id: generate_id(),
+            id: Uuid::new_v4().to_string(),
             name: Translations {
                 fr: "".into(),
                 en: "".into(),
@@ -58,12 +59,13 @@ impl Achievement {
         let description_json = serde_json::to_string(&achievement.description).expect("error");
 
         let insertable = InsertableAchievement {
+            id: Uuid::new_v4().to_string(),
             name: name_json,
             description: description_json,
             completed: achievement.completed,
         };
         let exists = achievements
-            .filter(id.eq(achievement.id))
+            .filter(id.eq(achievement.clone().id))
             .first::<Achievement>(connection)
             .is_ok();
 
@@ -80,7 +82,7 @@ impl Achievement {
         Ok(())
     }
 
-    pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
+    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(achievements.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }
