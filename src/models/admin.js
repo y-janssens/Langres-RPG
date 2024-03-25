@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { GameModel, Storyline, Collection, MapObject, MapFunction, Fetcher } from '.';
+import { GameModel, Storyline, Collection, MapObject, MapFunction, Quest, Fetcher, Achievement, Statistic } from '.';
 import { isObject } from '../components/utils';
 export default class AdminModel extends Fetcher {
     constructor(instance, model) {
@@ -61,6 +61,12 @@ export default class AdminModel extends Fetcher {
                 return MapObject;
             case 'Function':
                 return MapFunction;
+            case 'Quest':
+                return Quest;
+            case 'Achievement':
+                return Achievement;
+            case 'Statistic':
+                return Statistic;
             default:
                 throw new Error('Model is undefined or not registered');
         }

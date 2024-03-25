@@ -5,6 +5,7 @@ use settings::database::initialize_db;
 use settings::errors::messages::{DATABASE_ERROR, RUNTIME_ERROR};
 use std::env;
 
+mod achievements;
 mod app;
 mod character;
 mod collection;
@@ -14,10 +15,14 @@ mod functions;
 mod game;
 mod maps;
 mod objects;
+mod player;
+mod quests;
 mod schema;
 mod settings;
+mod statistics;
 mod storyline;
 mod time;
+mod translations;
 mod utils;
 mod world;
 
@@ -27,6 +32,11 @@ fn main() {
 
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
+            // Achievements commands
+            achievements::commands::new_achievement,
+            achievements::commands::load_achievements,
+            achievements::commands::save_achievement,
+            achievements::commands::delete_achievement,
             // Admin Dashboard
             dashboard::commands::load_admin_dashboard,
             // Application settings
@@ -60,9 +70,37 @@ fn main() {
             objects::commands::load_objects,
             objects::commands::save_object,
             objects::commands::delete_object,
+            // Player achievements commands
+            player::achievements::commands::load_player_achievements,
+            player::achievements::commands::load_player_achievement,
+            player::achievements::commands::save_player_achievement,
+            player::achievements::commands::activate_player_achievement,
+            // Player journal commands
+            player::journal::commands::load_player_journal,
+            // Player quests commands
+            player::quests::commands::load_player_quests,
+            player::quests::commands::load_player_quest,
+            player::quests::commands::save_player_quest,
+            player::quests::commands::activate_player_quest,
+            player::quests::commands::validate_player_quest,
+            player::quests::commands::edit_player_quest,
+            // Player statistics commands
+            player::statistics::commands::load_player_statistics,
+            player::statistics::commands::load_player_statistic,
+            player::statistics::commands::save_player_statistic,
+            // Quests commands
+            quests::commands::new_quest,
+            quests::commands::load_quests,
+            quests::commands::save_quest,
+            quests::commands::delete_quest,
             // Storyline commands
             storyline::commands::save_storyline,
             storyline::commands::load_storylines,
+            // Statistics commands
+            statistics::commands::new_statistic,
+            statistics::commands::load_statistics,
+            statistics::commands::save_statistic,
+            statistics::commands::delete_statistic,
             // Utils
             utils::commands::throw_dice,
             utils::commands::frustum_cull_ids,

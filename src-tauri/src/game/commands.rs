@@ -1,4 +1,4 @@
-use super::models::Game;
+use super::models::{Game, GameDatas};
 use crate::config::fetcher::get_connection;
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
@@ -22,16 +22,16 @@ pub fn load_games(
 
 #[tauri::command]
 pub fn load_game(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Game {
+) -> GameDatas {
     let mut connection = get_connection(connection);
     Game::load(id, &mut connection).expect("Failed to load game")
 }
 
 #[tauri::command]
 pub fn delete_game(
-    id: i32,
+    id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
@@ -40,9 +40,9 @@ pub fn delete_game(
 
 #[tauri::command]
 pub fn save_game(
-    data: Game,
+    mut data: Game,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) {
     let mut connection = get_connection(connection);
-    Game::save(data, &mut connection).expect("Failed to save game")
+    Game::save(&mut data, &mut connection).expect("Failed to save game")
 }

@@ -1,6 +1,15 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
+    achievements (id) {
+        id -> Text,
+        name -> Text,
+        description -> Text,
+        completed -> Bool,
+    }
+}
+
+diesel::table! {
     functions (id) {
         id -> Integer,
         icon -> Text,
@@ -11,7 +20,7 @@ diesel::table! {
 
 diesel::table! {
     games (id) {
-        id -> Integer,
+        id -> Text,
         player -> Text,
         date_created -> Text,
         last_save_date -> Text,
@@ -44,6 +53,53 @@ diesel::table! {
 }
 
 diesel::table! {
+    playerachievements (id) {
+        id -> Text,
+        achievement_id -> Text,
+        game_id -> Text,
+        name -> Text,
+        description -> Text,
+        completed -> Bool,
+    }
+}
+
+diesel::table! {
+    playerquests (id) {
+        id -> Text,
+        quest_id -> Text,
+        game_id -> Text,
+        name -> Text,
+        description -> Text,
+        primary -> Bool,
+        status -> Text,
+        visible -> Bool,
+        reward -> Integer,
+    }
+}
+
+diesel::table! {
+    playerstatistics (id) {
+        id -> Text,
+        game_id -> Text,
+        statistic_id -> Text,
+        name -> Text,
+        value -> Text,
+    }
+}
+
+diesel::table! {
+    quests (id) {
+        id -> Text,
+        name -> Text,
+        description -> Text,
+        primary -> Bool,
+        status -> Text,
+        visible -> Bool,
+        reward -> Integer,
+    }
+}
+
+diesel::table! {
     settings (id) {
         id -> Integer,
         language -> Text,
@@ -51,6 +107,14 @@ diesel::table! {
         sound -> Bool,
         volume -> Integer,
         music -> Integer,
+    }
+}
+
+diesel::table! {
+    statistics (id) {
+        id -> Text,
+        name -> Text,
+        value -> Text,
     }
 }
 
@@ -65,10 +129,16 @@ diesel::table! {
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
+    achievements,
     functions,
     games,
     maps,
     objects,
+    playerachievements,
+    playerquests,
+    playerstatistics,
+    quests,
     settings,
+    statistics,
     storyline,
 );

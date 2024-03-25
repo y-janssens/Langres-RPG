@@ -5,4 +5,5 @@ pub mod messages {
     pub const DATABASE_ERROR: &str = "Failed to initialize database.";
     pub const RUNTIME_ERROR: &str = "error while running tauri application.";
     pub const FLUSH_DATABASE_ERROR: &str = "Failed to flush test database.";
+    pub const NOT_SUPPORTED_LANGUAGE_ERROR: &str = "This language is not supported.";
 }

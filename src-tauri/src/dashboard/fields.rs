@@ -7,11 +7,20 @@ pub struct Field {
     primary: bool,
 }
 
+#[allow(dead_code)]
 impl Field {
     pub fn char_field(name: &str, primary: bool) -> Self {
         Field {
             name: String::from(name),
             field: "character_field".into(),
+            primary,
+        }
+    }
+
+    pub fn number_field(name: &str, primary: bool) -> Self {
+        Field {
+            name: String::from(name),
+            field: "number_field".into(),
             primary,
         }
     }
@@ -52,6 +61,14 @@ impl Field {
         Field {
             name: String::from(name),
             field: "dict_field".into(),
+            primary,
+        }
+    }
+
+    pub fn translatable_field(name: &str, primary: bool) -> Self {
+        Field {
+            name: String::from(name),
+            field: "translatable_field".into(),
             primary,
         }
     }

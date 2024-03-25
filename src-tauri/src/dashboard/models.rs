@@ -42,7 +42,6 @@ impl AdminModel for AdminStoryLineModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("name"),
             Field::date_field("created"),
             Field::date_field("modified"),
@@ -61,7 +60,6 @@ impl AdminModel for AdminGameModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("player"),
             Field::text_field("character", false),
             Field::dict_field("last_known_position", false),
@@ -83,7 +81,6 @@ impl AdminModel for AdminCollectionModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::date_field("created"),
             Field::date_field("modified"),
             Field::text_field("map", true),
@@ -103,7 +100,6 @@ impl AdminModel for AdminMapObjectsModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("name"),
             Field::char_field("value", true),
             Field::dict_field("area", true),
@@ -123,10 +119,65 @@ impl AdminModel for AdminMapFunctionsModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::char_field("icon", true),
             Field::char_field("label", true),
             Field::char_field("command", true),
+            Field::cta_field(),
+        ]
+    }
+}
+
+pub struct AdminQuestModel;
+impl AdminModel for AdminQuestModel {
+    fn id(&self) -> u8 {
+        5
+    }
+    fn name(&self) -> &'static str {
+        "quest"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::translatable_field("name", true),
+            Field::translatable_field("description", true),
+            Field::boolean_field("primary", true),
+            Field::dict_field("status", false),
+            Field::boolean_field("visible", true),
+            Field::number_field("reward", false),
+            Field::cta_field(),
+        ]
+    }
+}
+
+pub struct AdminAchievementModel;
+impl AdminModel for AdminAchievementModel {
+    fn id(&self) -> u8 {
+        6
+    }
+    fn name(&self) -> &'static str {
+        "achievement"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::translatable_field("name", true),
+            Field::translatable_field("description", true),
+            Field::boolean_field("completed", true),
+            Field::cta_field(),
+        ]
+    }
+}
+
+pub struct AdminStatisticModel;
+impl AdminModel for AdminStatisticModel {
+    fn id(&self) -> u8 {
+        7
+    }
+    fn name(&self) -> &'static str {
+        "statistic"
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::translatable_field("name", true),
+            Field::char_field("value", true),
             Field::cta_field(),
         ]
     }
@@ -144,6 +195,9 @@ impl AdminDashboard {
         dashboard.register_model(AdminCollectionModel);
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);
+        dashboard.register_model(AdminQuestModel);
+        dashboard.register_model(AdminAchievementModel);
+        dashboard.register_model(AdminStatisticModel);
 
         dashboard.export()
     }

@@ -8,8 +8,8 @@ mod tests {
     #[test]
     fn test_load_games() {
         allow_db_access(|connection| {
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game, connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
             let response = Game::fetch(connection).unwrap();
 
             assert_eq!(response.len(), 1);
@@ -22,8 +22,8 @@ mod tests {
     fn test_save_games() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(game.clone(), connection);
-            let request = Game::load(game.id, connection).unwrap();
+            let _ = Game::save(&mut game, connection);
+            let request = Game::load(game.id.clone(), connection).unwrap();
 
             assert_eq!(request.player, "game".to_string());
             assert_eq!(request.character.name, "game".to_string());
@@ -34,9 +34,9 @@ mod tests {
                 id: 633,
             };
 
-            let _ = Game::save(game.clone(), connection).unwrap();
-            let patch_response = Game::load(game.id, connection).unwrap();
-            assert_eq!(patch_response.save_count, 1);
+            let _ = Game::save(&mut game, connection).unwrap();
+            let patch_response = Game::load(game.clone().id, connection).unwrap();
+            assert_eq!(patch_response.save_count, 2);
             assert_eq!(patch_response.last_known_position.x, 8.0);
             assert_eq!(patch_response.last_known_position.y, 12.0);
             assert_eq!(patch_response.last_known_position.id, 633);
@@ -46,13 +46,13 @@ mod tests {
     #[test]
     fn test_delete_game() {
         allow_db_access(|connection| {
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game, connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
             let result = Game::fetch(connection).unwrap();
 
             assert_eq!(result.len(), 1);
 
-            let delete = Game::delete(result[0].id, connection);
+            let delete = Game::delete(result[0].clone().id, connection);
 
             assert!(delete.is_ok());
         });

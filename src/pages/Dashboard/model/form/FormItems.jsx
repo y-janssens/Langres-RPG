@@ -22,10 +22,38 @@ export const InstanceItem = ({ current, field, value, onChange }) => {
 };
 
 const InstanceComponent = ({ currentField, field, value, onChange }) => {
+    const { t } = useTranslation();
     switch (true) {
         case currentField === 'character_field':
+        case currentField === 'number_field':
         case currentField === 'dict_field':
-            return <Input dataTheme="dark" color="emerald" value={displayValue(value)} placeholder={field} onChange={({ target: { value } }) => onChange(field, value)} />;
+            return (
+                <Input
+                    dataTheme="dark"
+                    color="emerald"
+                    value={displayValue(value)}
+                    placeholder={t(`dashboard.form.fields.${field}`)}
+                    onChange={({ target: { value } }) => onChange(field, currentField === 'number_field' ? Number(value) : value)}
+                />
+            );
+        case currentField === 'translatable_field':
+            return Object.entries(value)
+                .map((entry) => ({ key: entry[0], value: entry[1] }))
+                .map((it, index) => (
+                    <div className={css['dashboard-form-item-translate-input']} key={index}>
+                        {/* <p>test</p> */}
+                        <Input
+                            dataTheme="dark"
+                            color="emerald"
+                            value={displayValue(it.value)}
+                            placeholder={`${t(`dashboard.form.fields.${field}`)}: ${it.key}`}
+                            onChange={({ target }) => {
+                                const _field = { ...value, [it.key]: target.value };
+                                onChange(field, _field);
+                            }}
+                        />
+                    </div>
+                ));
         case currentField === 'text_field':
             return (
                 <Textarea
@@ -33,7 +61,7 @@ const InstanceComponent = ({ currentField, field, value, onChange }) => {
                     dataTheme="dark"
                     color="emerald"
                     value={JSON.stringify(value, null, 2)}
-                    placeholder={field}
+                    placeholder={t(`dashboard.form.fields.${field}`)}
                     onChange={({ target: { value } }) => onChange(field, value)}
                 />
             );

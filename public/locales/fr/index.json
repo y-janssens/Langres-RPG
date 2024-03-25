@@ -5,9 +5,9 @@
     "menu": {
       "functions": {
         "clear-map": "Effacer la carte",
-        "label": "Fonctions",
         "generate-forest": "Générer des arbres",
-        "generate-maps": "Générer des cartes"
+        "generate-maps": "Générer des cartes",
+        "label": "Fonctions"
       },
       "items": {
         "label": "Éléments"
@@ -101,46 +101,68 @@
   "dashboard": {
     "form": {
       "fields": {
-        "id": "Id",
-        "player": "Nom",
-        "character": "Personnage",
-        "last_known_position": "Dernière position",
-        "date_created": "Créé",
-        "last_save_date": "Modifié",
-        "visible": "Visible",
         "actions": "Actions",
-        "name": "Nom",
-        "created": "Créé",
-        "modified": "Modifié",
-        "map": "Carte",
-        "value": "Valeur",
         "area": "Zone",
-        "walkable": "Accessible",
+        "character": "Personnage",
+        "command": "Commande",
+        "created": "Créé",
+        "date_created": "Créé",
+        "description": "Description",
         "icon": "Icône",
+        "id": "Id",
         "label": "Label",
-        "command": "Commande"
+        "last_known_position": "Dernière position",
+        "last_save_date": "Modifié",
+        "map": "Carte",
+        "modified": "Modifié",
+        "name": "Nom",
+        "player": "Nom",
+        "primary": "Principal",
+        "reward": "Récompense",
+        "status": "Statut",
+        "value": "Valeur",
+        "visible": "Visible",
+        "walkable": "Accessible"
       }
     },
-    "models": {
-      "collection": "Collections",
-      "game": "Parties",
-      "storyline": "Scénarios",
-      "object": "Objets",
-      "function": "Fonctions"
-    },
     "modal": {
-      "collection-title": "Créer une nouvelle collection",
-      "object-title": "Créer un nouvel objet",
-      "function-title": "Créer un nouvelle fonction"
+      "achievement": "Nouveau Succès",
+      "collection": "Nouvelle Collection",
+      "function": "Nouvelle Fonction",
+      "game": "Nouvelle Partie",
+      "object": "Nouvel Objet",
+      "quest": "Nouvelle Quête",
+      "statistic": "Nouvelle Statistique",
+      "storyline": "Nouveau Scénario"
+    },
+    "models": {
+      "achievement": "Succès",
+      "collection": "Collections",
+      "function": "Fonctions",
+      "game": "Parties",
+      "object": "Objets",
+      "quest": "Quêtes",
+      "statistic": "Statistiques",
+      "storyline": "Scénarios"
     },
     "searchbar": {
+      "achievement": "un succès",
       "collection": "une collection",
+      "function": "une fonction",
       "game": "une partie",
-      "storyline": "un scénario",
       "object": "un objet",
-      "function": "une fonction"
+      "quest": "une quête",
+      "statistic": "une statistique",
+      "storyline": "un scénario"
     },
     "table": {
+      "achievement": {
+        "actions": "Actions",
+        "completed": "Accompli",
+        "description": "Description",
+        "id": "Id",
+        "name": "Nom"
+      },
       "collection": {
         "actions": "Actions",
         "created": "Créé",
@@ -171,6 +193,20 @@
         "name": "Nom",
         "value": "Valeur",
         "walkable": "Accessible"
+      },
+      "quest": {
+        "actions": "Actions",
+        "description": "Description",
+        "id": "Id",
+        "name": "Nom",
+        "primary": "Principale",
+        "visible": "Visible"
+      },
+      "statistic": {
+        "actions": "Actions",
+        "id": "Id",
+        "name": "Nom",
+        "value": "Valeur"
       },
       "storyline": {
         "actions": "Actions",

@@ -38,7 +38,7 @@ export const Form = ({ current }) => {
     }, [form, syncInstance, handleRedirect]);
 
     return (
-        <FormBody title={id || `${t(`common.actions.new`)} ${current.name}`} onSave={handleSave} onCancel={handleRedirect} onReset={() => syncInstance()}>
+        <FormBody title={id || t(`dashboard.modal.${current.name}`)} onSave={handleSave} onCancel={handleRedirect} onReset={() => syncInstance()}>
             {form.id &&
                 current.fields.map((field, index) => {
                     return <InstanceItem key={index} current={current} field={field.name} value={form[field.name]} onChange={setForm} />;

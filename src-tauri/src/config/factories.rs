@@ -2,14 +2,20 @@
 pub mod factories_definitions {
     use diesel::SqliteConnection;
 
+    use crate::achievements::models::Achievement;
     use crate::collection::models::Collection;
     use crate::functions::models::Function;
     use crate::game::models::Game;
+    use crate::quests::models::{Quest, Status};
 
     use crate::config::factory::factory_models::{ApiFactory, Factory};
-    use crate::config::faker::faker_definitions::{BoolFaker, Faker, IdFaker, StringFaker};
+    use crate::config::faker::faker_definitions::{
+        BoolFaker, Faker, IdFaker, StringFaker, UUIdFaker,
+    };
     use crate::objects::models::{Area, Object};
+    use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
+    use crate::translations::models::Translations;
     use crate::world::models::World;
 
     pub struct StoryLineFactory;
@@ -21,6 +27,9 @@ pub mod factories_definitions {
     pub struct GameFactory;
     pub struct ObjectFactory;
     pub struct FunctionFactory;
+    pub struct QuestFactory;
+    pub struct AchievementFactory;
+    pub struct StatisticFactory;
 
     impl Factory for StoryLineFactory {
         type Output = Story;
@@ -127,6 +136,67 @@ pub mod factories_definitions {
                 icon: StringFaker.generate().value().to_string(),
                 label: StringFaker.generate().value().to_string(),
                 command: StringFaker.generate().value().to_string(),
+            }
+        }
+    }
+
+    impl Factory for QuestFactory {
+        type Output = Quest;
+
+        fn generate(&self) -> Self::Output {
+            Quest {
+                id: UUIdFaker.generate().value(),
+                name: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                description: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                primary: BoolFaker.generate().value(),
+                status: Status {
+                    owned: false,
+                    completed: false,
+                    failed: false,
+                    abandoned: false,
+                },
+                visible: true,
+                reward: 153,
+            }
+        }
+    }
+
+    impl Factory for AchievementFactory {
+        type Output = Achievement;
+
+        fn generate(&self) -> Self::Output {
+            Achievement {
+                id: UUIdFaker.generate().value(),
+                name: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                description: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                completed: false,
+            }
+        }
+    }
+
+    impl Factory for StatisticFactory {
+        type Output = Statistic;
+
+        fn generate(&self) -> Self::Output {
+            Statistic {
+                id: UUIdFaker.generate().value(),
+                name: Translations {
+                    fr: StringFaker.generate().value(),
+                    en: StringFaker.generate().value(),
+                },
+                value: StringFaker.generate().value(),
             }
         }
     }
