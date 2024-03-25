@@ -7,6 +7,7 @@ pub struct Field {
     primary: bool,
 }
 
+#[allow(dead_code)]
 impl Field {
     pub fn char_field(name: &str, primary: bool) -> Self {
         Field {

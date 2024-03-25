@@ -19,8 +19,8 @@ mod tests {
 
             assert_eq!(result.len(), 25);
 
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game.clone(), connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
 
             assert_eq!(player_quests.len(), 25);
@@ -32,9 +32,9 @@ mod tests {
     fn test_activate_player_quest() {
         allow_db_access(|connection| {
             let quest = QuestFactory.generate();
-            let game = GameFactory.generate(connection);
+            let mut game = GameFactory.generate(connection);
             let _ = Quest::save(quest, connection);
-            let _ = Game::save(game.clone(), connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
             let player_quest = &player_quests[0];
@@ -51,9 +51,9 @@ mod tests {
     fn test_validate_player_quest() {
         allow_db_access(|connection| {
             let quest = QuestFactory.generate();
-            let game = GameFactory.generate(connection);
+            let mut game = GameFactory.generate(connection);
             let _ = Quest::save(quest.clone(), connection);
-            let _ = Game::save(game.clone(), connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_quests = PlayerQuest::load(game.id.clone(), connection).expect("Error");
             let player_quest = &player_quests[0];
@@ -71,9 +71,9 @@ mod tests {
     fn test_edit_player_quest() {
         allow_db_access(|connection| {
             let quest = QuestFactory.generate();
-            let game = GameFactory.generate(connection);
+            let mut game = GameFactory.generate(connection);
             let _ = Quest::save(quest, connection);
-            let _ = Game::save(game.clone(), connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
             let player_quest = &player_quests[0];

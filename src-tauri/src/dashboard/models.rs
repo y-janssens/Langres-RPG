@@ -42,7 +42,6 @@ impl AdminModel for AdminStoryLineModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("name"),
             Field::date_field("created"),
             Field::date_field("modified"),
@@ -61,7 +60,6 @@ impl AdminModel for AdminGameModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("player"),
             Field::text_field("character", false),
             Field::dict_field("last_known_position", false),
@@ -83,7 +81,6 @@ impl AdminModel for AdminCollectionModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::date_field("created"),
             Field::date_field("modified"),
             Field::text_field("map", true),
@@ -103,7 +100,6 @@ impl AdminModel for AdminMapObjectsModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::name_field("name"),
             Field::char_field("value", true),
             Field::dict_field("area", true),
@@ -123,7 +119,6 @@ impl AdminModel for AdminMapFunctionsModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::char_field("icon", true),
             Field::char_field("label", true),
             Field::char_field("command", true),
@@ -142,7 +137,6 @@ impl AdminModel for AdminQuestModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::translatable_field("name", true),
             Field::translatable_field("description", true),
             Field::boolean_field("primary", true),
@@ -164,7 +158,6 @@ impl AdminModel for AdminAchievementModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::translatable_field("name", true),
             Field::translatable_field("description", true),
             Field::boolean_field("completed", true),
@@ -183,7 +176,6 @@ impl AdminModel for AdminStatisticModel {
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::pk_field(),
             Field::translatable_field("name", true),
             Field::char_field("value", true),
             Field::cta_field(),

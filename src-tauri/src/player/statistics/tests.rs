@@ -19,8 +19,8 @@ mod tests {
 
             assert_eq!(result.len(), 25);
 
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game.clone(), connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
             let player_statistics = PlayerStatistic::load(game.id, connection).expect("Error");
 
             assert_eq!(player_statistics.len(), 25);
@@ -31,9 +31,9 @@ mod tests {
     fn test_save_player_statistic() {
         allow_db_access(|connection| {
             let statistic = StatisticFactory.generate();
-            let game = GameFactory.generate(connection);
+            let mut game = GameFactory.generate(connection);
             let _ = Statistic::save(statistic, connection);
-            let _ = Game::save(game.clone(), connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_statistics =
                 PlayerStatistic::load(game.id.clone(), connection).expect("Error");

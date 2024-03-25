@@ -28,7 +28,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const [game, loading] = GameModel.useCommand(
         {
             useLoader: true,
-            id: parseInt(engine.gameId),
+            id: engine.gameId,
             launch: Boolean(engine.gameId || engine.mapId),
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, engine });

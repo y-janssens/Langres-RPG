@@ -1,6 +1,7 @@
 use crate::character::models::Character;
 use crate::config::factory::factory_models::AbstractModel;
 use crate::player::achievements::models::PlayerAchievement;
+use crate::player::journal::models::PlayerJournal;
 use crate::player::quests::models::PlayerQuest;
 use crate::player::statistics::models::PlayerStatistic;
 use crate::schema::games;
@@ -69,8 +70,22 @@ pub struct InsertableGame {
     last_known_position: String,
 }
 
+#[derive(Debug, Clone, Serialize)]
+pub struct GameDatas {
+    pub id: String,
+    pub player: String,
+    pub date_created: String,
+    pub last_save_date: String,
+    pub save_count: i32,
+    pub character: Character,
+    pub storyline: Story,
+    pub visible: bool,
+    pub last_known_position: Position,
+    pub journal: PlayerJournal,
+}
+
 impl Game {
-    pub fn new(name: String, connection: &mut SqliteConnection) -> Game {
+    pub fn new(name: String, connection: &mut SqliteConnection) -> Self {
         println!("Generating game data...");
 
         Game {
@@ -95,40 +110,37 @@ impl Game {
         local.to_string()
     }
 
-    pub fn save(
-        mut game: Game,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        game.save_count += 1;
-        game.last_save_date = Self::get_date();
+    pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+        self.save_count += 1;
+        self.last_save_date = Self::get_date();
 
-        let character_json = serde_json::to_string(&game.character).expect("error");
-        let storyline_json = serde_json::to_string(&game.storyline).expect("error");
+        let character_json = serde_json::to_string(&self.character).expect("error");
+        let storyline_json = serde_json::to_string(&self.storyline).expect("error");
         let last_known_position_json =
-            serde_json::to_string(&game.last_known_position).expect("error");
+            serde_json::to_string(&self.last_known_position).expect("error");
 
         let insertable = InsertableGame {
-            id: game.id.clone(),
-            player: game.player.clone(),
-            date_created: game.date_created.clone(),
-            last_save_date: game.last_save_date.clone(),
-            save_count: game.save_count,
+            id: self.id.clone(),
+            player: self.player.clone(),
+            date_created: self.date_created.clone(),
+            last_save_date: self.last_save_date.clone(),
+            save_count: self.save_count,
             character: character_json,
             storyline: storyline_json,
-            visible: game.visible,
+            visible: self.visible,
             last_known_position: last_known_position_json,
         };
         let exists = games
-            .filter(id.eq(game.clone().id))
+            .filter(id.eq(self.id.clone()))
             .first::<Game>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(games.find(game.clone().id))
+            diesel::update(games.find(self.id.clone()))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
-            Self::generate_player_datas(game.clone().id, connection);
+            Self::generate_player_datas(self, connection);
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;
@@ -137,20 +149,38 @@ impl Game {
         Ok(())
     }
 
-    pub fn compute_character_xp(xp: i32, mut game: Game, connection: &mut SqliteConnection) {
-        game.character.compute_xp(xp as u32);
-        let _ = Game::save(game, connection);
+    pub fn compute_character_xp(&mut self, xp: i32, connection: &mut SqliteConnection) {
+        self.character.compute_xp(xp as u32);
+        let _ = Self::save(self, connection);
     }
 
-    pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Game> {
-        let mut _load: Game = games.find(_id).first(connection)?;
-        for act in &mut _load.storyline.story.acts {
+    pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<Self> {
+        let game: Self = games.find(_id).first(connection)?;
+        Ok(game)
+    }
+
+    pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<GameDatas> {
+        let mut game: Self = games.find(_id).first(connection)?;
+        for act in &mut game.storyline.story.acts {
             act.validate_acts();
         }
-        Ok(_load)
+        let datas = GameDatas {
+            id: game.id.clone(),
+            player: game.player,
+            date_created: game.date_created,
+            last_save_date: game.last_save_date,
+            save_count: game.save_count,
+            character: game.character,
+            storyline: game.storyline,
+            visible: game.visible,
+            last_known_position: game.last_known_position,
+            journal: PlayerJournal::load(game.id, connection)
+                .expect("Failed to fetch player journal"),
+        };
+        Ok(datas)
     }
 
-    pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Game>> {
+    pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::games::table.load(connection)?;
         Ok(_load)
     }
@@ -160,9 +190,9 @@ impl Game {
         Ok(())
     }
 
-    pub fn generate_player_datas(game_id: String, connection: &mut SqliteConnection) {
-        PlayerQuest::generate(game_id.clone(), connection);
-        PlayerAchievement::generate(game_id.clone(), connection);
-        PlayerStatistic::generate(game_id, connection);
+    pub fn generate_player_datas(&self, connection: &mut SqliteConnection) {
+        PlayerQuest::generate(self.id.clone(), connection);
+        PlayerAchievement::generate(self.id.clone(), connection);
+        PlayerStatistic::generate(self.id.clone(), connection);
     }
 }

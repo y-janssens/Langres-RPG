@@ -19,8 +19,8 @@ mod tests {
 
             assert_eq!(result.len(), 25);
 
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game.clone(), connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
             let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
 
             assert_eq!(player_achievements.len(), 25);
@@ -32,9 +32,9 @@ mod tests {
     fn test_activate_player_achievement() {
         allow_db_access(|connection| {
             let achievement = AchievementFactory.generate();
-            let game = GameFactory.generate(connection);
+            let mut game = GameFactory.generate(connection);
             let _ = Achievement::save(achievement, connection);
-            let _ = Game::save(game.clone(), connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
             let player_achievement = &player_achievements[0];

@@ -23,8 +23,8 @@ mod tests {
                 let _ = Statistic::save(statistic, connection);
             }
 
-            let game = GameFactory.generate(connection);
-            let _ = Game::save(game.clone(), connection);
+            let mut game = GameFactory.generate(connection);
+            let _ = Game::save(&mut game, connection);
 
             let player_journal = PlayerJournal::load(game.id, connection).expect("Error");
 

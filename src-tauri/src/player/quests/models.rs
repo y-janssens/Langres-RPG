@@ -137,9 +137,9 @@ impl PlayerQuest {
     }
 
     pub fn validate(mut quest: PlayerQuest, xp: i32, connection: &mut SqliteConnection) {
-        let player_game = Game::load(quest.clone().game_id, connection)
+        let mut player_game = Game::get(quest.clone().game_id, connection)
             .unwrap_or_else(|_| panic!("Failed to load game {}", quest.clone().game_id));
-        Game::compute_character_xp(xp, player_game, connection);
+        Game::compute_character_xp(&mut player_game, xp, connection);
         quest.status.completed = true;
         let _ = PlayerQuest::save(quest, connection);
     }
