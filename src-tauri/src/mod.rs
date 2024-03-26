@@ -5,6 +5,7 @@ pub mod collection;
 pub mod dashboard;
 pub mod functions;
 pub mod games;
+pub mod loot;
 pub mod maps;
 pub mod objects;
 pub mod player;

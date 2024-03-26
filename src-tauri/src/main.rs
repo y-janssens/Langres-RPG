@@ -13,6 +13,7 @@ mod config;
 mod dashboard;
 mod functions;
 mod game;
+mod loot;
 mod maps;
 mod objects;
 mod player;
@@ -65,6 +66,14 @@ fn main() {
             game::commands::delete_game,
             // Map generator commands
             maps::commands::generate_maps_batch,
+            // Loot commands
+            loot::commands::new_armor,
+            loot::commands::new_weapon,
+            loot::commands::new_thrash,
+            loot::commands::new_craftable,
+            loot::commands::load_loots,
+            loot::commands::save_loot,
+            loot::commands::delete_loot,
             // Objects commands
             objects::commands::new_object,
             objects::commands::load_objects,

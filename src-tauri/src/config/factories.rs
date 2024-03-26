@@ -1,16 +1,19 @@
 #[allow(dead_code)]
 pub mod factories_definitions {
     use diesel::SqliteConnection;
+    use rand::seq::IteratorRandom;
+    use rand::thread_rng;
 
     use crate::achievements::models::Achievement;
     use crate::collection::models::Collection;
     use crate::functions::models::Function;
     use crate::game::models::Game;
+    use crate::loot::models::{BaseEquipment, BaseItem, BaseWeapon, ItemTypes, Loot};
     use crate::quests::models::{Quest, Status};
 
     use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::config::faker::faker_definitions::{
-        BoolFaker, Faker, IdFaker, StringFaker, UUIdFaker,
+        BoolFaker, Faker, FloatFaker, IdFaker, IntFaker, StringFaker, UUIdFaker,
     };
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
@@ -30,6 +33,8 @@ pub mod factories_definitions {
     pub struct QuestFactory;
     pub struct AchievementFactory;
     pub struct StatisticFactory;
+    pub struct LootFactory;
+    pub struct ItemFactory;
 
     impl Factory for StoryLineFactory {
         type Output = Story;
@@ -197,6 +202,58 @@ pub mod factories_definitions {
                     en: StringFaker.generate().value(),
                 },
                 value: StringFaker.generate().value(),
+            }
+        }
+    }
+
+    impl Factory for ItemFactory {
+        type Output = ItemTypes;
+
+        fn generate(&self) -> Self::Output {
+            let mut rng = thread_rng();
+            let types = vec!["weapon", "armor", "craftable", "thrash"];
+
+            let name = StringFaker.generate().value();
+            let kind = *types.iter().choose(&mut rng).unwrap();
+            let armor = IntFaker.generate().value() as u32;
+            let damage = IntFaker.generate().value() as u32;
+            let parade = IntFaker.generate().value() as u32;
+            let price = IntFaker.generate().value() as u32;
+            let weight = FloatFaker.generate().value();
+
+            let item = match kind {
+                "weapon" => ItemTypes::Weapon(BaseWeapon {
+                    name,
+                    damage,
+                    parade,
+                    price,
+                    weight,
+                }),
+                "armor" => ItemTypes::Equipment(BaseEquipment {
+                    name,
+                    armor,
+                    parade,
+                    price,
+                    weight,
+                }),
+                "craftable" | "thrash" => ItemTypes::Craftable(BaseItem {
+                    name,
+                    price,
+                    weight,
+                }),
+                _ => panic!("Unknown item kind: {}", kind),
+            };
+            item
+        }
+    }
+
+    impl Factory for LootFactory {
+        type Output = Loot;
+
+        fn generate(&self) -> Self::Output {
+            Loot {
+                id: UUIdFaker.generate().value(),
+                item: ItemFactory.generate(),
             }
         }
     }

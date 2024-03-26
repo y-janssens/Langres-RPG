@@ -33,6 +33,13 @@ diesel::table! {
 }
 
 diesel::table! {
+    loot (id) {
+        id -> Text,
+        item -> Text,
+    }
+}
+
+diesel::table! {
     maps (id) {
         id -> Integer,
         map -> Text,
@@ -132,6 +139,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     achievements,
     functions,
     games,
+    loot,
     maps,
     objects,
     playerachievements,
