@@ -2,9 +2,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api';
 
 export default class Fetcher {
-    constructor(model) {
-        this.model = model;
-    }
 
     static resolveLauncher(params) {
         if (!('launch' in params)) {
@@ -69,7 +66,7 @@ export default class Fetcher {
         return [data, loading, fetch];
     }
 
-    async new() { 
+    async new() {
         await invoke(`new_${this.model}`);
     }
 

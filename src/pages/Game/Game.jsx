@@ -32,6 +32,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             launch: Boolean(engine.gameId || engine.mapId),
             onSuccess: (response) => {
                 let game = new GameModel({ ...response, engine });
+                console.log(game);
                 const currentWorld = game.current_world;
                 engine.controls.currentTile = game.current_tile;
 

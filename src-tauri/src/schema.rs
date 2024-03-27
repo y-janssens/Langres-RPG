@@ -35,6 +35,7 @@ diesel::table! {
 diesel::table! {
     loot (id) {
         id -> Text,
+        item_type -> Text,
         item -> Text,
     }
 }

@@ -13,23 +13,8 @@ pub fn load_loots(
 }
 
 #[tauri::command]
-pub fn new_armor() -> Loot {
-    Loot::new("armor")
-}
-
-#[tauri::command]
-pub fn new_weapon() -> Loot {
-    Loot::new("weapon")
-}
-
-#[tauri::command]
-pub fn new_thrash() -> Loot {
-    Loot::new("thrash")
-}
-
-#[tauri::command]
-pub fn new_craftable() -> Loot {
-    Loot::new("craftable")
+pub fn new_loot(kind: &str) -> Loot {
+    Loot::new(kind)
 }
 
 #[tauri::command]

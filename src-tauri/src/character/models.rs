@@ -5,6 +5,8 @@ use diesel::{
     sqlite::{Sqlite, SqliteValue},
 };
 use serde::{Deserialize, Serialize};
+
+use crate::loot::{models::Loot, table::base::*};
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Character {
     pub name: String,
@@ -85,30 +87,64 @@ impl Character {
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Inventory {
-    right_hand: String,
-    left_hand: String,
-    head: String,
-    torso: String,
-    legs: String,
-    objects: Vec<String>,
+    pub right_hand: Option<Loot>,
+    pub left_hand: Option<Loot>,
+    pub head: Option<Loot>,
+    pub torso: Option<Loot>,
+    pub legs: Option<Loot>,
+    pub gold: u32,
+    pub objects: Vec<Loot>,
 }
 
 impl Inventory {
     pub fn new() -> Inventory {
         println!("Generating inventory...");
+
         Inventory {
-            right_hand: String::from("Sword"),
-            left_hand: String::from("Shield"),
-            head: String::from("Helmet"),
-            torso: String::from("Armor"),
-            legs: String::from("Legs"),
-            objects: Vec::new(),
+            right_hand: Some(BASE_WEAPON.clone()),
+            left_hand: Some(BASE_SHIELD.clone()),
+            head: Some(BASE_HELMET.clone()),
+            torso: Some(BASE_ARMOR.clone()),
+            legs: Some(BASE_LEGS.clone()),
+            gold: BASE_GOLD.clone().item.value(),
+            objects: vec![],
         }
     }
 
-    // pub fn add_objects(&mut self, items: Vec<String>) {
-    //     for item in items {
-    //         self.objects.push(item)
-    //     }
-    // }
+    pub fn add_gold(&mut self, loot: Loot) {
+        if loot.item_type == "gold" {
+            self.gold += loot.item.value();
+        }
+    }
+
+    pub fn remove_gold(&mut self, value: i32) {
+        self.gold = std::cmp::max(0, self.gold as i32 - value) as u32;
+    }
+
+    pub fn add_objects(&mut self, items: Vec<Loot>) {
+        for item in items {
+            self.objects.push(item)
+        }
+    }
+
+    pub fn remove_object(&mut self, id: String) {
+        println!("Before removal, objects count: {}", self.objects.len());
+
+        // Debugging: Print IDs that are about to be filtered out
+        self.objects
+            .iter()
+            .filter(|item| item.id == id)
+            .for_each(|item| println!("Removing object with id: {}", item.id));
+
+        let objects: Vec<Loot> = self
+            .objects
+            .iter()
+            .filter(|item| item.id != id)
+            .cloned()
+            .collect();
+
+        self.objects = objects;
+
+        println!("After removal, objects count: {}", self.objects.len());
+    }
 }

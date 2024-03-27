@@ -2,7 +2,6 @@
 pub mod factories_definitions {
     use diesel::SqliteConnection;
     use rand::seq::IteratorRandom;
-    use rand::thread_rng;
 
     use crate::achievements::models::Achievement;
     use crate::collection::models::Collection;
@@ -11,7 +10,7 @@ pub mod factories_definitions {
     use crate::loot::models::{BaseEquipment, BaseItem, BaseWeapon, ItemTypes, Loot};
     use crate::quests::models::{Quest, Status};
 
-    use crate::config::factory::factory_models::{ApiFactory, Factory};
+    use crate::config::factory::factory_models::{ApiFactory, Factory, NamedFactory};
     use crate::config::faker::faker_definitions::{
         BoolFaker, Faker, FloatFaker, IdFaker, IntFaker, StringFaker, UUIdFaker,
     };
@@ -206,44 +205,55 @@ pub mod factories_definitions {
         }
     }
 
-    impl Factory for ItemFactory {
+    impl NamedFactory for ItemFactory {
         type Output = ItemTypes;
 
-        fn generate(&self) -> Self::Output {
-            let mut rng = thread_rng();
-            let types = vec!["weapon", "armor", "craftable", "thrash"];
-
-            let name = StringFaker.generate().value();
-            let kind = *types.iter().choose(&mut rng).unwrap();
+        fn generate(&self, _item: &str) -> Self::Output {
+            let name = Translations {
+                fr: StringFaker.generate().value(),
+                en: StringFaker.generate().value(),
+            };
+            let description = Translations {
+                fr: StringFaker.generate().value(),
+                en: StringFaker.generate().value(),
+            };
             let armor = IntFaker.generate().value() as u32;
             let damage = IntFaker.generate().value() as u32;
             let parade = IntFaker.generate().value() as u32;
             let price = IntFaker.generate().value() as u32;
             let weight = FloatFaker.generate().value();
 
-            let item = match kind {
+            match _item {
                 "weapon" => ItemTypes::Weapon(BaseWeapon {
                     name,
+                    description,
                     damage,
                     parade,
                     price,
                     weight,
                 }),
-                "armor" => ItemTypes::Equipment(BaseEquipment {
+                "equipment" => ItemTypes::Equipment(BaseEquipment {
                     name,
+                    description,
                     armor,
                     parade,
                     price,
                     weight,
                 }),
-                "craftable" | "thrash" => ItemTypes::Craftable(BaseItem {
+                "craftable" => ItemTypes::Craftable(BaseItem {
                     name,
+                    description,
                     price,
                     weight,
                 }),
-                _ => panic!("Unknown item kind: {}", kind),
-            };
-            item
+                "thrash" => ItemTypes::Thrash(BaseItem {
+                    name,
+                    description,
+                    price,
+                    weight,
+                }),
+                _ => panic!("Unknown item kind: {}", _item),
+            }
         }
     }
 
@@ -251,9 +261,13 @@ pub mod factories_definitions {
         type Output = Loot;
 
         fn generate(&self) -> Self::Output {
+            let mut rng = rand::thread_rng();
+            let types = ["weapon", "equipment", "craftable", "thrash"];
+            let item = types.iter().choose(&mut rng).unwrap().to_string();
             Loot {
                 id: UUIdFaker.generate().value(),
-                item: ItemFactory.generate(),
+                item_type: item.clone(),
+                item: ItemFactory.generate(&item),
             }
         }
     }

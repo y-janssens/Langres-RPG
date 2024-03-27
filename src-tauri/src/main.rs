@@ -48,6 +48,10 @@ fn main() {
             config::commands::load_permissions,
             // Character commands
             character::commands::compute_xp,
+            character::commands::add_gold,
+            character::commands::remove_gold,
+            character::commands::add_objects,
+            character::commands::remove_object,
             // Collections
             collection::commands::new_collection,
             collection::commands::load_collections,
@@ -67,13 +71,11 @@ fn main() {
             // Map generator commands
             maps::commands::generate_maps_batch,
             // Loot commands
-            loot::commands::new_armor,
-            loot::commands::new_weapon,
-            loot::commands::new_thrash,
-            loot::commands::new_craftable,
+            loot::commands::new_loot,
             loot::commands::load_loots,
             loot::commands::save_loot,
             loot::commands::delete_loot,
+            loot::table::commands::generate_loot_table,
             // Objects commands
             objects::commands::new_object,
             objects::commands::load_objects,

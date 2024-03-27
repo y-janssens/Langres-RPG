@@ -1,4 +1,5 @@
 use crate::schema::loot::dsl::*;
+use crate::translations::models::Translations;
 use crate::{config::factory::factory_models::AbstractModel, schema::loot};
 use diesel::{
     deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, RunQueryDsl,
@@ -12,14 +13,16 @@ impl AbstractModel for ItemTypes {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct BaseItem {
-    pub name: String,
+    pub name: Translations,
+    pub description: Translations,
     pub price: u32,
     pub weight: f32,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct BaseWeapon {
-    pub name: String,
+    pub name: Translations,
+    pub description: Translations,
     pub damage: u32,
     pub parade: u32,
     pub price: u32,
@@ -28,7 +31,8 @@ pub struct BaseWeapon {
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct BaseEquipment {
-    pub name: String,
+    pub name: Translations,
+    pub description: Translations,
     pub armor: u32,
     pub parade: u32,
     pub price: u32,
@@ -37,11 +41,11 @@ pub struct BaseEquipment {
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum ItemTypes {
-    Gold(u32, BaseItem),
-    Thrash(BaseItem),
+    Gold(u32),
     Weapon(BaseWeapon),
     Equipment(BaseEquipment),
     Craftable(BaseItem),
+    Thrash(BaseItem),
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq)]
@@ -49,6 +53,7 @@ pub enum ItemTypes {
 #[diesel(check_for_backend(Sqlite))]
 pub struct Loot {
     pub id: String,
+    pub item_type: String,
     pub item: ItemTypes,
 }
 
@@ -57,6 +62,7 @@ pub struct Loot {
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableLoot {
     pub id: String,
+    pub item_type: String,
     pub item: String,
 }
 
@@ -72,23 +78,33 @@ impl Loot {
     pub fn new(kind: &str) -> Self {
         Loot {
             id: Uuid::new_v4().to_string(),
+            item_type: String::from(""),
             item: match kind {
                 "weapon" => ItemTypes::Weapon(BaseWeapon {
-                    name: String::from(""),
+                    name: Translations::default(),
+                    description: Translations::default(),
                     damage: 14,
                     parade: 10,
                     price: 1,
                     weight: 1.0,
                 }),
                 "armor" => ItemTypes::Equipment(BaseEquipment {
-                    name: String::from(""),
+                    name: Translations::default(),
+                    description: Translations::default(),
                     armor: 14,
                     parade: 10,
                     price: 1,
                     weight: 1.0,
                 }),
-                "craftable" | "thrash" => ItemTypes::Craftable(BaseItem {
-                    name: String::from(""),
+                "craftable" => ItemTypes::Craftable(BaseItem {
+                    name: Translations::default(),
+                    description: Translations::default(),
+                    price: 1,
+                    weight: 1.0,
+                }),
+                "thrash" => ItemTypes::Thrash(BaseItem {
+                    name: Translations::default(),
+                    description: Translations::default(),
                     price: 1,
                     weight: 1.0,
                 }),
@@ -110,6 +126,7 @@ impl Loot {
 
         let insertable = InsertableLoot {
             id: Uuid::new_v4().to_string(),
+            item_type: _item.item_type.clone(),
             item: item_json,
         };
 
@@ -134,5 +151,15 @@ impl Loot {
     pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(loot.filter(id.eq(_id))).execute(connection)?;
         Ok(())
+    }
+}
+
+impl ItemTypes {
+    pub fn value(self) -> u32 {
+        if let ItemTypes::Gold(amount) = self {
+            amount
+        } else {
+            panic!("Called unwrap_gold on a non-Gold item");
+        }
     }
 }
