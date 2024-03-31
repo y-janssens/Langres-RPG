@@ -27,7 +27,7 @@ pub struct Conf {
 lazy_static! {
 
     // Config definition
-    static ref BASE_RANGES: Vec<i32> = vec![10, 3, 3, 3, 2];
+    static ref BASE_RANGES: Vec<i32> = vec![10, 10, 10, 3, 3];
     static ref TABLE_CONFIG: Conf = Conf::get_config();
 
 }

@@ -26,7 +26,7 @@ lazy_static! {
         damage: Some(14),
         parade: Some(14),
         price: Some(14),
-        weight: Some(4.0)
+        weight: Some(4)
     };
     pub static ref BASE_SHIELD: Loot = Loot {
         id: Uuid::new_v4().to_string(),
@@ -37,7 +37,7 @@ lazy_static! {
         damage: Some(2),
         parade: Some(14),
         price: Some(16),
-        weight: Some(5.0)
+        weight: Some(5)
     };
     pub static ref BASE_HELMET: Loot = Loot {
         id: Uuid::new_v4().to_string(),
@@ -48,7 +48,7 @@ lazy_static! {
         damage: None,
         parade: Some(10),
         price: Some(12),
-        weight: Some(2.0)
+        weight: Some(2)
     };
     pub static ref BASE_ARMOR: Loot = Loot {
         id: Uuid::new_v4().to_string(),
@@ -59,7 +59,7 @@ lazy_static! {
         damage: None,
         parade: Some(10),
         price: Some(12),
-        weight: Some(2.0)
+        weight: Some(2)
     };
     pub static ref BASE_LEGS: Loot = Loot {
         id: Uuid::new_v4().to_string(),
@@ -70,6 +70,6 @@ lazy_static! {
         damage: None,
         parade: Some(10),
         price: Some(12),
-        weight: Some(2.0)
+        weight: Some(2)
     };
 }

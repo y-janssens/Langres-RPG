@@ -19,4 +19,4 @@ export { default as Permissions } from './permissions';
 export { default as Quest } from './quests';
 export { default as Achievement } from './achievements';
 export { default as Statistic } from './statistics';
-export { default as Loot } from './loot';
+export { default as Loot, LootTable } from './loot';

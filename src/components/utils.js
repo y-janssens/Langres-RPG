@@ -62,3 +62,21 @@ const stringify = (value) => {
         .replace(/(:)(\d+)/g, ': $2')
         .replace(/,/g, ', ');
 };
+
+export const resolveOptions = (options, name = null, id = null) => {
+    const _name = name || 'name';
+    const _id = id || 'id';
+
+    if (!options || !options.length) {
+        return [];
+    }
+    if (!Array.isArray(options)) {
+        options = [options];
+    }
+    return options.map((it, index) => {
+        if (isObject(it)) {
+            return { key: index, text: it[_name], value: it[_id] };
+        }
+        return { key: index, text: it, value: it };
+    });
+};

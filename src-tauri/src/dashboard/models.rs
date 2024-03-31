@@ -195,14 +195,13 @@ impl AdminModel for AdminLootModel {
         "loot"
     }
     fn options(&self) -> Vec<&'static str> {
-        vec!["weapon", "equipment", "craftable", "thrash"]
+        vec!["Weapon", "Equipment", "Craftable", "Thrash"]
     }
     fn fields(&self) -> Vec<Field> {
         vec![
-            Field::choice_field(false),
             Field::translatable_field("name", true),
             Field::translatable_field("description", false),
-            Field::char_field("item_type", true),
+            Field::choice_field("item_type", true),
             Field::number_field("armor", false),
             Field::number_field("damage", false),
             Field::number_field("parade", false),

@@ -8,5 +8,5 @@ create table loot (
     damage INTEGER,
     parade INTEGER,
     price INTEGER,
-    "weight" FLOAT
+    "weight" INTEGER
 )

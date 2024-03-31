@@ -10,7 +10,7 @@ use uuid::Uuid;
 
 impl AbstractModel for Loot {}
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
 pub enum ItemTypes {
     Gold,
     Weapon,
@@ -19,7 +19,7 @@ pub enum ItemTypes {
     Thrash,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq, Eq, Hash)]
 #[diesel(table_name = crate::schema::loot)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Loot {
@@ -31,10 +31,22 @@ pub struct Loot {
     pub damage: Option<i32>,
     pub parade: Option<i32>,
     pub price: Option<i32>,
-    pub weight: Option<f32>,
+    pub weight: Option<i32>,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
+#[derive(
+    Debug,
+    Serialize,
+    Deserialize,
+    Clone,
+    Queryable,
+    Selectable,
+    Insertable,
+    AsChangeset,
+    PartialEq,
+    Eq,
+    Hash,
+)]
 #[diesel(table_name = crate::schema::loot)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableLoot {
@@ -46,7 +58,7 @@ pub struct InsertableLoot {
     pub damage: Option<i32>,
     pub parade: Option<i32>,
     pub price: Option<i32>,
-    pub weight: Option<f32>,
+    pub weight: Option<i32>,
 }
 
 impl Queryable<Text, Sqlite> for ItemTypes {
@@ -81,7 +93,7 @@ impl Loot {
                 None
             },
             price: Some(1),
-            weight: Some(1.0),
+            weight: Some(1),
         }
     }
 

@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 use crate::{
     loot::models::{ItemTypes, Loot},
     translations::models::Translations,
@@ -57,7 +59,9 @@ impl TableLoot {
                 }
             }
         }
-        table
+        let set_loot: HashSet<Loot> = table.clone().into_iter().collect();
+        set_loot.into_iter().collect()
+        // table
     }
 
     fn resolve_named_table(name: &str, mut table: Vec<Loot>) -> Vec<Loot> {

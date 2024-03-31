@@ -35,7 +35,7 @@ lazy_static! {
                         damage: Some(14),
                         parade: Some(14),
                         price: Some(14),
-                        weight: Some(4.0)
+                        weight: Some(4)
                     },
                 ],
             },

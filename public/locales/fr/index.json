@@ -89,6 +89,7 @@
       "reset": "Réinitialiser",
       "save": "Enregistrer",
       "search": "Rechercher",
+      "select": "Sélectionner",
       "start": "Commencer"
     },
     "date": "Date",
@@ -103,26 +104,32 @@
       "fields": {
         "actions": "Actions",
         "area": "Zone",
+        "armor": "Armure",
         "character": "Personnage",
         "command": "Commande",
         "created": "Créé",
+        "damage": "Dégâts",
         "date_created": "Créé",
         "description": "Description",
         "icon": "Icône",
         "id": "Id",
+        "item_type": "Type",
         "label": "Label",
         "last_known_position": "Dernière position",
         "last_save_date": "Modifié",
         "map": "Carte",
         "modified": "Modifié",
         "name": "Nom",
+        "parade": "Parade",
         "player": "Nom",
+        "price": "Prix",
         "primary": "Principal",
         "reward": "Récompense",
         "status": "Statut",
         "value": "Valeur",
         "visible": "Visible",
-        "walkable": "Accessible"
+        "walkable": "Accessible",
+        "weight": "Poids"
       }
     },
     "modal": {
@@ -130,6 +137,7 @@
       "collection": "Nouvelle Collection",
       "function": "Nouvelle Fonction",
       "game": "Nouvelle Partie",
+      "loot": "Nouveau butin",
       "object": "Nouvel Objet",
       "quest": "Nouvelle Quête",
       "statistic": "Nouvelle Statistique",
@@ -140,6 +148,7 @@
       "collection": "Collections",
       "function": "Fonctions",
       "game": "Parties",
+      "loot": "Butins",
       "object": "Objets",
       "quest": "Quêtes",
       "statistic": "Statistiques",
@@ -150,6 +159,7 @@
       "collection": "une collection",
       "function": "une fonction",
       "game": "une partie",
+      "loot": "un objet",
       "object": "un objet",
       "quest": "une quête",
       "statistic": "une statistique",
@@ -185,6 +195,12 @@
         "last_save_date": "Modifié",
         "player": "Nom",
         "visible": "Visible"
+      },
+      "loot": {
+        "actions": "Actions",
+        "id": "Id",
+        "item_type": "Type",
+        "name": "Nom"
       },
       "object": {
         "actions": "Actions",

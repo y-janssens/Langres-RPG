@@ -42,7 +42,7 @@ diesel::table! {
         damage -> Nullable<Integer>,
         parade -> Nullable<Integer>,
         price -> Nullable<Integer>,
-        weight -> Nullable<Float>,
+        weight -> Nullable<Integer>,
     }
 }
 

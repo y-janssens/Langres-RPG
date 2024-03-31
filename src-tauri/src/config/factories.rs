@@ -11,9 +11,7 @@ pub mod factories_definitions {
     use crate::quests::models::{Quest, Status};
 
     use crate::config::factory::factory_models::{ApiFactory, Factory};
-    use crate::config::faker::faker_definitions::{
-        BoolFaker, Faker, FloatFaker, IdFaker, IntFaker, StringFaker, UUIdFaker,
-    };
+    use crate::config::faker::faker_definitions::*;
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
@@ -227,7 +225,7 @@ pub mod factories_definitions {
                 damage: Some(IntFaker.generate().value()),
                 parade: Some(IntFaker.generate().value()),
                 price: Some(IntFaker.generate().value()),
-                weight: Some(FloatFaker.generate().value()),
+                weight: Some(IntFaker.generate().value()),
             }
         }
     }

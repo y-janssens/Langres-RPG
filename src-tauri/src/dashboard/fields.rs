@@ -81,9 +81,9 @@ impl Field {
         }
     }
 
-    pub fn choice_field(primary: bool) -> Self {
+    pub fn choice_field(name: &str, primary: bool) -> Self {
         Field {
-            name: "options".into(),
+            name: String::from(name),
             field: "choice_field".into(),
             primary,
         }
