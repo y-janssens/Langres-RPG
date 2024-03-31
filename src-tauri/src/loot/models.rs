@@ -9,43 +9,14 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 impl AbstractModel for Loot {}
-impl AbstractModel for ItemTypes {}
-
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
-pub struct BaseItem {
-    pub name: Translations,
-    pub description: Translations,
-    pub price: u32,
-    pub weight: f32,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
-pub struct BaseWeapon {
-    pub name: Translations,
-    pub description: Translations,
-    pub damage: u32,
-    pub parade: u32,
-    pub price: u32,
-    pub weight: f32,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
-pub struct BaseEquipment {
-    pub name: Translations,
-    pub description: Translations,
-    pub armor: u32,
-    pub parade: u32,
-    pub price: u32,
-    pub weight: f32,
-}
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum ItemTypes {
-    Gold(u32),
-    Weapon(BaseWeapon),
-    Equipment(BaseEquipment),
-    Craftable(BaseItem),
-    Thrash(BaseItem),
+    Gold,
+    Weapon,
+    Equipment,
+    Craftable,
+    Thrash,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq)]
@@ -53,8 +24,14 @@ pub enum ItemTypes {
 #[diesel(check_for_backend(Sqlite))]
 pub struct Loot {
     pub id: String,
-    pub item_type: String,
-    pub item: ItemTypes,
+    pub item_type: ItemTypes,
+    pub name: Translations,
+    pub description: Translations,
+    pub armor: Option<i32>,
+    pub damage: Option<i32>,
+    pub parade: Option<i32>,
+    pub price: Option<i32>,
+    pub weight: Option<f32>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -63,7 +40,13 @@ pub struct Loot {
 pub struct InsertableLoot {
     pub id: String,
     pub item_type: String,
-    pub item: String,
+    pub name: String,
+    pub description: String,
+    pub armor: Option<i32>,
+    pub damage: Option<i32>,
+    pub parade: Option<i32>,
+    pub price: Option<i32>,
+    pub weight: Option<f32>,
 }
 
 impl Queryable<Text, Sqlite> for ItemTypes {
@@ -75,41 +58,30 @@ impl Queryable<Text, Sqlite> for ItemTypes {
 }
 
 impl Loot {
-    pub fn new(kind: &str) -> Self {
+    pub fn new(kind: &str) -> Loot {
+        let _type = ItemTypes::resolve(kind);
         Loot {
             id: Uuid::new_v4().to_string(),
-            item_type: String::from(""),
-            item: match kind {
-                "weapon" => ItemTypes::Weapon(BaseWeapon {
-                    name: Translations::default(),
-                    description: Translations::default(),
-                    damage: 14,
-                    parade: 10,
-                    price: 1,
-                    weight: 1.0,
-                }),
-                "armor" => ItemTypes::Equipment(BaseEquipment {
-                    name: Translations::default(),
-                    description: Translations::default(),
-                    armor: 14,
-                    parade: 10,
-                    price: 1,
-                    weight: 1.0,
-                }),
-                "craftable" => ItemTypes::Craftable(BaseItem {
-                    name: Translations::default(),
-                    description: Translations::default(),
-                    price: 1,
-                    weight: 1.0,
-                }),
-                "thrash" => ItemTypes::Thrash(BaseItem {
-                    name: Translations::default(),
-                    description: Translations::default(),
-                    price: 1,
-                    weight: 1.0,
-                }),
-                _ => panic!("Unknown item kind: {}", kind),
+            item_type: _type.clone(),
+            name: Translations::default(),
+            description: Translations::default(),
+            armor: if _type == ItemTypes::Equipment {
+                Some(10)
+            } else {
+                None
             },
+            damage: if _type == ItemTypes::Weapon {
+                Some(14)
+            } else {
+                None
+            },
+            parade: if _type == ItemTypes::Equipment || _type == ItemTypes::Weapon {
+                Some(10)
+            } else {
+                None
+            },
+            price: Some(1),
+            weight: Some(1.0),
         }
     }
 
@@ -122,12 +94,20 @@ impl Loot {
         _item: Loot,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let item_json = serde_json::to_string(&_item.item).expect("error");
+        let item_type_json = serde_json::to_string(&_item.item_type).expect("error");
+        let name_json = serde_json::to_string(&_item.name).expect("error");
+        let description_json = serde_json::to_string(&_item.description).expect("error");
 
         let insertable = InsertableLoot {
             id: Uuid::new_v4().to_string(),
-            item_type: _item.item_type.clone(),
-            item: item_json,
+            item_type: item_type_json,
+            name: name_json,
+            description: description_json,
+            armor: _item.armor,
+            damage: _item.damage,
+            parade: _item.parade,
+            price: _item.price,
+            weight: _item.weight,
         };
 
         let exists = loot
@@ -155,11 +135,14 @@ impl Loot {
 }
 
 impl ItemTypes {
-    pub fn value(self) -> u32 {
-        if let ItemTypes::Gold(amount) = self {
-            amount
-        } else {
-            panic!("Called unwrap_gold on a non-Gold item");
+    pub fn resolve(kind: &str) -> ItemTypes {
+        match kind {
+            "weapon" => ItemTypes::Weapon,
+            "armor" => ItemTypes::Equipment,
+            "craftable" => ItemTypes::Craftable,
+            "thrash" => ItemTypes::Thrash,
+            "gold" => ItemTypes::Gold,
+            _ => ItemTypes::Weapon,
         }
     }
 }

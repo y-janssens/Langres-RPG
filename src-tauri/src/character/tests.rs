@@ -8,10 +8,7 @@ mod tests {
             factory::factory_models::{ApiFactory, Factory},
         },
         game::models::{Game, Position},
-        loot::{
-            models::{ItemTypes, Loot},
-            table::base::*,
-        },
+        loot::table::base::*,
     };
 
     #[test]
@@ -35,11 +32,7 @@ mod tests {
     fn test_inventory_add_gold() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let gold = Loot {
-                id: "test".to_string(),
-                item_type: "gold".to_string(),
-                item: ItemTypes::Gold(13),
-            };
+            let gold = BASE_GOLD.clone();
 
             game.character.inventory.add_gold(gold);
 
@@ -47,7 +40,7 @@ mod tests {
 
             let patched_game = Game::load(game.id, connection).unwrap();
 
-            assert_eq!(patched_game.character.inventory.gold, 23);
+            assert_eq!(patched_game.character.inventory.gold, 20);
         });
     }
 
@@ -131,7 +124,7 @@ mod tests {
                         head: Some(BASE_HELMET.clone()),
                         torso: Some(BASE_ARMOR.clone()),
                         legs: Some(BASE_LEGS.clone()),
-                        gold: BASE_GOLD.clone().item.value(),
+                        gold: BASE_GOLD.clone().price.unwrap() as u32,
                         objects: items.clone(),
                     },
                 },

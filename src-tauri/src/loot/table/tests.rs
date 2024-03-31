@@ -15,18 +15,7 @@ mod tests {
                 let _ = Loot::save(loot, connection);
             }
             let table = TableLoot::generate(None, connection);
-            let expected_types = vec![
-                "gold".to_string(),
-                "weapon".to_string(),
-                "equipment".to_string(),
-                "craftable".to_string(),
-                "thrash".to_string(),
-            ];
             assert!(table.len() <= 5);
-
-            for item in table.clone() {
-                assert!(expected_types.contains(&item.item_type))
-            }
         });
     }
 

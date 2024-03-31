@@ -1,4 +1,7 @@
-use crate::loot::models::{ItemTypes, Loot};
+use crate::{
+    loot::models::{ItemTypes, Loot},
+    translations::models::Translations,
+};
 use diesel::SqliteConnection;
 use rand::{seq::IteratorRandom, thread_rng};
 use serde::{Deserialize, Serialize};
@@ -6,7 +9,7 @@ use uuid::Uuid;
 
 use super::{config::Conf, definitions::NAMED_TABLES};
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct TableLoot {
     pub items: Vec<Loot>,
 }
@@ -72,8 +75,14 @@ impl TableLoot {
         if gold > 0 {
             Some(Loot {
                 id: Uuid::new_v4().to_string(),
-                item_type: String::from("gold"),
-                item: ItemTypes::Gold(gold),
+                item_type: ItemTypes::Gold,
+                name: Translations::blank(),
+                description: Translations::blank(),
+                armor: None,
+                damage: None,
+                parade: None,
+                price: Some(gold as i32),
+                weight: None,
             })
         } else {
             None
@@ -82,7 +91,10 @@ impl TableLoot {
 
     fn resolve_item(kind: &str, table: &[Loot]) -> Option<Loot> {
         let mut rng = thread_rng();
-        let items: Vec<&Loot> = table.iter().filter(|item| item.item_type == kind).collect();
+        let items: Vec<&Loot> = table
+            .iter()
+            .filter(|item| item.item_type == ItemTypes::resolve(kind))
+            .collect();
 
         if let Some(&item) = items.iter().choose(&mut rng) {
             Some(item.clone())

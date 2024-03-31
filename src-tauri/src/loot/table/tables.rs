@@ -1,7 +1,7 @@
 use super::models::TableLoot;
 use crate::{
     loot::{
-        models::{BaseWeapon, ItemTypes, Loot},
+        models::{ItemTypes, Loot},
         table::definitions::NamedTableLoot,
     },
     translations::models::Translations,
@@ -17,20 +17,25 @@ lazy_static! {
                 items: vec![
                     Loot {
                         id: Uuid::new_v4().to_string(),
-                        item_type: "gold".to_string(),
-                        item: ItemTypes::Gold(100),
+                        item_type: ItemTypes::Gold,
+                        name: Translations::blank(),
+                        description: Translations::blank(),
+                        armor: None,
+                        damage: None,
+                        parade: None,
+                        price: Some(100),
+                        weight: None,
                     },
                     Loot {
                         id: Uuid::new_v4().to_string(),
-                        item_type: "weapon".to_string(),
-                        item: ItemTypes::Weapon(BaseWeapon {
-                            name: Translations::generate("Épée courte", "Short sword"),
-                            description: Translations::generate("Une simple épée", "A basic sword"),
-                            damage: 12,
-                            parade: 12,
-                            price: 12,
-                            weight: 3.0
-                            }),
+                        item_type: ItemTypes::Weapon,
+                        name: Translations::generate("Épée longue", "Long sword"),
+                        description: Translations::generate("Une simple longue", "A long sword"),
+                        armor: None,
+                        damage: Some(14),
+                        parade: Some(14),
+                        price: Some(14),
+                        weight: Some(4.0)
                     },
                 ],
             },

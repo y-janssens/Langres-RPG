@@ -1,37 +1,27 @@
 use serde::{Deserialize, Serialize};
 
-use crate::settings::errors::messages::NOT_SUPPORTED_LANGUAGE_ERROR;
-
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct Translations {
-    pub fr: String,
-    pub en: String,
+    pub fr: Option<String>,
+    pub en: Option<String>,
 }
 
-#[allow(dead_code)]
 impl Translations {
-    pub fn resolve(self, owned: bool, language: &str) -> String {
-        if !owned {
-            return "???".into();
-        }
-        match language {
-            "fr" => self.fr,
-            "en" => self.en,
-            _ => String::from(NOT_SUPPORTED_LANGUAGE_ERROR),
+    pub fn default() -> Translations {
+        Translations {
+            fr: Some("".to_string()),
+            en: Some("".to_string()),
         }
     }
 
-    pub fn default() -> Translations {
-        Translations {
-            fr: "".to_string(),
-            en: "".to_string(),
-        }
+    pub fn blank() -> Translations {
+        Translations { fr: None, en: None }
     }
 
     pub fn generate(_fr: &str, _en: &str) -> Translations {
         Translations {
-            fr: _fr.to_string(),
-            en: _en.to_string(),
+            fr: Some(_fr.to_string()),
+            en: Some(_en.to_string()),
         }
     }
 }

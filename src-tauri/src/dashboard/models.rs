@@ -20,6 +20,9 @@ pub trait AdminModel {
     fn actions(&self) -> Vec<&'static str> {
         vec!["edit", "export", "delete"]
     }
+    fn options(&self) -> Vec<&'static str> {
+        vec![]
+    }
     fn fields(&self) -> Vec<Field>;
 }
 
@@ -183,6 +186,33 @@ impl AdminModel for AdminStatisticModel {
     }
 }
 
+pub struct AdminLootModel;
+impl AdminModel for AdminLootModel {
+    fn id(&self) -> u8 {
+        7
+    }
+    fn name(&self) -> &'static str {
+        "loot"
+    }
+    fn options(&self) -> Vec<&'static str> {
+        vec!["weapon", "equipment", "craftable", "thrash"]
+    }
+    fn fields(&self) -> Vec<Field> {
+        vec![
+            Field::choice_field(false),
+            Field::translatable_field("name", true),
+            Field::translatable_field("description", false),
+            Field::char_field("item_type", true),
+            Field::number_field("armor", false),
+            Field::number_field("damage", false),
+            Field::number_field("parade", false),
+            Field::number_field("weight", false),
+            Field::number_field("price", false),
+            Field::cta_field(),
+        ]
+    }
+}
+
 pub struct AdminDashboard {
     models: Vec<Box<dyn AdminModel>>,
 }
@@ -198,6 +228,7 @@ impl AdminDashboard {
         dashboard.register_model(AdminQuestModel);
         dashboard.register_model(AdminAchievementModel);
         dashboard.register_model(AdminStatisticModel);
+        dashboard.register_model(AdminLootModel);
 
         dashboard.export()
     }

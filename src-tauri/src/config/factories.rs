@@ -7,10 +7,10 @@ pub mod factories_definitions {
     use crate::collection::models::Collection;
     use crate::functions::models::Function;
     use crate::game::models::Game;
-    use crate::loot::models::{BaseEquipment, BaseItem, BaseWeapon, ItemTypes, Loot};
+    use crate::loot::models::{ItemTypes, Loot};
     use crate::quests::models::{Quest, Status};
 
-    use crate::config::factory::factory_models::{ApiFactory, Factory, NamedFactory};
+    use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::config::faker::faker_definitions::{
         BoolFaker, Faker, FloatFaker, IdFaker, IntFaker, StringFaker, UUIdFaker,
     };
@@ -150,14 +150,14 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Quest {
                 id: UUIdFaker.generate().value(),
-                name: Translations {
-                    fr: StringFaker.generate().value(),
-                    en: StringFaker.generate().value(),
-                },
-                description: Translations {
-                    fr: StringFaker.generate().value(),
-                    en: StringFaker.generate().value(),
-                },
+                name: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
+                description: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
                 primary: BoolFaker.generate().value(),
                 status: Status {
                     owned: false,
@@ -177,14 +177,14 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Achievement {
                 id: UUIdFaker.generate().value(),
-                name: Translations {
-                    fr: StringFaker.generate().value(),
-                    en: StringFaker.generate().value(),
-                },
-                description: Translations {
-                    fr: StringFaker.generate().value(),
-                    en: StringFaker.generate().value(),
-                },
+                name: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
+                description: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
                 completed: false,
             }
         }
@@ -196,63 +196,11 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Statistic {
                 id: UUIdFaker.generate().value(),
-                name: Translations {
-                    fr: StringFaker.generate().value(),
-                    en: StringFaker.generate().value(),
-                },
+                name: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
                 value: StringFaker.generate().value(),
-            }
-        }
-    }
-
-    impl NamedFactory for ItemFactory {
-        type Output = ItemTypes;
-
-        fn generate(&self, _item: &str) -> Self::Output {
-            let name = Translations {
-                fr: StringFaker.generate().value(),
-                en: StringFaker.generate().value(),
-            };
-            let description = Translations {
-                fr: StringFaker.generate().value(),
-                en: StringFaker.generate().value(),
-            };
-            let armor = IntFaker.generate().value() as u32;
-            let damage = IntFaker.generate().value() as u32;
-            let parade = IntFaker.generate().value() as u32;
-            let price = IntFaker.generate().value() as u32;
-            let weight = FloatFaker.generate().value();
-
-            match _item {
-                "weapon" => ItemTypes::Weapon(BaseWeapon {
-                    name,
-                    description,
-                    damage,
-                    parade,
-                    price,
-                    weight,
-                }),
-                "equipment" => ItemTypes::Equipment(BaseEquipment {
-                    name,
-                    description,
-                    armor,
-                    parade,
-                    price,
-                    weight,
-                }),
-                "craftable" => ItemTypes::Craftable(BaseItem {
-                    name,
-                    description,
-                    price,
-                    weight,
-                }),
-                "thrash" => ItemTypes::Thrash(BaseItem {
-                    name,
-                    description,
-                    price,
-                    weight,
-                }),
-                _ => panic!("Unknown item kind: {}", _item),
             }
         }
     }
@@ -263,11 +211,23 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             let mut rng = rand::thread_rng();
             let types = ["weapon", "equipment", "craftable", "thrash"];
-            let item = types.iter().choose(&mut rng).unwrap().to_string();
+            let item = *types.iter().choose(&mut rng).unwrap();
             Loot {
                 id: UUIdFaker.generate().value(),
-                item_type: item.clone(),
-                item: ItemFactory.generate(&item),
+                item_type: ItemTypes::resolve(item),
+                name: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
+                description: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
+                armor: Some(IntFaker.generate().value()),
+                damage: Some(IntFaker.generate().value()),
+                parade: Some(IntFaker.generate().value()),
+                price: Some(IntFaker.generate().value()),
+                weight: Some(FloatFaker.generate().value()),
             }
         }
     }

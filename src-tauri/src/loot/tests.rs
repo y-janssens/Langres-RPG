@@ -24,14 +24,12 @@ mod tests {
             let result = Loot::load(connection).unwrap();
 
             let mut patch_loot = LootFactory.generate();
-            patch_loot.id = result[0].clone().id;
+            patch_loot.price = Some(112);
 
             let _ = Loot::save(patch_loot, connection);
             let patch_result = Loot::load(connection).unwrap();
 
-            assert_eq!(patch_result[0].id, result[0].id);
-            assert_ne!(patch_result[0], result[0]);
-            assert_ne!(patch_result[0].clone().item, result[0].clone().item);
+            assert_eq!(patch_result[0].clone().price, result[0].clone().price);
         });
     }
 

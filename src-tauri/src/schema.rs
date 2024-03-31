@@ -36,7 +36,13 @@ diesel::table! {
     loot (id) {
         id -> Text,
         item_type -> Text,
-        item -> Text,
+        name -> Text,
+        description -> Text,
+        armor -> Nullable<Integer>,
+        damage -> Nullable<Integer>,
+        parade -> Nullable<Integer>,
+        price -> Nullable<Integer>,
+        weight -> Nullable<Float>,
     }
 }
 

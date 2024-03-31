@@ -6,7 +6,10 @@ use diesel::{
 };
 use serde::{Deserialize, Serialize};
 
-use crate::loot::{models::Loot, table::base::*};
+use crate::loot::{
+    models::{ItemTypes, Loot},
+    table::base::*,
+};
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Character {
     pub name: String,
@@ -106,14 +109,14 @@ impl Inventory {
             head: Some(BASE_HELMET.clone()),
             torso: Some(BASE_ARMOR.clone()),
             legs: Some(BASE_LEGS.clone()),
-            gold: BASE_GOLD.clone().item.value(),
+            gold: BASE_GOLD.clone().price.unwrap() as u32,
             objects: vec![],
         }
     }
 
     pub fn add_gold(&mut self, loot: Loot) {
-        if loot.item_type == "gold" {
-            self.gold += loot.item.value();
+        if loot.item_type == ItemTypes::Gold {
+            self.gold += loot.price.unwrap() as u32;
         }
     }
 
@@ -128,14 +131,6 @@ impl Inventory {
     }
 
     pub fn remove_object(&mut self, id: String) {
-        println!("Before removal, objects count: {}", self.objects.len());
-
-        // Debugging: Print IDs that are about to be filtered out
-        self.objects
-            .iter()
-            .filter(|item| item.id == id)
-            .for_each(|item| println!("Removing object with id: {}", item.id));
-
         let objects: Vec<Loot> = self
             .objects
             .iter()
@@ -144,7 +139,5 @@ impl Inventory {
             .collect();
 
         self.objects = objects;
-
-        println!("After removal, objects count: {}", self.objects.len());
     }
 }

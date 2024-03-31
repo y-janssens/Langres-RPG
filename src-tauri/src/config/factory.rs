@@ -7,10 +7,6 @@ pub mod factory_models {
         type Output: AbstractModel;
         fn generate(&self) -> Self::Output;
     }
-    pub trait NamedFactory {
-        type Output: AbstractModel;
-        fn generate(&self, name: &str) -> Self::Output;
-    }
 
     pub trait ApiFactory {
         type Output: AbstractModel;

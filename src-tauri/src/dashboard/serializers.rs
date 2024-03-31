@@ -11,13 +11,14 @@ impl<'a> Serialize for AdminModelSerializer<'a> {
     where
         S: Serializer,
     {
-        let mut state = serializer.serialize_struct("AdminModel", 5)?;
+        let mut state = serializer.serialize_struct("AdminModel", 8)?;
         state.serialize_field("id", &self.model.id())?;
         state.serialize_field("name", self.model.name())?;
         state.serialize_field("command", &self.model.command())?;
         state.serialize_field("model", &self.model.model())?;
         state.serialize_field("search", &self.model.search())?;
         state.serialize_field("create", &self.model.create())?;
+        state.serialize_field("options", &self.model.options())?;
         state.serialize_field("actions", &self.model.actions())?;
         state.serialize_field("fields", &self.model.fields())?;
         state.end()

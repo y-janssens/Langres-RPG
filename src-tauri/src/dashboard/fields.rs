@@ -81,6 +81,14 @@ impl Field {
         }
     }
 
+    pub fn choice_field(primary: bool) -> Self {
+        Field {
+            name: "options".into(),
+            field: "choice_field".into(),
+            primary,
+        }
+    }
+
     pub fn cta_field() -> Self {
         Field {
             name: "actions".into(),
