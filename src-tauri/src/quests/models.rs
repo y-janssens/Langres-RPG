@@ -56,14 +56,8 @@ impl Quest {
     pub fn new() -> Quest {
         Quest {
             id: Uuid::new_v4().to_string(),
-            name: Translations {
-                fr: "".into(),
-                en: "".into(),
-            },
-            description: Translations {
-                fr: "".into(),
-                en: "".into(),
-            },
+            name: Translations::default(),
+            description: Translations::default(),
             primary: true,
             status: Status {
                 owned: false,

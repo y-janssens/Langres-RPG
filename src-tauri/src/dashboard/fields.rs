@@ -81,6 +81,14 @@ impl Field {
         }
     }
 
+    pub fn choice_field(name: &str, primary: bool) -> Self {
+        Field {
+            name: String::from(name),
+            field: "choice_field".into(),
+            primary,
+        }
+    }
+
     pub fn cta_field() -> Self {
         Field {
             name: "actions".into(),

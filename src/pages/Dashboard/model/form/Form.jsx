@@ -18,6 +18,7 @@ export const Form = ({ current }) => {
     const [, , syncInstance] = useNew(
         {
             func: new instance().new_command,
+            payload: new instance().payload,
             launch: !id,
             onSuccess: (response) => {
                 setForm(new instance(response).instance);

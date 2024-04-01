@@ -33,6 +33,20 @@ diesel::table! {
 }
 
 diesel::table! {
+    loot (id) {
+        id -> Text,
+        item_type -> Text,
+        name -> Text,
+        description -> Text,
+        armor -> Nullable<Integer>,
+        damage -> Nullable<Integer>,
+        parade -> Nullable<Integer>,
+        price -> Nullable<Integer>,
+        weight -> Nullable<Integer>,
+    }
+}
+
+diesel::table! {
     maps (id) {
         id -> Integer,
         map -> Text,
@@ -132,6 +146,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     achievements,
     functions,
     games,
+    loot,
     maps,
     objects,
     playerachievements,

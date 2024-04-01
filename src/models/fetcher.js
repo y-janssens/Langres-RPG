@@ -2,10 +2,6 @@ import { useState, useCallback, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api';
 
 export default class Fetcher {
-    constructor(model) {
-        this.model = model;
-    }
-
     static resolveLauncher(params) {
         if (!('launch' in params)) {
             return true;
@@ -69,8 +65,8 @@ export default class Fetcher {
         return [data, loading, fetch];
     }
 
-    async new() { 
-        await invoke(`new_${this.model}`);
+    async new() {
+        await invoke(`new_${this.model}`, this.payload());
     }
 
     async save(overide = false) { // eslint-disable-line

@@ -89,6 +89,7 @@
       "reset": "Reset",
       "save": "Save",
       "search": "Search",
+      "select": "Select",
       "start": "Start"
     },
     "date": "Date",
@@ -103,26 +104,32 @@
       "fields": {
         "actions": "Actions",
         "area": "Area",
+        "armor": "Armor",
         "character": "Character",
         "command": "Command",
         "created": "Created",
+        "damage": "Damage",
         "date_created": "Created",
         "description": "Description",
         "icon": "Icon",
         "id": "Id",
+        "item_type": "Type",
         "label": "Label",
         "last_known_position": "Last position",
         "last_save_date": "Modified",
         "map": "Map",
         "modified": "Modified",
         "name": "Name",
+        "parade": "Parade",
+        "price": "Price",
         "player": "Name",
         "primary": "Primary",
         "reward": "Reward",
         "status": "Status",
         "value": "Value",
         "visible": "Visible",
-        "walkable": "Walkable"
+        "walkable": "Walkable",
+        "weight": "Weight"
       }
     },
     "modal": {
@@ -130,6 +137,7 @@
       "collection": "New Collection",
       "function": "New Function",
       "game": "New Game",
+      "loot": "New Loot",
       "object": "New Object",
       "quest": "New Quest",
       "statistic": "New Statistic",
@@ -140,6 +148,7 @@
       "collection": "Collections",
       "function": "Functions",
       "game": "Games",
+      "loot": "Loots",
       "object": "Objects",
       "quest": "Quests",
       "statistic": "Statistics",
@@ -150,6 +159,7 @@
       "collection": "a collection",
       "function": "a function",
       "game": "a game",
+      "loot": "a loot",
       "object": "an object",
       "quest": "a quest",
       "statistic": "a statistic",
@@ -185,6 +195,12 @@
         "last_save_date": "Saved",
         "player": "Name",
         "visible": "Visible"
+      },
+      "loot": {
+        "actions": "Actions",
+        "id": "Id",
+        "item_type": "Type",
+        "name": "Name"
       },
       "object": {
         "actions": "Actions",

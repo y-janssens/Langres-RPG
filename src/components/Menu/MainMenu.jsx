@@ -41,49 +41,39 @@ export const MainMenu = () => {
         const games = savedGames?.filter((gm) => gm.visible);
         let menu_items = [
             lastPlayedGame && {
-                id: 0,
                 name: t('menu.items.continue'),
                 onClick: () => setEngine({ gameId: lastPlayedGame.id })
             },
             games?.length >= 1 && {
-                id: 1,
                 name: t('menu.items.load'),
                 onClick: () => setOpenModal('saved_games')
             },
             games?.length < 3 && {
-                id: 2,
                 name: t('menu.items.new'),
                 onClick: () => setOpenModal('new_game')
             },
             {
-                id: 3,
                 name: t('menu.items.settings'),
                 onClick: () => {
                     setOpenModal('settings');
                 }
             },
             isAdmin && {
-                id: 4,
                 name: t('menu.items.builder'),
                 onClick: () => navigate('admin/editor')
             },
             isAdmin && {
-                id: 5,
                 name: t('menu.items.dashboard'),
                 onClick: () => navigate('admin/dashboard')
             },
             {
-                id: 6,
                 name: t('menu.items.exit'),
                 onClick: async () => await exit(1)
             }
         ];
 
-        return menu_items
-            .filter(Boolean)
-            .sort((a, b) => a.id - b.id)
-            .map((it) => it);
-    }, [savedGames, lastPlayedGame]);
+        return menu_items.filter(Boolean).map((it, index) => ({ ...it, key: index }));
+    }, [savedGames, lastPlayedGame, isAdmin]);
 
     const handleMenu = useCallback(
         (event) => {
@@ -115,11 +105,8 @@ export const MainMenu = () => {
             activeRef.current.focus();
         }
         // setEngine({ gameId: 1182534022 });
+        // navigate('admin/dashboard/loot');
     }, []);
-
-    // useEffect(() => {
-    //     navigate('admin/dashboard');
-    // }, []);
 
     if (engine.gameId) {
         return null;
@@ -135,7 +122,7 @@ export const MainMenu = () => {
                     <div className={css['menu-items-container']}>
                         <div className={css['menu-items-block']}>
                             {items.map((it) => {
-                                return <MenuItem active={selected === it.id} key={it.id} name={it.name} onClick={it.onClick} />;
+                                return <MenuItem active={selected === it.key} key={it.key} name={it.name} onClick={it.onClick} />;
                             })}
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 pub mod faker_definitions {
     use rand::{distributions::Alphanumeric, Rng};
     use uuid::Uuid;
+
     pub trait AbstractFake {}
 
     pub struct FakeId(i32);

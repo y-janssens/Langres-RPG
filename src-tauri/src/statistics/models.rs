@@ -32,10 +32,7 @@ impl Statistic {
     pub fn new() -> Statistic {
         Statistic {
             id: Uuid::new_v4().to_string(),
-            name: Translations {
-                fr: "".into(),
-                en: "".into(),
-            },
+            name: Translations::default(),
             value: "".into(),
         }
     }
