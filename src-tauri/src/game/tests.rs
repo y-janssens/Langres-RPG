@@ -14,7 +14,7 @@ mod tests {
 
             assert_eq!(response.len(), 1);
             assert_eq!(response[0].player, "game".to_string());
-            assert_eq!(response[0].character.name, "game".to_string());
+            assert_eq!(response[0].character.first_name, "game".to_string());
         });
     }
 
@@ -26,7 +26,7 @@ mod tests {
             let request = Game::load(game.id.clone(), connection).unwrap();
 
             assert_eq!(request.player, "game".to_string());
-            assert_eq!(request.character.name, "game".to_string());
+            assert_eq!(request.character.first_name, "game".to_string());
 
             game.last_known_position = Position {
                 x: 8.0,

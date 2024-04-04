@@ -12,17 +12,17 @@ use crate::loot::{
 };
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Character {
-    pub name: String,
-    pub _end: u32,
-    pub _for: u32,
-    pub _hab: u32,
-    pub _cha: u32,
-    pub _int: u32,
-    pub _ini: u32,
-    pub _pv: u32,
+    pub first_name: String,
+    pub last_name: String,
+    pub end: u32,
+    pub r#for: u32,
+    pub hab: u32,
+    pub cha: u32,
+    pub int: u32,
+    pub ini: u32,
+    pub pv: u32,
     pub xp: u32,
     pub max_xp: u32,
-    pub gold: u64,
     pub lvl: u32,
     pub inventory: Inventory,
 }
@@ -45,18 +45,20 @@ impl Queryable<Text, Sqlite> for Character {
 
 impl Character {
     pub fn new(name: String) -> Character {
+        let full_name: Vec<&str> = name.split_whitespace().collect();
+
         Character {
-            name,
-            _end: 8,
-            _for: 8,
-            _hab: 8,
-            _cha: 8,
-            _int: 8,
-            _ini: 8,
-            _pv: 60,
+            first_name: full_name.get(0).unwrap_or(&"").to_string(),
+            last_name: full_name.get(1).unwrap_or(&"").to_string(),
+            end: 8,
+            r#for: 8,
+            hab: 8,
+            cha: 8,
+            int: 8,
+            ini: 8,
+            pv: 60,
             xp: 0,
             max_xp: 150,
-            gold: 10,
             lvl: 1,
             inventory: Inventory::new(),
         }
