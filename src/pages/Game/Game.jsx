@@ -1,6 +1,6 @@
 import { useRef, useMemo, useCallback } from 'react';
 import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
-import { GameModel, Environment } from '../../models';
+import { GameModel, Environment, PlayerJournal } from '../../models';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../../components/ui/LoadingScreen';
@@ -67,6 +67,18 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             });
         },
         [form]
+    );
+
+    PlayerJournal.useCommand(
+        {
+            useLoader: true,
+            id: engine.gameId,
+            launch: game,
+            onSuccess: (response) => {
+                setFormObject({ ...form, journal: response });
+            }
+        },
+        [game]
     );
 
     Environment.useCommand(

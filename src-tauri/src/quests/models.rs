@@ -1,12 +1,10 @@
 use crate::config::factory::factory_models::AbstractModel;
-use crate::schema::quests::dsl::*;
-use crate::{schema::quests, translations::models::Translations};
-use diesel::{
-    deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, QueryResult, RunQueryDsl,
-    Selectable, SqliteConnection,
-};
+
+use crate::translations::models::Translations;
+use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
-use uuid::Uuid;
+
+use super::definitions::get_all;
 
 impl AbstractModel for Quest {}
 
@@ -18,30 +16,24 @@ pub struct Status {
     pub abandoned: bool,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
-#[diesel(table_name = crate::schema::quests)]
-#[diesel(check_for_backend(Sqlite))]
-pub struct Quest {
-    pub id: String,
-    pub name: Translations,
-    pub description: Translations,
-    pub primary: bool,
-    pub status: Status,
-    pub visible: bool,
-    pub reward: i32,
-}
+impl Status {
+    pub fn base() -> Status {
+        Status {
+            owned: true,
+            completed: false,
+            failed: false,
+            abandoned: false,
+        }
+    }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
-#[diesel(table_name = crate::schema::quests)]
-#[diesel(check_for_backend(Sqlite))]
-pub struct InsertableQuest {
-    id: String,
-    name: String,
-    description: String,
-    primary: bool,
-    status: String,
-    visible: bool,
-    reward: i32,
+    pub fn default() -> Status {
+        Status {
+            owned: false,
+            completed: false,
+            failed: false,
+            abandoned: false,
+        }
+    }
 }
 
 impl Queryable<Text, Sqlite> for Status {
@@ -52,66 +44,20 @@ impl Queryable<Text, Sqlite> for Status {
     }
 }
 
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Quest {
+    pub id: String,
+    pub name: Translations,
+    pub description: Translations,
+    pub primary: bool,
+    pub status: Status,
+    pub visible: bool,
+    pub reward: i32,
+    pub next: Option<String>,
+}
+
 impl Quest {
-    pub fn new() -> Quest {
-        Quest {
-            id: Uuid::new_v4().to_string(),
-            name: Translations::default(),
-            description: Translations::default(),
-            primary: true,
-            status: Status {
-                owned: false,
-                completed: false,
-                failed: false,
-                abandoned: false,
-            },
-            visible: true,
-            reward: 0,
-        }
-    }
-
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Quest>> {
-        let _load = crate::schema::quests::table.load(connection)?;
-        Ok(_load)
-    }
-
-    pub fn save(
-        quest: Quest,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&quest.name).expect("error");
-        let description_json = serde_json::to_string(&quest.description).expect("error");
-        let status_json = serde_json::to_string(&quest.status).expect("error");
-
-        let insertable = InsertableQuest {
-            id: Uuid::new_v4().to_string(),
-            name: name_json,
-            description: description_json,
-            primary: quest.primary,
-            status: status_json,
-            visible: quest.visible,
-            reward: quest.reward,
-        };
-        let exists = quests
-            .filter(id.eq(quest.clone().id))
-            .first::<Quest>(connection)
-            .is_ok();
-
-        if exists {
-            diesel::update(quests.find(quest.id))
-                .set(&insertable)
-                .execute(connection)?;
-        } else {
-            diesel::insert_into(quests::table)
-                .values(&insertable)
-                .execute(connection)?;
-        }
-
-        Ok(())
-    }
-
-    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
-        diesel::delete(quests.filter(id.eq(_id))).execute(connection)?;
-        Ok(())
+    pub fn load() -> Vec<Quest> {
+        get_all()
     }
 }

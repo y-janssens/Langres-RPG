@@ -1,4 +1,4 @@
-import { World } from '.';
+import { World, Character } from '.';
 import AdminModel from './admin';
 
 export default class GameModel extends AdminModel {
@@ -7,6 +7,7 @@ export default class GameModel extends AdminModel {
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
+        this.character = new Character(options['character']);
     }
 
     get title() {

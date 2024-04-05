@@ -7,6 +7,7 @@ pub mod functions;
 pub mod games;
 pub mod loot;
 pub mod maps;
+pub mod npcs;
 pub mod objects;
 pub mod player;
 pub mod quests;

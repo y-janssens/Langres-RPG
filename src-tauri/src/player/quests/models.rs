@@ -27,6 +27,7 @@ pub struct PlayerQuest {
     pub status: Status,
     pub visible: bool,
     pub reward: i32,
+    pub next: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -42,6 +43,7 @@ pub struct InsertablePlayerQuest {
     pub status: String,
     pub visible: bool,
     pub reward: i32,
+    pub next: Option<String>,
 }
 
 impl Queryable<Text, Sqlite> for Translations {
@@ -55,7 +57,7 @@ impl Queryable<Text, Sqlite> for Translations {
 impl PlayerQuest {
     pub fn generate(_id: String, connection: &mut SqliteConnection) {
         println!("Generating game quests...");
-        let base_quests = Quest::load(connection).expect("Failed to load quests");
+        let base_quests = Quest::load();
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
             let status_json = serde_json::to_string(&quest.status).expect("error");
@@ -71,6 +73,7 @@ impl PlayerQuest {
                 status: status_json,
                 visible: quest.visible,
                 reward: quest.reward,
+                next: quest.next,
             };
             diesel::insert_into(playerquests::table)
                 .values(&_quest)
@@ -88,7 +91,7 @@ impl PlayerQuest {
 
     pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<PlayerQuest> {
         let _load = crate::schema::playerquests::table
-            .filter(crate::schema::playerquests::id.eq(_id))
+            .filter(crate::schema::playerquests::quest_id.eq(_id))
             .first::<PlayerQuest>(connection)?;
         Ok(_load)
     }
@@ -111,6 +114,7 @@ impl PlayerQuest {
             status: status_json,
             visible: quest.visible,
             reward: quest.reward,
+            next: quest.next.clone(),
         };
 
         let exists = playerquests
@@ -141,7 +145,13 @@ impl PlayerQuest {
             .unwrap_or_else(|_| panic!("Failed to load game {}", quest.clone().game_id));
         Game::compute_character_xp(&mut player_game, xp, connection);
         quest.status.completed = true;
-        let _ = PlayerQuest::save(quest, connection);
+        let _ = PlayerQuest::save(quest.clone(), connection);
+
+        if quest.next.is_some() {
+            let mut _next =
+                Self::get(quest.next.unwrap(), connection).expect("Failed to get quest");
+            Self::activate(_next, connection);
+        }
     }
 
     pub fn edit(
@@ -151,7 +161,6 @@ impl PlayerQuest {
         connection: &mut SqliteConnection,
     ) {
         match _status {
-            "completed" => quest.status.completed = value,
             "failed" => quest.status.failed = value,
             "abandoned" => quest.status.abandoned = value,
             _ => (),

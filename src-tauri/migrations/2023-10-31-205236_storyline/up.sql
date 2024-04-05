@@ -26583,7 +26583,8 @@ VALUES
                         "y": 14,
                         "id": 707
                     },
-                    "primary": true
+                    "primary": true,
+                    "npcs": []
                 }
             ]
         },

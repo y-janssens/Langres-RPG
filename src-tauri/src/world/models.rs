@@ -1,5 +1,5 @@
-use crate::config::factory::factory_models::AbstractModel;
 use crate::objects::models::Object;
+use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
@@ -16,6 +16,7 @@ pub struct World {
     pub content: Vec<Item>,
     pub starting_point: Location,
     pub primary: bool,
+    pub npcs: Vec<Npc>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -66,6 +67,7 @@ impl World {
                 id: 254,
             },
             primary,
+            npcs: vec![],
         }
     }
 

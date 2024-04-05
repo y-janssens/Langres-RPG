@@ -35,7 +35,6 @@ export const Builder = () => {
         useLoader: true,
         onSuccess: (response) => {
             setForm('storyLine', response);
-
             switch (true) {
                 case !response.story.acts.length:
                     setForm('onboarding', { value: true, type: 'acts' });

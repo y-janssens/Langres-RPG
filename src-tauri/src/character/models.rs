@@ -47,9 +47,16 @@ impl Character {
     pub fn new(name: String) -> Character {
         let full_name: Vec<&str> = name.split_whitespace().collect();
 
+        let first_name = full_name.first().unwrap_or(&"").to_string();
+        let last_name = if full_name.len() > 1 {
+            full_name[1..].join(" ")
+        } else {
+            "".to_string()
+        };
+
         Character {
-            first_name: full_name.get(0).unwrap_or(&"").to_string(),
-            last_name: full_name.get(1).unwrap_or(&"").to_string(),
+            first_name,
+            last_name,
             end: 8,
             r#for: 8,
             hab: 8,
@@ -113,6 +120,30 @@ impl Inventory {
             legs: Some(BASE_LEGS.clone()),
             gold: BASE_GOLD.clone().price.unwrap() as u32,
             objects: vec![],
+        }
+    }
+
+    pub fn empty() -> Inventory {
+        Inventory {
+            right_hand: None,
+            left_hand: None,
+            head: None,
+            torso: None,
+            legs: None,
+            gold: 0_u32,
+            objects: vec![],
+        }
+    }
+
+    pub fn basic(items: Vec<Loot>) -> Inventory {
+        Inventory {
+            right_hand: None,
+            left_hand: None,
+            head: None,
+            torso: None,
+            legs: None,
+            gold: 10_u32,
+            objects: items,
         }
     }
 

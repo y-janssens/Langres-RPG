@@ -224,7 +224,7 @@ impl AdminDashboard {
         dashboard.register_model(AdminCollectionModel);
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);
-        dashboard.register_model(AdminQuestModel);
+        // dashboard.register_model(AdminQuestModel);
         dashboard.register_model(AdminAchievementModel);
         dashboard.register_model(AdminStatisticModel);
         dashboard.register_model(AdminLootModel);

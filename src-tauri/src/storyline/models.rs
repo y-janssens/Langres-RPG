@@ -1,4 +1,5 @@
 use crate::config::factory::factory_models::AbstractModel;
+use crate::npcs::models::Npc;
 use crate::schema::storyline::dsl::storyline;
 use crate::world::models::World;
 use diesel::deserialize::{self, FromSql};
@@ -95,8 +96,14 @@ pub struct Content {
 
 impl Story {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Story> {
-        let mut _load: Story = crate::schema::storyline::table.first(connection)?;
-        Ok(_load)
+        let mut _storyline: Story = crate::schema::storyline::table.first(connection)?;
+
+        for act in _storyline.story.acts.iter_mut() {
+            for map in act.content.maps.iter_mut().flatten() {
+                map.npcs = Npc::get_for_map(map.id);
+            }
+        }
+        Ok(_storyline)
     }
 
     pub fn save(
@@ -104,7 +111,7 @@ impl Story {
         id: i32,
         data: &mut Story,
     ) -> QueryResult<usize> {
-        for act in &mut data.story.acts {
+        for act in data.story.acts.iter_mut() {
             act.validate_acts();
         }
         let updated_json = serde_json::to_string(&data.story.acts).map_err(|e| {

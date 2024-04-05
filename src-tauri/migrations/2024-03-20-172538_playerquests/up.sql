@@ -8,5 +8,6 @@ CREATE TABLE playerquests (
     "primary" BOOLEAN NOT NULL,
     status TEXT NOT NULL,
     visible BOOLEAN NOT NULL,
-    reward INTEGER NOT NULL
+    reward INTEGER NOT NULL,
+    next TEXT
 );
