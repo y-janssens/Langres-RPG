@@ -17,11 +17,21 @@ use uuid::Uuid;
 
 impl AbstractModel for Game {}
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable)]
 pub struct Position {
     pub x: f32,
     pub y: f32,
     pub id: u32,
+}
+
+impl Position {
+    pub fn resolve(args: (f32, f32, u32)) -> Position {
+        Position {
+            x: args.0,
+            y: args.1,
+            id: args.2,
+        }
+    }
 }
 
 impl FromSql<Text, Sqlite> for Position {

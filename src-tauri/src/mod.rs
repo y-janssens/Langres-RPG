@@ -3,6 +3,7 @@ pub mod backend;
 pub mod character;
 pub mod collection;
 pub mod dashboard;
+pub mod events;
 pub mod functions;
 pub mod games;
 pub mod loot;

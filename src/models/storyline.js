@@ -21,6 +21,6 @@ export default class Storyline extends AdminModel {
     }
 
     static command() {
-        return 'load_storylines';
+        return 'load_storyline';
     }
 }

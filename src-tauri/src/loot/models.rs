@@ -144,6 +144,20 @@ impl Loot {
         diesel::delete(loot.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }
+
+    pub fn gold(value: i32) -> Loot {
+        Loot {
+            id: Uuid::new_v4().to_string(),
+            item_type: ItemTypes::Gold,
+            name: Translations::blank(),
+            description: Translations::blank(),
+            armor: None,
+            damage: None,
+            parade: None,
+            price: Some(value),
+            weight: None,
+        }
+    }
 }
 
 impl ItemTypes {

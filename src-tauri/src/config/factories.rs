@@ -79,7 +79,7 @@ pub mod factories_definitions {
 
         fn generate(&self) -> Self::Output {
             Content {
-                maps: vec![Some(WorldFactory.generate()), Some(WorldFactory.generate())],
+                maps: vec![WorldFactory.generate(), WorldFactory.generate()],
             }
         }
     }

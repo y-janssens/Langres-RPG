@@ -7,14 +7,14 @@ use crate::{
     translations::models::Translations,
 };
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum Gender {
     Male,
     Female,
     Unknown,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum Class {
     Human,
     Soldier,
@@ -25,13 +25,7 @@ pub enum Class {
     Merchant,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct NpcQuests(pub Vec<Quest>);
-
-#[derive(Debug, Serialize, Deserialize, Clone)]
-pub struct NpcDialogs(pub Vec<Translations>);
-
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Npc {
     pub id: String,
     pub first_name: String,
@@ -72,7 +66,7 @@ impl Npc {
         gender: Gender,
         map_id: i32,
         inventory: Inventory,
-        position: Position,
+        position: (f32, f32, u32),
     ) -> Npc {
         Npc {
             id: Uuid::new_v4().to_string(),
@@ -95,33 +89,130 @@ impl Npc {
             is_alive: true,
             can_be_hostile: false,
             inventory,
-            quests: Self::get_quests(None),
-            dialogs: Self::get_merchant_dialogs(),
-            starting_point: position,
+            quests: NpcQuests::get_quests(None),
+            dialogs: NpcDialogs::get_merchant_dialogs(),
+            starting_point: Position::resolve(position),
         }
     }
 
-    fn get_merchant_dialogs() -> NpcDialogs {
-        NpcDialogs(vec![
-            Translations::generate("Bonjour", "Hello"),
-            Translations::generate(
-                "Jetez donc un oeil à mes marchandises!",
-                "Take a look at my goods",
-            ),
-        ])
+    pub fn get_zombie(
+        gender: Gender,
+        map_id: i32,
+        inventory: Inventory,
+        position: (f32, f32, u32),
+    ) -> Npc {
+        Npc {
+            id: Uuid::new_v4().to_string(),
+            first_name: "???".to_string(),
+            last_name: "???".to_string(),
+            title: Translations::blank(),
+            class: Class::Zombie,
+            end: 12,
+            r#for: 12,
+            hab: 12,
+            cha: 12,
+            int: 12,
+            ini: 12,
+            pv: 100,
+            level: 1,
+            gender,
+            map_id,
+            unique: false,
+            hostile: true,
+            is_alive: true,
+            can_be_hostile: true,
+            inventory,
+            quests: NpcQuests::empty(),
+            dialogs: NpcDialogs::empty(),
+            starting_point: Position::resolve(position),
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+pub struct Quote {
+    pub order: u8,
+    pub quote: Translations,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+pub struct NpcDialogs {
+    pub npc: Vec<Quote>,
+    pub player: Vec<Quote>,
+}
+
+impl NpcDialogs {
+    pub fn empty() -> NpcDialogs {
+        NpcDialogs {
+            npc: vec![],
+            player: vec![],
+        }
     }
 
-    fn get_quests(id: Option<String>) -> NpcQuests {
-        if id.is_some() {
-            let quests = Quest::load();
-            return NpcQuests(
-                quests
-                    .iter()
-                    .filter(|q| q.id == id.clone().unwrap())
-                    .cloned()
-                    .collect(),
-            );
+    pub fn get_merchant_dialogs() -> NpcDialogs {
+        NpcDialogs {
+            npc: vec![
+                Quote {
+                    order: 0,
+                    quote: Translations::generate("Bonjour", "Hello"),
+                },
+                Quote {
+                    order: 1,
+                    quote: Translations::generate(
+                        "Jetez donc un oeil à mes marchandises!",
+                        "Take a look at my goods",
+                    ),
+                },
+            ],
+            player: vec![],
         }
+    }
+
+    pub fn generate(quotes: Vec<Translations>) -> NpcDialogs {
+        let mut result = NpcDialogs {
+            npc: vec![],
+            player: vec![],
+        };
+
+        for (index, quote) in quotes.iter().enumerate() {
+            if index % 2 == 0 {
+                result.npc.push(Quote {
+                    order: index as u8,
+                    quote: quote.clone(),
+                })
+            } else {
+                result.player.push(Quote {
+                    order: index as u8,
+                    quote: quote.clone(),
+                })
+            }
+        }
+
+        result
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+pub struct NpcQuests(pub Vec<Quest>);
+
+impl NpcQuests {
+    pub fn empty() -> NpcQuests {
         NpcQuests(vec![])
+    }
+
+    pub fn get_quests(ids: Option<Vec<String>>) -> NpcQuests {
+        let mut result: Vec<Quest> = Vec::new();
+
+        if let Some(ids) = ids {
+            let quests = Quest::load();
+
+            for quest in quests {
+                if ids.contains(&quest.id) {
+                    result.push(quest);
+                }
+            }
+        }
+
+        NpcQuests(result)
     }
 }

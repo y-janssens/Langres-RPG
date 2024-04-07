@@ -11,6 +11,7 @@ mod character;
 mod collection;
 mod config;
 mod dashboard;
+mod events;
 mod functions;
 mod game;
 mod loot;
@@ -102,7 +103,9 @@ fn main() {
             player::statistics::commands::save_player_statistic,
             // Storyline commands
             storyline::commands::save_storyline,
-            storyline::commands::load_storylines,
+            storyline::commands::load_storyline,
+            storyline::commands::register_gateway,
+            storyline::commands::register_checkpoint,
             // Statistics commands
             statistics::commands::new_statistic,
             statistics::commands::load_statistics,

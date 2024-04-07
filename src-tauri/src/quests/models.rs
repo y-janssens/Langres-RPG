@@ -8,7 +8,7 @@ use super::definitions::get_all;
 
 impl AbstractModel for Quest {}
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable)]
 pub struct Status {
     pub owned: bool,
     pub completed: bool,
@@ -44,7 +44,7 @@ impl Queryable<Text, Sqlite> for Status {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
 pub struct Quest {
     pub id: String,
     pub name: Translations,

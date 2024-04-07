@@ -2,6 +2,7 @@ import { useState, useRef, memo, useMemo } from 'react';
 import { Vector2, BufferAttribute, BufferGeometry } from 'three';
 import { useGameContext } from '../../../hooks';
 import { Tree } from './Tree';
+// import { Text } from '@react-three/drei';
 
 export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();
@@ -17,6 +18,11 @@ export const Tiles = memo(({ data }) => {
                 {(item.value === 'T' || item.value === 'F') && (
                     <Tree position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]} colorMap={colorMaps.trees} />
                 )}
+                {/* {item.value !== 'W' && item.Value !== 'S' && (
+                    <Text scale={[-0.25, 0.25, 0.25]} position={[-item.x / 1.5, 0.1, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]} color="white">
+                        {item.id}
+                    </Text>
+                )} */}
                 <Hexagon
                     item={item}
                     position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}

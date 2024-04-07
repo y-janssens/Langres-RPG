@@ -97,7 +97,7 @@ impl Character {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Inventory {
     pub right_hand: Option<Loot>,
     pub left_hand: Option<Loot>,

@@ -16,4 +16,5 @@ VALUES
     ('tree', 'T', json('{"x": 1, "y": 1}'), 0),
     ('rock', 'R', json('{"x": 1, "y": 1}'), 0),
     ('water', 'W', json('{"x": 1, "y": 1}'), 0),
+    ('shore', 'S', json('{"x": 1, "y": 1}'), 0),
     ('bridge', 'BR', json('{"x": 1, "y": 1}'), 0);

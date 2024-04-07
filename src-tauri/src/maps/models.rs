@@ -1,10 +1,11 @@
 use std::collections::HashSet;
 
+use crate::events::models::Event;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
 use crate::maps::tiles::{get_neighbours, get_walkable_tiles};
 use crate::maps::topology::Topology;
-use crate::world::models::{Item, Threshold};
+use crate::world::models::Item;
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 
@@ -23,7 +24,7 @@ pub struct Tile {
     pub y: u32,
     pub z: i32,
     pub value: String,
-    threshold: Option<Threshold>,
+    events: Vec<Event>,
     walkable: bool,
     tesselated: bool,
     pub entropy: u32,
@@ -43,7 +44,7 @@ impl From<Item> for Tile {
             y: item.y,
             z: 0,
             value: String::from(value),
-            threshold: item.threshold,
+            events: item.events,
             walkable: item.walkable,
             tesselated: false,
             entropy: if value == "null" { *ENTROPY } else { 0 },
@@ -91,7 +92,7 @@ impl Map {
                         tile.z
                     },
                     value,
-                    threshold: tile.threshold,
+                    events: tile.events.clone(),
                     walkable,
                 }
             })

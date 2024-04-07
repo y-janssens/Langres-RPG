@@ -1,3 +1,5 @@
+use crate::events::models::Event;
+use crate::game::models::Position;
 use crate::objects::models::Object;
 use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
@@ -14,7 +16,7 @@ pub struct World {
     pub order: u32,
     pub complete: bool,
     pub content: Vec<Item>,
-    pub starting_point: Location,
+    pub starting_point: Position,
     pub primary: bool,
     pub npcs: Vec<Npc>,
 }
@@ -26,7 +28,7 @@ pub struct Item {
     pub y: u32,
     pub z: i32,
     pub value: String,
-    pub threshold: Option<Threshold>,
+    pub events: Vec<Event>,
     pub walkable: bool,
 }
 
@@ -36,19 +38,6 @@ pub struct Value {
     value: String,
     name: String,
     assets: Vec<Option<Object>>,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Copy)]
-pub struct Threshold {
-    map: i32,
-    is_final: bool,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Location {
-    pub x: u32,
-    pub y: u32,
-    pub id: u32,
 }
 
 impl World {
@@ -61,11 +50,7 @@ impl World {
             order,
             complete: false,
             content: Self::generate(size),
-            starting_point: Location {
-                x: 9,
-                y: 4,
-                id: 254,
-            },
+            starting_point: Position::resolve((9.0, 4.0, 254)),
             primary,
             npcs: vec![],
         }
@@ -98,7 +83,7 @@ impl World {
                 y,
                 z: 0,
                 value: value.clone(),
-                threshold: None,
+                events: vec![],
                 walkable: walkable_tiles.contains(&value),
             };
             content.push(item);
