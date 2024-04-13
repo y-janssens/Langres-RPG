@@ -26585,7 +26585,26573 @@ VALUES
                     },
                     "primary": true,
                     "npcs": []
-                }
+                },
+                {
+                    "complete": false,
+                    "content": [
+                        {
+                        "events": [],
+                        "id": 0,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 3,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 4,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 5,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 6,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 7,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 8,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 9,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 10,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 11,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 12,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 13,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 14,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 15,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 16,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 17,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 18,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 19,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 20,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 21,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 22,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 23,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 24,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 25,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 26,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 27,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 28,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 29,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 0,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 30,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 31,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 32,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 33,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 34,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 35,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 36,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 37,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 38,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 39,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 40,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 41,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 42,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 43,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 0,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 44,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 0,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 45,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 46,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 0,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 47,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 48,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 49,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 0,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 50,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 51,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 52,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 53,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 54,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 55,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 56,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 57,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 58,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 59,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 60,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 61,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 62,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 63,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 64,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 65,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 66,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 67,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 68,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 69,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 70,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 71,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 72,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 73,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 74,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 75,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 76,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 77,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 78,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 1,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 79,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 1,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 80,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 1,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 81,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 82,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 83,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 84,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 85,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 86,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 87,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 88,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 89,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 90,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 91,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 92,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 93,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 94,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 95,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 96,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 1,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 97,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 98,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 99,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 1,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 100,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 101,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 102,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 103,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 104,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 105,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 106,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 107,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 108,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 109,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 110,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 111,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 112,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 113,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 114,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 115,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 116,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 117,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 118,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 119,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 120,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 121,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 122,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 123,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 124,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 125,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 126,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 127,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 2,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 128,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 2,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 129,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 2,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 130,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 2,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 131,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 132,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 133,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 134,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 135,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 136,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 137,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 138,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 139,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 140,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 141,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 142,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 143,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 144,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 145,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 2,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 146,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 147,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 2,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 148,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 2,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 149,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 2,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 150,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 151,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 3,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 152,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 3,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 153,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 154,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 155,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 156,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 157,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 158,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 159,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 160,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 161,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 162,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 163,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 164,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 165,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 166,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 167,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 168,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 169,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 3,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 170,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 171,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 172,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 173,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 174,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 175,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 176,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 177,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 3,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 178,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 3,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 179,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 3,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 180,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 3,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 181,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 3,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 182,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 183,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 184,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 185,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 186,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 187,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 188,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 189,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 190,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 191,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 192,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 193,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 194,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 195,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 3,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 196,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 197,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 3,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 198,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 3,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 199,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 3,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 200,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 201,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 202,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 203,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 204,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 205,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 206,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 207,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 4,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 208,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 209,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 210,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 211,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 212,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 213,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 214,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 215,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 216,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 217,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 218,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 219,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 220,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 221,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 222,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 223,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 224,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 225,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 226,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 227,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 4,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 228,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 4,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 229,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 4,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 230,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 4,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 231,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 232,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 233,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 234,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 235,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 236,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 237,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 4,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 238,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 239,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 240,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 241,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 242,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 243,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 244,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 245,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 246,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 4,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 247,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 248,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 249,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 4,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 250,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 251,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 252,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 253,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 254,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 255,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 256,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 257,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 5,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 258,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 5,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 259,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 260,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 261,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 262,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 263,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 264,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 265,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 266,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 267,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 268,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 269,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 270,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 271,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 272,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 273,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 274,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 275,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 276,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 277,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 5,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 278,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 5,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 279,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 5,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 280,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 281,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 282,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 283,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 284,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 285,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 286,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 287,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 288,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 289,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 5,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 290,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 291,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 292,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 293,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 294,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 295,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 296,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 5,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 297,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 298,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 299,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 5,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 300,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 301,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 302,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 303,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 304,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 305,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 306,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 6,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 307,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 6,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 308,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 6,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 309,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 310,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 311,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 312,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 313,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 314,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 315,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 316,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 317,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 318,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 319,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 320,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 321,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 322,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 323,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 324,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 325,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 326,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 6,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 327,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 6,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 328,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 329,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 330,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 331,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 332,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 333,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 334,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 335,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 336,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 337,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 338,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 339,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 6,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 340,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 341,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 342,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 343,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 344,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 6,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 345,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 346,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 347,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 348,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 349,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 6,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 350,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 351,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 352,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 353,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 354,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 355,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 356,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 357,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 358,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 359,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 360,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 361,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 362,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 363,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 364,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 365,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 366,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 367,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 368,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 369,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 370,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 371,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 372,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 373,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 374,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 375,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 376,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 377,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 378,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 379,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 380,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 381,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 382,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 383,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 384,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 385,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 386,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 387,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 7,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 388,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 389,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 390,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 391,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 7,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 392,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 393,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 394,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 7,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 395,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 396,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 397,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 398,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 399,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 7,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 400,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 401,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 402,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 403,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 404,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 405,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 406,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 407,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 408,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 409,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 410,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 411,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 412,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 413,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 414,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 415,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 416,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 417,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 418,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 419,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 420,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 421,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 422,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 423,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 424,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 425,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 426,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 427,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 428,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 429,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 430,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 431,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 432,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 433,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 434,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 435,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 436,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 437,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 438,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 8,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 439,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 440,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 8,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 441,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 442,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 443,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 444,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 8,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 445,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 446,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 447,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 448,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 449,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 8,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 450,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 451,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 452,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 453,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 454,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 455,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 456,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 457,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 458,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 459,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 460,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 461,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 462,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 463,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 464,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 465,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 466,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 467,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 468,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 469,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 470,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 471,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 42,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 472,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 44,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 473,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 474,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 475,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 476,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 477,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 478,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 479,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 480,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 481,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 482,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 483,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 484,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 485,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 486,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 487,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 488,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 489,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 9,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 490,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 491,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 9,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 492,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 493,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 494,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 495,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 9,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 496,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 497,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 498,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 499,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 9,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 500,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 501,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 502,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 503,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 504,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 505,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 506,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 507,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 508,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 509,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 510,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 511,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 512,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 513,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 514,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 515,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 516,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 517,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 518,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 519,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 520,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 521,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 522,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 523,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 524,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 525,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 526,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 527,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 528,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 529,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 530,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 531,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 10,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 532,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 533,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 534,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 535,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 536,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 537,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 538,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 10,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 539,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 540,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 10,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 541,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 542,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 543,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 544,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 545,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 546,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 547,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 548,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 549,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 10,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 550,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 551,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 552,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 553,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 554,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 555,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 556,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 557,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 558,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 559,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 560,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 561,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 562,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 563,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 564,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 565,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 566,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 567,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 11,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 568,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 11,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 569,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 570,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 571,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 42,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 572,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 44,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 573,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 574,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 575,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 576,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 577,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 578,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 579,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 11,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 580,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 11,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 581,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 11,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 582,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 583,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 584,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 585,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 586,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 587,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 588,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 589,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 11,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 590,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 591,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 11,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 592,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 593,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 594,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 595,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 596,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 597,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 598,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 599,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 11,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 600,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 601,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 602,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 603,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 604,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 605,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 606,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 607,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 608,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 609,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 610,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 611,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 612,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 613,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 614,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 615,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 616,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 617,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 12,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 618,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 619,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 620,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 621,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 622,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 623,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 624,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 625,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 626,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 627,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 628,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 629,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 12,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 630,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 12,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 631,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 12,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 632,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 633,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 634,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 635,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 636,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 637,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 638,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 12,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 639,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 640,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 12,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 641,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 642,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 643,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 644,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 645,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 646,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 647,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 648,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 649,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 12,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 650,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 651,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 652,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 653,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 654,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 655,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 656,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 657,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 658,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 659,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 660,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 661,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 662,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 663,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 664,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 665,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 666,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 667,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 668,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 669,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 670,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 671,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 672,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 44,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 673,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 674,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 675,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 676,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 677,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 678,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 679,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 13,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 680,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 13,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 681,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 13,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 682,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 683,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 684,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 685,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 686,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 687,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 688,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 13,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 689,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 690,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 691,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 692,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 693,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 694,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 695,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 696,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 697,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 13,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 698,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 699,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 13,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 700,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 701,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 702,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 703,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 704,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 705,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 706,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 707,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 708,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 709,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 710,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 711,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 712,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 713,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 714,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 715,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 716,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 717,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 718,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 719,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 720,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 721,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 722,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 723,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 724,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 725,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 726,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 727,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 728,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 729,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 14,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 730,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 14,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 731,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 732,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 733,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 734,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 735,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 736,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 737,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 14,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 738,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 739,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 740,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 741,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 742,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 743,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 744,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 745,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 746,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 747,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 748,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 14,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 749,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 14,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 750,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 751,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 752,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 753,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 754,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 755,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 756,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 757,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 758,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 759,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 760,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 761,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 762,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 763,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 764,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 765,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 766,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 767,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 768,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 769,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 770,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 771,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 772,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 773,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 774,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 775,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 776,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 777,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 778,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 779,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 780,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 15,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 781,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 782,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 783,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 784,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 785,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 786,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 787,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 788,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 15,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 789,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 790,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 791,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 792,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 793,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 794,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 795,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 796,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 797,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 798,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 15,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 799,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 15,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 800,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 801,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 802,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 803,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 804,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 805,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 806,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 807,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 808,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 809,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 810,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 811,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 812,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 813,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 814,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 815,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 816,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 817,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 818,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 819,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 820,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 821,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 822,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 823,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 824,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 825,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 826,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 827,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 828,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 829,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 830,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 831,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 832,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 833,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 834,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 835,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 836,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 837,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 16,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 838,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 839,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 840,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 841,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 16,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 842,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 16,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 843,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 844,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 845,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 846,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 847,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 848,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 16,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 849,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 16,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 850,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 851,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 852,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 853,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 854,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 855,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 856,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 857,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 858,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 859,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 860,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 861,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 862,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 863,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 864,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 865,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 866,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 867,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 868,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 869,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 870,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 871,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 872,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 873,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 874,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 875,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 876,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 877,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 878,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 879,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 880,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 881,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 882,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 883,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 884,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 885,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 886,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 17,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 887,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 17,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 888,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 889,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 890,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 891,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 17,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 892,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 17,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 893,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 17,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 894,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 895,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 896,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 897,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 898,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 17,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 899,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 17,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 900,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 901,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 902,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 903,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 904,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 905,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 906,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 907,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 908,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 909,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 910,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 911,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 912,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 913,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 914,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 915,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 916,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 917,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 918,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 919,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 920,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 921,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 922,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 923,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 924,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 925,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 926,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 927,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 928,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 929,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 930,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 931,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 932,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 933,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 934,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 18,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 935,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 18,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 936,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 18,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 937,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 938,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 939,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 940,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 18,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 941,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 18,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 942,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 18,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 943,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 944,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 945,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 946,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 947,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 948,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 18,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 949,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 18,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 950,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 951,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 952,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 953,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 954,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 955,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 956,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 957,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 958,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 959,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 960,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 961,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 962,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 963,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 964,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 965,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 966,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 967,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 968,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 969,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 970,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 971,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 972,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 973,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 974,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 975,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 976,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 977,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 978,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 979,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 980,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 981,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 982,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 983,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 984,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 19,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 985,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 19,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 986,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 19,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 987,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 19,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 988,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 989,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 19,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 990,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 19,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 991,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 19,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 992,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 19,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 993,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 19,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 994,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 19,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 995,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 19,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 996,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 997,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 998,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 19,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 999,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 19,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1000,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1001,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1002,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1003,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1004,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1005,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1006,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1007,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1008,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1009,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1010,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1011,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1012,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1013,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1014,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1015,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1016,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1017,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1018,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 20,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1019,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1020,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1021,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1022,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1023,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1024,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1025,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1026,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1027,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1028,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1029,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1030,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1031,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1032,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1033,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1034,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 20,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1035,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 20,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1036,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 20,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1037,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1038,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 20,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1039,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 20,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1040,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 20,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1041,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 20,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1042,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 20,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1043,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 20,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1044,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 20,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1045,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 20,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1046,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1047,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1048,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 20,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1049,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 20,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1050,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1051,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1052,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1053,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1054,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1055,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1056,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1057,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1058,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1059,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1060,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1061,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1062,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1063,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1064,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1065,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1066,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1067,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1068,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1069,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1070,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1071,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1072,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1073,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1074,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1075,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1076,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1077,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1078,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1079,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1080,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1081,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1082,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1083,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1084,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 21,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1085,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 21,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1086,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 21,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1087,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1088,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1089,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1090,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1091,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1092,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1093,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1094,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 21,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1095,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1096,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1097,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1098,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 21,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1099,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 21,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1100,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1101,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1102,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1103,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1104,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1105,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1106,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1107,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1108,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1109,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1110,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1111,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1112,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1113,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1114,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1115,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1116,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1117,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1118,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1119,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1120,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1121,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1122,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1123,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1124,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1125,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1126,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1127,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1128,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1129,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1130,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1131,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1132,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1133,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1134,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 22,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1135,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1136,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 22,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1137,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1138,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1139,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1140,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1141,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1142,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1143,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1144,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 22,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1145,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1146,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1147,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 22,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1148,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1149,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 22,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1150,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1151,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1152,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1153,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1154,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1155,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1156,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1157,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1158,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1159,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1160,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1161,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1162,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1163,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1164,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1165,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1166,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1167,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1168,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1169,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1170,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1171,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1172,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1173,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1174,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1175,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1176,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1177,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1178,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1179,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1180,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1181,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1182,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1183,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1184,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1185,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1186,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 23,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1187,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1188,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1189,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1190,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1191,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1192,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 23,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1193,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 23,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1194,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 23,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1195,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1196,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1197,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1198,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 23,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1199,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 23,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1200,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1201,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1202,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1203,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1204,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1205,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1206,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1207,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1208,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1209,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1210,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1211,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1212,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1213,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1214,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1215,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1216,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1217,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1218,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1219,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1220,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1221,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1222,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1223,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1224,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1225,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1226,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1227,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1228,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1229,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1230,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1231,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1232,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1233,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1234,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1235,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1236,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 24,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1237,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1238,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1239,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1240,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1241,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1242,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 24,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1243,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 24,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1244,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 24,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1245,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1246,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1247,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1248,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 24,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1249,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 24,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1250,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1251,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1252,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1253,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 25,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1254,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 25,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1255,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1256,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1257,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1258,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1259,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1260,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1261,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1262,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 24,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1263,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1264,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1265,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1266,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1267,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1268,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1269,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1270,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1271,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1272,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1273,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1274,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1275,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1276,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1277,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1278,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 25,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1279,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1280,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1281,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1282,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1283,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1284,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1285,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 25,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1286,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 25,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1287,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1288,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1289,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1290,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1291,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1292,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1293,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1294,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 25,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 1295,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1296,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 25,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1297,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1298,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1299,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 25,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1300,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1301,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1302,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1303,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 26,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1304,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 26,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1305,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1306,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1307,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1308,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1309,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1310,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1311,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1312,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1313,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1314,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1315,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1316,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1317,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1318,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1319,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1320,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1321,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1322,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1323,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1324,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1325,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1326,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1327,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1328,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1329,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1330,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1331,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1332,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1333,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1334,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1335,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 26,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1336,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 26,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1337,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1338,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1339,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1340,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1341,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1342,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1343,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1344,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1345,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1346,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 26,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1347,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1348,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1349,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 26,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1350,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1351,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1352,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1353,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1354,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 27,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1355,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1356,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1357,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1358,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1359,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1360,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1361,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1362,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1363,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1364,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1365,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1366,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1367,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1368,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1369,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1370,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1371,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1372,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1373,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1374,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1375,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1376,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1377,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1378,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1379,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1380,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1381,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1382,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1383,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1384,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1385,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1386,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 27,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1387,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1388,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1389,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1390,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1391,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1392,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1393,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1394,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1395,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1396,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 27,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1397,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1398,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1399,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 27,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1400,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1401,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1402,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1403,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1404,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1405,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1406,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1407,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1408,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1409,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1410,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1411,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1412,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1413,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1414,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1415,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1416,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1417,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1418,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1419,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1420,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1421,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1422,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1423,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1424,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1425,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1426,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1427,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1428,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1429,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1430,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1431,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1432,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1433,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1434,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1435,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1436,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 28,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1437,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1438,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1439,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1440,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1441,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1442,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1443,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1444,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 28,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1445,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1446,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1447,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1448,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 28,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1449,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 28,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1450,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1451,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1452,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1453,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1454,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1455,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1456,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1457,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1458,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1459,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1460,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1461,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1462,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1463,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1464,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1465,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1466,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1467,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1468,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1469,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1470,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1471,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1472,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1473,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1474,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1475,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1476,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1477,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1478,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1479,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1480,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1481,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1482,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1483,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1484,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1485,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1486,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1487,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1488,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1489,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1490,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1491,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1492,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1493,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1494,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 29,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1495,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1496,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 29,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1497,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 29,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1498,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 29,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1499,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 29,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1500,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1501,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1502,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1503,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1504,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1505,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1506,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1507,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1508,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1509,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1510,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1511,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1512,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1513,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 27,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1514,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1515,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1516,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1517,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1518,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1519,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1520,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1521,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1522,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1523,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1524,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1525,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1526,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1527,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1528,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1529,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1530,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1531,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1532,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1533,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 30,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1534,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1535,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1536,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1537,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1538,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1539,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1540,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1541,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1542,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1543,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1544,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1545,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 30,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1546,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1547,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1548,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1549,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 30,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1550,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1551,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1552,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1553,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1554,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1555,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1556,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1557,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1558,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1559,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1560,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1561,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1562,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1563,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1564,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1565,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1566,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1567,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1568,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1569,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1570,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1571,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1572,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1573,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1574,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1575,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1576,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1577,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1578,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1579,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1580,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1581,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1582,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1583,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 31,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1584,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1585,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1586,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1587,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1588,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1589,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1590,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1591,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1592,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1593,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1594,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1595,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 31,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1596,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1597,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1598,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1599,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 31,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1600,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1601,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1602,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1603,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1604,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1605,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1606,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1607,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1608,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1609,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1610,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1611,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1612,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1613,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1614,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1615,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1616,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1617,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1618,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1619,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1620,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1621,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1622,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1623,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1624,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1625,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1626,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1627,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1628,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1629,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1630,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1631,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1632,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1633,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 32,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1634,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1635,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1636,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1637,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1638,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1639,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1640,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1641,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1642,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1643,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1644,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 32,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1645,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1646,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1647,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 32,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1648,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 32,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1649,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 32,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1650,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1651,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1652,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1653,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1654,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1655,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1656,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1657,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1658,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1659,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1660,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1661,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1662,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1663,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1664,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1665,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1666,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1667,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1668,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 33,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1669,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 33,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1670,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1671,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1672,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1673,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1674,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1675,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1676,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1677,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1678,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1679,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1680,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1681,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1682,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 33,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1683,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1684,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1685,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1686,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1687,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1688,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1689,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1690,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1691,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1692,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1693,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1694,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1695,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 33,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1696,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1697,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 33,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1698,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 33,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1699,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 33,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1700,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1701,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1702,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1703,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1704,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1705,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1706,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1707,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1708,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1709,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1710,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1711,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1712,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1713,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1714,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1715,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1716,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1717,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 34,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1718,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 34,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1719,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1720,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1721,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1722,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1723,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1724,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1725,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1726,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1727,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1728,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1729,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1730,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1731,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1732,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1733,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1734,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1735,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1736,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1737,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1738,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1739,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1740,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1741,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1742,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 34,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1743,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1744,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 34,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1745,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1746,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1747,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 34,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1748,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 34,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1749,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 34,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1750,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1751,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1752,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1753,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1754,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1755,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1756,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1757,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1758,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1759,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1760,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1761,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1762,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1763,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1764,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1765,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1766,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1767,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 35,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1768,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 35,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1769,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 35,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1770,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1771,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1772,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1773,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1774,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1775,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1776,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1777,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1778,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1779,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1780,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1781,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1782,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1783,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1784,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1785,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1786,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1787,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1788,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1789,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1790,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1791,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1792,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1793,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 35,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1794,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1795,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 35,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1796,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1797,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1798,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 35,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1799,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 35,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1800,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1801,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1802,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1803,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1804,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1805,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1806,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1807,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1808,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1809,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1810,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1811,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 23,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1812,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1813,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1814,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1815,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1816,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 36,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1817,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 36,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1818,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 36,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1819,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1820,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1821,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1822,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1823,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1824,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1825,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1826,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1827,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1828,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1829,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1830,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1831,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1832,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1833,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1834,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1835,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1836,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1837,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1838,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1839,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1840,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1841,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1842,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1843,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 36,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1844,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1845,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 36,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1846,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1847,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1848,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1849,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 36,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1850,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1851,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1852,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1853,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1854,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1855,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1856,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1857,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1858,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1859,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1860,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1861,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 22,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1862,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1863,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1864,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1865,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1866,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 37,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1867,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 37,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1868,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 37,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1869,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1870,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1871,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1872,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1873,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1874,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1875,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1876,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1877,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1878,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1879,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1880,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1881,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1882,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1883,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1884,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1885,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1886,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1887,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1888,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1889,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1890,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1891,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1892,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1893,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1894,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 37,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1895,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1896,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 37,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1897,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1898,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1899,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 37,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1900,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1901,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1902,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1903,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1904,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1905,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1906,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1907,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1908,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1909,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1910,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1911,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1912,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1913,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1914,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1915,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1916,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 38,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1917,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 38,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1918,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1919,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1920,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1921,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1922,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1923,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1924,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1925,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1926,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1927,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1928,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1929,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1930,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1931,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1932,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1933,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1934,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1935,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1936,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1937,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1938,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1939,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1940,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1941,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1942,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1943,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1944,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 38,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1945,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1946,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 38,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1947,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1948,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1949,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 38,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1950,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1951,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1952,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1953,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1954,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1955,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1956,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1957,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1958,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1959,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1960,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1961,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1962,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1963,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1964,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1965,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 39,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1966,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 39,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1967,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 39,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 1968,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 39,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1969,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1970,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1971,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1972,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1973,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1974,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1975,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1976,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1977,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1978,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1979,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1980,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1981,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1982,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1983,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1984,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1985,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1986,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1987,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1988,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1989,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1990,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1991,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1992,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1993,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1994,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1995,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 90,
+                        "y": 39,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 1996,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1997,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 39,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 1998,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 39,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 1999,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 39,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2000,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2001,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2002,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2003,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2004,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2005,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2006,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2007,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2008,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2009,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2010,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2011,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2012,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2013,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2014,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2015,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 40,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2016,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 40,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2017,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 40,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2018,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 40,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2019,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2020,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2021,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2022,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2023,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2024,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2025,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2026,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2027,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2028,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2029,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2030,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2031,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2032,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2033,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2034,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2035,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2036,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2037,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2038,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2039,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2040,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2041,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2042,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2043,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2044,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2045,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 40,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2046,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2047,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2048,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 40,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2049,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 40,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2050,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2051,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2052,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2053,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2054,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2055,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2056,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2057,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2058,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2059,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2060,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2061,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2062,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2063,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2064,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2065,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2066,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 41,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2067,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 41,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2068,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 41,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2069,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2070,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2071,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2072,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2073,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2074,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2075,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2076,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2077,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2078,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2079,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2080,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2081,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2082,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2083,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2084,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2085,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2086,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2087,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2088,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2089,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2090,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2091,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2092,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2093,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2094,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2095,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2096,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 41,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2097,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2098,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2099,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 41,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2100,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2101,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2102,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2103,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2104,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2105,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2106,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2107,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2108,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2109,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2110,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2111,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2112,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2113,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2114,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2115,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 42,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2116,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 42,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2117,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 42,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2118,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2119,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2120,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2121,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2122,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2123,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2124,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2125,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2126,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2127,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2128,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 42,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2129,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 42,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2130,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2131,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2132,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2133,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2134,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2135,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2136,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2137,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2138,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2139,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2140,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2141,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2142,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2143,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2144,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2145,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2146,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 42,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2147,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2148,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2149,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 42,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2150,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2151,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2152,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2153,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2154,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2155,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2156,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2157,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2158,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2159,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2160,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2161,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2162,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2163,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2164,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2165,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2166,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 43,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2167,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 43,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2168,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2169,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2170,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2171,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 42,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2172,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2173,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2174,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2175,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2176,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2177,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2178,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2179,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2180,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2181,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2182,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2183,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2184,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2185,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2186,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2187,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2188,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2189,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 43,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2190,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 43,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2191,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2192,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2193,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2194,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2195,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 43,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2196,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2197,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 43,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2198,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2199,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 43,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2200,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2201,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 3,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2202,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 5,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2203,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2204,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2205,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2206,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2207,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2208,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2209,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2210,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2211,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2212,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2213,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2214,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2215,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2216,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2217,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2218,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2219,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2220,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2221,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2222,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2223,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2224,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2225,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2226,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2227,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2228,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2229,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2230,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2231,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2232,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2233,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2234,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2235,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2236,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2237,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 44,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2238,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 44,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2239,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 44,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2240,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 44,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2241,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2242,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2243,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2244,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2245,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2246,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 44,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2247,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 44,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2248,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2249,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 44,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2250,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2251,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 2,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2252,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 4,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2253,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2254,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2255,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2256,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2257,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2258,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2259,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2260,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2261,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2262,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2263,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 26,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2264,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 28,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2265,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2266,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2267,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2268,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2269,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2270,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2271,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2272,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2273,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2274,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2275,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2276,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2277,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2278,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2279,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2280,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2281,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2282,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2283,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2284,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2285,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2286,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2287,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 45,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2288,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 45,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2289,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 45,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2290,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 45,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2291,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 45,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2292,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2293,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2294,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2295,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2296,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2297,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 45,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2298,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 45,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2299,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 45,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2300,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2301,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2302,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2303,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2304,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2305,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2306,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2307,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2308,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2309,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2310,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2311,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2312,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 25,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2313,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2314,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2315,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2316,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2317,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2318,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2319,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2320,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2321,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2322,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2323,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2324,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2325,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2326,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2327,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2328,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2329,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2330,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2331,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2332,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2333,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2334,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2335,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2336,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2337,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2338,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2339,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2340,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2341,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 46,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2342,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2343,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2344,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2345,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2346,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 46,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2347,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2348,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 46,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2349,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 46,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2350,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2351,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2352,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2353,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2354,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2355,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2356,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2357,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2358,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2359,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2360,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2361,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2362,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2363,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2364,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2365,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2366,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 32,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2367,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 34,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2368,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2369,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2370,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2371,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2372,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 47,
+                        "z": 5
+                        },
+                        {
+                        "events": [],
+                        "id": 2373,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2374,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2375,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2376,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2377,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2378,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2379,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2380,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 60,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2381,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 62,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2382,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2383,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2384,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2385,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2386,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2387,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2388,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2389,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2390,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2391,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 47,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2392,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2393,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2394,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2395,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2396,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 92,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2397,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 47,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2398,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 47,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2399,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 47,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2400,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2401,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2402,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2403,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2404,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2405,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2406,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2407,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2408,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2409,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2410,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 21,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2411,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2412,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2413,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2414,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2415,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2416,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2417,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2418,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 37,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2419,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2420,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2421,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2422,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 48,
+                        "z": 5
+                        },
+                        {
+                        "events": [],
+                        "id": 2423,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2424,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2425,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2426,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2427,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2428,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2429,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2430,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2431,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2432,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2433,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2434,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2435,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2436,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2437,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2438,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2439,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2440,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2441,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 48,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2442,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2443,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2444,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2445,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2446,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 48,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2447,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2448,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 48,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2449,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 48,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2450,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2451,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2452,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2453,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2454,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2455,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2456,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2457,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2458,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2459,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2460,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2461,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2462,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2463,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2464,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2465,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 30,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2466,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2467,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2468,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2469,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2470,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2471,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2472,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 44,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2473,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2474,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2475,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2476,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2477,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2478,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2479,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2480,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2481,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2482,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2483,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2484,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2485,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2486,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2487,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2488,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2489,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2490,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2491,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 49,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2492,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2493,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2494,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2495,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2496,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 49,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2497,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2498,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 49,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2499,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 49,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2500,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2501,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2502,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2503,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2504,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2505,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2506,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2507,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2508,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2509,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 19,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2510,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2511,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2512,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2513,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2514,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2515,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2516,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2517,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2518,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2519,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2520,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2521,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2522,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2523,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2524,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2525,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2526,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2527,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 55,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2528,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 57,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2529,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2530,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2531,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2532,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2533,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2534,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2535,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2536,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2537,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2538,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2539,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2540,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 50,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2541,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2542,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2543,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2544,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2545,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 50,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2546,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2547,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 50,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2548,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 97,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2549,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 50,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2550,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2551,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2552,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2553,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2554,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2555,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 51,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2556,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2557,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 14,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2558,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2559,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2560,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 20,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2561,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2562,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2563,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2564,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2565,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2566,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2567,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2568,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2569,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2570,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2571,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2572,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 51,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2573,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 46,
+                        "y": 51,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2574,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 48,
+                        "y": 51,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2575,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2576,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2577,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2578,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2579,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2580,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2581,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2582,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2583,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2584,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2585,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 51,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2586,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 51,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2587,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 51,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2588,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 51,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2589,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2590,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2591,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2592,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2593,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2594,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2595,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 51,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2596,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2597,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 51,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2598,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2599,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 51,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2600,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2601,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2602,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2603,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2604,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2605,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2606,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2607,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2608,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2609,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2610,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2611,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2612,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2613,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2614,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2615,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2616,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2617,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2618,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2619,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 39,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2620,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2621,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2622,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 52,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2623,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2624,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2625,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2626,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2627,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2628,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2629,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2630,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2631,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2632,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2633,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2634,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 69,
+                        "y": 52,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2635,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 71,
+                        "y": 52,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2636,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 52,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2637,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 52,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2638,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2639,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2640,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2641,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2642,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2643,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2644,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2645,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2646,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 52,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2647,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 95,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2648,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 52,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2649,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 52,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2650,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2651,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2652,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2653,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2654,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2655,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2656,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2657,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2658,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 16,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2659,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2660,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2661,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2662,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2663,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2664,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2665,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2666,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2667,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 53,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2668,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2669,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2670,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2671,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2672,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2673,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2674,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2675,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 50,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2676,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 52,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2677,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2678,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2679,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2680,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2681,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2682,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 64,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2683,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 66,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2684,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2685,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 53,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2686,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 53,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2687,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 74,
+                        "y": 53,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2688,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 76,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2689,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 78,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2690,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2691,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2692,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 84,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2693,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 86,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2694,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 88,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2695,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2696,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 53,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2697,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2698,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 53,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2699,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 53,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2700,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2701,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2702,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2703,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 7,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2704,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 9,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2705,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2706,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2707,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2708,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2709,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2710,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2711,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2712,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2713,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2714,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2715,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2716,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2717,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 54,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2718,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 54,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2719,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2720,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 41,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2721,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 43,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2722,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 45,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2723,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2724,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2725,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2726,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2727,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2728,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2729,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2730,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2731,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2732,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2733,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2734,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2735,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2736,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2737,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2738,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2739,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2740,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2741,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 83,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2742,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2743,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2744,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 89,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2745,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 91,
+                        "y": 54,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2746,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 93,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2747,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 54,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2748,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 54,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2749,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 54,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2750,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2751,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2752,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2753,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 6,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2754,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 8,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2755,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 10,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2756,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 12,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2757,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2758,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2759,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 18,
+                        "y": 55,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2760,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2761,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2762,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2763,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2764,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2765,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2766,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2767,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 55,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2768,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 36,
+                        "y": 55,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2769,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 38,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2770,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 40,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2771,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 42,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2772,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 44,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2773,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2774,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2775,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2776,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2777,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 54,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2778,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 56,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2779,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 58,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2780,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2781,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2782,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2783,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2784,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 68,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2785,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 70,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2786,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 72,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2787,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2788,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2789,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2790,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 80,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2791,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 82,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2792,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2793,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2794,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2795,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 55,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2796,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2797,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 94,
+                        "y": 55,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2798,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 96,
+                        "y": 55,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2799,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 55,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2800,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2801,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2802,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2803,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2804,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2805,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 11,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2806,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 13,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2807,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 15,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2808,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 17,
+                        "y": 56,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2809,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 56,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2810,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2811,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2812,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2813,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2814,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 29,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2815,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 31,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2816,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 33,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2817,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 35,
+                        "y": 56,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2818,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 56,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2819,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2820,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2821,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2822,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2823,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 47,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2824,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 49,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2825,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 51,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2826,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 53,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2827,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2828,
+                        "value": "S",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2829,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 59,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2830,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 61,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2831,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 63,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2832,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 65,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2833,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 67,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2834,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2835,
+                        "value": "W",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2836,
+                        "value": "S",
+                        "walkable": true,
+                        "x": 73,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2837,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 75,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2838,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 77,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2839,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 79,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2840,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 81,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2841,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2842,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 85,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2843,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 87,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2844,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 56,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2845,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2846,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 56,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2847,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 56,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2848,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 56,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2849,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 56,
+                        "z": 0
+                        },
+                        {
+                        "events": [],
+                        "id": 2850,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 0,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2851,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 2,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2852,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 4,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2853,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 6,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2854,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 8,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2855,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 10,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2856,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 12,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2857,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 14,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2858,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 16,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2859,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 18,
+                        "y": 57,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2860,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 20,
+                        "y": 57,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2861,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 22,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2862,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 24,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2863,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 26,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2864,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 28,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2865,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 30,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2866,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 32,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2867,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 34,
+                        "y": 57,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2868,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 36,
+                        "y": 57,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2869,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 38,
+                        "y": 57,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2870,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 40,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2871,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 42,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2872,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 44,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2873,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 46,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2874,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 48,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2875,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 50,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2876,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 52,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2877,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 54,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2878,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 56,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2879,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 58,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2880,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 60,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2881,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 62,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2882,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 64,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2883,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 66,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2884,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 68,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2885,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 70,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2886,
+                        "value": "-",
+                        "walkable": true,
+                        "x": 72,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2887,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 74,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2888,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 76,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2889,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 78,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2890,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 80,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2891,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 82,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2892,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 84,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2893,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 86,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2894,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 88,
+                        "y": 57,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2895,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 90,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2896,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 92,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2897,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 94,
+                        "y": 57,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2898,
+                        "value": "C",
+                        "walkable": true,
+                        "x": 96,
+                        "y": 57,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2899,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 98,
+                        "y": 57,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2900,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 1,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2901,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 3,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2902,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 5,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2903,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 7,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2904,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 9,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2905,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 11,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2906,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 13,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2907,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 15,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2908,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 17,
+                        "y": 58,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2909,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 19,
+                        "y": 58,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2910,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 21,
+                        "y": 58,
+                        "z": 4
+                        },
+                        {
+                        "events": [],
+                        "id": 2911,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 23,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2912,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 25,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2913,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 27,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2914,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 29,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2915,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 31,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2916,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 33,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2917,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 35,
+                        "y": 58,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2918,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 37,
+                        "y": 58,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2919,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 39,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2920,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 41,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2921,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 43,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2922,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 45,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2923,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 47,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2924,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 49,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2925,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 51,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2926,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 53,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2927,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 55,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2928,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 57,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2929,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 59,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2930,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 61,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2931,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 63,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2932,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 65,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2933,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 67,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2934,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 69,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2935,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 71,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2936,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 73,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2937,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 75,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2938,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 77,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2939,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 79,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2940,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 81,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2941,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 83,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2942,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 85,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2943,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 87,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2944,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 89,
+                        "y": 58,
+                        "z": 3
+                        },
+                        {
+                        "events": [],
+                        "id": 2945,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 91,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2946,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 93,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2947,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 95,
+                        "y": 58,
+                        "z": 2
+                        },
+                        {
+                        "events": [],
+                        "id": 2948,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 97,
+                        "y": 58,
+                        "z": 1
+                        },
+                        {
+                        "events": [],
+                        "id": 2949,
+                        "value": "T",
+                        "walkable": false,
+                        "x": 99,
+                        "y": 58,
+                        "z": 1
+                        }
+                    ],
+                    "id": 958207166,
+                    "name": "Suburbs",
+                    "npcs": [],
+                    "order": 1,
+                    "primary": true,
+                    "size": 50,
+                    "starting_point": {
+                        "id": 254,
+                        "x": 9,
+                        "y": 4
+                    }
+                    }
             ]
         },
         "complete": false

@@ -1,13 +1,13 @@
 import i18next from 'i18next';
 import Fetcher from './fetcher';
+import { invoke } from '@tauri-apps/api';
 
 export default class Settings extends Fetcher {
     constructor(options = {}) {
         super('app_datas');
-        Object.keys(options).forEach((key) => {
-            this[key] = options[key];
-        });
-        this.setLanguage();
+        for (const [key, value] of Object.entries(options)) {
+            this[key] = value;
+        }
     }
 
     setLanguage() {
@@ -37,5 +37,9 @@ export default class Settings extends Fetcher {
 
     static fromApi(id, data) { // eslint-disable-line
         return new this(data);
+    }
+
+    async save(overide = false) { // eslint-disable-line
+        await invoke(`save_app_datas`, { id: this.id, data: this });
     }
 }

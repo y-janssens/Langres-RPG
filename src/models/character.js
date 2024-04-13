@@ -4,6 +4,7 @@ export default class Character {
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
+        this.inventory = new Inventory(options['inventory']);
     }
 
     get name() {

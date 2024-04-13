@@ -22,8 +22,8 @@ export const InGameMenu = ({ id, form }) => {
     const handleContinue = useCallback(
         (save = false) => {
             if (save) {
-                let game = new GameModel(form);
-                if (!engine.mapid || engine.mapid?.is_final) {
+                let game = new GameModel(form.instance);
+                if (!engine.mapId || engine.mapId?.is_final) {
                     game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
                 }
                 game.save();
@@ -31,7 +31,7 @@ export const InGameMenu = ({ id, form }) => {
             engine.controls.generateControls();
             setEngine({ controls: engine.controls });
         },
-        [form, engine.controls]
+        [form, engine.controls, engine.controls.currentTile, engine.mapId]
     );
 
     const items = useMemo(() => {

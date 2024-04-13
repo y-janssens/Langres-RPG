@@ -82,8 +82,10 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                         break;
                 }
 
-                if (Boolean(tiles.current?.threshold) && Object.keys(tiles.current?.threshold).length) {
-                    handleGateWay(tiles.current?.threshold);
+                if (tiles.current?.events.length) {
+                    if (tiles.current?.hasGateway) {
+                        handleGateWay(tiles.current?.gateway);
+                    }
                 }
 
                 if (engine.controls.getDelta(character)) {
@@ -96,7 +98,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
     useEffect(() => {
         frustumCullItems();
-    }, []);
+    }, [engine.mapId]);
 
     return (
         <>

@@ -46,7 +46,7 @@ const Map = ({ loading, type, display, form, setForm, history, index }) => {
                         <div
                             className={css['builder-map-grid']}
                             style={{
-                                gridTemplateRows: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`,
+                                gridTemplateRows: `repeat(${world.size + Math.ceil(Math.sqrt(world.size))}, ${55 * (form.zoom / 100)}px)`,
                                 gridTemplateColumns: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`
                             }}
                         >
@@ -132,12 +132,19 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
         return name;
     }, [form, item, item.value]);
 
+    const isGateway = useMemo(() => {
+        if (!item.events.length) {
+            return false;
+        }
+        return item.events.some((ev) => Object.keys(ev.type)[0] === 'GateWay');
+    }, [item]);
+
     const colors = useMemo(() => {
-        if (!item.start && !item.threshold) {
+        if (!item.start && !isGateway) {
             return 'unset';
         }
         return `hue-rotate(${item.start ? '-25deg' : '25deg'}) brightness(1.25) saturate(1.5)`;
-    }, [item]);
+    }, [item, isGateway]);
 
     useEffect(() => {
         const element = tileRef.current;

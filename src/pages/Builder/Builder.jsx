@@ -2,11 +2,13 @@ import { useCallback, useMemo } from 'react';
 import { Header, SideBar, Manager, Theme } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction } from '../../models';
+
 import Map from './Map/Map';
-import css from './builder.module.css';
 import { Onboarding } from './components/Onboarding/Onboarding';
 import { Gateway } from './components/Gateway';
 import { Generator } from './components/Generator/Generator';
+
+import css from './builder.module.css';
 
 export const Builder = () => {
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
@@ -120,13 +122,12 @@ export const Builder = () => {
                                 sync={handleSync}
                                 onClose={() => setForm('onboarding', { value: false, type: null })}
                             />
-                            {/* {form.modalEditor && <Editor open={form.modalEditor} form={form} setForm={setForm} onClose={() => setForm('modalEditor', false)} />} */}
                             {form.modalManager && <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />}
                             {form.modalGenerator && (
                                 <Generator open={form.modalGenerator} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGenerator', false)} />
                             )}
                             {form.modalGateway && (
-                                <Gateway open={form.modalGateway} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
+                                <Gateway open={form.modalGateway} form={form} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
                             )}
                         </>
                     ))}

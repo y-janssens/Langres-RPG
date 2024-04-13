@@ -28,7 +28,7 @@ export const Modal = ({ title = '', subtitle = '', onSave = () => {}, onReset = 
                             <div className={css['modal-card-content']}>{children}</div>
 
                             <div className={css['modal-footer']}>
-                                {onReset() && (
+                                {onReset && (
                                     <Button className={css['modal-btns']} dataTheme="dark" size="sm" color="default" variant="outline" disabled={disabled} onClick={onReset}>
                                         {t('common.actions.reset')}
                                     </Button>

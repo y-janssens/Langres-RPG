@@ -8,7 +8,7 @@ export default class PlayerJournal extends Fetcher {
         }
     }
 
-    static command(id) {
+    static command(id) { // eslint-disable-line
         return 'load_player_journal';
     }
 }

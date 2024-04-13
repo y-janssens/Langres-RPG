@@ -1,8 +1,6 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::npcs::models::{Npc, NpcDialogs};
-
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum EventStatus {
     None,
@@ -25,9 +23,9 @@ pub enum EventType {
     Quest(String),
     GateWay(i32, bool),
     CheckPoint(i32),
-    Combat(Box<Npc>),
+    Combat(String),
     CutScene(String),
-    Dialog(Box<NpcDialogs>),
+    Dialog(String),
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
@@ -39,6 +37,7 @@ pub struct Event {
     pub destination: EventType,
 }
 
+#[allow(dead_code)]
 impl Event {
     fn get_base_event(args: (EventType, EventMode, EventStatus, EventType)) -> Event {
         Self {
@@ -82,6 +81,33 @@ impl Event {
             EventType::Quest(quest_id),
             EventMode::End,
             EventStatus::Done,
+            EventType::None,
+        ))
+    }
+
+    pub fn start_dialog(npc_id: String) -> Event {
+        Self::get_base_event((
+            EventType::Dialog(npc_id),
+            EventMode::Start,
+            EventStatus::Pending,
+            EventType::None,
+        ))
+    }
+
+    pub fn start_combat(npc_id: String) -> Event {
+        Self::get_base_event((
+            EventType::Combat(npc_id),
+            EventMode::Start,
+            EventStatus::Pending,
+            EventType::None,
+        ))
+    }
+
+    pub fn get_cutscene(cutscene_id: String) -> Event {
+        Self::get_base_event((
+            EventType::CutScene(cutscene_id),
+            EventMode::Start,
+            EventStatus::Pending,
             EventType::None,
         ))
     }

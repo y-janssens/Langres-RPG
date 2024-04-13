@@ -34,7 +34,7 @@ export default class GameModel extends AdminModel {
     }
 
     get current_map() {
-        return this.current_act.content.maps.find((mp) => (this.engine.mapid ? mp.id === this.engine?.mapId?.id : !mp.complete && mp.primary));
+        return this.current_act.content.maps.find((mp) => (this.engine.mapId ? mp.id === this.engine?.mapId?.id : !mp.complete && mp.primary));
     }
 
     get current_world() {
@@ -42,7 +42,7 @@ export default class GameModel extends AdminModel {
     }
 
     get current_tile() {
-        if (!this.has_position) {
+        if (!this.has_position || this.engine.mapId) {
             return this.current_world.starting_tile;
         }
         return this.current_world.content.find((it) => it.id === this.last_known_position.id);
