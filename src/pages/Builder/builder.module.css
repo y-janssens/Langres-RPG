@@ -47,12 +47,16 @@
 }
 
 .builder-navbar-cta {
-    width: 210px;
+    width: max-content;
     margin-right: 10px;
 }
 
 .builder-navbar-cta .builder-navbar-divider {
     margin: 0 !important;
+}
+
+.builder-navbar-cta button {
+    margin-left: 10px;
 }
 
 .builder-navbar-actions-block {
@@ -215,7 +219,7 @@
 
 .builder-map-grid {
     display: grid;
-    column-gap: 8px;
+
     row-gap: 0px;
 }
 

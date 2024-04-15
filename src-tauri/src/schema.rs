@@ -6,6 +6,7 @@ diesel::table! {
         name -> Text,
         description -> Text,
         completed -> Bool,
+        visible -> Bool,
     }
 }
 
@@ -117,7 +118,9 @@ diesel::table! {
     statistics (id) {
         id -> Text,
         name -> Text,
+        description -> Text,
         value -> Text,
+        visible -> Bool,
     }
 }
 

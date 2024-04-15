@@ -52,7 +52,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
 
     const handleGateWay = useCallback(
         (gateway) => {
-            let game = new GameModel(form.instance);
+            let game = new GameModel(form);
             if (gateway[0] && Boolean(gateway[1])) {
                 let act = game.storyline.story.acts.find((act) => act.id === form.act.id);
                 act.content.maps.find((mp) => mp.id === form.world.id).complete = true;
@@ -75,6 +75,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             id: engine.gameId,
             launch: game,
             onSuccess: (response) => {
+                console.log(response.achievements);
                 setFormObject({ ...form, journal: response });
             }
         },

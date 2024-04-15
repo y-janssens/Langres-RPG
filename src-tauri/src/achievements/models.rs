@@ -18,6 +18,7 @@ pub struct Achievement {
     pub name: Translations,
     pub description: Translations,
     pub completed: bool,
+    pub visible: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -28,6 +29,7 @@ pub struct InsertableAchievement {
     pub name: String,
     pub description: String,
     pub completed: bool,
+    pub visible: bool,
 }
 
 impl Achievement {
@@ -37,6 +39,7 @@ impl Achievement {
             name: Translations::default(),
             description: Translations::default(),
             completed: false,
+            visible: true,
         }
     }
 
@@ -57,6 +60,7 @@ impl Achievement {
             name: name_json,
             description: description_json,
             completed: achievement.completed,
+            visible: achievement.visible,
         };
         let exists = achievements
             .filter(id.eq(achievement.clone().id))

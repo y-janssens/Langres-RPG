@@ -76,6 +76,8 @@ export const Hexagon = memo(({ position, colorMap, item, builder = false, onClic
             return 'white';
         }
         switch (item.value) {
+            case 'C':
+                return 'lightgreen';
             case 'T':
                 return 'green';
             case 'S':

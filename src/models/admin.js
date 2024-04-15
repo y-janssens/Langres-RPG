@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { GameModel, Storyline, Collection, MapObject, MapFunction, Quest, Fetcher, Achievement, Statistic, Loot } from '.';
+import { AdminGameModel, Storyline, Collection, MapObject, MapFunction, Quest, Fetcher, Achievement, Statistic, Loot } from '.';
 import { isObject } from '../components/utils';
 export default class AdminModel extends Fetcher {
     constructor(instance, model) {
@@ -52,7 +52,7 @@ export default class AdminModel extends Fetcher {
     static getInstance(model) {
         switch (model) {
             case 'Game':
-                return GameModel;
+                return AdminGameModel;
             case 'Storyline':
                 return Storyline;
             case 'Collection':

@@ -156,6 +156,7 @@ pub mod factories_definitions {
                     &StringFaker.generate().value(),
                 ),
                 completed: false,
+                visible: true,
             }
         }
     }
@@ -170,7 +171,12 @@ pub mod factories_definitions {
                     &StringFaker.generate().value(),
                     &StringFaker.generate().value(),
                 ),
+                description: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
                 value: StringFaker.generate().value(),
+                visible: BoolFaker.generate().value(),
             }
         }
     }

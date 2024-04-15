@@ -2,5 +2,7 @@
 CREATE TABLE statistics (
     id TEXT NOT NULL PRIMARY KEY,
     name TEXT NOT NULL,
-    "value" TEXT NOT NULL
+    description TEXT NOT NULL,
+    "value" TEXT NOT NULL,
+    visible BOOLEAN NOT NULL
 );

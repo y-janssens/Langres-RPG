@@ -1,8 +1,9 @@
-import { World, Character, Fetcher } from '.';
+import { World, Character } from '.';
+import AdminModel from './admin';
 
-export default class GameModel extends Fetcher {
+export default class AdminGameModel extends AdminModel {
     constructor(options = {}) {
-        super('game');
+        super(options, 'game');
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
@@ -52,9 +53,5 @@ export default class GameModel extends Fetcher {
             return 'load_games';
         }
         return 'load_game';
-    }
-
-    get model() {
-        return "game"
     }
 }

@@ -4,6 +4,7 @@ export { default as Engine } from './engine';
 export { default as DashboardModels } from './dashboard';
 export { default as Fetcher } from './fetcher';
 export { default as GameModel } from './game';
+export { default as AdminGameModel } from './adminGame';
 export { default as Settings } from './settings';
 export { default as Character } from './character';
 export { default as Inventory } from './inventory';

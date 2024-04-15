@@ -58,6 +58,7 @@ pub struct Quest {
 
 impl Quest {
     pub fn load() -> Vec<Quest> {
+        println!("{:#?}", get_all());
         get_all()
     }
 }

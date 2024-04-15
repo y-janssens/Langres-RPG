@@ -22,7 +22,7 @@ export const InGameMenu = ({ id, form }) => {
     const handleContinue = useCallback(
         (save = false) => {
             if (save) {
-                let game = new GameModel(form.instance);
+                let game = new GameModel(form);
                 if (!engine.mapId || engine.mapId?.is_final) {
                     game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
                 }

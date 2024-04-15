@@ -28,6 +28,7 @@ mod tests {
                 name: result[0].clone().name,
                 description: result[0].clone().description,
                 completed: result[0].clone().completed,
+                visible: result[0].clone().visible,
             };
 
             patch_achievement.completed = true;

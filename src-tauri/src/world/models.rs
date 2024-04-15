@@ -100,22 +100,16 @@ impl World {
         String::from("-")
     }
 
-    pub fn generate_forest(content: Vec<Item>) -> Vec<Item> {
+    pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
         let items = Self::get_items("map");
-        let mut new_content = Vec::new();
 
-        for mut item in content {
+        for item in content.iter_mut().filter(|i| i.value == "-") {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
-            if item.value != "F" {
-                item.value = value.clone();
-                item.walkable = value == "-";
-            } else {
-                item.walkable = false;
-            }
-            new_content.push(item);
+            item.value = value.clone();
+            item.walkable = value == "-";
         }
-        new_content
+        content
     }
 
     fn get_items(name: &str) -> Vec<&'static str> {

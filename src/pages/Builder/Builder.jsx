@@ -22,11 +22,11 @@ export const Builder = () => {
         modalGenerator: false,
         onboarding: { value: false, type: null },
         selectedTiles: [],
-        showValues: true,
+        showValues: false,
         showIds: true,
         showObjects: false,
-        showIcons: false,
-        zoom: 100,
+        showIcons: true,
+        zoom: 80,
         storyLine: {},
         objects: [],
         functions: []
@@ -126,9 +126,7 @@ export const Builder = () => {
                             {form.modalGenerator && (
                                 <Generator open={form.modalGenerator} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGenerator', false)} />
                             )}
-                            {form.modalGateway && (
-                                <Gateway open={form.modalGateway} form={form} onClose={() => setForm('modalGateway', false)} sync={handleSync} />
-                            )}
+                            {form.modalGateway && <Gateway open={form.modalGateway} form={form} onClose={() => setForm('modalGateway', false)} sync={handleSync} />}
                         </>
                     ))}
             </div>

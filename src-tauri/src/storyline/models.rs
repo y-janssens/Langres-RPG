@@ -84,7 +84,7 @@ impl Act {
             .filter(|map| map.primary)
             .all(|map| map.complete);
 
-        if self.content.maps.len() > 0 && all_primary_maps_complete {
+        if !self.content.maps.is_empty() && all_primary_maps_complete {
             self.complete = true;
         }
     }
