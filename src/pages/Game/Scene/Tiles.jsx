@@ -23,11 +23,13 @@ export const Tiles = memo(({ data }) => {
                         {item.id}
                     </Text>
                 )} */}
-                <Hexagon
-                    item={item}
-                    position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                    colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
-                />
+                {item.value !== 'W' && (
+                    <Hexagon
+                        item={item}
+                        position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
+                        colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
+                    />
+                )}
             </group>
         );
     });
