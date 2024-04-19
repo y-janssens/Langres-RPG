@@ -32,9 +32,31 @@ lazy_static! {
                         name: Translations::generate("Épée longue", "Long sword"),
                         description: Translations::generate("Une simple longue", "A long sword"),
                         armor: None,
-                        damage: Some(14),
+                        damage: Some(12),
+                        parade: Some(12),
+                        price: Some(12),
+                        weight: Some(3)
+                    },
+                ],
+            },
+        };
+
+     pub static ref SER_HERBERT_TABLE: NamedTableLoot = NamedTableLoot {
+            name: "ser_herbert_table".to_string(),
+            table: TableLoot {
+                items: vec![
+                    Loot::gold(100),
+                    Loot {
+                        id: Uuid::new_v4().to_string(),
+                        item_type: ItemTypes::Weapon,
+                        name: Translations::generate("Ordalie", "Ordeal"),
+                        description: Translations::generate(
+                            "Une épée longue, ayant appartenu au traître, Ser Herbert",
+                            "A long sword that belonged to the traitor, Sir Herbert"),
+                        armor: None,
+                        damage: Some(16),
                         parade: Some(14),
-                        price: Some(14),
+                        price: Some(25),
                         weight: Some(4)
                     },
                 ],

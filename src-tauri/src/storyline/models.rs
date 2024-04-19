@@ -1,6 +1,8 @@
 use crate::config::factory::factory_models::AbstractModel;
+use crate::events::models::{Event, EventType};
+use crate::npcs::models::Npc;
 use crate::schema::storyline::dsl::storyline;
-use crate::world::models::World;
+use crate::world::models::{Item, World};
 use diesel::deserialize::{self, FromSql};
 use diesel::sql_types::Text;
 use diesel::sqlite::SqliteValue;
@@ -78,11 +80,11 @@ impl Act {
             .content
             .maps
             .iter()
-            .filter_map(|map_option| map_option.as_ref())
+            .filter_map(Some)
             .filter(|map| map.primary)
             .all(|map| map.complete);
 
-        if all_primary_maps_complete {
+        if !self.content.maps.is_empty() && all_primary_maps_complete {
             self.complete = true;
         }
     }
@@ -90,13 +92,19 @@ impl Act {
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Content {
-    pub maps: Vec<Option<World>>,
+    pub maps: Vec<World>,
 }
 
 impl Story {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Story> {
-        let mut _load: Story = crate::schema::storyline::table.first(connection)?;
-        Ok(_load)
+        let mut _storyline: Story = crate::schema::storyline::table.first(connection)?;
+
+        for act in _storyline.story.acts.iter_mut() {
+            for map in act.content.maps.iter_mut() {
+                map.npcs = Npc::get_for_map(map.id);
+            }
+        }
+        Ok(_storyline)
     }
 
     pub fn save(
@@ -104,7 +112,7 @@ impl Story {
         id: i32,
         data: &mut Story,
     ) -> QueryResult<usize> {
-        for act in &mut data.story.acts {
+        for act in data.story.acts.iter_mut() {
             act.validate_acts();
         }
         let updated_json = serde_json::to_string(&data.story.acts).map_err(|e| {
@@ -116,5 +124,84 @@ impl Story {
         diesel::update(storyline.find(id))
             .set(crate::schema::storyline::story.eq(updated_json))
             .execute(connection)
+    }
+
+    fn find_tile<F>(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        mut operation: F,
+    ) where
+        F: FnMut(&mut Item) + std::panic::UnwindSafe,
+    {
+        let mut story = Self::load(connection).expect("Failed to load Story");
+
+        let result = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+            story
+                .story
+                .acts
+                .iter_mut()
+                .find(|act| act.id == act_id)
+                .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+                .and_then(|map| map.content.iter_mut().find(|tile| tile.id == tile_id))
+                .map(&mut operation);
+        }));
+
+        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+
+        if let Err(e) = result {
+            std::panic::resume_unwind(e);
+        }
+    }
+
+    pub fn register_gateway(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        gateway: (Option<i32>, bool),
+    ) {
+        Self::find_tile(connection, act_id, map_id, tile_id, |tile| {
+            if let Some(gateway_id) = gateway.0 {
+                let gateway_event = Event::get_gateway(Some(gateway_id), gateway.1);
+                let pos = tile
+                    .events
+                    .iter()
+                    .position(|event| matches!(event.r#type, EventType::GateWay(_, _)));
+                match pos {
+                    Some(idx) => tile.events[idx] = gateway_event,
+                    None => tile.events.push(gateway_event),
+                }
+            } else {
+                tile.events
+                    .retain(|event| !matches!(event.r#type, EventType::GateWay(_, _)));
+            }
+        });
+    }
+
+    pub fn register_checkpoint(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        checkpoint: Option<i32>,
+    ) {
+        Self::find_tile(connection, act_id, map_id, tile_id, |tile| {
+            if let Some(checkpoint_id) = checkpoint {
+                let checkpoint_event = Event::get_checkpoint(Some(checkpoint_id));
+                let pos = tile
+                    .events
+                    .iter()
+                    .position(|event| matches!(event.r#type, EventType::CheckPoint(_)));
+                match pos {
+                    Some(idx) => tile.events[idx] = checkpoint_event,
+                    None => tile.events.push(checkpoint_event),
+                }
+            } else {
+                tile.events
+                    .retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
+            }
+        });
     }
 }

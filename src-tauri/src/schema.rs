@@ -6,6 +6,7 @@ diesel::table! {
         name -> Text,
         description -> Text,
         completed -> Bool,
+        visible -> Bool,
     }
 }
 
@@ -88,6 +89,7 @@ diesel::table! {
         status -> Text,
         visible -> Bool,
         reward -> Integer,
+        next -> Nullable<Text>,
     }
 }
 
@@ -98,18 +100,6 @@ diesel::table! {
         statistic_id -> Text,
         name -> Text,
         value -> Text,
-    }
-}
-
-diesel::table! {
-    quests (id) {
-        id -> Text,
-        name -> Text,
-        description -> Text,
-        primary -> Bool,
-        status -> Text,
-        visible -> Bool,
-        reward -> Integer,
     }
 }
 
@@ -128,7 +118,9 @@ diesel::table! {
     statistics (id) {
         id -> Text,
         name -> Text,
+        description -> Text,
         value -> Text,
+        visible -> Bool,
     }
 }
 
@@ -152,7 +144,6 @@ diesel::allow_tables_to_appear_in_same_query!(
     playerachievements,
     playerquests,
     playerstatistics,
-    quests,
     settings,
     statistics,
     storyline,

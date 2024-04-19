@@ -5,7 +5,7 @@ use diesel::SqliteConnection;
 use crate::config::fetcher::get_connection;
 
 #[tauri::command]
-pub fn load_storylines(
+pub fn load_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Story {
     let mut connection = get_connection(connection);
@@ -20,4 +20,28 @@ pub fn save_storyline(
 ) {
     let mut connection = get_connection(connection);
     Story::save(&mut connection, id as i32, &mut data).expect("Failed to save storyline");
+}
+
+#[tauri::command]
+pub fn register_gateway(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    act_id: i32,
+    map_id: i32,
+    tile_id: u32,
+    gateway: (Option<i32>, bool),
+) {
+    let mut connection = get_connection(connection);
+    Story::register_gateway(&mut connection, act_id, map_id, tile_id, gateway)
+}
+
+#[tauri::command]
+pub fn register_checkpoint(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    act_id: i32,
+    map_id: i32,
+    tile_id: u32,
+    checkpoint: Option<i32>,
+) {
+    let mut connection = get_connection(connection);
+    Story::register_checkpoint(&mut connection, act_id, map_id, tile_id, checkpoint)
 }

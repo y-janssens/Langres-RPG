@@ -171,7 +171,8 @@
         "completed": "Accompli",
         "description": "Description",
         "id": "Id",
-        "name": "Nom"
+        "name": "Nom",
+        "visible": "Visible"
       },
       "collection": {
         "actions": "Actions",
@@ -220,9 +221,11 @@
       },
       "statistic": {
         "actions": "Actions",
+        "description": "Description",
         "id": "Id",
         "name": "Nom",
-        "value": "Valeur"
+        "value": "Valeur",
+        "visible": "Visible"
       },
       "storyline": {
         "actions": "Actions",

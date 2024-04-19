@@ -8,7 +8,6 @@ pub mod factories_definitions {
     use crate::functions::models::Function;
     use crate::game::models::Game;
     use crate::loot::models::{ItemTypes, Loot};
-    use crate::quests::models::{Quest, Status};
 
     use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::config::faker::faker_definitions::*;
@@ -80,7 +79,7 @@ pub mod factories_definitions {
 
         fn generate(&self) -> Self::Output {
             Content {
-                maps: vec![Some(WorldFactory.generate()), Some(WorldFactory.generate())],
+                maps: vec![WorldFactory.generate(), WorldFactory.generate()],
             }
         }
     }
@@ -142,33 +141,6 @@ pub mod factories_definitions {
         }
     }
 
-    impl Factory for QuestFactory {
-        type Output = Quest;
-
-        fn generate(&self) -> Self::Output {
-            Quest {
-                id: UUIdFaker.generate().value(),
-                name: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
-                description: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
-                primary: BoolFaker.generate().value(),
-                status: Status {
-                    owned: false,
-                    completed: false,
-                    failed: false,
-                    abandoned: false,
-                },
-                visible: true,
-                reward: 153,
-            }
-        }
-    }
-
     impl Factory for AchievementFactory {
         type Output = Achievement;
 
@@ -184,6 +156,7 @@ pub mod factories_definitions {
                     &StringFaker.generate().value(),
                 ),
                 completed: false,
+                visible: true,
             }
         }
     }
@@ -198,7 +171,12 @@ pub mod factories_definitions {
                     &StringFaker.generate().value(),
                     &StringFaker.generate().value(),
                 ),
+                description: Translations::generate(
+                    &StringFaker.generate().value(),
+                    &StringFaker.generate().value(),
+                ),
                 value: StringFaker.generate().value(),
+                visible: BoolFaker.generate().value(),
             }
         }
     }

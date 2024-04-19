@@ -1,12 +1,12 @@
 import React, { useCallback, useMemo, useState } from 'react';
+import { invoke } from '@tauri-apps/api';
 import { useTranslation } from 'react-i18next';
 import { Modal } from './Modal/Modal';
 import { SelectButton } from './selector/Selector';
 import { Button } from 'react-daisyui';
 import css from './Manager/manager.module.css';
-import Storyline from '../../../models/storyline';
 
-export const Gateway = ({ form, setFormObject, open = false, onClose = () => {}, sync = () => {} }) => {
+export const Gateway = ({ form, open = false, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
     const [toggle, setToggle] = useState(false);
     const [selectedMap, setSelectedMap] = useState(null);
@@ -21,38 +21,32 @@ export const Gateway = ({ form, setFormObject, open = false, onClose = () => {},
         }, []);
     }, [form]);
 
-    const handleGateWay = useCallback(
-        (map) => {
-            if (!form.selectedTiles.length) {
-                return;
-            }
-            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-            let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
-            let newMap = { ...act.content.maps[mapIndex] };
+    const findGateway = useCallback(() => {
+        if (!form.selectedTiles[0].events.some((ev) => Object.keys(ev.type)[0] === 'GateWay')) {
+            return selectedMap.id;
+        }
+        const actualGateway = form.selectedTiles[0].events.find((ev) => Object.keys(ev.type)[0] === 'GateWay');
 
-            let newContent = newMap.content.map((item) => {
-                if (item.id !== form.selectedTiles[0].id) {
-                    return item;
-                }
-                return { ...item, threshold: { map: map.id, is_final: Boolean(map.primary && form.selectedMap.primary) } };
+        if (actualGateway.type['GateWay'][0] === selectedMap.id) {
+            return null;
+        }
+        return selectedMap.id;
+    }, [selectedMap]);
+
+    const handleSave = useCallback(async () => {
+        await invoke('register_gateway', {
+            actId: form.selectedAct.id,
+            mapId: form.selectedMap.id,
+            tileId: form.selectedTiles[0].id,
+            gateway: [findGateway(), selectedMap.primary]
+        })
+            .then(() => {
+                sync();
+            })
+            .finally(() => {
+                onClose();
             });
-
-            newMap.content = newContent;
-            act.content.maps[mapIndex] = newMap;
-
-            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
-            setToggle(false);
-        },
-        [form]
-    );
-
-    const handleSave = useCallback(() => {
-        const datas = new Storyline(form.storyLine);
-        datas.save().then(() => {
-            sync();
-            onClose();
-        });
-    }, [form, sync, onClose]);
+    }, [selectedMap, form, sync, onClose, findGateway]);
 
     if (!open) {
         return null;
@@ -81,8 +75,9 @@ export const Gateway = ({ form, setFormObject, open = false, onClose = () => {},
                                             size="xs"
                                             fullWidth
                                             onClick={() => {
-                                                handleGateWay(map);
+                                                // handleGateWay(map);
                                                 setSelectedMap(map);
+                                                setToggle(false);
                                             }}
                                         >
                                             {map.name}

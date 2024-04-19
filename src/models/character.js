@@ -1,19 +1,18 @@
 import { Inventory } from './';
 export default class Character {
-    constructor({ name, _end, _for, _hab, _cha, _int, _ini, _pv, xp, gold, max_xp, lvl, inventory }) {
-        this.name = name;
-        this._end = _end;
-        this._for = _for;
-        this._hab = _hab;
-        this._cha = _cha;
-        this._int = _int;
-        this._ini = _ini;
-        this._pv = _pv;
-        this.xp = xp;
-        this.gold = gold;
-        this.max_xp = max_xp;
-        this.lvl = lvl;
-        this.inventory = new Inventory(inventory);
+    constructor(options = {}) {
+        Object.keys(options).forEach((key) => {
+            this[key] = options[key];
+        });
+        this.inventory = new Inventory(options['inventory']);
+    }
+
+    get name() {
+        return `${this.first_name} ${this.last_name}`;
+    }
+
+    get level() {
+        return `Lvl ${this.lvl}`;
     }
 
     compute_xp(xp) {

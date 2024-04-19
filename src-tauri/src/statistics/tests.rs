@@ -1,55 +1,57 @@
-// #[cfg(test)]
-// mod tests {
-//     use crate::config::conf::test_conf::allow_db_access;
-//     use crate::config::factories::factories_definitions::ObjectFactory;
-//     use crate::config::factory::factory_models::Factory;
-//     use crate::objects::models::Object;
+#[cfg(test)]
+mod tests {
+    use crate::config::conf::test_conf::allow_db_access;
+    use crate::config::factories::factories_definitions::StatisticFactory;
+    use crate::config::factory::factory_models::Factory;
+    use crate::statistics::models::Statistic;
+    use crate::translations::models::Translations;
 
-//     #[test]
-//     fn test_load_objects() {
-//         allow_db_access(|connection| {
-//             let object = ObjectFactory.generate();
-//             let _ = Object::save(object, connection);
-//             let result = Object::load(connection).unwrap();
+    #[test]
+    fn test_load_statistics() {
+        allow_db_access(|connection| {
+            let statistic = StatisticFactory.generate();
+            let _ = Statistic::save(statistic, connection);
+            let result = Statistic::load(connection).unwrap();
 
-//             assert_eq!(result.len(), 9);
-//         });
-//     }
+            assert_eq!(result.len(), 1);
+        });
+    }
 
-//     #[test]
-//     fn test_patch_object() {
-//         allow_db_access(|connection| {
-//             let object = ObjectFactory.generate();
-//             let _ = Object::save(object, connection);
-//             let result = Object::load(connection).unwrap();
+    #[test]
+    fn test_patch_statistic() {
+        allow_db_access(|connection| {
+            let statistic = StatisticFactory.generate();
+            let _ = Statistic::save(statistic, connection);
+            let result = Statistic::load(connection).unwrap();
 
-//             let mut patch_object = Object {
-//                 id: result[0].id,
-//                 name: result[0].clone().name,
-//                 value: result[0].clone().value,
-//                 area: result[0].clone().area,
-//                 walkable: result[0].clone().walkable,
-//             };
+            let mut patch_statistic = Statistic {
+                id: result[0].clone().id,
+                name: result[0].clone().name,
+                description: result[0].clone().description,
+                value: result[0].clone().value,
+                visible: result[0].clone().visible,
+            };
 
-//             patch_object.name = "loul".to_string();
+            patch_statistic.name = Translations::generate("nom", "name");
 
-//             let _ = Object::save(patch_object, connection);
-//             let patch_result = Object::load(connection).unwrap();
+            let _ = Statistic::save(patch_statistic, connection);
+            let patch_result = Statistic::load(connection).unwrap();
 
-//             assert_eq!(patch_result[0].name, "loul");
-//         });
-//     }
+            assert_eq!(patch_result[0].name.fr, Some("nom".to_string()));
+            assert_eq!(patch_result[0].name.en, Some("name".to_string()));
+        });
+    }
 
-//     #[test]
-//     fn test_delete_object() {
-//         allow_db_access(|connection| {
-//             let object = ObjectFactory.generate();
-//             let _ = Object::save(object, connection);
-//             let result = Object::load(connection).unwrap();
+    #[test]
+    fn test_delete_statistic() {
+        allow_db_access(|connection| {
+            let statistic = StatisticFactory.generate();
+            let _ = Statistic::save(statistic, connection);
+            let result = Statistic::load(connection).unwrap();
 
-//             let delete = Object::delete(result[0].id, connection);
+            let delete = Statistic::delete(result[0].clone().id, connection);
 
-//             assert!(delete.is_ok());
-//         });
-//     }
-// }
+            assert!(delete.is_ok());
+        });
+    }
+}

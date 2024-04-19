@@ -1,16 +1,13 @@
 export default class World {
-    constructor({ id, name, size, content, order, complete, starting_point, primary }) {
-        this.id = id;
-        this.name = name;
-        this.size = size;
-        this.order = order;
-        this.grid = this.gridify(content);
-        this.hex = this.hexify(content);
-        this.complete = complete;
-        this.rows = this.toRows(content);
-        this.content = content;
-        this.starting_point = { x: starting_point.x / 1.5, y: starting_point.y + 2, id: starting_point.id };
-        this.primary = primary;
+    constructor(options = {}) {
+        Object.keys(options).forEach((key) => {
+            this[key] = options[key];
+        });
+        this.grid = this.gridify(options['content']);
+        this.hex = this.hexify(options['content']);
+        this.rows = this.toRows(options['content']);
+        this.content = [...options['content']].map((it) => new Tile(it));
+        this.starting_point = { x: options['starting_point'].x / 1.5, y: options['starting_point'].y + 2, id: options['starting_point'].id };
     }
 
     gridify(data) {
@@ -37,5 +34,24 @@ export default class World {
 
     get starting_tile() {
         return this.content.find((it) => it.id === this.starting_point.id);
+    }
+}
+
+class Tile {
+    constructor(options = {}) {
+        Object.keys(options).forEach((key) => {
+            this[key] = options[key];
+        });
+    }
+
+    get hasGateway() {
+        return this.events.some((ev) => Object.keys(ev.type)[0] === 'GateWay');
+    }
+
+    get gateway() {
+        if (!this.hasGateway) {
+            return null;
+        }
+        return this.events.find((ev) => Object.keys(ev.type)[0] === 'GateWay')?.type['GateWay'];
     }
 }

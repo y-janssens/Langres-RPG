@@ -16,6 +16,6 @@ lazy_static! {
 
 impl NamedTableLoot {
     pub fn get_all() -> Vec<NamedTableLoot> {
-        vec![FIRST_TABLE.clone()]
+        vec![FIRST_TABLE.clone(), SER_HERBERT_TABLE.clone()]
     }
 }

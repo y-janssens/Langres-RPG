@@ -46,7 +46,8 @@ const Map = ({ loading, type, display, form, setForm, history, index }) => {
                         <div
                             className={css['builder-map-grid']}
                             style={{
-                                gridTemplateRows: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`,
+                                columnGap: `${Math.ceil(Math.sqrt(55 * (form.zoom / 100)))}px`,
+                                gridTemplateRows: `repeat(${world.size + Math.ceil(Math.sqrt(world.size))}, ${55 * (form.zoom / 100)}px)`,
                                 gridTemplateColumns: `repeat(${world.size}, ${55 * (form.zoom / 100)}px)`
                             }}
                         >
@@ -132,11 +133,35 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
         return name;
     }, [form, item, item.value]);
 
-    const colors = useMemo(() => {
-        if (!item.start && !item.threshold) {
+    const isGateway = useMemo(() => {
+        if (!item.events.length) {
+            return false;
+        }
+        return item.events.some((ev) => Object.keys(ev.type)[0] === 'GateWay');
+    }, [item]);
+
+    const filters = useMemo(() => {
+        if (!item.start && !isGateway) {
             return 'unset';
         }
         return `hue-rotate(${item.start ? '-25deg' : '25deg'}) brightness(1.25) saturate(1.5)`;
+    }, [item, isGateway]);
+
+    const color = useMemo(() => {
+        switch (item.value) {
+            case 'C':
+                return 'rgba(200, 255, 19, .5)';
+            case 'T':
+                return 'rgba(94, 219, 53, .8)';
+            case 'S':
+                return 'rgb(219, 210, 87)';
+            case 'W':
+                return 'lightskyblue';
+            case '-':
+                return 'darkkhaki';
+            default:
+                return '#334359';
+        }
     }, [item]);
 
     useEffect(() => {
@@ -153,8 +178,9 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
             onClick={() => handleSelect(item)}
             aria-labelledby="Selectable"
             style={{
-                filter: colors,
-                marginLeft: item.y % 2 !== 0 && `${30 * (form.zoom / 100) + 1}px`,
+                filter: filters,
+                backgroundColor: color,
+                marginLeft: item.y % 2 === 0 && `${30 * (form.zoom / 100) + 1}px`,
                 height: `${70 * (form.zoom / 100)}px`,
                 width: `${((70 * Math.sqrt(3)) / 2) * (form.zoom / 100)}px`
             }}

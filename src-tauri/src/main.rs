@@ -11,10 +11,12 @@ mod character;
 mod collection;
 mod config;
 mod dashboard;
+mod events;
 mod functions;
 mod game;
 mod loot;
 mod maps;
+mod npcs;
 mod objects;
 mod player;
 mod quests;
@@ -99,14 +101,11 @@ fn main() {
             player::statistics::commands::load_player_statistics,
             player::statistics::commands::load_player_statistic,
             player::statistics::commands::save_player_statistic,
-            // Quests commands
-            quests::commands::new_quest,
-            quests::commands::load_quests,
-            quests::commands::save_quest,
-            quests::commands::delete_quest,
             // Storyline commands
             storyline::commands::save_storyline,
-            storyline::commands::load_storylines,
+            storyline::commands::load_storyline,
+            storyline::commands::register_gateway,
+            storyline::commands::register_checkpoint,
             // Statistics commands
             statistics::commands::new_statistic,
             statistics::commands::load_statistics,

@@ -7,7 +7,10 @@ export default class KeyControls {
         this.allowedKeys = [
             { name: 'menu', key: 'Escape', value: false },
             { name: 'character', key: 'c', value: false },
-            { name: 'minimap', key: 'l', value: true },
+            { name: 'quests', key: 'j', value: false },
+            { name: 'achievements', key: 'l', value: false },
+            { name: 'statistics', key: 'k', value: false },
+            // { name: 'minimap', key: 'l', value: true },
             { name: 'interface', key: 'h', value: true },
             { name: 'map', key: 'm', value: false },
             { name: 'pause', key: 'p', value: false }
@@ -41,7 +44,7 @@ export default class KeyControls {
         let toggles = { ...this.toggles };
 
         if (key) {
-            if ((key.name !== 'pause' && !this.toggles['pause'] && !this.toggles['input']) || (key.name === 'input' && Boolean(this.toggles['input']))) {
+            if (key.name !== 'pause' && !this.toggles['pause']) {
                 this.allowedKeys.forEach((key) => {
                     toggles[key.name] = key.value;
                 });

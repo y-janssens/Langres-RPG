@@ -1,6 +1,6 @@
 import { useRef, useMemo, useCallback } from 'react';
 import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
-import { GameModel, Environment } from '../../models';
+import { GameModel, Environment, PlayerJournal } from '../../models';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../../components/ui/LoadingScreen';
@@ -35,7 +35,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 const currentWorld = game.current_world;
                 engine.controls.currentTile = game.current_tile;
 
-                if (!game.has_position || engine.mapid) {
+                if (!game.has_position || engine.mapId) {
                     game.last_known_position = { ...game.last_known_position, x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
                 }
 
@@ -51,15 +51,15 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
     );
 
     const handleGateWay = useCallback(
-        async (gateway) => {
+        (gateway) => {
             let game = new GameModel(form);
-            if (gateway.map && Boolean(gateway.is_final)) {
+            if (gateway[0] && Boolean(gateway[1])) {
                 let act = game.storyline.story.acts.find((act) => act.id === form.act.id);
                 act.content.maps.find((mp) => mp.id === form.world.id).complete = true;
             }
             game.save().then(() => {
                 if (form.world.primary) {
-                    setEngine({ mapId: { id: gateway.map, is_final: gateway.is_final } });
+                    setEngine({ mapId: { id: gateway[0], is_final: gateway[1] } });
                 } else {
                     removeFromEngine('mapId');
                 }
@@ -69,10 +69,23 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         [form]
     );
 
+    PlayerJournal.useCommand(
+        {
+            useLoader: true,
+            id: engine.gameId,
+            launch: game,
+            onSuccess: (response) => {
+                console.log(response.achievements);
+                setFormObject({ ...form, journal: response });
+            }
+        },
+        [game]
+    );
+
     Environment.useCommand(
         {
             launch: game,
-            payload: { date: form?.act?.date },
+            payload: { date: form.act?.date },
             onSuccess: (response) => {
                 let environment = response;
                 environment.season = t(`environment.seasons.${response.season}`);

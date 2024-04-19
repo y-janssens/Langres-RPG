@@ -3,7 +3,7 @@ import Fetcher from './fetcher';
 
 export default class Environment extends Fetcher {
     constructor({ date, daytime, weather, season, danger, wind_force }) {
-        super('env');
+        super();
         this.date = this.parseDate(date);
         this.daytime = daytime;
         this.season = season;

@@ -16,7 +16,9 @@ impl AbstractModel for Statistic {}
 pub struct Statistic {
     pub id: String,
     pub name: Translations,
+    pub description: Translations,
     pub value: String,
+    pub visible: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -25,7 +27,9 @@ pub struct Statistic {
 pub struct InsertableStatistic {
     pub id: String,
     name: String,
+    description: String,
     value: String,
+    pub visible: bool,
 }
 
 impl Statistic {
@@ -33,7 +37,9 @@ impl Statistic {
         Statistic {
             id: Uuid::new_v4().to_string(),
             name: Translations::default(),
-            value: "".into(),
+            description: Translations::default(),
+            value: "0".into(),
+            visible: true,
         }
     }
 
@@ -47,11 +53,14 @@ impl Statistic {
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let name_json = serde_json::to_string(&stat.name).expect("error");
+        let description_json = serde_json::to_string(&stat.description).expect("error");
 
         let insertable = InsertableStatistic {
             id: Uuid::new_v4().to_string(),
             name: name_json,
+            description: description_json,
             value: stat.clone().value,
+            visible: stat.clone().visible,
         };
         let exists = statistics
             .filter(id.eq(stat.clone().id))

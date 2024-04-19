@@ -7,11 +7,12 @@ import { useGameContext } from '../../../hooks';
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
 import Zombie from '../Ennemies/Zombie'; // eslint-disable-line
+import { Npcs } from '../Npcs/Npcs';
 
 const positionCaster = new Raycaster();
 const collisionCaster = new Raycaster();
 
-export const MapLayout = memo(({ position, characterRef, cameraRef, lightRef, handleGateWay }) => {
+export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [engine] = useGameContext();
     const [focus] = useState(() => new Vector3(0, -1, 1));
     const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
@@ -81,8 +82,10 @@ export const MapLayout = memo(({ position, characterRef, cameraRef, lightRef, ha
                         break;
                 }
 
-                if (Boolean(tiles.current?.threshold) && Object.keys(tiles.current?.threshold).length) {
-                    handleGateWay(tiles.current?.threshold);
+                if (tiles.current?.events.length) {
+                    if (tiles.current?.hasGateway) {
+                        handleGateWay(tiles.current?.gateway);
+                    }
                 }
 
                 if (engine.controls.getDelta(character)) {
@@ -95,11 +98,12 @@ export const MapLayout = memo(({ position, characterRef, cameraRef, lightRef, ha
 
     useEffect(() => {
         frustumCullItems();
-    }, []);
+    }, [engine.mapId]);
 
     return (
         <>
             <Character position={position} characterRef={characterRef} />
+            <Npcs npcs={form.world.npcs} />
             {/* <Zombies target={characterRef} map={form.world} nodes={form.world.grid} /> */}
             <Tiles data={filteredItems} />
         </>

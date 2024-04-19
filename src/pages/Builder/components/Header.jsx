@@ -19,6 +19,19 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         });
     }, [sync, clear, datas]);
 
+    const handleExport = useCallback(async () => {
+        let _datas = { ...datas }.story.acts;
+        _datas.map((act) => {
+            return act.content.maps.map((mp) => {
+                mp.npcs = [];
+                return mp;
+            });
+        });
+        await navigator.clipboard.writeText(JSON.stringify(_datas, null, 2)).then(() => {
+            sync();
+        });
+    }, [datas, sync]);
+
     const handleHistory = useCallback(
         (direction) => {
             switch (direction) {
@@ -110,6 +123,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
 
                     <div className={css['builder-navbar-cta']}>
                         <Divider className={css['builder-navbar-divider']} horizontal />
+                        <ButtonLabel variant="outline" label={t('common.actions.export')} onClick={handleExport} />
                         <ButtonLabel
                             variant="outline"
                             label={t('common.actions.reset')}

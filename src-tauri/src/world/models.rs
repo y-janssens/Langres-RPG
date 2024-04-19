@@ -1,5 +1,7 @@
-use crate::config::factory::factory_models::AbstractModel;
+use crate::events::models::Event;
+use crate::game::models::Position;
 use crate::objects::models::Object;
+use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
@@ -14,8 +16,9 @@ pub struct World {
     pub order: u32,
     pub complete: bool,
     pub content: Vec<Item>,
-    pub starting_point: Location,
+    pub starting_point: Position,
     pub primary: bool,
+    pub npcs: Vec<Npc>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -25,7 +28,7 @@ pub struct Item {
     pub y: u32,
     pub z: i32,
     pub value: String,
-    pub threshold: Option<Threshold>,
+    pub events: Vec<Event>,
     pub walkable: bool,
 }
 
@@ -35,19 +38,6 @@ pub struct Value {
     value: String,
     name: String,
     assets: Vec<Option<Object>>,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Copy)]
-pub struct Threshold {
-    map: i32,
-    is_final: bool,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Location {
-    pub x: u32,
-    pub y: u32,
-    pub id: u32,
 }
 
 impl World {
@@ -60,12 +50,9 @@ impl World {
             order,
             complete: false,
             content: Self::generate(size),
-            starting_point: Location {
-                x: 9,
-                y: 4,
-                id: 254,
-            },
+            starting_point: Position::resolve((9.0, 4.0, 254)),
             primary,
+            npcs: vec![],
         }
     }
 
@@ -96,7 +83,7 @@ impl World {
                 y,
                 z: 0,
                 value: value.clone(),
-                threshold: None,
+                events: vec![],
                 walkable: walkable_tiles.contains(&value),
             };
             content.push(item);
@@ -113,22 +100,16 @@ impl World {
         String::from("-")
     }
 
-    pub fn generate_forest(content: Vec<Item>) -> Vec<Item> {
+    pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
         let items = Self::get_items("map");
-        let mut new_content = Vec::new();
 
-        for mut item in content {
+        for item in content.iter_mut().filter(|i| i.value == "-") {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
-            if item.value != "F" {
-                item.value = value.clone();
-                item.walkable = value == "-";
-            } else {
-                item.walkable = false;
-            }
-            new_content.push(item);
+            item.value = value.clone();
+            item.walkable = value == "-";
         }
-        new_content
+        content
     }
 
     fn get_items(name: &str) -> Vec<&'static str> {

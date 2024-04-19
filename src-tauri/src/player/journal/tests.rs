@@ -3,12 +3,11 @@ mod tests {
     use crate::achievements::models::Achievement;
     use crate::config::conf::test_conf::allow_db_access;
     use crate::config::factories::factories_definitions::{
-        AchievementFactory, GameFactory, QuestFactory, StatisticFactory,
+        AchievementFactory, GameFactory, StatisticFactory,
     };
     use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::game::models::Game;
     use crate::player::journal::models::PlayerJournal;
-    use crate::quests::models::Quest;
     use crate::statistics::models::Statistic;
 
     #[test]
@@ -16,10 +15,8 @@ mod tests {
         allow_db_access(|connection| {
             for _ in 0..25 {
                 let achievement = AchievementFactory.generate();
-                let quest = QuestFactory.generate();
                 let statistic = StatisticFactory.generate();
                 let _ = Achievement::save(achievement, connection);
-                let _ = Quest::save(quest, connection);
                 let _ = Statistic::save(statistic, connection);
             }
 
@@ -29,7 +26,7 @@ mod tests {
             let player_journal = PlayerJournal::load(game.id, connection).expect("Error");
 
             assert_eq!(player_journal.achievements.len(), 25);
-            assert_eq!(player_journal.quests.len(), 25);
+            assert_eq!(player_journal.quests.len(), 2);
             assert_eq!(player_journal.statistics.len(), 25);
         });
     }

@@ -19,21 +19,27 @@ export const InGameMenu = ({ id, form }) => {
         return id && engine.controls.toggles.menu;
     }, [id, engine, engine.controls]);
 
-    const handleSaveGame = useCallback(() => {
-        let game = new GameModel(form);
-        if (!engine.mapid || engine.mapid?.is_final) {
-            game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
-        }
-        game.save();
-        engine.controls.generateControls();
-        setEngine({ controls: engine.controls });
-    }, [form, engine.controls]);
+    const handleContinue = useCallback(
+        (save = false) => {
+            if (save) {
+                let game = new GameModel(form);
+                if (!engine.mapId || engine.mapId?.is_final) {
+                    game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
+                }
+                game.save();
+            }
+            engine.controls.generateControls();
+            setEngine({ controls: engine.controls });
+        },
+        [form, engine.controls, engine.controls.currentTile, engine.mapId]
+    );
 
     const items = useMemo(() => {
         return [
-            { id: 0, name: t('menu.items.save'), onClick: () => handleSaveGame() },
+            { id: 0, name: t('menu.items.continue'), onClick: () => handleContinue() },
+            { id: 1, name: t('menu.items.save'), onClick: () => handleContinue(true) },
             {
-                id: 1,
+                id: 2,
                 name: t('menu.items.settings'),
                 onClick: () => {
                     setOpenModal('settings');
@@ -41,7 +47,7 @@ export const InGameMenu = ({ id, form }) => {
                 }
             },
             {
-                id: 2,
+                id: 3,
                 name: t('menu.items.exit-game'),
                 onClick: () => {
                     // Remove game related content from engine
@@ -51,7 +57,7 @@ export const InGameMenu = ({ id, form }) => {
                 }
             }
         ];
-    }, [handleSaveGame, engine, removeFromEngine]);
+    }, [handleContinue, engine, removeFromEngine]);
 
     const handleMenu = useCallback(
         (event) => {

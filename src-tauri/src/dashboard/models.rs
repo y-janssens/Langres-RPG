@@ -163,7 +163,7 @@ impl AdminModel for AdminAchievementModel {
         vec![
             Field::translatable_field("name", true),
             Field::translatable_field("description", true),
-            Field::boolean_field("completed", true),
+            Field::boolean_field("visible", true),
             Field::cta_field(),
         ]
     }
@@ -180,7 +180,9 @@ impl AdminModel for AdminStatisticModel {
     fn fields(&self) -> Vec<Field> {
         vec![
             Field::translatable_field("name", true),
-            Field::char_field("value", true),
+            Field::translatable_field("description", true),
+            Field::char_field("value", false),
+            Field::boolean_field("visible", true),
             Field::cta_field(),
         ]
     }
@@ -220,14 +222,14 @@ impl AdminDashboard {
     pub fn get() -> Result<Value, Error> {
         let mut dashboard = AdminDashboard { models: Vec::new() };
         dashboard.register_model(AdminGameModel);
-        dashboard.register_model(AdminStoryLineModel);
+        // dashboard.register_model(AdminStoryLineModel);
         dashboard.register_model(AdminCollectionModel);
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);
-        dashboard.register_model(AdminQuestModel);
+        // dashboard.register_model(AdminQuestModel);
         dashboard.register_model(AdminAchievementModel);
         dashboard.register_model(AdminStatisticModel);
-        dashboard.register_model(AdminLootModel);
+        // dashboard.register_model(AdminLootModel);
 
         dashboard.export()
     }
