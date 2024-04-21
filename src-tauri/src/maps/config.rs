@@ -4,6 +4,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Conf {
+    pub name: String,
+    pub primary_value: String,
     pub values: Vec<(String, u32)>,
 }
 
@@ -11,18 +13,31 @@ lazy_static! {
     pub static ref ENTROPY: u32 = get_tiles_values().len() as u32;
 
     // Config definitions
-    /// Soil - Trees - Water- Shore - Borders - Roads
+    /// Soil - Trees - Water- Shore - Borders - Roads - Fences
     static ref BASE_CONFIG: Conf = Conf {
-        values: get_tiles(10, 5, 0, 0, 1, 0),
+        name: "base".to_string(),
+        primary_value: "-".to_string(),
+        values: get_tiles(10, 5, 0, 0, 1, 0, 0),
     };
     static ref FOREST_CONFIG: Conf = Conf {
-        values: get_tiles(100, 35, 25, 10, 10, 0),
+        name: "forest".to_string(),
+        primary_value: "W".to_string(),
+         values: get_tiles(45, 9, 7, 3, 3, 0, 0),
     };
     static ref SWAMP_CONFIG: Conf = Conf {
-        values: get_tiles(1, 3, 5, 1, 1, 0),
+        name: "swamp".to_string(),
+        primary_value: "W".to_string(),
+        values: get_tiles(30, 8, 30, 30, 5, 0, 0),
+    };
+    static ref TOWN_CONFIG: Conf = Conf {
+        name: "town".to_string(),
+        primary_value: "-".to_string(),
+        values: get_tiles(50, 18, 13, 5, 5, 0, 0),
     };
     static ref ROADS_CONFIG: Conf = Conf {
-        values: get_tiles(1, 0, 0, 0, 0, 0),
+        name: "roads".to_string(),
+        primary_value: "-".to_string(),
+        values: get_tiles(100, 5, 5, 5, 5, 1, 0),
     };
 
 }
@@ -33,6 +48,7 @@ pub fn get_config(name: &str) -> &'static Conf {
         "forest" => &FOREST_CONFIG,
         "swamp" => &SWAMP_CONFIG,
         "roads" => &ROADS_CONFIG,
+        "town" => &TOWN_CONFIG,
         _ => &BASE_CONFIG,
     }
 }

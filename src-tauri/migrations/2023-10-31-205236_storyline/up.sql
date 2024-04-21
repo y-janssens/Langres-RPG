@@ -4837,7 +4837,7 @@ VALUES
             {
               "events": [],
               "id": 535,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 10,
@@ -5287,7 +5287,7 @@ VALUES
             {
               "events": [],
               "id": 585,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 11,
@@ -5737,7 +5737,7 @@ VALUES
             {
               "events": [],
               "id": 635,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 12,
@@ -6187,7 +6187,7 @@ VALUES
             {
               "events": [],
               "id": 685,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 13,
@@ -6601,7 +6601,7 @@ VALUES
             {
               "events": [],
               "id": 731,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 63,
               "y": 14,
@@ -6610,7 +6610,7 @@ VALUES
             {
               "events": [],
               "id": 732,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 65,
               "y": 14,
@@ -6619,7 +6619,7 @@ VALUES
             {
               "events": [],
               "id": 733,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 67,
               "y": 14,
@@ -6628,7 +6628,7 @@ VALUES
             {
               "events": [],
               "id": 734,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 14,
@@ -7051,7 +7051,7 @@ VALUES
             {
               "events": [],
               "id": 781,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 62,
               "y": 15,
@@ -7087,7 +7087,7 @@ VALUES
             {
               "events": [],
               "id": 785,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 15,
@@ -7303,7 +7303,7 @@ VALUES
             {
               "events": [],
               "id": 809,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 19,
               "y": 16,
@@ -7492,7 +7492,7 @@ VALUES
             {
               "events": [],
               "id": 830,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 61,
               "y": 16,
@@ -7537,7 +7537,7 @@ VALUES
             {
               "events": [],
               "id": 835,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 16,
@@ -7546,7 +7546,7 @@ VALUES
             {
               "events": [],
               "id": 836,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 73,
               "y": 16,
@@ -7753,7 +7753,7 @@ VALUES
             {
               "events": [],
               "id": 859,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 18,
               "y": 17,
@@ -7942,7 +7942,7 @@ VALUES
             {
               "events": [],
               "id": 880,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 60,
               "y": 17,
@@ -8005,7 +8005,7 @@ VALUES
             {
               "events": [],
               "id": 887,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 74,
               "y": 17,
@@ -8014,7 +8014,7 @@ VALUES
             {
               "events": [],
               "id": 888,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 76,
               "y": 17,
@@ -8216,7 +8216,7 @@ VALUES
             {
               "events": [],
               "id": 909,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 19,
               "y": 18,
@@ -8378,7 +8378,7 @@ VALUES
             {
               "events": [],
               "id": 927,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 55,
               "y": 18,
@@ -8387,7 +8387,7 @@ VALUES
             {
               "events": [],
               "id": 928,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 57,
               "y": 18,
@@ -8396,7 +8396,7 @@ VALUES
             {
               "events": [],
               "id": 929,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 59,
               "y": 18,
@@ -8459,7 +8459,7 @@ VALUES
             {
               "events": [],
               "id": 936,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 73,
               "y": 18,
@@ -8477,7 +8477,7 @@ VALUES
             {
               "events": [],
               "id": 938,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 77,
               "y": 18,
@@ -8486,7 +8486,7 @@ VALUES
             {
               "events": [],
               "id": 939,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 79,
               "y": 18,
@@ -8495,7 +8495,7 @@ VALUES
             {
               "events": [],
               "id": 940,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 81,
               "y": 18,
@@ -8504,7 +8504,7 @@ VALUES
             {
               "events": [],
               "id": 941,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 83,
               "y": 18,
@@ -8513,7 +8513,7 @@ VALUES
             {
               "events": [],
               "id": 942,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 85,
               "y": 18,
@@ -8688,7 +8688,7 @@ VALUES
             {
               "events": [],
               "id": 960,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 20,
               "y": 19,
@@ -8814,7 +8814,7 @@ VALUES
             {
               "events": [],
               "id": 974,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 48,
               "y": 19,
@@ -8823,7 +8823,7 @@ VALUES
             {
               "events": [],
               "id": 975,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 50,
               "y": 19,
@@ -8832,7 +8832,7 @@ VALUES
             {
               "events": [],
               "id": 976,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 52,
               "y": 19,
@@ -8841,7 +8841,7 @@ VALUES
             {
               "events": [],
               "id": 977,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 54,
               "y": 19,
@@ -8922,7 +8922,7 @@ VALUES
             {
               "events": [],
               "id": 986,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 72,
               "y": 19,
@@ -9066,7 +9066,7 @@ VALUES
             {
               "events": [],
               "id": 1002,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 5,
               "y": 20,
@@ -9129,7 +9129,7 @@ VALUES
             {
               "events": [],
               "id": 1009,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 19,
               "y": 20,
@@ -9138,7 +9138,7 @@ VALUES
             {
               "events": [],
               "id": 1010,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 21,
               "y": 20,
@@ -9246,7 +9246,7 @@ VALUES
             {
               "events": [],
               "id": 1022,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 45,
               "y": 20,
@@ -9255,7 +9255,7 @@ VALUES
             {
               "events": [],
               "id": 1023,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 47,
               "y": 20,
@@ -9372,7 +9372,7 @@ VALUES
             {
               "events": [],
               "id": 1036,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 73,
               "y": 20,
@@ -9525,7 +9525,7 @@ VALUES
             {
               "events": [],
               "id": 1053,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 6,
               "y": 21,
@@ -9534,7 +9534,7 @@ VALUES
             {
               "events": [],
               "id": 1054,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 8,
               "y": 21,
@@ -9579,7 +9579,7 @@ VALUES
             {
               "events": [],
               "id": 1059,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 18,
               "y": 21,
@@ -9597,7 +9597,7 @@ VALUES
             {
               "events": [],
               "id": 1061,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 22,
               "y": 21,
@@ -9642,7 +9642,7 @@ VALUES
             {
               "events": [],
               "id": 1066,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 32,
               "y": 21,
@@ -9651,7 +9651,7 @@ VALUES
             {
               "events": [],
               "id": 1067,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 34,
               "y": 21,
@@ -9660,7 +9660,7 @@ VALUES
             {
               "events": [],
               "id": 1068,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 36,
               "y": 21,
@@ -9822,7 +9822,7 @@ VALUES
             {
               "events": [],
               "id": 1086,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 72,
               "y": 21,
@@ -9984,7 +9984,7 @@ VALUES
             {
               "events": [],
               "id": 1104,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 9,
               "y": 22,
@@ -9993,7 +9993,7 @@ VALUES
             {
               "events": [],
               "id": 1105,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 11,
               "y": 22,
@@ -10002,7 +10002,7 @@ VALUES
             {
               "events": [],
               "id": 1106,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 13,
               "y": 22,
@@ -10011,7 +10011,7 @@ VALUES
             {
               "events": [],
               "id": 1107,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 15,
               "y": 22,
@@ -10020,7 +10020,7 @@ VALUES
             {
               "events": [],
               "id": 1108,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 17,
               "y": 22,
@@ -10047,7 +10047,7 @@ VALUES
             {
               "events": [],
               "id": 1111,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 23,
               "y": 22,
@@ -10056,7 +10056,7 @@ VALUES
             {
               "events": [],
               "id": 1112,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 25,
               "y": 22,
@@ -10083,7 +10083,7 @@ VALUES
             {
               "events": [],
               "id": 1115,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 31,
               "y": 22,
@@ -10263,7 +10263,7 @@ VALUES
             {
               "events": [],
               "id": 1135,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 22,
@@ -10515,7 +10515,7 @@ VALUES
             {
               "events": [],
               "id": 1163,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 26,
               "y": 23,
@@ -10524,7 +10524,7 @@ VALUES
             {
               "events": [],
               "id": 1164,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 28,
               "y": 23,
@@ -10533,7 +10533,7 @@ VALUES
             {
               "events": [],
               "id": 1165,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 30,
               "y": 23,
@@ -10713,7 +10713,7 @@ VALUES
             {
               "events": [],
               "id": 1185,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 23,
@@ -11154,7 +11154,7 @@ VALUES
             {
               "events": [],
               "id": 1234,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 24,
@@ -11604,7 +11604,7 @@ VALUES
             {
               "events": [],
               "id": 1284,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 25,
@@ -12054,7 +12054,7 @@ VALUES
             {
               "events": [],
               "id": 1334,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 26,
@@ -12504,7 +12504,7 @@ VALUES
             {
               "events": [],
               "id": 1384,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 27,
@@ -12936,7 +12936,7 @@ VALUES
             {
               "events": [],
               "id": 1432,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 65,
               "y": 28,
@@ -12945,7 +12945,7 @@ VALUES
             {
               "events": [],
               "id": 1433,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 67,
               "y": 28,
@@ -13377,7 +13377,7 @@ VALUES
             {
               "events": [],
               "id": 1481,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 62,
               "y": 29,
@@ -13386,7 +13386,7 @@ VALUES
             {
               "events": [],
               "id": 1482,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 64,
               "y": 29,
@@ -13404,7 +13404,7 @@ VALUES
             {
               "events": [],
               "id": 1484,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 29,
@@ -13818,7 +13818,7 @@ VALUES
             {
               "events": [],
               "id": 1530,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 61,
               "y": 30,
@@ -13845,7 +13845,7 @@ VALUES
             {
               "events": [],
               "id": 1533,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 67,
               "y": 30,
@@ -14304,7 +14304,7 @@ VALUES
             {
               "events": [],
               "id": 1584,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 31,
@@ -14754,7 +14754,7 @@ VALUES
             {
               "events": [],
               "id": 1634,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 32,
@@ -15213,7 +15213,7 @@ VALUES
             {
               "events": [],
               "id": 1685,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 33,
@@ -15663,7 +15663,7 @@ VALUES
             {
               "events": [],
               "id": 1735,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 34,
@@ -16113,7 +16113,7 @@ VALUES
             {
               "events": [],
               "id": 1785,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 35,
@@ -16563,7 +16563,7 @@ VALUES
             {
               "events": [],
               "id": 1835,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 36,
@@ -17013,7 +17013,7 @@ VALUES
             {
               "events": [],
               "id": 1885,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 37,
@@ -17463,7 +17463,7 @@ VALUES
             {
               "events": [],
               "id": 1935,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 38,
@@ -17913,7 +17913,7 @@ VALUES
             {
               "events": [],
               "id": 1985,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 39,
@@ -18354,7 +18354,7 @@ VALUES
             {
               "events": [],
               "id": 2034,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 40,
@@ -18804,7 +18804,7 @@ VALUES
             {
               "events": [],
               "id": 2084,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 41,
@@ -19254,7 +19254,7 @@ VALUES
             {
               "events": [],
               "id": 2134,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 42,
@@ -19704,7 +19704,7 @@ VALUES
             {
               "events": [],
               "id": 2184,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 68,
               "y": 43,
@@ -20154,7 +20154,7 @@ VALUES
             {
               "events": [],
               "id": 2234,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 69,
               "y": 44,
@@ -20613,7 +20613,7 @@ VALUES
             {
               "events": [],
               "id": 2285,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 45,
@@ -21063,7 +21063,7 @@ VALUES
             {
               "events": [],
               "id": 2335,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 46,
@@ -21513,7 +21513,7 @@ VALUES
             {
               "events": [],
               "id": 2385,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 47,
@@ -21963,7 +21963,7 @@ VALUES
             {
               "events": [],
               "id": 2435,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 48,
@@ -22422,7 +22422,7 @@ VALUES
             {
               "events": [],
               "id": 2486,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 72,
               "y": 49,
@@ -22431,7 +22431,7 @@ VALUES
             {
               "events": [],
               "id": 2487,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 74,
               "y": 49,
@@ -22863,7 +22863,7 @@ VALUES
             {
               "events": [],
               "id": 2535,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 50,
@@ -22881,7 +22881,7 @@ VALUES
             {
               "events": [],
               "id": 2537,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 75,
               "y": 50,
@@ -22890,7 +22890,7 @@ VALUES
             {
               "events": [],
               "id": 2538,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 77,
               "y": 50,
@@ -23313,7 +23313,7 @@ VALUES
             {
               "events": [],
               "id": 2585,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 70,
               "y": 51,
@@ -23349,7 +23349,7 @@ VALUES
             {
               "events": [],
               "id": 2589,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 78,
               "y": 51,
@@ -23358,7 +23358,7 @@ VALUES
             {
               "events": [],
               "id": 2590,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 80,
               "y": 51,
@@ -23763,7 +23763,7 @@ VALUES
             {
               "events": [],
               "id": 2635,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 52,
@@ -24222,7 +24222,7 @@ VALUES
             {
               "events": [],
               "id": 2686,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 72,
               "y": 53,
@@ -24672,7 +24672,7 @@ VALUES
             {
               "events": [],
               "id": 2736,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 73,
               "y": 54,
@@ -25122,7 +25122,7 @@ VALUES
             {
               "events": [],
               "id": 2786,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 72,
               "y": 55,
@@ -25563,7 +25563,7 @@ VALUES
             {
               "events": [],
               "id": 2835,
-              "value": "-",
+              "value": "R",
               "walkable": true,
               "x": 71,
               "y": 56,

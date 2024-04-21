@@ -33,11 +33,42 @@ mod tests {
 
         render_map_output(map, size);
     }
+
+    #[test]
+    fn test_generate_swamp() {
+        let size = 50;
+        let world = WorldFactory.generate();
+        let map = Map::generate(world.content, "swamp");
+
+        for (_, item) in map.iter().enumerate() {
+            let expected_values = get_tiles_values();
+            assert!(expected_values.contains(&item.value));
+            assert!(!["null"].contains(&item.value.as_str()));
+        }
+
+        render_map_output(map, size);
+    }
+
+    #[test]
+    fn test_generate_town() {
+        let size = 50;
+        let world = WorldFactory.generate();
+        let map = Map::generate(world.content, "town");
+
+        for (_, item) in map.iter().enumerate() {
+            let expected_values = get_tiles_values();
+            assert!(expected_values.contains(&item.value));
+            assert!(!["null"].contains(&item.value.as_str()));
+        }
+
+        render_map_output(map, size);
+    }
+
     #[test]
     fn test_procedural_map_generation_topology() {
         let size = 50;
         let world = WorldFactory.generate();
-        let map = Map::generate(world.content, "forest");
+        let map = Map::generate(world.content, "town");
 
         for (_, item) in map.iter().enumerate() {
             let expected_values = get_tiles_values();
@@ -57,7 +88,7 @@ mod tests {
     #[ignore]
     fn test_procedural_map_generation_batch_stress_test() {
         let size = 50;
-        for _ in 0..=25 {
+        for _ in 0..=50 {
             let world = WorldFactory.generate();
             let map = Map::generate(world.content, "forest");
 
