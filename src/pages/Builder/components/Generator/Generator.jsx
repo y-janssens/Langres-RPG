@@ -12,10 +12,19 @@ const MAP_TYPES = [
     { label: 'swamp', key: 1 }
 ];
 
+const DEFAULT_OPTIONS = {
+    options: {
+        type: MAP_TYPES[1].label,
+        town: false,
+        shanty: true
+    },
+    amount: 25
+};
+
 export const Generator = ({ open, form, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
-    const [batchSettings, setBatchSettings] = useState(() => ({ type: MAP_TYPES[0].label, amount: 25 }));
+    const [batchSettings, setBatchSettings] = useState(() => ({ ...DEFAULT_OPTIONS }));
     const [selectedMap, setSelectedMap] = useState({ id: null, map: null });
     const [selectedPreview, setSelectedPreview] = useState(null);
 
@@ -29,7 +38,9 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
 
     const handleSelect = useCallback(
         (value) => {
-            setBatchSettings({ ...batchSettings, type: value });
+            let settings = { ...batchSettings };
+            settings.options.type = value;
+            setBatchSettings(settings);
         },
         [batchSettings]
     );
@@ -70,7 +81,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                     disabled={loadingMaps || selectedPreview}
                     progress={progress}
                     onLaunch={() => setReady(true)}
-                    selected={batchSettings.type}
+                    selected={batchSettings.options.type}
                     handleSelect={handleSelect}
                     sync={handleReset}
                 />
