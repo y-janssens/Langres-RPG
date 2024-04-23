@@ -15,7 +15,7 @@ const MAP_TYPES = [
 export const Generator = ({ open, form, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
-    const [batchSettings, setBatchSettings] = useState(() => ({ kind: MAP_TYPES[0].label, amount: 25 }));
+    const [batchSettings, setBatchSettings] = useState(() => ({ type: MAP_TYPES[0].label, amount: 25 }));
     const [selectedMap, setSelectedMap] = useState({ id: null, map: null });
     const [selectedPreview, setSelectedPreview] = useState(null);
 
@@ -29,7 +29,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
 
     const handleSelect = useCallback(
         (value) => {
-            setBatchSettings({ ...batchSettings, kind: value });
+            setBatchSettings({ ...batchSettings, type: value });
         },
         [batchSettings]
     );
@@ -70,7 +70,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                     disabled={loadingMaps || selectedPreview}
                     progress={progress}
                     onLaunch={() => setReady(true)}
-                    selected={batchSettings.kind}
+                    selected={batchSettings.type}
                     handleSelect={handleSelect}
                     sync={handleReset}
                 />

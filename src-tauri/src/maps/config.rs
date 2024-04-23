@@ -61,11 +61,3 @@ pub fn get_values(conf: &Conf) -> Vec<String> {
         .map(|s| s.to_string())
         .collect()
 }
-
-pub fn get_map_size(size: u32) -> (usize, usize) {
-    let bias = (((size as f32).sqrt()).sqrt() + 1_f32).ceil();
-    let width = ((size as f32).sqrt() - (bias / 2_f32)).round();
-    let height = width + bias;
-
-    (width as usize, height as usize)
-}

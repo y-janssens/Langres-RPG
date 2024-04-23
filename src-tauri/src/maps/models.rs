@@ -4,15 +4,17 @@ use crate::events::models::Event;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
 use crate::maps::tiles::{get_neighbours, get_walkable_tiles};
-use crate::maps::utilities::Generator;
 use crate::world::models::Item;
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
 
+use super::options::Options;
+
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {
     settings: Conf,
+    options: Options,
     content: Vec<Tile>,
     values: Vec<String>,
 }
@@ -54,12 +56,12 @@ impl From<Item> for Tile {
 
 impl Map {
     /// Procedural map generation entry point
-    pub fn generate(tiles: Vec<Item>, kind: &str) -> Vec<Item> {
-        let settings = get_config(kind);
+    pub fn generate(tiles: Vec<Item>, options: Options) -> Vec<Item> {
+        let settings = get_config(&options.r#type);
         let values = get_values(settings);
-
         let mut config = Self {
             settings: settings.clone(),
+            options: options.clone(),
             content: vec![],
             values,
         };
@@ -71,10 +73,7 @@ impl Map {
     /// Initially convert map's content to collapsable Items
     fn get_content(&mut self, tiles: Vec<Item>) {
         let items: Vec<Tile> = tiles.into_iter().map(Tile::from).collect();
-        if self.settings.name == "town" {
-            return self.content = Generator::generate_town(items);
-        }
-        self.content = items;
+        self.content = Options::perform_actions(&self.options, items)
     }
 
     /// Convert back to World Tiles for game usage

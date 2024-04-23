@@ -1,31 +1,24 @@
 use super::tiles::get_neighbours;
-use crate::maps::config::get_map_size;
 use crate::maps::models::Tile;
 use noise::{NoiseFn, Perlin, Terrace};
 use rand::Rng;
 
-#[allow(dead_code)]
 pub struct Generator {
     content: Vec<Tile>,
     seed: u32,   // Random value (2800101214)
     scale: f64,  // Noise spreading
     factor: f64, // Intensity
-    map_size: (usize, usize),
 }
 
 impl Generator {
     pub fn generate_town(content: Vec<Tile>) -> Vec<Tile> {
-        let mut rng = rand::thread_rng();
-        let mut topology = Generator {
-            map_size: get_map_size(content.clone().len() as u32),
-            seed: rng.gen(),
-            content,
-            scale: 0.025,
-            factor: 1.8,
-        };
-        topology.generate_map();
-        topology.clean_town_output();
-        topology.content
+        let mut topology = Self::get_params(content, 0.025, 1.8);
+        topology.generate()
+    }
+
+    pub fn generate_shanty(content: Vec<Tile>) -> Vec<Tile> {
+        let mut topology = Self::get_params(content, 0.1, 1.8);
+        topology.generate()
     }
 
     fn generate_map(&mut self) -> Vec<Tile> {
@@ -34,7 +27,6 @@ impl Generator {
         let terrace: Terrace<f64, &Perlin, 3> = Terrace::new(&perlin)
             .add_control_point(-1.0)
             .add_control_point(0.0)
-            // .add_control_point(0.1)
             .add_control_point(1.0);
 
         for item in items.iter_mut().filter(|i| &i.value != "T") {
@@ -74,5 +66,21 @@ impl Generator {
                 item.value = "-".to_string();
             }
         }
+    }
+
+    fn get_params(content: Vec<Tile>, scale: f64, factor: f64) -> Self {
+        let mut rng = rand::thread_rng();
+        Self {
+            seed: rng.gen(),
+            content,
+            scale,
+            factor,
+        }
+    }
+
+    fn generate(&mut self) -> Vec<Tile> {
+        self.generate_map();
+        self.clean_town_output();
+        self.content.clone()
     }
 }
