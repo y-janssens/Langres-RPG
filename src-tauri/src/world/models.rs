@@ -1,6 +1,5 @@
 use crate::events::models::Event;
 use crate::game::models::Position;
-use crate::objects::models::Object;
 use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
@@ -30,14 +29,6 @@ pub struct Item {
     pub value: String,
     pub events: Vec<Event>,
     pub walkable: bool,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Value {
-    id: u32,
-    value: String,
-    name: String,
-    assets: Vec<Option<Object>>,
 }
 
 impl World {
@@ -83,6 +74,7 @@ impl World {
                 y,
                 z: 0,
                 value: value.clone(),
+                // display_value: Values::get_display(&value),
                 events: vec![],
                 walkable: walkable_tiles.contains(&value),
             };

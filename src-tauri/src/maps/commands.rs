@@ -1,5 +1,5 @@
+use super::actions::params::Options;
 use super::models::Map;
-use super::options::Options;
 use crate::config::factories::factories_definitions::WorldFactory;
 use crate::config::factory::factory_models::Factory;
 use crate::world::models::Item;

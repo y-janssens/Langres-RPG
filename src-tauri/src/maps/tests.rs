@@ -3,8 +3,8 @@ mod tests {
     use crate::config::factories::factories_definitions::WorldFactory;
     use crate::config::factory::factory_models::Factory;
     use crate::config::fixtures::tests_fixtures::*;
+    use crate::maps::actions::params::Options;
     use crate::maps::models::Map;
-    use crate::maps::options::Options;
     use crate::maps::tiles::get_tiles_values;
 
     #[test]
@@ -26,8 +26,7 @@ mod tests {
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
-            town: false,
-            shanty: false,
+            action: None,
         };
         let map = Map::generate(world.content, options);
 
@@ -46,8 +45,7 @@ mod tests {
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "swamp".to_string(),
-            town: false,
-            shanty: false,
+            action: None,
         };
         let map = Map::generate(world.content, options);
 
@@ -66,8 +64,7 @@ mod tests {
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
-            town: true,
-            shanty: false,
+            action: Some("town".to_string()),
         };
         let map = Map::generate(world.content, options);
 
@@ -86,8 +83,7 @@ mod tests {
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "swamp".to_string(),
-            town: false,
-            shanty: true,
+            action: Some("shanty".to_string()),
         };
         let map = Map::generate(world.content, options);
 
@@ -106,8 +102,7 @@ mod tests {
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
-            town: true,
-            shanty: false,
+            action: Some("town".to_string()),
         };
         let map = Map::generate(world.content, options);
 
@@ -129,8 +124,7 @@ mod tests {
             let world = WorldFactory.generate();
             let options = Options {
                 r#type: "forest".to_string(),
-                town: false,
-                shanty: false,
+                action: None,
             };
             let map = Map::generate(world.content, options);
 

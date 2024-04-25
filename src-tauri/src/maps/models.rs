@@ -1,15 +1,14 @@
+use rand::seq::SliceRandom;
+use rand::thread_rng;
+use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
+use super::actions::{generator::Generator, params::Options};
 use crate::events::models::Event;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
 use crate::maps::tiles::{get_neighbours, get_walkable_tiles};
 use crate::world::models::Item;
-use rand::seq::SliceRandom;
-use rand::thread_rng;
-use serde::{Deserialize, Serialize};
-
-use super::options::Options;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {
@@ -28,7 +27,6 @@ pub struct Tile {
     pub value: String,
     events: Vec<Event>,
     walkable: bool,
-    tesselated: bool,
     pub entropy: u32,
 }
 
@@ -48,7 +46,6 @@ impl From<Item> for Tile {
             value: String::from(value),
             events: item.events,
             walkable: item.walkable,
-            tesselated: false,
             entropy: if value == "null" { *ENTROPY } else { 0 },
         }
     }
@@ -73,7 +70,7 @@ impl Map {
     /// Initially convert map's content to collapsable Items
     fn get_content(&mut self, tiles: Vec<Item>) {
         let items: Vec<Tile> = tiles.into_iter().map(Tile::from).collect();
-        self.content = Options::perform_actions(&self.options, items)
+        self.content = Generator::perform_actions(&self.options, items)
     }
 
     /// Convert back to World Tiles for game usage
@@ -90,7 +87,7 @@ impl Map {
                     x: tile.x,
                     y: tile.y,
                     z: tile.z,
-                    value,
+                    value: value.clone(),
                     events: [].to_vec(),
                     walkable,
                 }
