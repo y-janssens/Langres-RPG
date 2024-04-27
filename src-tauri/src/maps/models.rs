@@ -4,10 +4,11 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
 use super::actions::{generator::Generator, params::Options};
+use super::tiles::Values;
 use crate::events::models::Event;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
-use crate::maps::tiles::{get_neighbours, get_walkable_tiles};
+use crate::maps::tiles::{get_neighbours_ids, get_neighbours_values, get_walkable_tiles};
 use crate::world::models::Item;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -28,6 +29,7 @@ pub struct Tile {
     events: Vec<Event>,
     walkable: bool,
     pub entropy: u32,
+    pub neighbours_ids: Vec<u32>,
 }
 
 impl From<Item> for Tile {
@@ -46,6 +48,7 @@ impl From<Item> for Tile {
             value: String::from(value),
             events: item.events,
             walkable: item.walkable,
+            neighbours_ids: get_neighbours_ids(item.id, item.y as i32),
             entropy: if value == "null" { *ENTROPY } else { 0 },
         }
     }
@@ -88,6 +91,7 @@ impl Map {
                     y: tile.y,
                     z: tile.z,
                     value: value.clone(),
+                    display_value: Values::get_display(&value),
                     events: [].to_vec(),
                     walkable,
                 }
@@ -154,7 +158,7 @@ impl Map {
             let filtered_indices = Self::get_items_indices(items);
 
             if let Some(&index) = filtered_indices.choose(&mut rng) {
-                let neighbours = get_neighbours(items, index);
+                let neighbours = get_neighbours_values(items, index);
                 let constraints = Self::apply_constraints(neighbours.0, &self.values);
                 let value = Self::get_random_value(&constraints.0);
 

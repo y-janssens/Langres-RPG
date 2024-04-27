@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 use crate::maps::models::generation::{Map, Tile};
-use crate::maps::tiles::map_config_tiles::get_neighbours;
+use crate::maps::tiles::map_config_tiles::get_neighbours_values;
 use crate::maps::tiles::map_config_tiles::get_tiles_values;
 
 #[derive(Debug)]
@@ -53,7 +53,7 @@ fn analyze_map(items: Vec<Tile>) -> (Vec<Tile>, Vec<Tile>, Vec<Tile>) {
     let expected_values = get_tiles_values();
 
     for (index, item) in items.iter().enumerate() {
-        let neighbours = get_neighbours(&items, index);
+        let neighbours = get_neighbours_values(&items, index);
         let constraints = Map::apply_constraints(neighbours.0, &expected_values.clone());
         if &item.value == "null" {
             unchanged.push(item.clone())

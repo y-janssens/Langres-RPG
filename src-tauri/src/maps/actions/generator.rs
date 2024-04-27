@@ -1,5 +1,5 @@
 use super::params::{Options, Params};
-use crate::maps::{models::Tile, tiles::get_neighbours};
+use crate::maps::{models::Tile, tiles::get_neighbours_values};
 use lazy_static::lazy_static;
 use noise::{NoiseFn, Perlin, Terrace};
 use rand::Rng;
@@ -84,7 +84,7 @@ impl Generator {
             .content
             .iter()
             .enumerate()
-            .map(|(index, _)| get_neighbours(&self.content, index).0)
+            .map(|(index, _)| get_neighbours_values(&self.content, index).0)
             .collect();
 
         for (index, item) in self

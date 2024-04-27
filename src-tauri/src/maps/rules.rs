@@ -47,7 +47,7 @@ pub fn ensure_values_consistency(value: &str, items: &[Tile], index: usize) -> S
     if !INCONSISTENT_VALUES.contains(&value) {
         return value.to_string();
     }
-    let neighbours = get_neighbours(items, index).0;
+    let neighbours = get_neighbours_values(items, index).0;
     match value {
         "S" => ensure_no_stranded_shores(value, &neighbours),
         "C" => ensure_no_stranded_borders(value, &neighbours),

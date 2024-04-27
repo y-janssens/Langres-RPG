@@ -5,7 +5,7 @@ mod tests {
     use crate::config::fixtures::tests_fixtures::*;
     use crate::maps::actions::params::Options;
     use crate::maps::models::Map;
-    use crate::maps::tiles::get_tiles_values;
+    use crate::maps::tiles::{get_tiles_values, Values};
 
     #[test]
     fn test_map_generation() {
@@ -34,6 +34,7 @@ mod tests {
             let expected_values = get_tiles_values();
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
+            assert!(item.display_value == Values::get_display(&item.value));
         }
 
         render_map_output(map, size);
@@ -53,6 +54,7 @@ mod tests {
             let expected_values = get_tiles_values();
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
+            assert!(item.display_value == Values::get_display(&item.value));
         }
 
         render_map_output(map, size);
@@ -72,6 +74,7 @@ mod tests {
             let expected_values = get_tiles_values();
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
+            assert!(item.display_value == Values::get_display(&item.value));
         }
 
         render_map_output(map, size);
@@ -91,6 +94,7 @@ mod tests {
             let expected_values = get_tiles_values();
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
+            assert!(item.display_value == Values::get_display(&item.value));
         }
 
         render_map_output(map, size);
@@ -110,6 +114,7 @@ mod tests {
             let expected_values = get_tiles_values();
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
+            assert!(item.display_value == Values::get_display(&item.value));
         }
 
         render_map_output(map.clone(), size);
@@ -132,6 +137,7 @@ mod tests {
                 let expected_values = get_tiles_values();
                 assert!(expected_values.contains(&item.value));
                 assert!(!["null"].contains(&item.value.as_str()));
+                assert!(item.display_value == Values::get_display(&item.value));
             }
 
             render_map_output(map, size);
