@@ -5,7 +5,6 @@ use std::collections::HashSet;
 
 use super::actions::{generator::Generator, params::Options};
 use super::tiles::Values;
-use crate::events::models::Event;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
 use crate::maps::tiles::{get_neighbours_ids, get_neighbours_values, get_walkable_tiles};
@@ -26,8 +25,6 @@ pub struct Tile {
     pub y: u32,
     pub z: i32,
     pub value: String,
-    events: Vec<Event>,
-    walkable: bool,
     pub entropy: u32,
     pub neighbours_ids: Vec<u32>,
 }
@@ -46,8 +43,6 @@ impl From<Item> for Tile {
             y: item.y,
             z: item.z,
             value: String::from(value),
-            events: item.events,
-            walkable: item.walkable,
             neighbours_ids: get_neighbours_ids(item.id, item.y as i32),
             entropy: if value == "null" { *ENTROPY } else { 0 },
         }

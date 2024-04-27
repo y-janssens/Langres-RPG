@@ -31,7 +31,6 @@ pub struct Item {
     pub display_value: String,
     pub events: Vec<Event>,
     pub walkable: bool,
-    // pub neighbours_ids: Vec<u32>,
 }
 
 impl World {
@@ -54,6 +53,7 @@ impl World {
         Self::generate(size)
     }
 
+    /// Generate base map
     pub fn generate(size: u32) -> Vec<Item> {
         println!("Generating world data...");
         // Adjust the number of rows to keep a square map
@@ -86,8 +86,7 @@ impl World {
         content
     }
 
-    // Map content generation
-
+    /// Generate map's borders
     fn generate_borders(x: u32, y: u32, size: u32, threshold: u32) -> String {
         if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
             return String::from("T");
@@ -95,9 +94,10 @@ impl World {
         String::from("-")
     }
 
+    /// Generate random trees in available space
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
-        let items = Self::get_items("map");
+        let items = ["T", "-", "-", "-", "-", "-"];
 
         for item in content.iter_mut().filter(|i| i.value == "-") {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
@@ -105,12 +105,5 @@ impl World {
             item.walkable = value == "-";
         }
         content
-    }
-
-    fn get_items(name: &str) -> Vec<&'static str> {
-        match name {
-            "map" => vec!["T", "-", "-", "-", "-", "-"],
-            _ => vec![],
-        }
     }
 }

@@ -1,7 +1,9 @@
-use super::params::{Options, Params};
+use super::{
+    noise::{Noise, NoiseType},
+    params::{Options, Params},
+};
 use crate::maps::{models::Tile, tiles::get_neighbours_values};
 use lazy_static::lazy_static;
-use noise::{NoiseFn, Perlin, Terrace};
 use rand::Rng;
 
 lazy_static! {
@@ -10,12 +12,12 @@ lazy_static! {
     static ref SHANTY_PARAMS: Params = Params::get(0.1, 1.8, "F");
 }
 
-#[allow(dead_code)]
 pub struct Generator {
-    content: Vec<Tile>, // Map content
-    seed: u32,          // Random value (2800101214)
-    params: Params,     // Generator's parameters
-    options: Options,   // Actions options
+    content: Vec<Tile>,   // Map content
+    pub seed: u32,        // Random value (2800101214)
+    params: Params,       // Generator's parameters
+    pub options: Options, // Actions options
+    noise: NoiseType,     // Noise generator
 }
 
 impl Generator {
@@ -23,8 +25,10 @@ impl Generator {
     pub fn perform_actions(options: &Options, mut content: Vec<Tile>) -> Vec<Tile> {
         if let Some(ref action) = options.action {
             content = match action.as_str() {
-                "town" => Self::get_action(content, options, TOWN_PARAMS.clone()),
-                "shanty" => Self::get_action(content, options, SHANTY_PARAMS.clone()),
+                "town" => Self::get_action(content, options, TOWN_PARAMS.clone(), Noise::Town),
+                "shanty" => {
+                    Self::get_action(content, options, SHANTY_PARAMS.clone(), Noise::Shanty)
+                }
                 _ => content,
             };
         }
@@ -32,14 +36,22 @@ impl Generator {
     }
 
     /// Get noise generator parameters and generate actions's content
-    fn get_action(content: Vec<Tile>, options: &Options, params: Params) -> Vec<Tile> {
+    fn get_action(
+        content: Vec<Tile>,
+        options: &Options,
+        params: Params,
+        noise: Noise,
+    ) -> Vec<Tile> {
         let mut rng = rand::thread_rng();
+        let seed = rng.gen();
         let mut generator = Self {
-            seed: rng.gen(),
+            seed,
             content,
             params,
             options: options.clone(),
+            noise: noise.get_type(seed),
         };
+
         generator.generate();
         generator.clean_output();
         generator.content.clone()
@@ -48,15 +60,9 @@ impl Generator {
     /// Generate noise map and return parsed content
     fn generate(&mut self) -> Vec<Tile> {
         let items = &mut self.content;
-        let perlin = Perlin::new(self.seed);
-        let terrace: Terrace<f64, &Perlin, 3> = Terrace::new(&perlin)
-            .add_control_point(-1.0)
-            .add_control_point(0.0)
-            .add_control_point(1.0);
 
-        // Avoid processing map's trees to conserve borders
         for item in items.iter_mut().filter(|i| &i.value != "T") {
-            let noise_value = terrace.get([
+            let noise_value = self.noise.get([
                 item.x as f64 * self.params.scale,
                 item.y as f64 * self.params.scale,
                 0.0,

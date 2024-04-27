@@ -1,11 +1,4 @@
-use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
-
-lazy_static! {
-    // Actions parameters : scale - factor - output
-    static ref TOWN_PARAMS: Params = Params::get(0.025, 1.8, "F");
-    static ref SHANTY_PARAMS: Params = Params::get(0.1, 1.8, "F");
-}
 
 #[derive(Clone)]
 pub struct Params {
