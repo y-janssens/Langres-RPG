@@ -12,10 +12,10 @@ use crate::world::models::{Item, Options};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {
-    settings: Conf,
-    options: Options,
-    content: Vec<Tile>,
-    values: Vec<String>,
+    settings: Conf,      // Procedural generation configuration
+    options: Options,    // Request parameters
+    content: Vec<Tile>,  // Map content
+    values: Vec<String>, // Array of values to be processed as items values
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -31,18 +31,14 @@ pub struct Tile {
 
 impl From<Item> for Tile {
     fn from(item: Item) -> Self {
-        let value = if item.value == "-" {
-            "null"
-        } else {
-            &item.value
-        };
+        let value = item.get_item_value();
 
         Tile {
             id: item.id,
             x: item.x,
             y: item.y,
             z: item.z,
-            value: String::from(value),
+            value: value.to_string(),
             neighbours_ids: get_neighbours_ids(item.id, item.y as i32),
             entropy: if value == "null" { *ENTROPY } else { 0 },
         }
@@ -52,8 +48,8 @@ impl From<Item> for Tile {
 impl Map {
     /// Procedural map generation entry point
     pub fn generate(tiles: Vec<Item>, options: Options) -> Vec<Item> {
-        let settings = get_config(&options.r#type);
-        let values = get_values(settings);
+        let settings = Conf::get_config(&options.r#type);
+        let values = Conf::get_values(settings);
         let mut config = Self {
             settings: settings.clone(),
             options: options.clone(),
@@ -62,6 +58,7 @@ impl Map {
         };
         config.get_content(tiles);
         config.collapse();
+        config.post_process();
         config.export()
     }
 
@@ -69,6 +66,39 @@ impl Map {
     fn get_content(&mut self, tiles: Vec<Item>) {
         let items: Vec<Tile> = tiles.into_iter().map(Tile::from).collect();
         self.content = Generator::perform_actions(&self.options, items)
+    }
+
+    /// WFC core algorithm, randomly loops over each tile and assign values according to neighbouring constraints
+    fn collapse(&mut self) {
+        let mut rng = thread_rng();
+        let items = &mut self.content;
+
+        while items.iter().any(|tile| tile.entropy > 0) {
+            let filtered_indices = Self::get_items_indices(items);
+
+            if let Some(&index) = filtered_indices.choose(&mut rng) {
+                let neighbours = get_neighbours_values(items, index);
+                let constraints = Self::apply_constraints(neighbours.0, &self.values);
+                let value = Self::get_random_value(&constraints.0);
+
+                items[index].value = value;
+                items[index].entropy = 0;
+
+                for neighbour_index in neighbours.1 {
+                    if items[neighbour_index].entropy > 0 && !constraints.0.is_empty() {
+                        // Assign entropy value based on remaining possibilities
+                        items[neighbour_index].entropy = constraints.1.len() as u32;
+                    }
+                }
+            } else {
+                break;
+            }
+        }
+        self.content = items.to_vec();
+    }
+
+    fn post_process(&mut self) {
+        self.content = Generator::perform_post_actions(&self.options, self.content.clone());
     }
 
     /// Convert back to World Tiles for game usage
@@ -142,34 +172,5 @@ impl Map {
             1 => String::from(&remaining_values[0]),
             _ => String::from(remaining_values.choose(&mut rng).unwrap()),
         }
-    }
-
-    /// WFC core algorithm, randomly loops over each tile and assign values according to neighbouring constraints
-    fn collapse(&mut self) {
-        let mut rng = thread_rng();
-        let items = &mut self.content;
-
-        while items.iter().any(|tile| tile.entropy > 0) {
-            let filtered_indices = Self::get_items_indices(items);
-
-            if let Some(&index) = filtered_indices.choose(&mut rng) {
-                let neighbours = get_neighbours_values(items, index);
-                let constraints = Self::apply_constraints(neighbours.0, &self.values);
-                let value = Self::get_random_value(&constraints.0);
-
-                items[index].value = value;
-                items[index].entropy = 0;
-
-                for neighbour_index in neighbours.1 {
-                    if items[neighbour_index].entropy > 0 && !constraints.0.is_empty() {
-                        // Assign entropy value based on remaining possibilities
-                        items[neighbour_index].entropy = constraints.1.len() as u32;
-                    }
-                }
-            } else {
-                break;
-            }
-        }
-        self.content = items.to_vec();
     }
 }

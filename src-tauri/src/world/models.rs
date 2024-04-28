@@ -11,8 +11,9 @@ impl AbstractModel for World {}
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Options {
-    pub r#type: String,         // Map type
-    pub action: Option<String>, // Action's name
+    pub r#type: String,              // Map type
+    pub action: Option<String>,      // Action's name
+    pub post_action: Option<String>, // Post processing actions
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -41,10 +42,20 @@ pub struct Item {
     pub walkable: bool,
 }
 
+impl Item {
+    pub fn get_item_value(&self) -> String {
+        if self.value == "-" {
+            "null".to_string()
+        } else {
+            self.value.to_string()
+        }
+    }
+}
+
 impl World {
-    pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {
+    pub fn new(size: u32, name: String, order: u32, primary: bool) -> Self {
         let mut rng = rand::thread_rng();
-        World {
+        Self {
             id: rng.gen_range(1..=i32::MAX),
             name,
             size,
@@ -57,6 +68,7 @@ impl World {
             options: Options {
                 r#type: "forest".to_string(),
                 action: None,
+                post_action: None,
             },
         }
     }
@@ -73,15 +85,14 @@ impl World {
         let threshold = rows - size;
         let grid: u32 = size * rows;
         let mut content = Vec::new();
-        let walkable_tiles = vec!["-".to_string(), "S".to_string(), "C".to_string()];
+        let walkable_tiles = ["-".to_string(), "S".to_string(), "C".to_string()];
 
         for i in 0..grid {
             let col = i % size;
-            let row = i / size;
-            let x = if row % 2 == 0 { (col * 2) + 1 } else { col * 2 };
-            let y = row;
+            let y = i / size;
+            let x = if y % 2 == 0 { (col * 2) + 1 } else { col * 2 };
 
-            let value = Self::generate_borders(col, row, size, threshold);
+            let value = Self::generate_borders(col, y, size, threshold);
 
             let item = Item {
                 id: i,
@@ -105,7 +116,7 @@ impl World {
         }
         let cleared_content = Self::generate(self.size);
         let content = Map::generate(cleared_content, opts.clone());
-        World {
+        Self {
             content,
             options: opts,
             ..self

@@ -1,13 +1,16 @@
-use noise::{NoiseFn, Perlin, Terrace};
+use noise::{Billow, NoiseFn, Perlin, Terrace};
 
 pub enum NoiseType {
     Town,
     Shanty,
+    Dirt,
 }
 
+#[allow(dead_code)]
 pub enum Noise {
     Perlin(Perlin),                   // Base noise type
     Terrace(Terrace<f64, Perlin, 3>), // Sharpest noise for towns or villages
+    Billow(Billow<Perlin>),
 }
 
 impl NoiseType {
@@ -16,6 +19,7 @@ impl NoiseType {
         match self {
             Self::Town => Self::get_perlin(seed),
             Self::Shanty => Self::get_terrace(seed),
+            Self::Dirt => Self::get_perlin(seed),
         }
     }
 
@@ -40,6 +44,7 @@ impl Noise {
         match self {
             Self::Perlin(perlin) => perlin.get(point),
             Self::Terrace(terrace) => terrace.get(point),
+            Self::Billow(billow) => billow.get(point),
         }
     }
 }
