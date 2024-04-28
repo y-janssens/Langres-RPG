@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { invoke } from '@tauri-apps/api';
 
-const useMapBatch = ({ options = {}, amount = 5, launch = true, onSuccess = () => {} }) => {
+const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSuccess = () => {} }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const progress = useRef(0);
 
     const batch = useCallback(async () => {
         if (progress.current < amount) {
-            await invoke('generate_maps_batch', { options })
+            await invoke('generate_map_content', { map, options })
                 .then((response) => {
                     setData((prevData) => [...prevData, response]);
                     progress.current += 1;

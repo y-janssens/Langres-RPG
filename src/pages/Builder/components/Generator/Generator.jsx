@@ -15,10 +15,9 @@ const MAP_TYPES = [
 const DEFAULT_OPTIONS = {
     options: {
         type: MAP_TYPES[1].label,
-        town: false,
-        shanty: true
+        action: null
     },
-    amount: 25
+    amount: 2
 };
 
 export const Generator = ({ open, form, setFormObject, onClose }) => {
@@ -29,6 +28,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     const [selectedPreview, setSelectedPreview] = useState(null);
 
     const [maps, progress, loadingMaps, regenerate] = useMapBatch({
+        map: form.selectedMap,
         ...batchSettings,
         launch: ready,
         onSuccess: () => {
@@ -50,7 +50,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
         let newMap = { ...act.content.maps[mapIndex] };
 
-        newMap.content = selectedMap.map;
+        newMap = selectedMap.map;
         act.content.maps[mapIndex] = newMap;
         setFormObject({ ...form, selectedMap: newMap });
         onClose();
@@ -93,7 +93,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         >
             {maps.length > 0 && selectedPreview && !loadingMaps && (
                 <div className={css['map-selected-preview']} onClick={() => setSelectedPreview(null)}>
-                    <MapThumbnail map={maps[selectedPreview - 1]} size={3} />
+                    <MapThumbnail map={maps[selectedPreview - 1].content} size={3} />
                 </div>
             )}
             <div className={css[selectedPreview ? 'map-preview-block-inactive' : 'map-preview-block']}>

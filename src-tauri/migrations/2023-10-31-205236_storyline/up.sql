@@ -29549,6 +29549,10 @@ VALUES
           "id": 1302422795,
           "name": "Traitor",
           "npcs": [],
+          "options": {
+            "type": "forest",
+            "action": null
+          },
           "order": 0,
           "primary": true,
           "size": 50,
@@ -59077,6 +59081,10 @@ VALUES
           "id": 958207166,
           "name": "Suburbs",
           "npcs": [],
+          "options": {
+            "type": "forest",
+            "action": null
+          },
           "order": 1,
           "primary": true,
           "size": 50,

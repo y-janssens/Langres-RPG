@@ -1,8 +1,8 @@
-use super::{
-    noise::{Noise, NoiseType},
-    params::{Options, Params},
+use super::noise::{Noise, NoiseType};
+use crate::{
+    maps::{models::Tile, tiles::get_neighbours_values},
+    world::models::Options,
 };
-use crate::maps::{models::Tile, tiles::get_neighbours_values};
 use lazy_static::lazy_static;
 use rand::Rng;
 
@@ -12,12 +12,29 @@ lazy_static! {
     static ref SHANTY_PARAMS: Params = Params::get(0.1, 1.8, "F");
 }
 
+#[derive(Clone)]
+pub struct Params {
+    pub scale: f64,     // Noise spreading
+    pub factor: f64,    // Intensity
+    pub output: String, // Tile's value
+}
+
+impl Params {
+    pub fn get(scale: f64, factor: f64, output: &str) -> Self {
+        Self {
+            scale,
+            factor,
+            output: output.to_string(),
+        }
+    }
+}
+
 pub struct Generator {
     content: Vec<Tile>,   // Map content
     pub seed: u32,        // Random value (2800101214)
     params: Params,       // Generator's parameters
     pub options: Options, // Actions options
-    noise: NoiseType,     // Noise generator
+    noise: Noise,         // Noise generator
 }
 
 impl Generator {
@@ -25,9 +42,9 @@ impl Generator {
     pub fn perform_actions(options: &Options, mut content: Vec<Tile>) -> Vec<Tile> {
         if let Some(ref action) = options.action {
             content = match action.as_str() {
-                "town" => Self::get_action(content, options, TOWN_PARAMS.clone(), Noise::Town),
+                "town" => Self::get_action(content, options, TOWN_PARAMS.clone(), NoiseType::Town),
                 "shanty" => {
-                    Self::get_action(content, options, SHANTY_PARAMS.clone(), Noise::Shanty)
+                    Self::get_action(content, options, SHANTY_PARAMS.clone(), NoiseType::Shanty)
                 }
                 _ => content,
             };
@@ -40,7 +57,7 @@ impl Generator {
         content: Vec<Tile>,
         options: &Options,
         params: Params,
-        noise: Noise,
+        noise: NoiseType,
     ) -> Vec<Tile> {
         let mut rng = rand::thread_rng();
         let seed = rng.gen();

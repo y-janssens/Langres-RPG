@@ -3,12 +3,12 @@ use rand::thread_rng;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
-use super::actions::{generator::Generator, params::Options};
+use super::actions::generator::Generator;
 use super::tiles::Values;
 use crate::maps::config::*;
 use crate::maps::rules::{ensure_values_consistency, get_constraints};
 use crate::maps::tiles::{get_neighbours_ids, get_neighbours_values, get_walkable_tiles};
-use crate::world::models::Item;
+use crate::world::models::{Item, Options};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {

@@ -1,45 +1,45 @@
 use noise::{NoiseFn, Perlin, Terrace};
 
-pub enum Noise {
+pub enum NoiseType {
     Town,
     Shanty,
 }
 
-pub enum NoiseType {
+pub enum Noise {
     Perlin(Perlin),                   // Base noise type
     Terrace(Terrace<f64, Perlin, 3>), // Sharpest noise for towns or villages
 }
 
-impl Noise {
+impl NoiseType {
     /// Get noise generator
-    pub fn get_type(self, seed: u32) -> NoiseType {
+    pub fn get_type(self, seed: u32) -> Noise {
         match self {
             Self::Town => Self::get_perlin(seed),
             Self::Shanty => Self::get_terrace(seed),
         }
     }
 
-    fn get_perlin(seed: u32) -> NoiseType {
+    fn get_perlin(seed: u32) -> Noise {
         let perlin = Perlin::new(seed);
-        NoiseType::Perlin(perlin)
+        Noise::Perlin(perlin)
     }
 
-    fn get_terrace(seed: u32) -> NoiseType {
+    fn get_terrace(seed: u32) -> Noise {
         let perlin = Perlin::new(seed);
         let terrace = Terrace::new(perlin)
             .add_control_point(-1.0)
             .add_control_point(0.0)
             .add_control_point(1.0);
-        NoiseType::Terrace(terrace)
+        Noise::Terrace(terrace)
     }
 }
 
-impl NoiseType {
+impl Noise {
     /// Compute noise values
     pub fn get(&self, point: [f64; 3]) -> f64 {
         match self {
-            NoiseType::Perlin(perlin) => perlin.get(point),
-            NoiseType::Terrace(terrace) => terrace.get(point),
+            Self::Perlin(perlin) => perlin.get(point),
+            Self::Terrace(terrace) => terrace.get(point),
         }
     }
 }

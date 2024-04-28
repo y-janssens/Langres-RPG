@@ -1,5 +1,6 @@
 use crate::events::models::Event;
 use crate::game::models::Position;
+use crate::maps::models::Map;
 use crate::maps::tiles::Values;
 use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
@@ -7,6 +8,12 @@ use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
 
 impl AbstractModel for World {}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Options {
+    pub r#type: String,         // Map type
+    pub action: Option<String>, // Action's name
+}
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct World {
@@ -19,6 +26,7 @@ pub struct World {
     pub starting_point: Position,
     pub primary: bool,
     pub npcs: Vec<Npc>,
+    pub options: Options,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -46,11 +54,15 @@ impl World {
             starting_point: Position::resolve((9.0, 4.0, 254)),
             primary,
             npcs: vec![],
+            options: Options {
+                r#type: "forest".to_string(),
+                action: None,
+            },
         }
     }
 
-    pub fn regenerate(size: u32) -> Vec<Item> {
-        Self::generate(size)
+    pub fn regenerate(map: World) -> World {
+        Self::generate_content(map, None)
     }
 
     /// Generate base map
@@ -84,6 +96,20 @@ impl World {
             content.push(item);
         }
         content
+    }
+
+    pub fn generate_content(self, options: Option<Options>) -> Self {
+        let mut opts = self.options.clone();
+        if options.is_some() {
+            opts = options.unwrap();
+        }
+        let cleared_content = Self::generate(self.size);
+        let content = Map::generate(cleared_content, opts.clone());
+        World {
+            content,
+            options: opts,
+            ..self
+        }
     }
 
     /// Generate map's borders

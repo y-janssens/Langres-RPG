@@ -3,9 +3,9 @@ mod tests {
     use crate::config::factories::factories_definitions::WorldFactory;
     use crate::config::factory::factory_models::Factory;
     use crate::config::fixtures::tests_fixtures::*;
-    use crate::maps::actions::params::Options;
     use crate::maps::models::Map;
     use crate::maps::tiles::{get_tiles_values, Values};
+    use crate::world::models::Options;
 
     #[test]
     fn test_map_generation() {
