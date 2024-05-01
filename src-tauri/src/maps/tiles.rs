@@ -12,6 +12,7 @@ lazy_static! {
 // Base map types definitions
     pub static ref GRASS: Values = Values::store("-", "grass");
     pub static ref GROUND: Values = Values::store("G", "ground");
+    pub static ref MUD: Values = Values::store("M", "mud");
     pub static ref TREE: Values = Values::store("T", "tree");
     pub static ref FENCE: Values = Values::store("F", "fence");
     pub static ref BORDER: Values = Values::store("C", "border");
@@ -29,6 +30,7 @@ lazy_static! {
     static ref VALUES: Vec<Values> = vec![
         GRASS.clone(),
         GROUND.clone(),
+        MUD.clone(),
         TREE.clone(),
         FENCE.clone(),
         BORDER.clone(),

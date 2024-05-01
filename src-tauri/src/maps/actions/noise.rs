@@ -19,7 +19,7 @@ impl NoiseType {
         match self {
             Self::Town => Self::get_perlin(seed),
             Self::Shanty => Self::get_terrace(seed),
-            Self::Dirt => Self::get_perlin(seed),
+            Self::Dirt => Self::get_terrace(seed),
         }
     }
 

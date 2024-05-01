@@ -8,22 +8,23 @@ use rand::Rng;
 
 lazy_static! {
     // Actions parameters : scale - factor - output
-    pub static ref TOWN_PARAMS: Params = Params::get("town", 0.025, 1.8, "F", "T", true);
-    pub static ref SHANTY_PARAMS: Params = Params::get("shanty", 0.1, 1.8, "F", "-", true);
-    pub static ref DIRT_PARAMS: Params = Params::get("dirt", 0.1, 1.25, "G", "-", false);
+    pub static ref TOWN_PARAMS: Params = Params::get("town", 0.025, 1.8, vec!["F"], "T", true);
+    pub static ref SHANTY_PARAMS: Params = Params::get("shanty", 0.1, 1.8, vec!["F"], "-", true);
+    pub static ref DIRT_PARAMS: Params = Params::get("dirt", 0.1, 1.25, vec!["G"], "-", false);
+    pub static ref GROUND_PARAMS: Params = Params::get("ground", 0.05, 1.8, vec!["G", "-", "M"], "-", false);
 
     pub static ref AVAILABLE_PARAMS: Vec<&'static String> = vec![&TOWN_PARAMS.name, &SHANTY_PARAMS.name];
-    pub static ref AVAILABLE_ACTIONS: Vec<&'static String> = vec![&DIRT_PARAMS.name];
+    pub static ref AVAILABLE_ACTIONS: Vec<&'static String> = vec![&DIRT_PARAMS.name, &GROUND_PARAMS.name];
 }
 
 #[derive(Clone)]
 pub struct Params {
-    pub name: String,      // Parameter's name
-    pub scale: f64,        // Noise spreading
-    pub factor: f64,       // Intensity
-    pub filter: String,    // Escape value
-    pub output: String,    // Tile's value
-    pub pre_process: bool, // Post-processing computation
+    pub name: String,        // Parameter's name
+    pub scale: f64,          // Noise spreading
+    pub factor: f64,         // Intensity
+    pub filter: String,      // Escape value
+    pub output: Vec<String>, // Tile's value
+    pub pre_process: bool,   // Post-processing computation
 }
 
 impl Params {
@@ -31,7 +32,7 @@ impl Params {
         name: &str,
         scale: f64,
         factor: f64,
-        output: &str,
+        mut output: Vec<&str>,
         filter: &str,
         pre_process: bool,
     ) -> Self {
@@ -40,7 +41,7 @@ impl Params {
             scale,
             factor,
             filter: filter.to_string(),
-            output: output.to_string(),
+            output: output.iter_mut().map(|a| a.to_string()).collect(),
             pre_process,
         }
     }
@@ -74,6 +75,9 @@ impl Generator {
         if let Some(ref post_action) = options.post_action {
             content = match post_action.as_str() {
                 "dirt" => Self::get_action(content, options, DIRT_PARAMS.clone(), NoiseType::Dirt),
+                "ground" => {
+                    Self::get_action(content, options, GROUND_PARAMS.clone(), NoiseType::Dirt)
+                }
                 _ => content,
             };
         }
@@ -87,15 +91,7 @@ impl Generator {
         params: Params,
         noise: NoiseType,
     ) -> Vec<Tile> {
-        let mut rng = rand::thread_rng();
-        let seed = rng.gen();
-        let mut generator = Self {
-            seed,
-            content,
-            params,
-            options: options.clone(),
-            noise: noise.get_type(seed),
-        };
+        let mut generator = Self::init(content, options, params, noise);
 
         generator.generate();
         generator.clean_output();
@@ -121,6 +117,18 @@ impl Generator {
         }
     }
 
+    fn init(content: Vec<Tile>, options: &Options, params: Params, noise: NoiseType) -> Self {
+        let mut rng = rand::thread_rng();
+        let seed = rng.gen();
+        Self {
+            seed,
+            content,
+            params,
+            options: options.clone(),
+            noise: noise.get_type(seed),
+        }
+    }
+
     fn get_filter(params: &Params, value: &String) -> bool {
         params.pre_process != (*value == params.filter)
     }
@@ -128,8 +136,13 @@ impl Generator {
     /// Ensure preprocessed values will be ignored by WFC and left as is
     fn pre_process_values(params: Params, item: &mut Tile, value: i32) -> &mut Tile {
         item.z = value;
-        if item.z == 0 {
-            item.value = params.output;
+        if params.pre_process {
+            if item.z == 0 {
+                item.value = params.output[0].clone();
+                item.entropy = 0
+            }
+        } else {
+            item.value = params.output[(item.z as usize).min(params.output.len() - 1)].clone();
             item.entropy = 0
         }
         item
@@ -149,11 +162,11 @@ impl Generator {
                 .content
                 .iter_mut()
                 .enumerate()
-                .filter(|(_, tile)| tile.value == self.params.output)
+                .filter(|(_, tile)| tile.value == self.params.output[0])
             {
                 if neighbours[index]
                     .iter()
-                    .all(|value| value == &self.params.output)
+                    .all(|value| value == &self.params.output[0])
                 {
                     item.value = "-".to_string();
                 }

@@ -35,6 +35,10 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
         progress.current = 0;
     }, [progress]);
 
+    const clear = useCallback(() => {
+        sync();
+    }, [sync]);
+
     useEffect(() => {
         if (launch) {
             setLoading(true);
@@ -47,7 +51,7 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
         }
     }, [launch]);
 
-    return [data, progress.current, loading, sync];
+    return [data, progress.current, loading, sync, clear];
 };
 
 export { useMapBatch };

@@ -15,7 +15,7 @@ mod tests {
         assert!(options.types.len() > 1);
         assert!(options.actions.len() > 1);
         assert!(options.post_actions.len() > 1);
-        assert_eq!(options.default_sizes.len(), 3);
+        assert_eq!(options.default_sizes.len(), 4);
     }
 
     #[test]
@@ -38,7 +38,7 @@ mod tests {
         let options = Options {
             r#type: "forest".to_string(),
             action: None,
-            post_action: Some("dirt".to_string()),
+            post_action: Some("ground".to_string()),
         };
         let map = Map::generate(world.content, options);
 
@@ -98,13 +98,13 @@ mod tests {
         let options = Options {
             r#type: "forest".to_string(),
             action: None,
-            post_action: Some("dirt".to_string()),
+            post_action: Some("ground".to_string()),
         };
         let map = Map::generate(world.content, options);
 
         get_map_results(map.clone());
-        render_map_topology(map.clone(), size);
         render_map_output(map.clone(), size);
+        render_map_topology(map.clone(), size);
     }
 
     #[test]

@@ -36,12 +36,22 @@
         "title": "Éditez et organisez les passages entre vos cartes"
       },
       "generator": {
-        "select": "Type de carte",
+        "type": "Type de carte",
+        "action": "Type d'action",
+        "post_action": "Type d'action secondaire",
+        "amount": "Taille du lot de cartes",
         "subtitle": "Générez un lot de cartes",
         "title": "Générez et sélectionnez des cartes aléatoires",
+        "reset": "Réinitialiser",
+        "settings": "Paramètres de la carte",
         "types": {
           "forest": "Forêt",
-          "swamp": "Marécage"
+          "swamp": "Marécage",
+          "ground": "Sol",
+          "null": "Aucun",
+          "dirt": "Terre",
+          "town": "Ville",
+          "shanty": "Villages"
         }
       },
       "manager": {
@@ -90,6 +100,7 @@
       "save": "Enregistrer",
       "search": "Rechercher",
       "select": "Sélectionner",
+      "settings": "Paramètres",
       "start": "Commencer"
     },
     "date": "Date",

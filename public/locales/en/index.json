@@ -36,12 +36,22 @@
         "title": "Manage gateways between your maps"
       },
       "generator": {
-        "select": "Map type",
+        "type": "Map type",
+        "action": "Action type",
+        "post_action": "Post action type",
+        "amount": "Map batch's size",
         "subtitle": "Generate a batch of maps",
         "title": "Generate and select random maps",
+        "reset": "Reset",
+        "settings": "Map settings",
         "types": {
           "forest": "Forest",
-          "swamp": "Swamp"
+          "swamp": "Swamp",
+          "ground": "Ground",
+          "null": "None",
+          "dirt": "Dirt",
+          "town": "Town",
+          "shanty": "Village"
         }
       },
       "manager": {
@@ -90,6 +100,7 @@
       "save": "Save",
       "search": "Search",
       "select": "Select",
+      "settings": "Settings",
       "start": "Start"
     },
     "date": "Date",

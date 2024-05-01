@@ -74,7 +74,7 @@ impl World {
     }
 
     pub fn regenerate(map: World) -> World {
-        Self::generate_content(map, None)
+        map.generate_content(None)
     }
 
     /// Generate base map
@@ -134,12 +134,16 @@ impl World {
     /// Generate random trees in available space
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
-        let items = ["T", "-", "-", "-", "-", "-"];
+        let items = ["T", "-", "-", "-", "-", "-", "-", "-"];
+        let walkable_values = ["-", "M", "G"];
 
-        for item in content.iter_mut().filter(|i| i.value == "-") {
+        for item in content
+            .iter_mut()
+            .filter(|i| walkable_values.contains(&i.value.as_str()))
+        {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
             item.value = value.clone();
-            item.walkable = value == "-";
+            item.walkable = value != "T";
         }
         content
     }

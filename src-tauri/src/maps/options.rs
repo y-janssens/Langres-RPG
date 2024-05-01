@@ -7,7 +7,7 @@ use super::{
 };
 
 lazy_static! {
-    pub static ref DEFAULT_BATCH_SIZES: Vec<u8> = vec![5, 15, 25];
+    pub static ref DEFAULT_BATCH_SIZES: Vec<u8> = vec![5, 15, 25, 50];
 }
 
 #[derive(Debug, Serialize)]
