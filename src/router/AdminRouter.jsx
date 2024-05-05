@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import AdminRoute from './AdminRoute';
-import { Builder } from '../pages/Builder/Builder';
 import { useAdminContext } from '../hooks';
 import { DashboardRouter } from './DashboardRouter';
 import { DashboardContextLayer } from '../context/DashboardContext';
+import { EditordRouter } from './EditorRouter';
 
 export const AdminRouter = () => {
     const { isAdmin } = useAdminContext();
@@ -12,10 +12,10 @@ export const AdminRouter = () => {
         <DashboardContextLayer>
             <Routes>
                 <Route
-                    path="editor"
+                    path="editor/*"
                     element={
                         <AdminRoute allow={isAdmin} fallback="/">
-                            <Builder />
+                            <EditordRouter />
                         </AdminRoute>
                     }
                 />

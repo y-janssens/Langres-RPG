@@ -1,5 +1,5 @@
 import { Text } from '@react-three/drei';
-import { Hexagon } from '../../Game/Scene/Tiles';
+import { Hexagon } from '../../../Game/Scene/Tiles';
 
 export const Tiles = ({ form, data = [], handleSelect }) => {
     return data.map((item, index) => {

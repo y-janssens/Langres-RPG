@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { cloneDeep } from 'lodash';
 import { Stepper } from './Stepper/Stepper';
-import { useDynamicForm, useTranslation } from '../../../../hooks';
+import { useDynamicForm, useTranslation } from '../../../../../hooks';
 import { ActStep, StoryStep, SummaryStep } from './Steps';
 import { Modal } from '..';
-import Storyline from '../../../../models/storyline';
+import Storyline from '../../../../../models/storyline';
 
 export const Manager = ({ open, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();

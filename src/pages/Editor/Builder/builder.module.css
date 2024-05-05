@@ -197,7 +197,7 @@
     background-image: linear-gradient(rgba(150, 150, 150, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 2px, transparent 2px),
         linear-gradient(rgba(150, 150, 150, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 1px, transparent 1px);
     background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-position: bottom left;
 }
 
 .builder-body {

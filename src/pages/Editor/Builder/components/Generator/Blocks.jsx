@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo, useRef, useEffect } from 'react';
-import { Loading } from '../../../../components/ui/Loading';
+import { Loading } from '../../../../../components/ui/Loading';
 import { ButtonIcon } from '../ButtonLabel';
-import Icon from '../../../../components/ui/Icon';
+import Icon from '../../../../../components/ui/Icon';
 import css from './generator.module.css';
 
 export const PreviewBlock = memo(({ map, index, selected, setSelect, setPreview, loading }) => {

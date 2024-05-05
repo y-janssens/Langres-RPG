@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { useMapBatch, useTranslation } from '../../../../hooks';
-import { GeneratorOptions } from '../../../../models';
+import { useMapBatch, useTranslation } from '../../../../../hooks';
+import { GeneratorOptions } from '../../../../../models';
 
 import { Modal } from '../Modal/Modal';
-import Icon from '../../../../components/ui/Icon';
+import Icon from '../../../../../components/ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
 import { ButtonIcon, ButtonLabel } from '../ButtonLabel';
 import { GeneratorSettings } from './Settings';

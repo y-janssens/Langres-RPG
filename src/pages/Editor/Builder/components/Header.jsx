@@ -4,7 +4,7 @@ import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
 import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle } from '.';
-import Icon from '../../../components/ui/Icon';
+import Icon from '../../../../components/ui/Icon';
 import css from '../builder.module.css';
 import Zoom from './Zoom';
 

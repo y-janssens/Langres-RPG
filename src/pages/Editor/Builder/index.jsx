@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react'; // eslint-disable-line
 import { Header, SideBar, Manager, Theme } from './components';
-import { useDynamicForm, useStateHistory } from '../../hooks';
-import { Storyline, MapObject, MapFunction } from '../../models';
+import { useDynamicForm, useStateHistory } from '../../../hooks';
+import { Storyline, MapObject, MapFunction } from '../../../models';
 
 import Map from './Map/Map';
 import { Onboarding } from './components/Onboarding/Onboarding';

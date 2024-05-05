@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
-import { useDynamicForm, useTranslation } from '../../../../hooks';
-import Storyline from '../../../../models/storyline';
+import { useDynamicForm, useTranslation } from '../../../../../hooks';
+import Storyline from '../../../../../models/storyline';
 import { StoryStep, ActStep } from '../Manager/Steps';
 import { Modal } from '..';
 
