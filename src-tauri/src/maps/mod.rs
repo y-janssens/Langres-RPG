@@ -1,8 +1,8 @@
-pub mod models;
+pub mod actions;
 pub mod commands;
 pub mod config;
-// pub mod report;
+pub mod models;
+pub mod options;
 pub mod rules;
-pub mod topology;
 pub mod tests;
 pub mod tiles;

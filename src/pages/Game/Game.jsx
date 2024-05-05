@@ -75,7 +75,6 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             id: engine.gameId,
             launch: game,
             onSuccess: (response) => {
-                console.log(response.achievements);
                 setFormObject({ ...form, journal: response });
             }
         },

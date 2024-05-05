@@ -1,10 +1,12 @@
-use super::models::Map;
-use crate::config::factories::factories_definitions::WorldFactory;
-use crate::config::factory::factory_models::Factory;
-use crate::world::models::Item;
+use super::options::GeneratorOptions;
+use crate::world::models::{Options, World};
 
 #[tauri::command]
-pub fn generate_maps_batch(kind: String) -> Vec<Item> {
-    let world = WorldFactory.generate();
-    Map::generate(world.content, &kind)
+pub fn generate_map_content(map: World, options: Options) -> World {
+    World::generate_content(map, Some(options))
+}
+
+#[tauri::command]
+pub fn load_generator_options() -> GeneratorOptions<'static> {
+    GeneratorOptions::load()
 }

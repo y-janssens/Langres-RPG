@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react'; // eslint-disable-line
 import { Header, SideBar, Manager, Theme } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction } from '../../models';
@@ -91,6 +91,13 @@ export const Builder = () => {
         syncObjects();
         syncFunctions();
     }, [syncStory, syncObjects, syncFunctions]);
+
+    // useEffect(() => {
+    //     if (Object.keys(form.storyLine).length && !form.selectedMap) {
+    //         setForm('selectedAct', form.storyLine?.story.acts[0]);
+    //         setForm('selectedMap', form.storyLine?.story.acts[0].content.maps[0]);
+    //     }
+    // }, [form.storyLine]);
 
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>

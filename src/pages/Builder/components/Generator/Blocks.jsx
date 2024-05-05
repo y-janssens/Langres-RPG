@@ -31,7 +31,7 @@ export const PreviewBlock = memo(({ map, index, selected, setSelect, setPreview,
                         <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant={'link'} size="sm" onClick={() => setPreview(index)} />
                     </div>
                 )}
-                <MapThumbnail key={index} map={map} />
+                <MapThumbnail key={index} map={map.content} />
             </div>
         </div>
     );
@@ -57,6 +57,10 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
                 return 'olivedrab';
             case 'W':
                 return 'lightskyblue';
+            case 'G':
+                return '#a9a469';
+            case 'M':
+                return '#b1ad78';
             case '-':
             default:
                 return 'darkkhaki';

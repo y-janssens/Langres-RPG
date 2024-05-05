@@ -45,6 +45,8 @@
 
 .modal-card-body {
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin-bottom: 20px;
     border-radius: 4px;
@@ -60,8 +62,10 @@
 }
 
 .modal-card-content {
-    height: 100%;
+    width: calc(100% - 15px);
     border-top: 1px solid rgba(229, 231, 235, 0.25);
+    overflow: hidden;
+    padding-bottom: 50px;
 }
 
 .modal-footer {

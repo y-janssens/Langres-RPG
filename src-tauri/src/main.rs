@@ -71,7 +71,8 @@ fn main() {
             game::commands::save_game,
             game::commands::delete_game,
             // Map generator commands
-            maps::commands::generate_maps_batch,
+            maps::commands::generate_map_content,
+            maps::commands::load_generator_options,
             // Loot commands
             loot::commands::new_loot,
             loot::commands::load_loots,

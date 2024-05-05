@@ -21,4 +21,5 @@ export { default as Quest } from './quests';
 export { default as Achievement } from './achievements';
 export { default as Statistic } from './statistics';
 export { default as PlayerJournal } from './journal';
+export { default as GeneratorOptions } from './generator';
 export { default as Loot, LootTable } from './loot';

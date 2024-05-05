@@ -14,7 +14,7 @@ VALUES
     ('grass', '-', json('{"x": 1, "y": 1}'), 1),
     ('clearing', 'C', json('{"x": 1, "y": 1}'), 1),
     ('tree', 'T', json('{"x": 1, "y": 1}'), 0),
-    ('rock', 'R', json('{"x": 1, "y": 1}'), 0),
+    ('road', 'R', json('{"x": 1, "y": 1}'), 1),
     ('water', 'W', json('{"x": 1, "y": 1}'), 0),
     ('shore', 'S', json('{"x": 1, "y": 1}'), 1),
     ('bridge', 'BR', json('{"x": 1, "y": 1}'), 1);

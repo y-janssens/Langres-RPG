@@ -1,26 +1,33 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useMapBatch, useTranslation } from '../../../../hooks';
+import { GeneratorOptions } from '../../../../models';
+
 import { Modal } from '../Modal/Modal';
 import Icon from '../../../../components/ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
-import { ButtonIcon } from '../ButtonLabel';
-import { SelectButton } from '../selector/Selector';
-import css from './generator.module.css';
+import { ButtonIcon, ButtonLabel } from '../ButtonLabel';
+import { GeneratorSettings } from './Settings';
 
-const MAP_TYPES = [
-    { label: 'forest', key: 0 },
-    { label: 'swamp', key: 1 }
-];
+import css from './generator.module.css';
 
 export const Generator = ({ open, form, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
-    const [batchSettings, setBatchSettings] = useState(() => ({ kind: MAP_TYPES[0].label, amount: 25 }));
+    const [batchSettings, setBatchSettings] = useState({});
+    const [displaySettings, setDisplaySettings] = useState(true);
     const [selectedMap, setSelectedMap] = useState({ id: null, map: null });
     const [selectedPreview, setSelectedPreview] = useState(null);
 
-    const [maps, progress, loadingMaps, regenerate] = useMapBatch({
-        ...batchSettings,
+    const [generatorOptions, loadingGeneratorOptions] = GeneratorOptions.useCommand({
+        onSuccess: (response) => {
+            setBatchSettings(response.defaultOptions);
+        }
+    });
+
+    const [maps, progress, loadingMaps, regenerate, clear] = useMapBatch({
+        map: form.selectedMap,
+        options: { ...batchSettings }.options,
+        amount: { ...batchSettings }.options?.amount,
         launch: ready,
         onSuccess: () => {
             setReady(false);
@@ -28,10 +35,12 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     });
 
     const handleSelect = useCallback(
-        (value) => {
-            setBatchSettings({ ...batchSettings, kind: value });
+        (type, value) => {
+            let settings = { ...batchSettings };
+            settings.options[type] = value;
+            setBatchSettings(settings);
         },
-        [batchSettings]
+        [batchSettings, generatorOptions]
     );
 
     const handleSave = useCallback(() => {
@@ -39,24 +48,30 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
         let newMap = { ...act.content.maps[mapIndex] };
 
-        newMap.content = selectedMap.map;
+        newMap = selectedMap.map;
         act.content.maps[mapIndex] = newMap;
         setFormObject({ ...form, selectedMap: newMap });
         onClose();
     }, [form, selectedMap, onClose]);
 
-    const handleReset = useCallback(() => {
+    const handleLaunch = useCallback(() => {
         setReady(true);
         setSelectedMap({ id: null, map: null });
         setSelectedPreview(null);
+        setDisplaySettings(false);
         regenerate();
     }, [regenerate]);
 
+    const handleReset = useCallback(() => {
+        clear();
+        setBatchSettings({ ...generatorOptions.defaultOptions });
+    }, [generatorOptions, clear]);
+
     const loading = useMemo(() => {
-        return loadingMaps && progress < batchSettings.amount;
+        return loadingMaps && progress < batchSettings.options?.amount;
     }, [loadingMaps, progress, batchSettings]);
 
-    if (!open) {
+    if (!open || loadingGeneratorOptions) {
         return null;
     }
 
@@ -65,14 +80,16 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
             title={t('builder.modals.generator.title')}
             subtitle={
                 <GeneratorActions
+                    options={generatorOptions}
                     settings={batchSettings}
-                    total={batchSettings.amount}
+                    displaySettings={displaySettings}
+                    setDisplaySettings={setDisplaySettings}
                     disabled={loadingMaps || selectedPreview}
                     progress={progress}
-                    onLaunch={() => setReady(true)}
-                    selected={batchSettings.kind}
+                    loading={loading}
+                    handleReset={handleReset}
                     handleSelect={handleSelect}
-                    sync={handleReset}
+                    onLaunch={handleLaunch}
                 />
             }
             disabled={!selectedMap.id || selectedPreview}
@@ -82,7 +99,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         >
             {maps.length > 0 && selectedPreview && !loadingMaps && (
                 <div className={css['map-selected-preview']} onClick={() => setSelectedPreview(null)}>
-                    <MapThumbnail map={maps[selectedPreview - 1]} size={3} />
+                    <MapThumbnail map={maps[selectedPreview - 1].content} size={3} />
                 </div>
             )}
             <div className={css[selectedPreview ? 'map-preview-block-inactive' : 'map-preview-block']}>
@@ -95,42 +112,36 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     );
 };
 
-const GeneratorActions = ({ disabled, total, progress, selected, onLaunch = () => {}, sync = () => {}, handleSelect = () => {} }) => {
+const GeneratorActions = ({
+    settings,
+    options,
+    disabled,
+    progress,
+    loading,
+    displaySettings,
+    setDisplaySettings,
+    handleReset = () => {},
+    onLaunch = () => {},
+    handleSelect = () => {}
+}) => {
     const { t } = useTranslation();
-    const [open, setOpen] = useState(false);
 
-    const trigger = useCallback(() => {
-        if (progress === 0) {
-            return onLaunch();
-        }
-        return sync();
-    }, [progress, sync, onLaunch]);
+    const handleClear = useCallback(() => {
+        setDisplaySettings(!displaySettings);
+    }, [displaySettings]);
 
     return (
-        <div className={css['map-preview-cta']}>
-            <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${total}`}</span>
-            <div className={css['map-preview-cta-btns']}>
-                <SelectButton open={open} label={t(`builder.modals.generator.types.${selected}`) || t('builder.modals.generator.select')} onClick={() => setOpen(!open)} disabled />
-                {open && (
-                    <div className={css['map-preview-cta-content']}>
-                        {MAP_TYPES.map((type) => {
-                            return (
-                                <span
-                                    key={type.key}
-                                    className={css['map-preview-cta-content-item']}
-                                    onClick={() => {
-                                        handleSelect(type.label);
-                                        setOpen(false);
-                                    }}
-                                >
-                                    {t(`builder.modals.generator.types.${type.label}`)}
-                                </span>
-                            );
-                        })}
-                    </div>
-                )}
-                <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => trigger()} />
+        <>
+            <div className={css['map-preview-cta']}>
+                <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${settings.options?.amount}`}</span>
+                <div className={css['map-preview-cta-btns']}>
+                    <ButtonLabel color="primary" label={t('builder.modals.generator.settings')} onClick={handleClear} disabled={loading} />
+                    <ButtonLabel variant="outline" label={t('builder.modals.generator.reset')} onClick={handleReset} disabled={loading} />
+
+                    <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => onLaunch()} />
+                </div>
             </div>
-        </div>
+            <GeneratorSettings settings={settings} options={options} handleSelect={handleSelect} display={displaySettings && !loading} />
+        </>
     );
 };

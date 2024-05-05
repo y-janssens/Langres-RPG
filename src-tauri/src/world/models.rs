@@ -1,12 +1,20 @@
 use crate::events::models::Event;
 use crate::game::models::Position;
-use crate::objects::models::Object;
+use crate::maps::models::Map;
+use crate::maps::tiles::Values;
 use crate::{config::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
 
 impl AbstractModel for World {}
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Options {
+    pub r#type: String,              // Map type
+    pub action: Option<String>,      // Action's name
+    pub post_action: Option<String>, // Post processing actions
+}
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct World {
@@ -19,6 +27,7 @@ pub struct World {
     pub starting_point: Position,
     pub primary: bool,
     pub npcs: Vec<Npc>,
+    pub options: Options,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -28,22 +37,25 @@ pub struct Item {
     pub y: u32,
     pub z: i32,
     pub value: String,
+    pub display_value: String,
     pub events: Vec<Event>,
     pub walkable: bool,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Value {
-    id: u32,
-    value: String,
-    name: String,
-    assets: Vec<Option<Object>>,
+impl Item {
+    pub fn get_item_value(&self) -> String {
+        if self.value == "-" {
+            "null".to_string()
+        } else {
+            self.value.to_string()
+        }
+    }
 }
 
 impl World {
-    pub fn new(size: u32, name: String, order: u32, primary: bool) -> World {
+    pub fn new(size: u32, name: String, order: u32, primary: bool) -> Self {
         let mut rng = rand::thread_rng();
-        World {
+        Self {
             id: rng.gen_range(1..=i32::MAX),
             name,
             size,
@@ -53,13 +65,19 @@ impl World {
             starting_point: Position::resolve((9.0, 4.0, 254)),
             primary,
             npcs: vec![],
+            options: Options {
+                r#type: "forest".to_string(),
+                action: None,
+                post_action: None,
+            },
         }
     }
 
-    pub fn regenerate(size: u32) -> Vec<Item> {
-        Self::generate(size)
+    pub fn regenerate(map: World) -> World {
+        map.generate_content(None)
     }
 
+    /// Generate base map
     pub fn generate(size: u32) -> Vec<Item> {
         println!("Generating world data...");
         // Adjust the number of rows to keep a square map
@@ -67,15 +85,14 @@ impl World {
         let threshold = rows - size;
         let grid: u32 = size * rows;
         let mut content = Vec::new();
-        let walkable_tiles = vec!["-".to_string(), "S".to_string(), "C".to_string()];
+        let walkable_tiles = ["-".to_string(), "S".to_string(), "C".to_string()];
 
         for i in 0..grid {
             let col = i % size;
-            let row = i / size;
-            let x = if row % 2 == 0 { (col * 2) + 1 } else { col * 2 };
-            let y = row;
+            let y = i / size;
+            let x = if y % 2 == 0 { (col * 2) + 1 } else { col * 2 };
 
-            let value = Self::generate_borders(col, row, size, threshold);
+            let value = Self::generate_borders(col, y, size, threshold);
 
             let item = Item {
                 id: i,
@@ -83,6 +100,7 @@ impl World {
                 y,
                 z: 0,
                 value: value.clone(),
+                display_value: Values::get_display(&value),
                 events: vec![],
                 walkable: walkable_tiles.contains(&value),
             };
@@ -91,8 +109,21 @@ impl World {
         content
     }
 
-    // Map content generation
+    pub fn generate_content(self, options: Option<Options>) -> Self {
+        let mut opts = self.options.clone();
+        if options.is_some() {
+            opts = options.unwrap();
+        }
+        let cleared_content = Self::generate(self.size);
+        let content = Map::generate(cleared_content, opts.clone());
+        Self {
+            content,
+            options: opts,
+            ..self
+        }
+    }
 
+    /// Generate map's borders
     fn generate_borders(x: u32, y: u32, size: u32, threshold: u32) -> String {
         if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
             return String::from("T");
@@ -100,22 +131,20 @@ impl World {
         String::from("-")
     }
 
+    /// Generate random trees in available space
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
-        let items = Self::get_items("map");
+        let items = ["T", "-", "-", "-", "-", "-", "-", "-"];
+        let walkable_values = ["-", "M", "G"];
 
-        for item in content.iter_mut().filter(|i| i.value == "-") {
+        for item in content
+            .iter_mut()
+            .filter(|i| walkable_values.contains(&i.value.as_str()))
+        {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
             item.value = value.clone();
-            item.walkable = value == "-";
+            item.walkable = value != "T";
         }
         content
-    }
-
-    fn get_items(name: &str) -> Vec<&'static str> {
-        match name {
-            "map" => vec!["T", "-", "-", "-", "-", "-"],
-            _ => vec![],
-        }
     }
 }

@@ -55,7 +55,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     payload['data'] = form.selectedMap.content;
                     break;
                 case 'regenerate':
-                    payload['size'] = form.selectedMap.size;
+                    payload['map'] = form.selectedMap;
                     break;
                 default:
                     break;
@@ -64,7 +64,11 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             await invoke(command, payload).then((data) => {
                 let act = form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id);
                 let map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
-                map.content = data;
+                if (command !== 'regenerate') {
+                    map.content = data;
+                } else {
+                    map = data;
+                }
                 setForm('selectedMap', map);
             });
         },

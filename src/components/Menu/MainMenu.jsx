@@ -105,7 +105,7 @@ export const MainMenu = () => {
             activeRef.current.focus();
         }
         // setEngine({ gameId: 1182534022 });
-        // navigate('admin/dashboard/loot');
+        // navigate('admin/editor');
     }, []);
 
     if (engine.gameId) {

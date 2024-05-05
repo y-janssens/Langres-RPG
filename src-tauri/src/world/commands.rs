@@ -6,8 +6,8 @@ pub fn generate(size: u32, name: String, order: u32, primary: bool) -> World {
 }
 
 #[tauri::command]
-pub fn regenerate(size: u32) -> Vec<Item> {
-    World::regenerate(size)
+pub fn regenerate(map: World) -> World {
+    World::regenerate(map)
 }
 
 #[tauri::command]
