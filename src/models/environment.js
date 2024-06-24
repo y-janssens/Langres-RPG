@@ -11,6 +11,14 @@ export default class Environment extends Fetcher {
         this.danger = danger;
         this.windForce = wind_force;
         this.time = new Time();
+        this.#instantiate();
+    }
+
+    #instantiate() {
+        if (!Environment.instance) {
+            Environment.instance = this;
+        }
+        return Environment.instance;
     }
 
     parseDate(str) {
@@ -38,6 +46,14 @@ export class Time {
         this.time = new Date();
         this.speed = 1;
         this.start();
+        this.#instantiate();
+    }
+
+    #instantiate() {
+        if (!Time.instance) {
+            Time.instance = this;
+        }
+        return Time.instance;
     }
 
     start() {
