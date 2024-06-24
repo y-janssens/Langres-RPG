@@ -9,7 +9,7 @@ export { default as Settings } from './settings';
 export { default as Character } from './character';
 export { default as Inventory } from './inventory';
 export { default as World } from './world';
-export { default as Environment } from './environment';
+export { default as Environment, Time } from './environment';
 export { default as MapAssets } from './map';
 export { default as Collection } from './collections';
 export { default as AdminModel } from './admin';
