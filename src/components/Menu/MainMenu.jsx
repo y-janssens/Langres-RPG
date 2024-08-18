@@ -104,9 +104,10 @@ export const MainMenu = () => {
         if (!engine.gameId && (!engine.controls?.toggles?.pause || !engine.controls?.toggles?.menu)) {
             activeRef.current.focus();
         }
-        // setEngine({ gameId: 1182534022 });
+        // console.log(lastPlayedGame);
+        setEngine({ gameId: lastPlayedGame?.id });
         // navigate('admin/editor');
-    }, []);
+    }, [lastPlayedGame]);
 
     if (engine.gameId) {
         return null;

@@ -1,6 +1,6 @@
-import { useRef, useMemo, useCallback } from 'react';
+import { useRef, useMemo, useCallback, useState } from 'react';
 import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
-import { GameModel, Environment, PlayerJournal } from '../../models';
+import { GameModel, Environment, PlayerJournal, Time } from '../../models';
 
 import { Hud } from './Interface/Hud';
 import { LoadingScreen } from '../../components/ui/LoadingScreen';
@@ -13,6 +13,7 @@ import { OpeningTitle } from '../../components/ui/OpeningTitle';
 export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();
     const [engine, setEngine, removeFromEngine] = useGameContext();
+    const [trackTime] = useState(() => new Time());
 
     const cameraRef = useRef();
     const characterRef = useRef();
@@ -21,6 +22,8 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const [form, setForm, setFormObject] = useDynamicForm({
         id: null,
         environment: {},
+        time: trackTime,
+        dayTime: trackTime.output,
         loadingProgress: 0,
         loadingReady: false
     });
@@ -94,6 +97,11 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         [game]
     );
 
+    setInterval(() => {
+        setForm('dayTime', form.time.output.time);
+        setForm('dayProgression', form.time.output.progression);
+    }, 1000);
+
     const contextReady = useMemo(() => {
         if (!engine) {
             return false;
@@ -117,7 +125,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             <LoadingScreen form={form} setForm={setForm} engine={engine} loading={isLoading}>
                 {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}
                 <Hud engine={engine} game={form} display={keyToggles} />
-                <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
+                <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause} time={form.dayProgression}>
                     <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
                 </Scene>
             </LoadingScreen>
