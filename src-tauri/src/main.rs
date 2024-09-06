@@ -107,6 +107,7 @@ fn main() {
             storyline::commands::load_storyline,
             storyline::commands::register_gateway,
             storyline::commands::register_checkpoint,
+            storyline::commands::register_object,
             // Statistics commands
             statistics::commands::new_statistic,
             statistics::commands::load_statistics,

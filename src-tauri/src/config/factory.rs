@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub mod factory_models {
     use diesel::SqliteConnection;
 

@@ -47,12 +47,13 @@ impl Params {
     }
 }
 
+#[allow(dead_code)]
 pub struct Generator {
-    content: Vec<Tile>,   // Map content
-    pub seed: u32,        // Random value (2800101214)
-    params: Params,       // Generator's parameters
-    pub options: Options, // Actions options
-    noise: Noise,         // Noise generator
+    content: Vec<Tile>, // Map content
+    seed: u32,          // Random value
+    params: Params,     // Generator's parameters
+    options: Options,   // Actions options
+    noise: Noise,       // Noise generator
 }
 
 impl Generator {

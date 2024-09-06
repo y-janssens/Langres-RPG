@@ -1,7 +1,10 @@
 use crate::config::factory::factory_models::AbstractModel;
 use crate::events::models::{Event, EventType};
 use crate::npcs::models::Npc;
+use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
+use crate::utils::errors::ValidationError;
+use crate::utils::models::FrustumCullingUtility;
 use crate::world::models::{Item, World};
 use diesel::deserialize::{self, FromSql};
 use diesel::sql_types::Text;
@@ -133,26 +136,23 @@ impl Story {
         tile_id: u32,
         mut operation: F,
     ) where
-        F: FnMut(&mut Item) + std::panic::UnwindSafe,
+        F: FnMut(&mut Item),
     {
         let mut story = Self::load(connection).expect("Failed to load Story");
 
-        let result = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-            story
-                .story
-                .acts
-                .iter_mut()
-                .find(|act| act.id == act_id)
-                .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
-                .and_then(|map| map.content.iter_mut().find(|tile| tile.id == tile_id))
-                .map(&mut operation);
-        }));
+        let tile_opt = story
+            .story
+            .acts
+            .iter_mut()
+            .find(|act| act.id == act_id)
+            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .and_then(|map| map.content.iter_mut().find(|tile| tile.id == tile_id));
+
+        if let Some(tile) = tile_opt {
+            operation(tile);
+        }
 
         Self::save(connection, story.id, &mut story).expect("Failed to save Story");
-
-        if let Err(e) = result {
-            std::panic::resume_unwind(e);
-        }
     }
 
     pub fn register_gateway(
@@ -203,5 +203,61 @@ impl Story {
                     .retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
             }
         });
+    }
+
+    pub fn register_object(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        object_id: i32,
+        enable: bool,
+    ) -> Result<(), ValidationError> {
+        let mut story = Self::load(connection).expect("Failed to load Story");
+
+        let map = story
+            .story
+            .acts
+            .iter_mut()
+            .find(|act| act.id == act_id)
+            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .expect("Failed to get map");
+
+        let obj = Object::get(object_id, connection).expect("Failed to get object");
+
+        if !obj.interactive {
+            return Err(ValidationError {
+                message: format!("Object: {} is not registrable", object_id),
+            });
+        }
+        // Use FrustumCullingUtility here to filter tiles based on object's area instead of expanding from tile
+        let neighbours_ids = FrustumCullingUtility::cull(
+            tile_id as i32,
+            map.size,
+            obj.area.x as usize,
+            obj.area.y as usize,
+        );
+
+        for _tile in map
+            .content
+            .iter_mut()
+            .filter(|t| neighbours_ids.contains(&(t.id as i32)))
+        {
+            if enable {
+                _tile.value = if _tile.id == tile_id {
+                    obj.value.clone().unwrap()
+                } else {
+                    String::from("#")
+                };
+                _tile.walkable = false;
+                _tile.events = [].to_vec();
+            } else {
+                _tile.value = String::from("-");
+                _tile.walkable = true;
+            }
+        }
+
+        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+        Ok(())
     }
 }

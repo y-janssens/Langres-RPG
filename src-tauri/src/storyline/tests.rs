@@ -4,7 +4,9 @@ mod tests {
     use crate::config::factories::factories_definitions::{StoryLineFactory, WorldFactory};
     use crate::config::factory::factory_models::Factory;
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
+    use crate::objects::models::Object;
     use crate::storyline::models::Story;
+    use crate::world::models::Item;
 
     #[test]
     fn test_load_storyline() {
@@ -143,6 +145,79 @@ mod tests {
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
             assert_eq!(patched_tile.events.len(), 0);
+        });
+    }
+
+    #[test]
+    fn test_register_object() {
+        allow_db_access(|connection| {
+            let objects = Object::load(connection).expect("Error");
+            let object = objects
+                .iter()
+                .find(|it| it.name == "house")
+                .cloned()
+                .expect("Error");
+
+            let _ = Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [1, 2, 3, 4, 5, 53, 103].contains(&t.id))
+                .cloned()
+                .collect();
+
+            let expected_values = ["#", "#", &object.value.clone().unwrap(), "#", "#", "#", "#"];
+            for (i, tile) in _tiles.iter().enumerate() {
+                assert_eq!(tile.value, expected_values[i]);
+                assert_eq!(tile.walkable, false);
+            }
+        });
+    }
+
+    #[test]
+    fn test_unregister_object() {
+        allow_db_access(|connection| {
+            let objects = Object::load(connection).expect("Error");
+            let object = objects
+                .iter()
+                .find(|it| it.name == "house")
+                .cloned()
+                .expect("Error");
+
+            let _ = Story::register_object(connection, 1323375008, 1302422795, 3, object.id, false);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [1, 2, 3, 4, 5, 53, 103].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert_eq!(tile.value, "-");
+                assert!(tile.walkable)
+            }
+        });
+    }
+
+    #[test]
+    fn test_register_wrong_object() {
+        allow_db_access(|connection| {
+            let objects = Object::load(connection).expect("Error");
+            let object = objects
+                .iter()
+                .find(|it| it.name == "road")
+                .cloned()
+                .expect("Error");
+
+            let response =
+                Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
+            let error = response.unwrap_err().message;
+            assert_eq!(error, format!("Object: {} is not registrable", object.id));
+            println!("{:?}", error);
         });
     }
 }

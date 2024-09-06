@@ -124,6 +124,7 @@ pub mod factories_definitions {
                 value: Some(StringFaker.generate().value().to_string()),
                 area: Area { x: 1, y: 1 },
                 walkable: BoolFaker.generate().value(),
+                interactive: BoolFaker.generate().value(),
             }
         }
     }
