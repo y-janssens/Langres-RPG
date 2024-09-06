@@ -148,20 +148,24 @@ const Maptile = ({ form, ds, item, handleSelect }) => {
     }, [item, isGateway]);
 
     const color = useMemo(() => {
-        switch (item.value) {
-            case 'C':
-                return 'rgba(200, 255, 19, .5)';
-            case 'T':
-                return 'rgba(94, 219, 53, .8)';
-            case 'S':
-                return 'rgb(219, 210, 87)';
-            case 'W':
-                return 'lightskyblue';
-            case '-':
-                return 'darkkhaki';
-            default:
-                return '#334359';
+        if (!form.showConstraints) {
+            switch (item.value) {
+                case 'C':
+                    return 'rgba(200, 255, 19, .5)';
+                case 'T':
+                    return 'rgba(94, 219, 53, .8)';
+                case 'S':
+                    return 'rgb(219, 210, 87)';
+                case 'W':
+                    return 'lightskyblue';
+                case 'R':
+                    return '#808080';
+                case '-':
+                default:
+                    return 'darkkhaki';
+            }
         }
+        return item.walkable ? 'white' : '#808080';
     }, [item]);
 
     useEffect(() => {

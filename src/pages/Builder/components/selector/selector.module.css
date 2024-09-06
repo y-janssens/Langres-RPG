@@ -1,8 +1,13 @@
-.select-multi-container {
+.select-multi-container,
+.select-multi-buttons {
     width: 350px;
     background-color: transparent;
     margin: 0 15px;
     z-index: 2000;
+}
+
+.select-multi-buttons {
+    width: 150px;
 }
 
 .selector-select-btn {

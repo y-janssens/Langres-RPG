@@ -10,7 +10,8 @@
         "label": "Fonctions"
       },
       "items": {
-        "label": "Éléments"
+        "items": "Éléments",
+        "objects": "Objets"
       },
       "map": {
         "id": "Id",
@@ -21,7 +22,16 @@
         "start": "Départ"
       },
       "objects": {
-        "label": "Objets"
+        "start": "Départ",
+        "gate": "Portail",
+        "grass": "Herbe",
+        "clearing": "Sol",
+        "tree": "Arbre",
+        "road": "Route",
+        "water": "Eau",
+        "shore": "Rivage",
+        "bridge": "Pont",
+        "house": "Maison"
       },
       "tile": {
         "label": "Paramètres des cases"
@@ -77,6 +87,8 @@
       "map": "Sélectionner une carte"
     },
     "toggles": {
+      "constraints": "Voir les contraintes",
+      "display": "Affichage",
       "icons": "Voir les icônes",
       "ids": "Voir les ids",
       "meshes": "Voir les meshs",
@@ -218,6 +230,7 @@
         "actions": "Actions",
         "area": "Zone",
         "id": "Id",
+        "interactive": "Interactif",
         "name": "Nom",
         "value": "Valeur",
         "walkable": "Accessible"

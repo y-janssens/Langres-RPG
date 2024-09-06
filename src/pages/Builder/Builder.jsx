@@ -92,12 +92,12 @@ export const Builder = () => {
         syncFunctions();
     }, [syncStory, syncObjects, syncFunctions]);
 
-    // useEffect(() => {
-    //     if (Object.keys(form.storyLine).length && !form.selectedMap) {
-    //         setForm('selectedAct', form.storyLine?.story.acts[0]);
-    //         setForm('selectedMap', form.storyLine?.story.acts[0].content.maps[0]);
-    //     }
-    // }, [form.storyLine]);
+    useEffect(() => {
+        if (Object.keys(form.storyLine).length && !form.selectedMap) {
+            setForm('selectedAct', form.storyLine?.story.acts[0]);
+            setForm('selectedMap', form.storyLine?.story.acts[0].content.maps[0]);
+        }
+    }, [form.storyLine]);
 
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>

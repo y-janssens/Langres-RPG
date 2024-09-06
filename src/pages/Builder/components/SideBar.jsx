@@ -123,17 +123,35 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     </div>
                 </MenuBlock>
             )}
-            <MenuBlock title={t('builder.menu.items.label')}>
-                {form.objects.map((it) => {
-                    return (
-                        <MenuItem
-                            key={it.id}
-                            icon={it.name}
-                            disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
-                            onClick={() => handleChange(it)}
-                        />
-                    );
-                })}
+            <MenuBlock title={t('builder.menu.items.items')}>
+                {form.objects
+                    .filter((it) => !it.interactive)
+                    .map((it) => {
+                        return (
+                            <MenuItem
+                                key={it.id}
+                                icon={it.name}
+                                label={t(`builder.menu.objects.${it.name}`)}
+                                disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
+                                onClick={() => handleChange(it)}
+                            />
+                        );
+                    })}
+            </MenuBlock>
+            <MenuBlock title={t('builder.menu.items.objects')}>
+                {form.objects
+                    .filter((it) => it.interactive)
+                    .map((it) => {
+                        return (
+                            <MenuItem
+                                key={it.id}
+                                icon={it.name}
+                                label={t(`builder.menu.objects.${it.name}`)}
+                                disabled={!form.selectedMap || form.selectedTiles.length}
+                                onClick={() => handleChange(it)}
+                            />
+                        );
+                    })}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
                 <MenuItem icon={'map'} disabled={!form.selectedMap} label={t('builder.menu.functions.generate-maps')} onClick={() => setForm('modalGenerator', true)} />
@@ -171,13 +189,13 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
                 <Icon name={icon} />
             </Button>
             {label && (
-                <span
+                <div
                     style={{
                         opacity: disabled ? '0.5' : 1
                     }}
                 >
                     {label}
-                </span>
+                </div>
             )}
         </div>
     );
