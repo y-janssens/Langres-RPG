@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  langres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src-tauri:/usr/src/app
+    command: cargo test

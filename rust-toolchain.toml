@@ -1,9 +1,0 @@
-[toolchain]
-channel = "1.76.0" # Critical, game doesn't build on newer versions due to issues with lazy_static
-components = ["rustfmt", "clippy"]
-targets = [
-    "x86_64-unknown-linux-gnu",
-    "x86_64-apple-darwin",
-    "x86_64-pc-windows-msvc",
-    "aarch64-unknown-linux-gnu",
-]
