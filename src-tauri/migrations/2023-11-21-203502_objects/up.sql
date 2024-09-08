@@ -22,4 +22,4 @@ VALUES
     ('shore', 'S', json('{"x": 1, "y": 1}'), 0, 1),
     -- Objects
     ('bridge', 'BR', json('{"x": 1, "y": 1}'), 1, 1),
-    ('house', 'H', json('{"x": 3, "y": 3}'), 1, 1);
+    ('house', 'H', json('{"x": 2, "y": 2}'), 1, 1);

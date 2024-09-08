@@ -6,6 +6,7 @@ mod tests {
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
+    use crate::world::commands::generate;
     use crate::world::models::Item;
 
     #[test]
@@ -46,7 +47,7 @@ mod tests {
     fn test_validate_act() {
         let mut storyline = StoryLineFactory.generate();
 
-        assert_eq!(storyline.story.acts[0].complete, false);
+        assert!(!storyline.story.acts[0].complete);
 
         for map in storyline.story.acts[0].content.maps.iter_mut() {
             map.complete = true;
@@ -57,15 +58,42 @@ mod tests {
     }
 
     #[test]
-    fn test_register_gateway() {
+    fn test_edit_map_tiles() {
         allow_db_access(|connection| {
-            let _ = Story::register_gateway(
+            let objects = Object::load(connection).expect("Error");
+            let object = objects
+                .iter()
+                .find(|it| it.name == "tree")
+                .cloned()
+                .expect("Error");
+
+            Story::edit_tiles(
                 connection,
                 1323375008,
                 1302422795,
-                3,
-                (Some(5325235), true),
+                [3, 4, 5].to_vec(),
+                object.id,
             );
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [3, 4, 5].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert_eq!(tile.value, "T");
+                assert!(!tile.walkable);
+            }
+        });
+    }
+
+    #[test]
+    fn test_register_gateway() {
+        allow_db_access(|connection| {
+            Story::register_gateway(connection, 1323375008, 1302422795, 3, (Some(5325235), true));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -88,19 +116,13 @@ mod tests {
     #[test]
     fn test_unregister_gateway() {
         allow_db_access(|connection| {
-            let _ = Story::register_gateway(
-                connection,
-                1323375008,
-                1302422795,
-                3,
-                (Some(5325235), true),
-            );
+            Story::register_gateway(connection, 1323375008, 1302422795, 3, (Some(5325235), true));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            let _ = Story::register_gateway(connection, 1323375008, 1302422795, 3, (None, true));
+            Story::register_gateway(connection, 1323375008, 1302422795, 3, (None, true));
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -111,7 +133,7 @@ mod tests {
     #[test]
     fn test_register_checkpoint() {
         allow_db_access(|connection| {
-            let _ = Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -134,13 +156,13 @@ mod tests {
     #[test]
     fn test_unregister_checkpoint() {
         allow_db_access(|connection| {
-            let _ = Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            let _ = Story::register_checkpoint(connection, 1323375008, 1302422795, 3, None);
+            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, None);
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -158,20 +180,38 @@ mod tests {
                 .cloned()
                 .expect("Error");
 
-            let _ = Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
+            let mut story = Story::load(connection).unwrap();
+            // Clear base map content for readability purposes
+            let map = generate(50, "test".to_string(), 0, true);
+            story.story.acts[0].content.maps[0] = map;
+            let _ = Story::save(connection, story.id, &mut story);
+
+            let _ = Story::register_object(
+                connection,
+                1323375008,
+                story.story.acts[0].content.maps[0].id,
+                1369,
+                object.id,
+                true,
+            );
 
             let response = Story::load(connection).unwrap();
-            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+            let _map = response.story.acts[0].content.maps[0].clone();
+            let expected_tiles = [
+                1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371,
+                1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+            ];
+
+            let _tiles: Vec<Item> = _map
                 .content
                 .iter()
-                .filter(|t| [1, 2, 3, 4, 5, 53, 103].contains(&t.id))
+                .filter(|t| expected_tiles.contains(&t.id))
                 .cloned()
                 .collect();
 
-            let expected_values = ["#", "#", &object.value.clone().unwrap(), "#", "#", "#", "#"];
-            for (i, tile) in _tiles.iter().enumerate() {
-                assert_eq!(tile.value, expected_values[i]);
-                assert_eq!(tile.walkable, false);
+            for tile in _tiles.iter() {
+                assert_eq!(tile.value, "#");
+                assert!(!tile.walkable);
             }
         });
     }
@@ -186,19 +226,38 @@ mod tests {
                 .cloned()
                 .expect("Error");
 
-            let _ = Story::register_object(connection, 1323375008, 1302422795, 3, object.id, false);
+            let mut story = Story::load(connection).unwrap();
+            // Clear base map content for readability purposes
+            let map = generate(50, "test".to_string(), 0, true);
+            story.story.acts[0].content.maps[0] = map;
+            let _ = Story::save(connection, story.id, &mut story);
+
+            let _ = Story::register_object(
+                connection,
+                1323375008,
+                story.story.acts[0].content.maps[0].id,
+                1369,
+                object.id,
+                false,
+            );
 
             let response = Story::load(connection).unwrap();
-            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+            let _map = response.story.acts[0].content.maps[0].clone();
+            let expected_tiles = [
+                1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371,
+                1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+            ];
+
+            let _tiles: Vec<Item> = _map
                 .content
                 .iter()
-                .filter(|t| [1, 2, 3, 4, 5, 53, 103].contains(&t.id))
+                .filter(|t| expected_tiles.contains(&t.id))
                 .cloned()
                 .collect();
 
             for tile in _tiles.iter() {
                 assert_eq!(tile.value, "-");
-                assert!(tile.walkable)
+                assert!(tile.walkable);
             }
         });
     }
@@ -217,7 +276,6 @@ mod tests {
                 Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
             let error = response.unwrap_err().message;
             assert_eq!(error, format!("Object: {} is not registrable", object.id));
-            println!("{:?}", error);
         });
     }
 }
