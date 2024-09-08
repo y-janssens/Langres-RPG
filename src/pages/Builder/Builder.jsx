@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react'; // eslint-disable-line
+import { useCallback, useMemo } from 'react';
 import { Header, SideBar, Manager, Theme } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction } from '../../models';
@@ -17,6 +17,7 @@ export const Builder = () => {
         selectedAct: null,
         modalManager: false,
         modalSelect: false,
+        modalDisplay: false,
         modalEditor: false,
         modalGateway: false,
         modalGenerator: false,
@@ -26,6 +27,12 @@ export const Builder = () => {
         showIds: true,
         showObjects: false,
         showIcons: true,
+        showConstraints: false,
+        interactiveMode: {
+            toggle: false,
+            object: null,
+            neighours: []
+        },
         zoom: 80,
         storyLine: {},
         objects: [],
@@ -45,6 +52,14 @@ export const Builder = () => {
                     setForm('onboarding', { value: true, type: 'maps' });
                     break;
                 default:
+                    // Select default values to avoid empty builder
+                    if (!form.selectedAct && !form.selectedMap) {
+                        setFormObject({ ...form, selectedAct: response.story.acts[0], selectedMap: response.story.acts[0].content.maps[0] });
+                    } else {
+                        const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
+                        const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+                        setFormObject({ ...form, selectedAct: act, selectedMap: map });
+                    }
                     break;
             }
         }
@@ -92,13 +107,6 @@ export const Builder = () => {
         syncFunctions();
     }, [syncStory, syncObjects, syncFunctions]);
 
-    useEffect(() => {
-        if (Object.keys(form.storyLine).length && !form.selectedMap) {
-            setForm('selectedAct', form.storyLine?.story.acts[0]);
-            setForm('selectedMap', form.storyLine?.story.acts[0].content.maps[0]);
-        }
-    }, [form.storyLine]);
-
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>
             <Header
@@ -119,7 +127,16 @@ export const Builder = () => {
                 {form.storyLine &&
                     !loadingStoryline &&
                     (display ? (
-                        <Map type={form.flatDisplay} history={history} index={index} display={Boolean(form.selectedMap)} loading={loadingStoryline} form={form} setForm={setForm} />
+                        <Map
+                            type={form.flatDisplay}
+                            history={history}
+                            index={index}
+                            display={Boolean(form.selectedMap)}
+                            loading={loadingStoryline}
+                            form={form}
+                            setForm={setForm}
+                            sync={handleSync}
+                        />
                     ) : (
                         <>
                             <Onboarding

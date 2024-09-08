@@ -46,6 +46,19 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
         [form]
     );
 
+    const handleObject = useCallback(
+        (object) => {
+            setFormObject({
+                ...form,
+                interactiveMode: { toggle: !form.interactiveMode.toggle, object: !form.interactiveMode.object ? object : null, neighbours: [] },
+                showConstraints: !form.interactiveMode.object,
+                showValues: !form.interactiveMode.object,
+                showIcons: Boolean(form.interactiveMode.object)
+            });
+        },
+        [form]
+    );
+
     const handleFunction = useCallback(
         async (command) => {
             let payload = {};
@@ -147,18 +160,30 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                                 key={it.id}
                                 icon={it.name}
                                 label={t(`builder.menu.objects.${it.name}`)}
-                                disabled={!form.selectedMap || form.selectedTiles.length}
-                                onClick={() => handleChange(it)}
+                                active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
+                                disabled={form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id}
+                                onClick={() => handleObject(it)}
                             />
                         );
                     })}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
-                <MenuItem icon={'map'} disabled={!form.selectedMap} label={t('builder.menu.functions.generate-maps')} onClick={() => setForm('modalGenerator', true)} />
+                <MenuItem
+                    icon={'map'}
+                    disabled={!form.selectedMap || form.interactiveMode.toggle}
+                    label={t('builder.menu.functions.generate-maps')}
+                    onClick={() => setForm('modalGenerator', true)}
+                />
                 {form.functions.map((it) => {
                     const label = it.label.toLowerCase().replaceAll(' ', '-');
                     return (
-                        <MenuItem key={it.id} icon={it.icon} disabled={!form.selectedMap} label={t(`builder.menu.functions.${label}`)} onClick={() => handleFunction(it.command)} />
+                        <MenuItem
+                            key={it.id}
+                            icon={it.icon}
+                            disabled={!form.selectedMap || form.interactiveMode.toggle}
+                            label={t(`builder.menu.functions.${label}`)}
+                            onClick={() => handleFunction(it.command)}
+                        />
                     );
                 })}
             </MenuBlock>

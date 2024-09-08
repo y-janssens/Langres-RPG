@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
-import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, ToggleButton, MultiButton } from '.';
+import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle, MultiButton } from '.';
 import Icon from '../../../components/ui/Icon';
 import Zoom from './Zoom';
 import css from '../builder.module.css';
@@ -101,32 +101,27 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                             <HistoryIcons index={index} history={history} onChange={handleHistory} disabled={disabled} />
 
                             <div className={css['builder-navbar-flatDisplay-toggles']}>
-                                <MultiButton label={t('builder.toggles.display')}>
-                                    <ToggleButton
-                                        title={t('builder.toggles.ids')}
-                                        active={form.showIds}
-                                        onChange={() => handleCheck('showIds', !form.showIds)}
-                                        disabled={disabled}
-                                    />
-                                    <ToggleButton
+                                <MultiButton label={t('builder.toggles.display')} open={form.modalDisplay} name={'modalDisplay'} setOpen={setForm}>
+                                    <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={() => handleCheck('showIds', !form.showIds)} disabled={disabled} />
+                                    <Toggle
                                         title={t('builder.toggles.values')}
                                         active={form.showValues}
                                         onChange={() => handleCheck('showValues', !form.showValues)}
                                         disabled={disabled}
                                     />
-                                    <ToggleButton
+                                    <Toggle
                                         title={t('builder.toggles.icons')}
                                         active={form.showIcons}
                                         onChange={() => handleCheck('showIcons', !form.showIcons)}
                                         disabled={disabled || !form.flatDisplay}
                                     />
-                                    <ToggleButton
+                                    <Toggle
                                         title={t('builder.toggles.constraints')}
                                         active={form.showConstraints}
                                         onChange={() => setForm('showConstraints', !form.showConstraints)}
                                         disabled={disabled}
                                     />
-                                    <ToggleButton
+                                    <Toggle
                                         title={t('builder.toggles.meshes')}
                                         active={form.showObjects}
                                         onChange={() => setForm('showObjects', !form.showObjects)}

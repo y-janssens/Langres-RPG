@@ -33,7 +33,7 @@ export const Tiles = memo(({ data }) => {
     });
 });
 
-export const Hexagon = memo(({ position, colorMap, item, builder = false, onClick = () => {} }) => {
+export const Hexagon = memo(({ position, colorMap, item, builder = false, form = {}, onClick = () => {} }) => {
     const meshRef = useRef();
 
     const vertices = useMemo(() => {
@@ -75,20 +75,23 @@ export const Hexagon = memo(({ position, colorMap, item, builder = false, onClic
         if (!builder) {
             return 'white';
         }
-        switch (item.value) {
-            case 'C':
-                return 'lightgreen';
-            case 'T':
-                return 'green';
-            case 'S':
-                return 'yellow';
-            case 'W':
-                return 'blue';
-            case '-':
-            default:
-                return 'white';
+        if (!form.showConstraints) {
+            switch (item.value) {
+                case 'C':
+                    return 'lightgreen';
+                case 'T':
+                    return 'green';
+                case 'S':
+                    return 'yellow';
+                case 'W':
+                    return 'blue';
+                case '-':
+                default:
+                    return 'white';
+            }
         }
-    }, [item, builder]);
+        return item.walkable ? 'white' : '#808080';
+    }, [form, item, builder]);
 
     return (
         <mesh
