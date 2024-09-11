@@ -24,7 +24,7 @@ mod tests {
             let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
 
             assert_eq!(player_achievements.len(), 25);
-            assert_eq!(player_achievements[0].completed, false);
+            assert!(!player_achievements[0].completed);
         });
     }
 

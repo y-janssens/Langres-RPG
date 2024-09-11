@@ -19,8 +19,8 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id, connection).expect("Error");
 
             assert_eq!(player_quests.len(), 2);
-            assert_eq!(player_quests[0].status.owned, true);
-            assert_eq!(player_quests[1].status.owned, false);
+            assert!(player_quests[0].status.owned);
+            assert!(!player_quests[1].status.owned);
         });
     }
 
@@ -81,9 +81,9 @@ mod tests {
             let patched_quests = PlayerQuest::load(game.id.clone(), connection).expect("Error");
 
             assert_eq!(patched_quests.len(), 2);
-            assert_eq!(patched_quests[0].status.owned, true);
-            assert_eq!(patched_quests[0].status.completed, true);
-            assert_eq!(patched_quests[1].status.owned, true);
+            assert!(patched_quests[0].status.owned);
+            assert!(patched_quests[0].status.completed);
+            assert!(patched_quests[1].status.owned);
         });
     }
 

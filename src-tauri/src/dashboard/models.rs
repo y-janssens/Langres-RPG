@@ -107,6 +107,7 @@ impl AdminModel for AdminMapObjectsModel {
             Field::char_field("value", true),
             Field::dict_field("area", true),
             Field::boolean_field("walkable", true),
+            Field::boolean_field("interactive", true),
             Field::cta_field(),
         ]
     }

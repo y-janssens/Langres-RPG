@@ -66,6 +66,7 @@
 
 .builder-navbar-actions {
     display: flex;
+    align-items: center;
 }
 
 .builder-navbar-zoom-active,
@@ -114,6 +115,10 @@
 .builder-navbar-toggles {
     display: flex;
     align-items: center;
+}
+
+.builder-navbar-toggles-btns {
+    margin: 5px 0;
 }
 
 .builder-navbar-exit {
@@ -307,12 +312,12 @@
     margin: 0 5px 0 5px;
 }
 
-.builder-sidebar-functions-item .btn span {
+.builder-sidebar-functions-item .btn div {
     margin-top: 0px !important;
 }
 
-.builder-sidebar-functions-item span {
-    display: inline-block;
+.builder-sidebar-functions-item div {
+    width: -webkit-fill-available;
     line-height: 13px;
     text-align: center;
     margin-top: 5px;

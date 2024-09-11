@@ -17,10 +17,8 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     const [focus] = useState(() => new Vector3(0, -1, 1));
     const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
 
-    const frustumCullItems = useCallback(async () => {
-        await engine.controls.filterItems().then((resp) => {
-            setFilteredItems(resp);
-        });
+    const frustumCullItems = useCallback( () => {
+            setFilteredItems(engine.controls.filterItems());
     }, [engine]);
 
     const computePositions = useCallback(() => {

@@ -25,6 +25,7 @@ pub struct Object {
     pub value: Option<String>,
     pub area: Area,
     pub walkable: bool,
+    pub interactive: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -34,6 +35,7 @@ pub struct InsertableObject {
     value: Option<String>,
     area: String,
     walkable: bool,
+    interactive: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -66,6 +68,7 @@ impl Object {
             value: None,
             area: Area { x: 0, y: 0 },
             walkable: false,
+            interactive: false,
         }
     }
 
@@ -80,6 +83,7 @@ impl Object {
             value: data.value,
             area: area_json,
             walkable: data.walkable,
+            interactive: data.interactive,
         };
 
         let exists = objects
@@ -103,6 +107,11 @@ impl Object {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Object>> {
         let _load = crate::schema::objects::table.load(connection)?;
         Ok(_load)
+    }
+
+    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Object> {
+        let object: Self = objects.find(_id).first(connection)?;
+        Ok(object)
     }
 
     pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {

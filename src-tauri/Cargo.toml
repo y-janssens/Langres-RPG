@@ -1,31 +1,31 @@
 [package]
 name = "langres"
-version = "0.0.0"
-description = ""
+version = "0.0.1"
+description = "Isometric medieval RPG game"
 authors = ["Y.janssens"]
-license = "test"
-repository = "https://github.com/y-janssens/game"
+license = ""
+repository = "https://github.com/y-janssens/Langres-RPG"
 edition = "2021"
 
 [build-dependencies]
-tauri-build = { version = "1.4", features = [] }
+tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-chrono = "0.4.26"
-diesel = { version = "2.1.0", features = ["sqlite", "r2d2"] }
+chrono = "^0.4.38"
+diesel = { version = "2.2.2", features = ["sqlite", "r2d2"] }
 rand = "0.8.5"
-tauri = { version = "1.4", features = ["api-all"] }
+tauri = { version = "1.7", features = ["api-all"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 round = "0.1.2"
 r2d2 = "0.8.10"
 rusqlite = { version = "0.29", features = ["bundled"] }
-diesel_migrations = { version = "2.1.0", features = ["sqlite"] }
-lazy_static = "1.4.0"
+diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
+lazy_static = "1.5.0"
 noise = "0.8.2"
 dotenv = "0.15.0"
-ucfirst = "0.2.1"
-uuid = { version = "1.8.0", features = ["serde", "v4"] }
+ucfirst = "0.2.2"
+uuid = { version = "1.10.0", features = ["serde", "v4"] }
 
 
 [features]

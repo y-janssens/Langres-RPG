@@ -64,6 +64,7 @@ diesel::table! {
         value -> Nullable<Text>,
         area -> Text,
         walkable -> Bool,
+        interactive -> Bool,
     }
 }
 

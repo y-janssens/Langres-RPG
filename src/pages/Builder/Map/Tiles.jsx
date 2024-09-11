@@ -15,7 +15,7 @@ function Tile({ form, item, position, handleSelect }) {
                 {form.showValues && item.value}
             </Text>
 
-            <Hexagon position={position} onClick={() => handleSelect(item)} item={item} builder />
+            <Hexagon position={position} onClick={() => handleSelect(item)} item={item} builder form={form} />
         </>
     );
 }

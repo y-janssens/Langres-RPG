@@ -59,6 +59,7 @@ impl Map {
         config.get_content(tiles);
         config.collapse();
         config.post_process();
+        
         config.export()
     }
 

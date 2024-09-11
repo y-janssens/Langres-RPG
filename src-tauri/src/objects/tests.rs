@@ -12,7 +12,7 @@ mod tests {
             let _ = Object::save(object, connection);
             let result = Object::load(connection).unwrap();
 
-            assert_eq!(result.len(), 10);
+            assert_eq!(result.len(), 11);
         });
     }
 
@@ -29,6 +29,7 @@ mod tests {
                 value: result[0].clone().value,
                 area: result[0].clone().area,
                 walkable: result[0].clone().walkable,
+                interactive: result[0].clone().interactive,
             };
 
             patch_object.name = "loul".to_string();

@@ -1,7 +1,10 @@
 use crate::config::factory::factory_models::AbstractModel;
 use crate::events::models::{Event, EventType};
 use crate::npcs::models::Npc;
+use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
+use crate::utils::errors::ValidationError;
+use crate::utils::models::FrustumCullingUtility;
 use crate::world::models::{Item, World};
 use diesel::deserialize::{self, FromSql};
 use diesel::sql_types::Text;
@@ -130,29 +133,44 @@ impl Story {
         connection: &mut SqliteConnection,
         act_id: i32,
         map_id: i32,
-        tile_id: u32,
-        mut operation: F,
+        tiles: Vec<u32>,
+        operation: F,
     ) where
-        F: FnMut(&mut Item) + std::panic::UnwindSafe,
+        F: FnMut(&mut Item),
     {
         let mut story = Self::load(connection).expect("Failed to load Story");
 
-        let result = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
-            story
-                .story
-                .acts
+        if let Some(map) = story
+            .story
+            .acts
+            .iter_mut()
+            .find(|act| act.id == act_id)
+            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+        {
+            map.content
                 .iter_mut()
-                .find(|act| act.id == act_id)
-                .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
-                .and_then(|map| map.content.iter_mut().find(|tile| tile.id == tile_id))
-                .map(&mut operation);
-        }));
+                .filter(|tile| tiles.contains(&tile.id))
+                .for_each(operation);
+        }
 
         Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+    }
 
-        if let Err(e) = result {
-            std::panic::resume_unwind(e);
-        }
+    pub fn edit_tiles(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tiles: Vec<u32>,
+        object_id: i32,
+    ) {
+        let object = Object::get(object_id, connection).expect("Failed to get object");
+
+        Self::find_tile(connection, act_id, map_id, tiles, |tile| {
+            if object.value.is_some() {
+                tile.value = object.value.clone().unwrap();
+            }
+            tile.walkable = object.walkable;
+        });
     }
 
     pub fn register_gateway(
@@ -162,7 +180,7 @@ impl Story {
         tile_id: u32,
         gateway: (Option<i32>, bool),
     ) {
-        Self::find_tile(connection, act_id, map_id, tile_id, |tile| {
+        Self::find_tile(connection, act_id, map_id, [tile_id].to_vec(), |tile| {
             if let Some(gateway_id) = gateway.0 {
                 let gateway_event = Event::get_gateway(Some(gateway_id), gateway.1);
                 let pos = tile
@@ -187,7 +205,7 @@ impl Story {
         tile_id: u32,
         checkpoint: Option<i32>,
     ) {
-        Self::find_tile(connection, act_id, map_id, tile_id, |tile| {
+        Self::find_tile(connection, act_id, map_id, [tile_id].to_vec(), |tile| {
             if let Some(checkpoint_id) = checkpoint {
                 let checkpoint_event = Event::get_checkpoint(Some(checkpoint_id));
                 let pos = tile
@@ -203,5 +221,87 @@ impl Story {
                     .retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
             }
         });
+    }
+
+    pub fn register_object(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        object_id: i32,
+        enable: bool,
+    ) -> Result<(), ValidationError> {
+        let mut story = Self::load(connection).expect("Failed to load Story");
+
+        let map = story
+            .story
+            .acts
+            .iter_mut()
+            .find(|act| act.id == act_id)
+            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .expect("Failed to get map");
+
+        let obj = Object::get(object_id, connection).expect("Failed to get object");
+
+        if !obj.interactive {
+            return Err(ValidationError {
+                message: format!("Object: {} is not registrable", object_id),
+            });
+        }
+        // Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
+        let neighbours_ids = FrustumCullingUtility::cull(
+            tile_id as i32,
+            map.size,
+            obj.area.x as usize,
+            obj.area.y as usize,
+        );
+
+        for _tile in map
+            .content
+            .iter_mut()
+            .filter(|t| neighbours_ids.contains(&(t.id as i32)))
+        {
+            if enable {
+                _tile.value = if _tile.id == tile_id {
+                    obj.value.clone().unwrap()
+                } else {
+                    String::from("#")
+                };
+                _tile.walkable = false;
+                _tile.events = [].to_vec();
+            } else {
+                _tile.value = String::from("-");
+                _tile.walkable = true;
+            }
+        }
+
+        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+        Ok(())
+    }
+
+    /// Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
+    pub fn get_neighbours_ids(
+        connection: &mut SqliteConnection,
+        act_id: i32,
+        map_id: i32,
+        tile_id: u32,
+        object_id: i32,
+    ) -> Vec<i32> {
+        let story = Self::load(connection).expect("Failed to load Story");
+        let map = story
+            .story
+            .acts
+            .iter()
+            .find(|act| act.id == act_id)
+            .and_then(|act| act.content.maps.iter().find(|map| map.id == map_id))
+            .expect("Failed to get map");
+
+        let obj = Object::get(object_id, connection).expect("Failed to get object");
+        FrustumCullingUtility::cull(
+            tile_id as i32,
+            map.size,
+            obj.area.x as usize,
+            obj.area.y as usize,
+        )
     }
 }

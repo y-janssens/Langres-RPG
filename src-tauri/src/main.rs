@@ -105,8 +105,11 @@ fn main() {
             // Storyline commands
             storyline::commands::save_storyline,
             storyline::commands::load_storyline,
+            storyline::commands::edit_tiles,
             storyline::commands::register_gateway,
             storyline::commands::register_checkpoint,
+            storyline::commands::register_object,
+            storyline::commands::get_neighbours_ids,
             // Statistics commands
             statistics::commands::new_statistic,
             statistics::commands::load_statistics,

@@ -125,3 +125,12 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
         </div>
     );
 };
+
+export const MultiButton = ({ open, name, setOpen, label = '', children }) => {
+    return (
+        <div className={css['select-multi-buttons']}>
+            <SelectButton open={open} label={label} onClick={() => setOpen(name, !open)} />
+            {open && <div className={css['select-multi-content']}>{children}</div>}
+        </div>
+    );
+};

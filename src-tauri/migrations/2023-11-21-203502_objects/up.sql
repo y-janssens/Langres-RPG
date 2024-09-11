@@ -4,17 +4,22 @@ CREATE TABLE objects (
     name TEXT NOT NULL,
     value TEXT,
     area TEXT NOT NULL,
-    walkable BOOLEAN NOT NULL
+    walkable BOOLEAN NOT NULL,
+    interactive BOOLEAN NOT NULL
 );
 
-INSERT INTO objects (name, value, area, walkable)
+INSERT INTO objects (name, value, area, interactive, walkable)
 VALUES
-    ('start', NULL, json('{"x": 1, "y": 1}'), 1),
-    ('gate', NULL, json('{"x": 1, "y": 1}'), 1),
-    ('grass', '-', json('{"x": 1, "y": 1}'), 1),
-    ('clearing', 'C', json('{"x": 1, "y": 1}'), 1),
-    ('tree', 'T', json('{"x": 1, "y": 1}'), 0),
-    ('road', 'R', json('{"x": 1, "y": 1}'), 1),
-    ('water', 'W', json('{"x": 1, "y": 1}'), 0),
-    ('shore', 'S', json('{"x": 1, "y": 1}'), 1),
-    ('bridge', 'BR', json('{"x": 1, "y": 1}'), 1);
+    -- Base
+    ('start', NULL, json('{"x": 1, "y": 1}'), 0, 1),
+    ('gate', NULL, json('{"x": 1, "y": 1}'), 0, 1),
+    -- Landscape
+    ('grass', '-', json('{"x": 1, "y": 1}'), 0, 1),
+    ('clearing', 'C', json('{"x": 1, "y": 1}'), 0, 1),
+    ('tree', 'T', json('{"x": 1, "y": 1}'), 0, 0),
+    ('road', 'R', json('{"x": 1, "y": 1}'), 0, 1),
+    ('water', 'W', json('{"x": 1, "y": 1}'), 0, 0),
+    ('shore', 'S', json('{"x": 1, "y": 1}'), 0, 1),
+    -- Objects
+    ('bridge', 'BR', json('{"x": 1, "y": 1}'), 1, 1),
+    ('house', 'H', json('{"x": 2, "y": 2}'), 1, 1);

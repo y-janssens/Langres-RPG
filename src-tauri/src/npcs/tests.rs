@@ -10,7 +10,7 @@ mod tests {
         allow_db_access(|connection| {
             let story = Story::load(connection).expect("Error");
             let map_id = story.story.acts[0].content.maps[0].clone().id;
-            let npcs = Npc::get_for_map(map_id.clone());
+            let npcs = Npc::get_for_map(map_id);
 
             for npc in npcs.clone() {
                 assert_eq!(npc.map_id, map_id)

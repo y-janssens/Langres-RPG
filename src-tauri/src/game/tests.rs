@@ -34,7 +34,7 @@ mod tests {
                 id: 633,
             };
 
-            let _ = Game::save(&mut game, connection).unwrap();
+            Game::save(&mut game, connection).unwrap();
             let patch_response = Game::load(game.clone().id, connection).unwrap();
             assert_eq!(patch_response.save_count, 2);
             assert_eq!(patch_response.last_known_position.x, 8.0);

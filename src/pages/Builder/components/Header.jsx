@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { invoke } from '@tauri-apps/api';
 import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
-import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle } from '.';
+import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle, MultiButton } from '.';
 import Icon from '../../../components/ui/Icon';
-import css from '../builder.module.css';
 import Zoom from './Zoom';
+import css from '../builder.module.css';
 
 export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
@@ -51,6 +51,16 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         [form, backward, forward]
     );
 
+    const handleCheck = useCallback(
+        (value, checked) => {
+            const values = ['showIcons', 'showValues'].filter((v) => v !== value);
+            // Complicated switch, but can easily evolve later if needed
+            const key = values.reduce((a, v) => ({ ...a, [v]: !checked }), {});
+            setObject({ ...form, [value]: checked, ...key });
+        },
+        [form]
+    );
+
     const disabled = useMemo(() => {
         return !form.selectedMap;
     }, [form]);
@@ -91,31 +101,33 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                             <HistoryIcons index={index} history={history} onChange={handleHistory} disabled={disabled} />
 
                             <div className={css['builder-navbar-flatDisplay-toggles']}>
-                                <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={(event) => setForm('showIds', event.target.checked)} disabled={disabled} />
-                                <Toggle
-                                    title={t('builder.toggles.values')}
-                                    active={form.showValues}
-                                    onChange={({ target: { checked } }) => {
-                                        setForm('showValues', checked);
-                                        setForm('showIcons', !checked);
-                                    }}
-                                    disabled={disabled}
-                                />
-                                <Toggle
-                                    title={t('builder.toggles.icons')}
-                                    active={form.showIcons}
-                                    onChange={({ target: { checked } }) => {
-                                        setForm('showIcons', checked);
-                                        setForm('showValues', !checked);
-                                    }}
-                                    disabled={disabled || !form.flatDisplay}
-                                />
-                                <Toggle
-                                    title={t('builder.toggles.meshes')}
-                                    active={form.showObjects}
-                                    onChange={({ target: { checked } }) => setForm('showObjects', checked)}
-                                    disabled={disabled || form.flatDisplay}
-                                />
+                                <MultiButton label={t('builder.toggles.display')} open={form.modalDisplay} name={'modalDisplay'} setOpen={setForm}>
+                                    <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={() => handleCheck('showIds', !form.showIds)} disabled={disabled} />
+                                    <Toggle
+                                        title={t('builder.toggles.values')}
+                                        active={form.showValues}
+                                        onChange={() => handleCheck('showValues', !form.showValues)}
+                                        disabled={disabled}
+                                    />
+                                    <Toggle
+                                        title={t('builder.toggles.icons')}
+                                        active={form.showIcons}
+                                        onChange={() => handleCheck('showIcons', !form.showIcons)}
+                                        disabled={disabled || !form.flatDisplay}
+                                    />
+                                    <Toggle
+                                        title={t('builder.toggles.constraints')}
+                                        active={form.showConstraints}
+                                        onChange={() => setForm('showConstraints', !form.showConstraints)}
+                                        disabled={disabled}
+                                    />
+                                    <Toggle
+                                        title={t('builder.toggles.meshes')}
+                                        active={form.showObjects}
+                                        onChange={() => setForm('showObjects', !form.showObjects)}
+                                        disabled={disabled || form.flatDisplay}
+                                    />
+                                </MultiButton>
                             </div>
                         </div>
                         <Zoom form={form} setValues={setObject} disabled={!form.flatDisplay || !form.selectedMap} />

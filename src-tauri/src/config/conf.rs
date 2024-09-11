@@ -17,7 +17,7 @@ pub mod test_conf {
     where
         T: FnOnce(&mut SqliteConnection) + panic::UnwindSafe,
     {
-        let unique_test_db = format!("test_db_{}.db", Uuid::new_v4().to_string());
+        let unique_test_db = format!("test_db_{}.db", Uuid::new_v4());
         let mut connection = get_local_connection(unique_test_db.clone());
 
         let result = panic::catch_unwind(AssertUnwindSafe(|| {

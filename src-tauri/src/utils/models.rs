@@ -44,7 +44,7 @@ impl FrustumCullingUtility {
             value,
             size,
             vertical_threshold: vertical,
-            horizontal_threshold: clamp(horizontal),
+            horizontal_threshold: horizontal,
             vertical_bias: clamp(vertical),
         };
         rationalizer.resolve()
@@ -73,7 +73,7 @@ impl FrustumCullingUtility {
             ids.insert((self.value - (i as i32) * 50).abs());
         }
 
-        for i in 0..=self.vertical_threshold - self.vertical_bias + 1 {
+        for i in 0..=self.vertical_threshold {
             ids.insert(self.value + (i as i32) * 50);
         }
 
