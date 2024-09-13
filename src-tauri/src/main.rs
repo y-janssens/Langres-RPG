@@ -120,6 +120,7 @@ fn main() {
             utils::commands::frustum_cull_ids,
             utils::commands::frustum_cull_filter,
             // World building commands
+            world::commands::clear,
             world::commands::generate,
             world::commands::regenerate,
             world::commands::generate_forest,

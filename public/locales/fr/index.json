@@ -5,6 +5,7 @@
     "menu": {
       "functions": {
         "clear-map": "Effacer la carte",
+        "regenerate-map": "Regénérer la carte",
         "generate-forest": "Générer des arbres",
         "generate-maps": "Générer des cartes",
         "label": "Fonctions"

@@ -5,6 +5,7 @@
     "menu": {
       "functions": {
         "clear-map": "Clear map",
+        "regenerate-map": "Regenerate map",
         "generate-forest": "Generate trees",
         "generate-maps": "Generate maps",
         "label": "Functions"
