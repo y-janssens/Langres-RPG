@@ -5,6 +5,8 @@ use std::iter::FromIterator;
 
 use crate::world::models::Item;
 
+use super::functions::{array_from_set, clamp};
+
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Dice {
     value: u32,
@@ -98,14 +100,4 @@ impl FrustumCullingUtility {
         let resolves_ids: HashSet<i32> = HashSet::from_iter(horizontal_ids);
         array_from_set(resolves_ids)
     }
-}
-
-fn array_from_set(values: HashSet<i32>) -> Vec<i32> {
-    let mut array: Vec<i32> = Vec::from_iter(values);
-    array.sort();
-    array
-}
-
-fn clamp(value: usize) -> usize {
-    (value as f32 / 1.5).ceil() as usize
 }

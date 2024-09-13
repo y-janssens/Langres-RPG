@@ -22,4 +22,6 @@ VALUES
     ('shore', 'S', json('{"x": 1, "y": 1}'), 0, 1),
     -- Objects
     ('bridge', 'BR', json('{"x": 1, "y": 1}'), 1, 1),
-    ('house', 'H', json('{"x": 2, "y": 2}'), 1, 1);
+    ('house', 'H', json('{"x": 0, "y": 0}'), 1, 1),
+    ('house', 'H_1', json('{"x": 1, "y": 1}'), 1, 1),
+    ('house', 'H_2', json('{"x": 2, "y": 2}'), 1, 1);

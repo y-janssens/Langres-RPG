@@ -54,11 +54,11 @@ export const Builder = () => {
                 default:
                     // Select default values to avoid empty builder
                     if (!form.selectedAct && !form.selectedMap) {
-                        setFormObject({ ...form, selectedAct: response.story.acts[0], selectedMap: response.story.acts[0].content.maps[0] });
+                        setFormObject({ ...form, storyLine: response, selectedAct: response.story.acts[0], selectedMap: response.story.acts[0].content.maps[0] });
                     } else {
                         const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
                         const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
-                        setFormObject({ ...form, selectedAct: act, selectedMap: map });
+                        setFormObject({ ...form, storyLine: response, selectedAct: act, selectedMap: map });
                     }
                     break;
             }
