@@ -9,4 +9,3 @@ pub fn array_from_set(values: HashSet<i32>) -> Vec<i32> {
 pub fn clamp(value: usize) -> usize {
     (value as f32 / 1.5).ceil() as usize
 }
-

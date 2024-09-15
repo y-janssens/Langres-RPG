@@ -1,4 +1,4 @@
-import { memo, useState, useCallback, useEffect } from 'react';
+import { memo, useState, useCallback, useEffect, useRef } from 'react';
 import { Raycaster, Vector3 } from 'three';
 import { useFrame } from '@react-three/fiber';
 
@@ -17,8 +17,8 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     const [focus] = useState(() => new Vector3(0, -1, 1));
     const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
 
-    const frustumCullItems = useCallback( () => {
-            setFilteredItems(engine.controls.filterItems());
+    const frustumCullItems = useCallback(() => {
+        setFilteredItems(engine.controls.filterItems());
     }, [engine]);
 
     const computePositions = useCallback(() => {
@@ -45,6 +45,8 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     collisionCaster,
                     scene
                 });
+
+                // console.log(tiles?.current, engine.controls);
 
                 switch (true) {
                     case engine.controls.directions.up:
@@ -102,16 +104,17 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         <>
             <Character position={position} characterRef={characterRef} />
             <Npcs npcs={form.world.npcs} />
-            {/* <Zombies target={characterRef} map={form.world} nodes={form.world.grid} /> */}
+            <Zombies target={characterRef} map={form.world} nodes={form.world.grid} />
             <Tiles data={filteredItems} />
         </>
     );
 });
 
-// const Zombies = ({ target, map, nodes }) => { // eslint-disable-line
-//     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
+const Zombies = ({ target, map, nodes }) => {
+    // eslint-disable-line
+    const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
 
-//     return refs.map((ref, index) => {
-//         return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
-//     });
-// };
+    return refs.map((ref, index) => {
+        return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
+    });
+};
