@@ -16,9 +16,12 @@ export default class World {
     }
 
     hexify(data) {
-        return data.map((item) => {
-            return [item.x, item.y, item.walkable ? 0 : 1];
-        });
+        return data.map((item) => ({
+            x: item.x,
+            y: item.y,
+            walkable: item.walkable,
+            item: item.id
+        }));
     }
 
     parseContent(data) {

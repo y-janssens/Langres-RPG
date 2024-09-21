@@ -46,8 +46,6 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                     scene
                 });
 
-                // console.log(tiles?.current, engine.controls);
-
                 switch (true) {
                     case engine.controls.directions.up:
                         focus.set(0, -1, 1);
@@ -104,14 +102,13 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         <>
             <Character position={position} characterRef={characterRef} />
             <Npcs npcs={form.world.npcs} />
-            <Zombies target={characterRef} map={form.world} nodes={form.world.grid} />
+            {/* <Zombies target={characterRef} map={form.world} nodes={form.world.hex} /> */}
             <Tiles data={filteredItems} />
         </>
     );
 });
 
-const Zombies = ({ target, map, nodes }) => {
-    // eslint-disable-line
+const Zombies = ({ target, map, nodes }) => { // eslint-disable-line
     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
 
     return refs.map((ref, index) => {

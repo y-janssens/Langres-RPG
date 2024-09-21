@@ -59,18 +59,20 @@ class Conditions extends Function {
 }
 
 export default class NpcBehaviour extends Conditions {
-    constructor({ target, self, map, patrol = true, verbose = true, targetPosition }) {
+    constructor({ target, self, map, nodes, patrol = true, verbose = false, targetPosition }) {
         super();
         this.target = target;
         this.self = self;
         this.map = map;
-        this.aggroRange = 5;
+        this.nodes = nodes;
+        this.aggroRange = 3;
         this.aggroIds = [];
         this.verbose = verbose;
         this.position = { x: self.current.position.x, y: self.current.position.z };
         this.startingPosition = { x: self.current.position.x, y: self.current.position.z };
         this.targetPosition = targetPosition;
         this.static = !patrol;
+        this.logs = [];
         this.tree = Tree.generate({
             idle: {
                 priority: 1,
@@ -124,6 +126,29 @@ export default class NpcBehaviour extends Conditions {
         this.updatePosition(target);
         [this.aggroIds, this.largeAggroIds] = this.get_detection_field();
         this.resolveAction();
+        this.updateLogs();
+    }
+
+    updateLogs() {
+        if (this.previousStance === this.stance) {
+            return;
+        }
+        let logs = [...this.logs];
+
+        if (logs.length === 10) {
+            logs.splice(0, 1);
+        }
+
+        logs.push(
+            new Log({
+                current: this.stance,
+                previous: this.previousStance,
+                npc: this.map.content.find((it) => it.x === this.position.x && it.y === this.position.y),
+                player: this.targetPosition,
+                map: this.map
+            })
+        );
+        this.logs = logs;
     }
 
     get_function(name) {
@@ -153,6 +178,7 @@ export default class NpcBehaviour extends Conditions {
         }
 
         const currentItem = this.map.content.find((it) => it.x === this.position.x && it.y === this.position.y);
+
         const ids = new Rationalizer(currentItem.id, this.aggroRange, this.aggroRange).resolve();
         const largeIds = new Rationalizer(currentItem.id, this.aggroRange + 2, this.aggroRange + 2).resolve();
         return [ids, largeIds];
@@ -175,7 +201,7 @@ class Tree {
 
     get_node() {
         return Object.entries(this)
-            .filter(([, value]) => value?.validate())
+            .filter(([, value]) => value.validate())
             .sort(([, a], [, b]) => a.priority - b.priority)
             .find(([, value]) => value)?.[1]
             .inspect();
@@ -198,19 +224,19 @@ class Node {
     }
 
     validate() {
+        if (!this.conditions.length) {
+            return true;
+        }
+
         return this.conditions.every((cdn) => cdn());
     }
 
     inspect() {
-        if (!this.validate()) {
-            throw new Error('Invalid node');
+        if (!this.children.some((ch) => ch.validate())) {
+            return this;
         }
 
-        if (this.children.some((ch) => ch.validate())) {
-            return this.findNode();
-        }
-
-        return this;
+        return this.findNode();
     }
 
     findNode() {
@@ -219,5 +245,15 @@ class Node {
             .sort((a, b) => a.priority - b.priority)
             .find(Boolean)
             .inspect();
+    }
+}
+
+class Log {
+    constructor({ current, previous, npc, player, map: { id, name, primary, complete } }) {
+        this.date = new Date().toISOString();
+        this.state = { current, previous };
+        this.npc = npc;
+        this.player = player;
+        this.map = { id, name, primary, complete };
     }
 }

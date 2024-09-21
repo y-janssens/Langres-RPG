@@ -1,24 +1,26 @@
 import { useEffect, useState } from 'react';
 import gsap from 'gsap'; // eslint-disable-line
 import { useGameContext } from '../../../hooks';
-import IA from '../../../models/ia/iaModel'; // eslint-disable-line
 import NpcBehaviour from '../../../models/ia/tree';
+import { parseCoordinates } from '../../../components/utils';
 
 export default function Zombie({ index, target, map, nodes, zombieRef }) { // eslint-disable-line
     const [engine, setEngine] = useGameContext(); // eslint-disable-line
     const [ia, setIa] = useState(null);
-    const [position] = useState([6, 0.75, 7]);
+    const [position] = useState([9, 0.75, 6]);
 
     useEffect(() => {
         if (!ia && zombieRef.current) {
-            setIa(new NpcBehaviour({ type: 'zombie', target, self: zombieRef, map: { ...map }, targetPosition: engine.controls.currentTile }));
+            setIa(new NpcBehaviour({ type: 'zombie', target, self: zombieRef, map: { ...map }, nodes, targetPosition: engine.controls.currentTile, verbose: engine.devMode }));
         }
         if (ia) {
             const interval = setInterval(
                 () => {
                     ia.update({ target: engine.controls.currentTile });
-                    // ia.patrol();
-                    gsap.to(zombieRef.current.position, { x: -ia.position.x, z: -ia.position.y, duration: 0.5 });
+                    gsap.to(zombieRef.current.position, {
+                        ...parseCoordinates(ia.position),
+                        duration: 0.5
+                    });
                     // switch (ia.direction) {
                     //     case 'up':
                     //         zombieRef.current.rotation.set(Math.PI / 2, 0, Math.PI);

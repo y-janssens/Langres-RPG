@@ -19,6 +19,23 @@ export const extractCoordinates = (values) => {
     };
 };
 
+export const parseCoordinates = (position, y = 0, list = false) => {
+    const pos = position;
+
+    if (isArray(position)) {
+        pos = { x: position[0], y: position[position.length - 1] };
+    }
+
+    const x = -pos.x / 1.5;
+    const z = pos.y === 0 ? -pos.y : -pos.y * (Math.sqrt(3) / 1.5);
+
+    if (!list) {
+        return { x, z };
+    }
+
+    return [x, y, z];
+};
+
 export const matchSearch = (values, search) => {
     if (!Array.isArray(values)) {
         values = [values];
