@@ -64,7 +64,11 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             await invoke(command, {
                 map: form.selectedMap
             }).then((data) => {
-                setForm('selectedMap', data);
+                let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
+                let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+                act.content.maps[mapIndex] = data;
+
+                setFormObject({ ...form, selectedMap: data, selectedTiles: [] });
             });
         },
         [form]

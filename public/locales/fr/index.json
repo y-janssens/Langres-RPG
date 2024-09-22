@@ -89,6 +89,7 @@
     },
     "toggles": {
       "constraints": "Voir les contraintes",
+      "coordinates": "Voir les coordonnées",
       "display": "Affichage",
       "icons": "Voir les icônes",
       "ids": "Voir les ids",
@@ -308,6 +309,21 @@
       "music": "Musique: ",
       "sound": "Son: ",
       "volume": "Volume: "
+    }
+  },
+  "pathfinder": {
+    "actions": {
+      "cull": "Filtrer les tuiles",
+      "path": "Trouver un chemin",
+      "randomize": "Carte aléatoire"
+    },
+    "sidebar": {
+      "start": "Départ",
+      "end": "Arrivée",
+      "obstacles": "Obstacles",
+      "operations": "Opérations",
+      "algorithm": "Algorithme",
+      "time": "Temps écoulé"
     }
   }
 }

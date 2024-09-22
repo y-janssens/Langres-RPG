@@ -89,6 +89,7 @@
     },
     "toggles": {
       "constraints": "Show constraints",
+      "coordinates": "Show coordinates",
       "display": "Display",
       "icons": "Show icons",
       "ids": "Show ids",
@@ -308,6 +309,21 @@
       "music": "Music: ",
       "sound": "Sound: ",
       "volume": "Volume: "
+    }
+  },
+  "pathfinder": {
+    "actions": {
+      "cull": "Cull tiles",
+      "path": "Find path",
+      "randomize": "Randomize map"
+    },
+    "sidebar": {
+      "start": "Start",
+      "end": "End",
+      "obstacles": "Obstacles",
+      "operations": "Operations",
+      "algorithm": "Algorithm",
+      "time": "Time elapsed"
     }
   }
 }

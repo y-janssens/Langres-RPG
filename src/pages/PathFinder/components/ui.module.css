@@ -87,9 +87,13 @@
 .pathfinder-navtitle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 50px;
+    padding-left: 10px;
     background-color: rgb(45, 51, 58);
+}
+
+.pathfinder-navtitle label {
+    margin-right: 5px;
 }
 
 .pathfinder-navbar-actions {

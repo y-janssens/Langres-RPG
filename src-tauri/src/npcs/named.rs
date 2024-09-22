@@ -30,6 +30,7 @@ lazy_static! {
             unique: true,
             hostile: false,
             is_alive: true,
+            r#static: false,
             can_be_hostile: true,
             inventory: Inventory {
                 right_hand: Some(BASE_WEAPON.clone()),

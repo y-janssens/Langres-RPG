@@ -30,8 +30,8 @@
 }
 
 .pathfinder-body {
-    height: 85%;
-    width: 85%;
+    height: 90%;
+    width: 90%;
     max-height: unset;
     max-width: unset;
     border-radius: 6px;
@@ -64,6 +64,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    white-space: nowrap;
 }
 
 .pathfinder-map-tile-text span {

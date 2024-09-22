@@ -1,16 +1,34 @@
-import React, { useMemo, memo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { DoubleSide } from 'three';
 import { useLoader } from '@react-three/fiber';
 import gsap from 'gsap';
 import { TextureLoader } from 'three';
+import { NpcBehaviourTree } from '../../../models/ia';
+import { useGameContext } from '../../../hooks';
+import { parseCoordinates } from '../../../components/utils';
 
-export const Npcs = memo(({ npcs }) => npcs.map((npc) => <Npc key={npc.id} npc={npc} />));
+export const Npcs = ({ npcs, target, map, filteredItems, ready }) => {
+    const culledIds = filteredItems.map((i) => i.id);
+    // const culledNpcs = npcs.filter(() => culledIds.includes(304)); // Test and debug datas
+    const culledNpcs = npcs.filter((npc) => culledIds.includes(npc.starting_point.id));
 
-const Npc = memo(({ npc }) => {
+    if (!ready) {
+        return null;
+    }
+    return culledNpcs.map((npc) => <Npc key={npc.id} npc={npc} target={target} map={map} />);
+};
+
+const Npc = ({ npc, target, map }) => {
     const npcRef = useRef();
     const outlineRef = useRef();
     const characterOutlineRef = useRef();
-    const position = useMemo(() => [-npc.starting_point.x / Math.sqrt(2.24), 0.75, -(npc.starting_point.y + Math.sqrt(3) + 3)]);
+    const [engine] = useGameContext();
+    const [ia, setIa] = useState(null);
+    const [frameId, setFrameId] = useState();
+
+    // const [position] = useState([9, 0.75, 6]); // Test and debug datas
+    const [position] = useState([npc.starting_point.x, 0.75, npc.starting_point.y]);
+
     const [alpha] = useState(() => useLoader(TextureLoader, './assets/map/outline.jpg'));
 
     const handleHover = (mode) => {
@@ -22,12 +40,45 @@ const Npc = memo(({ npc }) => {
         document.body.style.cursor = mode ? 'pointer' : 'auto';
     };
 
+    const animate = useCallback(() => {
+        if (!ia) {
+            return;
+        }
+
+        ia.update({ target: engine.controls.currentTile });
+        gsap.to(npcRef.current.position, {
+            ...parseCoordinates(ia.position),
+            duration: 1,
+            onComplete: () => {
+                setFrameId(requestAnimationFrame(animate));
+            }
+        });
+        npcRef.current.rotation.set(ia.direction.x, 0, ia.direction.y);
+    }, [ia, npcRef, engine]);
+
+    useEffect(() => {
+        if (!ia && npcRef.current) {
+            const coordinates = parseCoordinates(position);
+            setIa(new NpcBehaviourTree({ target, self: npcRef, map, targetPosition: engine.controls.currentTile, verbose: engine.devMode }));
+            npcRef.current.position.set(coordinates.x, 0.75, coordinates.z);
+        }
+    }, [ia, npcRef, target.current?.position]);
+
+    useEffect(() => {
+        animate();
+
+        return () => {
+            cancelAnimationFrame(frameId);
+        };
+    }, [ia]);
+
     return (
         <group>
             <mesh
                 ref={npcRef}
+                userData={npc}
                 scale={[0.25, 0.25, 0.25]}
-                rotation={[Math.PI / 2, 0, Math.PI]}
+                rotation={[Math.PI / 2, 0, Math.PI / 2]}
                 position={position}
                 castShadow
                 receiveShadow
@@ -37,10 +88,10 @@ const Npc = memo(({ npc }) => {
                 <coneGeometry attach="geometry" args={[1, 2.5, 10]} smoothness={5} />
                 <meshStandardMaterial ref={characterOutlineRef} color="red" emissive={'yellow'} emissiveIntensity={0} />
             </mesh>
-            <mesh visible={true} position={[position[0], 0, position[2]]} rotation={[Math.PI / 2, 0, Math.PI]}>
+            <mesh visible={true} position={[npcRef.current?.position.x, 0, npcRef.current?.position.z]} rotation={[Math.PI / 2, 0, Math.PI]}>
                 <planeGeometry attach="geometry" args={[1.2, 1.2]} />
                 <meshStandardMaterial ref={outlineRef} color="yellow" transparent side={DoubleSide} emissive={'yellow'} emissiveIntensity={25} alphaMap={alpha} opacity={0} />
             </mesh>
         </group>
     );
-});
+};

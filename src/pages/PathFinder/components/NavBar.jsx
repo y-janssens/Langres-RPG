@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next';
 
 import { Button } from 'react-daisyui';
 import Icon from '../../../components/ui/Icon';
+import { Toggle } from '../../Builder/components';
 
 import css from './ui.module.css';
 
-const NavBar = () => {
+const NavBar = ({ form, setForm }) => {
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -23,7 +24,10 @@ const NavBar = () => {
                     </Button>
                 </span>
             </div>
-            <div className={css['pathfinder-navtitle']} />
+            <div className={css['pathfinder-navtitle']}>
+                <Toggle title={t('builder.toggles.ids')} active={form.displayIds} onChange={() => setForm('displayIds', !form.displayIds)} />
+                <Toggle title={t('builder.toggles.coordinates')} active={form.displayCoordinates} onChange={() => setForm('displayCoordinates', !form.displayCoordinates)} />
+            </div>
         </div>
     );
 };

@@ -100,10 +100,29 @@ export const resolveOptions = (options, name = null, id = null) => {
 
 export const uniqueSelection = (source, value) => {
     let selection = new Set(source);
-    if (!selection.has(value)) {
-        selection.add(value);
-    } else {
-        selection.delete(value);
+    if (!Array.isArray(value)) {
+        value = [value];
     }
-    return [...selection];
+    value.forEach((v) => {
+        if (!selection.has(v)) {
+            selection.add(v);
+        } else {
+            selection.delete(v);
+        }
+    });
+    return Array.from(new Set([...selection]));
+};
+
+export const uniqueList = (...args) => Array.from(new Set(Object.values(args).flatMap((it) => it)));
+
+export const executionTime = (fn, ...args) => {
+    const start = performance.now();
+    const result = fn(...args);
+    const end = performance.now();
+    const time = ((end - start) / 1000).toFixed(5);
+    return { result, time };
+};
+
+export const flatten = (args) => {
+    return Object.values(args);
 };

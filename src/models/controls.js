@@ -146,8 +146,8 @@ export class Rationalizer {
     constructor(value, horizontalThreshold, verticalThreshold) {
         this.value = value;
         this.horizontalThreshold = horizontalThreshold;
-        this.verticalThreshold = verticalThreshold;
-        this.verticalBias = verticalThreshold / 1.5;
+        this.verticalThreshold = verticalThreshold || horizontalThreshold;
+        this.verticalBias = this.verticalThreshold / 1.5;
     }
 
     get verticalIds() {
