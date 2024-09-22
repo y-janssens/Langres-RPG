@@ -20,7 +20,7 @@ export const extractCoordinates = (values) => {
 };
 
 export const parseCoordinates = (position, y = 0, list = false) => {
-    const pos = position;
+    let pos = position;
 
     if (isArray(position)) {
         pos = { x: position[0], y: position[position.length - 1] };
@@ -96,4 +96,14 @@ export const resolveOptions = (options, name = null, id = null) => {
         }
         return { key: index, text: it, value: it };
     });
+};
+
+export const uniqueSelection = (source, value) => {
+    let selection = new Set(source);
+    if (!selection.has(value)) {
+        selection.add(value);
+    } else {
+        selection.delete(value);
+    }
+    return [...selection];
 };

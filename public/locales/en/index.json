@@ -118,8 +118,10 @@
     },
     "date": "Date",
     "game": "Langres",
+    "informations": "Informations",
     "name": "Name",
     "order": "Order",
+    "result": "Result",
     "size": "Size",
     "title": "Title"
   },
@@ -297,6 +299,7 @@
       "exit-game": "Main Menu",
       "load": "Load Game",
       "new": "New Game",
+      "pathfinder": "Pathfinder",
       "save": "Save Game",
       "settings": "Settings"
     },

@@ -66,6 +66,10 @@ export const MainMenu = () => {
                 name: t('menu.items.dashboard'),
                 onClick: () => navigate('admin/dashboard')
             },
+            isAdmin && {
+                name: t('menu.items.pathfinder'),
+                onClick: () => navigate('admin/pathfinder')
+            },
             {
                 name: t('menu.items.exit'),
                 onClick: async () => await exit(1)
@@ -105,7 +109,7 @@ export const MainMenu = () => {
             activeRef.current.focus();
         }
         // setEngine({ gameId: 1182534022 });
-        // navigate('admin/editor');
+        // navigate('admin/pathfinder');
     }, []);
 
     if (engine.gameId) {

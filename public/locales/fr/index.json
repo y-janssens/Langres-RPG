@@ -118,8 +118,10 @@
     },
     "date": "Date",
     "game": "Langres",
+    "informations": "Informations",
     "name": "Nom",
     "order": "Ordre",
+    "result": "Resultat",
     "size": "Taille",
     "title": "Titre"
   },
@@ -297,6 +299,7 @@
       "exit-game": "Menu Principal",
       "load": "Charger une partie",
       "new": "Nouvelle partie",
+      "pathfinder": "Recherche",
       "save": "Enregistrer la partie",
       "settings": "Paramètres"
     },
