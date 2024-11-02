@@ -1,12 +1,17 @@
 import { useEffect, useMemo } from 'react';
+import { useSettingsProperties } from '../../hooks';
+
 import css from './ui.module.css';
+
 export const LoadingScreen = ({ form, setForm, engine = {}, loading = false, children = null }) => {
+    const { displayLoadingScreen } = useSettingsProperties({ keys: engine.settings.keys.global }, [engine]);
+
     const progress = useMemo(() => {
         return form.loadingProgress;
     }, [form]);
 
     useEffect(() => {
-        if (!engine.devMode && !form.loadingReady) {
+        if (displayLoadingScreen && !form.loadingReady) {
             if (progress < 100) {
                 const interval = setInterval(() => {
                     setForm('loadingProgress', progress + 2);
@@ -21,11 +26,11 @@ export const LoadingScreen = ({ form, setForm, engine = {}, loading = false, chi
                 }, 1000);
             }
         }
-    }, [progress]);
+    }, [progress, form, displayLoadingScreen]);
 
     return (
         <>
-            {!form.loadingReady && !engine.devMode && <LoadingBar state={progress} />}
+            {!form.loadingReady && displayLoadingScreen && <LoadingBar state={progress} />}
             {!loading && children}
         </>
     );

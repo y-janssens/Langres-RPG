@@ -1,5 +1,3 @@
-export { default as BaseEngine } from './baseEngine';
-
 export { default as Engine } from './engine';
 export { default as DashboardModels } from './dashboard';
 export { default as Fetcher } from './fetcher';

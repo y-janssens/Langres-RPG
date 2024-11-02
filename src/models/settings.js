@@ -8,9 +8,11 @@ export default class Settings extends Fetcher {
         for (const [key, value] of Object.entries(options)) {
             this[key] = value;
         }
+        this.setLanguage();
     }
 
     setLanguage() {
+        console.log(`Set language: ${this.language.toUpperCase()}`);
         i18next.changeLanguage(this.language);
     }
 
@@ -29,6 +31,10 @@ export default class Settings extends Fetcher {
         this.sound = 'true';
         this.volume = '100';
         this.music = '100';
+    }
+
+    static async load() {
+        return await invoke(this.command()).then((response) => new this(response));
     }
 
     static command(id) { // eslint-disable-line

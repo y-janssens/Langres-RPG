@@ -19,7 +19,7 @@ export const MainMenu = () => {
     const [engine, setEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
     const [openModal, setOpenModal] = useState(null);
-    const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
+    const [displayTitle, setDisplayTitle] = useState(!engine.settings.devMode);
     const activeRef = useRef();
 
     const [savedGames, , sync] = GameModel.useCommand();
@@ -97,7 +97,7 @@ export const MainMenu = () => {
                         setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
                         break;
                     case 'Enter':
-                        items.find((it) => it.id === selected).onClick();
+                        items.find((it) => it.key === selected).onClick();
                 }
             }
         },

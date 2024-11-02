@@ -13,7 +13,8 @@ export const AdminContextLayer = ({ children }) => {
     return (
         <AdminContext.Provider
             value={{
-                isAdmin: permissions
+                isAdmin: permissions,
+                loadingPermissions
             }}
         >
             {children}

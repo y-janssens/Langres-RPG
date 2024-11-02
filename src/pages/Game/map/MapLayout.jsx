@@ -49,7 +49,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
                 switch (true) {
                     case engine.controls.directions.up:
                         focus.set(0, -1, 1);
-                        if (tiles.canMove) {
+                        if (!engine.settings.resolveSettingsProperty('collisions') || tiles.canMove) {
                             character.z += 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
@@ -57,7 +57,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
                     case engine.controls.directions.down:
                         focus.set(0, -1, -1);
-                        if (tiles.canMove) {
+                        if (!engine.settings.resolveSettingsProperty('collisions') || tiles.canMove) {
                             character.z -= 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
@@ -65,7 +65,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
                     case engine.controls.directions.left:
                         focus.set(1, -1, 0);
-                        if (tiles.canMove) {
+                        if (!engine.settings.resolveSettingsProperty('collisions') || tiles.canMove) {
                             character.x += 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
@@ -73,7 +73,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
                     case engine.controls.directions.right:
                         focus.set(-1, -1, 0);
-                        if (tiles.canMove) {
+                        if (!engine.settings.resolveSettingsProperty('collisions') || tiles.canMove) {
                             character.x -= 0.015 * engine.controls.speed;
                         }
                         characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);

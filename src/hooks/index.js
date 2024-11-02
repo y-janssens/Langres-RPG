@@ -6,4 +6,6 @@ export { useStateHistory } from './useStateHistory';
 export { default as useGameContext } from './useGameContext';
 export { default as useAdminContext } from './useAdminContext';
 export { default as useDashboardContext } from './useDashboardContext';
+export { default as useSettingsProperties } from './useSettingsProperties';
+export { default as useFirstRender } from './useFirstRender';
 export { useTranslation } from 'react-i18next';

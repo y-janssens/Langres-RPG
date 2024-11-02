@@ -1,23 +1,19 @@
 import KeyControls from './controls';
-import BaseEngine from './baseEngine';
+import DevSettings from './devSettings';
+import Settings from './settings';
 
-export default class Engine extends BaseEngine {
-    constructor() {
-        super();
+export default class Engine {
+    constructor(args) {
         this.world = {};
         this.gameId = null;
         this.mapId = null;
-        this.devMode = true;
+        this.settings = new DevSettings(args);
         this.controls = new KeyControls();
-
-        if (!Engine.instance) {
-            Engine.instance = this;
-        }
-        return Engine.instance;
+        this.init();
     }
 
-    roll(value, cap) {
-        return new Dice(value, cap);
+    async init() {
+        this.applicationData = await Settings.load();
     }
 }
 
@@ -26,5 +22,9 @@ export class Dice {
         this.value = value;
         this.cap = cap;
         this.result = result;
+    }
+
+    roll(value, cap) {
+        return new Dice(value, cap);
     }
 }

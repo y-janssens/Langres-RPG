@@ -1,8 +1,8 @@
 import { useState, useRef, memo, useMemo } from 'react';
 import { Vector2, BufferAttribute, BufferGeometry } from 'three';
-import { useGameContext } from '../../../hooks';
+import { useGameContext, useSettingsProperties } from '../../../hooks';
 import { Tree } from './Tree';
-import { Text } from '@react-three/drei'; // eslint-disable-line
+import { Text } from '@react-three/drei';
 
 export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();
@@ -12,25 +12,29 @@ export const Tiles = memo(({ data }) => {
         water: engine.controls.assets.get_water()
     }));
 
-    return data.map((item, index) => {
-        return (
+    const settings = useSettingsProperties({ keys: engine.settings.keys.game }, [engine]);
+
+    return data
+        .filter((it) => (settings.displayObstacles ? it : it.walkable))
+        .filter((it) => (settings.displayWater ? it : it.value !== 'W'))
+        .map((item, index) => (
             <group key={index}>
-                {(item.value === 'T' || item.value === 'F') && (
+                {settings.displayMeshes && (item.value === 'T' || item.value === 'F') && (
                     <Tree position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]} colorMap={colorMaps.trees} />
                 )}
-                {/* {item.value !== 'W' && item.Value !== 'S' && (
+                {settings.displayText && item.value !== 'W' && item.Value !== 'S' && (
                     <Text scale={[-0.25, 0.25, 0.25]} position={[-item.x / 1.5, 0.1, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]} color="white">
                         {item.id}
                     </Text>
-                )} */}
+                )}
                 <Hexagon
                     item={item}
+                    builder={!settings.displayTextures}
                     position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                    colorMap={item.value === 'W' ? colorMaps.water : colorMaps.grass}
+                    colorMap={settings.displayTextures ? (item.value === 'W' ? colorMaps.water : colorMaps.grass) : null}
                 />
             </group>
-        );
-    });
+        ));
 });
 
 export const Hexagon = memo(({ position, colorMap, item, builder = false, form = {}, onClick = () => {} }) => {
