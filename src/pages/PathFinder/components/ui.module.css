@@ -1,0 +1,128 @@
+.pathfinder-sidebar {
+    position: fixed;
+    width: 225px;
+    height: 100%;
+    background-color: rgb(47, 54, 61);
+}
+
+.pathfinder-sidebar-logo {
+    position: static;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 12px 12px 15px 12px;
+}
+
+.pathfinder-sidebar-logo div {
+    position: relative;
+    font-size: 30px !important;
+    font-style: italic;
+    margin-left: 15px;
+    bottom: 5px;
+}
+
+.pathfinder-sidebar-logo img {
+    width: 55px;
+    cursor: pointer;
+}
+
+.pathfinder-sidebar-items {
+    margin-top: 27px;
+    padding: 0 10px;
+}
+
+.pathfinder-sidebar-actions,
+.pathfinder-sidebar-items {
+    width: 100%;
+}
+
+.pathfinder-sidebar-block {
+    display: flex;
+    height: calc(100% - 85px);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pathfinder-sidebar-item {
+    padding: 0 15px 15px 15px;
+}
+
+.pathfinder-sidebar-item-active,
+.pathfinder-sidebar-item-idle {
+    border-radius: 6px !important;
+}
+
+.pathfinder-navbar-block {
+    position: absolute;
+    width: calc(100% - 225px);
+    height: 135px;
+    right: 0px;
+}
+
+.pathfinder-navbar {
+    height: 85px;
+    background-color: rgb(33, 39, 42);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pathfinder-navbar-actions,
+.pathfinder-navbar-title {
+    display: flex;
+    align-items: center;
+}
+
+.pathfinder-navbar-title {
+    padding: 10px;
+}
+
+.pathfinder-navbar-title:first-of-type span {
+    font-size: 26px !important;
+    margin-left: 15px;
+    font-style: italic;
+}
+
+.pathfinder-navtitle {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 10px;
+    background-color: rgb(45, 51, 58);
+}
+
+.pathfinder-navtitle label {
+    margin-right: 5px;
+}
+
+.pathfinder-navbar-actions {
+    justify-content: flex-end;
+    width: 80%;
+    max-width: 800px !important;
+    margin: 0 15px;
+}
+
+.pathfinder-navbar-exit {
+    margin: 15px 0px 15px 15px;
+}
+
+.pathfinder-infos-title {
+    text-align: center;
+    font-size: 12px !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .pathfinder-navbar {
+        justify-content: flex-end;
+    }
+    .pathfinder-navbar-actions {
+        width: 100%;
+        max-width: none !important;
+    }
+    .pathfinder-navbar-title {
+        display: none;
+    }
+}

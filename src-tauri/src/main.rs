@@ -118,6 +118,7 @@ fn main() {
             // Utils
             utils::commands::throw_dice,
             utils::commands::frustum_cull_ids,
+            utils::commands::get_neighbours,
             utils::commands::frustum_cull_filter,
             // World building commands
             world::commands::clear,

@@ -12,7 +12,7 @@ mod tests {
             let _ = Object::save(object, connection);
             let result = Object::load(connection).unwrap();
 
-            assert_eq!(result.len(), 11);
+            assert_eq!(result.len(), 13);
         });
     }
 

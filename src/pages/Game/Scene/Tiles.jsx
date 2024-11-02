@@ -2,7 +2,7 @@ import { useState, useRef, memo, useMemo } from 'react';
 import { Vector2, BufferAttribute, BufferGeometry } from 'three';
 import { useGameContext } from '../../../hooks';
 import { Tree } from './Tree';
-// import { Text } from '@react-three/drei';
+import { Text } from '@react-three/drei'; // eslint-disable-line
 
 export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();

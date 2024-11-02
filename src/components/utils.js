@@ -19,6 +19,23 @@ export const extractCoordinates = (values) => {
     };
 };
 
+export const parseCoordinates = (position, y = 0, list = false) => {
+    let pos = position;
+
+    if (isArray(position)) {
+        pos = { x: position[0], y: position[position.length - 1] };
+    }
+
+    const x = -pos.x / 1.5;
+    const z = pos.y === 0 ? -pos.y : -pos.y * (Math.sqrt(3) / 1.5);
+
+    if (!list) {
+        return { x, z };
+    }
+
+    return [x, y, z];
+};
+
 export const matchSearch = (values, search) => {
     if (!Array.isArray(values)) {
         values = [values];
@@ -79,4 +96,33 @@ export const resolveOptions = (options, name = null, id = null) => {
         }
         return { key: index, text: it, value: it };
     });
+};
+
+export const uniqueSelection = (source, value) => {
+    let selection = new Set(source);
+    if (!Array.isArray(value)) {
+        value = [value];
+    }
+    value.forEach((v) => {
+        if (!selection.has(v)) {
+            selection.add(v);
+        } else {
+            selection.delete(v);
+        }
+    });
+    return Array.from(new Set([...selection]));
+};
+
+export const uniqueList = (...args) => Array.from(new Set(Object.values(args).flatMap((it) => it)));
+
+export const executionTime = (fn, ...args) => {
+    const start = performance.now();
+    const result = fn(...args);
+    const end = performance.now();
+    const time = ((end - start) / 1000).toFixed(5);
+    return { result, time };
+};
+
+export const flatten = (args) => {
+    return Object.values(args);
 };

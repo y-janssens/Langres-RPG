@@ -6,7 +6,6 @@ import { useGameContext } from '../../../hooks';
 
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
-import Zombie from '../Ennemies/Zombie'; // eslint-disable-line
 import { Npcs } from '../Npcs/Npcs';
 
 const positionCaster = new Raycaster();
@@ -14,11 +13,12 @@ const collisionCaster = new Raycaster();
 
 export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightRef, handleGateWay }) => {
     const [engine] = useGameContext();
+    const [ready, setReady] = useState(false);
     const [focus] = useState(() => new Vector3(0, -1, 1));
     const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
 
-    const frustumCullItems = useCallback( () => {
-            setFilteredItems(engine.controls.filterItems());
+    const frustumCullItems = useCallback(() => {
+        setFilteredItems(engine.controls.filterItems());
     }, [engine]);
 
     const computePositions = useCallback(() => {
@@ -96,22 +96,14 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
 
     useEffect(() => {
         frustumCullItems();
+        setReady(true);
     }, [engine.mapId]);
 
     return (
         <>
             <Character position={position} characterRef={characterRef} />
-            <Npcs npcs={form.world.npcs} />
-            {/* <Zombies target={characterRef} map={form.world} nodes={form.world.grid} /> */}
+            <Npcs npcs={form.world.npcs} target={characterRef} map={form.world} filteredItems={filteredItems} ready={ready} />
             <Tiles data={filteredItems} />
         </>
     );
 });
-
-// const Zombies = ({ target, map, nodes }) => { // eslint-disable-line
-//     const refs = Array.from({ length: 1 }, (_, index) => useRef()); // eslint-disable-line
-
-//     return refs.map((ref, index) => {
-//         return <Zombie key={index} index={index} zombieRef={ref} target={target} map={map} nodes={nodes} />;
-//     });
-// };

@@ -13,4 +13,10 @@ mod tests {
         assert_eq!(ids.len(), 1221);
         assert_eq!(items.len(), 1221);
     }
+
+    #[test]
+    fn test_get_neighbours_ids() {
+        let ids = FrustumCullingUtility::cull(1122, 50, 3, 3);
+        assert_eq!(ids.len(), 49);
+    }
 }

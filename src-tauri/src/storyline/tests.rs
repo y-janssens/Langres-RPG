@@ -176,7 +176,7 @@ mod tests {
             let objects = Object::load(connection).expect("Error");
             let object = objects
                 .iter()
-                .find(|it| it.name == "house")
+                .find(|it| it.value == Some("H_2".to_string()))
                 .cloned()
                 .expect("Error");
 

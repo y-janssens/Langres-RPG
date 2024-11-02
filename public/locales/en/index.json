@@ -89,6 +89,7 @@
     },
     "toggles": {
       "constraints": "Show constraints",
+      "coordinates": "Show coordinates",
       "display": "Display",
       "icons": "Show icons",
       "ids": "Show ids",
@@ -118,8 +119,10 @@
     },
     "date": "Date",
     "game": "Langres",
+    "informations": "Informations",
     "name": "Name",
     "order": "Order",
+    "result": "Result",
     "size": "Size",
     "title": "Title"
   },
@@ -297,6 +300,7 @@
       "exit-game": "Main Menu",
       "load": "Load Game",
       "new": "New Game",
+      "pathfinder": "Pathfinder",
       "save": "Save Game",
       "settings": "Settings"
     },
@@ -305,6 +309,21 @@
       "music": "Music: ",
       "sound": "Sound: ",
       "volume": "Volume: "
+    }
+  },
+  "pathfinder": {
+    "actions": {
+      "cull": "Cull tiles",
+      "path": "Find path",
+      "randomize": "Randomize map"
+    },
+    "sidebar": {
+      "start": "Start",
+      "end": "End",
+      "obstacles": "Obstacles",
+      "operations": "Operations",
+      "algorithm": "Algorithm",
+      "time": "Time elapsed"
     }
   }
 }

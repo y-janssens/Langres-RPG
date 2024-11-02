@@ -13,7 +13,7 @@ mod tests {
             let _ = Function::save(function, connection);
             let result = Function::load(connection).unwrap();
 
-            assert_eq!(result.len(), 3);
+            assert_eq!(result.len(), 4);
         });
     }
 

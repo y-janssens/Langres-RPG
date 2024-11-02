@@ -126,7 +126,7 @@ export default class KeyControls {
         };
     }
 
-     filterItems() {
+    filterItems() {
         const id = this.currentTile.id;
         const height = Math.ceil(Math.ceil(window.innerHeight / 100) * Math.sqrt(3));
         const width = Math.ceil(Math.ceil(window.innerWidth / 100) * Math.sqrt(3));
@@ -140,15 +140,14 @@ export default class KeyControls {
         // });
         // return items;
     }
-
 }
 
-class Rationalizer {
+export class Rationalizer {
     constructor(value, horizontalThreshold, verticalThreshold) {
         this.value = value;
         this.horizontalThreshold = horizontalThreshold;
-        this.verticalThreshold = verticalThreshold;
-        this.verticalBias = verticalThreshold / 1.5;
+        this.verticalThreshold = verticalThreshold || horizontalThreshold;
+        this.verticalBias = this.verticalThreshold / 1.5;
     }
 
     get verticalIds() {

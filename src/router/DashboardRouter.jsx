@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { DashboardModels } from '../models';
-import { Dashboard as Template } from '../pages/Dashboard/Dashboard';
+import { Dashboard as Template } from '../pages';
 import { Model, Form } from '../pages/Dashboard/model';
 
 export const DashboardRouter = () => {

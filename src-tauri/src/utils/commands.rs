@@ -1,4 +1,7 @@
-use super::models::{Dice, FrustumCullingUtility};
+use super::{
+    errors::ValidationError,
+    models::{Dice, FrustumCullingUtility},
+};
 use crate::world::models::Item;
 
 #[tauri::command]
@@ -20,4 +23,14 @@ pub fn frustum_cull_filter(
     content: Vec<Item>,
 ) -> Vec<Item> {
     FrustumCullingUtility::cull_filter(value, size, horizontal, vertical, content)
+}
+
+#[tauri::command]
+pub fn get_neighbours(size: u32, area: u32, tile_id: u32) -> Result<Vec<i32>, ValidationError> {
+    Ok(FrustumCullingUtility::cull(
+        tile_id as i32,
+        size,
+        area as usize,
+        area as usize,
+    ))
 }

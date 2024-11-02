@@ -58,6 +58,8 @@ export const Builder = () => {
                     } else {
                         const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
                         const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+                        // Test feature
+                        // map.npcs[0].starting_point = {x: 9, y: 6, id: 304}
                         setFormObject({ ...form, storyLine: response, selectedAct: act, selectedMap: map });
                     }
                     break;

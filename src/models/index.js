@@ -8,7 +8,7 @@ export { default as AdminGameModel } from './adminGame';
 export { default as Settings } from './settings';
 export { default as Character } from './character';
 export { default as Inventory } from './inventory';
-export { default as World } from './world';
+export { default as World, Tile } from './world';
 export { default as Environment } from './environment';
 export { default as MapAssets } from './map';
 export { default as Collection } from './collections';
