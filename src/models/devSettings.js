@@ -2,7 +2,7 @@ import { invoke } from '@tauri-apps/api/tauri';
 import _ from 'lodash';
 export default class DevSettings {
     constructor(args) {
-        this.devMode = args.isAdmin;
+        this.devMode = args.is_admin && args.dev_settings_enabled;
         this.defaultSettings = {};
         this.settings = {};
         this.defaultKeys = [];

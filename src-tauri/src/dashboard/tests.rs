@@ -1,13 +1,17 @@
 #[cfg(test)]
 mod tests {
-    use crate::dashboard::commands::load_admin_dashboard;
+    use crate::{
+        dashboard::commands::load_admin_dashboard,
+        settings::variables::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
+    };
     use dotenv::dotenv;
     use serde_json::{json, Value};
     use std::env;
 
     #[test]
     fn test_load_admin_dashboard_success() {
-        env::set_var("ADMIN_USER", "true");
+        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+        env::set_var("USER_KEY", TEST_ADMIN_KEY);
         dotenv().ok();
         let dashboard = load_admin_dashboard();
 
@@ -20,8 +24,6 @@ mod tests {
 
     #[test]
     fn test_load_admin_dashboard_missing_variable() {
-        env::remove_var("ADMIN_USER");
-        dotenv().ok();
         let dashboard = load_admin_dashboard();
 
         if let Value::Object(ref obj) = dashboard {
@@ -33,14 +35,14 @@ mod tests {
 
     #[test]
     fn test_load_admin_dashboard_unauthorized() {
-        env::set_var("ADMIN_USER", "false");
+        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+        env::set_var("USER_KEY", TEST_USER_KEY);
         dotenv().ok();
         let dashboard = load_admin_dashboard();
 
         if let Value::Object(ref obj) = dashboard {
             if let Some(serde_json::Value::String(error_message)) = obj.get("error") {
-                assert!(error_message
-                    .contains("Admin dashboard is disabled or configuration is invalid."));
+                assert!(error_message.contains("Environment variable is not set."));
             }
         }
     }

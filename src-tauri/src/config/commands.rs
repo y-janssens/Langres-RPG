@@ -1,12 +1,6 @@
-use serde_json::{json, Value};
-use std::env;
+use crate::settings::security::{Config, Credentials};
 
 #[tauri::command]
-pub fn load_permissions() -> Value {
-    let is_admin = env::var("ADMIN_USER")
-        .ok()
-        .and_then(|val| val.parse().ok())
-        .unwrap_or(false);
-
-    json!({"is_admin": is_admin})
+pub fn load_permissions() -> Config {
+    Credentials::initialize().config
 }

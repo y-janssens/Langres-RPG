@@ -5,7 +5,7 @@ import { useAdminContext } from '../hooks';
 const GameContext = React.createContext(null);
 
 export const GameContextLayer = ({ children }) => {
-    const { isAdmin, loadingPermissions } = useAdminContext();
+    const { is_admin, dev_settings_enabled, loadingPermissions } = useAdminContext();
     const [engine, _setEngine] = useState(null);
 
     const setEngine = React.useCallback((ctx = {}) => {
@@ -28,10 +28,10 @@ export const GameContextLayer = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (!loadingPermissions && isAdmin !== null) {
-            _setEngine(new Engine({ isAdmin }));
+        if (!loadingPermissions && is_admin !== null) {
+            _setEngine(new Engine({ is_admin, dev_settings_enabled }));
         }
-    }, [loadingPermissions, isAdmin]);
+    }, [loadingPermissions, is_admin]);
 
     if (!engine) {
         return null;

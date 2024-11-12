@@ -26,6 +26,7 @@ noise = "0.8.2"
 dotenv = "0.15.0"
 ucfirst = "0.2.2"
 uuid = { version = "1.10.0", features = ["serde", "v4"] }
+magic-crypt = "4.0.1"
 
 
 [features]

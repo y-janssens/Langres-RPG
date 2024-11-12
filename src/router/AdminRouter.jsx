@@ -7,7 +7,7 @@ import { DashboardContextLayer } from '../context/DashboardContext';
 
 
 export const AdminRouter = () => {
-    const { isAdmin } = useAdminContext();
+    const { is_admin, dashboard_enabled, dev_tools_enabled, editor_enabled } = useAdminContext();
 
     return (
         <DashboardContextLayer>
@@ -15,7 +15,7 @@ export const AdminRouter = () => {
                 <Route
                     path="editor"
                     element={
-                        <AdminRoute allow={isAdmin} fallback="/">
+                        <AdminRoute allow={is_admin && editor_enabled} fallback="/">
                             <Builder />
                         </AdminRoute>
                     }
@@ -23,7 +23,7 @@ export const AdminRouter = () => {
                 <Route
                     path="dashboard/*"
                     element={
-                        <AdminRoute allow={isAdmin} fallback="/">
+                        <AdminRoute allow={is_admin && dashboard_enabled} fallback="/">
                             <DashboardRouter />
                         </AdminRoute>
                     }
@@ -31,7 +31,7 @@ export const AdminRouter = () => {
                 <Route
                     path="pathfinder"
                     element={
-                        <AdminRoute allow={isAdmin} fallback="/">
+                        <AdminRoute allow={is_admin && dev_tools_enabled} fallback="/">
                             <PathFinder />
                         </AdminRoute>
                     }

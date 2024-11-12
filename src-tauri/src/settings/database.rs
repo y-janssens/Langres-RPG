@@ -1,5 +1,5 @@
 use super::errors::messages::{MIGRATION_ERROR, POOL_ERROR};
-use super::variables::{DATABASE_URL, MIGRATIONS};
+use super::variables::vars::{DATABASE_URL, MIGRATIONS};
 
 use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
 use diesel_migrations::MigrationHarness;

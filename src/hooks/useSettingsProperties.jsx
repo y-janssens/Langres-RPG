@@ -4,7 +4,7 @@ import useAdminContext from './useAdminContext';
 
 const useSettingsProperties = ({ keys = [], validate = () => {} }, deps = []) => {
     const [engine] = useGameContext();
-    const { isAdmin } = useAdminContext();
+    const { is_admin, dev_settings_enabled } = useAdminContext();
     const [data, setData] = useState(() => formatValues('defaultProperty'));
 
     function formatValues(fn, onlyValue = false) {
@@ -17,11 +17,11 @@ const useSettingsProperties = ({ keys = [], validate = () => {} }, deps = []) =>
     }
 
     const get = useCallback(() => {
-        if (isAdmin) {
+        if (is_admin && dev_settings_enabled) {
             setData(formatValues('resolveSettingsProperty', true));
             validate(formatValues('resolveSettingsProperty'));
         }
-    }, [formatValues, validate, isAdmin, engine]);
+    }, [formatValues, validate, is_admin, dev_settings_enabled, engine]);
 
     useEffect(() => {
         get();

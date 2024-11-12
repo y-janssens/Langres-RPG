@@ -1,7 +1,8 @@
 use serde::Serialize;
 use std::collections::HashMap;
-use std::env;
 use std::ops::Deref;
+
+use super::security::Credentials;
 
 #[derive(Debug, Serialize, PartialEq)]
 pub enum SettingType {
@@ -55,16 +56,9 @@ impl SettingGroup {
 }
 
 impl DevSettings {
-    fn get_permissions() -> bool {
-        env::var("ADMIN_USER")
-            .ok()
-            .and_then(|val| val.parse().ok())
-            .unwrap_or(false)
-    }
-
     pub fn get() -> Self {
+        let is_admin = Credentials::initialize().config.is_admin;
         let mut global = SettingGroup::new();
-        let is_admin = Self::get_permissions();
         let mutable = is_admin;
 
         global.add(
