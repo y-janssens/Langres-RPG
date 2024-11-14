@@ -1,25 +1,35 @@
+use serde_json::Value;
+
+use crate::{permissions::models::Permission, views::models::authenticated_command};
+
 use super::models::World;
 
 #[tauri::command]
-pub fn generate(size: u32, name: String, order: u32, primary: bool) -> World {
-    World::new(size, name, order, primary)
+pub fn generate(size: u32, name: String, order: u32, primary: bool) -> Value {
+    authenticated_command(Permission::Editor, || {
+        World::new(size, name, order, primary)
+    })
 }
 
 #[tauri::command]
-pub fn regenerate(map: World) -> World {
-    World::regenerate(map)
+pub fn regenerate(map: World) -> Value {
+    authenticated_command(Permission::Editor, || World::regenerate(map))
 }
 
 #[tauri::command]
-pub fn clear(mut map: World) -> World {
-    let content = World::generate(map.size);
-    map.content = content;
-    map
+pub fn clear(mut map: World) -> Value {
+    authenticated_command(Permission::Editor, || {
+        let content = World::generate(map.size);
+        map.content = content;
+        map
+    })
 }
 
 #[tauri::command]
-pub fn generate_forest(mut map: World) -> World {
-    let content = World::generate_forest(map.content);
-    map.content = content;
-    map
+pub fn generate_forest(mut map: World) -> Value {
+    authenticated_command(Permission::Editor, || {
+        let content = World::generate_forest(map.content);
+        map.content = content;
+        map
+    })
 }

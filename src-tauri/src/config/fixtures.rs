@@ -1,5 +1,7 @@
 #[allow(dead_code)]
 pub mod tests_fixtures {
+    use serde_json::{json, Value};
+
     use crate::world::models::Item;
 
     /// Run "cargo test -- --nocapture" to visualize output
@@ -53,5 +55,14 @@ pub mod tests_fixtures {
     pub fn compute_map_size(size: u32) -> u32 {
         let rows = ((size as f32 + (size as f32).sqrt()).ceil() + 1_f32) as u32;
         size * rows
+    }
+
+    pub fn mock_value() -> Value {
+        json!([
+            {"name": "QuantumEntanglement_42"},
+            {"name": "NeuralNet_Override_v3.14"},
+            {"name": "Hyperdrive_Stabilization_Unit"},
+            {"name": "Exabyte_Cache_Cluster"},
+        ])
     }
 }

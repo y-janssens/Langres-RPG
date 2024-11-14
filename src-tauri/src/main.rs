@@ -18,6 +18,7 @@ mod loot;
 mod maps;
 mod npcs;
 mod objects;
+mod permissions;
 mod player;
 mod quests;
 mod schema;
@@ -27,6 +28,7 @@ mod storyline;
 mod time;
 mod translations;
 mod utils;
+mod views;
 mod world;
 
 fn main() {

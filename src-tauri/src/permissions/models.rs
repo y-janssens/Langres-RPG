@@ -3,6 +3,15 @@ use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use std::env;
 
+#[allow(dead_code)]
+pub enum Permission {
+    Admin,
+    Editor,
+    DevTools,
+    Dashboard,
+    DevSettings,
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Config {
     pub is_admin: bool,
@@ -10,6 +19,18 @@ pub struct Config {
     pub editor_enabled: bool,
     pub dev_tools_enabled: bool,
     pub dev_settings_enabled: bool,
+}
+
+impl Config {
+    pub fn has_permission(&self, permission: Permission) -> bool {
+        match permission {
+            Permission::Admin => self.is_admin,
+            Permission::Dashboard => self.is_admin && self.dashboard_enabled,
+            Permission::Editor => self.is_admin && self.editor_enabled,
+            Permission::DevTools => self.is_admin && self.dev_tools_enabled,
+            Permission::DevSettings => self.is_admin && self.dev_settings_enabled,
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize)]

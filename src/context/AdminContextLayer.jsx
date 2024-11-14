@@ -5,7 +5,7 @@ const AdminContext = React.createContext(null);
 
 export const AdminContextLayer = ({ children }) => {
     const [permissions, loadingPermissions] = Permissions.useCommand();
-    
+
     if (!permissions || loadingPermissions) {
         return null;
     }

@@ -1,4 +1,4 @@
-use crate::settings::security::{Config, Credentials};
+use crate::permissions::models::{Config, Credentials};
 
 #[tauri::command]
 pub fn load_permissions() -> Config {

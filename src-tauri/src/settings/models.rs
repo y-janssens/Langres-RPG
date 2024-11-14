@@ -1,8 +1,7 @@
+use crate::permissions::models::Credentials;
 use serde::Serialize;
 use std::collections::HashMap;
 use std::ops::Deref;
-
-use super::security::Credentials;
 
 #[derive(Debug, Serialize, PartialEq)]
 pub enum SettingType {

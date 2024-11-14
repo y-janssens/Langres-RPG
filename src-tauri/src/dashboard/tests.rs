@@ -24,11 +24,13 @@ mod tests {
 
     #[test]
     fn test_load_admin_dashboard_missing_variable() {
+        env::remove_var("SECRET_KEY");
+        env::remove_var("USER_KEY");
         let dashboard = load_admin_dashboard();
 
         if let Value::Object(ref obj) = dashboard {
             if let Some(serde_json::Value::String(error_message)) = obj.get("error") {
-                assert!(error_message.contains("Environment variable is not set."));
+                assert!(error_message.contains("Permission denied"));
             }
         }
     }
@@ -42,7 +44,7 @@ mod tests {
 
         if let Value::Object(ref obj) = dashboard {
             if let Some(serde_json::Value::String(error_message)) = obj.get("error") {
-                assert!(error_message.contains("Environment variable is not set."));
+                assert!(error_message.contains("Permission denied"));
             }
         }
     }
