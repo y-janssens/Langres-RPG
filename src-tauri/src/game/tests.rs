@@ -1,9 +1,9 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::GameFactory;
-    use crate::config::factory::factory_models::ApiFactory;
     use crate::game::models::{Game, Position};
+    use crate::settings::factories::factories_definitions::GameFactory;
+    use crate::settings::factory::factory_models::ApiFactory;
+    use crate::settings::tests::database::allow_db_access;
 
     #[test]
     fn test_load_games() {

@@ -3,8 +3,8 @@ use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 use serde_json::Value;
 
-use crate::config::fetcher::get_connection;
 use crate::permissions::models::Permission;
+use crate::settings::database::get_connection;
 use crate::utils::errors::ValidationError;
 use crate::views::models::authenticated_command;
 

@@ -1,108 +1,68 @@
 #[cfg(test)]
-mod tests {
-    use crate::permissions::models::Credentials;
-    use crate::settings::{
-        commands::load_dev_settings,
-        models::SettingValue,
-        variables::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
+pub mod database {
+    use crate::settings::config::vars::MIGRATIONS;
+    use crate::settings::errors::messages::{
+        DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
     };
-    use dotenv::dotenv;
-    use std::env;
+    use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
+    use diesel_migrations::MigrationHarness;
 
-    #[test]
-    fn test_load_dev_settings_admin() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        env::set_var("USER_KEY", TEST_ADMIN_KEY);
-        dotenv().ok();
-        let settings = load_dev_settings();
+    use r2d2::{Pool, PooledConnection};
+    use std::panic::{self, AssertUnwindSafe};
+    use std::{error::Error, fs};
+    use uuid::Uuid;
 
-        let global = settings.global.values().into_iter().all(|it| it.mutable);
-        let game = settings.game.values().into_iter().all(|it| it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| it.mutable);
+    /// Wrapper to allow unit tests to access local database
+    pub fn allow_db_access<T>(unit_test: T)
+    where
+        T: FnOnce(&mut SqliteConnection) + panic::UnwindSafe,
+    {
+        let unique_test_db = format!("test_db_{}.db", Uuid::new_v4());
+        let mut connection = get_local_connection(unique_test_db.clone());
 
-        assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
-            SettingValue::Boolean(false)
-        );
+        let result = panic::catch_unwind(AssertUnwindSafe(|| {
+            unit_test(&mut connection);
+        }));
 
-        assert!(global);
-        assert!(game);
-        assert!(scene);
+        flush_local_db(unique_test_db).expect(FLUSH_DATABASE_ERROR);
+
+        if let Err(e) = result {
+            panic::resume_unwind(e);
+        }
     }
 
-    #[test]
-    fn test_load_dev_settings_missing_variable() {
-        env::remove_var("SECRET_KEY");
-        env::remove_var("USER_KEY");
-        let settings = load_dev_settings();
-
-        let global = settings.global.values().into_iter().all(|it| !it.mutable);
-        let game = settings.game.values().into_iter().all(|it| !it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| !it.mutable);
-
-        assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
-            SettingValue::Boolean(true)
-        );
-
-        assert!(global);
-        assert!(game);
-        assert!(scene);
+    fn get_local_connection(
+        unique_test_db: String,
+    ) -> PooledConnection<ConnectionManager<diesel::SqliteConnection>> {
+        let pool = initialize_local_db(unique_test_db).expect(DATABASE_ERROR);
+        pool.get().unwrap()
     }
 
-    #[test]
-    fn test_load_dev_settings_regular_user() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        env::set_var("USER_KEY", TEST_USER_KEY);
-        dotenv().ok();
+    fn initialize_local_db(
+        unique_test_db: String,
+    ) -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<dyn Error>> {
+        let manager = ConnectionManager::<SqliteConnection>::new(unique_test_db);
+        let pool = Pool::builder().build(manager).expect(POOL_ERROR);
 
-        let settings = load_dev_settings();
+        let mut connection = pool.get()?;
+        run_local_migrations(&mut connection).expect(MIGRATION_ERROR);
 
-        let global = settings.global.values().into_iter().all(|it| !it.mutable);
-        let game = settings.game.values().into_iter().all(|it| !it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| !it.mutable);
-
-        assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
-            SettingValue::Boolean(true)
-        );
-
-        assert!(global);
-        assert!(game);
-        assert!(scene);
+        Ok(pool)
     }
 
-    #[test]
-    fn test_generate_security_keys() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        dotenv().ok();
+    fn run_local_migrations(
+        connection: &mut impl MigrationHarness<Sqlite>,
+    ) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+        connection.run_pending_migrations(MIGRATIONS)?;
 
-        let full_admin_security_key = Credentials::generate_full_admin_secret_key();
-        let admin_security_key = Credentials::generate_admin_secret_key();
-        let regular_user_security_key = Credentials::generate_regular_user_secret_key();
-
-        println!("full_admin_security_key: {:?}", full_admin_security_key);
-        println!("---");
-        println!("limited_admin_security_key: {:?}", admin_security_key);
-        println!("---");
-        println!("regular_user_security_key: {:?}", regular_user_security_key);
-
-        assert!(full_admin_security_key.is_ok());
-        assert!(admin_security_key.is_ok());
-        assert!(regular_user_security_key.is_ok());
+        Ok(())
     }
 
-    #[test]
-    fn test_decrypt_secret_key() {
-        let secret_key = TEST_SECRET_KEY;
-        let configuration_key = TEST_ADMIN_KEY;
+    fn flush_local_db(
+        unique_test_db: String,
+    ) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+        fs::remove_file(unique_test_db)?;
 
-        let credentials = Credentials::decrypt_secret_key(&secret_key, &configuration_key);
-
-        assert!(credentials.is_admin);
-        assert!(credentials.dashboard_enabled);
-        assert!(credentials.editor_enabled);
-        assert!(credentials.dev_tools_enabled);
-        assert!(credentials.dev_settings_enabled);
+        Ok(())
     }
 }

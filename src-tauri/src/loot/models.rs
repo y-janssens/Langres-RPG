@@ -1,6 +1,6 @@
 use crate::schema::loot::dsl::*;
 use crate::translations::models::Translations;
-use crate::{config::factory::factory_models::AbstractModel, schema::loot};
+use crate::{settings::factory::factory_models::AbstractModel, schema::loot};
 use diesel::{
     deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, RunQueryDsl,
     SqliteConnection,

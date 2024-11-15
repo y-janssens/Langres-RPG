@@ -1,8 +1,8 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::StatisticFactory;
-    use crate::config::factory::factory_models::Factory;
+    use crate::settings::factories::factories_definitions::StatisticFactory;
+    use crate::settings::factory::factory_models::Factory;
+    use crate::settings::tests::database::allow_db_access;
     use crate::statistics::models::Statistic;
     use crate::translations::models::Translations;
 

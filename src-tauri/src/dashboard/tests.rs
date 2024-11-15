@@ -2,7 +2,7 @@
 mod tests {
     use crate::{
         dashboard::commands::load_admin_dashboard,
-        settings::variables::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
+        settings::config::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
     };
     use dotenv::dotenv;
     use serde_json::{json, Value};

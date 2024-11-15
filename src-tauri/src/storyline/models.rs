@@ -1,8 +1,8 @@
-use crate::config::factory::factory_models::AbstractModel;
 use crate::events::models::{Event, EventType};
 use crate::npcs::models::Npc;
 use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
+use crate::settings::factory::factory_models::AbstractModel;
 use crate::utils::errors::ValidationError;
 use crate::utils::models::FrustumCullingUtility;
 use crate::world::models::{Item, World};

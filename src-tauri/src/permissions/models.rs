@@ -88,7 +88,7 @@ impl Credentials {
     }
 
     /// Check environment variables existence
-    fn check_key(key: &str) -> Option<String> {
+    pub fn check_key(key: &str) -> Option<String> {
         env::var(key).ok()
     }
 

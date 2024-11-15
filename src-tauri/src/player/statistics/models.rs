@@ -1,6 +1,6 @@
-use crate::config::factory::factory_models::AbstractModel;
 use crate::schema::playerstatistics;
 use crate::schema::playerstatistics::dsl::*;
+use crate::settings::factory::factory_models::AbstractModel;
 use crate::statistics::models::Statistic;
 use crate::translations::models::Translations;
 

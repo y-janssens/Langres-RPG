@@ -1,10 +1,16 @@
+use super::config::vars::{DATABASE_URL, MIGRATIONS};
 use super::errors::messages::{MIGRATION_ERROR, POOL_ERROR};
-use super::variables::vars::{DATABASE_URL, MIGRATIONS};
 
 use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
 use diesel_migrations::MigrationHarness;
-use r2d2::Pool;
+use r2d2::{Pool, PooledConnection};
 use std::error::Error;
+
+pub fn get_connection(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> PooledConnection<ConnectionManager<diesel::SqliteConnection>> {
+    connection.get().expect("Failed to get DB connection")
+}
 
 fn run_migrations(
     connection: &mut impl MigrationHarness<Sqlite>,

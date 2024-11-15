@@ -1,4 +1,4 @@
-use crate::config::factory::factory_models::AbstractModel;
+use crate::settings::factory::factory_models::AbstractModel;
 use crate::schema::achievements::dsl::*;
 use crate::{schema::achievements, translations::models::Translations};
 use diesel::{

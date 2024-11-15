@@ -2,7 +2,7 @@ use super::models::App;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
-use crate::config::fetcher::get_connection;
+use crate::settings::database::get_connection;
 
 #[tauri::command]
 pub fn load_app_datas(

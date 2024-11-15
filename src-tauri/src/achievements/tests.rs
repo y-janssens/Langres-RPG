@@ -1,9 +1,9 @@
 #[cfg(test)]
 mod tests {
     use crate::achievements::models::Achievement;
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::AchievementFactory;
-    use crate::config::factory::factory_models::Factory;
+    use crate::settings::factories::factories_definitions::AchievementFactory;
+    use crate::settings::factory::factory_models::Factory;
+    use crate::settings::tests::database::allow_db_access;
 
     #[test]
     fn test_load_achievements() {

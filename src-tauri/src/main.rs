@@ -9,8 +9,8 @@ mod achievements;
 mod app;
 mod character;
 mod collection;
-mod config;
 mod dashboard;
+mod devtools;
 mod events;
 mod functions;
 mod game;
@@ -48,9 +48,9 @@ fn main() {
             time::commands::load_env,
             app::commands::load_app_datas,
             app::commands::save_app_datas,
-            settings::commands::load_dev_settings,
+            devtools::commands::load_dev_settings,
             // Permissions
-            config::commands::load_permissions,
+            permissions::commands::load_permissions,
             // Character commands
             character::commands::compute_xp,
             character::commands::add_gold,

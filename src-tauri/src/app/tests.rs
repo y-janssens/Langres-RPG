@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
     use crate::app::models::App;
-    use crate::config::conf::test_conf::allow_db_access;
+    use crate::settings::tests::database::allow_db_access;
 
     #[test]
     fn test_load_application_datas() {

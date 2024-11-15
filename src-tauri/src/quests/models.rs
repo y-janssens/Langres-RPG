@@ -1,4 +1,4 @@
-use crate::config::factory::factory_models::AbstractModel;
+use crate::settings::factory::factory_models::AbstractModel;
 
 use crate::translations::models::Translations;
 use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};

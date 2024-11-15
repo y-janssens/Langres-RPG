@@ -9,9 +9,9 @@ pub mod factories_definitions {
     use crate::game::models::Game;
     use crate::loot::models::{ItemTypes, Loot};
 
-    use crate::config::factory::factory_models::{ApiFactory, Factory};
-    use crate::config::faker::faker_definitions::*;
     use crate::objects::models::{Area, Object};
+    use crate::settings::factory::factory_models::{ApiFactory, Factory};
+    use crate::settings::faker::faker_definitions::*;
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
     use crate::translations::models::Translations;

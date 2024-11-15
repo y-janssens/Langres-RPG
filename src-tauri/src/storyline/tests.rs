@@ -3,12 +3,12 @@ mod tests {
     use dotenv::dotenv;
     use std::env;
 
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::{StoryLineFactory, WorldFactory};
-    use crate::config::factory::factory_models::Factory;
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::objects::models::Object;
-    use crate::settings::variables::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
+    use crate::settings::config::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
+    use crate::settings::factories::factories_definitions::{StoryLineFactory, WorldFactory};
+    use crate::settings::factory::factory_models::Factory;
+    use crate::settings::tests::database::allow_db_access;
     use crate::storyline::models::Story;
     use crate::world::commands::generate;
     use crate::world::models::Item;

@@ -2,7 +2,7 @@ use diesel::{r2d2::ConnectionManager, SqliteConnection};
 use serde_json::Value;
 
 use crate::{
-    config::fetcher::get_connection, permissions::models::Permission,
+    permissions::models::Permission, settings::database::get_connection,
     views::models::authenticated_command,
 };
 

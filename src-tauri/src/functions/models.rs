@@ -1,9 +1,9 @@
 use crate::{
-    config::{
+    schema::functions::dsl::*,
+    settings::{
         factory::factory_models::AbstractModel,
         faker::faker_definitions::{Faker, IdFaker},
     },
-    schema::functions::dsl::*,
 };
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,

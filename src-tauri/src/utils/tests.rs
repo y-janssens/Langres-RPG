@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::factories::factories_definitions::WorldFactory;
-    use crate::config::factory::factory_models::Factory;
+    use crate::settings::factories::factories_definitions::WorldFactory;
+    use crate::settings::factory::factory_models::Factory;
     use crate::utils::models::FrustumCullingUtility;
 
     #[test]

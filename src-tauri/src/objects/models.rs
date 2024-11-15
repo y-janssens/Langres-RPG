@@ -1,9 +1,9 @@
 use crate::{
-    config::{
+    schema::objects::dsl::*,
+    settings::{
         factory::factory_models::AbstractModel,
         faker::faker_definitions::{Faker, IdFaker},
     },
-    schema::objects::dsl::*,
 };
 use diesel::{
     deserialize::{self, FromSql, Queryable},

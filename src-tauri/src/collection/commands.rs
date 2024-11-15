@@ -1,4 +1,4 @@
-use crate::config::fetcher::get_connection;
+use crate::settings::database::get_connection;
 use crate::permissions::models::Permission;
 use crate::views::models::authenticated_command;
 use diesel::r2d2::ConnectionManager;

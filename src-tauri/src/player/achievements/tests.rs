@@ -1,11 +1,11 @@
 #[cfg(test)]
 mod tests {
     use crate::achievements::models::Achievement;
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::{AchievementFactory, GameFactory};
-    use crate::config::factory::factory_models::{ApiFactory, Factory};
     use crate::game::models::Game;
     use crate::player::achievements::models::PlayerAchievement;
+    use crate::settings::factories::factories_definitions::{AchievementFactory, GameFactory};
+    use crate::settings::factory::factory_models::{ApiFactory, Factory};
+    use crate::settings::tests::database::allow_db_access;
 
     #[test]
     fn test_generate_player_achievements() {
