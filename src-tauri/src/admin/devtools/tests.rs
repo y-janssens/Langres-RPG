@@ -1,9 +1,9 @@
 #[cfg(test)]
 mod tests {
-    use crate::devtools::commands::load_dev_settings;
-    use crate::devtools::models::SettingValue;
-    use crate::permissions::models::Credentials;
-    use crate::settings::config::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY};
+    use crate::admin::devtools::commands::load_dev_settings;
+    use crate::admin::devtools::models::SettingValue;
+    use crate::backend::permissions::models::Credentials;
+    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY};
     use dotenv::dotenv;
     use std::env;
 

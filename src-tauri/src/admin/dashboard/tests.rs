@@ -1,8 +1,8 @@
 #[cfg(test)]
 mod tests {
     use crate::{
-        dashboard::commands::load_admin_dashboard,
-        settings::config::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
+        admin::dashboard::commands::load_admin_dashboard,
+        backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
     };
     use dotenv::dotenv;
     use serde_json::{json, Value};

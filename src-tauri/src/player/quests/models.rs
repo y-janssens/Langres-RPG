@@ -1,7 +1,7 @@
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
-use crate::translations::models::Translations;
-use crate::{game::models::Game, settings::factory::factory_models::AbstractModel};
+use crate::backend::translations::models::Translations;
+use crate::{game::models::Game, backend::conf::factory::factory_models::AbstractModel};
 
 use diesel::sql_types::Text;
 use diesel::{

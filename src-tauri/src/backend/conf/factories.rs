@@ -4,17 +4,16 @@ pub mod factories_definitions {
     use rand::seq::IteratorRandom;
 
     use crate::achievements::models::Achievement;
+    use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::conf::faker::faker_definitions::*;
+    use crate::backend::translations::models::Translations;
     use crate::collection::models::Collection;
     use crate::functions::models::Function;
     use crate::game::models::Game;
     use crate::loot::models::{ItemTypes, Loot};
-
     use crate::objects::models::{Area, Object};
-    use crate::settings::factory::factory_models::{ApiFactory, Factory};
-    use crate::settings::faker::faker_definitions::*;
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
-    use crate::translations::models::Translations;
     use crate::world::models::World;
 
     pub struct StoryLineFactory;

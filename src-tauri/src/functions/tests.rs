@@ -2,9 +2,9 @@
 mod tests {
 
     use crate::functions::models::Function;
-    use crate::settings::factories::factories_definitions::FunctionFactory;
-    use crate::settings::factory::factory_models::Factory;
-    use crate::settings::tests::database::allow_db_access;
+    use crate::backend::conf::factories::factories_definitions::FunctionFactory;
+    use crate::backend::conf::factory::factory_models::Factory;
+    use crate::backend::tests::database::allow_db_access;
 
     #[test]
     fn test_load_functions() {

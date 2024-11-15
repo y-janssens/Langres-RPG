@@ -4,7 +4,7 @@ use crate::{
         models::{ItemTypes, Loot},
         table::definitions::NamedTableLoot,
     },
-    translations::models::Translations,
+    backend::translations::models::Translations,
 };
 use lazy_static::lazy_static;
 use uuid::Uuid;

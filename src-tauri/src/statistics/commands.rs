@@ -1,6 +1,6 @@
-use crate::permissions::models::Permission;
-use crate::settings::database::get_connection;
-use crate::views::models::authenticated_command;
+use crate::backend::permissions::models::Permission;
+use crate::backend::database::authenticated_command;
+use crate::backend::database::get_connection;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 use serde_json::Value;

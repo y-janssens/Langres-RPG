@@ -2,8 +2,8 @@ use diesel::{r2d2::ConnectionManager, SqliteConnection};
 use serde_json::Value;
 
 use crate::{
-    permissions::models::Permission, settings::database::get_connection,
-    views::models::authenticated_command,
+    backend::database::authenticated_command, backend::database::get_connection,
+    backend::permissions::models::Permission,
 };
 
 use super::models::Function;

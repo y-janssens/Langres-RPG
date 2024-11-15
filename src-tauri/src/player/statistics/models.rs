@@ -1,8 +1,8 @@
 use crate::schema::playerstatistics;
 use crate::schema::playerstatistics::dsl::*;
-use crate::settings::factory::factory_models::AbstractModel;
+use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::statistics::models::Statistic;
-use crate::translations::models::Translations;
+use crate::backend::translations::models::Translations;
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,

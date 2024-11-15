@@ -1,9 +1,9 @@
 #[cfg(test)]
 pub mod database {
-    use crate::settings::config::vars::MIGRATIONS;
-    use crate::settings::errors::messages::{
+    use crate::backend::settings::errors::{
         DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
     };
+    use crate::backend::settings::variables::MIGRATIONS;
     use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
     use diesel_migrations::MigrationHarness;
 

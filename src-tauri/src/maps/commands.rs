@@ -2,8 +2,8 @@ use serde_json::Value;
 
 use super::options::GeneratorOptions;
 use crate::{
-    permissions::models::Permission,
-    views::models::authenticated_command,
+    backend::database::authenticated_command,
+    backend::permissions::models::Permission,
     world::models::{Options, World},
 };
 

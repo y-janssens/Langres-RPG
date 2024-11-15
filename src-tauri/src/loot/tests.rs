@@ -1,9 +1,9 @@
 #[cfg(test)]
 mod tests {
     use crate::loot::models::Loot;
-    use crate::settings::factories::factories_definitions::LootFactory;
-    use crate::settings::factory::factory_models::Factory;
-    use crate::settings::tests::database::allow_db_access;
+    use crate::backend::conf::factories::factories_definitions::LootFactory;
+    use crate::backend::conf::factory::factory_models::Factory;
+    use crate::backend::tests::database::allow_db_access;
 
     #[test]
     fn test_load_loots() {

@@ -1,4 +1,4 @@
-use crate::permissions::models::Credentials;
+use crate::backend::permissions::models::Credentials;
 use serde::Serialize;
 use std::collections::HashMap;
 use std::ops::Deref;

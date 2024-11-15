@@ -1,9 +1,13 @@
-use super::config::vars::{DATABASE_URL, MIGRATIONS};
-use super::errors::messages::{MIGRATION_ERROR, POOL_ERROR};
+use crate::backend::permissions::models::{Credentials, Permission};
+
+use super::settings::errors::{MIGRATION_ERROR, POOL_ERROR};
+use super::settings::variables::{DATABASE_URL, MIGRATIONS};
 
 use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
 use diesel_migrations::MigrationHarness;
 use r2d2::{Pool, PooledConnection};
+use serde::Serialize;
+use serde_json::json;
 use std::error::Error;
 
 pub fn get_connection(
@@ -29,4 +33,25 @@ pub fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<
     run_migrations(&mut *conn).expect(MIGRATION_ERROR);
 
     Ok(pool)
+}
+
+pub fn authenticated_command<T, R>(permissions: Permission, func: T) -> serde_json::Value
+where
+    T: FnOnce() -> R,
+    R: Serialize,
+{
+    let credentials = Credentials::initialize().config;
+
+    if credentials.has_permission(permissions) {
+        match serde_json::to_value(func()) {
+            Ok(result) => result,
+            Err(_) => json!({
+                "error": "Failed to serialize the result"
+            }),
+        }
+    } else {
+        json!({
+            "error": "Permission denied"
+        })
+    }
 }

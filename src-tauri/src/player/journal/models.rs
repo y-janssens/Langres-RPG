@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::quests::models::PlayerQuest;
 use crate::player::statistics::models::PlayerStatistic;
-use crate::settings::factory::factory_models::AbstractModel;
+use crate::backend::conf::factory::factory_models::AbstractModel;
 
 impl AbstractModel for PlayerJournal {}
 

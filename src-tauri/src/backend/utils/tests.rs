@@ -1,8 +1,8 @@
 #[cfg(test)]
 mod tests {
-    use crate::settings::factories::factories_definitions::WorldFactory;
-    use crate::settings::factory::factory_models::Factory;
-    use crate::utils::models::FrustumCullingUtility;
+    use crate::backend::conf::factories::factories_definitions::WorldFactory;
+    use crate::backend::conf::factory::factory_models::Factory;
+    use crate::backend::utils::models::FrustumCullingUtility;
 
     #[test]
     fn test_frustum_cull() {

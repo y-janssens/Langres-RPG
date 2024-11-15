@@ -2,7 +2,7 @@
 mod tests {
     use crate::npcs::models::Npc;
     use crate::npcs::named::SER_HERBERT;
-    use crate::settings::tests::database::allow_db_access;
+    use crate::backend::tests::database::allow_db_access;
     use crate::storyline::models::Story;
 
     #[test]

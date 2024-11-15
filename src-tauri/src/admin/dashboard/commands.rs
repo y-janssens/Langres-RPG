@@ -1,5 +1,5 @@
 use super::models::AdminDashboard;
-use crate::{permissions::models::Permission, views::models::authenticated_command};
+use crate::{backend::database::authenticated_command, backend::permissions::models::Permission};
 use serde_json::{json, Value};
 
 #[tauri::command]

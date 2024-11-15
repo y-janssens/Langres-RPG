@@ -1,12 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use crate::app::models::App;
-    use crate::settings::tests::database::allow_db_access;
+    use crate::application::models::ApplicationSettings;
+    use crate::backend::tests::database::allow_db_access;
 
     #[test]
     fn test_load_application_datas() {
         allow_db_access(|connection| {
-            let response = App::load(connection).unwrap();
+            let response = ApplicationSettings::load(connection).unwrap();
 
             assert_eq!(response.language, "en");
             assert!(response.sound);
@@ -18,8 +18,8 @@ mod tests {
     #[test]
     fn test_patch_application_datas() {
         allow_db_access(|connection| {
-            let settings = App::load(connection).unwrap();
-            let patch_datas = App {
+            let settings = ApplicationSettings::load(connection).unwrap();
+            let patch_datas = ApplicationSettings {
                 id: settings.id,
                 language: "en".to_string(),
                 languages: settings.languages,
@@ -28,8 +28,8 @@ mod tests {
                 music: 100,
             };
 
-            let _ = App::save(settings.id, patch_datas, connection);
-            let patch_response = App::load(connection).unwrap();
+            let _ = ApplicationSettings::save(settings.id, patch_datas, connection);
+            let patch_response = ApplicationSettings::load(connection).unwrap();
 
             assert_eq!(patch_response.language, "en");
             assert!(patch_response.sound);

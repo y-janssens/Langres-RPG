@@ -1,4 +1,4 @@
-use crate::translations::models::Translations;
+use crate::backend::translations::models::Translations;
 
 use super::models::*;
 use lazy_static::lazy_static;

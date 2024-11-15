@@ -2,7 +2,7 @@ use crate::events::models::Event;
 use crate::game::models::Position;
 use crate::maps::models::Map;
 use crate::maps::tiles::Values;
-use crate::{npcs::models::Npc, settings::factory::factory_models::AbstractModel};
+use crate::{npcs::models::Npc, backend::conf::factory::factory_models::AbstractModel};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};

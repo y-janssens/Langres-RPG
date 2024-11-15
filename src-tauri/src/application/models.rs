@@ -44,7 +44,7 @@ impl FromSql<Text, Sqlite> for Values {
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::settings)]
 #[diesel(check_for_backend(Sqlite))]
-pub struct App {
+pub struct ApplicationSettings {
     pub id: i32,
     pub language: String,
     pub languages: Languages,
@@ -53,13 +53,17 @@ pub struct App {
     pub music: i32,
 }
 
-impl App {
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<App> {
+impl ApplicationSettings {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<ApplicationSettings> {
         let _load = crate::schema::settings::table.first(connection)?;
         Ok(_load)
     }
 
-    pub fn save(_id: i32, data: App, connection: &mut SqliteConnection) -> QueryResult<usize> {
+    pub fn save(
+        _id: i32,
+        data: ApplicationSettings,
+        connection: &mut SqliteConnection,
+    ) -> QueryResult<usize> {
         let languages_json = serde_json::to_string(&data.languages.0).map_err(|e| {
             diesel::result::Error::DatabaseError(
                 diesel::result::DatabaseErrorKind::UnableToSendCommand,

@@ -1,10 +1,10 @@
 #[cfg(test)]
 mod tests {
     use crate::{
-        permissions::{commands::load_permissions, models::Permission},
-        settings::config::vars::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
-        settings::fixtures::tests_fixtures::mock_value,
-        views::models::authenticated_command,
+        backend::database::authenticated_command,
+        backend::fixtures::tests_fixtures::mock_value,
+        backend::permissions::{commands::load_permissions, models::Permission},
+        backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
     };
     use dotenv::dotenv;
     use serde_json::json;

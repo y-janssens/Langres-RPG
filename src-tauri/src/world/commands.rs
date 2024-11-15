@@ -1,6 +1,6 @@
 use serde_json::Value;
 
-use crate::{permissions::models::Permission, views::models::authenticated_command};
+use crate::backend::{database::authenticated_command, permissions::models::Permission};
 
 use super::models::World;
 
