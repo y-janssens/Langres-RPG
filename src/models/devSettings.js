@@ -7,15 +7,12 @@ export default class DevSettings {
         this.settings = {};
         this.defaultKeys = [];
         this.keys = [];
-        this.refreshGame = () => {
-            // Function is overriden by game's model and provides a hot reload functionnality
-        };
         this.init();
     }
 
     async init() {
         const settings = await this.loadSettings();
-        const defaultSettings = Object.freeze(await this.loadSettings());
+        const defaultSettings = _.cloneDeep(settings);
 
         this.settings = settings;
         this.defaultSettings = defaultSettings;
@@ -39,11 +36,27 @@ export default class DevSettings {
             const setting = this.settings[label][key];
             if (!setting.mutable) return;
 
+            if (key === 'performances') {
+                return this.togglePerformances();
+            }
+
             this.settings[label][key].value = value;
             if (setting.dynamic) {
                 this.refreshGame();
             }
         });
+    }
+
+    togglePerformances() {
+        const value = this.settings.global.performances.value;
+        this.settings.global.performances.value = !value;
+
+        this.settings.global.collisions.value = value;
+        this.settings.game.displayObstacles.value = value;
+        this.settings.game.displayTextures.value = value;
+        this.settings.scene.zoom = value ? 1 : 1.25;
+
+        this.refreshGame();
     }
 
     defaultProperty(property) {
@@ -64,30 +77,30 @@ export default class DevSettings {
         this.validate(async () => {
             if (_.isEqual(this.settings, this.defaultSettings)) return;
             this.mustRefreshGame();
-            this.settings = await this.loadSettings();
+            this.settings = _.cloneDeep(this.defaultSettings);
         });
     }
 
     deepCompare(settings, defaultSettings) {
-        return Object.keys(settings).reduce((result, key) => {
-            const group = settings[key];
+        return Object.keys(settings)
+            .reduce((result, key) => {
+                const group = settings[key];
 
-            const groupDifferences = Object.keys(group).reduce((acc, k) => {
-                if (group[k].value !== defaultSettings[key]?.[k]?.value) {
-                    acc[k] = group[k];
+                const groupDifferences = Object.keys(group).reduce((acc, k) => {
+                    const defaultValue = defaultSettings[key]?.[k]?.value;
+                    if (group[k].value !== defaultValue) {
+                        acc[k] = group[k];
+                    }
+                    return acc;
+                }, {});
+
+                if (Object.keys(groupDifferences).length > 0) {
+                    result[key] = groupDifferences;
                 }
-                return acc;
-            }, {});
 
-            if (Object.keys(groupDifferences).length > 0) {
-                result[key] = groupDifferences;
-            }
-
-            return Object.values(result).reduce((acc, key) => {
-                acc = [...acc, ...Object.values(key)];
-                return acc;
-            }, []);
-        }, {});
+                return Object.values(result).map((it) => Object.values(it));
+            }, [])
+            .flat();
     }
 
     mustRefreshGame() {
@@ -102,4 +115,7 @@ export default class DevSettings {
             return acc;
         }, {});
     }
+
+    /** Function is overriden by game's model and provides a hot reload functionnality */
+    refreshGame() {}
 }

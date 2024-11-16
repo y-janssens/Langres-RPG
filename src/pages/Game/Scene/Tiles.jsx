@@ -13,6 +13,7 @@ export const Tiles = memo(({ data }) => {
     }));
 
     const settings = useSettingsProperties({ keys: engine.settings.keys.game }, [engine]);
+    const { performances } = useSettingsProperties({ keys: 'performances' }, [engine]);
 
     return data
         .filter((it) => (settings.displayObstacles ? it : it.walkable))
@@ -29,6 +30,7 @@ export const Tiles = memo(({ data }) => {
                 )}
                 <Hexagon
                     item={item}
+                    grayscale={performances}
                     builder={!settings.displayTextures}
                     position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
                     colorMap={settings.displayTextures ? (item.value === 'W' ? colorMaps.water : colorMaps.grass) : null}
@@ -37,7 +39,7 @@ export const Tiles = memo(({ data }) => {
         ));
 });
 
-export const Hexagon = memo(({ position, colorMap, item, builder = false, form = {}, onClick = () => {} }) => {
+export const Hexagon = memo(({ position, colorMap, item, grayscale = false, builder = false, form = {}, onClick = () => {} }) => {
     const meshRef = useRef();
 
     const vertices = useMemo(() => {
@@ -82,20 +84,20 @@ export const Hexagon = memo(({ position, colorMap, item, builder = false, form =
         if (!form.showConstraints) {
             switch (item.value) {
                 case 'C':
-                    return 'lightgreen';
+                    return grayscale ? '#B7B7B7' : 'lightgreen';
                 case 'T':
-                    return 'green';
+                    return grayscale ? '#555555' : 'green';
                 case 'S':
-                    return 'yellow';
+                    return grayscale ? '#AAAAAA' : 'yellow';
                 case 'W':
-                    return 'blue';
+                    return grayscale ? '#555555' : 'blue';
                 case '-':
                 default:
-                    return 'white';
+                    return grayscale ? '#FFFFFF' : 'white';
             }
         }
         return item.walkable ? 'white' : '#808080';
-    }, [form, item, builder]);
+    }, [form, item, builder, grayscale]);
 
     return (
         <mesh
