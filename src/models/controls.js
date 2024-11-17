@@ -115,14 +115,15 @@ export default class KeyControls {
         return Object.values(this.directions).some((key) => key === true);
     }
 
-    rayCasterResolver({ positionCaster, collisionCaster, scene }) {
-        const current = positionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
-        const next = collisionCaster.intersectObjects(scene.children).find((it) => it.object.userData.castable)?.object.userData?.tile;
+    rayCasterResolver({ positionCaster, collisionCaster, scene, computeCollisions }) {
+        const current = positionCaster.intersectObjects(scene.children).find((it) => (!computeCollisions ? it.object.userData : it.object.userData.castable))?.object
+            .userData?.tile;
+        const next = collisionCaster.intersectObjects(scene.children).find((it) => (!computeCollisions ? it.object.userData : it.object.userData.castable))?.object.userData?.tile;
         this.currentTile = current;
         return {
             current: current,
             next: next,
-            canMove: Boolean(current?.walkable && next)
+            canMove: Boolean(!computeCollisions || (current?.walkable && next))
         };
     }
 

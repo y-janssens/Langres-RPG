@@ -54,7 +54,7 @@ export default class DevSettings {
         this.settings.global.collisions.value = value;
         this.settings.game.displayObstacles.value = value;
         this.settings.game.displayTextures.value = value;
-        this.settings.scene.zoom = value ? 1 : 1.25;
+        this.settings.scene.zoom.value = value ? 1.25 : 1;
 
         this.refreshGame();
     }
