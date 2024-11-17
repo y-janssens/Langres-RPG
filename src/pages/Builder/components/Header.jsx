@@ -80,7 +80,16 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                         <ButtonLabel
                             color="primary"
                             label={t('builder.manager')}
-                            onClick={() => setObject({ ...form, modalManager: !form.modalManager, modalSelect: false, modalEditor: false })}
+                            onClick={() =>
+                                setObject({ ...form, modalManager: !form.modalManager, modalCollection: false, modalSelect: false, modalEditor: false, modalGenerator: false })
+                            }
+                        />
+                        <ButtonLabel
+                            color="primary"
+                            label={t('builder.collections')}
+                            onClick={() =>
+                                setObject({ ...form, modalCollection: !form.modalCollection, modalManager: false, modalSelect: false, modalEditor: false, modalGenerator: false })
+                            }
                         />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
                     </div>

@@ -11,7 +11,7 @@
 .modal-body {
     position: relative;
     height: 85%;
-    width: 65%;
+    width: 75%;
     border-radius: 10px;
     background-color: rgb(39, 41, 53);
     -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
@@ -62,7 +62,7 @@
 }
 
 .modal-card-content {
-    width: calc(100% - 15px);
+    width: 100%;
     border-top: 1px solid rgba(229, 231, 235, 0.25);
     overflow: hidden;
     padding-bottom: 50px;

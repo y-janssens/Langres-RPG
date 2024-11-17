@@ -46,6 +46,10 @@
     align-items: center;
 }
 
+.builder-navbar-left button:first-of-type {
+    margin-right: 10px;
+}
+
 .builder-navbar-cta {
     width: max-content;
     margin-right: 10px;

@@ -4,7 +4,7 @@ import { ButtonIcon } from '../ButtonLabel';
 import Icon from '../../../../components/ui/Icon';
 import css from './generator.module.css';
 
-export const PreviewBlock = memo(({ map, index, selected, setSelect, setPreview, loading }) => {
+export const PreviewBlock = memo(({ map, index, label = true, selected, setSelect, setPreview, loading }) => {
     const blockClass = useMemo(() => {
         if (!selected.id || selected.id !== index) {
             return 'map-preview-content';
@@ -24,14 +24,14 @@ export const PreviewBlock = memo(({ map, index, selected, setSelect, setPreview,
     );
     return (
         <div className={css['map-preview-item']}>
-            <span>{`Map_${index}`}</span>
+            {label && <span>{`Map_${index}`}</span>}
             <div className={css[blockClass]} onClick={() => handleSelect({ id: index, map })}>
                 {!loading && (
                     <div className={css['map-preview-actions']}>
                         <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant={'link'} size="sm" onClick={() => setPreview(index)} />
                     </div>
                 )}
-                <MapThumbnail key={index} map={map.content} />
+                <MapThumbnail key={index} map={map} />
             </div>
         </div>
     );
@@ -50,6 +50,10 @@ export const EmptyBlock = memo(({ index }) => {
 
 export const MapThumbnail = memo(({ map, size = 1 }) => {
     const canvasRef = useRef(null);
+    const hexRadius = 1.165 * size;
+    const hexWidth = Math.sqrt(3) * hexRadius;
+    const vertDist = hexRadius * 1.5;
+    const verticalThreshold = Math.round(Math.sqrt(map.size)) - 2;
 
     const getColor = useCallback((value) => {
         switch (value) {
@@ -69,11 +73,7 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
 
     const drawMap = useCallback(
         (ctx) => {
-            const hexRadius = 1.165 * size;
-            const hexWidth = Math.sqrt(3) * hexRadius;
-            const vertDist = hexRadius * 1.5;
-
-            map.forEach((it) => {
+            map.content.forEach((it) => {
                 ctx.fillStyle = getColor(it.value);
 
                 const col = it.x;
@@ -90,7 +90,7 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
                 ctx.fill();
             });
         },
-        [map, size]
+        [map, size, hexRadius, hexWidth, vertDist]
     );
 
     useEffect(() => {
@@ -99,5 +99,5 @@ export const MapThumbnail = memo(({ map, size = 1 }) => {
         drawMap(ctx);
     }, []);
 
-    return <canvas ref={canvasRef} width={100 * size} height={100 * size} />;
+    return <canvas ref={canvasRef} width={100 * size} height={100 * size + verticalThreshold} />;
 });

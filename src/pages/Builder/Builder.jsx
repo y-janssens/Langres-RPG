@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { Header, SideBar, Manager, Theme } from './components';
+import { Header, SideBar, Manager, Theme, Collections } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction } from '../../models';
 
@@ -21,6 +21,7 @@ export const Builder = () => {
         modalEditor: false,
         modalGateway: false,
         modalGenerator: false,
+        modalCollection: false,
         onboarding: { value: false, type: null },
         selectedTiles: [],
         showValues: false,
@@ -95,7 +96,7 @@ export const Builder = () => {
         if (!form.storyLine) {
             return false;
         }
-        return !form.modalManager && !form.modalEditor && !form.onboarding.value && !form.modalGateway && !form.modalGenerator;
+        return !form.modalManager && !form.modalEditor && !form.onboarding.value && !form.modalGateway && !form.modalGenerator && !form.modalCollection;
     }, [form]);
 
     const handleReset = useCallback(() => {
@@ -151,6 +152,9 @@ export const Builder = () => {
                             {form.modalManager && <Manager open={form.modalManager} storyline={form.storyLine} onClose={() => setForm('modalManager', false)} sync={handleSync} />}
                             {form.modalGenerator && (
                                 <Generator open={form.modalGenerator} form={form} setFormObject={setFormObject} onClose={() => setForm('modalGenerator', false)} />
+                            )}
+                            {form.modalCollection && (
+                                <Collections open={form.modalCollection} form={form} setFormObject={setFormObject} onClose={() => setForm('modalCollection', false)} />
                             )}
                             {form.modalGateway && <Gateway open={form.modalGateway} form={form} onClose={() => setForm('modalGateway', false)} sync={handleSync} />}
                         </>

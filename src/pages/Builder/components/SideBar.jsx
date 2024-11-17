@@ -158,7 +158,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     icon={'map'}
                     disabled={!form.selectedMap || form.interactiveMode.toggle}
                     label={t('builder.menu.functions.generate-maps')}
-                    onClick={() => setForm('modalGenerator', true)}
+                    onClick={() => setFormObject({ ...form, modalManager: false, modalCollection: false, modalSelect: false, modalEditor: false, modalGenerator: true })}
                 />
                 {form.functions.map((it) => {
                     const label = it.label.toLowerCase().replaceAll(' ', '-');
