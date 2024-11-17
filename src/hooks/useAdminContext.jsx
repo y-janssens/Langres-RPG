@@ -7,7 +7,8 @@ export default function useAdminContext() {
         throw new Error('[useAdminContext] Did you call useAdminContext outside an AdminContextProvider component?');
     }
 
-    const { isAdmin } = ctx;
+    const { loadingPermissions} = ctx;
+    
 
-    return { isAdmin };
+    return { loadingPermissions, ...ctx.permissions };
 }

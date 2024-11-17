@@ -4,7 +4,7 @@ use uuid::Uuid;
 use crate::npcs::tables::NPCS;
 use crate::{
     character::models::Inventory, game::models::Position, quests::models::Quest,
-    translations::models::Translations,
+    backend::translations::models::Translations,
 };
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]

@@ -1,12 +1,14 @@
 #[cfg(test)]
 mod tests {
     use crate::{
-        character::models::{Character, Inventory},
-        config::{
-            conf::test_conf::allow_db_access,
-            factories::factories_definitions::{GameFactory, LootFactory, StoryLineFactory},
-            factory::factory_models::{ApiFactory, Factory},
+        backend::{
+            conf::{
+                factories::factories_definitions::{GameFactory, LootFactory, StoryLineFactory},
+                factory::factory_models::{ApiFactory, Factory},
+            },
+            tests::database::allow_db_access,
         },
+        character::models::{Character, Inventory},
         game::models::{Game, Position},
         loot::table::base::*,
     };

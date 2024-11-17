@@ -1,5 +1,5 @@
 use crate::character::models::Character;
-use crate::config::factory::factory_models::AbstractModel;
+use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::journal::models::PlayerJournal;
 use crate::player::quests::models::PlayerQuest;

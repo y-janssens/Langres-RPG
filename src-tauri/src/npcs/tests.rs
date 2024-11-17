@@ -1,8 +1,8 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::conf::test_conf::allow_db_access;
     use crate::npcs::models::Npc;
     use crate::npcs::named::SER_HERBERT;
+    use crate::backend::tests::database::allow_db_access;
     use crate::storyline::models::Story;
 
     #[test]

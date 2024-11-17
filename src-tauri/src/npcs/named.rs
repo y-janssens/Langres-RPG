@@ -3,7 +3,7 @@ use crate::{
     game::models::Position,
     loot::table::{base::*, tables::SER_HERBERT_TABLE},
     quests::definitions::*,
-    translations::models::Translations,
+    backend::translations::models::Translations,
 };
 
 use super::models::*;

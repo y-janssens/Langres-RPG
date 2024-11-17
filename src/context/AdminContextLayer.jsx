@@ -6,14 +6,15 @@ const AdminContext = React.createContext(null);
 export const AdminContextLayer = ({ children }) => {
     const [permissions, loadingPermissions] = Permissions.useCommand();
 
-    if (loadingPermissions) {
+    if (!permissions || loadingPermissions) {
         return null;
     }
 
     return (
         <AdminContext.Provider
             value={{
-                isAdmin: permissions
+                permissions,
+                loadingPermissions
             }}
         >
             {children}

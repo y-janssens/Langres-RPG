@@ -13,6 +13,6 @@ export default class Permissions extends Fetcher {
     }
 
     static fromApi(id, data) { // eslint-disable-line
-        return new this(data).is_admin;
+        return new this(data)
     }
 }

@@ -270,6 +270,25 @@
       "critical_success": "Critical Success",
       "failure": "Failure",
       "success": "Success"
+    },
+    "quicksettings": {
+      "camera": "Camera settings",
+      "game": "Game settings",
+      "global": "Global settings",
+      "title": "Settings",
+      "values": {
+        "collisions": "Compute collisions",
+        "isometric": "Isometric viewport",
+        "performances": "Performances mode",
+        "displayLoadingScreen": "Display loading screen",
+        "displayMeshes": "Display meshes",
+        "displayObstacles": "Display obstacles",
+        "displayText": "Display tiles informations",
+        "displayTextures": "Display textures",
+        "displayWater": "Display water",
+        "pixelization": "Pixelization",
+        "zoom": "Zoom"
+      }
     }
   },
   "environment": {

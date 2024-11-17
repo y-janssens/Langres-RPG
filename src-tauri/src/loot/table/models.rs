@@ -2,7 +2,7 @@ use std::collections::HashSet;
 
 use crate::{
     loot::models::{ItemTypes, Loot},
-    translations::models::Translations,
+    backend::translations::models::Translations,
 };
 use diesel::SqliteConnection;
 use rand::{seq::IteratorRandom, thread_rng};

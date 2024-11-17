@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Engine } from '../models';
+import { useAdminContext } from '../hooks';
 
 const GameContext = React.createContext(null);
 
 export const GameContextLayer = ({ children }) => {
-    const [engine, _setEngine] = useState(() => new Engine());
+    const { is_admin, dev_settings_enabled, loadingPermissions } = useAdminContext();
+    const [engine, _setEngine] = useState(null);
 
     const setEngine = React.useCallback((ctx = {}) => {
         _setEngine((engine) => {
@@ -24,6 +26,16 @@ export const GameContextLayer = ({ children }) => {
             return newContext;
         });
     }, []);
+
+    useEffect(() => {
+        if (!loadingPermissions && is_admin !== null) {
+            _setEngine(new Engine({ is_admin, dev_settings_enabled }));
+        }
+    }, [loadingPermissions, is_admin]);
+
+    if (!engine) {
+        return null;
+    }
 
     return (
         <GameContext.Provider

@@ -1,36 +1,45 @@
-use crate::config::fetcher::get_connection;
+use crate::backend::database::authenticated_command;
+use crate::backend::database::get_connection;
+use crate::backend::permissions::models::Permission;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
+use serde_json::Value;
 
 use super::models::Loot;
 
 #[tauri::command]
 pub fn load_loots(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Vec<Loot> {
+) -> Value {
     let mut connection = get_connection(connection);
-    Loot::load(&mut connection).expect("Failed to load loots")
+    authenticated_command(Permission::Dashboard, || {
+        Loot::load(&mut connection).expect("Failed to load loots")
+    })
 }
 
 #[tauri::command]
-pub fn new_loot(kind: &str) -> Loot {
-    Loot::new(kind)
+pub fn new_loot(kind: &str) -> Value {
+    authenticated_command(Permission::Dashboard, || Loot::new(kind))
 }
 
 #[tauri::command]
 pub fn save_loot(
     data: Loot,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) {
+) -> Value {
     let mut connection = get_connection(connection);
-    Loot::save(data, &mut connection).expect("Failed to save loot")
+    authenticated_command(Permission::Dashboard, || {
+        Loot::save(data, &mut connection).expect("Failed to save loot")
+    })
 }
 
 #[tauri::command]
 pub fn delete_loot(
     id: String,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) {
+) -> Value {
     let mut connection = get_connection(connection);
-    Loot::delete(id, &mut connection).expect("Failed to delete loot")
+    authenticated_command(Permission::Dashboard, || {
+        Loot::delete(id, &mut connection).expect("Failed to delete loot")
+    })
 }

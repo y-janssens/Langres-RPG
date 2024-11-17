@@ -59,7 +59,7 @@ const Npc = ({ npc, target, map }) => {
     useEffect(() => {
         if (!ia && npcRef.current) {
             const coordinates = parseCoordinates(position);
-            setIa(new NpcBehaviourTree({ target, self: npcRef, map, targetPosition: engine.controls.currentTile, verbose: engine.devMode }));
+            setIa(new NpcBehaviourTree({ target, self: npcRef, map, targetPosition: engine.controls.currentTile, verbose: engine.settings.devMode }));
             npcRef.current.position.set(coordinates.x, 0.75, coordinates.z);
         }
     }, [ia, npcRef, target.current?.position]);

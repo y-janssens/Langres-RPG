@@ -270,6 +270,25 @@
       "critical_success": "Réussite critique",
       "failure": "Échec",
       "success": "Réussite"
+    },
+    "quicksettings": {
+      "camera": "Paramètres de la caméra",
+      "game": "Paramètres du jeu",
+      "global": "Paramètres globaux",
+      "title": "Paramètres",
+      "values": {
+        "collisions": "Calculer les collisions",
+        "isometric": "Rendu isométrique",
+        "performances": "Mode performances",
+        "displayLoadingScreen": "Afficher l'écran de chargement",
+        "displayMeshes": "Afficher les objets",
+        "displayObstacles": "Afficher les obstacles",
+        "displayText": "Afficher les informations des cases",
+        "displayTextures": "Afficher les textures",
+        "displayWater": "Afficher l'eau",
+        "pixelization": "Pixellisation",
+        "zoom": "Zoom"
+      }
     }
   },
   "environment": {

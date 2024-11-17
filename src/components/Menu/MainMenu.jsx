@@ -14,12 +14,13 @@ import css from './menu.module.css';
 
 export const MainMenu = () => {
     const { t } = useTranslation();
-    const { isAdmin } = useAdminContext();
+    const { is_admin, dashboard_enabled, editor_enabled, dev_tools_enabled } = useAdminContext();
+    
     const navigate = useNavigate();
     const [engine, setEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
     const [openModal, setOpenModal] = useState(null);
-    const [displayTitle, setDisplayTitle] = useState(!engine.devMode);
+    const [displayTitle, setDisplayTitle] = useState(!engine.settings.devMode);
     const activeRef = useRef();
 
     const [savedGames, , sync] = GameModel.useCommand();
@@ -58,15 +59,15 @@ export const MainMenu = () => {
                     setOpenModal('settings');
                 }
             },
-            isAdmin && {
+            is_admin && editor_enabled && {
                 name: t('menu.items.builder'),
                 onClick: () => navigate('admin/editor')
             },
-            isAdmin && {
+            is_admin && dashboard_enabled && {
                 name: t('menu.items.dashboard'),
                 onClick: () => navigate('admin/dashboard')
             },
-            isAdmin && {
+            is_admin && dev_tools_enabled && {
                 name: t('menu.items.pathfinder'),
                 onClick: () => navigate('admin/pathfinder')
             },
@@ -77,7 +78,7 @@ export const MainMenu = () => {
         ];
 
         return menu_items.filter(Boolean).map((it, index) => ({ ...it, key: index }));
-    }, [savedGames, lastPlayedGame, isAdmin]);
+    }, [savedGames, lastPlayedGame, is_admin, editor_enabled, dashboard_enabled, dev_tools_enabled]);
 
     const handleMenu = useCallback(
         (event) => {
@@ -97,7 +98,7 @@ export const MainMenu = () => {
                         setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
                         break;
                     case 'Enter':
-                        items.find((it) => it.id === selected).onClick();
+                        items.find((it) => it.key === selected).onClick();
                 }
             }
         },

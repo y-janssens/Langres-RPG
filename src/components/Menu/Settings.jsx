@@ -1,9 +1,11 @@
 import React, { useCallback } from 'react';
 import { useDynamicForm, useTranslation } from '../../hooks';
+
 import Modal from '../ui/Modal';
-import css from './menu.module.css';
 import { VolumeBar } from '../ui/Gauge';
 import Icon from '../ui/Icon';
+
+import css from './menu.module.css';
 
 export default function Settings({ state, onClose = () => {}, engine }) {
     const { t } = useTranslation();

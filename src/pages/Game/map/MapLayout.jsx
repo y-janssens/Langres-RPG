@@ -2,7 +2,7 @@ import { memo, useState, useCallback, useEffect } from 'react';
 import { Raycaster, Vector3 } from 'three';
 import { useFrame } from '@react-three/fiber';
 
-import { useGameContext } from '../../../hooks';
+import { useGameContext, useSettingsProperties } from '../../../hooks';
 
 import { Tiles } from '../Scene/Tiles';
 import Character from '../Character';
@@ -16,6 +16,7 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     const [ready, setReady] = useState(false);
     const [focus] = useState(() => new Vector3(0, -1, 1));
     const [filteredItems, setFilteredItems] = useState(() => engine.controls.items);
+    const { collisions: computeCollisions } = useSettingsProperties({ keys: 'collisions' }, [engine]);
 
     const frustumCullItems = useCallback(() => {
         setFilteredItems(engine.controls.filterItems());
@@ -32,66 +33,74 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
         }
     }, [cameraRef, lightRef, engine, characterRef]);
 
-    useFrame(({ scene }) => {
-        if (cameraRef.current && characterRef && lightRef.current) {
-            const character = characterRef.current.position;
+    const computeMovements = useCallback(
+        (scene) => {
+            if (cameraRef.current && characterRef && lightRef.current) {
+                const character = characterRef.current.position;
 
-            if (engine.controls.isMoving) {
-                positionCaster.set(character, new Vector3(0, -1, 0).normalize());
-                collisionCaster.set(character, focus);
+                if (engine.controls.isMoving) {
+                    positionCaster.set(character, new Vector3(0, -1, 0).normalize());
+                    collisionCaster.set(character, focus);
 
-                const tiles = engine.controls.rayCasterResolver({
-                    positionCaster,
-                    collisionCaster,
-                    scene
-                });
+                    const tiles = engine.controls.rayCasterResolver({
+                        positionCaster,
+                        collisionCaster,
+                        scene,
+                        computeCollisions
+                    });
 
-                switch (true) {
-                    case engine.controls.directions.up:
-                        focus.set(0, -1, 1);
-                        if (tiles.canMove) {
-                            character.z += 0.015 * engine.controls.speed;
+                    switch (true) {
+                        case engine.controls.directions.up:
+                            focus.set(0, -1, 1);
+                            if (tiles.canMove) {
+                                character.z += 0.015 * engine.controls.speed;
+                            }
+                            characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
+                            break;
+
+                        case engine.controls.directions.down:
+                            focus.set(0, -1, -1);
+                            if (tiles.canMove) {
+                                character.z -= 0.015 * engine.controls.speed;
+                            }
+                            characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
+                            break;
+
+                        case engine.controls.directions.left:
+                            focus.set(1, -1, 0);
+                            if (tiles.canMove) {
+                                character.x += 0.015 * engine.controls.speed;
+                            }
+                            characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
+                            break;
+
+                        case engine.controls.directions.right:
+                            focus.set(-1, -1, 0);
+                            if (tiles.canMove) {
+                                character.x -= 0.015 * engine.controls.speed;
+                            }
+                            characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
+                            break;
+                    }
+
+                    if (tiles.current?.events.length) {
+                        if (tiles.current?.hasGateway) {
+                            handleGateWay(tiles.current?.gateway);
                         }
-                        characterRef.current.rotation.set(-Math.PI / 2, 0, Math.PI);
-                        break;
+                    }
 
-                    case engine.controls.directions.down:
-                        focus.set(0, -1, -1);
-                        if (tiles.canMove) {
-                            character.z -= 0.015 * engine.controls.speed;
-                        }
-                        characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI);
-                        break;
-
-                    case engine.controls.directions.left:
-                        focus.set(1, -1, 0);
-                        if (tiles.canMove) {
-                            character.x += 0.015 * engine.controls.speed;
-                        }
-                        characterRef.current.rotation.set(Math.PI / 2, 0, -Math.PI / 2);
-                        break;
-
-                    case engine.controls.directions.right:
-                        focus.set(-1, -1, 0);
-                        if (tiles.canMove) {
-                            character.x -= 0.015 * engine.controls.speed;
-                        }
-                        characterRef.current.rotation.set(Math.PI / 2, 0, Math.PI / 2);
-                        break;
-                }
-
-                if (tiles.current?.events.length) {
-                    if (tiles.current?.hasGateway) {
-                        handleGateWay(tiles.current?.gateway);
+                    if (engine.controls.getDelta(character)) {
+                        frustumCullItems();
                     }
                 }
-
-                if (engine.controls.getDelta(character)) {
-                    frustumCullItems();
-                }
+                computePositions();
             }
-            computePositions();
-        }
+        },
+        [engine, characterRef, computePositions, frustumCullItems, handleGateWay, focus, positionCaster, collisionCaster, computeCollisions]
+    );
+
+    useFrame(({ scene }) => {
+        computeMovements(scene);
     });
 
     useEffect(() => {

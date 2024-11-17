@@ -1,21 +1,14 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
 import { useGameContext } from '../../hooks';
 
-import { Settings } from '../../models';
-
 import { Game } from '../Game/Game';
 import { MainMenu } from '../../components/Menu/MainMenu';
+import { QuickSettings } from '../../components/settings';
 
 export const Controler = () => {
     const [position, setPosition] = useState();
     const [engine, setEngine] = useGameContext();
     const gameRef = useRef();
-
-    Settings.useCommand({
-        onSuccess: (response) => {
-            engine.applicationData = response;
-        }
-    });
 
     const pauseGame = useMemo(() => {
         return Boolean(engine.controls?.toggles?.pause || engine.controls?.toggles?.menu || engine.controls?.toggles.map);
@@ -43,26 +36,30 @@ export const Controler = () => {
         }
     }, [engine, pauseGame, gameRef]);
 
-    if (!('applicationData' in engine)) {
-        return null;
+    return (
+        <>
+            {engine.settings.devMode && <QuickSettings />}
+            <Handler engine={engine} handleControls={handleControls} gameRef={gameRef} position={position} setPosition={setPosition} pauseGame={pauseGame} />
+        </>
+    );
+};
+
+const Handler = ({ engine, handleControls, gameRef, position, setPosition, pauseGame }) => {
+    if (!engine.gameId) {
+        return <MainMenu />;
     }
 
     return (
-        <>
-            {!engine.gameId && <MainMenu />}
-            {engine.gameId && (
-                <div
-                    className={'game-main-block'}
-                    onKeyDown={handleControls}
-                    onKeyUp={(event) => {
-                        engine.controls.setDirections(event, false);
-                    }}
-                    tabIndex={0}
-                    ref={gameRef}
-                >
-                    <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
-                </div>
-            )}
-        </>
+        <div
+            className={'game-main-block'}
+            onKeyDown={handleControls}
+            onKeyUp={(event) => {
+                engine.controls.setDirections(event, false);
+            }}
+            tabIndex={0}
+            ref={gameRef}
+        >
+            <Game pause={pauseGame} keyToggles={engine.controls?.toggles} position={position} setPosition={setPosition} />
+        </div>
     );
 };

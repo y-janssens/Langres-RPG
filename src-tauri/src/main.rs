@@ -1,16 +1,16 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use backend::database::initialize_db;
+use backend::settings::errors::{DATABASE_ERROR, RUNTIME_ERROR};
 use dotenv::dotenv;
-use settings::database::initialize_db;
-use settings::errors::messages::{DATABASE_ERROR, RUNTIME_ERROR};
 use std::env;
 
 mod achievements;
-mod app;
+mod admin;
+mod application;
+mod backend;
 mod character;
 mod collection;
-mod config;
-mod dashboard;
 mod events;
 mod functions;
 mod game;
@@ -21,12 +21,9 @@ mod objects;
 mod player;
 mod quests;
 mod schema;
-mod settings;
 mod statistics;
 mod storyline;
 mod time;
-mod translations;
-mod utils;
 mod world;
 
 fn main() {
@@ -41,13 +38,14 @@ fn main() {
             achievements::commands::save_achievement,
             achievements::commands::delete_achievement,
             // Admin Dashboard
-            dashboard::commands::load_admin_dashboard,
+            admin::dashboard::commands::load_admin_dashboard,
             // Application settings
             time::commands::load_env,
-            app::commands::load_app_datas,
-            app::commands::save_app_datas,
+            application::commands::load_app_datas,
+            application::commands::save_app_datas,
+            admin::devtools::commands::load_dev_settings,
             // Permissions
-            config::commands::load_permissions,
+            backend::permissions::commands::load_permissions,
             // Character commands
             character::commands::compute_xp,
             character::commands::add_gold,
@@ -116,10 +114,10 @@ fn main() {
             statistics::commands::save_statistic,
             statistics::commands::delete_statistic,
             // Utils
-            utils::commands::throw_dice,
-            utils::commands::frustum_cull_ids,
-            utils::commands::get_neighbours,
-            utils::commands::frustum_cull_filter,
+            backend::utils::commands::throw_dice,
+            backend::utils::commands::frustum_cull_ids,
+            backend::utils::commands::get_neighbours,
+            backend::utils::commands::frustum_cull_filter,
             // World building commands
             world::commands::clear,
             world::commands::generate,

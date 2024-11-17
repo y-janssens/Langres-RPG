@@ -1,10 +1,10 @@
-use crate::config::factory::factory_models::AbstractModel;
+use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::backend::utils::errors::ValidationError;
+use crate::backend::utils::models::FrustumCullingUtility;
 use crate::events::models::{Event, EventType};
 use crate::npcs::models::Npc;
 use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
-use crate::utils::errors::ValidationError;
-use crate::utils::models::FrustumCullingUtility;
 use crate::world::models::{Item, World};
 use diesel::deserialize::{self, FromSql};
 use diesel::sql_types::Text;

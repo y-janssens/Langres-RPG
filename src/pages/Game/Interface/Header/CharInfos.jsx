@@ -8,7 +8,7 @@ export const CharInfos = ({ character }) => {
             <div className={css['character-infos-level']}>{character.lvl}</div>
             <div className={css['character-infos-bubble']} />
             <div className={css['character-infos-header']}>
-                <Gauge stat={character._pv} max={character._pv} type={'pv'} />
+                <Gauge stat={character.pv} max={character.pv} type={'pv'} />
                 <XpGauge stat={character.xp} max={character.max_xp} />
             </div>
         </div>

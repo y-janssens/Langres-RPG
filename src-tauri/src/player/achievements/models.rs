@@ -1,6 +1,6 @@
 use crate::schema::playerachievements;
 use crate::schema::playerachievements::dsl::*;
-use crate::{config::factory::factory_models::AbstractModel, translations::models::Translations};
+use crate::{backend::conf::factory::factory_models::AbstractModel, backend::translations::models::Translations};
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,

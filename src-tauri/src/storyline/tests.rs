@@ -1,8 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::{StoryLineFactory, WorldFactory};
-    use crate::config::factory::factory_models::Factory;
+    use dotenv::dotenv;
+    use std::env;
+
+    use crate::backend::conf::factories::factories_definitions::{StoryLineFactory, WorldFactory};
+    use crate::backend::conf::factory::factory_models::Factory;
+    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
+    use crate::backend::tests::database::allow_db_access;
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
@@ -173,6 +177,10 @@ mod tests {
     #[test]
     fn test_register_object() {
         allow_db_access(|connection| {
+            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+            env::set_var("USER_KEY", TEST_ADMIN_KEY);
+            dotenv().ok();
+
             let objects = Object::load(connection).expect("Error");
             let object = objects
                 .iter()
@@ -183,7 +191,7 @@ mod tests {
             let mut story = Story::load(connection).unwrap();
             // Clear base map content for readability purposes
             let map = generate(50, "test".to_string(), 0, true);
-            story.story.acts[0].content.maps[0] = map;
+            story.story.acts[0].content.maps[0] = serde_json::from_value(map).expect("Error");
             let _ = Story::save(connection, story.id, &mut story);
 
             let _ = Story::register_object(
@@ -219,6 +227,10 @@ mod tests {
     #[test]
     fn test_unregister_object() {
         allow_db_access(|connection| {
+            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+            env::set_var("USER_KEY", TEST_ADMIN_KEY);
+            dotenv().ok();
+
             let objects = Object::load(connection).expect("Error");
             let object = objects
                 .iter()
@@ -229,7 +241,7 @@ mod tests {
             let mut story = Story::load(connection).unwrap();
             // Clear base map content for readability purposes
             let map = generate(50, "test".to_string(), 0, true);
-            story.story.acts[0].content.maps[0] = map;
+            story.story.acts[0].content.maps[0] = serde_json::from_value(map).expect("Error");
             let _ = Story::save(connection, story.id, &mut story);
 
             let _ = Story::register_object(

@@ -1,7 +1,7 @@
-use crate::config::factories::factories_definitions::WorldFactory;
-use crate::config::factory::factory_models::AbstractModel;
-use crate::config::factory::factory_models::Factory;
-use crate::config::faker::faker_definitions::{Faker, IdFaker};
+use crate::backend::conf::factories::factories_definitions::WorldFactory;
+use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::backend::conf::factory::factory_models::Factory;
+use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
 use crate::schema::maps::dsl::*;
 use crate::world::models::World;
 

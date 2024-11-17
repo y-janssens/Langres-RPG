@@ -1,8 +1,8 @@
 #[cfg(test)]
 mod tests {
-    use crate::config::conf::test_conf::allow_db_access;
-    use crate::config::factories::factories_definitions::{GameFactory, StatisticFactory};
-    use crate::config::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::conf::factories::factories_definitions::{GameFactory, StatisticFactory};
+    use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::tests::database::allow_db_access;
     use crate::game::models::Game;
     use crate::player::statistics::models::PlayerStatistic;
     use crate::statistics::models::Statistic;

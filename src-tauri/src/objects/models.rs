@@ -1,5 +1,5 @@
 use crate::{
-    config::{
+    backend::conf::{
         factory::factory_models::AbstractModel,
         faker::faker_definitions::{Faker, IdFaker},
     },

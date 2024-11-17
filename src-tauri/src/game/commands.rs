@@ -1,5 +1,5 @@
 use super::models::{Game, GameDatas};
-use crate::config::fetcher::get_connection;
+use crate::backend::database::get_connection;
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
 
 #[tauri::command]

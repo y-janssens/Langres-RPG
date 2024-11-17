@@ -25,7 +25,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         loadingReady: false
     });
 
-    const [game, loading] = GameModel.useCommand(
+    const [game, loading, reload] = GameModel.useCommand(
         {
             useLoader: true,
             id: engine.gameId,
@@ -43,11 +43,26 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 engine.controls.setCamera({ x: -game.last_known_position.x, z: -game.last_known_position.y });
                 engine.controls.items = currentWorld.content;
                 engine.world = currentWorld;
+
                 setPosition(engine.controls.positions);
                 setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
+                setEngineHotReload(game, reload);
             }
         },
         [engine.gameId, engine?.mapId]
+    );
+
+    const setEngineHotReload = useCallback(
+        (game, reload) => {
+            engine.settings.refreshGame = () => {
+                if (!engine.mapId || engine.mapId?.is_final) {
+                    game.last_known_position = { x: Math.abs(engine.controls.positions[0]), y: Math.abs(engine.controls.positions[2]), id: engine.controls.currentTile.id };
+                }
+                game.save();
+                reload();
+            };
+        },
+        [engine]
     );
 
     const handleGateWay = useCallback(
