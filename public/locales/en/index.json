@@ -140,6 +140,7 @@
         "description": "Description",
         "icon": "Icon",
         "id": "Id",
+        "interactive": "Interactive",
         "item_type": "Type",
         "label": "Label",
         "last_known_position": "Last position",
