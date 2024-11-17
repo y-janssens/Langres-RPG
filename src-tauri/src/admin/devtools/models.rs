@@ -1,15 +1,15 @@
 use crate::backend::permissions::models::Credentials;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::ops::Deref;
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub enum SettingType {
     Boolean,
     Number,
 }
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct Setting {
     pub order: i8,
     pub value: SettingValue,
@@ -19,14 +19,14 @@ pub struct Setting {
     pub mutable: bool,
 }
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 #[serde(untagged)]
 pub enum SettingValue {
     Boolean(bool),
     Number(f64),
 }
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct SettingGroup(HashMap<String, Setting>);
 
 impl Deref for SettingGroup {
@@ -37,7 +37,7 @@ impl Deref for SettingGroup {
     }
 }
 
-#[derive(Debug, Serialize, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, PartialEq)]
 pub struct DevSettings {
     pub global: SettingGroup,
     pub game: SettingGroup,

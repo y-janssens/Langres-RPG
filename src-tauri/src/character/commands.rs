@@ -1,28 +1,44 @@
-use crate::loot::models::Loot;
+use crate::{
+    backend::{
+        database::authenticated_command, permissions::models::Permission, response::Response,
+        utils::errors::ValidationError,
+    },
+    loot::models::Loot,
+};
 
 use super::models::{Character, Inventory};
 
 #[tauri::command]
-pub fn compute_xp(mut character: Character, xp: u32) -> Character {
-    Character::compute_xp(&mut character, xp).clone()
+pub fn compute_xp(mut character: Character, xp: u32) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        Character::compute_xp(&mut character, xp).clone()
+    })
 }
 
 #[tauri::command]
-pub fn add_gold(mut inventory: Inventory, loot: Loot) {
-    Inventory::add_gold(&mut inventory, loot);
+pub fn add_gold(mut inventory: Inventory, loot: Loot) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        Inventory::add_gold(&mut inventory, loot);
+    })
 }
 
 #[tauri::command]
-pub fn remove_gold(mut inventory: Inventory, gold: i32) {
-    Inventory::remove_gold(&mut inventory, gold);
+pub fn remove_gold(mut inventory: Inventory, gold: i32) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        Inventory::remove_gold(&mut inventory, gold)
+    })
 }
 
 #[tauri::command]
-pub fn add_objects(mut inventory: Inventory, loot: Vec<Loot>) {
-    Inventory::add_objects(&mut inventory, loot);
+pub fn add_objects(mut inventory: Inventory, loot: Vec<Loot>) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        Inventory::add_objects(&mut inventory, loot)
+    })
 }
 
 #[tauri::command]
-pub fn remove_object(mut inventory: Inventory, id: String) {
-    Inventory::remove_object(&mut inventory, id);
+pub fn remove_object(mut inventory: Inventory, id: String) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        Inventory::remove_object(&mut inventory, id)
+    })
 }

@@ -190,8 +190,8 @@ mod tests {
 
             let mut story = Story::load(connection).unwrap();
             // Clear base map content for readability purposes
-            let map = generate(50, "test".to_string(), 0, true);
-            story.story.acts[0].content.maps[0] = serde_json::from_value(map).expect("Error");
+            let map = generate(50, "test".to_string(), 0, true).expect("Error");
+            story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
             let _ = Story::save(connection, story.id, &mut story);
 
             let _ = Story::register_object(
@@ -240,8 +240,8 @@ mod tests {
 
             let mut story = Story::load(connection).unwrap();
             // Clear base map content for readability purposes
-            let map = generate(50, "test".to_string(), 0, true);
-            story.story.acts[0].content.maps[0] = serde_json::from_value(map).expect("Error");
+            let map = generate(50, "test".to_string(), 0, true).expect("Error");
+            story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
             let _ = Story::save(connection, story.id, &mut story);
 
             let _ = Story::register_object(
@@ -286,7 +286,7 @@ mod tests {
 
             let response =
                 Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
-            let error = response.unwrap_err().message;
+            let error = response.unwrap_err().0;
             assert_eq!(error, format!("Object: {} is not registrable", object.id));
         });
     }

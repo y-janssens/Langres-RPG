@@ -2,6 +2,7 @@ pub mod conf;
 pub mod database;
 pub mod fixtures;
 pub mod permissions;
+pub mod response;
 pub mod settings;
 pub mod tests;
 pub mod translations;

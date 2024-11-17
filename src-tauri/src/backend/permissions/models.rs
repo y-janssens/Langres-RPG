@@ -10,6 +10,7 @@ pub enum Permission {
     DevTools,
     Dashboard,
     DevSettings,
+    RegularUser,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -29,6 +30,7 @@ impl Config {
             Permission::Editor => self.is_admin && self.editor_enabled,
             Permission::DevTools => self.is_admin && self.dev_tools_enabled,
             Permission::DevSettings => self.is_admin && self.dev_settings_enabled,
+            Permission::RegularUser => true,
         }
     }
 }

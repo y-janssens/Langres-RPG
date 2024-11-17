@@ -1,13 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use crate::{
-        backend::database::authenticated_command,
-        backend::fixtures::tests_fixtures::mock_value,
-        backend::permissions::{commands::load_permissions, models::Permission},
-        backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
+    use crate::backend::{
+        database::authenticated_command,
+        fixtures::tests_fixtures::mock_value,
+        permissions::{commands::load_permissions, models::Permission},
+        settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY},
     };
     use dotenv::dotenv;
-    use serde_json::json;
     use std::env;
 
     #[test]
@@ -17,7 +16,7 @@ mod tests {
         dotenv().ok();
         let permissions = load_permissions();
 
-        assert_eq!(permissions.is_admin, true);
+        assert!(permissions.is_ok_and(|result| result["is_admin"] == true));
     }
 
     #[test]
@@ -26,7 +25,7 @@ mod tests {
         env::remove_var("USER_KEY");
         let permissions = load_permissions();
 
-        assert_eq!(permissions.is_admin, false)
+        assert!(permissions.is_ok_and(|result| result["is_admin"] == false));
     }
 
     #[test]
@@ -36,7 +35,7 @@ mod tests {
         dotenv().ok();
         let permissions = load_permissions();
 
-        assert_eq!(permissions.is_admin, false);
+        assert!(permissions.is_ok_and(|result| result["is_admin"] == false));
     }
 
     #[test]
@@ -51,11 +50,11 @@ mod tests {
         let dev_tools = authenticated_command(Permission::DevTools, || mock_value());
         let dev_settings = authenticated_command(Permission::DevSettings, || mock_value());
 
-        assert_ne!(admin, json!({"error": "Permission denied"}));
-        assert_ne!(dashboard, json!({"error": "Permission denied"}));
-        assert_ne!(editor, json!({"error": "Permission denied"}));
-        assert_ne!(dev_tools, json!({"error": "Permission denied"}));
-        assert_ne!(dev_settings, json!({"error": "Permission denied"}));
+        assert!(admin.is_ok());
+        assert!(dashboard.is_ok());
+        assert!(editor.is_ok());
+        assert!(dev_tools.is_ok());
+        assert!(dev_settings.is_ok());
     }
 
     #[test]
@@ -70,10 +69,10 @@ mod tests {
         let dev_tools = authenticated_command(Permission::DevTools, || mock_value());
         let dev_settings = authenticated_command(Permission::DevSettings, || mock_value());
 
-        assert_eq!(admin, json!({"error": "Permission denied"}));
-        assert_eq!(dashboard, json!({"error": "Permission denied"}));
-        assert_eq!(editor, json!({"error": "Permission denied"}));
-        assert_eq!(dev_tools, json!({"error": "Permission denied"}));
-        assert_eq!(dev_settings, json!({"error": "Permission denied"}));
+        assert!(admin.is_err_and(|r| r.0 == "Permission denied"));
+        assert!(dashboard.is_err_and(|r| r.0 == "Permission denied"));
+        assert!(editor.is_err_and(|r| r.0 == "Permission denied"));
+        assert!(dev_tools.is_err_and(|r| r.0 == "Permission denied"));
+        assert!(dev_settings.is_err_and(|r| r.0 == "Permission denied"));
     }
 }

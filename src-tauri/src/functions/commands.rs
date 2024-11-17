@@ -1,9 +1,10 @@
 use diesel::{r2d2::ConnectionManager, SqliteConnection};
-use serde_json::Value;
 
-use crate::{
-    backend::database::authenticated_command, backend::database::get_connection,
-    backend::permissions::models::Permission,
+use crate::backend::{
+    database::{authenticated_command, get_connection},
+    permissions::models::Permission,
+    response::Response,
+    utils::errors::ValidationError,
 };
 
 use super::models::Function;
@@ -11,7 +12,7 @@ use super::models::Function;
 #[tauri::command]
 pub fn load_functions(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Function::load(&mut connection).expect("Failed to load functions")
@@ -19,7 +20,7 @@ pub fn load_functions(
 }
 
 #[tauri::command]
-pub fn new_function() -> Value {
+pub fn new_function() -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, Function::new)
 }
 
@@ -27,7 +28,7 @@ pub fn new_function() -> Value {
 pub fn save_function(
     data: Function,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Function::save(data, &mut connection).expect("Failed to save function")
@@ -38,9 +39,9 @@ pub fn save_function(
 pub fn delete_function(
     id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) {
+) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Function::delete(id, &mut connection).expect("Failed to delete function")
-    });
+    })
 }

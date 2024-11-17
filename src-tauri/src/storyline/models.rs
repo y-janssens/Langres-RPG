@@ -244,9 +244,10 @@ impl Story {
         let obj = Object::get(object_id, connection).expect("Failed to get object");
 
         if !obj.interactive {
-            return Err(ValidationError {
-                message: format!("Object: {} is not registrable", object_id),
-            });
+            return Err(ValidationError(format!(
+                "Object: {} is not registrable",
+                object_id
+            )));
         }
         // Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
         let neighbours_ids = FrustumCullingUtility::cull(

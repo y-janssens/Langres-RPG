@@ -1,19 +1,21 @@
 use super::models::Story;
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
-use serde_json::Value;
 
 use crate::backend::database::authenticated_command;
 use crate::backend::database::get_connection;
 use crate::backend::permissions::models::Permission;
+use crate::backend::response::Response;
 use crate::backend::utils::errors::ValidationError;
 
 #[tauri::command]
 pub fn load_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Story {
-    let mut connection = get_connection(connection);
-    Story::load(&mut connection).expect("Failed to load storyline")
+) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        let mut connection = get_connection(connection);
+        Story::load(&mut connection).expect("Failed to load storyline")
+    })
 }
 
 #[tauri::command]
@@ -21,10 +23,10 @@ pub fn save_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
     mut data: Story,
     id: u32,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        Story::save(&mut connection, id as i32, &mut data).expect("Failed to save storyline");
+        Story::save(&mut connection, id as i32, &mut data).expect("Failed to save storyline")
     })
 }
 
@@ -35,7 +37,7 @@ pub fn edit_tiles(
     map_id: i32,
     tiles: Vec<u32>,
     object_id: i32,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         Story::edit_tiles(&mut connection, act_id, map_id, tiles, object_id)
@@ -49,7 +51,7 @@ pub fn register_gateway(
     map_id: i32,
     tile_id: u32,
     gateway: (Option<i32>, bool),
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         Story::register_gateway(&mut connection, act_id, map_id, tile_id, gateway)
@@ -63,7 +65,7 @@ pub fn register_checkpoint(
     map_id: i32,
     tile_id: u32,
     checkpoint: Option<i32>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         Story::register_checkpoint(&mut connection, act_id, map_id, tile_id, checkpoint)
@@ -78,7 +80,7 @@ pub fn register_object(
     tile_id: u32,
     object_id: i32,
     enable: bool,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         Story::register_object(&mut connection, act_id, map_id, tile_id, object_id, enable)
@@ -92,13 +94,9 @@ pub fn get_neighbours_ids(
     map_id: i32,
     tile_id: u32,
     object_id: i32,
-) -> Result<Vec<i32>, ValidationError> {
-    let mut connection = get_connection(connection);
-    Ok(Story::get_neighbours_ids(
-        &mut connection,
-        act_id,
-        map_id,
-        tile_id,
-        object_id,
-    ))
+) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        let mut connection = get_connection(connection);
+        Story::get_neighbours_ids(&mut connection, act_id, map_id, tile_id, object_id)
+    })
 }

@@ -1,16 +1,17 @@
+use super::models::Object;
+use crate::backend::database::authenticated_command;
 use crate::backend::database::get_connection;
 use crate::backend::permissions::models::Permission;
-use crate::backend::database::authenticated_command;
+use crate::backend::response::Response;
+use crate::backend::utils::errors::ValidationError;
+
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
-use serde_json::Value;
-
-use super::models::Object;
 
 #[tauri::command]
 pub fn load_objects(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
         Object::load(&mut connection).expect("Failed to load objects")
@@ -18,7 +19,7 @@ pub fn load_objects(
 }
 
 #[tauri::command]
-pub fn new_object() -> Value {
+pub fn new_object() -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, Object::new)
 }
 
@@ -26,7 +27,7 @@ pub fn new_object() -> Value {
 pub fn save_object(
     data: Object,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
         Object::save(data, &mut connection).expect("Failed to save object")
@@ -37,7 +38,7 @@ pub fn save_object(
 pub fn delete_object(
     id: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Value {
+) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
         Object::delete(id, &mut connection).expect("Failed to delete object")

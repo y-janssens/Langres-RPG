@@ -1,10 +1,11 @@
 #[cfg(test)]
 mod tests {
     use crate::admin::devtools::commands::load_dev_settings;
-    use crate::admin::devtools::models::SettingValue;
+    use crate::admin::devtools::models::{DevSettings, SettingValue};
     use crate::backend::permissions::models::Credentials;
     use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY};
     use dotenv::dotenv;
+    use serde_json::from_value;
     use std::env;
 
     #[test]
@@ -12,14 +13,15 @@ mod tests {
         env::set_var("SECRET_KEY", TEST_SECRET_KEY);
         env::set_var("USER_KEY", TEST_ADMIN_KEY);
         dotenv().ok();
-        let settings = load_dev_settings();
+        let settings = load_dev_settings().expect("Error");
+        let config: DevSettings = from_value(settings.0).expect("Error");
 
-        let global = settings.global.values().into_iter().all(|it| it.mutable);
-        let game = settings.game.values().into_iter().all(|it| it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| it.mutable);
+        let global = config.global.values().into_iter().all(|it| it.mutable);
+        let game = config.game.values().into_iter().all(|it| it.mutable);
+        let scene = config.scene.values().into_iter().all(|it| it.mutable);
 
         assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
+            config.global.get("displayLoadingScreen").unwrap().value,
             SettingValue::Boolean(false)
         );
 
@@ -32,14 +34,16 @@ mod tests {
     fn test_load_dev_settings_missing_variable() {
         env::remove_var("SECRET_KEY");
         env::remove_var("USER_KEY");
-        let settings = load_dev_settings();
 
-        let global = settings.global.values().into_iter().all(|it| !it.mutable);
-        let game = settings.game.values().into_iter().all(|it| !it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| !it.mutable);
+        let settings = load_dev_settings().expect("Error");
+        let config: DevSettings = from_value(settings.0).expect("Error");
+
+        let global = config.global.values().into_iter().all(|it| !it.mutable);
+        let game = config.game.values().into_iter().all(|it| !it.mutable);
+        let scene = config.scene.values().into_iter().all(|it| !it.mutable);
 
         assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
+            config.global.get("displayLoadingScreen").unwrap().value,
             SettingValue::Boolean(true)
         );
 
@@ -54,14 +58,15 @@ mod tests {
         env::set_var("USER_KEY", TEST_USER_KEY);
         dotenv().ok();
 
-        let settings = load_dev_settings();
+        let settings = load_dev_settings().expect("Error");
+        let config: DevSettings = from_value(settings.0).expect("Error");
 
-        let global = settings.global.values().into_iter().all(|it| !it.mutable);
-        let game = settings.game.values().into_iter().all(|it| !it.mutable);
-        let scene = settings.scene.values().into_iter().all(|it| !it.mutable);
+        let global = config.global.values().into_iter().all(|it| !it.mutable);
+        let game = config.game.values().into_iter().all(|it| !it.mutable);
+        let scene = config.scene.values().into_iter().all(|it| !it.mutable);
 
         assert_eq!(
-            settings.global.get("displayLoadingScreen").unwrap().value,
+            config.global.get("displayLoadingScreen").unwrap().value,
             SettingValue::Boolean(true)
         );
 
