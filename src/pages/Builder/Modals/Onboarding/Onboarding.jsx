@@ -2,9 +2,9 @@ import React, { useCallback, useMemo } from 'react';
 import { useDynamicForm, useTranslation } from '../../../../hooks';
 import Storyline from '../../../../models/storyline';
 import { StoryStep, ActStep } from '../Manager/Steps';
-import { Modal } from '..';
+import { BuilderModalWrapper } from '../Wrapper';
 
-export const Onboarding = ({ open, type, storyline = {}, sync, onClose }) => {
+const Onboarding = ({ open, type, value, storyline = {}, sync, onClose }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useDynamicForm({
@@ -24,7 +24,7 @@ export const Onboarding = ({ open, type, storyline = {}, sync, onClose }) => {
     }, [form, sync, onClose]);
 
     const disabled = useMemo(() => {
-        switch (type) {
+        switch (value) {
             case 'acts':
                 return !form.acts?.filter((act) => !act.temp).length;
             case 'maps':
@@ -32,22 +32,25 @@ export const Onboarding = ({ open, type, storyline = {}, sync, onClose }) => {
             default:
                 return true;
         }
-    }, [form, type]);
+    }, [form, value]);
 
     if (!open || !form.id) {
         return null;
     }
 
     return (
-        <Modal
-            title={t(`builder.modals.steps.${type}.title`)}
-            subtitle={t(`builder.modals.steps.${type}.subtitle`)}
+        <BuilderModalWrapper
+            title={t(`builder.modals.steps.${value}.title`)}
+            subtitle={t(`builder.modals.steps.${value}.subtitle`)}
             onReset={sync}
             onSave={handleSave}
             disabled={disabled}
             canBeClosed={false}
+            type={type}
         >
-            {type === 'acts' ? <StoryStep form={form} setForm={setForm} /> : <ActStep form={form} setForm={setForm} onboarding />}
-        </Modal>
+            {value === 'acts' ? <StoryStep form={form} setForm={setForm} /> : <ActStep form={form} setForm={setForm} onboarding />}
+        </BuilderModalWrapper>
     );
 };
+
+export default Onboarding;

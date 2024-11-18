@@ -36,16 +36,14 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
     return (
         <div className={css['select-multi-container']}>
             <SelectButton
-                open={form.modalSelect}
+                open={form.displaySelector}
                 label={label}
                 onClick={() => {
-                    setForm('modalSelect', !form.modalSelect);
-                    setForm('modalManager', false);
-                    setForm('modalEditor', false);
-                    setForm('modalGenerator', false);
+                    setForm('displaySelector', !form.displaySelector);
+                    setForm('modal', { type: null, open: false, value: null });
                 }}
             />
-            {form.modalSelect && datas && (
+            {form.displaySelector && datas && (
                 <div className={css['select-multi-content']}>
                     <Input
                         className={css['select-multi-searchbar']}
@@ -60,7 +58,7 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
                     {groups
                         .sort((a, b) => a.order - b.order)
                         .map((gr, index) => {
-                            return <SelectGroup key={index} group={gr} search={search} onSelect={setForm} onClose={() => setForm('modalSelect', false)} />;
+                            return <SelectGroup key={index} group={gr} search={search} onSelect={setForm} onClose={() => setForm('displaySelector', false)} />;
                         })}
                 </div>
             )}

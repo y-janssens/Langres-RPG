@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { SelectButton } from '../selector/Selector';
+import { SelectButton } from '../../components/selector/Selector';
 
 import css from './generator.module.css';
 

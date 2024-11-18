@@ -2,13 +2,12 @@ import React, { useState, useCallback } from 'react';
 import { useTranslation } from '../../../../hooks';
 import { Collection } from '../../../../models';
 
-import { Modal } from '../Modal/Modal';
-import { SelectButton } from '../selector/Selector';
-import { MapThumbnail } from '../Generator/Blocks';
+import { CollectionItem } from './components';
+import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './collections.module.css';
 
-export const Collections = ({ open, form, setFormObject, onClose }) => {
+const Collections = ({ type, open, form, setForm, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [selectedMap, setSelectedMap] = useState(null);
 
@@ -42,18 +41,17 @@ export const Collections = ({ open, form, setFormObject, onClose }) => {
     }
 
     return (
-        <Modal
-            title={t('builder.modals.collections.title')}
-            subtitle={t('builder.modals.collections.subtitle')}
+        <BuilderModalWrapper
             onSave={handleApply}
             onReset={null}
             onClose={onClose}
             canBeClosed
+            type={type}
             disabled={!selectedMap}
             ctaLabel={t('common.actions.apply')}
             customFooter={[
                 { id: 'delete', label: t('common.actions.delete'), disabled: !selectedMap, onClick: () => handleDelete(selectedMap) },
-                { id: 'new', label: t('builder.menu.functions.generate-maps'), onClick: () => setFormObject({ ...form, modalCollection: false, modalGenerator: true }) },
+                { id: 'new', label: t('builder.menu.functions.generate-maps'), onClick: () => setForm('modal', { type: 'generator', open: true, value: null }) }
             ]}
         >
             <div className={css['collections-modal-container']}>
@@ -61,29 +59,7 @@ export const Collections = ({ open, form, setFormObject, onClose }) => {
                     <CollectionItem key={coll.id} item={coll} selected={selectedMap} setSelected={setSelectedMap} />
                 ))}
             </div>
-        </Modal>
+        </BuilderModalWrapper>
     );
 };
-
-const CollectionItem = ({ item, selected, setSelected }) => {
-    const [open, setOpen] = useState(false);
-    const label = `${item.id} - ${item.map.id} - ${item.created.split(' ')[0]}`;
-
-    return (
-        <div className={css['collection-item']}>
-            <SelectButton
-                open={open}
-                label={label}
-                onClick={() => {
-                    setOpen(!open);
-                    setSelected(null);
-                }}
-            />
-            {open && (
-                <div className={css[`collection-content-${selected?.id === item.id ? 'active' : 'inactive'}`]} onClick={() => setSelected(selected?.id === item.id ? null : item)}>
-                    <MapThumbnail map={item.map} size={3} />
-                </div>
-            )}
-        </div>
-    );
-};
+export default Collections;

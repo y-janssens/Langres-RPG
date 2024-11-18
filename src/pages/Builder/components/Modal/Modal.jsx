@@ -2,19 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'react-daisyui';
 import css from './modal.module.css';
 
-export const Modal = ({
-    title = '',
-    subtitle = '',
-    onSave = () => {},
-    onReset = () => {},
-    onClose = () => {},
-    disabled = false,
-    steps = false,
-    canBeClosed = true,
-    customFooter = [],
-    ctaLabel = null,
-    children
-}) => {
+export const Modal = ({ title, subtitle, onSave, onReset, onClose, disabled, steps, canBeClosed, customFooter, ctaLabel, children }) => {
     const { t } = useTranslation();
     const saveLabel = ctaLabel ?? t('common.actions.save');
 

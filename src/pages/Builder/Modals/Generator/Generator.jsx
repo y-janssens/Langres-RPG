@@ -2,15 +2,15 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { useMapBatch, useTranslation } from '../../../../hooks';
 import { Collection, GeneratorOptions } from '../../../../models';
 
-import { Modal } from '../Modal/Modal';
 import Icon from '../../../../components/ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
-import { ButtonIcon, ButtonLabel } from '../ButtonLabel';
+import { ButtonIcon, ButtonLabel } from '../../components';
 import { GeneratorSettings } from './Settings';
+import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './generator.module.css';
 
-export const Generator = ({ open, form, setFormObject, onClose }) => {
+const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
     const [batchSettings, setBatchSettings] = useState({});
@@ -84,8 +84,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     }
 
     return (
-        <Modal
-            title={t('builder.modals.generator.title')}
+        <BuilderModalWrapper
             subtitle={
                 <GeneratorActions
                     options={generatorOptions}
@@ -103,9 +102,10 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
             disabled={!selectedMap.id || selectedPreview}
             onSave={handleApply}
             onClose={onClose}
+            type={type}
             ctaLabel={t('common.actions.apply')}
             customFooter={[
-                { id: 'manage', label: t('builder.collections'), onClick: () => setFormObject({ ...form, modalCollection: true, modalGenerator: false }) },
+                { id: 'manage', label: t('builder.collections'), onClick: () => setForm('modal', { type: 'collections', open: true, value: null }) },
                 { id: 'save', label: t('common.actions.save'), disabled: !selectedMap.map, onClick: handleSave }
             ]}
             canBeClosed
@@ -121,7 +121,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                 ))}
                 {loading && <EmptyBlock index={progress} />}
             </div>
-        </Modal>
+        </BuilderModalWrapper>
     );
 };
 
@@ -158,3 +158,5 @@ const GeneratorActions = ({
         </>
     );
 };
+
+export default Generator;

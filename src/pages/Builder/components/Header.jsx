@@ -77,20 +77,8 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
             <Navbar dataTheme="dark">
                 <div className={css['builder-navbar-top']}>
                     <div className={css['builder-navbar-left']}>
-                        <ButtonLabel
-                            color="primary"
-                            label={t('builder.manager')}
-                            onClick={() =>
-                                setObject({ ...form, modalManager: !form.modalManager, modalCollection: false, modalSelect: false, modalEditor: false, modalGenerator: false })
-                            }
-                        />
-                        <ButtonLabel
-                            color="primary"
-                            label={t('builder.collections')}
-                            onClick={() =>
-                                setObject({ ...form, modalCollection: !form.modalCollection, modalManager: false, modalSelect: false, modalEditor: false, modalGenerator: false })
-                            }
-                        />
+                        <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modal', { type: 'manager', open: true, value: null })} />
+                        <ButtonLabel color="primary" label={t('builder.collections')} onClick={() => setForm('modal', { type: 'collections', open: true, value: null })} />
                         <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
                     </div>
 
@@ -110,7 +98,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                             <HistoryIcons index={index} history={history} onChange={handleHistory} disabled={disabled} />
 
                             <div className={css['builder-navbar-flatDisplay-toggles']}>
-                                <MultiButton label={t('builder.toggles.display')} open={form.modalDisplay} name={'modalDisplay'} setOpen={setForm}>
+                                <MultiButton label={t('builder.toggles.display')} open={form.displayOptions} name={'displayOptions'} setOpen={setForm}>
                                     <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={() => handleCheck('showIds', !form.showIds)} disabled={disabled} />
                                     <Toggle
                                         title={t('builder.toggles.values')}

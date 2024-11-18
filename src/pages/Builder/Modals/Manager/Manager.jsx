@@ -1,12 +1,14 @@
 import React, { useCallback } from 'react';
-import { cloneDeep } from 'lodash';
-import { Stepper } from './Stepper/Stepper';
+import { Storyline } from '../../../../models';
 import { useDynamicForm, useTranslation } from '../../../../hooks';
-import { ActStep, StoryStep, SummaryStep } from './Steps';
-import { Modal } from '..';
-import Storyline from '../../../../models/storyline';
 
-export const Manager = ({ open, storyline = {}, onClose = () => {}, sync = () => {} }) => {
+import { cloneDeep } from 'lodash';
+
+import { Stepper } from './Stepper/Stepper';
+import { ActStep, StoryStep, SummaryStep } from './Steps';
+import { BuilderModalWrapper } from '../Wrapper';
+
+const Manager = ({ open, type, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useDynamicForm({
@@ -31,7 +33,7 @@ export const Manager = ({ open, storyline = {}, onClose = () => {}, sync = () =>
     }
 
     return (
-        <Modal title={t('builder.modals.manager.title')} onClose={onClose} steps>
+        <BuilderModalWrapper title={t('builder.modals.manager.title')} onClose={onClose} steps type={type}>
             <Stepper handleSave={handleSave}>
                 <StoryStep
                     title={t(`builder.modals.steps.acts.title`)}
@@ -57,6 +59,8 @@ export const Manager = ({ open, storyline = {}, onClose = () => {}, sync = () =>
                     errors={form.errors}
                 />
             </Stepper>
-        </Modal>
+        </BuilderModalWrapper>
     );
 };
+
+export default Manager;
