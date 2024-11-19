@@ -1,24 +1,67 @@
-import PropTypes, { object } from 'prop-types';
+import PropTypes, { object, string } from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Modal } from '../components';
+
+import { Button } from 'react-daisyui';
+
+import css from './modal.module.css';
 
 export const BuilderModalWrapper = ({ title, subtitle, type, onSave, onReset, disabled, onClose, ctaLabel, customFooter, children, steps, canBeClosed }) => {
     const { t } = useTranslation();
+    const _title = title ?? t(`builder.modals.${type}.title`);
+    const _subtitle = subtitle ?? t(`builder.modals.${type}.subtitle`);
+    const _ctaLabel = ctaLabel ?? t('common.actions.save');
+
     return (
-        <Modal
-            title={title ?? t(`builder.modals.${type}.title`)}
-            subtitle={subtitle ?? t(`builder.modals.${type}.subtitle`)}
-            onSave={onSave}
-            onReset={onReset}
-            onClose={onClose}
-            canBeClosed={canBeClosed}
-            disabled={disabled}
-            ctaLabel={ctaLabel}
-            customFooter={customFooter}
-            steps={steps}
-        >
-            {children}
-        </Modal>
+        <div className={css['modal-container']}>
+            <div className={css['modal-body']}>
+                <div className={css['modal-body-header']}>
+                    {_title}
+                    {canBeClosed && (
+                        <Button dataTheme="business" className={css['modal-body-header-exit']} size="xs" color="secondary" shape="square" onClick={onClose}>
+                            x
+                        </Button>
+                    )}
+                </div>
+                {steps ? (
+                    children
+                ) : (
+                    <div className={css['modal-card-block']}>
+                        <div className={css['modal-card-body']}>
+                            <div className={css['modal-card-header']}>
+                                <div>{_subtitle}</div>
+                            </div>
+
+                            <div className={css['modal-card-content']}>{children}</div>
+
+                            <div className={css['modal-footer']}>
+                                {onReset && (
+                                    <Button className={css['modal-btns']} dataTheme="dark" size="sm" color="default" variant="outline" disabled={disabled} onClick={onReset}>
+                                        {t('common.actions.reset')}
+                                    </Button>
+                                )}
+                                {customFooter?.map((it) => (
+                                    <Button
+                                        key={it.id}
+                                        className={css['modal-btns']}
+                                        dataTheme="dark"
+                                        size="sm"
+                                        color="default"
+                                        variant="outline"
+                                        disabled={it.disabled}
+                                        onClick={it.onClick}
+                                    >
+                                        {it.label}
+                                    </Button>
+                                ))}
+                                <Button className={css['modal-btns']} dataTheme="business" size="sm" color="primary" disabled={disabled} onClick={onSave}>
+                                    {_ctaLabel}
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
     );
 };
 
@@ -32,7 +75,7 @@ BuilderModalWrapper.defaultProps = {
 
 BuilderModalWrapper.propTypes = {
     title: PropTypes.string,
-    subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    subtitle: PropTypes.oneOfType([string, object]),
     type: PropTypes.string.isRequired,
     onSave: PropTypes.func,
     onReset: PropTypes.func,

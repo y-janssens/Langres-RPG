@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
 
 const MODALS = [
-    { name: 'manager', component: React.lazy(() => import('./Manager/Manager')) },
-    { name: 'gateway', component: React.lazy(() => import('./Gateway/Gateway')) },
-    { name: 'generator', component: React.lazy(() => import('./Generator/Generator')) },
-    { name: 'collections', component: React.lazy(() => import('./Collections/Collections')) },
-    { name: 'onboarding', component: React.lazy(() => import('./Onboarding/Onboarding')) }
+    { name: 'manager', component: React.lazy(() => import('./Manager')) },
+    { name: 'gateway', component: React.lazy(() => import('./Gateway')) },
+    { name: 'generator', component: React.lazy(() => import('./Generator')) },
+    { name: 'collections', component: React.lazy(() => import('./Collections')) },
+    { name: 'onboarding', component: React.lazy(() => import('./Onboarding')) }
 ];
 
 class ModalGenerator {

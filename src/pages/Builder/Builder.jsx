@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Header, SideBar, Theme } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction } from '../../models';
@@ -29,30 +29,33 @@ export const Builder = () => {
         interactiveMode: { toggle: false, object: null, neighours: [] }
     });
 
-    const [, loadingStoryline, syncStory] = Storyline.useCommand({
-        useLoader: true,
-        onSuccess: (response) => {
-            setForm('storyLine', response);
-            switch (true) {
-                case !response.story.acts.length:
-                    setForm('modal', { type: 'onboarding', open: true, value: 'acts' });
-                    break;
-                case response.story.acts.length && response.story.acts.every((act) => !act.content.maps.length):
-                    setForm('modal', { type: 'onboarding', open: true, value: 'maps' });
-                    break;
-                default:
-                    // Select default values to avoid empty builder
-                    if (!form.selectedAct && !form.selectedMap) {
-                        setFormObject({ ...form, storyLine: response, selectedAct: response.story.acts[0], selectedMap: response.story.acts[0].content.maps[0] });
-                    } else {
-                        const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
-                        const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
-                        setFormObject({ ...form, storyLine: response, selectedAct: act, selectedMap: map });
-                    }
-                    break;
+    const [, loadingStoryline, syncStory] = Storyline.useCommand(
+        {
+            useLoader: true,
+            onSuccess: (response) => {
+                setForm('storyLine', response);
+                switch (true) {
+                    case !response.story.acts.length:
+                        setForm('modal', { type: 'onboarding', open: true, value: 'acts' });
+                        break;
+                    case response.story.acts.length && response.story.acts.every((act) => !act.content.maps.length):
+                        setForm('modal', { type: 'onboarding', open: true, value: 'maps' });
+                        break;
+                    default:
+                        // Select default values to avoid empty builder
+                        if (!form.selectedAct && !form.selectedMap) {
+                            setFormObject({ ...form, storyLine: response, selectedAct: response.story.acts[0], selectedMap: response.story.acts[0].content.maps[0] });
+                        } else {
+                            const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
+                            const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+                            setFormObject({ ...form, storyLine: response, selectedAct: act, selectedMap: map });
+                        }
+                        break;
+                }
             }
-        }
-    });
+        },
+        []
+    );
 
     const [, , syncObjects] = MapObject.useCommand({
         onSuccess: (response) => {
@@ -78,13 +81,6 @@ export const Builder = () => {
         listener: currentMap
     });
 
-    const display = useMemo(() => {
-        if (!form.storyLine) {
-            return false;
-        }
-        return !form.modal.type && !form.modal.open;
-    }, [form]);
-
     const handleReset = useCallback(() => {
         resetForm();
         clearHistory();
@@ -95,6 +91,13 @@ export const Builder = () => {
         syncObjects();
         syncFunctions();
     }, [syncStory, syncObjects, syncFunctions]);
+
+    const display = useMemo(() => {
+        if (!form.storyLine) {
+            return false;
+        }
+        return !form.modal.type && !form.modal.open;
+    }, [form]);
 
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>
@@ -113,26 +116,18 @@ export const Builder = () => {
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
-                {form.storyLine && !loadingStoryline && display && (
-                    <Map
-                        type={form.flatDisplay}
-                        history={history}
-                        index={index}
-                        display={Boolean(form.selectedMap)}
-                        loading={loadingStoryline}
+                {display ? (
+                    <Map flatDisplay={form.flatDisplay} history={history} index={index} loading={loadingStoryline} form={form} setForm={setForm} sync={handleSync} />
+                ) : (
+                    <BuilderModal
                         form={form}
                         setForm={setForm}
                         sync={handleSync}
+                        datas={form.modal}
+                        setFormObject={setFormObject}
+                        onClose={() => setForm('modal', { type: null, open: false, value: null })}
                     />
                 )}
-                <BuilderModal
-                    form={form}
-                    setForm={setForm}
-                    sync={handleSync}
-                    datas={form.modal}
-                    setFormObject={setFormObject}
-                    onClose={() => setForm('modal', { type: null, open: false, value: null })}
-                />
             </div>
         </Theme>
     );
