@@ -1,7 +1,15 @@
 #[cfg(test)]
 mod tests {
-    use crate::application::models::ApplicationSettings;
+    use chrono::Local;
+    use dotenv::dotenv;
+    use std::env;
+
+    use crate::application::models::{ApplicationMenu, ApplicationSettings};
+    use crate::backend::conf::factories::factories_definitions::GameFactory;
+    use crate::backend::conf::factory::factory_models::ApiFactory;
+    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY};
     use crate::backend::tests::database::allow_db_access;
+    use crate::game::models::Game;
 
     #[test]
     fn test_load_application_datas() {
@@ -35,6 +43,66 @@ mod tests {
             assert!(patch_response.sound);
             assert_eq!(patch_response.volume, 100);
             assert_eq!(patch_response.music, 100);
+        });
+    }
+
+    #[test]
+    fn test_load_ingame_menu() {
+        let response = ApplicationMenu::load_ingame_menu();
+        assert_eq!(response.len(), 4);
+        for i in 0..response.len() {
+            assert_eq!(response[i].order, i as u8)
+        }
+    }
+
+    #[test]
+    fn test_load_main_menu_admin() {
+        allow_db_access(|connection| {
+            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+            env::set_var("USER_KEY", TEST_ADMIN_KEY);
+            dotenv().ok();
+
+            let response = ApplicationMenu::load_main_menu(connection);
+            assert_eq!(response.len(), 6);
+            for i in 0..response.len() {
+                assert_eq!(response[i].order, i as u8)
+            }
+        });
+    }
+
+    #[test]
+    fn test_load_main_menu_user() {
+        allow_db_access(|connection| {
+            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+            env::set_var("USER_KEY", TEST_USER_KEY);
+            dotenv().ok();
+
+            let response = ApplicationMenu::load_main_menu(connection);
+            assert_eq!(response.len(), 3);
+            for i in 0..response.len() {
+                assert_eq!(response[i].order, i as u8)
+            }
+        });
+    }
+
+    #[test]
+    fn test_load_main_menu_saved_games() {
+        allow_db_access(|connection| {
+            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+            env::set_var("USER_KEY", TEST_USER_KEY);
+            dotenv().ok();
+
+            let mut g1 = GameFactory.generate(connection);
+            g1.last_save_date = Local::now().to_string();
+            let mut g2 = GameFactory.generate(connection);
+            let _ = Game::save(&mut g1, connection);
+            let _ = Game::save(&mut g2, connection);
+
+            let response = ApplicationMenu::load_main_menu(connection);
+            assert_eq!(response.len(), 5);
+            for i in 0..response.len() {
+                assert_eq!(response[i].order, i as u8)
+            }
         });
     }
 }

@@ -43,6 +43,8 @@ fn main() {
             time::commands::load_env,
             application::commands::load_app_datas,
             application::commands::save_app_datas,
+            application::commands::load_main_menu,
+            application::commands::load_ingame_menu,
             admin::devtools::commands::load_dev_settings,
             // Permissions
             backend::permissions::commands::load_permissions,
