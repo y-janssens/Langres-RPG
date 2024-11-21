@@ -15,7 +15,7 @@ import css from './menu.module.css';
 export const MainMenu = () => {
     const { t } = useTranslation();
     const { is_admin, dashboard_enabled, editor_enabled, dev_tools_enabled } = useAdminContext();
-    
+
     const navigate = useNavigate();
     const [engine, setEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
@@ -59,18 +59,21 @@ export const MainMenu = () => {
                     setOpenModal('settings');
                 }
             },
-            is_admin && editor_enabled && {
-                name: t('menu.items.builder'),
-                onClick: () => navigate('admin/editor')
-            },
-            is_admin && dashboard_enabled && {
-                name: t('menu.items.dashboard'),
-                onClick: () => navigate('admin/dashboard')
-            },
-            is_admin && dev_tools_enabled && {
-                name: t('menu.items.pathfinder'),
-                onClick: () => navigate('admin/pathfinder')
-            },
+            is_admin &&
+                editor_enabled && {
+                    name: t('menu.items.builder'),
+                    onClick: () => navigate('admin/editor')
+                },
+            is_admin &&
+                dashboard_enabled && {
+                    name: t('menu.items.dashboard'),
+                    onClick: () => navigate('admin/dashboard')
+                },
+            is_admin &&
+                dev_tools_enabled && {
+                    name: t('menu.items.pathfinder'),
+                    onClick: () => navigate('admin/pathfinder')
+                },
             {
                 name: t('menu.items.exit'),
                 onClick: async () => await exit(1)
@@ -110,7 +113,7 @@ export const MainMenu = () => {
             activeRef.current.focus();
         }
         // setEngine({ gameId: 'a9f3e7de-ffa0-4a2b-bf29-c0e8db7351be' });
-        // navigate('admin/pathfinder');
+        // navigate('admin/editor');
     }, []);
 
     if (engine.gameId) {

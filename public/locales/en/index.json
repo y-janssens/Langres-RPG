@@ -1,7 +1,8 @@
 {
   "builder": {
+    "collections": "Manage collections",
     "json": "Json editor",
-    "manager": "Manage your storylines",
+    "manager": "Manage storylines",
     "menu": {
       "functions": {
         "clear-map": "Clear map",
@@ -39,6 +40,10 @@
       }
     },
     "modals": {
+      "collections": {
+        "title": "Visualize and edit your collection of maps",
+        "subtitle": "Existing maps"
+      },
       "editor": {
         "title": "Edit your map's content"
       },
@@ -51,6 +56,7 @@
         "action": "Action type",
         "post_action": "Post action type",
         "amount": "Map batch's size",
+        "save": "Save in collections",
         "subtitle": "Generate a batch of maps",
         "title": "Generate and select random maps",
         "reset": "Reset",
@@ -102,6 +108,7 @@
     "actions": {
       "actions": "Actions",
       "add": "Add",
+      "apply": "Apply",
       "cancel": "Cancel",
       "confirm": "Confirm",
       "continue": "Continue",

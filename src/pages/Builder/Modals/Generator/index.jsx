@@ -1,16 +1,16 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { useMapBatch, useTranslation } from '../../../../hooks';
-import { GeneratorOptions } from '../../../../models';
+import { Collection, GeneratorOptions } from '../../../../models';
 
-import { Modal } from '../Modal/Modal';
 import Icon from '../../../../components/ui/Icon';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
-import { ButtonIcon, ButtonLabel } from '../ButtonLabel';
+import { ButtonIcon, ButtonLabel } from '../../components';
 import { GeneratorSettings } from './Settings';
+import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './generator.module.css';
 
-export const Generator = ({ open, form, setFormObject, onClose }) => {
+const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
     const [batchSettings, setBatchSettings] = useState({});
@@ -43,7 +43,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         [batchSettings, generatorOptions]
     );
 
-    const handleSave = useCallback(() => {
+    const handleApply = useCallback(() => {
         let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
         let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
         let newMap = { ...act.content.maps[mapIndex] };
@@ -67,6 +67,14 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
         setBatchSettings({ ...generatorOptions.defaultOptions });
     }, [generatorOptions, clear]);
 
+    const handleSave = useCallback(async () => {
+        let collection = await Collection.new();
+        collection.map = selectedMap.map;
+        collection.save().then(() => {
+            onClose();
+        });
+    }, [selectedMap, onClose]);
+
     const loading = useMemo(() => {
         return loadingMaps && progress < batchSettings.options?.amount;
     }, [loadingMaps, progress, batchSettings]);
@@ -76,8 +84,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
     }
 
     return (
-        <Modal
-            title={t('builder.modals.generator.title')}
+        <BuilderModalWrapper
             subtitle={
                 <GeneratorActions
                     options={generatorOptions}
@@ -93,13 +100,19 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                 />
             }
             disabled={!selectedMap.id || selectedPreview}
-            onSave={handleSave}
+            onSave={handleApply}
             onClose={onClose}
+            type={type}
+            ctaLabel={t('common.actions.apply')}
+            customFooter={[
+                { id: 'manage', label: t('builder.collections'), onClick: () => setForm('modal', { type: 'collections', open: true, value: null }) },
+                { id: 'save', label: t('common.actions.save'), disabled: !selectedMap.map, onClick: handleSave }
+            ]}
             canBeClosed
         >
             {maps.length > 0 && selectedPreview && !loadingMaps && (
                 <div className={css['map-selected-preview']} onClick={() => setSelectedPreview(null)}>
-                    <MapThumbnail map={maps[selectedPreview - 1].content} size={3} />
+                    <MapThumbnail map={maps[selectedPreview - 1]} size={3} />
                 </div>
             )}
             <div className={css[selectedPreview ? 'map-preview-block-inactive' : 'map-preview-block']}>
@@ -108,7 +121,7 @@ export const Generator = ({ open, form, setFormObject, onClose }) => {
                 ))}
                 {loading && <EmptyBlock index={progress} />}
             </div>
-        </Modal>
+        </BuilderModalWrapper>
     );
 };
 
@@ -145,3 +158,5 @@ const GeneratorActions = ({
         </>
     );
 };
+
+export default Generator;

@@ -1,0 +1,31 @@
+.gateway-selector-block {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.gateway-selector-content {
+    position: relative;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    top: -12px;
+    background-color: rgb(166, 173, 186);
+    z-index: 10;
+}
+
+.gateway-selector-content ul {
+    margin-top: 6px;
+    padding: 3px;
+}
+
+.gateway-selector-content li {
+    padding: 3px;
+}
+
+.gateway-selector-content li :global(.btn) {
+    color: black !important;
+    font-size: 9px !important;
+    text-align: left !important;
+    display: flex;
+    justify-content: flex-start;
+}

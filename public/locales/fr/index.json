@@ -1,5 +1,6 @@
 {
   "builder": {
+    "collections": "Gérez vos collections",
     "json": "Éditeur Json",
     "manager": "Gérez vos scénarios",
     "menu": {
@@ -39,6 +40,10 @@
       }
     },
     "modals": {
+      "collections": {
+        "title": "Visualisez et éditez votre collection de cartes",
+        "subtitle": "Cartes existantes"
+      },
       "editor": {
         "title": "Éditez le contenu de vos cartes"
       },
@@ -54,6 +59,7 @@
         "subtitle": "Générez un lot de cartes",
         "title": "Générez et sélectionnez des cartes aléatoires",
         "reset": "Réinitialiser",
+        "save": "Enregistrer dans les collections",
         "settings": "Paramètres de la carte",
         "types": {
           "forest": "Forêt",
@@ -102,6 +108,7 @@
     "actions": {
       "actions": "Actions",
       "add": "Ajouter",
+      "apply": "Appliquer",
       "cancel": "Annuler",
       "confirm": "Confirmer",
       "continue": "Continuer",

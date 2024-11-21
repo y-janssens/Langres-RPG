@@ -18,8 +18,9 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
 
     const handleChange = useCallback(
         (item, primary = false) => {
+            const gateWayOpened = form.modal.type === 'gateway';
             if (item.name === 'gate') {
-                return setForm('modalGateway', !form.modalGateway);
+                return setForm('modal', { type: gateWayOpened ? null : 'gateway', open: !gateWayOpened, value: null });
             }
 
             let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
@@ -158,7 +159,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     icon={'map'}
                     disabled={!form.selectedMap || form.interactiveMode.toggle}
                     label={t('builder.menu.functions.generate-maps')}
-                    onClick={() => setForm('modalGenerator', true)}
+                    onClick={() => setForm('modal', { type: 'generator', open: true })}
                 />
                 {form.functions.map((it) => {
                     const label = it.label.toLowerCase().replaceAll(' ', '-');

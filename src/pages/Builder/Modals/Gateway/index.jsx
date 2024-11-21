@@ -1,12 +1,14 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { invoke } from '@tauri-apps/api';
 import { useTranslation } from 'react-i18next';
-import { Modal } from './Modal/Modal';
-import { SelectButton } from './selector/Selector';
-import { Button } from 'react-daisyui';
-import css from './Manager/manager.module.css';
 
-export const Gateway = ({ form, open = false, onClose = () => {}, sync = () => {} }) => {
+import { Button } from 'react-daisyui';
+import { SelectButton } from '../../components/selector/Selector';
+import { BuilderModalWrapper } from '../Wrapper';
+
+import css from './gateway.module.css';
+
+const Gateway = ({ form, type, open, onClose, sync }) => {
     const { t } = useTranslation();
     const [toggle, setToggle] = useState(false);
     const [selectedMap, setSelectedMap] = useState(null);
@@ -52,19 +54,11 @@ export const Gateway = ({ form, open = false, onClose = () => {}, sync = () => {
         return null;
     }
     return (
-        <Modal
-            title={t('builder.modals.gateway.title')}
-            subtitle={t('builder.modals.gateway.subtitle')}
-            onReset={sync}
-            onSave={handleSave}
-            disabled={false}
-            canBeClosed
-            onClose={onClose}
-        >
-            <div className={css['manager-selector-block']}>
+        <BuilderModalWrapper type={type} onReset={sync} onSave={handleSave} disabled={!selectedMap} canBeClosed onClose={onClose}>
+            <div className={css['gateway-selector-block']}>
                 <SelectButton label={selectedMap?.name || t('builder.modals.gateway.subtitle')} open={toggle} onClick={() => setToggle(!toggle)} size="sm" />
                 {toggle && (
-                    <div className={css['manager-selector-content']}>
+                    <div className={css['gateway-selector-content']}>
                         <ul>
                             {mapList.map((map, index) => {
                                 return (
@@ -75,7 +69,6 @@ export const Gateway = ({ form, open = false, onClose = () => {}, sync = () => {
                                             size="xs"
                                             fullWidth
                                             onClick={() => {
-                                                // handleGateWay(map);
                                                 setSelectedMap(map);
                                                 setToggle(false);
                                             }}
@@ -89,6 +82,8 @@ export const Gateway = ({ form, open = false, onClose = () => {}, sync = () => {
                     </div>
                 )}
             </div>
-        </Modal>
+        </BuilderModalWrapper>
     );
 };
+
+export default Gateway;

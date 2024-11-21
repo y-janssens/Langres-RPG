@@ -9,7 +9,7 @@ function DragSelectProvider({ children, settings = {} }) {
     useEffect(() => {
         setDS((prevState) => {
             if (prevState) return prevState;
-            return new DragSelect({});
+            return new DragSelect(settings);
         });
         return () => {
             if (ds) {
@@ -18,10 +18,6 @@ function DragSelectProvider({ children, settings = {} }) {
             }
         };
     }, [ds]);
-
-    useEffect(() => {
-        ds?.setSettings(settings);
-    }, [ds, settings]);
 
     return <Context.Provider value={ds}>{children}</Context.Provider>;
 }

@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { invoke } from '@tauri-apps/api';
 import { Button, InputGroup, Input } from 'react-daisyui';
-import { SelectButton } from '../../selector/Selector';
+import { SelectButton } from '../../../components/selector/Selector';
 import { useTranslation } from 'react-i18next';
 import css from '../manager.module.css';
 
