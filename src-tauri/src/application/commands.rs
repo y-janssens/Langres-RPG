@@ -1,4 +1,4 @@
-use super::models::ApplicationSettings;
+use super::models::{ApplicationMenu, ApplicationSettings};
 use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
@@ -14,6 +14,23 @@ pub fn load_app_datas(
     let mut connection = get_connection(connection);
     authenticated_command(Permission::RegularUser, || {
         ApplicationSettings::load(&mut connection).expect("Failed to load app datas")
+    })
+}
+
+#[tauri::command]
+pub fn load_main_menu(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::RegularUser, || {
+        ApplicationMenu::load_main_menu(&mut connection)
+    })
+}
+
+#[tauri::command]
+pub fn load_ingame_menu() -> Result<Response, ValidationError> {
+    authenticated_command(Permission::RegularUser, || {
+        ApplicationMenu::load_ingame_menu()
     })
 }
 

@@ -1,4 +1,10 @@
-use crate::schema::settings::dsl::*;
+use std::ops::{Deref, DerefMut};
+
+use crate::{
+    backend::permissions::models::{Config, Credentials},
+    game::models::Game,
+    schema::settings::dsl::*,
+};
 use diesel::{
     deserialize::{self, FromSql},
     prelude::*,
@@ -81,5 +87,163 @@ impl ApplicationSettings {
                 music.eq(data.music),
             ))
             .execute(connection)
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Func {
+    r#type: Option<String>,
+    value: String,
+}
+
+impl Func {
+    fn new(r#type: Option<&str>, value: &str) -> Self {
+        Self {
+            r#type: r#type.map(|s| s.to_string()),
+            value: value.to_string(),
+        }
+    }
+}
+
+pub struct MenuOrdering {
+    current: u8,
+}
+
+impl MenuOrdering {
+    pub fn new() -> Self {
+        Self { current: 0 }
+    }
+
+    pub fn next(&mut self) -> u8 {
+        let current_order = self.current;
+        self.current += 1;
+        current_order
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Menu {
+    pub order: u8,
+    name: String,
+    func: Option<Func>,
+}
+
+impl Menu {
+    fn new(order: u8, name: &str, func: Option<Func>) -> Self {
+        Self {
+            order,
+            name: name.to_string(),
+            func,
+        }
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ApplicationMenu(Vec<Menu>);
+
+impl Deref for ApplicationMenu {
+    type Target = Vec<Menu>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for ApplicationMenu {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+
+impl ApplicationMenu {
+    fn new() -> Self {
+        Self(vec![])
+    }
+    pub fn load_main_menu(connection: &mut SqliteConnection) -> Self {
+        let mut menu = Self::new();
+        let mut order = MenuOrdering::new();
+        let credentials = Credentials::initialize().config;
+        let games = Game::fetch(connection).expect("Failed to load games");
+
+        menu.add_main_menu_items(&mut order, games);
+        menu.add_common_items(&mut order);
+        menu.add_admin_menu_items(&credentials, &mut order);
+        menu.add_item(&mut order, "exit", Some(Func::new(Some("exit"), "/")));
+
+        menu
+    }
+
+    pub fn load_ingame_menu() -> Self {
+        let mut menu = Self::new();
+        let mut order = MenuOrdering::new();
+
+        menu.add_ingame_items(&mut order);
+        menu.add_common_items(&mut order);
+        menu.add_item(&mut order, "exit-game", Some(Func::new(Some("exit"), "/")));
+
+        menu
+    }
+
+    fn add_item(&mut self, order: &mut MenuOrdering, name: &str, func: Option<Func>) {
+        self.push(Menu::new(order.next(), name, func))
+    }
+
+    fn add_common_items(&mut self, order: &mut MenuOrdering) {
+        self.add_item(
+            order,
+            "settings",
+            Some(Func::new(Some("popup"), "settings")),
+        )
+    }
+
+    fn add_ingame_items(&mut self, order: &mut MenuOrdering) {
+        self.add_item(order, "continue", Some(Func::new(None, "continue")));
+        self.add_item(order, "save", Some(Func::new(None, "save")));
+    }
+
+    fn add_main_menu_items(&mut self, order: &mut MenuOrdering, games: Vec<Game>) {
+        let last_played_game = games
+            .iter()
+            .find(|g| g.visible && !g.last_save_date.is_empty());
+
+        if let Some(game) = last_played_game {
+            self.add_item(order, "continue", Some(Func::new(None, &game.id)));
+        }
+
+        if !games.is_empty() {
+            self.add_item(order, "load", Some(Func::new(Some("popup"), "saved_games")));
+        }
+
+        if games.len() < 3 {
+            self.add_item(order, "new", Some(Func::new(Some("popup"), "new_game")));
+        }
+    }
+
+    fn add_admin_menu_items(&mut self, credentials: &Config, order: &mut MenuOrdering) {
+        if !credentials.is_admin {
+            return;
+        }
+
+        if credentials.editor_enabled {
+            self.add_item(
+                order,
+                "builder",
+                Some(Func::new(Some("link"), "admin/editor")),
+            );
+        }
+        if credentials.dashboard_enabled {
+            self.add_item(
+                order,
+                "dashboard",
+                Some(Func::new(Some("link"), "admin/dashboard")),
+            );
+        }
+        if credentials.dev_tools_enabled {
+            self.add_item(
+                order,
+                "pathfinder",
+                Some(Func::new(Some("link"), "admin/pathfinder")),
+            );
+        }
     }
 }

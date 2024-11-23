@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './Button';
 import css from './ui.module.css';
 
-function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose, onClear, disabled = false }) {
+function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose, onClear, syncSettings = () => {}, disabled = false }) {
     const { t } = useTranslation();
 
     const handleDelete = useCallback(() => {
@@ -19,7 +19,7 @@ function DeletionModal({ games, gameToDelete, height = '200px', onLoad, onClose,
                     onClear();
                 }
             });
-    }, [games, gameToDelete, onLoad, onClose, onClear]);
+    }, [games, gameToDelete, onLoad, onClose, onClear, syncSettings]);
 
     if (!gameToDelete) {
         return null;

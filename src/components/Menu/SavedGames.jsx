@@ -1,15 +1,28 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { useGameContext, useTranslation } from '../../hooks';
+
+import { GameModel } from '../../models';
+
 import Modal from '../ui/Modal';
 import Icon from '../ui/Icon';
-import css from './menu.module.css';
 import DeletionModal from '../ui/DeletionModal';
 
-export default function SavedGames({ loading = false, items = [], state = null, onClose = () => {}, sync = () => {} }) {
+import css from './menu.module.css';
+
+export default function SavedGames({ onClose = () => {} }) {
     const { t } = useTranslation();
-    const [, setEngine] = useGameContext();
+    const [engine, setEngine] = useGameContext();
     const [selectedItem, setSelectedItem] = useState(null);
     const [gameToDelete, setGameToDelete] = useState(null);
+
+    const [savedGames, loadingSavedGames, sync] = GameModel.useCommand();
+
+    const items = useMemo(() => {
+        if (!savedGames || loadingSavedGames) {
+            return [];
+        }
+        return savedGames.filter((gm) => gm.visible);
+    }, [savedGames, loadingSavedGames]);
 
     const handleLoad = useCallback(() => {
         if (selectedItem) {
@@ -18,13 +31,9 @@ export default function SavedGames({ loading = false, items = [], state = null, 
         }
     }, [selectedItem, onclose]);
 
-    if (!state || state !== 'saved_games') {
-        return null;
-    }
-
     return (
-        <Modal name={t('common.actions.start')} loading={loading} disabled={!selectedItem} onClick={handleLoad}>
-            <DeletionModal games={items} gameToDelete={gameToDelete} onLoad={sync} onClose={() => setGameToDelete(null)} onClear={onClose} />
+        <Modal name={t('common.actions.start')} disabled={!selectedItem} onClick={handleLoad}>
+            <DeletionModal games={items} gameToDelete={gameToDelete} syncSettings={engine.settings.init()} onLoad={sync} onClose={() => setGameToDelete(null)} onClear={onClose} />
             {items?.map((save) => {
                 return <SavedGame selected={selectedItem} setSelected={setSelectedItem} key={save.id} item={save} setGameToDelete={setGameToDelete} />;
             })}
