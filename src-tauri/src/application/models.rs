@@ -168,7 +168,7 @@ impl ApplicationMenu {
         menu.add_main_menu_items(&mut order, games);
         menu.add_common_items(&mut order);
         menu.add_admin_menu_items(&credentials, &mut order);
-        menu.finalize(&mut order);
+        menu.add_item(&mut order, "exit", Some(Func::new(Some("exit"), "/")));
 
         menu
     }
@@ -179,7 +179,7 @@ impl ApplicationMenu {
 
         menu.add_ingame_items(&mut order);
         menu.add_common_items(&mut order);
-        menu.finalize(&mut order);
+        menu.add_item(&mut order, "exit-game", Some(Func::new(Some("exit"), "/")));
 
         menu
     }
@@ -245,9 +245,5 @@ impl ApplicationMenu {
                 Some(Func::new(Some("link"), "admin/pathfinder")),
             );
         }
-    }
-
-    fn finalize(&mut self, order: &mut MenuOrdering) {
-        self.add_item(order, "exit", Some(Func::new(Some("exit"), "/")));
     }
 }

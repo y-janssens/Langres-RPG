@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useDynamicForm, useTranslation } from '../../hooks';
+import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
 
 import Modal from '../ui/Modal';
 import { VolumeBar } from '../ui/Gauge';
@@ -7,8 +7,9 @@ import Icon from '../ui/Icon';
 
 import css from './menu.module.css';
 
-export default function Settings({ state, onClose = () => {}, engine }) {
+export default function Settings({ onClose = () => {} }) {
     const { t } = useTranslation();
+    const [engine] = useGameContext();
     const { languages, language, sound, volume, music } = engine.applicationData;
 
     const [settings, setSettings] = useDynamicForm({
@@ -24,9 +25,6 @@ export default function Settings({ state, onClose = () => {}, engine }) {
         onClose();
     }, [settings, engine, onClose]);
 
-    if (state !== 'settings') {
-        return null;
-    }
     return (
         <Modal height="500px" name={t('common.actions.save')} onClick={handleSave}>
             <div className={css['settings-block']}>

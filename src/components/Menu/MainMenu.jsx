@@ -1,14 +1,11 @@
-import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GameModel } from '../../models';
 import { useGameContext, useTranslation } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
-import { MenuItem } from './MenuItem';
 import { Title, MainTitle } from '../ui/Title';
-import SavedGames from './SavedGames';
-import NewGame from './NewGame';
-import Settings from './Settings';
+import { MenuItems } from './MenuItems';
+import MenuModals from './MenuModals';
 
 import css from './menu.module.css';
 
@@ -18,20 +15,23 @@ export const MainMenu = () => {
     const navigate = useNavigate();
     const [engine, setEngine] = useGameContext();
     const [selected, setSelected] = useState(0);
-    const [openModal, setOpenModal] = useState(null);
+    const [openModal, setOpenModal] = useState({ type: null, open: false });
     const [displayTitle, setDisplayTitle] = useState(!engine.settings.devMode);
+    const [menuItems, setMenuItems] = useState([]);
+
     const activeRef = useRef();
 
-    const [savedGames, , sync] = GameModel.useCommand();
-
-    const items = useMemo(() => {
+    const getOrUpdateMenuItems = useCallback(async () => {
+        await engine.applicationData.load().then((resp) => {
+            setEngine('applicationData', resp);
+        });
         const elements = engine.applicationData?.main_menu_items || [];
-        return elements?.map((it, index) => {
+        const items = elements.map((it, index) => {
             let func = () => {};
             if (it.func) {
                 switch (it.func?.type) {
                     case 'popup':
-                        func = () => setOpenModal(it.func.value);
+                        func = () => setOpenModal({ type: it.func.value, open: true });
                         break;
                     case 'link':
                         func = () => navigate(it.func.value);
@@ -50,40 +50,40 @@ export const MainMenu = () => {
                 onClick: () => func()
             };
         });
+        setMenuItems(items);
     }, [engine.applicationData]);
 
     const handleMenu = useCallback(
         (event) => {
-            if (openModal) {
+            if (openModal.type && openModal.open) {
                 if (event.key === 'Escape') {
-                    setOpenModal(null);
+                    setOpenModal({ type: null, open: false });
                     setDisplayTitle(false);
                 }
             } else {
                 switch (event.key) {
                     case 'ArrowDown':
                     case 's':
-                        setSelected((slt) => (slt + 1 <= items.length - 1 ? slt + 1 : 0));
+                        setSelected((slt) => (slt + 1 <= menuItems.length - 1 ? slt + 1 : 0));
                         break;
                     case 'ArrowUp':
                     case 'z':
-                        setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
+                        setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : menuItems.length - 1));
                         break;
                     case 'Enter':
-                        items.find((it) => it.key === selected).onClick();
+                        menuItems.find((it) => it.key === selected).onClick();
                 }
             }
         },
-        [openModal, items, selected]
+        [openModal, menuItems, selected]
     );
 
     useEffect(() => {
         if (!engine.gameId && (!engine.controls?.toggles?.pause || !engine.controls?.toggles?.menu)) {
             activeRef.current.focus();
         }
-        // setEngine({ gameId: 'a9f3e7de-ffa0-4a2b-bf29-c0e8db7351be' });
-        // navigate('admin/editor');
-    }, []);
+        getOrUpdateMenuItems();
+    }, [engine.applicationData, getOrUpdateMenuItems]);
 
     if (engine.gameId) {
         return null;
@@ -96,39 +96,15 @@ export const MainMenu = () => {
             ) : (
                 <>
                     <MainTitle />
-                    <div className={css['menu-items-container']}>
-                        <div className={css['menu-items-block']}>
-                            {items.map((it) => {
-                                return <MenuItem active={selected === it.key} key={it.key} name={it.name} onClick={it.onClick} />;
-                            })}
-                        </div>
-                    </div>
+                    <MenuItems items={menuItems} selected={selected} />
+                    <MenuModals
+                        item={openModal}
+                        onClose={() => {
+                            setOpenModal({ type: null, open: false });
+                            getOrUpdateMenuItems();
+                        }}
+                    />
                 </>
-            )}
-
-            {openModal === 'new_game' && <NewGame state={openModal} sync={sync} onClose={() => setOpenModal(null)} />}
-
-            {openModal === 'saved_games' && (
-                <SavedGames
-                    state={openModal}
-                    items={savedGames.filter((gm) => gm.visible)}
-                    loading={false}
-                    sync={sync}
-                    onClose={() => {
-                        setOpenModal(null);
-                    }}
-                />
-            )}
-
-            {openModal === 'settings' && (
-                <Settings
-                    state={openModal}
-                    onClose={() => {
-                        setOpenModal(null);
-                        sync();
-                    }}
-                    engine={engine}
-                />
             )}
         </div>
     );
