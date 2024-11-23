@@ -12,19 +12,19 @@ const NavBar = ({ form, setForm }) => {
     const { t } = useTranslation();
 
     return (
-        <div className={css['pathfinder-navbar-block']}>
-            <div className={css['pathfinder-navbar']}>
-                <span className={css['pathfinder-navbar-title']}>
+        <div className={css['tools-navbar-block']}>
+            <div className={css['tools-navbar']}>
+                <span className={css['tools-navbar-title']}>
                     <Icon name="menu" color="white" size="xl" cursor="initial" />
-                    <span>{t('menu.items.pathfinder')}</span>
+                    <span>{t('menu.items.tools')}</span>
                 </span>
-                <span className={css['pathfinder-navbar-actions']}>
-                    <Button dataTheme="emerald" className={css['pathfinder-navbar-exit']} size="md" color="primary" shape="square" onClick={() => navigate('/')}>
+                <span className={css['tools-navbar-actions']}>
+                    <Button dataTheme="emerald" className={css['tools-navbar-exit']} size="md" color="primary" shape="square" onClick={() => navigate('/')}>
                         <Icon name="home" color="white" size="medium" />
                     </Button>
                 </span>
             </div>
-            <div className={css['pathfinder-navtitle']}>
+            <div className={css['tools-navtitle']}>
                 <Toggle title={t('builder.toggles.ids')} active={form.displayIds} onChange={() => setForm('displayIds', !form.displayIds)} />
                 <Toggle title={t('builder.toggles.coordinates')} active={form.displayCoordinates} onChange={() => setForm('displayCoordinates', !form.displayCoordinates)} />
             </div>

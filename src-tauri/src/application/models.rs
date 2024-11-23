@@ -225,24 +225,16 @@ impl ApplicationMenu {
         }
 
         if credentials.editor_enabled {
-            self.add_item(
-                order,
-                "builder",
-                Some(Func::new(Some("link"), "admin/editor")),
-            );
+            self.add_item(order, "builder", Some(Func::new(Some("link"), "editor")));
+        }
+        if credentials.dev_tools_enabled {
+            self.add_item(order, "tools", Some(Func::new(Some("link"), "tools")));
         }
         if credentials.dashboard_enabled {
             self.add_item(
                 order,
                 "dashboard",
-                Some(Func::new(Some("link"), "admin/dashboard")),
-            );
-        }
-        if credentials.dev_tools_enabled {
-            self.add_item(
-                order,
-                "pathfinder",
-                Some(Func::new(Some("link"), "admin/pathfinder")),
+                Some(Func::new(Some("link"), "dashboard")),
             );
         }
     }

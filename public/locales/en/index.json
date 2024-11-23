@@ -327,7 +327,7 @@
       "exit-game": "Main Menu",
       "load": "Load Game",
       "new": "New Game",
-      "pathfinder": "Pathfinder",
+      "tools": "Tools",
       "save": "Save Game",
       "settings": "Settings"
     },
@@ -338,7 +338,7 @@
       "volume": "Volume: "
     }
   },
-  "pathfinder": {
+  "tools": {
     "actions": {
       "cull": "Cull tiles",
       "path": "Find path",

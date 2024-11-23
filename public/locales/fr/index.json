@@ -327,7 +327,7 @@
       "exit-game": "Menu Principal",
       "load": "Charger une partie",
       "new": "Nouvelle partie",
-      "pathfinder": "Recherche",
+      "tools": "Outils",
       "save": "Enregistrer la partie",
       "settings": "Paramètres"
     },
@@ -338,7 +338,7 @@
       "volume": "Volume: "
     }
   },
-  "pathfinder": {
+  "tools": {
     "actions": {
       "cull": "Filtrer les tuiles",
       "path": "Trouver un chemin",

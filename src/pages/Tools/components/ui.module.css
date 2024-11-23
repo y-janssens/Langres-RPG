@@ -1,11 +1,11 @@
-.pathfinder-sidebar {
+.tools-sidebar {
     position: fixed;
     width: 225px;
     height: 100%;
     background-color: rgb(47, 54, 61);
 }
 
-.pathfinder-sidebar-logo {
+.tools-sidebar-logo {
     position: static;
     display: flex;
     justify-content: flex-start;
@@ -13,7 +13,7 @@
     padding: 12px 12px 15px 12px;
 }
 
-.pathfinder-sidebar-logo div {
+.tools-sidebar-logo div {
     position: relative;
     font-size: 30px !important;
     font-style: italic;
@@ -21,22 +21,22 @@
     bottom: 5px;
 }
 
-.pathfinder-sidebar-logo img {
+.tools-sidebar-logo img {
     width: 55px;
     cursor: pointer;
 }
 
-.pathfinder-sidebar-items {
+.tools-sidebar-items {
     margin-top: 27px;
     padding: 0 10px;
 }
 
-.pathfinder-sidebar-actions,
-.pathfinder-sidebar-items {
+.tools-sidebar-actions,
+.tools-sidebar-items {
     width: 100%;
 }
 
-.pathfinder-sidebar-block {
+.tools-sidebar-block {
     display: flex;
     height: calc(100% - 85px);
     flex-direction: column;
@@ -44,23 +44,23 @@
     align-items: center;
 }
 
-.pathfinder-sidebar-item {
+.tools-sidebar-item {
     padding: 0 15px 15px 15px;
 }
 
-.pathfinder-sidebar-item-active,
-.pathfinder-sidebar-item-idle {
+.tools-sidebar-item-active,
+.tools-sidebar-item-idle {
     border-radius: 6px !important;
 }
 
-.pathfinder-navbar-block {
+.tools-navbar-block {
     position: absolute;
     width: calc(100% - 225px);
     height: 135px;
     right: 0px;
 }
 
-.pathfinder-navbar {
+.tools-navbar {
     height: 85px;
     background-color: rgb(33, 39, 42);
     display: flex;
@@ -68,23 +68,23 @@
     align-items: center;
 }
 
-.pathfinder-navbar-actions,
-.pathfinder-navbar-title {
+.tools-navbar-actions,
+.tools-navbar-title {
     display: flex;
     align-items: center;
 }
 
-.pathfinder-navbar-title {
+.tools-navbar-title {
     padding: 10px;
 }
 
-.pathfinder-navbar-title:first-of-type span {
+.tools-navbar-title:first-of-type span {
     font-size: 26px !important;
     margin-left: 15px;
     font-style: italic;
 }
 
-.pathfinder-navtitle {
+.tools-navtitle {
     display: flex;
     align-items: center;
     height: 50px;
@@ -92,22 +92,22 @@
     background-color: rgb(45, 51, 58);
 }
 
-.pathfinder-navtitle label {
+.tools-navtitle label {
     margin-right: 5px;
 }
 
-.pathfinder-navbar-actions {
+.tools-navbar-actions {
     justify-content: flex-end;
     width: 80%;
     max-width: 800px !important;
     margin: 0 15px;
 }
 
-.pathfinder-navbar-exit {
+.tools-navbar-exit {
     margin: 15px 0px 15px 15px;
 }
 
-.pathfinder-infos-title {
+.tools-infos-title {
     text-align: center;
     font-size: 12px !important;
     border-bottom: 1px solid rgba(128, 128, 128, 0.5);
@@ -115,14 +115,14 @@
 }
 
 @media screen and (max-width: 800px) {
-    .pathfinder-navbar {
+    .tools-navbar {
         justify-content: flex-end;
     }
-    .pathfinder-navbar-actions {
+    .tools-navbar-actions {
         width: 100%;
         max-width: none !important;
     }
-    .pathfinder-navbar-title {
+    .tools-navbar-title {
         display: none;
     }
 }

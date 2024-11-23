@@ -1,4 +1,4 @@
-.pathfinder-main-container {
+.tools-main-container {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -7,12 +7,12 @@
     overflow: hidden;
 }
 
-.pathfinder-main-container * {
+.tools-main-container * {
     font-family: system-ui !important;
     font-size: 10px !important;
 }
 
-.pathfinder-body-container {
+.tools-body-container {
     position: absolute;
     display: flex;
     width: calc(100% - 225px);
@@ -29,7 +29,7 @@
     background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
-.pathfinder-body {
+.tools-body {
     height: 90%;
     width: 90%;
     max-height: unset;
@@ -45,7 +45,7 @@
     row-gap: 0px;
 }
 
-.pathfinder-map-tile {
+.tools-map-tile {
     position: relative;
     height: 56px;
     width: 48.497423px;
@@ -60,14 +60,14 @@
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.pathfinder-map-tile-text {
+.tools-map-tile-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     white-space: nowrap;
 }
 
-.pathfinder-map-tile-text span {
+.tools-map-tile-text span {
     font-size: 8px !important;
     opacity: 0.5;
 }

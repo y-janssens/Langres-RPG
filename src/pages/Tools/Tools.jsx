@@ -10,9 +10,9 @@ import { executionTime, uniqueSelection } from '../../components/utils';
 
 import { Theme, Sidebar, NavBar, TileInfo } from './components';
 
-import css from './pathfinder.module.css';
+import css from './tools.module.css';
 
-export const PathFinder = () => {
+export const Tools = () => {
     const [form, setForm, setFormObject] = useDynamicForm({
         map: {},
         start: null,
@@ -113,12 +113,12 @@ export const PathFinder = () => {
     }, [form]);
 
     return (
-        <Theme dataTheme="night" className={css['pathfinder-main-container']}>
+        <Theme dataTheme="night" className={css['tools-main-container']}>
             <Sidebar form={form} handleFunction={handleFunction} />
             <NavBar form={form} setForm={setForm} />
-            <div className={css['pathfinder-body-container']}>
+            <div className={css['tools-body-container']}>
                 <div
-                    className={css[`pathfinder-body`]}
+                    className={css[`tools-body`]}
                     style={{
                         columnGap: `${Math.ceil(Math.sqrt(55 * 0.8))}px`,
                         gridTemplateRows: `repeat(${form.map.size + Math.ceil(Math.sqrt(form.map.size))}, ${55 * 0.8}px)`,
@@ -151,7 +151,7 @@ const Tile = ({ form, item, handleclick }) => {
     }, [form, item, hover]);
     return (
         <div
-            className={css['pathfinder-map-tile']}
+            className={css['tools-map-tile']}
             style={{
                 marginLeft: item.y % 2 === 0 && `25px`,
                 backgroundColor: color
@@ -160,7 +160,7 @@ const Tile = ({ form, item, handleclick }) => {
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
         >
-            <div className={css['pathfinder-map-tile-text']}>
+            <div className={css['tools-map-tile-text']}>
                 <TileInfo formKey={'displayIds'} form={form} text={item.id} />
                 <TileInfo formKey={'displayCoordinates'} form={form} text={`x: ${item.x} - y: ${item.y}`} />
             </div>

@@ -24,34 +24,34 @@ const Sidebar = ({ form, handleFunction }) => {
     }, [form]);
 
     return (
-        <div className={css['pathfinder-sidebar']}>
-            <div className={css['pathfinder-sidebar-logo']}>
+        <div className={css['tools-sidebar']}>
+            <div className={css['tools-sidebar-logo']}>
                 <a href="https://www.marbrume.com/admin/game/" target="_blank" rel="noreferrer">
                     <img src={AdminLogo} alt="logo" />
                 </a>
-                <div className={css['pathfinder-sidebar-title']}>{t('common.game')}</div>
+                <div className={css['tools-sidebar-title']}>{t('common.game')}</div>
             </div>
-            <div className={css['pathfinder-sidebar-block']}>
-                <div className={css['pathfinder-sidebar-items']}>
-                    <div className={css['pathfinder-infos-title']}>{t('common.informations')}</div>
+            <div className={css['tools-sidebar-block']}>
+                <div className={css['tools-sidebar-items']}>
+                    <div className={css['tools-infos-title']}>{t('common.informations')}</div>
 
-                    <Information label={t('pathfinder.sidebar.start')} text={informations.start} />
-                    <Information label={t('pathfinder.sidebar.end')} text={informations.end} />
-                    <Information label={t('pathfinder.sidebar.obstacles')} text={informations.obstacles} />
+                    <Information label={t('tools.sidebar.start')} text={informations.start} />
+                    <Information label={t('tools.sidebar.end')} text={informations.end} />
+                    <Information label={t('tools.sidebar.obstacles')} text={informations.obstacles} />
 
                     {!!Object.keys(form.output).length && (
                         <>
-                            <div className={css['pathfinder-infos-title']}>{t('common.result')}</div>
-                            <Information label={t('pathfinder.sidebar.algorithm')} text={form.algorithm} />
-                            <Information label={t('pathfinder.sidebar.operations')} text={form.output.operations} />
-                            <Information label={t('pathfinder.sidebar.time')} text={`${form.output.time}s`} />
+                            <div className={css['tools-infos-title']}>{t('common.result')}</div>
+                            <Information label={t('tools.sidebar.algorithm')} text={form.algorithm} />
+                            <Information label={t('tools.sidebar.operations')} text={form.output.operations} />
+                            <Information label={t('tools.sidebar.time')} text={`${form.output.time}s`} />
                         </>
                     )}
                 </div>
-                <div className={css['pathfinder-sidebar-actions']}>
-                    <SideBarItem label={t('pathfinder.actions.path')} disabled={!form.start || !form.end} primary onClick={() => handleFunction('start')} />
-                    <SideBarItem label={t('pathfinder.actions.cull')} disabled={!form.start} primary onClick={() => handleFunction('cull')} />
-                    <SideBarItem label={t('pathfinder.actions.randomize')} onClick={() => handleFunction('randomize')} />
+                <div className={css['tools-sidebar-actions']}>
+                    <SideBarItem label={t('tools.actions.path')} disabled={!form.start || !form.end} primary onClick={() => handleFunction('start')} />
+                    <SideBarItem label={t('tools.actions.cull')} disabled={!form.start} primary onClick={() => handleFunction('cull')} />
+                    <SideBarItem label={t('tools.actions.randomize')} onClick={() => handleFunction('randomize')} />
                     <SideBarItem label={t('common.actions.reset')} inverted onClick={() => handleFunction('reset')} />
                 </div>
             </div>
@@ -61,9 +61,9 @@ const Sidebar = ({ form, handleFunction }) => {
 
 const SideBarItem = ({ label, primary = false, inverted = false, disabled = false, onClick }) => {
     return (
-        <div className={css['pathfinder-sidebar-item']}>
+        <div className={css['tools-sidebar-item']}>
             <Button
-                className={css[`pathfinder-sidebar-item-${primary ? 'active' : 'idle'}`]}
+                className={css[`tools-sidebar-item-${primary ? 'active' : 'idle'}`]}
                 dataTheme="forest"
                 size="sm"
                 color={inverted ? 'ghost' : primary ? 'primary' : 'accent'}

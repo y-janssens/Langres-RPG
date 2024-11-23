@@ -34,7 +34,7 @@ export const MainMenu = () => {
                         func = () => setOpenModal({ type: it.func.value, open: true });
                         break;
                     case 'link':
-                        func = () => navigate(it.func.value);
+                        func = () => navigate(`admin/${it.func.value}`);
                         break;
                     case 'exit':
                         func = async () => await exit(1);
