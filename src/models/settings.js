@@ -9,6 +9,12 @@ export default class Settings extends Fetcher {
             this[key] = value;
         }
         this.setLanguage();
+        this.init();
+    }
+
+    async init() {
+        this.main_menu_items = await invoke('load_main_menu').then((response) => response);
+        this.ingame_menu_items = await invoke('load_ingame_menu').then((response) => response);
     }
 
     setLanguage() {

@@ -35,29 +35,38 @@ export const InGameMenu = ({ id, form }) => {
     );
 
     const items = useMemo(() => {
-        return [
-            { id: 0, name: t('menu.items.continue'), onClick: () => handleContinue() },
-            { id: 1, name: t('menu.items.save'), onClick: () => handleContinue(true) },
-            {
-                id: 2,
-                name: t('menu.items.settings'),
-                onClick: () => {
-                    setOpenModal('settings');
-                    setEngine({ pauseMenu: true });
-                }
-            },
-            {
-                id: 3,
-                name: t('menu.items.exit-game'),
-                onClick: () => {
-                    // Remove game related content from engine
-                    removeFromEngine(['gameId', 'world']);
-                    // Reset keyboard controls default values
-                    engine.controls.generateControls();
+        const elements = engine.applicationData?.ingame_menu_items || [];
+
+        return elements?.map((it, index) => {
+            let func = () => {};
+            if (it.func) {
+                switch (it.func.type) {
+                    case 'popup':
+                        func = () => {
+                            setOpenModal('settings');
+                            setEngine({ pauseMenu: true });
+                        };
+                        break;
+                    case 'exit':
+                        func = async () => {
+                            // Remove game related content from engine
+                            removeFromEngine(['gameId', 'world']);
+                            // Reset keyboard controls default values
+                            engine.controls.generateControls();
+                        };
+                        break;
+                    default:
+                        func = () => handleContinue(Boolean(it.func.type === 'continue'));
+                        break;
                 }
             }
-        ];
-    }, [handleContinue, engine, removeFromEngine]);
+            return {
+                key: index,
+                name: t(`menu.items.${it.name}`),
+                onClick: () => func()
+            };
+        });
+    }, [handleContinue, engine, engine.applicationData, removeFromEngine]);
 
     const handleMenu = useCallback(
         (event) => {
@@ -76,7 +85,7 @@ export const InGameMenu = ({ id, form }) => {
                         setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : items.length - 1));
                         break;
                     case 'Enter':
-                        items.find((it) => it.id === selected).onClick();
+                        items.find((it) => it.key === selected).onClick();
                 }
             }
         },
@@ -93,7 +102,7 @@ export const InGameMenu = ({ id, form }) => {
         <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1} ref={activeRef}>
             <div className={css['ingame-menu-items-block']}>
                 {items.map((it) => {
-                    return <MenuItem key={it.id} active={selected === it.id} name={it.name} onClick={it.onClick} />;
+                    return <MenuItem key={it.key} active={selected === it.key} name={it.name} onClick={it.onClick} />;
                 })}
                 <Settings
                     state={openModal}
