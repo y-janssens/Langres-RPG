@@ -25,7 +25,7 @@ export default class GameModel extends Fetcher {
     }
 
     get has_position() {
-        return !Object.values(this.last_known_position).every((pos) => pos === 0);
+        return this.last_known_position.id !== 0;
     }
 
     get current_act() {
@@ -55,6 +55,6 @@ export default class GameModel extends Fetcher {
     }
 
     get model() {
-        return "game"
+        return 'game';
     }
 }

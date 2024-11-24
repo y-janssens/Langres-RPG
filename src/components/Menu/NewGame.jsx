@@ -14,7 +14,7 @@ export default function NewGame({ onClose = () => {} }) {
     const [playerName, setPlayerName] = useState('');
 
     const handleNewGame = useCallback(async () => {
-        await invoke('new_game', { playerName })
+        await invoke('new_game', { name: playerName })
             .then((data) => {
                 let game = new GameModel(data);
                 game.save();

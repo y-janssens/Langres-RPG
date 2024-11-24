@@ -2,6 +2,7 @@ use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::backend::utils::errors::ValidationError;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::events::models::{Event, EventType};
+use crate::game::models::Game;
 use crate::npcs::models::Npc;
 use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
@@ -124,9 +125,13 @@ impl Story {
                 Box::new(e.to_string()),
             )
         })?;
-        diesel::update(storyline.find(id))
-            .set(crate::schema::storyline::story.eq(updated_json))
-            .execute(connection)
+
+        let result = diesel::update(storyline.find(id))
+            .set(crate::schema::storyline::story.eq(updated_json.clone()))
+            .execute(connection);
+
+        Self::edit_existing_games(connection);
+        result
     }
 
     fn find_tile<F>(
@@ -304,5 +309,11 @@ impl Story {
             obj.area.x as usize,
             obj.area.y as usize,
         )
+    }
+
+    fn edit_existing_games(connection: &mut SqliteConnection) {
+        let mut games = Game::fetch(connection).expect("Failed to fetch games");
+        let _games = games.iter_mut().filter(|g| g.visible);
+        _games.for_each(|game| game.patch_game_storyline(connection));
     }
 }
