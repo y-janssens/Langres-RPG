@@ -1,40 +1,36 @@
 #[cfg(test)]
 mod tests {
+    use serde_json::from_value;
+
     use crate::admin::devtools::commands::load_dev_settings;
     use crate::admin::devtools::models::{DevSettings, SettingValue};
-    use crate::backend::permissions::models::Credentials;
-    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY};
-    use dotenv::dotenv;
-    use serde_json::from_value;
-    use std::env;
+    use crate::backend::permissions::models::{Credentials, Permission};
+    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
+    use crate::backend::tests::database::with_permissions;
 
     #[test]
     fn test_load_dev_settings_admin() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        env::set_var("USER_KEY", TEST_ADMIN_KEY);
-        dotenv().ok();
-        let settings = load_dev_settings().expect("Error");
-        let config: DevSettings = from_value(settings.0).expect("Error");
+        with_permissions(Permission::Admin, || {
+            let settings = load_dev_settings().expect("Error");
+            let config: DevSettings = from_value(settings.0).expect("Error");
 
-        let global = config.global.values().into_iter().all(|it| it.mutable);
-        let game = config.game.values().into_iter().all(|it| it.mutable);
-        let scene = config.scene.values().into_iter().all(|it| it.mutable);
+            let global = config.global.values().into_iter().all(|it| it.mutable);
+            let game = config.game.values().into_iter().all(|it| it.mutable);
+            let scene = config.scene.values().into_iter().all(|it| it.mutable);
 
-        assert_eq!(
-            config.global.get("displayLoadingScreen").unwrap().value,
-            SettingValue::Boolean(false)
-        );
+            assert_eq!(
+                config.global.get("displayLoadingScreen").unwrap().value,
+                SettingValue::Boolean(false)
+            );
 
-        assert!(global);
-        assert!(game);
-        assert!(scene);
+            assert!(global);
+            assert!(game);
+            assert!(scene);
+        });
     }
 
     #[test]
     fn test_load_dev_settings_missing_variable() {
-        env::remove_var("SECRET_KEY");
-        env::remove_var("USER_KEY");
-
         let settings = load_dev_settings().expect("Error");
         let config: DevSettings = from_value(settings.0).expect("Error");
 
@@ -54,45 +50,42 @@ mod tests {
 
     #[test]
     fn test_load_dev_settings_regular_user() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        env::set_var("USER_KEY", TEST_USER_KEY);
-        dotenv().ok();
+        with_permissions(Permission::RegularUser, || {
+            let settings = load_dev_settings().expect("Error");
+            let config: DevSettings = from_value(settings.0).expect("Error");
 
-        let settings = load_dev_settings().expect("Error");
-        let config: DevSettings = from_value(settings.0).expect("Error");
+            let global = config.global.values().into_iter().all(|it| !it.mutable);
+            let game = config.game.values().into_iter().all(|it| !it.mutable);
+            let scene = config.scene.values().into_iter().all(|it| !it.mutable);
 
-        let global = config.global.values().into_iter().all(|it| !it.mutable);
-        let game = config.game.values().into_iter().all(|it| !it.mutable);
-        let scene = config.scene.values().into_iter().all(|it| !it.mutable);
+            assert_eq!(
+                config.global.get("displayLoadingScreen").unwrap().value,
+                SettingValue::Boolean(true)
+            );
 
-        assert_eq!(
-            config.global.get("displayLoadingScreen").unwrap().value,
-            SettingValue::Boolean(true)
-        );
-
-        assert!(global);
-        assert!(game);
-        assert!(scene);
+            assert!(global);
+            assert!(game);
+            assert!(scene);
+        });
     }
 
     #[test]
     fn test_generate_security_keys() {
-        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-        dotenv().ok();
+        with_permissions(Permission::Admin, || {
+            let full_admin_security_key = Credentials::generate_full_admin_secret_key();
+            let admin_security_key = Credentials::generate_admin_secret_key();
+            let regular_user_security_key = Credentials::generate_regular_user_secret_key();
 
-        let full_admin_security_key = Credentials::generate_full_admin_secret_key();
-        let admin_security_key = Credentials::generate_admin_secret_key();
-        let regular_user_security_key = Credentials::generate_regular_user_secret_key();
+            println!("full_admin_security_key: {:?}", full_admin_security_key);
+            println!("---");
+            println!("limited_admin_security_key: {:?}", admin_security_key);
+            println!("---");
+            println!("regular_user_security_key: {:?}", regular_user_security_key);
 
-        println!("full_admin_security_key: {:?}", full_admin_security_key);
-        println!("---");
-        println!("limited_admin_security_key: {:?}", admin_security_key);
-        println!("---");
-        println!("regular_user_security_key: {:?}", regular_user_security_key);
-
-        assert!(full_admin_security_key.is_ok());
-        assert!(admin_security_key.is_ok());
-        assert!(regular_user_security_key.is_ok());
+            assert!(full_admin_security_key.is_ok());
+            assert!(admin_security_key.is_ok());
+            assert!(regular_user_security_key.is_ok());
+        });
     }
 
     #[test]
