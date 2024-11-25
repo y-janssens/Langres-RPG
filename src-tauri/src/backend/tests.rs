@@ -1,13 +1,18 @@
 #[cfg(test)]
 pub mod database {
+    use crate::backend::permissions::models::Permission;
     use crate::backend::settings::errors::{
         DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
     };
-    use crate::backend::settings::variables::MIGRATIONS;
+    use crate::backend::settings::variables::{
+        MIGRATIONS, TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY,
+    };
     use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
     use diesel_migrations::MigrationHarness;
 
+    use dotenv::dotenv;
     use r2d2::{Pool, PooledConnection};
+    use std::env;
     use std::panic::{self, AssertUnwindSafe};
     use std::{error::Error, fs};
     use uuid::Uuid;
@@ -29,6 +34,28 @@ pub mod database {
         if let Err(e) = result {
             panic::resume_unwind(e);
         }
+    }
+
+    /// Wrapper to abtract permissions handling and environment variables initialization and cleanup
+    pub fn with_permissions<T>(permission: Permission, unit_test: T)
+    where
+        T: FnOnce(),
+    {
+        match permission {
+            Permission::Admin => {
+                env::set_var("USER_KEY", TEST_ADMIN_KEY);
+            }
+            Permission::RegularUser => {
+                env::set_var("USER_KEY", TEST_USER_KEY);
+            }
+            _ => (),
+        }
+        env::set_var("SECRET_KEY", TEST_SECRET_KEY);
+        dotenv().ok();
+        unit_test();
+
+        env::remove_var("SECRET_KEY");
+        env::remove_var("USER_KEY");
     }
 
     fn get_local_connection(

@@ -1,12 +1,9 @@
 #[cfg(test)]
 mod tests {
-    use dotenv::dotenv;
-    use std::env;
-
     use crate::backend::conf::factories::factories_definitions::{StoryLineFactory, WorldFactory};
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
-    use crate::backend::tests::database::allow_db_access;
+    use crate::backend::permissions::models::Permission;
+    use crate::backend::tests::database::{allow_db_access, with_permissions};
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::game::models::{Game, Position};
     use crate::objects::models::Object;
@@ -178,100 +175,96 @@ mod tests {
     #[test]
     fn test_register_object() {
         allow_db_access(|connection| {
-            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-            env::set_var("USER_KEY", TEST_ADMIN_KEY);
-            dotenv().ok();
+            with_permissions(Permission::Admin, || {
+                let objects = Object::load(connection).expect("Error");
+                let object = objects
+                    .iter()
+                    .find(|it| it.value == Some("H_2".to_string()))
+                    .cloned()
+                    .expect("Error");
 
-            let objects = Object::load(connection).expect("Error");
-            let object = objects
-                .iter()
-                .find(|it| it.value == Some("H_2".to_string()))
-                .cloned()
-                .expect("Error");
+                let mut story = Story::load(connection).unwrap();
+                // Clear base map content for readability purposes
+                let map = generate(50, "test".to_string(), 0, true).expect("Error");
+                story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
+                let _ = Story::save(connection, story.id, &mut story);
 
-            let mut story = Story::load(connection).unwrap();
-            // Clear base map content for readability purposes
-            let map = generate(50, "test".to_string(), 0, true).expect("Error");
-            story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
-            let _ = Story::save(connection, story.id, &mut story);
+                let _ = Story::register_object(
+                    connection,
+                    1323375008,
+                    story.story.acts[0].content.maps[0].id,
+                    1369,
+                    object.id,
+                    true,
+                );
 
-            let _ = Story::register_object(
-                connection,
-                1323375008,
-                story.story.acts[0].content.maps[0].id,
-                1369,
-                object.id,
-                true,
-            );
+                let response = Story::load(connection).unwrap();
+                let _map = response.story.acts[0].content.maps[0].clone();
+                let expected_tiles = [
+                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370,
+                    1371, 1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+                ];
 
-            let response = Story::load(connection).unwrap();
-            let _map = response.story.acts[0].content.maps[0].clone();
-            let expected_tiles = [
-                1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371,
-                1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
-            ];
+                let _tiles: Vec<Item> = _map
+                    .content
+                    .iter()
+                    .filter(|t| expected_tiles.contains(&t.id))
+                    .cloned()
+                    .collect();
 
-            let _tiles: Vec<Item> = _map
-                .content
-                .iter()
-                .filter(|t| expected_tiles.contains(&t.id))
-                .cloned()
-                .collect();
-
-            for tile in _tiles.iter() {
-                assert_eq!(tile.value, "#");
-                assert!(!tile.walkable);
-            }
+                for tile in _tiles.iter() {
+                    assert_eq!(tile.value, "#");
+                    assert!(!tile.walkable);
+                }
+            });
         });
     }
 
     #[test]
     fn test_unregister_object() {
         allow_db_access(|connection| {
-            env::set_var("SECRET_KEY", TEST_SECRET_KEY);
-            env::set_var("USER_KEY", TEST_ADMIN_KEY);
-            dotenv().ok();
+            with_permissions(Permission::Admin, || {
+                let objects = Object::load(connection).expect("Error");
+                let object = objects
+                    .iter()
+                    .find(|it| it.name == "house")
+                    .cloned()
+                    .expect("Error");
 
-            let objects = Object::load(connection).expect("Error");
-            let object = objects
-                .iter()
-                .find(|it| it.name == "house")
-                .cloned()
-                .expect("Error");
+                let mut story = Story::load(connection).unwrap();
+                // Clear base map content for readability purposes
+                let map = generate(50, "test".to_string(), 0, true).expect("Error");
+                story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
+                let _ = Story::save(connection, story.id, &mut story);
 
-            let mut story = Story::load(connection).unwrap();
-            // Clear base map content for readability purposes
-            let map = generate(50, "test".to_string(), 0, true).expect("Error");
-            story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
-            let _ = Story::save(connection, story.id, &mut story);
+                let _ = Story::register_object(
+                    connection,
+                    1323375008,
+                    story.story.acts[0].content.maps[0].id,
+                    1369,
+                    object.id,
+                    false,
+                );
 
-            let _ = Story::register_object(
-                connection,
-                1323375008,
-                story.story.acts[0].content.maps[0].id,
-                1369,
-                object.id,
-                false,
-            );
+                let response = Story::load(connection).unwrap();
+                let _map = response.story.acts[0].content.maps[0].clone();
+                let expected_tiles = [
+                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370,
+                    1371, 1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+                ];
 
-            let response = Story::load(connection).unwrap();
-            let _map = response.story.acts[0].content.maps[0].clone();
-            let expected_tiles = [
-                1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371,
-                1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
-            ];
+                let _tiles: Vec<Item> = _map
+                    .content
+                    .iter()
+                    .filter(|t| expected_tiles.contains(&t.id))
+                    .cloned()
+                    .collect();
 
-            let _tiles: Vec<Item> = _map
-                .content
-                .iter()
-                .filter(|t| expected_tiles.contains(&t.id))
-                .cloned()
-                .collect();
-
-            for tile in _tiles.iter() {
-                assert_eq!(tile.value, "-");
-                assert!(tile.walkable);
-            }
+                for tile in _tiles.iter() {
+                    assert_eq!(tile.value, "-");
+                    assert!(tile.walkable);
+                }
+            });
         });
     }
 
