@@ -15,14 +15,7 @@ export default function SavedGames({ onClose = () => {} }) {
     const [selectedItem, setSelectedItem] = useState(null);
     const [gameToDelete, setGameToDelete] = useState(null);
 
-    const [savedGames, loadingSavedGames, sync] = GameModel.useCommand();
-
-    const items = useMemo(() => {
-        if (!savedGames || loadingSavedGames) {
-            return [];
-        }
-        return savedGames.filter((gm) => gm.visible);
-    }, [savedGames, loadingSavedGames]);
+    const [savedGames, , sync] = GameModel.useCommand();
 
     const handleLoad = useCallback(() => {
         if (selectedItem) {
@@ -33,8 +26,15 @@ export default function SavedGames({ onClose = () => {} }) {
 
     return (
         <Modal name={t('common.actions.start')} disabled={!selectedItem} onClick={handleLoad}>
-            <DeletionModal games={items} gameToDelete={gameToDelete} syncSettings={engine.settings.init()} onLoad={sync} onClose={() => setGameToDelete(null)} onClear={onClose} />
-            {items?.map((save) => {
+            <DeletionModal
+                games={savedGames}
+                gameToDelete={gameToDelete}
+                syncSettings={engine.settings.init()}
+                onLoad={sync}
+                onClose={() => setGameToDelete(null)}
+                onClear={onClose}
+            />
+            {savedGames?.map((save) => {
                 return <SavedGame selected={selectedItem} setSelected={setSelectedItem} key={save.id} item={save} setGameToDelete={setGameToDelete} />;
             })}
         </Modal>
