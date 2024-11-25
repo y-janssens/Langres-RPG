@@ -1,5 +1,6 @@
-use crate::character::models::Character;
 use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::backend::utils::models::FrustumCullingUtility;
+use crate::character::models::Character;
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::journal::models::PlayerJournal;
 use crate::player::quests::models::PlayerQuest;
@@ -7,11 +8,13 @@ use crate::player::statistics::models::PlayerStatistic;
 use crate::schema::games;
 use crate::schema::games::dsl::*;
 use crate::storyline::models::Story;
+use crate::world::models::{Item, World};
 use chrono::{DateTime, Local};
 use diesel::deserialize::{self, FromSql};
 use diesel::prelude::*;
 use diesel::sql_types::Text;
 use diesel::sqlite::{Sqlite, SqliteValue};
+use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -198,6 +201,100 @@ impl Game {
     pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
         diesel::delete(games.filter(id.eq(_id))).execute(connection)?;
         Ok(())
+    }
+
+    pub fn patch_game_storyline(&mut self, connection: &mut SqliteConnection) {
+        let story = Story::load(connection).expect("Failed to load storyline");
+        println!("GameId: {} - Patching storyline", self.id);
+
+        let (current_item, current_map, current_act) = self
+            .storyline
+            .story
+            .acts
+            .iter()
+            .find_map(|act| {
+                act.content.maps.iter().find_map(|map| {
+                    map.content
+                        .iter()
+                        .find(|item| {
+                            item.id == self.last_known_position.id && !map.complete && map.primary
+                        })
+                        .map(|item| (item, map, act))
+                })
+            })
+            .unwrap();
+
+        let (storyline_item, storyline_map) = story
+            .story
+            .acts
+            .iter()
+            .find_map(|act| {
+                act.content.maps.iter().find_map(|map| {
+                    map.content
+                        .iter()
+                        .find(|item| {
+                            item.id == self.last_known_position.id
+                                && act.id == current_act.id
+                                && map.id == current_map.id
+                        })
+                        .map(|item| (item, map))
+                })
+            })
+            .unwrap();
+
+        if current_item.clone().walkable && !storyline_item.walkable {
+            println!("GameId: {} - Relocating character", self.id);
+            self.relocate_character(storyline_map.clone());
+        }
+
+        for act in self.storyline.story.acts.iter_mut() {
+            for map in act.content.maps.iter_mut() {
+                if map.id == storyline_map.id {
+                    map.content = storyline_map.content.clone();
+                }
+            }
+        }
+
+        let _ = self.save(connection);
+    }
+
+    fn relocate_character(&mut self, current_map: World) {
+        let current_position = self.last_known_position.id;
+        let neighbours = current_map
+            .content
+            .iter()
+            .find(|tile| tile.id == current_position)
+            .cloned()
+            .map(|t| {
+                FrustumCullingUtility::cull_filter(
+                    t.id as i32,
+                    current_map.size,
+                    2_usize,
+                    2_usize,
+                    current_map.content,
+                )
+            })
+            .unwrap();
+
+        self.get_new_position(neighbours);
+    }
+
+    fn get_new_position(&mut self, items: Vec<Item>) {
+        let _items: Vec<Item> = items.iter().filter(|i| i.walkable).cloned().collect();
+        let new_position = _items.choose(&mut rand::thread_rng()).unwrap();
+        self.last_known_position = Position::resolve(Self::resolve_new_position(new_position));
+        println!("GameId: {} - New position: {}", self.id, new_position.id);
+    }
+
+    /// Convert item's coordinates to game engine coordinates
+    fn resolve_new_position(item: &Item) -> (f32, f32, u32) {
+        let x = -(item.x as f64) / 1.5 + 0.35;
+        let y = if item.y == 0 {
+            -(item.y as f64) - 0.5
+        } else {
+            -(item.y as f64) * (f64::sqrt(3.0) / 1.5) - 0.5
+        };
+        (x.abs() as f32, y.abs() as f32, item.id)
     }
 
     pub fn generate_player_datas(&self, connection: &mut SqliteConnection) {

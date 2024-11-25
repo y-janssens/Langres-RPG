@@ -8,6 +8,7 @@ mod tests {
     use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
     use crate::backend::tests::database::allow_db_access;
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
+    use crate::game::models::{Game, Position};
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
     use crate::world::commands::generate;
@@ -288,6 +289,60 @@ mod tests {
                 Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
             let error = response.unwrap_err().0;
             assert_eq!(error, format!("Object: {} is not registrable", object.id));
+        });
+    }
+
+    #[test]
+    fn test_patch_storyline_and_edit_existing_games() {
+        allow_db_access(|connection| {
+            // Setup initial storyline and game
+            let storyline = Story::load(connection).unwrap();
+            let mut game = Game::new("test".to_string(), connection);
+            game.last_known_position = Position::resolve((10.0, 16.0, 707));
+            Game::save(&mut game, connection).unwrap();
+
+            // Patch storyline
+            let mut maps = storyline.story.acts[0].content.maps.clone();
+            let map = storyline.story.acts[0].content.maps[0].content.clone();
+            let tile = maps[0]
+                .content
+                .iter_mut()
+                .find(|tile| tile.id == 707)
+                .unwrap();
+
+            tile.value = "W".to_string();
+            tile.display_value = "water".to_string();
+            tile.walkable = false;
+
+            assert_eq!(map[707].value, "-".to_string());
+            assert_eq!(map[707].display_value, "grass".to_string());
+
+            let mut patch_data = storyline.clone();
+            patch_data.story.acts[0].content.maps = maps;
+            let _ = Story::save(connection, storyline.id, &mut patch_data);
+
+            // Retrieve patched storyline and check datas consistency
+            let _act = Story::load(connection).unwrap().story.acts[0].clone();
+            assert_eq!(&_act.content.maps[0].content[707].value, "W");
+            assert_eq!(&_act.content.maps[0].content[707].display_value, "water");
+
+            // Retrieve games and ensure that character has been properly moved
+            let games = Game::fetch(connection).expect("Failed to fetch games");
+            assert_eq!(games.len(), 1);
+            assert!(games.iter().all(|game| game.last_known_position.id != 707));
+            assert!(
+                games[0].storyline.story.acts[0].content.maps[0].content
+                    [games[0].last_known_position.id as usize]
+                    .walkable
+            );
+            assert_eq!(
+                games[0].storyline.story.acts[0].content.maps[0].content[707].value,
+                "W"
+            );
+            assert_eq!(
+                games[0].storyline.story.acts[0].content.maps[0].content[707].display_value,
+                "water"
+            );
         });
     }
 }

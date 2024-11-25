@@ -59,7 +59,7 @@ export const InGameMenu = ({ id, form }) => {
                         };
                         break;
                     default:
-                        func = () => handleContinue(Boolean(it.func.type === 'continue'));
+                        func = () => handleContinue(Boolean(it.func.value !== 'continue'));
                         break;
                 }
             }
