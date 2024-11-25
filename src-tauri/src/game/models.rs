@@ -1,4 +1,5 @@
 use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::backend::permissions::models::Credentials;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::character::models::Character;
 use crate::player::achievements::models::PlayerAchievement;
@@ -194,8 +195,15 @@ impl Game {
     }
 
     pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
-        let _load = crate::schema::games::table.load(connection)?;
-        Ok(_load)
+        let credentials = Credentials::initialize().config;
+        let _games = if credentials.is_admin {
+            crate::schema::games::table.load(connection)?
+        } else {
+            crate::schema::games::table
+                .filter(visible.eq(true))
+                .load(connection)?
+        };
+        Ok(_games)
     }
 
     pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
