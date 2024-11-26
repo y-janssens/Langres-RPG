@@ -124,6 +124,7 @@
 
 .settings-item {
     position: relative;
+    width: 100%;
     display: flex;
     margin: 5px 0px 5px 0px;
     align-items: center;
