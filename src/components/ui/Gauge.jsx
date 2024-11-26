@@ -1,6 +1,8 @@
-import { useCallback, useMemo, useState } from 'react';
-import Draggable from 'react-draggable';
+import { useMemo } from 'react';
+
+import { Range } from 'react-daisyui';
 import Icon from './Icon';
+
 import css from './ui.module.css';
 
 export const Gauge = ({ stat, max, type }) => {
@@ -52,13 +54,7 @@ export const XpGauge = ({ stat, max }) => {
     );
 };
 
-export function VolumeBar({ name, stat, max = 100, disabled = false, onChange = () => {} }) {
-    const [drag, setDrag] = useState(false);
-
-    const fill = useMemo(() => {
-        return `${(stat / max) * 100}%`;
-    }, [stat, max]);
-
+export function VolumeBar({ name, stat, disabled = false, onChange = () => {} }) {
     const volumeLevel = useMemo(() => {
         if (!stat || stat === 0 || disabled) {
             return 'mute';
@@ -67,38 +63,11 @@ export function VolumeBar({ name, stat, max = 100, disabled = false, onChange = 
         return stat > 0 && stat <= 50 ? 'medium' : 'volume';
     }, [stat, disabled]);
 
-    const handleVolume = useCallback(
-        (e, vol) => {
-            if (drag) {
-                if (vol.x >= -100 && vol.x <= 0) {
-                    const newVolume = 100 - Math.abs(vol.x);
-                    onChange(name, newVolume >= 99 ? Math.ceil(newVolume) : Math.round(newVolume));
-                }
-            }
-        },
-        [drag, name, onChange]
-    );
-
     return (
         <>
             <Icon name={volumeLevel} color="white" size="large" />
             <div className={css['volume-container']}>
-                <Draggable
-                    disabled={disabled}
-                    defaultPosition={{ x: 0, y: 0 }}
-                    scale={1.4}
-                    axis="none"
-                    onDrag={handleVolume}
-                    onStart={() => setDrag(true)}
-                    onStop={() => setDrag(false)}
-                >
-                    <span
-                        className={css['volume-content']}
-                        style={{
-                            width: disabled ? '0%' : fill
-                        }}
-                    />
-                </Draggable>
+                <Range dataTheme="sunset" size="xs" color="info" value={stat} onChange={({ target: { value } }) => onChange(name, Number(value))} disabled={disabled} />
             </div>
             <span className={css['volume-level']}>{disabled ? 0 : stat}</span>
         </>

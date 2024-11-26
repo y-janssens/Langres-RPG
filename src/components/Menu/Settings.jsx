@@ -10,14 +10,7 @@ import css from './menu.module.css';
 export default function Settings({ onClose = () => {} }) {
     const { t } = useTranslation();
     const [engine] = useGameContext();
-    const { languages, language, sound, volume, music } = engine.applicationData;
-
-    const [settings, setSettings] = useDynamicForm({
-        language,
-        sound,
-        volume,
-        music
-    });
+    const [settings, setSettings] = useDynamicForm({ ...engine.applicationData });
 
     const handleSave = useCallback(() => {
         const appDatas = engine.applicationData;
@@ -31,7 +24,7 @@ export default function Settings({ onClose = () => {} }) {
                 {!engine.gameId && (
                     <SettingsItem name={t('menu.settings.language')}>
                         <select className={css['settings-ln-selector']} value={settings.language} onChange={({ target: { value } }) => setSettings('language', value)}>
-                            {languages.map((ln, index) => {
+                            {settings.languages.map((ln, index) => {
                                 return (
                                     <option key={index} value={ln.key}>
                                         {ln.value}
@@ -42,7 +35,12 @@ export default function Settings({ onClose = () => {} }) {
                     </SettingsItem>
                 )}
                 <SettingsItem name={t('menu.settings.sound')}>
-                    <Icon name={settings.sound ? 'volume' : 'mute'} color="white" onClick={() => setSettings('sound', !settings.sound)} size="large" />
+                    <Icon
+                        name={settings.sound && (settings.volume > 0 || settings.music) > 0 ? 'volume' : 'mute'}
+                        color="white"
+                        onClick={() => setSettings('sound', !settings.sound)}
+                        size="large"
+                    />
                 </SettingsItem>
                 <SettingsItem name={t('menu.settings.volume')}>
                     <VolumeBar disabled={!settings.sound} stat={settings.volume} name="volume" onChange={setSettings} />

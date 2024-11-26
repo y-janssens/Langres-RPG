@@ -181,14 +181,21 @@
 }
 
 .volume-container {
-    width: 150px;
-    height: 8px;
     border-radius: 5px;
     overflow: hidden;
     justify-content: unset;
-    background-color: #606060;
     cursor: pointer;
     box-shadow: unset;
+}
+
+.volume-container input {
+    padding: 0 !important;
+}
+
+.volume-container input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
 }
 
 .volume-container:hover .volume-content {
