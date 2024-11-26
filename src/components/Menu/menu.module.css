@@ -59,6 +59,11 @@
     font-size: 16px;
 }
 
+.menu-item[data-disabled='true'],
+.menu-item-active[data-disabled='true'] {
+    cursor: not-allowed;
+}
+
 .menu-item-active {
     background-color: rgba(0, 0, 0, 0.75);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);

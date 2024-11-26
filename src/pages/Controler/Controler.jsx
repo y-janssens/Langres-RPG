@@ -19,14 +19,11 @@ export const Controler = () => {
             if (!pauseGame) {
                 engine.controls.setDirections(event, true);
             }
-            if (pauseGame && event.key === 'Escape' && Boolean(engine?.pauseMenu)) {
-                return setEngine({ pauseMenu: false });
-            } else {
-                engine.controls.setToggles(event);
-                setEngine({ controls: engine.controls });
-            }
+
+            engine.controls.setToggles(event);
+            setEngine({ controls: engine.controls });
         },
-        [pauseGame]
+        [pauseGame, engine]
     );
 
     useEffect(() => {

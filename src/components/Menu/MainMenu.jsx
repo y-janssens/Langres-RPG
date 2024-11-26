@@ -55,27 +55,16 @@ export const MainMenu = () => {
 
     const handleMenu = useCallback(
         (event) => {
-            if (openModal.type && openModal.open) {
-                if (event.key === 'Escape') {
-                    setOpenModal({ type: null, open: false });
-                    setDisplayTitle(false);
-                }
-            } else {
-                switch (event.key) {
-                    case 'ArrowDown':
-                    case 's':
-                        setSelected((slt) => (slt + 1 <= menuItems.length - 1 ? slt + 1 : 0));
-                        break;
-                    case 'ArrowUp':
-                    case 'z':
-                        setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : menuItems.length - 1));
-                        break;
-                    case 'Enter':
-                        menuItems.find((it) => it.key === selected).onClick();
-                }
+            if (!openModal.type && !openModal.open) {
+                return engine.controls.keyBoardMenuSelect(event, menuItems, selected, setSelected);
+            }
+
+            if (event.key === 'Escape') {
+                setOpenModal({ type: null, open: false });
+                setDisplayTitle(false);
             }
         },
-        [openModal, menuItems, selected]
+        [openModal, menuItems, selected, engine]
     );
 
     useEffect(() => {
