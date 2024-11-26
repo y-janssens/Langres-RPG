@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState, useEffect, useRef } from 'react';
-import { useGameContext, useTranslation } from '../../hooks';
+import { useGameContext, useSettingsProperties, useTranslation } from '../../hooks';
 
 import { GameModel } from '../../models';
 
@@ -10,11 +10,12 @@ import css from './menu.module.css';
 
 export const InGameMenu = ({ id, form }) => {
     const { t } = useTranslation();
-    const [openModal, setOpenModal] = useState({ type: null, open: false });
+    const activeRef = useRef();
     const [engine, setEngine, removeFromEngine] = useGameContext();
+    const { collisions } = useSettingsProperties({ keys: 'collisions' }, [engine]);
+    const [openModal, setOpenModal] = useState({ type: null, open: false });
     const [selected, setSelected] = useState(0);
     const [menuItems, setMenuItems] = useState([]);
-    const activeRef = useRef();
 
     const displayInGameMenu = useMemo(() => {
         return id && engine.controls.toggles.menu;
@@ -22,6 +23,8 @@ export const InGameMenu = ({ id, form }) => {
 
     const handleContinue = useCallback(
         (save = false) => {
+            if (save && !collisions) return;
+
             if (save) {
                 let game = new GameModel(form);
                 if (!engine.mapId || engine.mapId?.is_final) {
@@ -32,7 +35,7 @@ export const InGameMenu = ({ id, form }) => {
             engine.controls.generateControls();
             setEngine({ controls: engine.controls });
         },
-        [form, engine.controls, engine.controls.currentTile, engine.mapId]
+        [form, engine.controls, engine.mapId, collisions]
     );
 
     const getOrUpdateMenuItems = useCallback(async () => {
@@ -66,34 +69,25 @@ export const InGameMenu = ({ id, form }) => {
             return {
                 key: index,
                 name: t(`menu.items.${it.name}`),
-                onClick: () => func()
+                onClick: () => func(),
+                disabled: it.name === 'save' && !collisions
             };
         });
         setMenuItems(items);
-    }, [engine.applicationData, handleContinue, removeFromEngine]);
+    }, [engine.applicationData, handleContinue, removeFromEngine, collisions]);
 
     const handleMenu = useCallback(
         (event) => {
-            if (openModal.type && openModal.open && displayInGameMenu) {
-                if (event.key === 'Escape') {
-                    setOpenModal({ type: null, open: false });
-                }
-            } else {
-                switch (event.key) {
-                    case 'ArrowDown':
-                    case 's':
-                        setSelected((slt) => (slt + 1 <= menuItems.length - 1 ? slt + 1 : 0));
-                        break;
-                    case 'ArrowUp':
-                    case 'z':
-                        setSelected((slt) => (slt - 1 >= 0 ? slt - 1 : menuItems.length - 1));
-                        break;
-                    case 'Enter':
-                        menuItems.find((it) => it.key === selected).onClick();
-                }
+            if (!openModal.type && !openModal.open) {
+                const enabledMenuItems = menuItems.filter((item) => !item.disabled);
+                return engine.controls.keyBoardMenuSelect(event, enabledMenuItems, selected, setSelected);
+            }
+
+            if (event.key === 'Escape') {
+                setOpenModal({ type: null, open: false });
             }
         },
-        [openModal, menuItems, selected, displayInGameMenu]
+        [openModal, menuItems, selected, engine]
     );
 
     useEffect(() => {
@@ -107,7 +101,7 @@ export const InGameMenu = ({ id, form }) => {
         <div className={css['ingame-menu-items-container']} onKeyDown={handleMenu} tabIndex={1} ref={activeRef}>
             <div className={css['ingame-menu-items-block']}>
                 {menuItems.map((it) => {
-                    return <MenuItem key={it.key} active={selected === it.key} name={it.name} onClick={it.onClick} />;
+                    return <MenuItem key={it.key} active={selected === it.key} name={it.name} onClick={it.onClick} disabled={it.disabled} />;
                 })}
                 <MenuModals
                     item={openModal}

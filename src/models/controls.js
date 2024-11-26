@@ -9,7 +9,6 @@ export default class KeyControls {
             { name: 'quests', key: 'j', value: false },
             { name: 'achievements', key: 'l', value: false },
             { name: 'statistics', key: 'k', value: false },
-            // { name: 'minimap', key: 'l', value: true },
             { name: 'interface', key: 'h', value: true },
             { name: 'map', key: 'm', value: false },
             { name: 'pause', key: 'p', value: false }
@@ -86,13 +85,6 @@ export default class KeyControls {
         this.positions = positions;
     }
 
-    handle_pause(event) {
-        if (event.key === 'Escape') {
-            const pause = !this.pause;
-            this.pause = pause;
-        }
-    }
-
     setDirections(event, value) {
         const key = this.getKey(event);
         if (key) {
@@ -140,6 +132,31 @@ export default class KeyControls {
         //     items = this.items.filter((it) => response.includes(it.id));
         // });
         // return items;
+    }
+
+    keyBoardMenuSelect(event, items, selected, setSelected) {
+        const currentIndex = items.findIndex((item) => item.key === selected);
+        switch (event.key) {
+            case 'ArrowDown':
+            case 's':
+                setSelected(() => {
+                    const nextIndex = (currentIndex + 1) % items.length;
+                    return items[nextIndex].key;
+                });
+                break;
+            case 'ArrowUp':
+            case 'z':
+                setSelected(() => {
+                    const nextIndex = (currentIndex - 1 + items.length) % items.length;
+                    return items[nextIndex].key;
+                });
+                break;
+            case 'Enter':
+                items.find((item) => item.key === selected).onClick();
+                break;
+            default:
+                break;
+        }
     }
 }
 
