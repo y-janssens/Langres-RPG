@@ -4,7 +4,7 @@ export { useMapBatch } from './useMapBatch';
 export { useDice } from './useDice';
 export { useStateHistory } from './useStateHistory';
 export { default as useGameContext } from './useGameContext';
-export { default as useAdminContext } from './useAdminContext';
+export { default as usePermissionsContext } from './usePermissionsContext';
 export { default as useDashboardContext } from './useDashboardContext';
 export { default as useSettingsProperties } from './useSettingsProperties';
 export { default as useFirstRender } from './useFirstRender';

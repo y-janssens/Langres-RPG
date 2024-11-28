@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import useGameContext from './useGameContext';
-import useAdminContext from './useAdminContext';
+import usePermissionsContext from './usePermissionsContext';
 
 const useSettingsProperties = ({ keys = [], validate = () => {} }, deps = []) => {
     const [engine] = useGameContext();
-    const { is_admin, dev_settings_enabled } = useAdminContext();
+    const { is_admin, dev_settings_enabled } = usePermissionsContext();
     const [data, setData] = useState(() => formatValues('defaultProperty'));
 
     function formatValues(fn, onlyValue = false) {

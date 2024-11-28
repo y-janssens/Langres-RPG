@@ -1,12 +1,16 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminRoute from './AdminRoute';
 import { Builder, Tools } from '../pages';
-import { useAdminContext } from '../hooks';
+import { usePermissionsContext } from '../hooks';
 import { DashboardRouter } from './DashboardRouter';
 import { DashboardContextLayer } from '../context/DashboardContext';
 
 export const AdminRouter = () => {
-    const { is_admin, dashboard_enabled, dev_tools_enabled, editor_enabled } = useAdminContext();
+    const { is_admin, dashboard_enabled, dev_tools_enabled, editor_enabled } = usePermissionsContext();
+
+    if (!is_admin) {
+        return <Navigate to="/" replace />;
+    }
 
     return (
         <DashboardContextLayer>

@@ -12,7 +12,7 @@ pub fn generate(
     order: u32,
     primary: bool,
 ) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Editor, || {
+    authenticated_command(Permission::DevTools, || {
         World::new(size, name, order, primary)
     })
 }
@@ -33,7 +33,7 @@ pub fn clear(mut map: World) -> Result<Response, ValidationError> {
 
 #[tauri::command]
 pub fn generate_forest(mut map: World) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Editor, || {
+    authenticated_command(Permission::DevTools, || {
         let content = World::generate_forest(map.content);
         map.content = content;
         map

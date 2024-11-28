@@ -1,9 +1,9 @@
 import React from 'react';
 import { Permissions } from '../models';
 
-const AdminContext = React.createContext(null);
+const PermissionsContext = React.createContext(null);
 
-export const AdminContextLayer = ({ children }) => {
+export const PermissionsContextLayer = ({ children }) => {
     const [permissions, loadingPermissions] = Permissions.useCommand();
 
     if (!permissions || loadingPermissions) {
@@ -11,15 +11,15 @@ export const AdminContextLayer = ({ children }) => {
     }
 
     return (
-        <AdminContext.Provider
+        <PermissionsContext.Provider
             value={{
                 permissions,
                 loadingPermissions
             }}
         >
             {children}
-        </AdminContext.Provider>
+        </PermissionsContext.Provider>
     );
 };
 
-export default AdminContext;
+export default PermissionsContext;
