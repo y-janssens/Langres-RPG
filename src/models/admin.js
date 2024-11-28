@@ -1,6 +1,7 @@
 import i18next from 'i18next';
 import { AdminGameModel, Storyline, Collection, MapObject, MapFunction, Quest, Fetcher, Achievement, Statistic, Loot } from '.';
-import { isObject } from '../components/utils';
+import { isObject } from '../utils';
+
 export default class AdminModel extends Fetcher {
     constructor(instance, model) {
         super(model);

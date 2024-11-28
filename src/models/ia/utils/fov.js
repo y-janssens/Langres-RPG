@@ -1,4 +1,4 @@
-import { uniqueList, flatten } from '../../../components/utils';
+import { uniqueList, flatten } from '../../../utils';
 
 export default class FieldOfView {
     constructor({ item, map, direction, area = 2 }) {

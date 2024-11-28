@@ -1,5 +1,5 @@
 import React from 'react';
-import GameContext from '../context/GameContextLayer';
+import { GameContext } from '../context';
 
 export default function useGameContext() {
     const ctx = React.useContext(GameContext);

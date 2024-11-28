@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import useDashboardContext from '../../../hooks/useDashboardContext';
+import { useDashboardContext } from '../../../hooks';
 
 import { Button, Input } from 'react-daisyui';
 import { Locator } from './locator/Locator';
-import Icon from '../../../components/ui/Icon';
+import { Icon } from '../../../components';
 
 import css from './ui.module.css';
 

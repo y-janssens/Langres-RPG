@@ -1,11 +1,14 @@
 import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { invoke } from '@tauri-apps/api';
-import { Navbar, Divider, Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
+import { invoke } from '@tauri-apps/api';
+
+import { Navbar, Divider, Button } from 'react-daisyui';
+
 import { ButtonLabel, ButtonIcon, ButtonToggle, MultiSelect, Toggle, MultiButton } from '.';
-import Icon from '../../../components/ui/Icon';
+import { Icon } from '../../../components';
 import Zoom from './Zoom';
+
 import css from '../builder.module.css';
 
 export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {

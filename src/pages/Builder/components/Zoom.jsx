@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
-import Icon from '../../../components/ui/Icon';
+
+import { Icon } from '../../../components';
 import { ButtonIcon } from './ButtonLabel';
+
 import css from '../builder.module.css';
 
 const GAP = 20;

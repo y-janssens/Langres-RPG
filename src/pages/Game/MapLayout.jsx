@@ -2,11 +2,11 @@ import { memo, useState, useCallback, useEffect } from 'react';
 import { Raycaster, Vector3 } from 'three';
 import { useFrame } from '@react-three/fiber';
 
-import { useGameContext, useSettingsProperties } from '../../../hooks';
+import { useGameContext, useSettingsProperties } from '../../hooks';
 
-import { Tiles } from '../Scene/Tiles';
-import Character from '../Character';
-import { Npcs } from '../Npcs/Npcs';
+import { Tiles } from './Scene';
+import Character from './Character';
+import { Npcs } from './Npcs';
 
 const positionCaster = new Raycaster();
 const collisionCaster = new Raycaster();

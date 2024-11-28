@@ -4,3 +4,4 @@ export { default as NavBar } from './NavBar';
 export { Locator } from './locator/Locator';
 export { ItemToggle } from './ItemToggle';
 export { ActionsButtons } from './ActionsButtons';
+export { Select } from './Select';

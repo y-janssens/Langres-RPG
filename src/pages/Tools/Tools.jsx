@@ -1,12 +1,11 @@
-import { invoke } from '@tauri-apps/api';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import _ from 'lodash';
-
-import { PathFinder as Path } from '../../models/ia';
-import { FieldOfView } from '../../models/ia/utils';
-import { World } from '../../models';
+import { invoke } from '@tauri-apps/api';
 import { useDynamicForm } from '../../hooks';
-import { executionTime, uniqueSelection } from '../../components/utils';
+import { PathFinder as Path, FieldOfView } from '../../models/ia';
+import { World } from '../../models';
+
+import _ from 'lodash';
+import { executionTime, uniqueSelection } from '../../utils';
 
 import { Theme, Sidebar, NavBar, TileInfo } from './components';
 

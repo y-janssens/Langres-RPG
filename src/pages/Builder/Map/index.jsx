@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 import { invoke } from '@tauri-apps/api';
 
-import World from '../../../models/world';
+import { World } from '../../../models';
 
-import { Loading } from '../../../components/ui/Loading';
+import { Loading } from '../../../components';
 import { FlatMap } from './flat/FlatMap';
 import { Scene } from './3D/Scene';
 

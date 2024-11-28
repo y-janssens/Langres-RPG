@@ -1,9 +1,8 @@
 import React, { useCallback, useState, useRef, useMemo, useEffect } from 'react';
 import { useGameContext } from '../../hooks';
 
-import { Game } from '../Game/Game';
-import { MainMenu } from '../../components/Menu/MainMenu';
-import { QuickSettings } from '../../components/settings';
+import { MainMenu, QuickSettings } from '../../components';
+import { Game } from '../';
 
 export const Controler = () => {
     const [position, setPosition] = useState();

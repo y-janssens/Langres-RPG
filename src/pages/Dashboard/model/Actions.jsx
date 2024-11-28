@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { Dropdown } from 'react-daisyui';
-import Icon from '../../../components/ui/Icon';
+import { Icon } from '../../../components';
 
 import css from './model.module.css';
 

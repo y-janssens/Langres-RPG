@@ -3,7 +3,7 @@ import { useGameContext, useTranslation } from '../../hooks';
 
 import SettingComponent from './SettingComponent';
 import { Button, Form } from 'react-daisyui';
-import Icon from '../ui/Icon';
+import { Icon } from '../Ui';
 
 import css from './dev.module.css';
 

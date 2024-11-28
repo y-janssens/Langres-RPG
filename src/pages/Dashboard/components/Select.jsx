@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { resolveOptions } from '../utils';
+import { resolveOptions } from '../../../utils';
 
 import { Button } from 'react-daisyui';
 
@@ -12,7 +12,7 @@ export const Select = ({ label, value, options, onChange }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className={css['ui-selector']}>
+        <div className={css['dashboard-selector']}>
             <Button
                 dataTheme="dark"
                 animation={false}
@@ -24,14 +24,14 @@ export const Select = ({ label, value, options, onChange }) => {
                     borderBottomLeftRadius: open && '0px'
                 }}
             >
-                <div className={css['ui-selector-label']}>
+                <div className={css['dashboard-selector-label']}>
                     <span>{value || t(label)}</span>
-                    <span className={css['ui-selector-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                    <span className={css['dashboard-selector-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
                 </div>
             </Button>
             {open && (
-                <div className={css['ui-selector-content']}>
-                    <div className={css['ui-selector-options']}>
+                <div className={css['dashboard-selector-content']}>
+                    <div className={css['dashboard-selector-options']}>
                         {resolveOptions(options).map((it) => (
                             <Option key={it.key} item={it} onClick={onChange} onclose={() => setOpen(false)} />
                         ))}

@@ -1,8 +1,9 @@
-import { Controler } from './pages/Controler/Controler';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { PermissionsContextLayer } from './context/PermissionsContextLayer';
-import { GameContextLayer } from './context/GameContextLayer';
-import { AdminRouter } from './router/AdminRouter';
+
+import { PermissionsContextLayer, GameContextLayer } from './context';
+import { AdminRouter } from './router';
+
+import { Controler } from './pages';
 
 function App() {
     return (

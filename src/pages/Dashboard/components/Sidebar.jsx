@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import useDashboardContext from '../../../hooks/useDashboardContext';
+import { useDashboardContext } from '../../../hooks';
 
 import { Button } from 'react-daisyui';
-import { AdminLogo } from '../../../components/images';
+import { AdminLogo } from '../../../components';
 
 import css from './ui.module.css';
 

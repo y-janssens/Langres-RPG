@@ -1,8 +1,7 @@
 import React, { memo, useCallback, useMemo, useRef, useEffect } from 'react';
 
-import { Loading } from '../../../../components/ui/Loading';
+import { Loading, Icon } from '../../../../components';
 import { ButtonIcon } from '../../components';
-import Icon from '../../../../components/ui/Icon';
 
 import css from './generator.module.css';
 

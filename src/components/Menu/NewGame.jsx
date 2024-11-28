@@ -4,7 +4,7 @@ import { useGameContext, useTranslation } from '../../hooks';
 
 import { GameModel } from '../../models';
 
-import Modal from '../ui/Modal';
+import { Modal } from '../Ui';
 
 import css from './menu.module.css';
 
