@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { invoke } from '@tauri-apps/api/tauri';
-import { Dice } from '../models/engine';
+import { Dice } from '../models';
 
 export const useDice = (value, cap = 10) => {
     const { t } = useTranslation();

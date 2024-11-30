@@ -2,7 +2,7 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { useMapBatch, useTranslation } from '../../../../hooks';
 import { Collection, GeneratorOptions } from '../../../../models';
 
-import Icon from '../../../../components/ui/Icon';
+import { Icon } from '../../../../components';
 import { PreviewBlock, EmptyBlock, MapThumbnail } from './Blocks';
 import { ButtonIcon, ButtonLabel } from '../../components';
 import { GeneratorSettings } from './Settings';

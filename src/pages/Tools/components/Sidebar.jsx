@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AdminLogo } from '../../../components/images';
+import { AdminLogo } from '../../../components';
 import Information from './Information';
 import { Button } from 'react-daisyui';
 

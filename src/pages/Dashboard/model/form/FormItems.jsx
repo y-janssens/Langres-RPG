@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { displayValue } from '../../../../components/utils';
+import { displayValue } from '../../../../utils';
 import { Input, Textarea, Toggle } from 'react-daisyui';
-import { Select } from '../../../../components/ui/Select';
+
+import { Select } from '../../components';
 
 import css from './form.module.css';
 

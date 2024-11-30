@@ -1,8 +1,7 @@
 import React, { useCallback, useMemo, useRef, useEffect } from 'react';
 import { invoke } from '@tauri-apps/api';
 
-import Icon from '../../../../components/ui/Icon';
-import { Hex } from '../../../../components/ui/Icons';
+import { Icon, Hex } from '../../../../components';
 
 import css from '../../builder.module.css';
 

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from 'react-daisyui';
-import Icon from '../../../components/ui/Icon';
+import { Icon } from '../../../components';
 import { Toggle } from '../../Builder/components';
 
 import css from './ui.module.css';

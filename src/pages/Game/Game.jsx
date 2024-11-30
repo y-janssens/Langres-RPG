@@ -3,12 +3,9 @@ import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
 import { GameModel, Environment, PlayerJournal } from '../../models';
 
 import { Hud } from './Interface/Hud';
-import { LoadingScreen } from '../../components/ui/LoadingScreen';
-import { MapLayout } from './map/MapLayout';
-import { InGameMenu } from '../../components/Menu/InGameMenu';
-import PauseScreen from '../../components/ui/PauseScreen';
-import Scene from './Scene/Scene';
-import { OpeningTitle } from '../../components/ui/OpeningTitle';
+import { LoadingScreen, PauseScreen, OpeningTitle, InGameMenu } from '../../components';
+import { MapLayout } from './MapLayout';
+import { Scene } from './Scene';
 
 export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();

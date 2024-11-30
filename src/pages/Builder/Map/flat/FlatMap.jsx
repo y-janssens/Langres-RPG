@@ -1,4 +1,4 @@
-import { DragSelectProvider } from '../../../../context/DragSelectContext';
+import { DragSelectProvider } from '../../../../context';
 import { MapGrid } from './Grid';
 
 import css from '../../builder.module.css';

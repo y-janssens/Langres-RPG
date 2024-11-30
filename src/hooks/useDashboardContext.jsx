@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardContext from '../context/DashboardContext';
+import { DashboardContext } from '../context';
 
 export default function useDashboardContext() {
     const ctx = React.useContext(DashboardContext);

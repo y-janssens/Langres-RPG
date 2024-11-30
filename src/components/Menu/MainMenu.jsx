@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGameContext, useTranslation } from '../../hooks';
 import { exit } from '@tauri-apps/api/process';
 
-import { Title, MainTitle } from '../ui/Title';
+import { Title, MainTitle } from '../Ui';
 import { MenuItems } from './MenuItems';
 import MenuModals from './MenuModals';
 
@@ -22,9 +22,7 @@ export const MainMenu = () => {
     const activeRef = useRef();
 
     const getOrUpdateMenuItems = useCallback(async () => {
-        await engine.applicationData.load().then((resp) => {
-            setEngine('applicationData', resp);
-        });
+        await engine.applicationData.load();
         const elements = engine.applicationData?.main_menu_items || [];
         const items = elements.map((it, index) => {
             let func = () => {};

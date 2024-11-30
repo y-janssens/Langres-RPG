@@ -1,9 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import AdminRoute from './AdminRoute';
-import { Builder, Tools } from '../pages';
 import { usePermissionsContext } from '../hooks';
-import { DashboardRouter } from './DashboardRouter';
-import { DashboardContextLayer } from '../context/DashboardContext';
+import { DashboardContextLayer } from '../context';
+
+import { AdminRoute, DashboardRouter } from './';
+
+import { Builder, Tools } from '../pages';
 
 export const AdminRouter = () => {
     const { is_admin, dashboard_enabled, dev_tools_enabled, editor_enabled } = usePermissionsContext();

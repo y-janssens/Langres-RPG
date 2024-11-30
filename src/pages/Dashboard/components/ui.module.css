@@ -1,3 +1,55 @@
+/* Base Selector */
+.dashboard-selector {
+    position: relative;
+    width: -webkit-fill-available;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.dashboard-selector button {
+    border: 1px solid rgb(51, 56, 63) !important;
+    background-color: rgb(29, 35, 42) !important;
+    z-index: 100;
+    text-transform: capitalize !important;
+    transition: 250ms all;
+}
+
+.dashboard-selector-label {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dashboard-selector-content {
+    position: absolute;
+    width: calc(100% - 10px);
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+    background-color: rgb(29, 35, 42);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: none !important;
+    border: 1px solid rgb(51, 56, 63);
+    overflow-y: auto;
+}
+
+.dashboard-selector-options {
+    margin-top: 5px;
+}
+
+.dashboard-selector-option {
+    padding: 5px 10px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 250ms all;
+}
+
+.dashboard-selector-option:hover {
+    background-color: rgba(46, 51, 57, 0.5);
+}
+
 .dashboard-sidebar {
     position: fixed;
     width: 225px;

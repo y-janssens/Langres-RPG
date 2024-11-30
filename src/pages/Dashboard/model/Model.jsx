@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { useTranslation, useDashboardContext } from '../../../hooks';
 import { AdminModel } from '../../../models';
-import { IsBoolean, matchSearch } from '../../../components/utils';
+import { IsBoolean, matchSearch } from '../../../utils';
 
 import { Table } from 'react-daisyui';
 import { ItemToggle } from '../components';

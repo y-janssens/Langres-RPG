@@ -1,4 +1,4 @@
-export { default as Engine } from './engine';
+export { default as Engine, Dice } from './engine';
 export { default as DashboardModels } from './dashboard';
 export { default as Fetcher } from './fetcher';
 export { default as GameModel } from './game';

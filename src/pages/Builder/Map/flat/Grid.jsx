@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useEffect, useState } from 'react';
-import { useDragSelect } from '../../../../context/DragSelectContext';
+import { useDragSelect } from '../../../../context';
 import { Maptile } from './Tile';
 
 export const MapGrid = ({ form, setForm, data, handleSelect }) => {

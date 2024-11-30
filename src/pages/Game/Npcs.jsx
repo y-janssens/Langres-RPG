@@ -3,9 +3,9 @@ import { DoubleSide } from 'three';
 import { useLoader } from '@react-three/fiber';
 import gsap from 'gsap';
 import { TextureLoader } from 'three';
-import { NpcBehaviourTree } from '../../../models/ia';
-import { useGameContext } from '../../../hooks';
-import { parseCoordinates } from '../../../components/utils';
+import { NpcBehaviourTree } from '../../models/ia';
+import { useGameContext } from '../../hooks';
+import { parseCoordinates } from '../../utils';
 
 export const Npcs = ({ npcs, target, map, filteredItems, ready }) => {
     const culledIds = filteredItems.map((i) => i.id);
