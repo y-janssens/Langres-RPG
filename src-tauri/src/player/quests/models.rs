@@ -1,7 +1,8 @@
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::backend::translations::models::Translations;
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
-use crate::backend::translations::models::Translations;
-use crate::{game::models::Game, backend::conf::factory::factory_models::AbstractModel};
+use crate::{backend::conf::factory::factory_models::AbstractModel, game::models::Game};
 
 use diesel::sql_types::Text;
 use diesel::{
@@ -60,9 +61,9 @@ impl PlayerQuest {
         let base_quests = Quest::load();
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
-            let status_json = serde_json::to_string(&quest.status).expect("error");
-            let name_json = serde_json::to_string(&quest.name).expect("error");
-            let description_json = serde_json::to_string(&quest.description).expect("error");
+            let status_json = serde_json::to_string(&quest.status).expect(BASE_ERROR);
+            let name_json = serde_json::to_string(&quest.name).expect(BASE_ERROR);
+            let description_json = serde_json::to_string(&quest.description).expect(BASE_ERROR);
             let _quest = InsertablePlayerQuest {
                 id: Uuid::new_v4().to_string(),
                 quest_id: quest.id,
@@ -100,9 +101,9 @@ impl PlayerQuest {
         quest: PlayerQuest,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let status_json = serde_json::to_string(&quest.status).expect("error");
-        let name_json = serde_json::to_string(&quest.name).expect("error");
-        let description_json = serde_json::to_string(&quest.description).expect("error");
+        let status_json = serde_json::to_string(&quest.status).expect(BASE_ERROR);
+        let name_json = serde_json::to_string(&quest.name).expect(BASE_ERROR);
+        let description_json = serde_json::to_string(&quest.description).expect(BASE_ERROR);
 
         let insertable = InsertablePlayerQuest {
             id: Uuid::new_v4().to_string(),

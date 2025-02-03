@@ -5,14 +5,15 @@ mod tests {
     use crate::admin::devtools::commands::load_dev_settings;
     use crate::admin::devtools::models::{DevSettings, SettingValue};
     use crate::backend::permissions::models::{Credentials, Permission};
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
     use crate::backend::tests::database::with_permissions;
 
     #[test]
     fn test_load_dev_settings_admin() {
         with_permissions(Permission::Admin, || {
-            let settings = load_dev_settings().expect("Error");
-            let config: DevSettings = from_value(settings.0).expect("Error");
+            let settings = load_dev_settings().expect(BASE_ERROR);
+            let config: DevSettings = from_value(settings.0).expect(BASE_ERROR);
 
             let global = config.global.values().into_iter().all(|it| it.mutable);
             let game = config.game.values().into_iter().all(|it| it.mutable);
@@ -31,8 +32,8 @@ mod tests {
 
     #[test]
     fn test_load_dev_settings_missing_variable() {
-        let settings = load_dev_settings().expect("Error");
-        let config: DevSettings = from_value(settings.0).expect("Error");
+        let settings = load_dev_settings().expect(BASE_ERROR);
+        let config: DevSettings = from_value(settings.0).expect(BASE_ERROR);
 
         let global = config.global.values().into_iter().all(|it| !it.mutable);
         let game = config.game.values().into_iter().all(|it| !it.mutable);
@@ -51,8 +52,8 @@ mod tests {
     #[test]
     fn test_load_dev_settings_regular_user() {
         with_permissions(Permission::RegularUser, || {
-            let settings = load_dev_settings().expect("Error");
-            let config: DevSettings = from_value(settings.0).expect("Error");
+            let settings = load_dev_settings().expect(BASE_ERROR);
+            let config: DevSettings = from_value(settings.0).expect(BASE_ERROR);
 
             let global = config.global.values().into_iter().all(|it| !it.mutable);
             let game = config.game.values().into_iter().all(|it| !it.mutable);

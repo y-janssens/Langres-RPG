@@ -6,7 +6,7 @@ pub struct AdminModelSerializer<'a> {
     pub model: &'a dyn AdminModel,
 }
 
-impl<'a> Serialize for AdminModelSerializer<'a> {
+impl Serialize for AdminModelSerializer<'_> {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,

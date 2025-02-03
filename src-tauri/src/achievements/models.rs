@@ -1,6 +1,7 @@
 use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::schema::achievements::dsl::*;
-use crate::{schema::achievements, backend::translations::models::Translations};
+use crate::{backend::translations::models::Translations, schema::achievements};
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -52,8 +53,8 @@ impl Achievement {
         achievement: Achievement,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&achievement.name).expect("error");
-        let description_json = serde_json::to_string(&achievement.description).expect("error");
+        let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
+        let description_json = serde_json::to_string(&achievement.description).expect(BASE_ERROR);
 
         let insertable = InsertableAchievement {
             id: Uuid::new_v4().to_string(),

@@ -1,7 +1,8 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use backend::database::initialize_db;
-use backend::settings::errors::{DATABASE_ERROR, RUNTIME_ERROR};
+use backend::settings::database::DATABASE_ERROR;
+use backend::settings::errors::RUNTIME_ERROR;
 use dotenv::dotenv;
 use std::env;
 

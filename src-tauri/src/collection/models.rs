@@ -2,6 +2,7 @@ use crate::backend::conf::factories::factories_definitions::WorldFactory;
 use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::backend::conf::factory::factory_models::Factory;
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::schema::maps::dsl::*;
 use crate::world::models::World;
 
@@ -73,7 +74,7 @@ impl Collection {
         data: Collection,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let map_json = serde_json::to_string(&data.map).expect("error");
+        let map_json = serde_json::to_string(&data.map).expect(BASE_ERROR);
 
         let insertable = InsertableCollection {
             map: map_json,

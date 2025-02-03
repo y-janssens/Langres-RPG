@@ -1,11 +1,12 @@
 #[cfg(test)]
 mod tests {
     use crate::achievements::models::Achievement;
-    use crate::game::models::Game;
-    use crate::player::achievements::models::PlayerAchievement;
     use crate::backend::conf::factories::factories_definitions::{AchievementFactory, GameFactory};
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::tests::database::allow_db_access;
+    use crate::game::models::Game;
+    use crate::player::achievements::models::PlayerAchievement;
 
     #[test]
     fn test_generate_player_achievements() {
@@ -21,7 +22,8 @@ mod tests {
 
             let mut game = GameFactory.generate(connection);
             let _ = Game::save(&mut game, connection);
-            let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
+            let player_achievements =
+                PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
 
             assert_eq!(player_achievements.len(), 25);
             assert!(!player_achievements[0].completed);
@@ -36,13 +38,15 @@ mod tests {
             let _ = Achievement::save(achievement, connection);
             let _ = Game::save(&mut game, connection);
 
-            let player_achievements = PlayerAchievement::load(game.id, connection).expect("Error");
+            let player_achievements =
+                PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
             let player_achievement = &player_achievements[0];
 
             PlayerAchievement::activate(player_achievement.clone(), connection);
 
             let patched_achievement =
-                PlayerAchievement::get(player_achievement.clone().id, connection).expect("Error");
+                PlayerAchievement::get(player_achievement.clone().id, connection)
+                    .expect(BASE_ERROR);
             assert!(patched_achievement.completed);
         });
     }

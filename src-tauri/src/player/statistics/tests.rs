@@ -2,6 +2,7 @@
 mod tests {
     use crate::backend::conf::factories::factories_definitions::{GameFactory, StatisticFactory};
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::tests::database::allow_db_access;
     use crate::game::models::Game;
     use crate::player::statistics::models::PlayerStatistic;
@@ -21,7 +22,7 @@ mod tests {
 
             let mut game = GameFactory.generate(connection);
             let _ = Game::save(&mut game, connection);
-            let player_statistics = PlayerStatistic::load(game.id, connection).expect("Error");
+            let player_statistics = PlayerStatistic::load(game.id, connection).expect(BASE_ERROR);
 
             assert_eq!(player_statistics.len(), 25);
         });
@@ -36,7 +37,7 @@ mod tests {
             let _ = Game::save(&mut game, connection);
 
             let player_statistics =
-                PlayerStatistic::load(game.id.clone(), connection).expect("Error");
+                PlayerStatistic::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_statistic = PlayerStatistic {
                 id: player_statistics[0].id.clone(),
                 game_id: game.id,
@@ -48,7 +49,7 @@ mod tests {
             let _ = PlayerStatistic::save(player_statistic.clone(), connection);
 
             let patched_statistic =
-                PlayerStatistic::get(player_statistic.id, connection).expect("Error");
+                PlayerStatistic::get(player_statistic.id, connection).expect(BASE_ERROR);
             assert_eq!(patched_statistic.value, "1322");
         });
     }

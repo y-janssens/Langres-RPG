@@ -3,6 +3,8 @@ pub mod env {
     use rand::{seq::SliceRandom, thread_rng, Rng};
     use serde::{Deserialize, Serialize};
 
+    use crate::backend::settings::errors::BASE_ERROR;
+
     #[derive(Clone, Copy, Debug, Serialize, Deserialize)]
     enum WeatherState {
         Sunny,
@@ -122,7 +124,7 @@ pub mod env {
                 6..=8 => String::from("summer"),
                 9..=11 => String::from("autumn"),
                 12 | 1 | 2 => String::from("winter"),
-                _ => String::from("error"),
+                _ => String::from(BASE_ERROR),
             }
         }
 

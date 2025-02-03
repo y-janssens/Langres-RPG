@@ -1,5 +1,6 @@
 use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::backend::permissions::models::Credentials;
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::character::models::Character;
 use crate::player::achievements::models::PlayerAchievement;
@@ -128,10 +129,10 @@ impl Game {
         self.save_count += 1;
         self.last_save_date = Self::get_date();
 
-        let character_json = serde_json::to_string(&self.character).expect("error");
-        let storyline_json = serde_json::to_string(&self.storyline).expect("error");
+        let character_json = serde_json::to_string(&self.character).expect(BASE_ERROR);
+        let storyline_json = serde_json::to_string(&self.storyline).expect(BASE_ERROR);
         let last_known_position_json =
-            serde_json::to_string(&self.last_known_position).expect("error");
+            serde_json::to_string(&self.last_known_position).expect(BASE_ERROR);
 
         let insertable = InsertableGame {
             id: self.id.clone(),

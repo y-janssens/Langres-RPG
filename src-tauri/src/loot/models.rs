@@ -1,3 +1,4 @@
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 use crate::schema::loot::dsl::*;
 use crate::{backend::conf::factory::factory_models::AbstractModel, schema::loot};
@@ -106,9 +107,9 @@ impl Loot {
         _item: Loot,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let item_type_json = serde_json::to_string(&_item.item_type).expect("error");
-        let name_json = serde_json::to_string(&_item.name).expect("error");
-        let description_json = serde_json::to_string(&_item.description).expect("error");
+        let item_type_json = serde_json::to_string(&_item.item_type).expect(BASE_ERROR);
+        let name_json = serde_json::to_string(&_item.name).expect(BASE_ERROR);
+        let description_json = serde_json::to_string(&_item.description).expect(BASE_ERROR);
 
         let insertable = InsertableLoot {
             id: Uuid::new_v4().to_string(),

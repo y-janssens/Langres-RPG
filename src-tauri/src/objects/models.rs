@@ -1,7 +1,10 @@
 use crate::{
-    backend::conf::{
-        factory::factory_models::AbstractModel,
-        faker::faker_definitions::{Faker, IdFaker},
+    backend::{
+        conf::{
+            factory::factory_models::AbstractModel,
+            faker::faker_definitions::{Faker, IdFaker},
+        },
+        settings::errors::BASE_ERROR,
     },
     schema::objects::dsl::*,
 };
@@ -76,7 +79,7 @@ impl Object {
         data: Object,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let area_json = serde_json::to_string(&data.area).expect("error");
+        let area_json = serde_json::to_string(&data.area).expect(BASE_ERROR);
 
         let insertable = InsertableObject {
             name: data.name,

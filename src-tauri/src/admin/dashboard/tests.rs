@@ -2,14 +2,17 @@
 mod tests {
     use crate::{
         admin::dashboard::commands::load_admin_dashboard,
-        backend::{permissions::models::Permission, tests::database::with_permissions},
+        backend::{
+            permissions::models::Permission, settings::errors::BASE_ERROR,
+            tests::database::with_permissions,
+        },
     };
     use serde_json::json;
 
     #[test]
     fn test_load_admin_dashboard_success() {
         with_permissions(Permission::Admin, || {
-            let dashboard = load_admin_dashboard().expect("Error");
+            let dashboard = load_admin_dashboard().expect(BASE_ERROR);
 
             assert_eq!(dashboard[0]["id"], 0);
             assert_eq!(dashboard[0]["command"], "load_games".to_string());

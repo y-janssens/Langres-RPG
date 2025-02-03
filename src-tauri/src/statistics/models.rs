@@ -1,6 +1,7 @@
-use crate::schema::statistics::dsl::*;
 use crate::backend::conf::factory::factory_models::AbstractModel;
-use crate::{schema::statistics, backend::translations::models::Translations};
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::schema::statistics::dsl::*;
+use crate::{backend::translations::models::Translations, schema::statistics};
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -52,8 +53,8 @@ impl Statistic {
         stat: Statistic,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&stat.name).expect("error");
-        let description_json = serde_json::to_string(&stat.description).expect("error");
+        let name_json = serde_json::to_string(&stat.name).expect(BASE_ERROR);
+        let description_json = serde_json::to_string(&stat.description).expect(BASE_ERROR);
 
         let insertable = InsertableStatistic {
             id: Uuid::new_v4().to_string(),

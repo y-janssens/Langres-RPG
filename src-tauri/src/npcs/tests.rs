@@ -1,14 +1,15 @@
 #[cfg(test)]
 mod tests {
+    use crate::backend::settings::errors::BASE_ERROR;
+    use crate::backend::tests::database::allow_db_access;
     use crate::npcs::models::Npc;
     use crate::npcs::named::SER_HERBERT;
-    use crate::backend::tests::database::allow_db_access;
     use crate::storyline::models::Story;
 
     #[test]
     fn test_get_map_npcs() {
         allow_db_access(|connection| {
-            let story = Story::load(connection).expect("Error");
+            let story = Story::load(connection).expect(BASE_ERROR);
             let map_id = story.story.acts[0].content.maps[0].clone().id;
             let npcs = Npc::get_for_map(map_id);
 

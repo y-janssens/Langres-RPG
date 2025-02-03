@@ -1,8 +1,8 @@
+use crate::backend::translations::models::Translations;
+use crate::backend::{conf::factory::factory_models::AbstractModel, settings::errors::BASE_ERROR};
 use crate::schema::playerstatistics;
 use crate::schema::playerstatistics::dsl::*;
-use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::statistics::models::Statistic;
-use crate::backend::translations::models::Translations;
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -39,7 +39,7 @@ impl PlayerStatistic {
         println!("Generating game statistics...");
         let base_statistics = Statistic::load(connection).expect("Failed to load statistics");
         for statistic in base_statistics {
-            let name_json = serde_json::to_string(&statistic.name).expect("error");
+            let name_json = serde_json::to_string(&statistic.name).expect(BASE_ERROR);
             let _statistic = InsertablePlayerStatistic {
                 id: Uuid::new_v4().to_string(),
                 game_id: _id.clone(),
@@ -75,7 +75,7 @@ impl PlayerStatistic {
         statistic: PlayerStatistic,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&statistic.name).expect("error");
+        let name_json = serde_json::to_string(&statistic.name).expect(BASE_ERROR);
 
         let insertable = InsertablePlayerStatistic {
             id: Uuid::new_v4().to_string(),

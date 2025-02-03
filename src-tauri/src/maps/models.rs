@@ -59,7 +59,7 @@ impl Map {
         config.get_content(tiles);
         config.collapse();
         config.post_process();
-        
+
         config.export()
     }
 
@@ -166,7 +166,7 @@ impl Map {
     }
 
     /// Pick a random value for a tile to be collapsed
-    fn get_random_value(remaining_values: &Vec<String>) -> String {
+    fn get_random_value(remaining_values: &[String]) -> String {
         let mut rng = rand::thread_rng();
         match remaining_values.len() {
             0 => String::from("-"),

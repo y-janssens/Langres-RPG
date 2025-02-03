@@ -1,6 +1,10 @@
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::schema::playerachievements;
 use crate::schema::playerachievements::dsl::*;
-use crate::{backend::conf::factory::factory_models::AbstractModel, backend::translations::models::Translations};
+use crate::{
+    backend::conf::factory::factory_models::AbstractModel,
+    backend::translations::models::Translations,
+};
 
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -42,8 +46,9 @@ impl PlayerAchievement {
         let base_achievements = Achievement::load(connection).expect("Failed to load achievements");
         let mut _achievements: Vec<PlayerAchievement> = vec![];
         for achievement in base_achievements {
-            let name_json = serde_json::to_string(&achievement.name).expect("error");
-            let description_json = serde_json::to_string(&achievement.description).expect("error");
+            let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
+            let description_json =
+                serde_json::to_string(&achievement.description).expect(BASE_ERROR);
             let _achievement = InsertablePlayerAchievement {
                 id: Uuid::new_v4().to_string(),
                 achievement_id: achievement.id,
@@ -80,8 +85,8 @@ impl PlayerAchievement {
         achievement: PlayerAchievement,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&achievement.name).expect("error");
-        let description_json = serde_json::to_string(&achievement.description).expect("error");
+        let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
+        let description_json = serde_json::to_string(&achievement.description).expect(BASE_ERROR);
         let insertable = InsertablePlayerAchievement {
             id: Uuid::new_v4().to_string(),
             game_id: achievement.clone().game_id,

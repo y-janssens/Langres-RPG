@@ -3,6 +3,7 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::{StoryLineFactory, WorldFactory};
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::permissions::models::Permission;
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::tests::database::{allow_db_access, with_permissions};
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::game::models::{Game, Position};
@@ -62,12 +63,12 @@ mod tests {
     #[test]
     fn test_edit_map_tiles() {
         allow_db_access(|connection| {
-            let objects = Object::load(connection).expect("Error");
+            let objects = Object::load(connection).expect(BASE_ERROR);
             let object = objects
                 .iter()
                 .find(|it| it.name == "tree")
                 .cloned()
-                .expect("Error");
+                .expect(BASE_ERROR);
 
             Story::edit_tiles(
                 connection,
@@ -176,17 +177,18 @@ mod tests {
     fn test_register_object() {
         allow_db_access(|connection| {
             with_permissions(Permission::Admin, || {
-                let objects = Object::load(connection).expect("Error");
+                let objects = Object::load(connection).expect(BASE_ERROR);
                 let object = objects
                     .iter()
                     .find(|it| it.value == Some("H_2".to_string()))
                     .cloned()
-                    .expect("Error");
+                    .expect(BASE_ERROR);
 
                 let mut story = Story::load(connection).unwrap();
                 // Clear base map content for readability purposes
-                let map = generate(50, "test".to_string(), 0, true).expect("Error");
-                story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
+                let map = generate(50, "test".to_string(), 0, true).expect(BASE_ERROR);
+                story.story.acts[0].content.maps[0] =
+                    serde_json::from_value(map.0).expect(BASE_ERROR);
                 let _ = Story::save(connection, story.id, &mut story);
 
                 let _ = Story::register_object(
@@ -224,17 +226,18 @@ mod tests {
     fn test_unregister_object() {
         allow_db_access(|connection| {
             with_permissions(Permission::Admin, || {
-                let objects = Object::load(connection).expect("Error");
+                let objects = Object::load(connection).expect(BASE_ERROR);
                 let object = objects
                     .iter()
                     .find(|it| it.name == "house")
                     .cloned()
-                    .expect("Error");
+                    .expect(BASE_ERROR);
 
                 let mut story = Story::load(connection).unwrap();
                 // Clear base map content for readability purposes
-                let map = generate(50, "test".to_string(), 0, true).expect("Error");
-                story.story.acts[0].content.maps[0] = serde_json::from_value(map.0).expect("Error");
+                let map = generate(50, "test".to_string(), 0, true).expect(BASE_ERROR);
+                story.story.acts[0].content.maps[0] =
+                    serde_json::from_value(map.0).expect(BASE_ERROR);
                 let _ = Story::save(connection, story.id, &mut story);
 
                 let _ = Story::register_object(
@@ -271,12 +274,12 @@ mod tests {
     #[test]
     fn test_register_wrong_object() {
         allow_db_access(|connection| {
-            let objects = Object::load(connection).expect("Error");
+            let objects = Object::load(connection).expect(BASE_ERROR);
             let object = objects
                 .iter()
                 .find(|it| it.name == "road")
                 .cloned()
-                .expect("Error");
+                .expect(BASE_ERROR);
 
             let response =
                 Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);

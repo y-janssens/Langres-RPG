@@ -1,11 +1,12 @@
 #[cfg(test)]
 pub mod database {
     use crate::backend::permissions::models::Permission;
-    use crate::backend::settings::errors::{
-        DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR, POOL_ERROR,
+    use crate::backend::settings::database::{
+        DATABASE_ERROR, FLUSH_DATABASE_ERROR, MIGRATION_ERROR,
     };
+    use crate::backend::settings::errors::POOL_ERROR;
     use crate::backend::settings::variables::{
-        MIGRATIONS, TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY,
+        MIGRATIONS_PATH, TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY,
     };
     use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
     use diesel_migrations::MigrationHarness;
@@ -80,7 +81,7 @@ pub mod database {
     fn run_local_migrations(
         connection: &mut impl MigrationHarness<Sqlite>,
     ) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-        connection.run_pending_migrations(MIGRATIONS)?;
+        connection.run_pending_migrations(MIGRATIONS_PATH)?;
 
         Ok(())
     }
