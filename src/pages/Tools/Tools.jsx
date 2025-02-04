@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 import { useDynamicForm } from '../../hooks';
 import { PathFinder as Path, FieldOfView } from '../../models/ia';
 import { World } from '../../models';

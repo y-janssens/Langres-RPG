@@ -1,6 +1,6 @@
 use crate::{
-    loot::models::{ItemTypes, Loot},
     backend::translations::models::Translations,
+    loot::models::{ItemTypes, Loot},
 };
 use lazy_static::lazy_static;
 use uuid::Uuid;

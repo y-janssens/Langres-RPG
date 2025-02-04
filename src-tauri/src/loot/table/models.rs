@@ -1,8 +1,8 @@
 use std::collections::HashSet;
 
 use crate::{
-    loot::models::{ItemTypes, Loot},
     backend::translations::models::Translations,
+    loot::models::{ItemTypes, Loot},
 };
 use diesel::SqliteConnection;
 use rand::{seq::IteratorRandom, thread_rng};

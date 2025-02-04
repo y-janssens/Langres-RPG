@@ -1,10 +1,10 @@
 #[cfg(test)]
 mod tests {
 
-    use crate::functions::models::Function;
     use crate::backend::conf::factories::factories_definitions::FunctionFactory;
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::tests::database::allow_db_access;
+    use crate::functions::models::Function;
 
     #[test]
     fn test_load_functions() {

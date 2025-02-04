@@ -3,8 +3,8 @@ use uuid::Uuid;
 
 use crate::npcs::tables::NPCS;
 use crate::{
-    character::models::Inventory, game::models::Position, quests::models::Quest,
-    backend::translations::models::Translations,
+    backend::translations::models::Translations, character::models::Inventory,
+    game::models::Position, quests::models::Quest,
 };
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]

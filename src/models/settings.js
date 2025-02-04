@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import Fetcher from './fetcher';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 
 export default class Settings extends Fetcher {
     constructor(options = {}) {
@@ -44,15 +44,18 @@ export default class Settings extends Fetcher {
         return await invoke(this.command()).then((response) => new this(response));
     }
 
-    static command(id) { // eslint-disable-line
+    static command(id) {
+        // eslint-disable-line
         return 'load_app_datas';
     }
 
-    static fromApi(id, data) { // eslint-disable-line
+    static fromApi(id, data) {
+        // eslint-disable-line
         return new this(data);
     }
 
-    async save(overide = false) { // eslint-disable-line
+    async save(overide = false) {
+        // eslint-disable-line
         await invoke(`save_app_datas`, { id: this.id, data: this });
     }
 }

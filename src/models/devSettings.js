@@ -1,4 +1,4 @@
-import { invoke } from '@tauri-apps/api/tauri';
+import { invoke } from '@tauri-apps/api/core';
 import _ from 'lodash';
 export default class DevSettings {
     constructor(args) {

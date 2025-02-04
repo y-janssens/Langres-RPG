@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 
 import { World } from '../../../models';
 

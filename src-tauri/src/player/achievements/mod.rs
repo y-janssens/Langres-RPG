@@ -1,3 +1,3 @@
+pub mod commands;
 pub mod models;
 pub mod tests;
-pub mod commands;

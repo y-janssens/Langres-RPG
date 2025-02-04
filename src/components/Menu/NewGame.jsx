@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 import { useGameContext, useTranslation } from '../../hooks';
 
 import { GameModel } from '../../models';

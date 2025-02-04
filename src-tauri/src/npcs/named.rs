@@ -1,9 +1,9 @@
 use crate::{
+    backend::translations::models::Translations,
     character::models::Inventory,
     game::models::Position,
     loot::table::{base::*, tables::SER_HERBERT_TABLE},
     quests::definitions::*,
-    backend::translations::models::Translations,
 };
 
 use super::models::*;

@@ -1,10 +1,10 @@
 use super::models::TableLoot;
 use crate::{
+    backend::translations::models::Translations,
     loot::{
         models::{ItemTypes, Loot},
         table::definitions::NamedTableLoot,
     },
-    backend::translations::models::Translations,
 };
 use lazy_static::lazy_static;
 use uuid::Uuid;

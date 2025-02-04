@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGameContext, useTranslation } from '../../hooks';
-import { exit } from '@tauri-apps/api/process';
+import { exit } from '@tauri-apps/plugin-process';
 
 import { Title, MainTitle } from '../Ui';
 import { MenuItems } from './MenuItems';

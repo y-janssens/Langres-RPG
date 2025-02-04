@@ -1,4 +1,4 @@
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 import AdminModel from './admin';
 
 export default class Storyline extends AdminModel {

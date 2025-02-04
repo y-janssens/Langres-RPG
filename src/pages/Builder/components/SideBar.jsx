@@ -1,5 +1,5 @@
 import { useCallback, useState, useMemo } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 import { Button, Input } from 'react-daisyui';
 import { Toggle } from './Toggle';
 import { useTranslation } from 'react-i18next';

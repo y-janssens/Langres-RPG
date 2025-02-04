@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 
 export const useNew = ({ func, payload = null, id = null, launch = true, useLoader = false, onSuccess = () => {} }, deps = []) => {
     const [data, setData] = useState(null);

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { invoke } from '@tauri-apps/api';
+import { invoke } from '@tauri-apps/api/core';
 
 export default class Fetcher {
     static resolveLauncher(params) {
@@ -69,7 +69,8 @@ export default class Fetcher {
         await invoke(`new_${this.model}`, this.payload());
     }
 
-    async save(overide = false) { // eslint-disable-line
+    async save(overide = false) {
+        // eslint-disable-line
         await invoke(`save_${this.model}`, { id: this.id, data: this });
     }
 
