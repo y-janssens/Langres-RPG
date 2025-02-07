@@ -1,11 +1,13 @@
-use crate::events::models::Event;
-use crate::game::models::Position;
-use crate::maps::models::Map;
-use crate::maps::tiles::Values;
-use crate::{backend::conf::factory::factory_models::AbstractModel, npcs::models::Npc};
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
+
+use crate::events::models::Event;
+use crate::game::models::Position;
+use crate::maps::config::Values;
+use crate::maps::models::Map;
+use crate::maps::settings::{EMPTY, GRASS, TREE};
+use crate::{backend::conf::factory::factory_models::AbstractModel, npcs::models::Npc};
 
 impl AbstractModel for World {}
 
@@ -38,17 +40,63 @@ pub struct Item {
     pub z: i32,
     pub value: String,
     pub display_value: String,
+    pub display_color: String,
     pub events: Vec<Event>,
     pub walkable: bool,
+    pub entropy: u32,
+    pub neighbours_ids: Vec<u32>,
 }
 
 impl Item {
-    pub fn get_item_value(&self) -> String {
-        if self.value == "-" {
-            "null".to_string()
-        } else {
-            self.value.to_string()
+    fn get_item_value(value: &str) -> String {
+        if value != GRASS.val() {
+            return value.to_string();
         }
+        EMPTY.value()
+    }
+
+    pub fn pre_collapse(mut self) -> Self {
+        let value = Self::get_item_value(&self.value);
+        let entropy = Values::get_tiles_values().len() as u32;
+
+        self.entropy = if value == EMPTY.val() { entropy } else { 0 };
+        self.value = value;
+        self
+    }
+
+    fn get_neighbours_ids(index: i32, row: i32, size: i32, map_size: u32) -> Vec<u32> {
+        let offset = Self::get_offset(row as u32, map_size as i32);
+        let mut ids: Vec<u32> = offset
+            .iter()
+            .filter(|&offset| index + offset >= 1 && index + offset < size)
+            .map(|&offset| (index + offset) as u32)
+            .collect();
+        ids.sort_unstable();
+        ids
+    }
+
+    fn get_offset(row: u32, size: i32) -> Vec<i32> {
+        if row % 2 == 0 {
+            vec![-1, 1, -size, -size + 1, size, size + 1]
+        } else {
+            vec![-1, 1, -size - 1, -size, size, size - 1]
+        }
+    }
+
+    /// Get each item's neighbours and return values and indices
+    pub fn get_neighbours_values(&self, items: &[Item]) -> (Vec<String>, Vec<usize>) {
+        let ids = &self.neighbours_ids;
+        let size = self.neighbours_ids.len();
+        let mut neighbour_indices = Vec::with_capacity(size);
+        let mut neighbour_values = Vec::with_capacity(size);
+
+        for (id, tile) in items.iter().enumerate() {
+            if ids.binary_search(&tile.id).is_ok() {
+                neighbour_indices.push(id);
+                neighbour_values.push(tile.value.clone());
+            }
+        }
+        (neighbour_values, neighbour_indices)
     }
 }
 
@@ -84,8 +132,7 @@ impl World {
         let rows = ((size as f32 + (size as f32).sqrt()).ceil() + 1_f32) as u32;
         let threshold = rows - size;
         let grid: u32 = size * rows;
-        let mut content = Vec::new();
-        let walkable_tiles = ["-".to_string(), "S".to_string(), "C".to_string()];
+        let mut content = Vec::with_capacity(grid.try_into().unwrap());
 
         for i in 0..grid {
             let col = i % size;
@@ -93,16 +140,20 @@ impl World {
             let x = if y % 2 == 0 { (col * 2) + 1 } else { col * 2 };
 
             let value = Self::generate_borders(col, y, size, threshold);
+            let (display_value, display_color, walkable) = Values::get_value(&value);
 
             let item = Item {
                 id: i,
                 x,
                 y,
                 z: 0,
-                value: value.clone(),
-                display_value: Values::get_display(&value),
+                value,
+                display_value,
+                display_color,
                 events: vec![],
-                walkable: walkable_tiles.contains(&value),
+                walkable,
+                entropy: 0,
+                neighbours_ids: Item::get_neighbours_ids(i as i32, y as i32, grid as i32, size),
             };
             content.push(item);
         }
@@ -126,24 +177,20 @@ impl World {
     /// Generate map's borders
     fn generate_borders(x: u32, y: u32, size: u32, threshold: u32) -> String {
         if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
-            return String::from("T");
+            return TREE.value();
         }
-        String::from("-")
+        GRASS.value()
     }
 
     /// Generate random trees in available space
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         println!("Generating game trees...");
         let items = ["T", "-", "-", "-", "-", "-", "-", "-"];
-        let walkable_values = ["-", "M", "G"];
 
-        for item in content
-            .iter_mut()
-            .filter(|i| walkable_values.contains(&i.value.as_str()))
-        {
+        for item in content.iter_mut().filter(|i| i.walkable) {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
             item.value = value.clone();
-            item.walkable = value != "T";
+            item.walkable = value != TREE.val();
         }
         content
     }

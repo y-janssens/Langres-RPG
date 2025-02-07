@@ -1,7 +1,59 @@
-use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
+use std::ops::Deref;
 
-use crate::maps::tiles::{get_tiles, get_tiles_values};
+use super::{
+    constraints::Constraints,
+    settings::{GRASS, VALUES, WATER},
+};
+
+#[derive(Clone)]
+pub struct Values {
+    pub value: String,
+    pub display_value: String,
+    pub walkable: bool,
+    pub display_color: String,
+}
+
+impl Deref for Values {
+    type Target = str;
+
+    fn deref(&self) -> &Self::Target {
+        &self.value
+    }
+}
+
+impl Values {
+    pub fn store(value: &str, display_value: &str, walkable: bool, display_color: &str) -> Self {
+        Self {
+            walkable,
+            value: value.to_string(),
+            display_value: display_value.to_string(),
+            display_color: display_color.to_string(),
+        }
+    }
+
+    pub fn value(&self) -> String {
+        self.to_string()
+    }
+
+    pub fn val(&self) -> &str {
+        self.as_ref()
+    }
+
+    pub fn get_value(value: &str) -> (String, String, bool) {
+        let value = VALUES
+            .clone()
+            .into_iter()
+            .find(|v| v.value == value)
+            .unwrap();
+        (value.display_value, value.display_color, value.walkable)
+    }
+
+    /// Get all possible tiles list with only values
+    pub fn get_tiles_values() -> Vec<String> {
+        VALUES.iter().map(|tile| tile.value.to_string()).collect()
+    }
+}
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Conf {
@@ -11,42 +63,42 @@ pub struct Conf {
     pub post_process: bool,
 }
 
-lazy_static! {
-    pub static ref ENTROPY: u32 = get_tiles_values().len() as u32;
-
-    // Config definitions
-    // Soil - Trees - Water- Shore - Borders - Roads(0) - Fences(0) - Ground(0)
-    pub static ref FOREST_CONFIG: Conf = Conf {
-        name: "forest".to_string(),
-        primary_value: "W".to_string(),
-         values: get_tiles(45, 9, 7, 3, 3),
-         post_process: true
-    };
-    pub static ref SWAMP_CONFIG: Conf = Conf {
-        name: "swamp".to_string(),
-        primary_value: "W".to_string(),
-        values: get_tiles(30, 8, 30, 30, 5),
-        post_process: false
-    };
-    pub static ref TOWN_CONFIG: Conf = Conf {
-        name: "town".to_string(),
-        primary_value: "-".to_string(),
-        values: get_tiles(50, 18, 13, 5, 5),
-        post_process: true
-    };
-
-    pub static ref AVAILABLE_CONFIGS: Vec<&'static String> = vec![&FOREST_CONFIG.name, &SWAMP_CONFIG.name];
-
-}
-
 impl Conf {
     /// Get config from entrypoint map's kind
-    pub fn get_config(name: &str) -> &'static Conf {
+    pub fn get_config(name: &str) -> Self {
         match name {
-            "forest" => &FOREST_CONFIG,
-            "swamp" => &SWAMP_CONFIG,
-            "town" => &TOWN_CONFIG,
-            _ => &FOREST_CONFIG,
+            "forest" => Self::get_forest_config(),
+            "swamp" => Self::get_swamp_config(),
+            "town" => Self::get_town_config(),
+            _ => Self::get_forest_config(),
+        }
+    }
+    // Configs definitions
+    // Soil - Trees - Water- Shore - Borders - Roads(0) - Fences(0) - Ground(0)
+    fn get_forest_config() -> Self {
+        Self {
+            name: "town".to_string(),
+            primary_value: GRASS.value(),
+            values: Constraints::get_tiles(50, 18, 13, 5, 5),
+            post_process: true,
+        }
+    }
+
+    fn get_swamp_config() -> Self {
+        Self {
+            name: "swamp".to_string(),
+            primary_value: WATER.value(),
+            values: Constraints::get_tiles(30, 8, 30, 30, 5),
+            post_process: false,
+        }
+    }
+
+    fn get_town_config() -> Self {
+        Self {
+            name: "town".to_string(),
+            primary_value: GRASS.value(),
+            values: Constraints::get_tiles(50, 18, 13, 5, 5),
+            post_process: true,
         }
     }
 

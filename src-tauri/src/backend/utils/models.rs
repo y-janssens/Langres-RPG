@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::iter::FromIterator;
 
-use crate::world::models::Item;
+use crate::{maps::settings::DEFAULT_MAP_SIZE, world::models::Item};
 
 use super::functions::{array_from_set, clamp};
 
@@ -69,14 +69,15 @@ impl FrustumCullingUtility {
 
     fn vertical_ids(&self) -> Vec<i32> {
         let mut ids = HashSet::new();
+        let size = *DEFAULT_MAP_SIZE;
         ids.insert(self.value);
 
         for i in 0..=self.vertical_threshold {
-            ids.insert((self.value - (i as i32) * 50).abs());
+            ids.insert((self.value - (i as i32) * size as i32).abs());
         }
 
         for i in 0..=self.vertical_threshold {
-            ids.insert(self.value + (i as i32) * 50);
+            ids.insert(self.value + (i as i32) * size as i32);
         }
 
         array_from_set(ids)

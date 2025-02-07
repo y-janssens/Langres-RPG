@@ -3,9 +3,10 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::WorldFactory;
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::fixtures::tests_fixtures::*;
+    use crate::maps::config::Values;
     use crate::maps::models::Map;
     use crate::maps::options::GeneratorOptions;
-    use crate::maps::tiles::{get_tiles_values, Values};
+    use crate::maps::settings::DEFAULT_MAP_SIZE;
     use crate::world::models::{Item, Options};
 
     #[test]
@@ -20,7 +21,7 @@ mod tests {
 
     #[test]
     fn test_map_generation() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let expected_size = size * (size as f32 / 0.85).ceil() as u32;
 
@@ -33,12 +34,13 @@ mod tests {
 
     #[test]
     fn test_generate_forest() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
             action: None,
-            post_action: Some("ground".to_string()),
+            post_action: None,
+            // post_action: Some("ground".to_string()),
         };
         let map = Map::generate(world.content, options);
 
@@ -48,7 +50,7 @@ mod tests {
 
     #[test]
     fn test_generate_swamp() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "swamp".to_string(),
@@ -63,7 +65,7 @@ mod tests {
 
     #[test]
     fn test_generate_town() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
@@ -78,7 +80,7 @@ mod tests {
 
     #[test]
     fn test_generate_swamp_village() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "swamp".to_string(),
@@ -93,7 +95,7 @@ mod tests {
 
     #[test]
     fn test_procedural_map_generation_topology() {
-        let size = 50;
+        let size = *DEFAULT_MAP_SIZE;
         let world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
@@ -110,8 +112,8 @@ mod tests {
     #[test]
     #[ignore]
     fn test_procedural_map_generation_batch_stress_test() {
-        let size = 50;
-        for _ in 0..=50 {
+        let size = *DEFAULT_MAP_SIZE;
+        for _ in 0..=size {
             let world = WorldFactory.generate();
             let options = Options {
                 r#type: "forest".to_string(),
@@ -126,10 +128,11 @@ mod tests {
     }
     fn get_map_results(map: Vec<Item>) {
         for (_, item) in map.iter().enumerate() {
-            let expected_values = get_tiles_values();
+            let expected_values = Values::get_tiles_values();
+            let (display_value, _, _) = Values::get_value(&item.value);
             assert!(expected_values.contains(&item.value));
             assert!(!["null"].contains(&item.value.as_str()));
-            assert_eq!(item.display_value, Values::get_display(&item.value));
+            assert_eq!(item.display_value, display_value);
         }
     }
 }
