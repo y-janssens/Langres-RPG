@@ -7,6 +7,7 @@ mod tests {
     use crate::backend::tests::database::{allow_db_access, with_permissions};
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::game::models::{Game, Position};
+    use crate::maps::settings::DEFAULT_MAP_SIZE;
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
     use crate::world::commands::generate;
@@ -17,7 +18,7 @@ mod tests {
         allow_db_access(|connection| {
             let response = Story::load(connection).unwrap();
 
-            assert_eq!(response.story.acts.len(), 2);
+            assert_eq!(response.story.acts.len(), 1);
             assert_eq!(response.story.acts[0].name, "Act I");
             assert_eq!(response.story.acts[0].title, "Rétribution");
             assert_eq!(response.story.acts[0].content.maps.len(), 1);
@@ -39,7 +40,7 @@ mod tests {
             let _ = Story::save(connection, response.id, &mut patch_data);
             let patch_response = Story::load(connection).unwrap();
 
-            assert_eq!(patch_response.story.acts.len(), 2);
+            assert_eq!(patch_response.story.acts.len(), 1);
             assert_eq!(patch_response.story.acts[0].name, "Act I");
             assert_eq!(patch_response.story.acts[0].title, "Rétribution");
             assert_eq!(patch_response.story.acts[0].content.maps.len(), 2);
@@ -73,7 +74,7 @@ mod tests {
             Story::edit_tiles(
                 connection,
                 1323375008,
-                1302422795,
+                1498719483,
                 [3, 4, 5].to_vec(),
                 object.id,
             );
@@ -96,7 +97,7 @@ mod tests {
     #[test]
     fn test_register_gateway() {
         allow_db_access(|connection| {
-            Story::register_gateway(connection, 1323375008, 1302422795, 3, (Some(5325235), true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -119,13 +120,13 @@ mod tests {
     #[test]
     fn test_unregister_gateway() {
         allow_db_access(|connection| {
-            Story::register_gateway(connection, 1323375008, 1302422795, 3, (Some(5325235), true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            Story::register_gateway(connection, 1323375008, 1302422795, 3, (None, true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (None, true));
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -136,7 +137,7 @@ mod tests {
     #[test]
     fn test_register_checkpoint() {
         allow_db_access(|connection| {
-            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -159,13 +160,13 @@ mod tests {
     #[test]
     fn test_unregister_checkpoint() {
         allow_db_access(|connection| {
-            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3));
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            Story::register_checkpoint(connection, 1323375008, 1302422795, 3, None);
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, None);
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -186,7 +187,8 @@ mod tests {
 
                 let mut story = Story::load(connection).unwrap();
                 // Clear base map content for readability purposes
-                let map = generate(50, "test".to_string(), 0, true).expect(BASE_ERROR);
+                let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true)
+                    .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
                 let _ = Story::save(connection, story.id, &mut story);
@@ -235,7 +237,8 @@ mod tests {
 
                 let mut story = Story::load(connection).unwrap();
                 // Clear base map content for readability purposes
-                let map = generate(50, "test".to_string(), 0, true).expect(BASE_ERROR);
+                let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true)
+                    .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
                 let _ = Story::save(connection, story.id, &mut story);
@@ -282,7 +285,7 @@ mod tests {
                 .expect(BASE_ERROR);
 
             let response =
-                Story::register_object(connection, 1323375008, 1302422795, 3, object.id, true);
+                Story::register_object(connection, 1323375008, 1498719483, 3, object.id, true);
             let error = response.unwrap_err().0;
             assert_eq!(error, format!("Object: {} is not registrable", object.id));
         });

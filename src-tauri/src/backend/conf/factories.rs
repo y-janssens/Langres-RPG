@@ -11,6 +11,7 @@ pub mod factories_definitions {
     use crate::functions::models::Function;
     use crate::game::models::Game;
     use crate::loot::models::{ItemTypes, Loot};
+    use crate::maps::settings::DEFAULT_MAP_SIZE;
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
@@ -87,7 +88,7 @@ pub mod factories_definitions {
         type Output = World;
 
         fn generate(&self) -> Self::Output {
-            World::new(50, "test".to_string(), 0, true)
+            World::new(*DEFAULT_MAP_SIZE, "test".to_string(), 0, true)
         }
     }
 

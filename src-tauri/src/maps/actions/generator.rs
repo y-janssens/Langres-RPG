@@ -1,21 +1,8 @@
-use super::noise::{Noise, NoiseType};
-use crate::{
-    maps::{models::Tile, tiles::get_neighbours_values},
-    world::models::Options,
-};
-use lazy_static::lazy_static;
 use rand::Rng;
 
-lazy_static! {
-    // Actions parameters : scale - factor - output
-    pub static ref TOWN_PARAMS: Params = Params::get("town", 0.025, 1.8, vec!["F"], "T", true);
-    pub static ref SHANTY_PARAMS: Params = Params::get("shanty", 0.1, 1.8, vec!["F"], "-", true);
-    pub static ref DIRT_PARAMS: Params = Params::get("dirt", 0.1, 1.25, vec!["G"], "-", false);
-    pub static ref GROUND_PARAMS: Params = Params::get("ground", 0.05, 1.8, vec!["G", "-", "M"], "-", false);
-
-    pub static ref AVAILABLE_PARAMS: Vec<&'static String> = vec![&TOWN_PARAMS.name, &SHANTY_PARAMS.name];
-    pub static ref AVAILABLE_ACTIONS: Vec<&'static String> = vec![&DIRT_PARAMS.name, &GROUND_PARAMS.name];
-}
+use super::super::settings::{DIRT_PARAMS, GROUND_PARAMS, SHANTY_PARAMS, TOWN_PARAMS};
+use super::noise::{Noise, NoiseType};
+use crate::world::models::{Item, Options};
 
 #[derive(Clone)]
 pub struct Params {
@@ -23,7 +10,7 @@ pub struct Params {
     pub scale: f64,          // Noise spreading
     pub factor: f64,         // Intensity
     pub filter: String,      // Escape value
-    pub output: Vec<String>, // Tile's value
+    pub output: Vec<String>, // Item's value
     pub pre_process: bool,   // Post-processing computation
 }
 
@@ -49,7 +36,7 @@ impl Params {
 
 #[allow(dead_code)]
 pub struct Generator {
-    content: Vec<Tile>, // Map content
+    content: Vec<Item>, // Map content
     seed: u32,          // Random value
     params: Params,     // Generator's parameters
     options: Options,   // Actions options
@@ -58,7 +45,7 @@ pub struct Generator {
 
 impl Generator {
     /// Perform generator's actions based on options, or returns content unchanged
-    pub fn perform_actions(options: &Options, mut content: Vec<Tile>) -> Vec<Tile> {
+    pub fn perform_actions(options: &Options, mut content: Vec<Item>) -> Vec<Item> {
         if let Some(ref action) = options.action {
             content = match action.as_str() {
                 "town" => Self::get_action(content, options, TOWN_PARAMS.clone(), NoiseType::Town),
@@ -72,7 +59,7 @@ impl Generator {
     }
 
     /// Perform generator's post processing actions based on options, or return content unchanged
-    pub fn perform_post_actions(options: &Options, mut content: Vec<Tile>) -> Vec<Tile> {
+    pub fn perform_post_actions(options: &Options, mut content: Vec<Item>) -> Vec<Item> {
         if let Some(ref post_action) = options.post_action {
             content = match post_action.as_str() {
                 "dirt" => Self::get_action(content, options, DIRT_PARAMS.clone(), NoiseType::Dirt),
@@ -87,11 +74,11 @@ impl Generator {
 
     /// Get noise generator parameters and generate actions's content
     fn get_action(
-        content: Vec<Tile>,
+        content: Vec<Item>,
         options: &Options,
         params: Params,
         noise: NoiseType,
-    ) -> Vec<Tile> {
+    ) -> Vec<Item> {
         let mut generator = Self::init(content, options, params, noise);
 
         generator.generate();
@@ -118,7 +105,7 @@ impl Generator {
         }
     }
 
-    fn init(content: Vec<Tile>, options: &Options, params: Params, noise: NoiseType) -> Self {
+    fn init(content: Vec<Item>, options: &Options, params: Params, noise: NoiseType) -> Self {
         let mut rng = rand::thread_rng();
         let seed = rng.gen();
         Self {
@@ -135,7 +122,7 @@ impl Generator {
     }
 
     /// Ensure preprocessed values will be ignored by WFC and left as is
-    fn pre_process_values(params: Params, item: &mut Tile, value: i32) -> &mut Tile {
+    fn pre_process_values(params: Params, item: &mut Item, value: i32) -> &mut Item {
         item.z = value;
         if params.pre_process {
             if item.z == 0 {
@@ -155,8 +142,7 @@ impl Generator {
             let neighbours: Vec<Vec<String>> = self
                 .content
                 .iter()
-                .enumerate()
-                .map(|(index, _)| get_neighbours_values(&self.content, index).0)
+                .map(|it| it.clone().get_neighbours_values(&self.content).0)
                 .collect();
 
             for (index, item) in self

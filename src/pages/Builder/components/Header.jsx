@@ -135,6 +135,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
 
                     <div className={css['builder-navbar-cta']}>
                         <Divider className={css['builder-navbar-divider']} horizontal />
+                        <ButtonIcon icon={<Icon name="preview" />} size="sm" onClick={() => setForm('modal', { type: 'preview', open: true, value: form.selectedMap })} />
                         <ButtonLabel variant="outline" label={t('common.actions.export')} onClick={handleExport} />
                         <ButtonLabel
                             variant="outline"

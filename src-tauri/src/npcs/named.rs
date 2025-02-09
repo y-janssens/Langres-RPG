@@ -26,7 +26,7 @@ lazy_static! {
             pv: 100,
             level: 2,
             gender: Gender::Male,
-            map_id: 1302422795,
+            map_id: 1498719483,
             unique: true,
             hostile: false,
             is_alive: true,

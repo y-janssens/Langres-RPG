@@ -1,0 +1,14 @@
+.preview-modal-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: -10px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-modal-container canvas {
+    border-radius: 8px;
+}

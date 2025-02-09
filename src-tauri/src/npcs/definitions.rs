@@ -7,7 +7,7 @@ lazy_static! {
     // Predefined npcs
     pub static ref BASE_ZOMBIE: Npc = Npc::get_zombie(
         Gender::Unknown,
-        1302422795,
+        1498719483,
         Inventory::empty(),
         (15.0, 32.0, 1607)
     );
@@ -16,7 +16,7 @@ lazy_static! {
         "Gabin",
         "Porcher",
         Gender::Male,
-        1302422795,
+        1498719483,
         Inventory::basic(FIRST_TABLE.clone().table.items),
         (21.0, 14.0, 710)
     );

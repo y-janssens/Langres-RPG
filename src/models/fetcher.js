@@ -69,8 +69,7 @@ export default class Fetcher {
         await invoke(`new_${this.model}`, this.payload());
     }
 
-    async save(overide = false) {
-        // eslint-disable-line
+    async save(overide = false) { // eslint-disable-line
         await invoke(`save_${this.model}`, { id: this.id, data: this });
     }
 
