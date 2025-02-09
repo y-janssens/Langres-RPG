@@ -74,6 +74,9 @@
       "manager": {
         "title": "Create and edit storylines and maps"
       },
+      "preview": {
+        "title": "Preview"
+      },
       "steps": {
         "acts": {
           "subtitle": "Edit and order your story's acts",

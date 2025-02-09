@@ -74,6 +74,9 @@
       "manager": {
         "title": "Créez et modifiez vos scénarios et cartes"
       },
+      "preview": {
+        "title": "Prévisualisation"
+      },
       "steps": {
         "acts": {
           "subtitle": "Éditez et organisez les actes de votre scénario",

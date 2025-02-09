@@ -59,11 +59,11 @@
 .modal-card-header {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.25);
 }
 
 .modal-card-content {
     width: 100%;
-    border-top: 1px solid rgba(229, 231, 235, 0.25);
     overflow: hidden;
     padding-bottom: 50px;
 }

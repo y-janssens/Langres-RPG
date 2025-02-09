@@ -5,7 +5,22 @@ import { Button } from 'react-daisyui';
 
 import css from './modal.module.css';
 
-export const BuilderModalWrapper = ({ title, subtitle, type, onSave, onReset, disabled, onClose, ctaLabel, customFooter, children, steps, canBeClosed }) => {
+export const BuilderModalWrapper = ({
+    title,
+    subtitle,
+    type,
+    onSave,
+    onReset,
+    disabled,
+    onClose,
+    ctaLabel,
+    customFooter,
+    children,
+    steps,
+    canBeClosed,
+    displayFooter = true,
+    displaySubtitle = true
+}) => {
     const { t } = useTranslation();
     const _title = title ?? t(`builder.modals.${type}.title`);
     const _subtitle = subtitle ?? t(`builder.modals.${type}.subtitle`);
@@ -27,9 +42,11 @@ export const BuilderModalWrapper = ({ title, subtitle, type, onSave, onReset, di
                 ) : (
                     <div className={css['modal-card-block']}>
                         <div className={css['modal-card-body']}>
-                            <div className={css['modal-card-header']}>
-                                <div>{_subtitle}</div>
-                            </div>
+                            {displaySubtitle && (
+                                <div className={css['modal-card-header']}>
+                                    <div>{_subtitle}</div>
+                                </div>
+                            )}
 
                             <div className={css['modal-card-content']}>{children}</div>
 
@@ -53,9 +70,11 @@ export const BuilderModalWrapper = ({ title, subtitle, type, onSave, onReset, di
                                         {it.label}
                                     </Button>
                                 ))}
-                                <Button className={css['modal-btns']} dataTheme="business" size="sm" color="primary" disabled={disabled} onClick={onSave}>
-                                    {_ctaLabel}
-                                </Button>
+                                {displayFooter && (
+                                    <Button className={css['modal-btns']} dataTheme="business" size="sm" color="primary" disabled={disabled} onClick={onSave}>
+                                        {_ctaLabel}
+                                    </Button>
+                                )}
                             </div>
                         </div>
                     </div>

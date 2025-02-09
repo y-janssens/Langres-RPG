@@ -39,21 +39,7 @@ export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect
 
     const color = useMemo(() => {
         if (!form.showConstraints) {
-            switch (item.value) {
-                case 'C':
-                    return 'rgba(200, 255, 19, .5)';
-                case 'T':
-                    return 'rgba(94, 219, 53, .8)';
-                case 'S':
-                    return 'rgb(219, 210, 87)';
-                case 'W':
-                    return 'lightskyblue';
-                case 'R':
-                    return '#808080';
-                case '-':
-                default:
-                    return 'darkkhaki';
-            }
+            return item.display_color;
         }
 
         if (Boolean(hover) && hover === item.id) {
