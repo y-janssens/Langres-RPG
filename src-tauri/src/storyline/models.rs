@@ -1,24 +1,16 @@
-use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::schema::acts::dsl::*;
+use crate::schema::storyline::dsl::*;
+use diesel::{prelude::*, sqlite::Sqlite};
+use serde::{Deserialize, Serialize};
+
 use crate::backend::utils::errors::ValidationError;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::events::models::{Event, EventType};
 use crate::game::models::Game;
-use crate::npcs::models::Npc;
 use crate::objects::models::Object;
-use crate::schema::storyline::dsl::storyline;
 use crate::world::models::{Item, World};
-use diesel::deserialize::{self, FromSql};
-use diesel::sql_types::Text;
-use diesel::sqlite::SqliteValue;
-use diesel::{prelude::*, sqlite::Sqlite};
-use serde::{Deserialize, Serialize};
 
-impl AbstractModel for Story {}
-impl AbstractModel for Acts {}
-impl AbstractModel for Act {}
-impl AbstractModel for Content {}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, AsChangeset)]
 #[diesel(table_name = crate::schema::storyline)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Story {
@@ -26,112 +18,76 @@ pub struct Story {
     pub name: String,
     pub created: String,
     pub modified: String,
-    pub story: Acts,
 }
 
-impl FromSql<Text, Sqlite> for Story {
-    fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
-        serde_json::from_str(&tstr)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-impl Queryable<Text, Sqlite> for Story {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-impl Queryable<Text, Sqlite> for Acts {
-    type Row = Acts;
-
-    fn build(row: Acts) -> Result<Acts, Box<(dyn serde::ser::StdError + Send + Sync + 'static)>> {
-        Ok(row)
-    }
-}
-
-impl FromSql<Text, Sqlite> for Acts {
-    fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let t = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
-        let acts: Vec<Act> = serde_json::from_str(&t)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)?;
-        Ok(Acts { acts })
-    }
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Acts {
-    pub acts: Vec<Act>,
-}
-
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, AsChangeset)]
+#[diesel(table_name = crate::schema::acts)]
+#[diesel(check_for_backend(Sqlite))]
 pub struct Act {
     pub id: i32,
-    pub order: u32,
+    pub order: i32,
     pub name: String,
     pub title: String,
     pub date: String,
-    pub content: Content,
     pub complete: bool,
+    pub storyline_id: i32,
 }
 
 impl Act {
-    pub fn validate_acts(&mut self) {
-        let all_primary_maps_complete = self
-            .content
-            .maps
+    pub fn validate_acts(&mut self, connection: &mut SqliteConnection) {
+        let maps: Vec<World> = crate::schema::maps::table
+            .filter(crate::schema::maps::act_id.eq(self.id))
+            .load(connection)
+            .expect("Error loading maps");
+
+        let all_primary_maps_complete = maps
             .iter()
             .filter_map(Some)
             .filter(|map| map.primary)
             .all(|map| map.complete);
 
-        if !self.content.maps.is_empty() && all_primary_maps_complete {
+        if !maps.is_empty() && all_primary_maps_complete {
             self.complete = true;
+            self.clone().save(connection);
         }
     }
-}
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Content {
-    pub maps: Vec<World>,
+    pub fn save(self, connection: &mut SqliteConnection) {
+        diesel::update(acts.find(self.id))
+            .set(self)
+            .execute(connection)
+            .map(|_| ());
+    }
 }
 
 impl Story {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Story> {
         let mut _storyline: Story = crate::schema::storyline::table.first(connection)?;
 
-        for act in _storyline.story.acts.iter_mut() {
-            for map in act.content.maps.iter_mut() {
-                map.npcs = Npc::get_for_map(map.id);
-            }
-        }
+        // TODO FIX
+        // for act in _storyline.story.acts.iter_mut() {
+        //     for map in act.content.maps.iter_mut() {
+        //         map.npcs = Npc::get_for_map(map.id);
+        //     }
+        // }
         Ok(_storyline)
     }
 
-    pub fn save(
-        connection: &mut SqliteConnection,
-        id: i32,
-        data: &mut Story,
-    ) -> QueryResult<usize> {
-        for act in data.story.acts.iter_mut() {
-            act.validate_acts();
-        }
-        let updated_json = serde_json::to_string(&data.story.acts).map_err(|e| {
-            diesel::result::Error::DatabaseError(
-                diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                Box::new(e.to_string()),
-            )
-        })?;
+    pub fn save(connection: &mut SqliteConnection, _id: i32, data: Story) {
+        let mut _acts: Vec<Act> = crate::schema::acts::table
+            .filter(crate::schema::acts::storyline_id.eq(_id))
+            .load(connection)
+            .expect("Error loading acts");
 
-        let result = diesel::update(storyline.find(id))
-            .set(crate::schema::storyline::story.eq(updated_json.clone()))
-            .execute(connection);
+        for act in _acts.iter_mut() {
+            act.validate_acts(connection);
+        }
+        diesel::update(storyline.find(_id))
+            .set(data)
+            .execute(connection)
+            .map(|_| ());
 
         Self::edit_existing_games(connection);
-        result
     }
 
     fn find_tile<F>(
@@ -144,21 +100,24 @@ impl Story {
         F: FnMut(&mut Item),
     {
         let mut story = Self::load(connection).expect("Failed to load Story");
+        let _acts: Vec<Act> = crate::schema::acts::table
+            .filter(crate::schema::acts::storyline_id.eq(story.id))
+            .load(connection)
+            .expect("Error loading acts");
 
-        if let Some(map) = story
-            .story
-            .acts
+        let acts_ids: Vec<i32> = _acts.iter().map(|ac| ac.id).collect();
+
+        let map: World = crate::schema::maps::table
+            .find(map_id)
+            .get_result(connection)
+            .expect("Error loading map");
+
+        map.content
             .iter_mut()
-            .find(|act| act.id == act_id)
-            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
-        {
-            map.content
-                .iter_mut()
-                .filter(|tile| tiles.contains(&tile.id))
-                .for_each(operation);
-        }
+            .filter(|tile| tiles.contains(&tile.id))
+            .for_each(operation);
 
-        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+        Self::save(connection, story.id, story).expect("Failed to save Story");
     }
 
     pub fn edit_tiles(

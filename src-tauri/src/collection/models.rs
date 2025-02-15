@@ -3,7 +3,7 @@ use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::backend::conf::factory::factory_models::Factory;
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
 use crate::backend::settings::errors::BASE_ERROR;
-use crate::schema::maps::dsl::*;
+use crate::schema::collections::dsl::*;
 use crate::world::models::World;
 
 use chrono::{DateTime, Local};
@@ -19,7 +19,7 @@ use serde::{Deserialize, Serialize};
 impl AbstractModel for Collection {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
-#[diesel(table_name = crate::schema::maps)]
+#[diesel(table_name = crate::schema::collections)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Collection {
     pub id: i32,
@@ -30,7 +30,7 @@ pub struct Collection {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
-#[diesel(table_name = crate::schema::maps)]
+#[diesel(table_name = crate::schema::collections)]
 pub struct InsertableCollection {
     pub map: String,
     pub created: String,
@@ -66,7 +66,7 @@ impl Collection {
     }
 
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Collection>> {
-        let mut _load: Vec<Collection> = crate::schema::maps::table.load(connection)?;
+        let mut _load: Vec<Collection> = crate::schema::collections::table.load(connection)?;
         Ok(_load)
     }
 
@@ -83,17 +83,17 @@ impl Collection {
             visible: data.visible,
         };
 
-        let exists = maps
+        let exists = collections
             .filter(id.eq(data.id))
             .first::<Collection>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(maps.find(data.id))
+            diesel::update(collections.find(data.id))
                 .set(insertable)
                 .execute(connection)?;
         } else {
-            diesel::insert_into(crate::schema::maps::table)
+            diesel::insert_into(crate::schema::collections::table)
                 .values(&insertable)
                 .execute(connection)?;
         }
@@ -102,7 +102,7 @@ impl Collection {
     }
 
     pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
-        diesel::delete(maps.filter(id.eq(_id))).execute(connection)?;
+        diesel::delete(collections.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }
 

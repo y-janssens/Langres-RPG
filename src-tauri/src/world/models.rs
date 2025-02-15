@@ -1,15 +1,16 @@
-use diesel::prelude::Queryable;
+use crate::schema::maps::dsl::maps;
+use diesel::prelude::{AsChangeset, Queryable};
+use diesel::sqlite::Sqlite;
+use diesel::{QueryDsl, Selectable, SqliteConnection};
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
 
+use super::types::{Content, Npcs};
 use crate::events::models::Event;
 use crate::game::models::Position;
 use crate::maps::config::Values;
 use crate::maps::models::Map;
 use crate::maps::settings::{DEFAULT_MAP_SIZE, EMPTY, GRASS, TREE, WALKABLE_VALUES};
-use crate::{backend::conf::factory::factory_models::AbstractModel, npcs::models::Npc};
-
-impl AbstractModel for World {}
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Options {
@@ -18,21 +19,24 @@ pub struct Options {
     pub post_action: Option<String>, // Post processing actions
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, AsChangeset)]
+#[diesel(table_name = crate::schema::maps)]
+#[diesel(check_for_backend(Sqlite))]
 pub struct World {
     pub id: i32,
     pub name: String,
-    pub size: u32,
-    pub order: u32,
+    pub size: i32,
+    pub order: i32,
     pub complete: bool,
-    pub content: Vec<Item>,
+    pub content: Content,
     pub starting_point: Position,
     pub primary: bool,
-    pub npcs: Vec<Npc>,
+    pub npcs: Npcs,
     pub options: Options,
+    pub act_id: Option<i32>,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, AsChangeset)]
 pub struct Item {
     pub id: u32,
     pub x: u32,
@@ -196,5 +200,12 @@ impl World {
             item.walkable = value != TREE.val();
         }
         content
+    }
+
+    pub fn save(self, connection: &mut SqliteConnection) {
+        diesel::update(maps.find(self.id))
+            .set(self)
+            .execute(connection)
+            .map(|_| ());
     }
 }

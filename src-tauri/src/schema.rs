@@ -11,6 +11,28 @@ diesel::table! {
 }
 
 diesel::table! {
+    acts (id) {
+        id -> Integer,
+        order -> Integer,
+        name -> Text,
+        title -> Text,
+        date -> Text,
+        complete -> Bool,
+        storyline_id -> Integer,
+    }
+}
+
+diesel::table! {
+    collections (id) {
+        id -> Integer,
+        map -> Text,
+        created -> Text,
+        modified -> Text,
+        visible -> Bool,
+    }
+}
+
+diesel::table! {
     functions (id) {
         id -> Integer,
         icon -> Text,
@@ -50,10 +72,16 @@ diesel::table! {
 diesel::table! {
     maps (id) {
         id -> Integer,
-        map -> Text,
-        created -> Text,
-        modified -> Text,
-        visible -> Bool,
+        name -> Text,
+        size -> Integer,
+        order -> Integer,
+        complete -> Bool,
+        content -> Text,
+        starting_point -> Text,
+        primary -> Bool,
+        npcs -> Text,
+        options -> Text,
+        act_id -> Nullable<Integer>,
     }
 }
 
@@ -131,12 +159,13 @@ diesel::table! {
         name -> Text,
         created -> Text,
         modified -> Text,
-        story -> Text,
     }
 }
 
 diesel::allow_tables_to_appear_in_same_query!(
     achievements,
+    acts,
+    collections,
     functions,
     games,
     loot,
