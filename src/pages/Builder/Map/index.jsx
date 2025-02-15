@@ -44,19 +44,14 @@ export default function Map({ loading, flatDisplay, form, setForm, history, inde
     const handleSelect = useCallback(
         async (item) => {
             if (!form.interactiveMode.toggle) {
-                let selected = form.selectedTiles;
+                let selected = [...form.selectedTiles];
+                const isAlreadySelected = selected.find((it) => it.id === item.id);
 
-                if (!form.selectedTiles.length || !form.selectedTiles.find((it) => it.id === item.id)) {
-                    selected.push(item);
-                } else if (form.selectedTiles.length && Boolean(form.selectedTiles.find((it) => it.id === item.id))) {
-                    const index = selected.findIndex((it) => it.id === item.id);
-                    selected.splice(index, 1);
-                }
-                return setForm('selectedTiles', selected);
+                return setForm('selectedTiles', isAlreadySelected ? selected.filter((it) => it.id !== item.id) : [...selected, item]);
             }
             return handleRegister(item);
         },
-        [form, sync, handleRegister]
+        [form.interactiveMode, form.selectedTiles, handleRegister]
     );
 
     return (

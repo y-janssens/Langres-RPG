@@ -110,7 +110,7 @@ export const uniqueSelection = (source, value) => {
             selection.delete(v);
         }
     });
-    return Array.from(new Set([...selection]));
+    return Array.from(new Set(selection));
 };
 
 export const uniqueList = (...args) => Array.from(new Set(Object.values(args).flatMap((it) => it)));

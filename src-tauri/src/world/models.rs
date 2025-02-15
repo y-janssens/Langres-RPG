@@ -6,7 +6,7 @@ use crate::events::models::Event;
 use crate::game::models::Position;
 use crate::maps::config::Values;
 use crate::maps::models::Map;
-use crate::maps::settings::{EMPTY, GRASS, TREE};
+use crate::maps::settings::{DEFAULT_MAP_SIZE, EMPTY, GRASS, TREE, WALKABLE_VALUES};
 use crate::{backend::conf::factory::factory_models::AbstractModel, npcs::models::Npc};
 
 impl AbstractModel for World {}
@@ -165,7 +165,7 @@ impl World {
         if options.is_some() {
             opts = options.unwrap();
         }
-        let cleared_content = Self::generate(self.size);
+        let cleared_content = Self::generate(*DEFAULT_MAP_SIZE);
         let content = Map::generate(cleared_content, opts.clone());
         Self {
             content,
@@ -187,7 +187,10 @@ impl World {
         println!("Generating game trees...");
         let items = ["T", "-", "-", "-", "-", "-", "-", "-"];
 
-        for item in content.iter_mut().filter(|i| i.walkable) {
+        for item in content
+            .iter_mut()
+            .filter(|i| WALKABLE_VALUES.contains(&i.value.as_str()))
+        {
             let value = String::from(*items.choose(&mut rand::thread_rng()).unwrap());
             item.value = value.clone();
             item.walkable = value != TREE.val();

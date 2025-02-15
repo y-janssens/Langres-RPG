@@ -11,10 +11,10 @@ export const MapGrid = ({ form, setForm, data, handleSelect }) => {
     }, []);
 
     const mapItems = useMemo(() => {
-        return data.content?.map((item) => ({
-            ...item,
-            start: isStartingPoint(item, data.starting_point)
-        }));
+        return data.content?.map((item) => {
+            item.start = isStartingPoint(item, data.starting_point);
+            return item;
+        });
     }, [data.content, data.starting_point]);
 
     useEffect(() => {

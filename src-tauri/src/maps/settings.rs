@@ -4,6 +4,7 @@ use super::{actions::generator::Params, config::Values};
 
 lazy_static! {
     pub static ref DEFAULT_MAP_SIZE : u32 = 50;
+    pub static ref DEFAULT_MAP_SIZE_FACTOR : u32 = 50;
 
     // Base map types definitions
     pub static ref GRASS: Values = Values::store("-", "grass",  true, "#BDB76B");
@@ -19,6 +20,7 @@ lazy_static! {
 
     pub static ref INCONSISTENT_VALUES: Vec<&'static str> = vec![BORDER.val(), SHORE.val()];
     pub static ref ROAD_VALUES: Vec<&'static str> = vec![TREE.val(), BORDER.val(), WATER.val(), SHORE.val()];
+    pub static ref WALKABLE_VALUES: Vec<&'static str> = vec![GRASS.val(), MUD.val(), GROUND.val()];
 
     pub static ref VALUES: Vec<Values> = vec![
         GRASS.clone(),

@@ -1,7 +1,8 @@
 use std::collections::HashSet;
 
 use super::settings::{
-    BORDER, EMPTY, FENCE, GRASS, GROUND, INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE, WATER,
+    BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND,
+    INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE, WATER,
 };
 use crate::world::models::Item;
 
@@ -19,12 +20,13 @@ impl Constraints {
         shore: u32,
         border: u32,
     ) -> Vec<(String, u32)> {
+        let factor = *DEFAULT_MAP_SIZE / *DEFAULT_MAP_SIZE_FACTOR;
         let tiles: Vec<(String, u32)> = vec![
-            (GRASS.value(), grass),
-            (TREE.value(), trees),
-            (WATER.value(), water),
-            (SHORE.value(), shore),
-            (BORDER.value(), border),
+            (GRASS.value(), grass * factor),
+            (TREE.value(), trees * factor),
+            (WATER.value(), water * factor),
+            (SHORE.value(), shore * factor),
+            (BORDER.value(), border * factor),
             (ROAD.value(), 0),
             (FENCE.value(), 0),
             (GROUND.value(), 0),

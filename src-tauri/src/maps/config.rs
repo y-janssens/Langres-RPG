@@ -77,7 +77,7 @@ impl Conf {
     // Soil - Trees - Water- Shore - Borders - Roads(0) - Fences(0) - Ground(0)
     fn get_forest_config() -> Self {
         Self {
-            name: "town".to_string(),
+            name: "forest".to_string(),
             primary_value: GRASS.value(),
             values: Constraints::get_tiles(50, 18, 13, 5, 5),
             post_process: true,
