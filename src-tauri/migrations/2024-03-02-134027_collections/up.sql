@@ -1,5 +1,5 @@
 -- Your SQL goes here
-CREATE TABLE maps (
+CREATE TABLE collections (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     map TEXT NOT NULL,
     created TEXT NOT NULL,

@@ -31,11 +31,20 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 if (!item.value && form.selectedTiles.length === 1) {
                     newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y, id: form.selectedTiles[0].id };
                 }
-                const items = form.selectedTiles.map((it) => ({ ...it, value: item.value || it.value, walkable: item.walkable }));
-                let newContent = newMap.content.map((item) => {
-                    const foundItem = items.find((it) => it.id === item.id);
-                    return foundItem ? { ...item, value: foundItem.value, walkable: foundItem.walkable } : { ...item };
-                });
+                const updatedItems = new Map(
+                    form.selectedTiles.map((tile) => [
+                        tile.id,
+                        {
+                            ...tile,
+                            value: item.value || tile.value,
+                            walkable: item.walkable,
+                            display_value: item.display_value || tile.display_value,
+                            display_color: item.display_color || tile.display_color
+                        }
+                    ])
+                );
+
+                const newContent = newMap.content.map((mapItem) => (updatedItems.has(mapItem.id) ? updatedItems.get(mapItem.id) : mapItem));
 
                 newMap.content = newContent;
             } else {
@@ -112,47 +121,41 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                             .sort((a, b) => {
                                 return a.id - b.id;
                             })
-                            .map((it) => {
-                                return (
-                                    <div className={css['builder-map-infos-selected-detail']} key={it.id}>
-                                        <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
-                                        <Input dataTheme="dark" size="xs" value={it.value} color="neutral" onChange={() => {}} />
-                                    </div>
-                                );
-                            })}
+                            .map((it) => (
+                                <div className={css['builder-map-infos-selected-detail']} key={it.id}>
+                                    <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
+                                    <Input dataTheme="dark" size="xs" value={it.value} color="neutral" onChange={() => {}} />
+                                </div>
+                            ))}
                     </div>
                 </MenuBlock>
             )}
             <MenuBlock title={t('builder.menu.items.items')}>
                 {form.objects
                     .filter((it) => !it.interactive)
-                    .map((it) => {
-                        return (
-                            <MenuItem
-                                key={it.id}
-                                icon={it.name}
-                                label={t(`builder.menu.objects.${it.name}`)}
-                                disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
-                                onClick={() => handleChange(it)}
-                            />
-                        );
-                    })}
+                    .map((it) => (
+                        <MenuItem
+                            key={it.id}
+                            icon={it.name}
+                            label={t(`builder.menu.objects.${it.name}`)}
+                            disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
+                            onClick={() => handleChange(it)}
+                        />
+                    ))}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.items.objects')}>
                 {form.objects
                     .filter((it) => it.interactive)
-                    .map((it) => {
-                        return (
-                            <MenuItem
-                                key={it.id}
-                                icon={it.name}
-                                label={t(`builder.menu.objects.${it.name}`)}
-                                active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
-                                disabled={form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id}
-                                onClick={() => handleObject(it)}
-                            />
-                        );
-                    })}
+                    .map((it) => (
+                        <MenuItem
+                            key={it.id}
+                            icon={it.name}
+                            label={t(`builder.menu.objects.${it.name}`)}
+                            active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
+                            disabled={form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id}
+                            onClick={() => handleObject(it)}
+                        />
+                    ))}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')}>
                 <MenuItem

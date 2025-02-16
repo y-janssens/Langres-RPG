@@ -148,6 +148,8 @@
         "damage": "Dégâts",
         "date_created": "Créé",
         "description": "Description",
+        "display_value": "Valeur d'affichage",
+        "display_color": "Couleur",
         "icon": "Icône",
         "id": "Id",
         "interactive": "Interactif",
@@ -248,6 +250,8 @@
         "interactive": "Interactif",
         "name": "Nom",
         "value": "Valeur",
+        "display_value": "Valeur d'affichage",
+        "display_color": "Couleur",
         "walkable": "Accessible"
       },
       "quest": {

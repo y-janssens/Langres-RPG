@@ -1,7 +1,5 @@
-use crate::backend::settings::errors::BASE_ERROR;
-use crate::backend::translations::models::Translations;
+use crate::schema::loot;
 use crate::schema::loot::dsl::*;
-use crate::{backend::conf::factory::factory_models::AbstractModel, schema::loot};
 use diesel::{
     deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, RunQueryDsl,
     SqliteConnection,
@@ -9,7 +7,8 @@ use diesel::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-impl AbstractModel for Loot {}
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::backend::translations::models::Translations;
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
 pub enum ItemTypes {

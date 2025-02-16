@@ -1,7 +1,5 @@
-use crate::backend::conf::factory::factory_models::AbstractModel;
-use crate::backend::settings::errors::BASE_ERROR;
+use crate::schema::achievements;
 use crate::schema::achievements::dsl::*;
-use crate::{backend::translations::models::Translations, schema::achievements};
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -9,7 +7,8 @@ use diesel::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-impl AbstractModel for Achievement {}
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::backend::translations::models::Translations;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::achievements)]
