@@ -105,6 +105,8 @@ impl AdminModel for AdminMapObjectsModel {
         vec![
             Field::name_field("name"),
             Field::char_field("value", true),
+            Field::char_field("display_value", true),
+            Field::char_field("display_color", true),
             Field::dict_field("area", true),
             Field::boolean_field("walkable", true),
             Field::boolean_field("interactive", true),

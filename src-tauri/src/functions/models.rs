@@ -1,17 +1,11 @@
-use crate::{
-    backend::conf::{
-        factory::factory_models::AbstractModel,
-        faker::faker_definitions::{Faker, IdFaker},
-    },
-    schema::functions::dsl::*,
-};
+use crate::schema::functions::dsl::*;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 
-impl AbstractModel for Function {}
+use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::functions)]

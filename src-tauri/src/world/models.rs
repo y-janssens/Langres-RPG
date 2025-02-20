@@ -7,9 +7,7 @@ use crate::game::models::Position;
 use crate::maps::config::Values;
 use crate::maps::models::Map;
 use crate::maps::settings::{DEFAULT_MAP_SIZE, EMPTY, GRASS, TREE, WALKABLE_VALUES};
-use crate::{backend::conf::factory::factory_models::AbstractModel, npcs::models::Npc};
-
-impl AbstractModel for World {}
+use crate::npcs::models::Npc;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Options {

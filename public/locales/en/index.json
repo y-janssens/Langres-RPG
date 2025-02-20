@@ -148,6 +148,8 @@
         "damage": "Damage",
         "date_created": "Created",
         "description": "Description",
+        "display_value": "Display value",
+        "display_color": "Display color",
         "icon": "Icon",
         "id": "Id",
         "interactive": "Interactive",
@@ -248,6 +250,8 @@
         "interactive": "Interactive",
         "name": "Name",
         "value": "Value",
+        "display_color": "Display color",
+        "display_value": "Display value",
         "walkable": "Walkable"
       },
       "quest": {

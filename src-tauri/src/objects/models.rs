@@ -1,23 +1,12 @@
-use crate::{
-    backend::{
-        conf::{
-            factory::factory_models::AbstractModel,
-            faker::faker_definitions::{Faker, IdFaker},
-        },
-        settings::errors::BASE_ERROR,
-    },
-    schema::objects::dsl::*,
-};
+use crate::schema::objects::dsl::*;
 use diesel::{
-    deserialize::{self, FromSql, Queryable},
-    prelude::*,
-    sql_types::Text,
-    sqlite::{Sqlite, SqliteValue},
-    QueryResult, RunQueryDsl, Selectable, SqliteConnection,
+    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
+    SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 
-impl AbstractModel for Object {}
+use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
+use crate::backend::settings::errors::BASE_ERROR;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::objects)]
@@ -26,6 +15,8 @@ pub struct Object {
     pub id: i32,
     pub name: String,
     pub value: Option<String>,
+    pub display_value: Option<String>,
+    pub display_color: Option<String>,
     pub area: Area,
     pub walkable: bool,
     pub interactive: bool,
@@ -36,6 +27,8 @@ pub struct Object {
 pub struct InsertableObject {
     name: String,
     value: Option<String>,
+    display_value: Option<String>,
+    display_color: Option<String>,
     area: String,
     walkable: bool,
     interactive: bool,
@@ -47,28 +40,14 @@ pub struct Area {
     pub y: i32,
 }
 
-impl FromSql<Text, Sqlite> for Area {
-    fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
-        serde_json::from_str(&tstr)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-impl Queryable<Text, Sqlite> for Area {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
 impl Object {
     pub fn new() -> Object {
         Object {
             id: IdFaker.generate().value(),
             name: String::from(""),
             value: None,
+            display_value: None,
+            display_color: None,
             area: Area { x: 0, y: 0 },
             walkable: false,
             interactive: false,
@@ -84,6 +63,8 @@ impl Object {
         let insertable = InsertableObject {
             name: data.name,
             value: data.value,
+            display_value: data.display_value,
+            display_color: data.display_color,
             area: area_json,
             walkable: data.walkable,
             interactive: data.interactive,

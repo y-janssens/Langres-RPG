@@ -1,16 +1,14 @@
-use crate::backend::translations::models::Translations;
-use crate::backend::{conf::factory::factory_models::AbstractModel, settings::errors::BASE_ERROR};
-use crate::schema::playerstatistics;
-use crate::schema::playerstatistics::dsl::*;
-use crate::statistics::models::Statistic;
-
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-impl AbstractModel for PlayerStatistic {}
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::backend::translations::models::Translations;
+use crate::schema::playerstatistics;
+use crate::schema::playerstatistics::dsl::*;
+use crate::statistics::models::Statistic;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::playerstatistics)]

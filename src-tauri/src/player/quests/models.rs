@@ -1,9 +1,5 @@
-use crate::backend::settings::errors::BASE_ERROR;
-use crate::backend::translations::models::Translations;
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
-use crate::{backend::conf::factory::factory_models::AbstractModel, game::models::Game};
-
 use diesel::sql_types::Text;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -11,9 +7,10 @@ use diesel::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::backend::translations::models::Translations;
+use crate::game::models::Game;
 use crate::quests::models::{Quest, Status};
-
-impl AbstractModel for PlayerQuest {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::playerquests)]

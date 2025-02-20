@@ -1,25 +1,19 @@
-use crate::backend::conf::factories::factories_definitions::WorldFactory;
-use crate::backend::conf::factory::factory_models::AbstractModel;
-use crate::backend::conf::factory::factory_models::Factory;
-use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
-use crate::backend::settings::errors::BASE_ERROR;
-use crate::schema::maps::dsl::*;
-use crate::world::models::World;
-
+use crate::schema::collections::dsl::*;
 use chrono::{DateTime, Local};
 use diesel::{
-    deserialize::{self, FromSql, Queryable},
-    prelude::*,
-    sql_types::Text,
-    sqlite::{Sqlite, SqliteValue},
-    QueryResult, RunQueryDsl, Selectable, SqliteConnection,
+    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
+    SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 
-impl AbstractModel for Collection {}
+use crate::backend::conf::factories::factories_definitions::WorldFactory;
+use crate::backend::conf::factory::factory_models::Factory;
+use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
+use crate::backend::settings::errors::BASE_ERROR;
+use crate::world::models::World;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
-#[diesel(table_name = crate::schema::maps)]
+#[diesel(table_name = crate::schema::collections)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Collection {
     pub id: i32,
@@ -30,28 +24,12 @@ pub struct Collection {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
-#[diesel(table_name = crate::schema::maps)]
+#[diesel(table_name = crate::schema::collections)]
 pub struct InsertableCollection {
     pub map: String,
     pub created: String,
     pub modified: String,
     pub visible: bool,
-}
-
-impl FromSql<Text, Sqlite> for World {
-    fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
-        serde_json::from_str(&tstr)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-impl Queryable<Text, Sqlite> for World {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
 }
 
 impl Collection {
@@ -66,7 +44,7 @@ impl Collection {
     }
 
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Collection>> {
-        let mut _load: Vec<Collection> = crate::schema::maps::table.load(connection)?;
+        let mut _load: Vec<Collection> = crate::schema::collections::table.load(connection)?;
         Ok(_load)
     }
 
@@ -83,17 +61,17 @@ impl Collection {
             visible: data.visible,
         };
 
-        let exists = maps
+        let exists = collections
             .filter(id.eq(data.id))
             .first::<Collection>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(maps.find(data.id))
+            diesel::update(collections.find(data.id))
                 .set(insertable)
                 .execute(connection)?;
         } else {
-            diesel::insert_into(crate::schema::maps::table)
+            diesel::insert_into(crate::schema::collections::table)
                 .values(&insertable)
                 .execute(connection)?;
         }
@@ -102,7 +80,7 @@ impl Collection {
     }
 
     pub fn delete(_id: i32, connection: &mut SqliteConnection) -> QueryResult<()> {
-        diesel::delete(maps.filter(id.eq(_id))).execute(connection)?;
+        diesel::delete(collections.filter(id.eq(_id))).execute(connection)?;
         Ok(())
     }
 

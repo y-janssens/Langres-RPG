@@ -1,4 +1,3 @@
-use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::backend::settings::errors::BASE_ERROR;
 use crate::schema::statistics::dsl::*;
 use crate::{backend::translations::models::Translations, schema::statistics};
@@ -8,8 +7,6 @@ use diesel::{
 };
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-
-impl AbstractModel for Statistic {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::statistics)]

@@ -122,6 +122,8 @@ pub mod factories_definitions {
                 id: IdFaker.generate().value(),
                 name: StringFaker.generate().value().to_string(),
                 value: Some(StringFaker.generate().value().to_string()),
+                display_value: Some(StringFaker.generate().value().to_string()),
+                display_color: Some(StringFaker.generate().value().to_string()),
                 area: Area { x: 1, y: 1 },
                 walkable: BoolFaker.generate().value(),
                 interactive: BoolFaker.generate().value(),

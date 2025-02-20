@@ -27,6 +27,8 @@ mod tests {
                 id: result[0].id,
                 name: result[0].clone().name,
                 value: result[0].clone().value,
+                display_value: result[0].clone().display_value,
+                display_color: result[0].clone().display_color,
                 area: result[0].clone().area,
                 walkable: result[0].clone().walkable,
                 interactive: result[0].clone().interactive,

@@ -1,12 +1,8 @@
-use crate::backend::conf::factory::factory_models::AbstractModel;
-
 use crate::backend::translations::models::Translations;
 use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
 
 use super::definitions::get_all;
-
-impl AbstractModel for Quest {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable)]
 pub struct Status {

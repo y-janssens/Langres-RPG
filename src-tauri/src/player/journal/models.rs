@@ -1,12 +1,9 @@
 use diesel::{QueryResult, SqliteConnection};
 use serde::{Deserialize, Serialize};
 
-use crate::backend::conf::factory::factory_models::AbstractModel;
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::quests::models::PlayerQuest;
 use crate::player::statistics::models::PlayerStatistic;
-
-impl AbstractModel for PlayerJournal {}
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct PlayerJournal {

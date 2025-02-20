@@ -11,6 +11,16 @@ diesel::table! {
 }
 
 diesel::table! {
+    collections (id) {
+        id -> Integer,
+        map -> Text,
+        created -> Text,
+        modified -> Text,
+        visible -> Bool,
+    }
+}
+
+diesel::table! {
     functions (id) {
         id -> Integer,
         icon -> Text,
@@ -48,20 +58,12 @@ diesel::table! {
 }
 
 diesel::table! {
-    maps (id) {
-        id -> Integer,
-        map -> Text,
-        created -> Text,
-        modified -> Text,
-        visible -> Bool,
-    }
-}
-
-diesel::table! {
     objects (id) {
         id -> Integer,
         name -> Text,
         value -> Nullable<Text>,
+        display_value -> Nullable<Text>,
+        display_color -> Nullable<Text>,
         area -> Text,
         walkable -> Bool,
         interactive -> Bool,
@@ -137,10 +139,10 @@ diesel::table! {
 
 diesel::allow_tables_to_appear_in_same_query!(
     achievements,
+    collections,
     functions,
     games,
     loot,
-    maps,
     objects,
     playerachievements,
     playerquests,

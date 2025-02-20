@@ -1,4 +1,11 @@
-use crate::backend::conf::factory::factory_models::AbstractModel;
+use crate::schema::games;
+use crate::schema::games::dsl::*;
+use chrono::{DateTime, Local};
+use diesel::prelude::*;
+use rand::seq::SliceRandom;
+use serde::{Deserialize, Serialize};
+use uuid::Uuid;
+
 use crate::backend::permissions::models::Credentials;
 use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::utils::models::FrustumCullingUtility;
@@ -7,20 +14,8 @@ use crate::player::achievements::models::PlayerAchievement;
 use crate::player::journal::models::PlayerJournal;
 use crate::player::quests::models::PlayerQuest;
 use crate::player::statistics::models::PlayerStatistic;
-use crate::schema::games;
-use crate::schema::games::dsl::*;
 use crate::storyline::models::Story;
 use crate::world::models::{Item, World};
-use chrono::{DateTime, Local};
-use diesel::deserialize::{self, FromSql};
-use diesel::prelude::*;
-use diesel::sql_types::Text;
-use diesel::sqlite::{Sqlite, SqliteValue};
-use rand::seq::SliceRandom;
-use serde::{Deserialize, Serialize};
-use uuid::Uuid;
-
-impl AbstractModel for Game {}
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable)]
 pub struct Position {
@@ -36,22 +31,6 @@ impl Position {
             y: args.1,
             id: args.2,
         }
-    }
-}
-
-impl FromSql<Text, Sqlite> for Position {
-    fn from_sql(bytes: SqliteValue<'_, '_, '_>) -> deserialize::Result<Self> {
-        let tstr = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
-        serde_json::from_str(&tstr)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-impl Queryable<Text, Sqlite> for Position {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
     }
 }
 
