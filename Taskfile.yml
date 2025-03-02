@@ -1,0 +1,146 @@
+version: '3'
+
+env:
+    TEST_ARGS: --test-threads=1
+    RUST_DIR: src-tauri
+    DOCKER_CMD: docker compose run --rm
+
+tasks:
+    # Local commands
+    init:
+        desc: Install requirements and prepare project to run.
+        aliases:
+            - install
+            - setup
+        cmds:
+            - task init:front
+            - task init:back
+        silent: true
+
+    init:front:
+        desc: Install frontend requirements.
+        cmds:
+            - npm install
+        silent: true
+
+    init:back:
+        desc: Install backend requirements.
+        cmds:
+            - cargo install diesel_cli
+            - rustup component add clippy
+        silent: true
+
+    build:
+        desc: Build and compile project.
+        aliases:
+            - compile
+        cmds:
+            - npm run tauri build
+        silent: true
+
+    dev:
+        desc: Run local project.
+        aliases:
+            - run
+            - start
+            - launch
+        cmds:
+            - npm run tauri dev
+        silent: true
+
+    lint:
+        desc: Run linter on the whole project.
+        cmds:
+            - task lint:front -- {{.CLI_ARGS}}
+            - task lint:back -- {{.CLI_ARGS}}
+        silent: true
+
+    lint:front:
+        desc: Run Eslint
+        cmds:
+            - npm run lint {{.CLI_ARGS}}
+        silent: true
+
+    lint:back:
+        dir: '{{.RUST_DIR}}'
+        desc: Run cargo clippy
+        cmds:
+            - cargo clippy {{.CLI_ARGS}}
+        silent: true
+
+    tests:
+        dir: '{{.RUST_DIR}}'
+        desc: Run tests, you can specify the path of the subset of tests to run as argument.
+        aliases:
+            - test
+        cmds:
+            - cargo test {{.CLI_ARGS}} -- {{.TEST_ARGS}} {{if ne .CLI_ARGS ""}}--nocapture{{end}}
+        silent: true
+
+    migrations:
+        dir: '{{.RUST_DIR}}'
+        desc: Run project's migrations
+        aliases:
+            - migrate
+        cmds:
+            - diesel migration redo --all --database-url="langres.db"
+        silent: true
+
+    shell:
+        dir: '{{.RUST_DIR}}'
+        desc: Run interactive shell environment
+        cmds:
+            - cargo run --bin shell
+        silent: true
+
+    clear:
+        dir: '{{.RUST_DIR}}'
+        desc: Clear build artifacts.
+        aliases:
+            - clean
+        cmds:
+            - cargo clean
+        silent: true
+
+    # Docker commands
+    docker:
+        desc: Run migrations through docker environment
+        aliases:
+            - docker-bash
+        cmds:
+            - docker compose run --rm langres
+        silent: true
+
+    docker-init:
+        desc: Build docker environment
+        aliases:
+            - docker-build
+        cmds:
+            - docker compose build
+        silent: true
+
+    docker-migrate:
+        desc: Run migrations through docker environment
+        cmds:
+            - docker compose run --rm migrate'
+        silent: true
+
+    docker-tests:
+        desc: Run unit tests through docker environment
+        aliases:
+            - docker-test
+        cmds:
+            - docker compose run --rm test {{.CLI_ARGS}} -- {{.TEST_ARGS}} {{if ne .CLI_ARGS ""}}--nocapture{{end}}
+        silent: true
+
+    docker-lint:
+        desc: Run cargo clippy through docker environment
+        cmds:
+            - docker compose run --rm lint
+        silent: true
+
+    docker-shell:
+        desc: Run interactive shell through docker environment
+        cmds:
+            - docker compose run --rm shell
+        silent: true

@@ -1,1 +1,4 @@
-node_modules
+target/
+**/target/
+.git/
+**/node_modules/

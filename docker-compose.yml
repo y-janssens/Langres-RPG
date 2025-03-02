@@ -6,6 +6,7 @@ services:
         context: .
     volumes:
       - .:/code
+      - cargo-target:/code/src-tauri/target
   langres:
     &langres
     <<: *base
@@ -14,19 +15,17 @@ services:
     <<: *base
     entrypoint: diesel migration redo --all --database-url="langres.db"
     working_dir: /code/src-tauri
+  shell:
+    <<: *base
+    entrypoint: cargo run --bin shell
+    working_dir: /code/src-tauri
   lint:
     <<: *base
     entrypoint: cargo clippy
-    volumes:
-    - .:/code
-    - cargo-target:/code/target
     working_dir: /code/src-tauri
   test:
     <<: *base
-    entrypoint: cargo test -- --test-threads=1
-    volumes:
-    - .:/code
-    - cargo-target:/code/target
+    entrypoint: cargo test
     working_dir: /code/src-tauri
 volumes:
   cargo-target:
