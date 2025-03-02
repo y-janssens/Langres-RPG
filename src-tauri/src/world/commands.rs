@@ -1,5 +1,7 @@
 use crate::backend::{
-    database::authenticated_command, permissions::models::Permission, response::Response,
+    database::{authenticated_command, authenticated_thread},
+    permissions::models::Permission,
+    response::Response,
     utils::errors::ValidationError,
 };
 
@@ -18,8 +20,8 @@ pub fn generate(
 }
 
 #[tauri::command]
-pub fn regenerate(map: World) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Editor, || World::regenerate(map))
+pub async fn regenerate(map: World) -> Result<Response, ValidationError> {
+    authenticated_thread(Permission::Editor, || World::regenerate(map)).await
 }
 
 #[tauri::command]

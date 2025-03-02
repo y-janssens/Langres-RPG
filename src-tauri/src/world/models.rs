@@ -1,6 +1,7 @@
 use diesel::prelude::Queryable;
 use rand::{seq::SliceRandom, Rng};
 use serde::{Deserialize, Serialize};
+use tokio::sync::mpsc;
 
 use crate::events::models::Event;
 use crate::game::models::Position;
@@ -119,8 +120,8 @@ impl World {
         }
     }
 
-    pub fn regenerate(map: World) -> World {
-        map.generate_content(None)
+    pub async fn regenerate(map: World) -> World {
+        map.generate_content(None).await
     }
 
     /// Generate base map
@@ -158,16 +159,24 @@ impl World {
         content
     }
 
-    pub fn generate_content(self, options: Option<Options>) -> Self {
+    pub async fn generate_content(self, options: Option<Options>) -> Self {
+        let (tx, mut rx) = mpsc::channel(100);
         let mut opts = self.options.clone();
         if options.is_some() {
             opts = options.unwrap();
         }
         let cleared_content = Self::generate(*DEFAULT_MAP_SIZE);
-        let content = Map::generate(cleared_content, opts.clone());
+        let opts_for_closure = opts.clone();
+        let result =
+            tokio::task::spawn_blocking(move || Map::generate(cleared_content, opts_for_closure))
+                .await
+                .unwrap();
+
+        tx.send(result).await.unwrap();
+        let content = rx.recv().await.unwrap();
         Self {
             content,
-            options: opts,
+            options: opts.clone(),
             ..self
         }
     }

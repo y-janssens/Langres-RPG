@@ -69,3 +69,25 @@ where
         Err(Response::error(PERMISSION_DENIED))
     }
 }
+
+pub async fn authenticated_thread<T, Fut, R>(
+    permissions: Permission,
+    func: T,
+) -> Result<Response, ValidationError>
+where
+    T: FnOnce() -> Fut,
+    Fut: std::future::Future<Output = R>,
+    R: Serialize,
+{
+    let credentials = Credentials::initialize().config;
+
+    if credentials.has_permission(permissions) {
+        let result = func().await;
+        match serde_json::to_value(result) {
+            Ok(result) => Ok(Response::success(result)),
+            Err(_) => Err(Response::error(VALIDATION_ERROR)),
+        }
+    } else {
+        Err(Response::error(PERMISSION_DENIED))
+    }
+}
