@@ -1,5 +1,6 @@
 [package]
 name = "langres"
+default-run = "langres"
 version = "0.0.1"
 description = "Isometric medieval RPG game"
 authors = ["Y.janssens"]
@@ -14,36 +15,48 @@ edition = "2021"
 name = "langres_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
+[[bin]]
+name = "shell"
+path = "src/bin/shell/main.rs"
+
+
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
 chrono = "^0.4.38"
+ctor = "0.3.6"
 diesel = { version = "2.2.2", features = ["sqlite", "r2d2"] }
+diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
+dotenv = "0.15.0"
+eval = "0.4.3"
+evcxr = "0.18.0"
+langres_core = { path = "./langres_core" }
+lazy_static = "1.5.0"
+magic-crypt = "4.0.1"
+models_registry = { path = "./models_registry" }
+noise = "0.8.2"
+r2d2 = "0.8.10"
 rand = "0.8.5"
-tauri = { version = "2", features = [] }
+regex = "1.11.1"
+rhai = "1.21.0"
+rusqlite = { version = "0.33", features = ["bundled"] }
+rustyline = "15.0.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-round = "0.1.2"
-r2d2 = "0.8.10"
-diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
-lazy_static = "1.5.0"
-noise = "0.8.2"
-dotenv = "0.15.0"
-ucfirst = "0.2.2"
-uuid = { version = "1.10.0", features = ["serde", "v4"] }
-magic-crypt = "4.0.1"
-tauri-plugin-process = "2"
-tauri-plugin-dialog = "2"
-tauri-plugin-http = "2"
-tauri-plugin-shell = "2"
-tauri-plugin-fs = "2"
+tauri = { version = "2", features = [] }
 tauri-plugin-clipboard-manager = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-http = "2"
 tauri-plugin-notification = "2"
 tauri-plugin-os = "2"
 tauri-plugin-localhost = "2.2.0"
+tauri-plugin-process = "2"
+tauri-plugin-shell = "2"
 tokio = "1.43.0"
-
+ucfirst = "0.2.2"
+uuid = { version = "1.10.0", features = ["serde", "v4"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
@@ -52,3 +65,6 @@ custom-protocol = ["tauri/custom-protocol"]
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-global-shortcut = "2"
+
+[package.metadata.cargo-machete]
+ignored = ["tauri-build"]
