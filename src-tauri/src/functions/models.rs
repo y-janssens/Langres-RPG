@@ -26,9 +26,15 @@ pub struct InsertableFunction {
     command: String,
 }
 
+impl Default for Function {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Function {
-    pub fn new() -> Function {
-        Function {
+    pub fn new() -> Self {
+        Self {
             id: IdFaker.generate().value(),
             icon: String::from(""),
             label: String::from(""),
@@ -37,7 +43,7 @@ impl Function {
     }
 
     pub fn save(
-        data: Function,
+        data: Self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let insertable = InsertableFunction {
@@ -48,7 +54,7 @@ impl Function {
 
         let exists = functions
             .filter(id.eq(data.id))
-            .first::<Function>(connection)
+            .first::<Self>(connection)
             .is_ok();
 
         if exists {
@@ -64,7 +70,7 @@ impl Function {
         Ok(())
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Function>> {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::functions::table.load(connection)?;
         Ok(_load)
     }

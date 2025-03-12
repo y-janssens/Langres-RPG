@@ -20,7 +20,7 @@ lazy_static! {
         name: Translations::generate("Renégats", "Renegades"),
         description: Translations::generate("Tuez Ser Herbert", "Kill Sir Herbert"),
         primary: true,
-        status: Status::default(),
+        status: Status::new(),
         visible: true,
         reward: 150,
         next: None

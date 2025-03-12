@@ -12,9 +12,15 @@ pub struct Status {
     pub abandoned: bool,
 }
 
+impl Default for Status {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Status {
-    pub fn base() -> Status {
-        Status {
+    pub fn base() -> Self {
+        Self {
             owned: true,
             completed: false,
             failed: false,
@@ -22,8 +28,8 @@ impl Status {
         }
     }
 
-    pub fn default() -> Status {
-        Status {
+    pub fn new() -> Self {
+        Self {
             owned: false,
             completed: false,
             failed: false,

@@ -40,9 +40,15 @@ pub struct Area {
     pub y: i32,
 }
 
+impl Default for Object {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Object {
-    pub fn new() -> Object {
-        Object {
+    pub fn new() -> Self {
+        Self {
             id: IdFaker.generate().value(),
             name: String::from(""),
             value: None,
@@ -55,7 +61,7 @@ impl Object {
     }
 
     pub fn save(
-        data: Object,
+        data: Self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let area_json = serde_json::to_string(&data.area).expect(BASE_ERROR);
@@ -72,7 +78,7 @@ impl Object {
 
         let exists = objects
             .filter(id.eq(data.id))
-            .first::<Object>(connection)
+            .first::<Self>(connection)
             .is_ok();
 
         if exists {
@@ -88,12 +94,12 @@ impl Object {
         Ok(())
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Object>> {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::objects::table.load(connection)?;
         Ok(_load)
     }
 
-    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Object> {
+    pub fn get(_id: i32, connection: &mut SqliteConnection) -> QueryResult<Self> {
         let object: Self = objects.find(_id).first(connection)?;
         Ok(object)
     }

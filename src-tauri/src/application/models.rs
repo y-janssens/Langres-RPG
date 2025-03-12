@@ -79,12 +79,18 @@ pub struct MenuOrdering {
     current: u8,
 }
 
+impl Default for MenuOrdering {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl MenuOrdering {
     pub fn new() -> Self {
         Self { current: 0 }
     }
 
-    pub fn next(&mut self) -> u8 {
+    pub fn next_item(&mut self) -> u8 {
         let current_order = self.current;
         self.current += 1;
         current_order
@@ -155,7 +161,7 @@ impl ApplicationMenu {
     }
 
     fn add_item(&mut self, order: &mut MenuOrdering, name: &str, func: Option<Func>) {
-        self.push(Menu::new(order.next(), name, func))
+        self.push(Menu::new(order.next_item(), name, func))
     }
 
     fn add_common_items(&mut self, order: &mut MenuOrdering) {
