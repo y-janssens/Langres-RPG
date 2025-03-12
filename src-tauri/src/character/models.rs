@@ -87,11 +87,17 @@ pub struct Inventory {
     pub objects: Vec<Loot>,
 }
 
+impl Default for Inventory {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Inventory {
-    pub fn new() -> Inventory {
+    pub fn new() -> Self {
         println!("Generating inventory...");
 
-        Inventory {
+        Self {
             right_hand: Some(BASE_WEAPON.clone()),
             left_hand: Some(BASE_SHIELD.clone()),
             head: Some(BASE_HELMET.clone()),
@@ -102,8 +108,8 @@ impl Inventory {
         }
     }
 
-    pub fn empty() -> Inventory {
-        Inventory {
+    pub fn empty() -> Self {
+        Self {
             right_hand: None,
             left_hand: None,
             head: None,
@@ -114,8 +120,8 @@ impl Inventory {
         }
     }
 
-    pub fn basic(items: Vec<Loot>) -> Inventory {
-        Inventory {
+    pub fn basic(items: Vec<Loot>) -> Self {
+        Self {
             right_hand: None,
             left_hand: None,
             head: None,

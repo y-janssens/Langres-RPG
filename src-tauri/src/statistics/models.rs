@@ -30,24 +30,30 @@ pub struct InsertableStatistic {
     pub visible: bool,
 }
 
+impl Default for Statistic {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Statistic {
-    pub fn new() -> Statistic {
-        Statistic {
+    pub fn new() -> Self {
+        Self {
             id: Uuid::new_v4().to_string(),
-            name: Translations::default(),
-            description: Translations::default(),
+            name: Translations::new(),
+            description: Translations::new(),
             value: "0".into(),
             visible: true,
         }
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Statistic>> {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::statistics::table.load(connection)?;
         Ok(_load)
     }
 
     pub fn save(
-        stat: Statistic,
+        stat: Self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let name_json = serde_json::to_string(&stat.name).expect(BASE_ERROR);
@@ -62,7 +68,7 @@ impl Statistic {
         };
         let exists = statistics
             .filter(id.eq(stat.clone().id))
-            .first::<Statistic>(connection)
+            .first::<Self>(connection)
             .is_ok();
 
         if exists {

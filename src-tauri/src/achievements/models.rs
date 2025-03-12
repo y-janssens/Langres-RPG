@@ -32,24 +32,30 @@ pub struct InsertableAchievement {
     pub visible: bool,
 }
 
+impl Default for Achievement {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Achievement {
-    pub fn new() -> Achievement {
-        Achievement {
+    pub fn new() -> Self {
+        Self {
             id: Uuid::new_v4().to_string(),
-            name: Translations::default(),
-            description: Translations::default(),
+            name: Translations::new(),
+            description: Translations::new(),
             completed: false,
             visible: true,
         }
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Achievement>> {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::achievements::table.load(connection)?;
         Ok(_load)
     }
 
     pub fn save(
-        achievement: Achievement,
+        achievement: Self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);

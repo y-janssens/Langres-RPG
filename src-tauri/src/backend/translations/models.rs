@@ -6,20 +6,26 @@ pub struct Translations {
     pub en: Option<String>,
 }
 
+impl Default for Translations {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Translations {
-    pub fn default() -> Translations {
-        Translations {
+    pub fn new() -> Self {
+        Self {
             fr: Some("".to_string()),
             en: Some("".to_string()),
         }
     }
 
-    pub fn blank() -> Translations {
-        Translations { fr: None, en: None }
+    pub fn blank() -> Self {
+        Self { fr: None, en: None }
     }
 
-    pub fn generate(_fr: &str, _en: &str) -> Translations {
-        Translations {
+    pub fn generate(_fr: &str, _en: &str) -> Self {
+        Self {
             fr: Some(_fr.to_string()),
             en: Some(_en.to_string()),
         }

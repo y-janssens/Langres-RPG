@@ -10,14 +10,16 @@ use crate::maps::models::Map;
 use crate::maps::settings::{DEFAULT_MAP_SIZE, EMPTY, GRASS, TREE, WALKABLE_VALUES};
 use crate::npcs::models::Npc;
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+use models_registry::Model;
+
+#[derive(Debug, Serialize, Deserialize, Clone, Model)]
 pub struct Options {
     pub r#type: String,              // Map type
     pub action: Option<String>,      // Action's name
     pub post_action: Option<String>, // Post processing actions
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct World {
     pub id: i32,
     pub name: String,
@@ -31,7 +33,7 @@ pub struct World {
     pub options: Options,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct Item {
     pub id: u32,
     pub x: u32,

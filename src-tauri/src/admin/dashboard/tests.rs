@@ -25,7 +25,6 @@ mod tests {
     #[test]
     fn test_load_admin_dashboard_missing_variable() {
         let dashboard = load_admin_dashboard();
-
         assert!(dashboard.is_err_and(|err| err.0 == "Permission denied"));
     }
 

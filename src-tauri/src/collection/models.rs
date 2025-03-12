@@ -32,9 +32,15 @@ pub struct InsertableCollection {
     pub visible: bool,
 }
 
+impl Default for Collection {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Collection {
-    pub fn new() -> Collection {
-        Collection {
+    pub fn new() -> Self {
+        Self {
             id: IdFaker.generate().value(),
             created: Self::get_date(),
             modified: Self::get_date(),
@@ -43,13 +49,13 @@ impl Collection {
         }
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Collection>> {
-        let mut _load: Vec<Collection> = crate::schema::collections::table.load(connection)?;
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
+        let mut _load: Vec<Self> = crate::schema::collections::table.load(connection)?;
         Ok(_load)
     }
 
     pub fn save(
-        data: Collection,
+        data: Self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
         let map_json = serde_json::to_string(&data.map).expect(BASE_ERROR);
@@ -63,7 +69,7 @@ impl Collection {
 
         let exists = collections
             .filter(id.eq(data.id))
-            .first::<Collection>(connection)
+            .first::<Self>(connection)
             .is_ok();
 
         if exists {

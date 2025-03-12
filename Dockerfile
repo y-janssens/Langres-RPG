@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /code
 
-RUN cargo install diesel_cli
+RUN rustup component add rust-src
 RUN rustup component add clippy
+RUN cargo install diesel_cli
+RUN cargo install --locked evcxr_repl
 
 COPY . .

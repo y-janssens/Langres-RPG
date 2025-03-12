@@ -44,6 +44,12 @@ pub struct DevSettings {
     pub scene: SettingGroup,
 }
 
+impl Default for SettingGroup {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl SettingGroup {
     pub fn new() -> Self {
         SettingGroup(HashMap::new())

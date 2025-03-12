@@ -75,8 +75,8 @@ impl Loot {
         Loot {
             id: Uuid::new_v4().to_string(),
             item_type: _type.clone(),
-            name: Translations::default(),
-            description: Translations::default(),
+            name: Translations::new(),
+            description: Translations::new(),
             armor: if _type == ItemTypes::Equipment {
                 Some(10)
             } else {
