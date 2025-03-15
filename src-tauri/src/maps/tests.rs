@@ -34,18 +34,14 @@ mod tests {
 
     #[test]
     fn test_generate_forest() {
-        let size = *DEFAULT_MAP_SIZE;
-        let world = WorldFactory.generate();
+        let mut world = WorldFactory.generate();
         let options = Options {
             r#type: "forest".to_string(),
             action: None,
             post_action: None,
-            // post_action: Some("ground".to_string()),
         };
-        let map = Map::generate(world.content, options);
-
-        get_map_results(map.clone());
-        render_map_output(map, size);
+        world.content = Map::generate(world.content, options);
+        world.display_values();
     }
 
     #[test]

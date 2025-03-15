@@ -21,13 +21,10 @@ pub fn load_storyline(
 #[tauri::command]
 pub fn save_storyline(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-    mut data: Story,
-    id: u32,
+    mut story: Story,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Editor, || {
-        Story::save(&mut connection, id as i32, &mut data).expect("Failed to save storyline")
-    })
+    authenticated_command(Permission::Editor, || story.save(&mut connection))
 }
 
 #[tauri::command]

@@ -22,6 +22,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 0,
               "neighbours_ids": [
@@ -39,6 +40,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1,
               "neighbours_ids": [
@@ -56,6 +58,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2,
               "neighbours_ids": [
@@ -74,6 +77,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 3,
               "neighbours_ids": [
@@ -92,6 +96,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 4,
               "neighbours_ids": [
@@ -110,6 +115,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 5,
               "neighbours_ids": [
@@ -128,6 +134,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 6,
               "neighbours_ids": [
@@ -146,6 +153,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 7,
               "neighbours_ids": [
@@ -164,6 +172,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 8,
               "neighbours_ids": [
@@ -182,6 +191,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 9,
               "neighbours_ids": [
@@ -200,6 +210,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 10,
               "neighbours_ids": [
@@ -218,6 +229,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 11,
               "neighbours_ids": [
@@ -236,6 +248,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 12,
               "neighbours_ids": [
@@ -254,6 +267,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 13,
               "neighbours_ids": [
@@ -272,6 +286,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 14,
               "neighbours_ids": [
@@ -290,6 +305,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 15,
               "neighbours_ids": [
@@ -308,6 +324,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 16,
               "neighbours_ids": [
@@ -326,6 +343,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 17,
               "neighbours_ids": [
@@ -344,6 +362,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 18,
               "neighbours_ids": [
@@ -362,6 +381,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 19,
               "neighbours_ids": [
@@ -380,6 +400,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 20,
               "neighbours_ids": [
@@ -398,6 +419,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 21,
               "neighbours_ids": [
@@ -416,6 +438,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 22,
               "neighbours_ids": [
@@ -434,6 +457,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 23,
               "neighbours_ids": [
@@ -452,6 +476,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 24,
               "neighbours_ids": [
@@ -470,6 +495,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 25,
               "neighbours_ids": [
@@ -488,6 +514,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 26,
               "neighbours_ids": [
@@ -506,6 +533,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 27,
               "neighbours_ids": [
@@ -524,6 +552,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 28,
               "neighbours_ids": [
@@ -542,6 +571,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 29,
               "neighbours_ids": [
@@ -560,6 +590,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 30,
               "neighbours_ids": [
@@ -578,6 +609,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 31,
               "neighbours_ids": [
@@ -596,6 +628,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 32,
               "neighbours_ids": [
@@ -614,6 +647,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 33,
               "neighbours_ids": [
@@ -632,6 +666,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 34,
               "neighbours_ids": [
@@ -650,6 +685,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 35,
               "neighbours_ids": [
@@ -668,6 +704,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 36,
               "neighbours_ids": [
@@ -686,6 +723,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 37,
               "neighbours_ids": [
@@ -704,6 +742,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 38,
               "neighbours_ids": [
@@ -722,6 +761,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 39,
               "neighbours_ids": [
@@ -740,6 +780,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 40,
               "neighbours_ids": [
@@ -758,6 +799,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 41,
               "neighbours_ids": [
@@ -776,6 +818,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 42,
               "neighbours_ids": [
@@ -794,6 +837,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 43,
               "neighbours_ids": [
@@ -812,6 +856,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 44,
               "neighbours_ids": [
@@ -830,6 +875,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 45,
               "neighbours_ids": [
@@ -848,6 +894,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 46,
               "neighbours_ids": [
@@ -866,6 +913,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 47,
               "neighbours_ids": [
@@ -884,6 +932,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 48,
               "neighbours_ids": [
@@ -902,6 +951,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 49,
               "neighbours_ids": [
@@ -920,6 +970,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 50,
               "neighbours_ids": [
@@ -938,6 +989,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 51,
               "neighbours_ids": [
@@ -957,6 +1009,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 52,
               "neighbours_ids": [
@@ -977,6 +1030,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 53,
               "neighbours_ids": [
@@ -997,6 +1051,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 54,
               "neighbours_ids": [
@@ -1017,6 +1072,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 55,
               "neighbours_ids": [
@@ -1037,6 +1093,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 56,
               "neighbours_ids": [
@@ -1057,6 +1114,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 57,
               "neighbours_ids": [
@@ -1077,6 +1135,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 58,
               "neighbours_ids": [
@@ -1097,6 +1156,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 59,
               "neighbours_ids": [
@@ -1117,6 +1177,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 60,
               "neighbours_ids": [
@@ -1137,6 +1198,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 61,
               "neighbours_ids": [
@@ -1157,6 +1219,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 62,
               "neighbours_ids": [
@@ -1177,6 +1240,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 63,
               "neighbours_ids": [
@@ -1197,6 +1261,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 64,
               "neighbours_ids": [
@@ -1217,6 +1282,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 65,
               "neighbours_ids": [
@@ -1237,6 +1303,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 66,
               "neighbours_ids": [
@@ -1257,6 +1324,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 67,
               "neighbours_ids": [
@@ -1277,6 +1345,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 68,
               "neighbours_ids": [
@@ -1297,6 +1366,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 69,
               "neighbours_ids": [
@@ -1317,6 +1387,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 70,
               "neighbours_ids": [
@@ -1337,6 +1408,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 71,
               "neighbours_ids": [
@@ -1357,6 +1429,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 72,
               "neighbours_ids": [
@@ -1377,6 +1450,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 73,
               "neighbours_ids": [
@@ -1397,6 +1471,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 74,
               "neighbours_ids": [
@@ -1417,6 +1492,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 75,
               "neighbours_ids": [
@@ -1437,6 +1513,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 76,
               "neighbours_ids": [
@@ -1457,6 +1534,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 77,
               "neighbours_ids": [
@@ -1477,6 +1555,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 78,
               "neighbours_ids": [
@@ -1497,6 +1576,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 79,
               "neighbours_ids": [
@@ -1517,6 +1597,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 80,
               "neighbours_ids": [
@@ -1537,6 +1618,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 81,
               "neighbours_ids": [
@@ -1557,6 +1639,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 82,
               "neighbours_ids": [
@@ -1577,6 +1660,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 83,
               "neighbours_ids": [
@@ -1597,6 +1681,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 84,
               "neighbours_ids": [
@@ -1617,6 +1702,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 85,
               "neighbours_ids": [
@@ -1637,6 +1723,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 86,
               "neighbours_ids": [
@@ -1657,6 +1744,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 87,
               "neighbours_ids": [
@@ -1677,6 +1765,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 88,
               "neighbours_ids": [
@@ -1697,6 +1786,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 89,
               "neighbours_ids": [
@@ -1717,6 +1807,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 90,
               "neighbours_ids": [
@@ -1737,6 +1828,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 91,
               "neighbours_ids": [
@@ -1757,6 +1849,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 92,
               "neighbours_ids": [
@@ -1777,6 +1870,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 93,
               "neighbours_ids": [
@@ -1797,6 +1891,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 94,
               "neighbours_ids": [
@@ -1817,6 +1912,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 95,
               "neighbours_ids": [
@@ -1837,6 +1933,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 96,
               "neighbours_ids": [
@@ -1857,6 +1954,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 97,
               "neighbours_ids": [
@@ -1877,6 +1975,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 98,
               "neighbours_ids": [
@@ -1897,6 +1996,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 99,
               "neighbours_ids": [
@@ -1917,6 +2017,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 100,
               "neighbours_ids": [
@@ -1937,6 +2038,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 101,
               "neighbours_ids": [
@@ -1957,6 +2059,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 102,
               "neighbours_ids": [
@@ -1977,6 +2080,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 103,
               "neighbours_ids": [
@@ -1997,6 +2101,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 104,
               "neighbours_ids": [
@@ -2017,6 +2122,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 105,
               "neighbours_ids": [
@@ -2037,6 +2143,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 106,
               "neighbours_ids": [
@@ -2057,6 +2164,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 107,
               "neighbours_ids": [
@@ -2077,6 +2185,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 108,
               "neighbours_ids": [
@@ -2097,6 +2206,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 109,
               "neighbours_ids": [
@@ -2117,6 +2227,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 110,
               "neighbours_ids": [
@@ -2137,6 +2248,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 111,
               "neighbours_ids": [
@@ -2157,6 +2269,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 112,
               "neighbours_ids": [
@@ -2177,6 +2290,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 113,
               "neighbours_ids": [
@@ -2197,6 +2311,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 114,
               "neighbours_ids": [
@@ -2217,6 +2332,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 115,
               "neighbours_ids": [
@@ -2237,6 +2353,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 116,
               "neighbours_ids": [
@@ -2257,6 +2374,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 117,
               "neighbours_ids": [
@@ -2277,6 +2395,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 118,
               "neighbours_ids": [
@@ -2297,6 +2416,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 119,
               "neighbours_ids": [
@@ -2317,6 +2437,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 120,
               "neighbours_ids": [
@@ -2337,6 +2458,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 121,
               "neighbours_ids": [
@@ -2357,6 +2479,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 122,
               "neighbours_ids": [
@@ -2377,6 +2500,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 123,
               "neighbours_ids": [
@@ -2397,6 +2521,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 124,
               "neighbours_ids": [
@@ -2417,6 +2542,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 125,
               "neighbours_ids": [
@@ -2437,6 +2563,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 126,
               "neighbours_ids": [
@@ -2457,6 +2584,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 127,
               "neighbours_ids": [
@@ -2477,6 +2605,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 128,
               "neighbours_ids": [
@@ -2497,6 +2626,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 129,
               "neighbours_ids": [
@@ -2517,6 +2647,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 130,
               "neighbours_ids": [
@@ -2537,6 +2668,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 131,
               "neighbours_ids": [
@@ -2557,6 +2689,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 132,
               "neighbours_ids": [
@@ -2577,6 +2710,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 133,
               "neighbours_ids": [
@@ -2597,6 +2731,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 134,
               "neighbours_ids": [
@@ -2617,6 +2752,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 135,
               "neighbours_ids": [
@@ -2637,6 +2773,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 136,
               "neighbours_ids": [
@@ -2657,6 +2794,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 137,
               "neighbours_ids": [
@@ -2677,6 +2815,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 138,
               "neighbours_ids": [
@@ -2697,6 +2836,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 139,
               "neighbours_ids": [
@@ -2717,6 +2857,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 140,
               "neighbours_ids": [
@@ -2737,6 +2878,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 141,
               "neighbours_ids": [
@@ -2757,6 +2899,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 142,
               "neighbours_ids": [
@@ -2777,6 +2920,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 143,
               "neighbours_ids": [
@@ -2797,6 +2941,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 144,
               "neighbours_ids": [
@@ -2817,6 +2962,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 145,
               "neighbours_ids": [
@@ -2837,6 +2983,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 146,
               "neighbours_ids": [
@@ -2857,6 +3004,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 147,
               "neighbours_ids": [
@@ -2877,6 +3025,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 148,
               "neighbours_ids": [
@@ -2897,6 +3046,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 149,
               "neighbours_ids": [
@@ -2917,6 +3067,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 150,
               "neighbours_ids": [
@@ -2937,6 +3088,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 151,
               "neighbours_ids": [
@@ -2957,6 +3109,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 152,
               "neighbours_ids": [
@@ -2977,6 +3130,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 153,
               "neighbours_ids": [
@@ -2997,6 +3151,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 154,
               "neighbours_ids": [
@@ -3017,6 +3172,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 155,
               "neighbours_ids": [
@@ -3037,6 +3193,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 156,
               "neighbours_ids": [
@@ -3057,6 +3214,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 157,
               "neighbours_ids": [
@@ -3077,6 +3235,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 158,
               "neighbours_ids": [
@@ -3097,6 +3256,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 159,
               "neighbours_ids": [
@@ -3117,6 +3277,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 160,
               "neighbours_ids": [
@@ -3137,6 +3298,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 161,
               "neighbours_ids": [
@@ -3157,6 +3319,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 162,
               "neighbours_ids": [
@@ -3177,6 +3340,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 163,
               "neighbours_ids": [
@@ -3197,6 +3361,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 164,
               "neighbours_ids": [
@@ -3217,6 +3382,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 165,
               "neighbours_ids": [
@@ -3237,6 +3403,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 166,
               "neighbours_ids": [
@@ -3257,6 +3424,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 167,
               "neighbours_ids": [
@@ -3277,6 +3445,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 168,
               "neighbours_ids": [
@@ -3297,6 +3466,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 169,
               "neighbours_ids": [
@@ -3317,6 +3487,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 170,
               "neighbours_ids": [
@@ -3337,6 +3508,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 171,
               "neighbours_ids": [
@@ -3357,6 +3529,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 172,
               "neighbours_ids": [
@@ -3377,6 +3550,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 173,
               "neighbours_ids": [
@@ -3397,6 +3571,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 174,
               "neighbours_ids": [
@@ -3417,6 +3592,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 175,
               "neighbours_ids": [
@@ -3437,6 +3613,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 176,
               "neighbours_ids": [
@@ -3457,6 +3634,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 177,
               "neighbours_ids": [
@@ -3477,6 +3655,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 178,
               "neighbours_ids": [
@@ -3497,6 +3676,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 179,
               "neighbours_ids": [
@@ -3517,6 +3697,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 180,
               "neighbours_ids": [
@@ -3537,6 +3718,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 181,
               "neighbours_ids": [
@@ -3557,6 +3739,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 182,
               "neighbours_ids": [
@@ -3577,6 +3760,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 183,
               "neighbours_ids": [
@@ -3597,6 +3781,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 184,
               "neighbours_ids": [
@@ -3617,6 +3802,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 185,
               "neighbours_ids": [
@@ -3637,6 +3823,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 186,
               "neighbours_ids": [
@@ -3657,6 +3844,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 187,
               "neighbours_ids": [
@@ -3677,6 +3865,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 188,
               "neighbours_ids": [
@@ -3697,6 +3886,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 189,
               "neighbours_ids": [
@@ -3717,6 +3907,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 190,
               "neighbours_ids": [
@@ -3737,6 +3928,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 191,
               "neighbours_ids": [
@@ -3757,6 +3949,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 192,
               "neighbours_ids": [
@@ -3777,6 +3970,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 193,
               "neighbours_ids": [
@@ -3797,6 +3991,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 194,
               "neighbours_ids": [
@@ -3817,6 +4012,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 195,
               "neighbours_ids": [
@@ -3837,6 +4033,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 196,
               "neighbours_ids": [
@@ -3857,6 +4054,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 197,
               "neighbours_ids": [
@@ -3877,6 +4075,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 198,
               "neighbours_ids": [
@@ -3897,6 +4096,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 199,
               "neighbours_ids": [
@@ -3917,6 +4117,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 200,
               "neighbours_ids": [
@@ -3937,6 +4138,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 201,
               "neighbours_ids": [
@@ -3957,6 +4159,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 202,
               "neighbours_ids": [
@@ -3977,6 +4180,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 203,
               "neighbours_ids": [
@@ -3997,6 +4201,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 204,
               "neighbours_ids": [
@@ -4017,6 +4222,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 205,
               "neighbours_ids": [
@@ -4037,6 +4243,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 206,
               "neighbours_ids": [
@@ -4057,6 +4264,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 207,
               "neighbours_ids": [
@@ -4077,6 +4285,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 208,
               "neighbours_ids": [
@@ -4097,6 +4306,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 209,
               "neighbours_ids": [
@@ -4117,6 +4327,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 210,
               "neighbours_ids": [
@@ -4137,6 +4348,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 211,
               "neighbours_ids": [
@@ -4157,6 +4369,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 212,
               "neighbours_ids": [
@@ -4177,6 +4390,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 213,
               "neighbours_ids": [
@@ -4197,6 +4411,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 214,
               "neighbours_ids": [
@@ -4217,6 +4432,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 215,
               "neighbours_ids": [
@@ -4237,6 +4453,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 216,
               "neighbours_ids": [
@@ -4257,6 +4474,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 217,
               "neighbours_ids": [
@@ -4277,6 +4495,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 218,
               "neighbours_ids": [
@@ -4297,6 +4516,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 219,
               "neighbours_ids": [
@@ -4317,6 +4537,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 220,
               "neighbours_ids": [
@@ -4337,6 +4558,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 221,
               "neighbours_ids": [
@@ -4357,6 +4579,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 222,
               "neighbours_ids": [
@@ -4377,6 +4600,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 223,
               "neighbours_ids": [
@@ -4397,6 +4621,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 224,
               "neighbours_ids": [
@@ -4417,6 +4642,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 225,
               "neighbours_ids": [
@@ -4437,6 +4663,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 226,
               "neighbours_ids": [
@@ -4457,6 +4684,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 227,
               "neighbours_ids": [
@@ -4477,6 +4705,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 228,
               "neighbours_ids": [
@@ -4497,6 +4726,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 229,
               "neighbours_ids": [
@@ -4517,6 +4747,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 230,
               "neighbours_ids": [
@@ -4537,6 +4768,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 231,
               "neighbours_ids": [
@@ -4557,6 +4789,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 232,
               "neighbours_ids": [
@@ -4577,6 +4810,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 233,
               "neighbours_ids": [
@@ -4597,6 +4831,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 234,
               "neighbours_ids": [
@@ -4617,6 +4852,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 235,
               "neighbours_ids": [
@@ -4637,6 +4873,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 236,
               "neighbours_ids": [
@@ -4657,6 +4894,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 237,
               "neighbours_ids": [
@@ -4677,6 +4915,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 238,
               "neighbours_ids": [
@@ -4697,6 +4936,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 239,
               "neighbours_ids": [
@@ -4717,6 +4957,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 240,
               "neighbours_ids": [
@@ -4737,6 +4978,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 241,
               "neighbours_ids": [
@@ -4757,6 +4999,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 242,
               "neighbours_ids": [
@@ -4777,6 +5020,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 243,
               "neighbours_ids": [
@@ -4797,6 +5041,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 244,
               "neighbours_ids": [
@@ -4817,6 +5062,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 245,
               "neighbours_ids": [
@@ -4837,6 +5083,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 246,
               "neighbours_ids": [
@@ -4857,6 +5104,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 247,
               "neighbours_ids": [
@@ -4877,6 +5125,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 248,
               "neighbours_ids": [
@@ -4897,6 +5146,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 249,
               "neighbours_ids": [
@@ -4917,6 +5167,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 250,
               "neighbours_ids": [
@@ -4937,6 +5188,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 251,
               "neighbours_ids": [
@@ -4957,6 +5209,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 252,
               "neighbours_ids": [
@@ -4977,6 +5230,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 253,
               "neighbours_ids": [
@@ -4997,6 +5251,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 254,
               "neighbours_ids": [
@@ -5017,6 +5272,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 255,
               "neighbours_ids": [
@@ -5037,6 +5293,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 256,
               "neighbours_ids": [
@@ -5057,6 +5314,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 257,
               "neighbours_ids": [
@@ -5077,6 +5335,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 258,
               "neighbours_ids": [
@@ -5097,6 +5356,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 259,
               "neighbours_ids": [
@@ -5117,6 +5377,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 260,
               "neighbours_ids": [
@@ -5137,6 +5398,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 261,
               "neighbours_ids": [
@@ -5157,6 +5419,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 262,
               "neighbours_ids": [
@@ -5177,6 +5440,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 263,
               "neighbours_ids": [
@@ -5197,6 +5461,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 264,
               "neighbours_ids": [
@@ -5217,6 +5482,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 265,
               "neighbours_ids": [
@@ -5237,6 +5503,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 266,
               "neighbours_ids": [
@@ -5257,6 +5524,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 267,
               "neighbours_ids": [
@@ -5277,6 +5545,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 268,
               "neighbours_ids": [
@@ -5297,6 +5566,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 269,
               "neighbours_ids": [
@@ -5317,6 +5587,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 270,
               "neighbours_ids": [
@@ -5337,6 +5608,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 271,
               "neighbours_ids": [
@@ -5357,6 +5629,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 272,
               "neighbours_ids": [
@@ -5377,6 +5650,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 273,
               "neighbours_ids": [
@@ -5397,6 +5671,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 274,
               "neighbours_ids": [
@@ -5417,6 +5692,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 275,
               "neighbours_ids": [
@@ -5437,6 +5713,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 276,
               "neighbours_ids": [
@@ -5457,6 +5734,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 277,
               "neighbours_ids": [
@@ -5477,6 +5755,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 278,
               "neighbours_ids": [
@@ -5497,6 +5776,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 279,
               "neighbours_ids": [
@@ -5517,6 +5797,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 280,
               "neighbours_ids": [
@@ -5537,6 +5818,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 281,
               "neighbours_ids": [
@@ -5557,6 +5839,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 282,
               "neighbours_ids": [
@@ -5577,6 +5860,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 283,
               "neighbours_ids": [
@@ -5597,6 +5881,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 284,
               "neighbours_ids": [
@@ -5617,6 +5902,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 285,
               "neighbours_ids": [
@@ -5637,6 +5923,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 286,
               "neighbours_ids": [
@@ -5657,6 +5944,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 287,
               "neighbours_ids": [
@@ -5677,6 +5965,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 288,
               "neighbours_ids": [
@@ -5697,6 +5986,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 289,
               "neighbours_ids": [
@@ -5717,6 +6007,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 290,
               "neighbours_ids": [
@@ -5737,6 +6028,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 291,
               "neighbours_ids": [
@@ -5757,6 +6049,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 292,
               "neighbours_ids": [
@@ -5777,6 +6070,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 293,
               "neighbours_ids": [
@@ -5797,6 +6091,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 294,
               "neighbours_ids": [
@@ -5817,6 +6112,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 295,
               "neighbours_ids": [
@@ -5837,6 +6133,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 296,
               "neighbours_ids": [
@@ -5857,6 +6154,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 297,
               "neighbours_ids": [
@@ -5877,6 +6175,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 298,
               "neighbours_ids": [
@@ -5897,6 +6196,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 299,
               "neighbours_ids": [
@@ -5917,6 +6217,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 300,
               "neighbours_ids": [
@@ -5937,6 +6238,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 301,
               "neighbours_ids": [
@@ -5957,6 +6259,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 302,
               "neighbours_ids": [
@@ -5977,6 +6280,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 303,
               "neighbours_ids": [
@@ -5997,6 +6301,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 304,
               "neighbours_ids": [
@@ -6017,6 +6322,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 305,
               "neighbours_ids": [
@@ -6037,6 +6343,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 306,
               "neighbours_ids": [
@@ -6057,6 +6364,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 307,
               "neighbours_ids": [
@@ -6077,6 +6385,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 308,
               "neighbours_ids": [
@@ -6097,6 +6406,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 309,
               "neighbours_ids": [
@@ -6117,6 +6427,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 310,
               "neighbours_ids": [
@@ -6137,6 +6448,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 311,
               "neighbours_ids": [
@@ -6157,6 +6469,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 312,
               "neighbours_ids": [
@@ -6177,6 +6490,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 313,
               "neighbours_ids": [
@@ -6197,6 +6511,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 314,
               "neighbours_ids": [
@@ -6217,6 +6532,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 315,
               "neighbours_ids": [
@@ -6237,6 +6553,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 316,
               "neighbours_ids": [
@@ -6257,6 +6574,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 317,
               "neighbours_ids": [
@@ -6277,6 +6595,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 318,
               "neighbours_ids": [
@@ -6297,6 +6616,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 319,
               "neighbours_ids": [
@@ -6317,6 +6637,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 320,
               "neighbours_ids": [
@@ -6337,6 +6658,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 321,
               "neighbours_ids": [
@@ -6357,6 +6679,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 322,
               "neighbours_ids": [
@@ -6377,6 +6700,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 323,
               "neighbours_ids": [
@@ -6397,6 +6721,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 324,
               "neighbours_ids": [
@@ -6417,6 +6742,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 325,
               "neighbours_ids": [
@@ -6437,6 +6763,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 326,
               "neighbours_ids": [
@@ -6457,6 +6784,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 327,
               "neighbours_ids": [
@@ -6477,6 +6805,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 328,
               "neighbours_ids": [
@@ -6497,6 +6826,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 329,
               "neighbours_ids": [
@@ -6517,6 +6847,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 330,
               "neighbours_ids": [
@@ -6537,6 +6868,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 331,
               "neighbours_ids": [
@@ -6557,6 +6889,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 332,
               "neighbours_ids": [
@@ -6577,6 +6910,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 333,
               "neighbours_ids": [
@@ -6597,6 +6931,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 334,
               "neighbours_ids": [
@@ -6617,6 +6952,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 335,
               "neighbours_ids": [
@@ -6637,6 +6973,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 336,
               "neighbours_ids": [
@@ -6657,6 +6994,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 337,
               "neighbours_ids": [
@@ -6677,6 +7015,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 338,
               "neighbours_ids": [
@@ -6697,6 +7036,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 339,
               "neighbours_ids": [
@@ -6717,6 +7057,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 340,
               "neighbours_ids": [
@@ -6737,6 +7078,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 341,
               "neighbours_ids": [
@@ -6757,6 +7099,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 342,
               "neighbours_ids": [
@@ -6777,6 +7120,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 343,
               "neighbours_ids": [
@@ -6797,6 +7141,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 344,
               "neighbours_ids": [
@@ -6817,6 +7162,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 345,
               "neighbours_ids": [
@@ -6837,6 +7183,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 346,
               "neighbours_ids": [
@@ -6857,6 +7204,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 347,
               "neighbours_ids": [
@@ -6877,6 +7225,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 348,
               "neighbours_ids": [
@@ -6897,6 +7246,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 349,
               "neighbours_ids": [
@@ -6917,6 +7267,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 350,
               "neighbours_ids": [
@@ -6937,6 +7288,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 351,
               "neighbours_ids": [
@@ -6957,6 +7309,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 352,
               "neighbours_ids": [
@@ -6977,6 +7330,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 353,
               "neighbours_ids": [
@@ -6997,6 +7351,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 354,
               "neighbours_ids": [
@@ -7017,6 +7372,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 355,
               "neighbours_ids": [
@@ -7037,6 +7393,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 356,
               "neighbours_ids": [
@@ -7057,6 +7414,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 357,
               "neighbours_ids": [
@@ -7077,6 +7435,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 358,
               "neighbours_ids": [
@@ -7097,6 +7456,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 359,
               "neighbours_ids": [
@@ -7117,6 +7477,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 360,
               "neighbours_ids": [
@@ -7137,6 +7498,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 361,
               "neighbours_ids": [
@@ -7157,6 +7519,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 362,
               "neighbours_ids": [
@@ -7177,6 +7540,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 363,
               "neighbours_ids": [
@@ -7197,6 +7561,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 364,
               "neighbours_ids": [
@@ -7217,6 +7582,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 365,
               "neighbours_ids": [
@@ -7237,6 +7603,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 366,
               "neighbours_ids": [
@@ -7257,6 +7624,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 367,
               "neighbours_ids": [
@@ -7277,6 +7645,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 368,
               "neighbours_ids": [
@@ -7297,6 +7666,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 369,
               "neighbours_ids": [
@@ -7317,6 +7687,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 370,
               "neighbours_ids": [
@@ -7337,6 +7708,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 371,
               "neighbours_ids": [
@@ -7357,6 +7729,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 372,
               "neighbours_ids": [
@@ -7377,6 +7750,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 373,
               "neighbours_ids": [
@@ -7397,6 +7771,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 374,
               "neighbours_ids": [
@@ -7417,6 +7792,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 375,
               "neighbours_ids": [
@@ -7437,6 +7813,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 376,
               "neighbours_ids": [
@@ -7457,6 +7834,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 377,
               "neighbours_ids": [
@@ -7477,6 +7855,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 378,
               "neighbours_ids": [
@@ -7497,6 +7876,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 379,
               "neighbours_ids": [
@@ -7517,6 +7897,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 380,
               "neighbours_ids": [
@@ -7537,6 +7918,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 381,
               "neighbours_ids": [
@@ -7557,6 +7939,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 382,
               "neighbours_ids": [
@@ -7577,6 +7960,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 383,
               "neighbours_ids": [
@@ -7597,6 +7981,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 384,
               "neighbours_ids": [
@@ -7617,6 +8002,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 385,
               "neighbours_ids": [
@@ -7637,6 +8023,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 386,
               "neighbours_ids": [
@@ -7657,6 +8044,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 387,
               "neighbours_ids": [
@@ -7677,6 +8065,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 388,
               "neighbours_ids": [
@@ -7697,6 +8086,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 389,
               "neighbours_ids": [
@@ -7717,6 +8107,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 390,
               "neighbours_ids": [
@@ -7737,6 +8128,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 391,
               "neighbours_ids": [
@@ -7757,6 +8149,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 392,
               "neighbours_ids": [
@@ -7777,6 +8170,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 393,
               "neighbours_ids": [
@@ -7797,6 +8191,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 394,
               "neighbours_ids": [
@@ -7817,6 +8212,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 395,
               "neighbours_ids": [
@@ -7837,6 +8233,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 396,
               "neighbours_ids": [
@@ -7857,6 +8254,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 397,
               "neighbours_ids": [
@@ -7877,6 +8275,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 398,
               "neighbours_ids": [
@@ -7897,6 +8296,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 399,
               "neighbours_ids": [
@@ -7917,6 +8317,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 400,
               "neighbours_ids": [
@@ -7937,6 +8338,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 401,
               "neighbours_ids": [
@@ -7957,6 +8359,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 402,
               "neighbours_ids": [
@@ -7977,6 +8380,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 403,
               "neighbours_ids": [
@@ -7997,6 +8401,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 404,
               "neighbours_ids": [
@@ -8017,6 +8422,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 405,
               "neighbours_ids": [
@@ -8037,6 +8443,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 406,
               "neighbours_ids": [
@@ -8057,6 +8464,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 407,
               "neighbours_ids": [
@@ -8077,6 +8485,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 408,
               "neighbours_ids": [
@@ -8097,6 +8506,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 409,
               "neighbours_ids": [
@@ -8117,6 +8527,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 410,
               "neighbours_ids": [
@@ -8137,6 +8548,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 411,
               "neighbours_ids": [
@@ -8157,6 +8569,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 412,
               "neighbours_ids": [
@@ -8177,6 +8590,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 413,
               "neighbours_ids": [
@@ -8197,6 +8611,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 414,
               "neighbours_ids": [
@@ -8217,6 +8632,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 415,
               "neighbours_ids": [
@@ -8237,6 +8653,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 416,
               "neighbours_ids": [
@@ -8257,6 +8674,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 417,
               "neighbours_ids": [
@@ -8277,6 +8695,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 418,
               "neighbours_ids": [
@@ -8297,6 +8716,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 419,
               "neighbours_ids": [
@@ -8317,6 +8737,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 420,
               "neighbours_ids": [
@@ -8337,6 +8758,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 421,
               "neighbours_ids": [
@@ -8357,6 +8779,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 422,
               "neighbours_ids": [
@@ -8377,6 +8800,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 423,
               "neighbours_ids": [
@@ -8397,6 +8821,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 424,
               "neighbours_ids": [
@@ -8417,6 +8842,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 425,
               "neighbours_ids": [
@@ -8437,6 +8863,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 426,
               "neighbours_ids": [
@@ -8457,6 +8884,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 427,
               "neighbours_ids": [
@@ -8477,6 +8905,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 428,
               "neighbours_ids": [
@@ -8497,6 +8926,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 429,
               "neighbours_ids": [
@@ -8517,6 +8947,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 430,
               "neighbours_ids": [
@@ -8537,6 +8968,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 431,
               "neighbours_ids": [
@@ -8557,6 +8989,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 432,
               "neighbours_ids": [
@@ -8577,6 +9010,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 433,
               "neighbours_ids": [
@@ -8597,6 +9031,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 434,
               "neighbours_ids": [
@@ -8617,6 +9052,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 435,
               "neighbours_ids": [
@@ -8637,6 +9073,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 436,
               "neighbours_ids": [
@@ -8657,6 +9094,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 437,
               "neighbours_ids": [
@@ -8677,6 +9115,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 438,
               "neighbours_ids": [
@@ -8697,6 +9136,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 439,
               "neighbours_ids": [
@@ -8717,6 +9157,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 440,
               "neighbours_ids": [
@@ -8737,6 +9178,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 441,
               "neighbours_ids": [
@@ -8757,6 +9199,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 442,
               "neighbours_ids": [
@@ -8777,6 +9220,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 443,
               "neighbours_ids": [
@@ -8797,6 +9241,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 444,
               "neighbours_ids": [
@@ -8817,6 +9262,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 445,
               "neighbours_ids": [
@@ -8837,6 +9283,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 446,
               "neighbours_ids": [
@@ -8857,6 +9304,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 447,
               "neighbours_ids": [
@@ -8877,6 +9325,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 448,
               "neighbours_ids": [
@@ -8897,6 +9346,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 449,
               "neighbours_ids": [
@@ -8917,6 +9367,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 450,
               "neighbours_ids": [
@@ -8937,6 +9388,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 451,
               "neighbours_ids": [
@@ -8957,6 +9409,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 452,
               "neighbours_ids": [
@@ -8977,6 +9430,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 453,
               "neighbours_ids": [
@@ -8997,6 +9451,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 454,
               "neighbours_ids": [
@@ -9017,6 +9472,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 455,
               "neighbours_ids": [
@@ -9037,6 +9493,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 456,
               "neighbours_ids": [
@@ -9057,6 +9514,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 457,
               "neighbours_ids": [
@@ -9077,6 +9535,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 458,
               "neighbours_ids": [
@@ -9097,6 +9556,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 459,
               "neighbours_ids": [
@@ -9117,6 +9577,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 460,
               "neighbours_ids": [
@@ -9137,6 +9598,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 461,
               "neighbours_ids": [
@@ -9157,6 +9619,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 462,
               "neighbours_ids": [
@@ -9177,6 +9640,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 463,
               "neighbours_ids": [
@@ -9197,6 +9661,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 464,
               "neighbours_ids": [
@@ -9217,6 +9682,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 465,
               "neighbours_ids": [
@@ -9237,6 +9703,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 466,
               "neighbours_ids": [
@@ -9257,6 +9724,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 467,
               "neighbours_ids": [
@@ -9277,6 +9745,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 468,
               "neighbours_ids": [
@@ -9297,6 +9766,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 469,
               "neighbours_ids": [
@@ -9317,6 +9787,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 470,
               "neighbours_ids": [
@@ -9337,6 +9808,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 471,
               "neighbours_ids": [
@@ -9357,6 +9829,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 472,
               "neighbours_ids": [
@@ -9377,6 +9850,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 473,
               "neighbours_ids": [
@@ -9397,6 +9871,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 474,
               "neighbours_ids": [
@@ -9417,6 +9892,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 475,
               "neighbours_ids": [
@@ -9437,6 +9913,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 476,
               "neighbours_ids": [
@@ -9457,6 +9934,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 477,
               "neighbours_ids": [
@@ -9477,6 +9955,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 478,
               "neighbours_ids": [
@@ -9497,6 +9976,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 479,
               "neighbours_ids": [
@@ -9517,6 +9997,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 480,
               "neighbours_ids": [
@@ -9537,6 +10018,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 481,
               "neighbours_ids": [
@@ -9557,6 +10039,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 482,
               "neighbours_ids": [
@@ -9577,6 +10060,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 483,
               "neighbours_ids": [
@@ -9597,6 +10081,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 484,
               "neighbours_ids": [
@@ -9617,6 +10102,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 485,
               "neighbours_ids": [
@@ -9637,6 +10123,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 486,
               "neighbours_ids": [
@@ -9657,6 +10144,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 487,
               "neighbours_ids": [
@@ -9677,6 +10165,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 488,
               "neighbours_ids": [
@@ -9697,6 +10186,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 489,
               "neighbours_ids": [
@@ -9717,6 +10207,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 490,
               "neighbours_ids": [
@@ -9737,6 +10228,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 491,
               "neighbours_ids": [
@@ -9757,6 +10249,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 492,
               "neighbours_ids": [
@@ -9777,6 +10270,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 493,
               "neighbours_ids": [
@@ -9797,6 +10291,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 494,
               "neighbours_ids": [
@@ -9817,6 +10312,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 495,
               "neighbours_ids": [
@@ -9837,6 +10333,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 496,
               "neighbours_ids": [
@@ -9857,6 +10354,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 497,
               "neighbours_ids": [
@@ -9877,6 +10375,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 498,
               "neighbours_ids": [
@@ -9897,6 +10396,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 499,
               "neighbours_ids": [
@@ -9917,6 +10417,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 500,
               "neighbours_ids": [
@@ -9937,6 +10438,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 501,
               "neighbours_ids": [
@@ -9957,6 +10459,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 502,
               "neighbours_ids": [
@@ -9977,6 +10480,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 503,
               "neighbours_ids": [
@@ -9997,6 +10501,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 504,
               "neighbours_ids": [
@@ -10017,6 +10522,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 505,
               "neighbours_ids": [
@@ -10037,6 +10543,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 506,
               "neighbours_ids": [
@@ -10057,6 +10564,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 507,
               "neighbours_ids": [
@@ -10077,6 +10585,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 508,
               "neighbours_ids": [
@@ -10097,6 +10606,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 509,
               "neighbours_ids": [
@@ -10117,6 +10627,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 510,
               "neighbours_ids": [
@@ -10137,6 +10648,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 511,
               "neighbours_ids": [
@@ -10157,6 +10669,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 512,
               "neighbours_ids": [
@@ -10177,6 +10690,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 513,
               "neighbours_ids": [
@@ -10197,6 +10711,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 514,
               "neighbours_ids": [
@@ -10217,6 +10732,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 515,
               "neighbours_ids": [
@@ -10237,6 +10753,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 516,
               "neighbours_ids": [
@@ -10257,6 +10774,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 517,
               "neighbours_ids": [
@@ -10277,6 +10795,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 518,
               "neighbours_ids": [
@@ -10297,6 +10816,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 519,
               "neighbours_ids": [
@@ -10317,6 +10837,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 520,
               "neighbours_ids": [
@@ -10337,6 +10858,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 521,
               "neighbours_ids": [
@@ -10357,6 +10879,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 522,
               "neighbours_ids": [
@@ -10377,6 +10900,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 523,
               "neighbours_ids": [
@@ -10397,6 +10921,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 524,
               "neighbours_ids": [
@@ -10417,6 +10942,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 525,
               "neighbours_ids": [
@@ -10437,6 +10963,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 526,
               "neighbours_ids": [
@@ -10457,6 +10984,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 527,
               "neighbours_ids": [
@@ -10477,6 +11005,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 528,
               "neighbours_ids": [
@@ -10497,6 +11026,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 529,
               "neighbours_ids": [
@@ -10517,6 +11047,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 530,
               "neighbours_ids": [
@@ -10537,6 +11068,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 531,
               "neighbours_ids": [
@@ -10557,6 +11089,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 532,
               "neighbours_ids": [
@@ -10577,6 +11110,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 533,
               "neighbours_ids": [
@@ -10597,6 +11131,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 534,
               "neighbours_ids": [
@@ -10617,6 +11152,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 535,
               "neighbours_ids": [
@@ -10637,6 +11173,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 536,
               "neighbours_ids": [
@@ -10657,6 +11194,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 537,
               "neighbours_ids": [
@@ -10677,6 +11215,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 538,
               "neighbours_ids": [
@@ -10697,6 +11236,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 539,
               "neighbours_ids": [
@@ -10717,6 +11257,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 540,
               "neighbours_ids": [
@@ -10737,6 +11278,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 541,
               "neighbours_ids": [
@@ -10757,6 +11299,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 542,
               "neighbours_ids": [
@@ -10777,6 +11320,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 543,
               "neighbours_ids": [
@@ -10797,6 +11341,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 544,
               "neighbours_ids": [
@@ -10817,6 +11362,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 545,
               "neighbours_ids": [
@@ -10837,6 +11383,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 546,
               "neighbours_ids": [
@@ -10857,6 +11404,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 547,
               "neighbours_ids": [
@@ -10877,6 +11425,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 548,
               "neighbours_ids": [
@@ -10897,6 +11446,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 549,
               "neighbours_ids": [
@@ -10917,6 +11467,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 550,
               "neighbours_ids": [
@@ -10937,6 +11488,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 551,
               "neighbours_ids": [
@@ -10957,6 +11509,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 552,
               "neighbours_ids": [
@@ -10977,6 +11530,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 553,
               "neighbours_ids": [
@@ -10997,6 +11551,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 554,
               "neighbours_ids": [
@@ -11017,6 +11572,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 555,
               "neighbours_ids": [
@@ -11037,6 +11593,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 556,
               "neighbours_ids": [
@@ -11057,6 +11614,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 557,
               "neighbours_ids": [
@@ -11077,6 +11635,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 558,
               "neighbours_ids": [
@@ -11097,6 +11656,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 559,
               "neighbours_ids": [
@@ -11117,6 +11677,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 560,
               "neighbours_ids": [
@@ -11137,6 +11698,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 561,
               "neighbours_ids": [
@@ -11157,6 +11719,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 562,
               "neighbours_ids": [
@@ -11177,6 +11740,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 563,
               "neighbours_ids": [
@@ -11197,6 +11761,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 564,
               "neighbours_ids": [
@@ -11217,6 +11782,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 565,
               "neighbours_ids": [
@@ -11237,6 +11803,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 566,
               "neighbours_ids": [
@@ -11257,6 +11824,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 567,
               "neighbours_ids": [
@@ -11277,6 +11845,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 568,
               "neighbours_ids": [
@@ -11297,6 +11866,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 569,
               "neighbours_ids": [
@@ -11317,6 +11887,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 570,
               "neighbours_ids": [
@@ -11337,6 +11908,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 571,
               "neighbours_ids": [
@@ -11357,6 +11929,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 572,
               "neighbours_ids": [
@@ -11377,6 +11950,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 573,
               "neighbours_ids": [
@@ -11397,6 +11971,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 574,
               "neighbours_ids": [
@@ -11417,6 +11992,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 575,
               "neighbours_ids": [
@@ -11437,6 +12013,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 576,
               "neighbours_ids": [
@@ -11457,6 +12034,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 577,
               "neighbours_ids": [
@@ -11477,6 +12055,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 578,
               "neighbours_ids": [
@@ -11497,6 +12076,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 579,
               "neighbours_ids": [
@@ -11517,6 +12097,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 580,
               "neighbours_ids": [
@@ -11537,6 +12118,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 581,
               "neighbours_ids": [
@@ -11557,6 +12139,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 582,
               "neighbours_ids": [
@@ -11577,6 +12160,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 583,
               "neighbours_ids": [
@@ -11597,6 +12181,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 584,
               "neighbours_ids": [
@@ -11617,6 +12202,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 585,
               "neighbours_ids": [
@@ -11637,6 +12223,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 586,
               "neighbours_ids": [
@@ -11657,6 +12244,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 587,
               "neighbours_ids": [
@@ -11677,6 +12265,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 588,
               "neighbours_ids": [
@@ -11697,6 +12286,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 589,
               "neighbours_ids": [
@@ -11717,6 +12307,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 590,
               "neighbours_ids": [
@@ -11737,6 +12328,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 591,
               "neighbours_ids": [
@@ -11757,6 +12349,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 592,
               "neighbours_ids": [
@@ -11777,6 +12370,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 593,
               "neighbours_ids": [
@@ -11797,6 +12391,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 594,
               "neighbours_ids": [
@@ -11817,6 +12412,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 595,
               "neighbours_ids": [
@@ -11837,6 +12433,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 596,
               "neighbours_ids": [
@@ -11857,6 +12454,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 597,
               "neighbours_ids": [
@@ -11877,6 +12475,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 598,
               "neighbours_ids": [
@@ -11897,6 +12496,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 599,
               "neighbours_ids": [
@@ -11917,6 +12517,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 600,
               "neighbours_ids": [
@@ -11937,6 +12538,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 601,
               "neighbours_ids": [
@@ -11957,6 +12559,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 602,
               "neighbours_ids": [
@@ -11977,6 +12580,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 603,
               "neighbours_ids": [
@@ -11997,6 +12601,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 604,
               "neighbours_ids": [
@@ -12017,6 +12622,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 605,
               "neighbours_ids": [
@@ -12037,6 +12643,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 606,
               "neighbours_ids": [
@@ -12057,6 +12664,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 607,
               "neighbours_ids": [
@@ -12077,6 +12685,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 608,
               "neighbours_ids": [
@@ -12097,6 +12706,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 609,
               "neighbours_ids": [
@@ -12117,6 +12727,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 610,
               "neighbours_ids": [
@@ -12137,6 +12748,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 611,
               "neighbours_ids": [
@@ -12157,6 +12769,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 612,
               "neighbours_ids": [
@@ -12177,6 +12790,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 613,
               "neighbours_ids": [
@@ -12197,6 +12811,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 614,
               "neighbours_ids": [
@@ -12217,6 +12832,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 615,
               "neighbours_ids": [
@@ -12237,6 +12853,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 616,
               "neighbours_ids": [
@@ -12257,6 +12874,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 617,
               "neighbours_ids": [
@@ -12277,6 +12895,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 618,
               "neighbours_ids": [
@@ -12297,6 +12916,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 619,
               "neighbours_ids": [
@@ -12317,6 +12937,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 620,
               "neighbours_ids": [
@@ -12337,6 +12958,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 621,
               "neighbours_ids": [
@@ -12357,6 +12979,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 622,
               "neighbours_ids": [
@@ -12377,6 +13000,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 623,
               "neighbours_ids": [
@@ -12397,6 +13021,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 624,
               "neighbours_ids": [
@@ -12417,6 +13042,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 625,
               "neighbours_ids": [
@@ -12437,6 +13063,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 626,
               "neighbours_ids": [
@@ -12457,6 +13084,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 627,
               "neighbours_ids": [
@@ -12477,6 +13105,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 628,
               "neighbours_ids": [
@@ -12497,6 +13126,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 629,
               "neighbours_ids": [
@@ -12517,6 +13147,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 630,
               "neighbours_ids": [
@@ -12537,6 +13168,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 631,
               "neighbours_ids": [
@@ -12557,6 +13189,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 632,
               "neighbours_ids": [
@@ -12577,6 +13210,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 633,
               "neighbours_ids": [
@@ -12597,6 +13231,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 634,
               "neighbours_ids": [
@@ -12617,6 +13252,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 635,
               "neighbours_ids": [
@@ -12637,6 +13273,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 636,
               "neighbours_ids": [
@@ -12657,6 +13294,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 637,
               "neighbours_ids": [
@@ -12677,6 +13315,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 638,
               "neighbours_ids": [
@@ -12697,6 +13336,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 639,
               "neighbours_ids": [
@@ -12717,6 +13357,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 640,
               "neighbours_ids": [
@@ -12737,6 +13378,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 641,
               "neighbours_ids": [
@@ -12757,6 +13399,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 642,
               "neighbours_ids": [
@@ -12777,6 +13420,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 643,
               "neighbours_ids": [
@@ -12797,6 +13441,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 644,
               "neighbours_ids": [
@@ -12817,6 +13462,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 645,
               "neighbours_ids": [
@@ -12837,6 +13483,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 646,
               "neighbours_ids": [
@@ -12857,6 +13504,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 647,
               "neighbours_ids": [
@@ -12877,6 +13525,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 648,
               "neighbours_ids": [
@@ -12897,6 +13546,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 649,
               "neighbours_ids": [
@@ -12917,6 +13567,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 650,
               "neighbours_ids": [
@@ -12937,6 +13588,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 651,
               "neighbours_ids": [
@@ -12957,6 +13609,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 652,
               "neighbours_ids": [
@@ -12977,6 +13630,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 653,
               "neighbours_ids": [
@@ -12997,6 +13651,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 654,
               "neighbours_ids": [
@@ -13017,6 +13672,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 655,
               "neighbours_ids": [
@@ -13037,6 +13693,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 656,
               "neighbours_ids": [
@@ -13057,6 +13714,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 657,
               "neighbours_ids": [
@@ -13077,6 +13735,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 658,
               "neighbours_ids": [
@@ -13097,6 +13756,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 659,
               "neighbours_ids": [
@@ -13117,6 +13777,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 660,
               "neighbours_ids": [
@@ -13137,6 +13798,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 661,
               "neighbours_ids": [
@@ -13157,6 +13819,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 662,
               "neighbours_ids": [
@@ -13177,6 +13840,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 663,
               "neighbours_ids": [
@@ -13197,6 +13861,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 664,
               "neighbours_ids": [
@@ -13217,6 +13882,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 665,
               "neighbours_ids": [
@@ -13237,6 +13903,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 666,
               "neighbours_ids": [
@@ -13257,6 +13924,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 667,
               "neighbours_ids": [
@@ -13277,6 +13945,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 668,
               "neighbours_ids": [
@@ -13297,6 +13966,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 669,
               "neighbours_ids": [
@@ -13317,6 +13987,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 670,
               "neighbours_ids": [
@@ -13337,6 +14008,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 671,
               "neighbours_ids": [
@@ -13357,6 +14029,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 672,
               "neighbours_ids": [
@@ -13377,6 +14050,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 673,
               "neighbours_ids": [
@@ -13397,6 +14071,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 674,
               "neighbours_ids": [
@@ -13417,6 +14092,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 675,
               "neighbours_ids": [
@@ -13437,6 +14113,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 676,
               "neighbours_ids": [
@@ -13457,6 +14134,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 677,
               "neighbours_ids": [
@@ -13477,6 +14155,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 678,
               "neighbours_ids": [
@@ -13497,6 +14176,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 679,
               "neighbours_ids": [
@@ -13517,6 +14197,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 680,
               "neighbours_ids": [
@@ -13537,6 +14218,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 681,
               "neighbours_ids": [
@@ -13557,6 +14239,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 682,
               "neighbours_ids": [
@@ -13577,6 +14260,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 683,
               "neighbours_ids": [
@@ -13597,6 +14281,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 684,
               "neighbours_ids": [
@@ -13617,6 +14302,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 685,
               "neighbours_ids": [
@@ -13637,6 +14323,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 686,
               "neighbours_ids": [
@@ -13657,6 +14344,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 687,
               "neighbours_ids": [
@@ -13677,6 +14365,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 688,
               "neighbours_ids": [
@@ -13697,6 +14386,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 689,
               "neighbours_ids": [
@@ -13717,6 +14407,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 690,
               "neighbours_ids": [
@@ -13737,6 +14428,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 691,
               "neighbours_ids": [
@@ -13757,6 +14449,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 692,
               "neighbours_ids": [
@@ -13777,6 +14470,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 693,
               "neighbours_ids": [
@@ -13797,6 +14491,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 694,
               "neighbours_ids": [
@@ -13817,6 +14512,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 695,
               "neighbours_ids": [
@@ -13837,6 +14533,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 696,
               "neighbours_ids": [
@@ -13857,6 +14554,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 697,
               "neighbours_ids": [
@@ -13877,6 +14575,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 698,
               "neighbours_ids": [
@@ -13897,6 +14596,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 699,
               "neighbours_ids": [
@@ -13917,6 +14617,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 700,
               "neighbours_ids": [
@@ -13937,6 +14638,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 701,
               "neighbours_ids": [
@@ -13957,6 +14659,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 702,
               "neighbours_ids": [
@@ -13977,6 +14680,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 703,
               "neighbours_ids": [
@@ -13997,6 +14701,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 704,
               "neighbours_ids": [
@@ -14017,6 +14722,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 705,
               "neighbours_ids": [
@@ -14037,6 +14743,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 706,
               "neighbours_ids": [
@@ -14057,6 +14764,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 707,
               "neighbours_ids": [
@@ -14077,6 +14785,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 708,
               "neighbours_ids": [
@@ -14097,6 +14806,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 709,
               "neighbours_ids": [
@@ -14117,6 +14827,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 710,
               "neighbours_ids": [
@@ -14137,6 +14848,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 711,
               "neighbours_ids": [
@@ -14157,6 +14869,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 712,
               "neighbours_ids": [
@@ -14177,6 +14890,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 713,
               "neighbours_ids": [
@@ -14197,6 +14911,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 714,
               "neighbours_ids": [
@@ -14217,6 +14932,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 715,
               "neighbours_ids": [
@@ -14237,6 +14953,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 716,
               "neighbours_ids": [
@@ -14257,6 +14974,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 717,
               "neighbours_ids": [
@@ -14277,6 +14995,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 718,
               "neighbours_ids": [
@@ -14297,6 +15016,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 719,
               "neighbours_ids": [
@@ -14317,6 +15037,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 720,
               "neighbours_ids": [
@@ -14337,6 +15058,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 721,
               "neighbours_ids": [
@@ -14357,6 +15079,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 722,
               "neighbours_ids": [
@@ -14377,6 +15100,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 723,
               "neighbours_ids": [
@@ -14397,6 +15121,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 724,
               "neighbours_ids": [
@@ -14417,6 +15142,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 725,
               "neighbours_ids": [
@@ -14437,6 +15163,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 726,
               "neighbours_ids": [
@@ -14457,6 +15184,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 727,
               "neighbours_ids": [
@@ -14477,6 +15205,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 728,
               "neighbours_ids": [
@@ -14497,6 +15226,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 729,
               "neighbours_ids": [
@@ -14517,6 +15247,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 730,
               "neighbours_ids": [
@@ -14537,6 +15268,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 731,
               "neighbours_ids": [
@@ -14557,6 +15289,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 732,
               "neighbours_ids": [
@@ -14577,6 +15310,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 733,
               "neighbours_ids": [
@@ -14597,6 +15331,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 734,
               "neighbours_ids": [
@@ -14617,6 +15352,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 735,
               "neighbours_ids": [
@@ -14637,6 +15373,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 736,
               "neighbours_ids": [
@@ -14657,6 +15394,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 737,
               "neighbours_ids": [
@@ -14677,6 +15415,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 738,
               "neighbours_ids": [
@@ -14697,6 +15436,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 739,
               "neighbours_ids": [
@@ -14717,6 +15457,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 740,
               "neighbours_ids": [
@@ -14737,6 +15478,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 741,
               "neighbours_ids": [
@@ -14757,6 +15499,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 742,
               "neighbours_ids": [
@@ -14777,6 +15520,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 743,
               "neighbours_ids": [
@@ -14797,6 +15541,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 744,
               "neighbours_ids": [
@@ -14817,6 +15562,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 745,
               "neighbours_ids": [
@@ -14837,6 +15583,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 746,
               "neighbours_ids": [
@@ -14857,6 +15604,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 747,
               "neighbours_ids": [
@@ -14877,6 +15625,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 748,
               "neighbours_ids": [
@@ -14897,6 +15646,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 749,
               "neighbours_ids": [
@@ -14917,6 +15667,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 750,
               "neighbours_ids": [
@@ -14937,6 +15688,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 751,
               "neighbours_ids": [
@@ -14957,6 +15709,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 752,
               "neighbours_ids": [
@@ -14977,6 +15730,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 753,
               "neighbours_ids": [
@@ -14997,6 +15751,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 754,
               "neighbours_ids": [
@@ -15017,6 +15772,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 755,
               "neighbours_ids": [
@@ -15037,6 +15793,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 756,
               "neighbours_ids": [
@@ -15057,6 +15814,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 757,
               "neighbours_ids": [
@@ -15077,6 +15835,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 758,
               "neighbours_ids": [
@@ -15097,6 +15856,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 759,
               "neighbours_ids": [
@@ -15117,6 +15877,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 760,
               "neighbours_ids": [
@@ -15137,6 +15898,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 761,
               "neighbours_ids": [
@@ -15157,6 +15919,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 762,
               "neighbours_ids": [
@@ -15177,6 +15940,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 763,
               "neighbours_ids": [
@@ -15197,6 +15961,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 764,
               "neighbours_ids": [
@@ -15217,6 +15982,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 765,
               "neighbours_ids": [
@@ -15237,6 +16003,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 766,
               "neighbours_ids": [
@@ -15257,6 +16024,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 767,
               "neighbours_ids": [
@@ -15277,6 +16045,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 768,
               "neighbours_ids": [
@@ -15297,6 +16066,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 769,
               "neighbours_ids": [
@@ -15317,6 +16087,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 770,
               "neighbours_ids": [
@@ -15337,6 +16108,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 771,
               "neighbours_ids": [
@@ -15357,6 +16129,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 772,
               "neighbours_ids": [
@@ -15377,6 +16150,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 773,
               "neighbours_ids": [
@@ -15397,6 +16171,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 774,
               "neighbours_ids": [
@@ -15417,6 +16192,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 775,
               "neighbours_ids": [
@@ -15437,6 +16213,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 776,
               "neighbours_ids": [
@@ -15457,6 +16234,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 777,
               "neighbours_ids": [
@@ -15477,6 +16255,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 778,
               "neighbours_ids": [
@@ -15497,6 +16276,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 779,
               "neighbours_ids": [
@@ -15517,6 +16297,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 780,
               "neighbours_ids": [
@@ -15537,6 +16318,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 781,
               "neighbours_ids": [
@@ -15557,6 +16339,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 782,
               "neighbours_ids": [
@@ -15577,6 +16360,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 783,
               "neighbours_ids": [
@@ -15597,6 +16381,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 784,
               "neighbours_ids": [
@@ -15617,6 +16402,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 785,
               "neighbours_ids": [
@@ -15637,6 +16423,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 786,
               "neighbours_ids": [
@@ -15657,6 +16444,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 787,
               "neighbours_ids": [
@@ -15677,6 +16465,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 788,
               "neighbours_ids": [
@@ -15697,6 +16486,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 789,
               "neighbours_ids": [
@@ -15717,6 +16507,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 790,
               "neighbours_ids": [
@@ -15737,6 +16528,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 791,
               "neighbours_ids": [
@@ -15757,6 +16549,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 792,
               "neighbours_ids": [
@@ -15777,6 +16570,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 793,
               "neighbours_ids": [
@@ -15797,6 +16591,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 794,
               "neighbours_ids": [
@@ -15817,6 +16612,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 795,
               "neighbours_ids": [
@@ -15837,6 +16633,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 796,
               "neighbours_ids": [
@@ -15857,6 +16654,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 797,
               "neighbours_ids": [
@@ -15877,6 +16675,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 798,
               "neighbours_ids": [
@@ -15897,6 +16696,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 799,
               "neighbours_ids": [
@@ -15917,6 +16717,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 800,
               "neighbours_ids": [
@@ -15937,6 +16738,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 801,
               "neighbours_ids": [
@@ -15957,6 +16759,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 802,
               "neighbours_ids": [
@@ -15977,6 +16780,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 803,
               "neighbours_ids": [
@@ -15997,6 +16801,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 804,
               "neighbours_ids": [
@@ -16017,6 +16822,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 805,
               "neighbours_ids": [
@@ -16037,6 +16843,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 806,
               "neighbours_ids": [
@@ -16057,6 +16864,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 807,
               "neighbours_ids": [
@@ -16077,6 +16885,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 808,
               "neighbours_ids": [
@@ -16097,6 +16906,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 809,
               "neighbours_ids": [
@@ -16117,6 +16927,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 810,
               "neighbours_ids": [
@@ -16137,6 +16948,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 811,
               "neighbours_ids": [
@@ -16157,6 +16969,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 812,
               "neighbours_ids": [
@@ -16177,6 +16990,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 813,
               "neighbours_ids": [
@@ -16197,6 +17011,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 814,
               "neighbours_ids": [
@@ -16217,6 +17032,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 815,
               "neighbours_ids": [
@@ -16237,6 +17053,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 816,
               "neighbours_ids": [
@@ -16257,6 +17074,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 817,
               "neighbours_ids": [
@@ -16277,6 +17095,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 818,
               "neighbours_ids": [
@@ -16297,6 +17116,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 819,
               "neighbours_ids": [
@@ -16317,6 +17137,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 820,
               "neighbours_ids": [
@@ -16337,6 +17158,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 821,
               "neighbours_ids": [
@@ -16357,6 +17179,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 822,
               "neighbours_ids": [
@@ -16377,6 +17200,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 823,
               "neighbours_ids": [
@@ -16397,6 +17221,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 824,
               "neighbours_ids": [
@@ -16417,6 +17242,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 825,
               "neighbours_ids": [
@@ -16437,6 +17263,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 826,
               "neighbours_ids": [
@@ -16457,6 +17284,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 827,
               "neighbours_ids": [
@@ -16477,6 +17305,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 828,
               "neighbours_ids": [
@@ -16497,6 +17326,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 829,
               "neighbours_ids": [
@@ -16517,6 +17347,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 830,
               "neighbours_ids": [
@@ -16537,6 +17368,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 831,
               "neighbours_ids": [
@@ -16557,6 +17389,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 832,
               "neighbours_ids": [
@@ -16577,6 +17410,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 833,
               "neighbours_ids": [
@@ -16597,6 +17431,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 834,
               "neighbours_ids": [
@@ -16617,6 +17452,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 835,
               "neighbours_ids": [
@@ -16637,6 +17473,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 836,
               "neighbours_ids": [
@@ -16657,6 +17494,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 837,
               "neighbours_ids": [
@@ -16677,6 +17515,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 838,
               "neighbours_ids": [
@@ -16697,6 +17536,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 839,
               "neighbours_ids": [
@@ -16717,6 +17557,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 840,
               "neighbours_ids": [
@@ -16737,6 +17578,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 841,
               "neighbours_ids": [
@@ -16757,6 +17599,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 842,
               "neighbours_ids": [
@@ -16777,6 +17620,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 843,
               "neighbours_ids": [
@@ -16797,6 +17641,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 844,
               "neighbours_ids": [
@@ -16817,6 +17662,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 845,
               "neighbours_ids": [
@@ -16837,6 +17683,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 846,
               "neighbours_ids": [
@@ -16857,6 +17704,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 847,
               "neighbours_ids": [
@@ -16877,6 +17725,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 848,
               "neighbours_ids": [
@@ -16897,6 +17746,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 849,
               "neighbours_ids": [
@@ -16917,6 +17767,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 850,
               "neighbours_ids": [
@@ -16937,6 +17788,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 851,
               "neighbours_ids": [
@@ -16957,6 +17809,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 852,
               "neighbours_ids": [
@@ -16977,6 +17830,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 853,
               "neighbours_ids": [
@@ -16997,6 +17851,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 854,
               "neighbours_ids": [
@@ -17017,6 +17872,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 855,
               "neighbours_ids": [
@@ -17037,6 +17893,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 856,
               "neighbours_ids": [
@@ -17057,6 +17914,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 857,
               "neighbours_ids": [
@@ -17077,6 +17935,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 858,
               "neighbours_ids": [
@@ -17097,6 +17956,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 859,
               "neighbours_ids": [
@@ -17117,6 +17977,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 860,
               "neighbours_ids": [
@@ -17137,6 +17998,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 861,
               "neighbours_ids": [
@@ -17157,6 +18019,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 862,
               "neighbours_ids": [
@@ -17177,6 +18040,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 863,
               "neighbours_ids": [
@@ -17197,6 +18061,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 864,
               "neighbours_ids": [
@@ -17217,6 +18082,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 865,
               "neighbours_ids": [
@@ -17237,6 +18103,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 866,
               "neighbours_ids": [
@@ -17257,6 +18124,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 867,
               "neighbours_ids": [
@@ -17277,6 +18145,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 868,
               "neighbours_ids": [
@@ -17297,6 +18166,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 869,
               "neighbours_ids": [
@@ -17317,6 +18187,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 870,
               "neighbours_ids": [
@@ -17337,6 +18208,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 871,
               "neighbours_ids": [
@@ -17357,6 +18229,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 872,
               "neighbours_ids": [
@@ -17377,6 +18250,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 873,
               "neighbours_ids": [
@@ -17397,6 +18271,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 874,
               "neighbours_ids": [
@@ -17417,6 +18292,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 875,
               "neighbours_ids": [
@@ -17437,6 +18313,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 876,
               "neighbours_ids": [
@@ -17457,6 +18334,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 877,
               "neighbours_ids": [
@@ -17477,6 +18355,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 878,
               "neighbours_ids": [
@@ -17497,6 +18376,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 879,
               "neighbours_ids": [
@@ -17517,6 +18397,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 880,
               "neighbours_ids": [
@@ -17537,6 +18418,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 881,
               "neighbours_ids": [
@@ -17557,6 +18439,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 882,
               "neighbours_ids": [
@@ -17577,6 +18460,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 883,
               "neighbours_ids": [
@@ -17597,6 +18481,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 884,
               "neighbours_ids": [
@@ -17617,6 +18502,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 885,
               "neighbours_ids": [
@@ -17637,6 +18523,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 886,
               "neighbours_ids": [
@@ -17657,6 +18544,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 887,
               "neighbours_ids": [
@@ -17677,6 +18565,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 888,
               "neighbours_ids": [
@@ -17697,6 +18586,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 889,
               "neighbours_ids": [
@@ -17717,6 +18607,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 890,
               "neighbours_ids": [
@@ -17737,6 +18628,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 891,
               "neighbours_ids": [
@@ -17757,6 +18649,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 892,
               "neighbours_ids": [
@@ -17777,6 +18670,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 893,
               "neighbours_ids": [
@@ -17797,6 +18691,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 894,
               "neighbours_ids": [
@@ -17817,6 +18712,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 895,
               "neighbours_ids": [
@@ -17837,6 +18733,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 896,
               "neighbours_ids": [
@@ -17857,6 +18754,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 897,
               "neighbours_ids": [
@@ -17877,6 +18775,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 898,
               "neighbours_ids": [
@@ -17897,6 +18796,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 899,
               "neighbours_ids": [
@@ -17917,6 +18817,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 900,
               "neighbours_ids": [
@@ -17937,6 +18838,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 901,
               "neighbours_ids": [
@@ -17957,6 +18859,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 902,
               "neighbours_ids": [
@@ -17977,6 +18880,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 903,
               "neighbours_ids": [
@@ -17997,6 +18901,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 904,
               "neighbours_ids": [
@@ -18017,6 +18922,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 905,
               "neighbours_ids": [
@@ -18037,6 +18943,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 906,
               "neighbours_ids": [
@@ -18057,6 +18964,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 907,
               "neighbours_ids": [
@@ -18077,6 +18985,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 908,
               "neighbours_ids": [
@@ -18097,6 +19006,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 909,
               "neighbours_ids": [
@@ -18117,6 +19027,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 910,
               "neighbours_ids": [
@@ -18137,6 +19048,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 911,
               "neighbours_ids": [
@@ -18157,6 +19069,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 912,
               "neighbours_ids": [
@@ -18177,6 +19090,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 913,
               "neighbours_ids": [
@@ -18197,6 +19111,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 914,
               "neighbours_ids": [
@@ -18217,6 +19132,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 915,
               "neighbours_ids": [
@@ -18237,6 +19153,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 916,
               "neighbours_ids": [
@@ -18257,6 +19174,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 917,
               "neighbours_ids": [
@@ -18277,6 +19195,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 918,
               "neighbours_ids": [
@@ -18297,6 +19216,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 919,
               "neighbours_ids": [
@@ -18317,6 +19237,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 920,
               "neighbours_ids": [
@@ -18337,6 +19258,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 921,
               "neighbours_ids": [
@@ -18357,6 +19279,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 922,
               "neighbours_ids": [
@@ -18377,6 +19300,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 923,
               "neighbours_ids": [
@@ -18397,6 +19321,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 924,
               "neighbours_ids": [
@@ -18417,6 +19342,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 925,
               "neighbours_ids": [
@@ -18437,6 +19363,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 926,
               "neighbours_ids": [
@@ -18457,6 +19384,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 927,
               "neighbours_ids": [
@@ -18477,6 +19405,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 928,
               "neighbours_ids": [
@@ -18497,6 +19426,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 929,
               "neighbours_ids": [
@@ -18517,6 +19447,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 930,
               "neighbours_ids": [
@@ -18537,6 +19468,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 931,
               "neighbours_ids": [
@@ -18557,6 +19489,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 932,
               "neighbours_ids": [
@@ -18577,6 +19510,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 933,
               "neighbours_ids": [
@@ -18597,6 +19531,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 934,
               "neighbours_ids": [
@@ -18617,6 +19552,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 935,
               "neighbours_ids": [
@@ -18637,6 +19573,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 936,
               "neighbours_ids": [
@@ -18657,6 +19594,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 937,
               "neighbours_ids": [
@@ -18677,6 +19615,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 938,
               "neighbours_ids": [
@@ -18697,6 +19636,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 939,
               "neighbours_ids": [
@@ -18717,6 +19657,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 940,
               "neighbours_ids": [
@@ -18737,6 +19678,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 941,
               "neighbours_ids": [
@@ -18757,6 +19699,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 942,
               "neighbours_ids": [
@@ -18777,6 +19720,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 943,
               "neighbours_ids": [
@@ -18797,6 +19741,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 944,
               "neighbours_ids": [
@@ -18817,6 +19762,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 945,
               "neighbours_ids": [
@@ -18837,6 +19783,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 946,
               "neighbours_ids": [
@@ -18857,6 +19804,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 947,
               "neighbours_ids": [
@@ -18877,6 +19825,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 948,
               "neighbours_ids": [
@@ -18897,6 +19846,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 949,
               "neighbours_ids": [
@@ -18917,6 +19867,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 950,
               "neighbours_ids": [
@@ -18937,6 +19888,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 951,
               "neighbours_ids": [
@@ -18957,6 +19909,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 952,
               "neighbours_ids": [
@@ -18977,6 +19930,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 953,
               "neighbours_ids": [
@@ -18997,6 +19951,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 954,
               "neighbours_ids": [
@@ -19017,6 +19972,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 955,
               "neighbours_ids": [
@@ -19037,6 +19993,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 956,
               "neighbours_ids": [
@@ -19057,6 +20014,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 957,
               "neighbours_ids": [
@@ -19077,6 +20035,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 958,
               "neighbours_ids": [
@@ -19097,6 +20056,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 959,
               "neighbours_ids": [
@@ -19117,6 +20077,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 960,
               "neighbours_ids": [
@@ -19137,6 +20098,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 961,
               "neighbours_ids": [
@@ -19157,6 +20119,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 962,
               "neighbours_ids": [
@@ -19177,6 +20140,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 963,
               "neighbours_ids": [
@@ -19197,6 +20161,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 964,
               "neighbours_ids": [
@@ -19217,6 +20182,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 965,
               "neighbours_ids": [
@@ -19237,6 +20203,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 966,
               "neighbours_ids": [
@@ -19257,6 +20224,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 967,
               "neighbours_ids": [
@@ -19277,6 +20245,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 968,
               "neighbours_ids": [
@@ -19297,6 +20266,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 969,
               "neighbours_ids": [
@@ -19317,6 +20287,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 970,
               "neighbours_ids": [
@@ -19337,6 +20308,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 971,
               "neighbours_ids": [
@@ -19357,6 +20329,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 972,
               "neighbours_ids": [
@@ -19377,6 +20350,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 973,
               "neighbours_ids": [
@@ -19397,6 +20371,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 974,
               "neighbours_ids": [
@@ -19417,6 +20392,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 975,
               "neighbours_ids": [
@@ -19437,6 +20413,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 976,
               "neighbours_ids": [
@@ -19457,6 +20434,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 977,
               "neighbours_ids": [
@@ -19477,6 +20455,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 978,
               "neighbours_ids": [
@@ -19497,6 +20476,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 979,
               "neighbours_ids": [
@@ -19517,6 +20497,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 980,
               "neighbours_ids": [
@@ -19537,6 +20518,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 981,
               "neighbours_ids": [
@@ -19557,6 +20539,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 982,
               "neighbours_ids": [
@@ -19577,6 +20560,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 983,
               "neighbours_ids": [
@@ -19597,6 +20581,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 984,
               "neighbours_ids": [
@@ -19617,6 +20602,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 985,
               "neighbours_ids": [
@@ -19637,6 +20623,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 986,
               "neighbours_ids": [
@@ -19657,6 +20644,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 987,
               "neighbours_ids": [
@@ -19677,6 +20665,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 988,
               "neighbours_ids": [
@@ -19697,6 +20686,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 989,
               "neighbours_ids": [
@@ -19717,6 +20707,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 990,
               "neighbours_ids": [
@@ -19737,6 +20728,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 991,
               "neighbours_ids": [
@@ -19757,6 +20749,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 992,
               "neighbours_ids": [
@@ -19777,6 +20770,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 993,
               "neighbours_ids": [
@@ -19797,6 +20791,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 994,
               "neighbours_ids": [
@@ -19817,6 +20812,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 995,
               "neighbours_ids": [
@@ -19837,6 +20833,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 996,
               "neighbours_ids": [
@@ -19857,6 +20854,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 997,
               "neighbours_ids": [
@@ -19877,6 +20875,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 998,
               "neighbours_ids": [
@@ -19897,6 +20896,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 999,
               "neighbours_ids": [
@@ -19917,6 +20917,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1000,
               "neighbours_ids": [
@@ -19937,6 +20938,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1001,
               "neighbours_ids": [
@@ -19957,6 +20959,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1002,
               "neighbours_ids": [
@@ -19977,6 +20980,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1003,
               "neighbours_ids": [
@@ -19997,6 +21001,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1004,
               "neighbours_ids": [
@@ -20017,6 +21022,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1005,
               "neighbours_ids": [
@@ -20037,6 +21043,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1006,
               "neighbours_ids": [
@@ -20057,6 +21064,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1007,
               "neighbours_ids": [
@@ -20077,6 +21085,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1008,
               "neighbours_ids": [
@@ -20097,6 +21106,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1009,
               "neighbours_ids": [
@@ -20117,6 +21127,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1010,
               "neighbours_ids": [
@@ -20137,6 +21148,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1011,
               "neighbours_ids": [
@@ -20157,6 +21169,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1012,
               "neighbours_ids": [
@@ -20177,6 +21190,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1013,
               "neighbours_ids": [
@@ -20197,6 +21211,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1014,
               "neighbours_ids": [
@@ -20217,6 +21232,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1015,
               "neighbours_ids": [
@@ -20237,6 +21253,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1016,
               "neighbours_ids": [
@@ -20257,6 +21274,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1017,
               "neighbours_ids": [
@@ -20277,6 +21295,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1018,
               "neighbours_ids": [
@@ -20297,6 +21316,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1019,
               "neighbours_ids": [
@@ -20317,6 +21337,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1020,
               "neighbours_ids": [
@@ -20337,6 +21358,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1021,
               "neighbours_ids": [
@@ -20357,6 +21379,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1022,
               "neighbours_ids": [
@@ -20377,6 +21400,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1023,
               "neighbours_ids": [
@@ -20397,6 +21421,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1024,
               "neighbours_ids": [
@@ -20417,6 +21442,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1025,
               "neighbours_ids": [
@@ -20437,6 +21463,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1026,
               "neighbours_ids": [
@@ -20457,6 +21484,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1027,
               "neighbours_ids": [
@@ -20477,6 +21505,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1028,
               "neighbours_ids": [
@@ -20497,6 +21526,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1029,
               "neighbours_ids": [
@@ -20517,6 +21547,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1030,
               "neighbours_ids": [
@@ -20537,6 +21568,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1031,
               "neighbours_ids": [
@@ -20557,6 +21589,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1032,
               "neighbours_ids": [
@@ -20577,6 +21610,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1033,
               "neighbours_ids": [
@@ -20597,6 +21631,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1034,
               "neighbours_ids": [
@@ -20617,6 +21652,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1035,
               "neighbours_ids": [
@@ -20637,6 +21673,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1036,
               "neighbours_ids": [
@@ -20657,6 +21694,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1037,
               "neighbours_ids": [
@@ -20677,6 +21715,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1038,
               "neighbours_ids": [
@@ -20697,6 +21736,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1039,
               "neighbours_ids": [
@@ -20717,6 +21757,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1040,
               "neighbours_ids": [
@@ -20737,6 +21778,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1041,
               "neighbours_ids": [
@@ -20757,6 +21799,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1042,
               "neighbours_ids": [
@@ -20777,6 +21820,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1043,
               "neighbours_ids": [
@@ -20797,6 +21841,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1044,
               "neighbours_ids": [
@@ -20817,6 +21862,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1045,
               "neighbours_ids": [
@@ -20837,6 +21883,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1046,
               "neighbours_ids": [
@@ -20857,6 +21904,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1047,
               "neighbours_ids": [
@@ -20877,6 +21925,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1048,
               "neighbours_ids": [
@@ -20897,6 +21946,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1049,
               "neighbours_ids": [
@@ -20917,6 +21967,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1050,
               "neighbours_ids": [
@@ -20937,6 +21988,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1051,
               "neighbours_ids": [
@@ -20957,6 +22009,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1052,
               "neighbours_ids": [
@@ -20977,6 +22030,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1053,
               "neighbours_ids": [
@@ -20997,6 +22051,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1054,
               "neighbours_ids": [
@@ -21017,6 +22072,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1055,
               "neighbours_ids": [
@@ -21037,6 +22093,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1056,
               "neighbours_ids": [
@@ -21057,6 +22114,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1057,
               "neighbours_ids": [
@@ -21077,6 +22135,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1058,
               "neighbours_ids": [
@@ -21097,6 +22156,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1059,
               "neighbours_ids": [
@@ -21117,6 +22177,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1060,
               "neighbours_ids": [
@@ -21137,6 +22198,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1061,
               "neighbours_ids": [
@@ -21157,6 +22219,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1062,
               "neighbours_ids": [
@@ -21177,6 +22240,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1063,
               "neighbours_ids": [
@@ -21197,6 +22261,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1064,
               "neighbours_ids": [
@@ -21217,6 +22282,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1065,
               "neighbours_ids": [
@@ -21237,6 +22303,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1066,
               "neighbours_ids": [
@@ -21257,6 +22324,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1067,
               "neighbours_ids": [
@@ -21277,6 +22345,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1068,
               "neighbours_ids": [
@@ -21297,6 +22366,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1069,
               "neighbours_ids": [
@@ -21317,6 +22387,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1070,
               "neighbours_ids": [
@@ -21337,6 +22408,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1071,
               "neighbours_ids": [
@@ -21357,6 +22429,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1072,
               "neighbours_ids": [
@@ -21377,6 +22450,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1073,
               "neighbours_ids": [
@@ -21397,6 +22471,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1074,
               "neighbours_ids": [
@@ -21417,6 +22492,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1075,
               "neighbours_ids": [
@@ -21437,6 +22513,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1076,
               "neighbours_ids": [
@@ -21457,6 +22534,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1077,
               "neighbours_ids": [
@@ -21477,6 +22555,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1078,
               "neighbours_ids": [
@@ -21497,6 +22576,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1079,
               "neighbours_ids": [
@@ -21517,6 +22597,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1080,
               "neighbours_ids": [
@@ -21537,6 +22618,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1081,
               "neighbours_ids": [
@@ -21557,6 +22639,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1082,
               "neighbours_ids": [
@@ -21577,6 +22660,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1083,
               "neighbours_ids": [
@@ -21597,6 +22681,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1084,
               "neighbours_ids": [
@@ -21617,6 +22702,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1085,
               "neighbours_ids": [
@@ -21637,6 +22723,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1086,
               "neighbours_ids": [
@@ -21657,6 +22744,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1087,
               "neighbours_ids": [
@@ -21677,6 +22765,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1088,
               "neighbours_ids": [
@@ -21697,6 +22786,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1089,
               "neighbours_ids": [
@@ -21717,6 +22807,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1090,
               "neighbours_ids": [
@@ -21737,6 +22828,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1091,
               "neighbours_ids": [
@@ -21757,6 +22849,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1092,
               "neighbours_ids": [
@@ -21777,6 +22870,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1093,
               "neighbours_ids": [
@@ -21797,6 +22891,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1094,
               "neighbours_ids": [
@@ -21817,6 +22912,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1095,
               "neighbours_ids": [
@@ -21837,6 +22933,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1096,
               "neighbours_ids": [
@@ -21857,6 +22954,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1097,
               "neighbours_ids": [
@@ -21877,6 +22975,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1098,
               "neighbours_ids": [
@@ -21897,6 +22996,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1099,
               "neighbours_ids": [
@@ -21917,6 +23017,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1100,
               "neighbours_ids": [
@@ -21937,6 +23038,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1101,
               "neighbours_ids": [
@@ -21957,6 +23059,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1102,
               "neighbours_ids": [
@@ -21977,6 +23080,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1103,
               "neighbours_ids": [
@@ -21997,6 +23101,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1104,
               "neighbours_ids": [
@@ -22017,6 +23122,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1105,
               "neighbours_ids": [
@@ -22037,6 +23143,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1106,
               "neighbours_ids": [
@@ -22057,6 +23164,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1107,
               "neighbours_ids": [
@@ -22077,6 +23185,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1108,
               "neighbours_ids": [
@@ -22097,6 +23206,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1109,
               "neighbours_ids": [
@@ -22117,6 +23227,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1110,
               "neighbours_ids": [
@@ -22137,6 +23248,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1111,
               "neighbours_ids": [
@@ -22157,6 +23269,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1112,
               "neighbours_ids": [
@@ -22177,6 +23290,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1113,
               "neighbours_ids": [
@@ -22197,6 +23311,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1114,
               "neighbours_ids": [
@@ -22217,6 +23332,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1115,
               "neighbours_ids": [
@@ -22237,6 +23353,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1116,
               "neighbours_ids": [
@@ -22257,6 +23374,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1117,
               "neighbours_ids": [
@@ -22277,6 +23395,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1118,
               "neighbours_ids": [
@@ -22297,6 +23416,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1119,
               "neighbours_ids": [
@@ -22317,6 +23437,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1120,
               "neighbours_ids": [
@@ -22337,6 +23458,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1121,
               "neighbours_ids": [
@@ -22357,6 +23479,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1122,
               "neighbours_ids": [
@@ -22377,6 +23500,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1123,
               "neighbours_ids": [
@@ -22397,6 +23521,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1124,
               "neighbours_ids": [
@@ -22417,6 +23542,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1125,
               "neighbours_ids": [
@@ -22437,6 +23563,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1126,
               "neighbours_ids": [
@@ -22457,6 +23584,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1127,
               "neighbours_ids": [
@@ -22477,6 +23605,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1128,
               "neighbours_ids": [
@@ -22497,6 +23626,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1129,
               "neighbours_ids": [
@@ -22517,6 +23647,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1130,
               "neighbours_ids": [
@@ -22537,6 +23668,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1131,
               "neighbours_ids": [
@@ -22557,6 +23689,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1132,
               "neighbours_ids": [
@@ -22577,6 +23710,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1133,
               "neighbours_ids": [
@@ -22597,6 +23731,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1134,
               "neighbours_ids": [
@@ -22617,6 +23752,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1135,
               "neighbours_ids": [
@@ -22637,6 +23773,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1136,
               "neighbours_ids": [
@@ -22657,6 +23794,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1137,
               "neighbours_ids": [
@@ -22677,6 +23815,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1138,
               "neighbours_ids": [
@@ -22697,6 +23836,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1139,
               "neighbours_ids": [
@@ -22717,6 +23857,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1140,
               "neighbours_ids": [
@@ -22737,6 +23878,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1141,
               "neighbours_ids": [
@@ -22757,6 +23899,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1142,
               "neighbours_ids": [
@@ -22777,6 +23920,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1143,
               "neighbours_ids": [
@@ -22797,6 +23941,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1144,
               "neighbours_ids": [
@@ -22817,6 +23962,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1145,
               "neighbours_ids": [
@@ -22837,6 +23983,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1146,
               "neighbours_ids": [
@@ -22857,6 +24004,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1147,
               "neighbours_ids": [
@@ -22877,6 +24025,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1148,
               "neighbours_ids": [
@@ -22897,6 +24046,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1149,
               "neighbours_ids": [
@@ -22917,6 +24067,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1150,
               "neighbours_ids": [
@@ -22937,6 +24088,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1151,
               "neighbours_ids": [
@@ -22957,6 +24109,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1152,
               "neighbours_ids": [
@@ -22977,6 +24130,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1153,
               "neighbours_ids": [
@@ -22997,6 +24151,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1154,
               "neighbours_ids": [
@@ -23017,6 +24172,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1155,
               "neighbours_ids": [
@@ -23037,6 +24193,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1156,
               "neighbours_ids": [
@@ -23057,6 +24214,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1157,
               "neighbours_ids": [
@@ -23077,6 +24235,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1158,
               "neighbours_ids": [
@@ -23097,6 +24256,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1159,
               "neighbours_ids": [
@@ -23117,6 +24277,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1160,
               "neighbours_ids": [
@@ -23137,6 +24298,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1161,
               "neighbours_ids": [
@@ -23157,6 +24319,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1162,
               "neighbours_ids": [
@@ -23177,6 +24340,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1163,
               "neighbours_ids": [
@@ -23197,6 +24361,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1164,
               "neighbours_ids": [
@@ -23217,6 +24382,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1165,
               "neighbours_ids": [
@@ -23237,6 +24403,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1166,
               "neighbours_ids": [
@@ -23257,6 +24424,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1167,
               "neighbours_ids": [
@@ -23277,6 +24445,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1168,
               "neighbours_ids": [
@@ -23297,6 +24466,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1169,
               "neighbours_ids": [
@@ -23317,6 +24487,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1170,
               "neighbours_ids": [
@@ -23337,6 +24508,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1171,
               "neighbours_ids": [
@@ -23357,6 +24529,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1172,
               "neighbours_ids": [
@@ -23377,6 +24550,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1173,
               "neighbours_ids": [
@@ -23397,6 +24571,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1174,
               "neighbours_ids": [
@@ -23417,6 +24592,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1175,
               "neighbours_ids": [
@@ -23437,6 +24613,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1176,
               "neighbours_ids": [
@@ -23457,6 +24634,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1177,
               "neighbours_ids": [
@@ -23477,6 +24655,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1178,
               "neighbours_ids": [
@@ -23497,6 +24676,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1179,
               "neighbours_ids": [
@@ -23517,6 +24697,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1180,
               "neighbours_ids": [
@@ -23537,6 +24718,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1181,
               "neighbours_ids": [
@@ -23557,6 +24739,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1182,
               "neighbours_ids": [
@@ -23577,6 +24760,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1183,
               "neighbours_ids": [
@@ -23597,6 +24781,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1184,
               "neighbours_ids": [
@@ -23617,6 +24802,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1185,
               "neighbours_ids": [
@@ -23637,6 +24823,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1186,
               "neighbours_ids": [
@@ -23657,6 +24844,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1187,
               "neighbours_ids": [
@@ -23677,6 +24865,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1188,
               "neighbours_ids": [
@@ -23697,6 +24886,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1189,
               "neighbours_ids": [
@@ -23717,6 +24907,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1190,
               "neighbours_ids": [
@@ -23737,6 +24928,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1191,
               "neighbours_ids": [
@@ -23757,6 +24949,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1192,
               "neighbours_ids": [
@@ -23777,6 +24970,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1193,
               "neighbours_ids": [
@@ -23797,6 +24991,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1194,
               "neighbours_ids": [
@@ -23817,6 +25012,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1195,
               "neighbours_ids": [
@@ -23837,6 +25033,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1196,
               "neighbours_ids": [
@@ -23857,6 +25054,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1197,
               "neighbours_ids": [
@@ -23877,6 +25075,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1198,
               "neighbours_ids": [
@@ -23897,6 +25096,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1199,
               "neighbours_ids": [
@@ -23917,6 +25117,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1200,
               "neighbours_ids": [
@@ -23937,6 +25138,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1201,
               "neighbours_ids": [
@@ -23957,6 +25159,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1202,
               "neighbours_ids": [
@@ -23977,6 +25180,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1203,
               "neighbours_ids": [
@@ -23997,6 +25201,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1204,
               "neighbours_ids": [
@@ -24017,6 +25222,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1205,
               "neighbours_ids": [
@@ -24037,6 +25243,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1206,
               "neighbours_ids": [
@@ -24057,6 +25264,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1207,
               "neighbours_ids": [
@@ -24077,6 +25285,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1208,
               "neighbours_ids": [
@@ -24097,6 +25306,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1209,
               "neighbours_ids": [
@@ -24117,6 +25327,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1210,
               "neighbours_ids": [
@@ -24137,6 +25348,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1211,
               "neighbours_ids": [
@@ -24157,6 +25369,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1212,
               "neighbours_ids": [
@@ -24177,6 +25390,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1213,
               "neighbours_ids": [
@@ -24197,6 +25411,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1214,
               "neighbours_ids": [
@@ -24217,6 +25432,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1215,
               "neighbours_ids": [
@@ -24237,6 +25453,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1216,
               "neighbours_ids": [
@@ -24257,6 +25474,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1217,
               "neighbours_ids": [
@@ -24277,6 +25495,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1218,
               "neighbours_ids": [
@@ -24297,6 +25516,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1219,
               "neighbours_ids": [
@@ -24317,6 +25537,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1220,
               "neighbours_ids": [
@@ -24337,6 +25558,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1221,
               "neighbours_ids": [
@@ -24357,6 +25579,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1222,
               "neighbours_ids": [
@@ -24377,6 +25600,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1223,
               "neighbours_ids": [
@@ -24397,6 +25621,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1224,
               "neighbours_ids": [
@@ -24417,6 +25642,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1225,
               "neighbours_ids": [
@@ -24437,6 +25663,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1226,
               "neighbours_ids": [
@@ -24457,6 +25684,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1227,
               "neighbours_ids": [
@@ -24477,6 +25705,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1228,
               "neighbours_ids": [
@@ -24497,6 +25726,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1229,
               "neighbours_ids": [
@@ -24517,6 +25747,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1230,
               "neighbours_ids": [
@@ -24537,6 +25768,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1231,
               "neighbours_ids": [
@@ -24557,6 +25789,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1232,
               "neighbours_ids": [
@@ -24577,6 +25810,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1233,
               "neighbours_ids": [
@@ -24597,6 +25831,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1234,
               "neighbours_ids": [
@@ -24617,6 +25852,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1235,
               "neighbours_ids": [
@@ -24637,6 +25873,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1236,
               "neighbours_ids": [
@@ -24657,6 +25894,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1237,
               "neighbours_ids": [
@@ -24677,6 +25915,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1238,
               "neighbours_ids": [
@@ -24697,6 +25936,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1239,
               "neighbours_ids": [
@@ -24717,6 +25957,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1240,
               "neighbours_ids": [
@@ -24737,6 +25978,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1241,
               "neighbours_ids": [
@@ -24757,6 +25999,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1242,
               "neighbours_ids": [
@@ -24777,6 +26020,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1243,
               "neighbours_ids": [
@@ -24797,6 +26041,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1244,
               "neighbours_ids": [
@@ -24817,6 +26062,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1245,
               "neighbours_ids": [
@@ -24837,6 +26083,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1246,
               "neighbours_ids": [
@@ -24857,6 +26104,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1247,
               "neighbours_ids": [
@@ -24877,6 +26125,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1248,
               "neighbours_ids": [
@@ -24897,6 +26146,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1249,
               "neighbours_ids": [
@@ -24917,6 +26167,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1250,
               "neighbours_ids": [
@@ -24937,6 +26188,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1251,
               "neighbours_ids": [
@@ -24957,6 +26209,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1252,
               "neighbours_ids": [
@@ -24977,6 +26230,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1253,
               "neighbours_ids": [
@@ -24997,6 +26251,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1254,
               "neighbours_ids": [
@@ -25017,6 +26272,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1255,
               "neighbours_ids": [
@@ -25037,6 +26293,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1256,
               "neighbours_ids": [
@@ -25057,6 +26314,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1257,
               "neighbours_ids": [
@@ -25077,6 +26335,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1258,
               "neighbours_ids": [
@@ -25097,6 +26356,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1259,
               "neighbours_ids": [
@@ -25117,6 +26377,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1260,
               "neighbours_ids": [
@@ -25137,6 +26398,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1261,
               "neighbours_ids": [
@@ -25157,6 +26419,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1262,
               "neighbours_ids": [
@@ -25177,6 +26440,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1263,
               "neighbours_ids": [
@@ -25197,6 +26461,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1264,
               "neighbours_ids": [
@@ -25217,6 +26482,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1265,
               "neighbours_ids": [
@@ -25237,6 +26503,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1266,
               "neighbours_ids": [
@@ -25257,6 +26524,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1267,
               "neighbours_ids": [
@@ -25277,6 +26545,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1268,
               "neighbours_ids": [
@@ -25297,6 +26566,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1269,
               "neighbours_ids": [
@@ -25317,6 +26587,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1270,
               "neighbours_ids": [
@@ -25337,6 +26608,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1271,
               "neighbours_ids": [
@@ -25357,6 +26629,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1272,
               "neighbours_ids": [
@@ -25377,6 +26650,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1273,
               "neighbours_ids": [
@@ -25397,6 +26671,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1274,
               "neighbours_ids": [
@@ -25417,6 +26692,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1275,
               "neighbours_ids": [
@@ -25437,6 +26713,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1276,
               "neighbours_ids": [
@@ -25457,6 +26734,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1277,
               "neighbours_ids": [
@@ -25477,6 +26755,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1278,
               "neighbours_ids": [
@@ -25497,6 +26776,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1279,
               "neighbours_ids": [
@@ -25517,6 +26797,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1280,
               "neighbours_ids": [
@@ -25537,6 +26818,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1281,
               "neighbours_ids": [
@@ -25557,6 +26839,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1282,
               "neighbours_ids": [
@@ -25577,6 +26860,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1283,
               "neighbours_ids": [
@@ -25597,6 +26881,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1284,
               "neighbours_ids": [
@@ -25617,6 +26902,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1285,
               "neighbours_ids": [
@@ -25637,6 +26923,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1286,
               "neighbours_ids": [
@@ -25657,6 +26944,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1287,
               "neighbours_ids": [
@@ -25677,6 +26965,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1288,
               "neighbours_ids": [
@@ -25697,6 +26986,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1289,
               "neighbours_ids": [
@@ -25717,6 +27007,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1290,
               "neighbours_ids": [
@@ -25737,6 +27028,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1291,
               "neighbours_ids": [
@@ -25757,6 +27049,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1292,
               "neighbours_ids": [
@@ -25777,6 +27070,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1293,
               "neighbours_ids": [
@@ -25797,6 +27091,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1294,
               "neighbours_ids": [
@@ -25817,6 +27112,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1295,
               "neighbours_ids": [
@@ -25837,6 +27133,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1296,
               "neighbours_ids": [
@@ -25857,6 +27154,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1297,
               "neighbours_ids": [
@@ -25877,6 +27175,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1298,
               "neighbours_ids": [
@@ -25897,6 +27196,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1299,
               "neighbours_ids": [
@@ -25917,6 +27217,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1300,
               "neighbours_ids": [
@@ -25937,6 +27238,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1301,
               "neighbours_ids": [
@@ -25957,6 +27259,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1302,
               "neighbours_ids": [
@@ -25977,6 +27280,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1303,
               "neighbours_ids": [
@@ -25997,6 +27301,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1304,
               "neighbours_ids": [
@@ -26017,6 +27322,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1305,
               "neighbours_ids": [
@@ -26037,6 +27343,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1306,
               "neighbours_ids": [
@@ -26057,6 +27364,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1307,
               "neighbours_ids": [
@@ -26077,6 +27385,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1308,
               "neighbours_ids": [
@@ -26097,6 +27406,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1309,
               "neighbours_ids": [
@@ -26117,6 +27427,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1310,
               "neighbours_ids": [
@@ -26137,6 +27448,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1311,
               "neighbours_ids": [
@@ -26157,6 +27469,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1312,
               "neighbours_ids": [
@@ -26177,6 +27490,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1313,
               "neighbours_ids": [
@@ -26197,6 +27511,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1314,
               "neighbours_ids": [
@@ -26217,6 +27532,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1315,
               "neighbours_ids": [
@@ -26237,6 +27553,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1316,
               "neighbours_ids": [
@@ -26257,6 +27574,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1317,
               "neighbours_ids": [
@@ -26277,6 +27595,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1318,
               "neighbours_ids": [
@@ -26297,6 +27616,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1319,
               "neighbours_ids": [
@@ -26317,6 +27637,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1320,
               "neighbours_ids": [
@@ -26337,6 +27658,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1321,
               "neighbours_ids": [
@@ -26357,6 +27679,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1322,
               "neighbours_ids": [
@@ -26377,6 +27700,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1323,
               "neighbours_ids": [
@@ -26397,6 +27721,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1324,
               "neighbours_ids": [
@@ -26417,6 +27742,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1325,
               "neighbours_ids": [
@@ -26437,6 +27763,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1326,
               "neighbours_ids": [
@@ -26457,6 +27784,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1327,
               "neighbours_ids": [
@@ -26477,6 +27805,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1328,
               "neighbours_ids": [
@@ -26497,6 +27826,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1329,
               "neighbours_ids": [
@@ -26517,6 +27847,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1330,
               "neighbours_ids": [
@@ -26537,6 +27868,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1331,
               "neighbours_ids": [
@@ -26557,6 +27889,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1332,
               "neighbours_ids": [
@@ -26577,6 +27910,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1333,
               "neighbours_ids": [
@@ -26597,6 +27931,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1334,
               "neighbours_ids": [
@@ -26617,6 +27952,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1335,
               "neighbours_ids": [
@@ -26637,6 +27973,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1336,
               "neighbours_ids": [
@@ -26657,6 +27994,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1337,
               "neighbours_ids": [
@@ -26677,6 +28015,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1338,
               "neighbours_ids": [
@@ -26697,6 +28036,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1339,
               "neighbours_ids": [
@@ -26717,6 +28057,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1340,
               "neighbours_ids": [
@@ -26737,6 +28078,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1341,
               "neighbours_ids": [
@@ -26757,6 +28099,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1342,
               "neighbours_ids": [
@@ -26777,6 +28120,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1343,
               "neighbours_ids": [
@@ -26797,6 +28141,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1344,
               "neighbours_ids": [
@@ -26817,6 +28162,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1345,
               "neighbours_ids": [
@@ -26837,6 +28183,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1346,
               "neighbours_ids": [
@@ -26857,6 +28204,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1347,
               "neighbours_ids": [
@@ -26877,6 +28225,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1348,
               "neighbours_ids": [
@@ -26897,6 +28246,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1349,
               "neighbours_ids": [
@@ -26917,6 +28267,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1350,
               "neighbours_ids": [
@@ -26937,6 +28288,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1351,
               "neighbours_ids": [
@@ -26957,6 +28309,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1352,
               "neighbours_ids": [
@@ -26977,6 +28330,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1353,
               "neighbours_ids": [
@@ -26997,6 +28351,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1354,
               "neighbours_ids": [
@@ -27017,6 +28372,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1355,
               "neighbours_ids": [
@@ -27037,6 +28393,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1356,
               "neighbours_ids": [
@@ -27057,6 +28414,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1357,
               "neighbours_ids": [
@@ -27077,6 +28435,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1358,
               "neighbours_ids": [
@@ -27097,6 +28456,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1359,
               "neighbours_ids": [
@@ -27117,6 +28477,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1360,
               "neighbours_ids": [
@@ -27137,6 +28498,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1361,
               "neighbours_ids": [
@@ -27157,6 +28519,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1362,
               "neighbours_ids": [
@@ -27177,6 +28540,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1363,
               "neighbours_ids": [
@@ -27197,6 +28561,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1364,
               "neighbours_ids": [
@@ -27217,6 +28582,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1365,
               "neighbours_ids": [
@@ -27237,6 +28603,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1366,
               "neighbours_ids": [
@@ -27257,6 +28624,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1367,
               "neighbours_ids": [
@@ -27277,6 +28645,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1368,
               "neighbours_ids": [
@@ -27297,6 +28666,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1369,
               "neighbours_ids": [
@@ -27317,6 +28687,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1370,
               "neighbours_ids": [
@@ -27337,6 +28708,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1371,
               "neighbours_ids": [
@@ -27357,6 +28729,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1372,
               "neighbours_ids": [
@@ -27377,6 +28750,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1373,
               "neighbours_ids": [
@@ -27397,6 +28771,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1374,
               "neighbours_ids": [
@@ -27417,6 +28792,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1375,
               "neighbours_ids": [
@@ -27437,6 +28813,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1376,
               "neighbours_ids": [
@@ -27457,6 +28834,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1377,
               "neighbours_ids": [
@@ -27477,6 +28855,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1378,
               "neighbours_ids": [
@@ -27497,6 +28876,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1379,
               "neighbours_ids": [
@@ -27517,6 +28897,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1380,
               "neighbours_ids": [
@@ -27537,6 +28918,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1381,
               "neighbours_ids": [
@@ -27557,6 +28939,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1382,
               "neighbours_ids": [
@@ -27577,6 +28960,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1383,
               "neighbours_ids": [
@@ -27597,6 +28981,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1384,
               "neighbours_ids": [
@@ -27617,6 +29002,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1385,
               "neighbours_ids": [
@@ -27637,6 +29023,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1386,
               "neighbours_ids": [
@@ -27657,6 +29044,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1387,
               "neighbours_ids": [
@@ -27677,6 +29065,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1388,
               "neighbours_ids": [
@@ -27697,6 +29086,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1389,
               "neighbours_ids": [
@@ -27717,6 +29107,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1390,
               "neighbours_ids": [
@@ -27737,6 +29128,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1391,
               "neighbours_ids": [
@@ -27757,6 +29149,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1392,
               "neighbours_ids": [
@@ -27777,6 +29170,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1393,
               "neighbours_ids": [
@@ -27797,6 +29191,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1394,
               "neighbours_ids": [
@@ -27817,6 +29212,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1395,
               "neighbours_ids": [
@@ -27837,6 +29233,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1396,
               "neighbours_ids": [
@@ -27857,6 +29254,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1397,
               "neighbours_ids": [
@@ -27877,6 +29275,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1398,
               "neighbours_ids": [
@@ -27897,6 +29296,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1399,
               "neighbours_ids": [
@@ -27917,6 +29317,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1400,
               "neighbours_ids": [
@@ -27937,6 +29338,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1401,
               "neighbours_ids": [
@@ -27957,6 +29359,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1402,
               "neighbours_ids": [
@@ -27977,6 +29380,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1403,
               "neighbours_ids": [
@@ -27997,6 +29401,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1404,
               "neighbours_ids": [
@@ -28017,6 +29422,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1405,
               "neighbours_ids": [
@@ -28037,6 +29443,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1406,
               "neighbours_ids": [
@@ -28057,6 +29464,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1407,
               "neighbours_ids": [
@@ -28077,6 +29485,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1408,
               "neighbours_ids": [
@@ -28097,6 +29506,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1409,
               "neighbours_ids": [
@@ -28117,6 +29527,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1410,
               "neighbours_ids": [
@@ -28137,6 +29548,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1411,
               "neighbours_ids": [
@@ -28157,6 +29569,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1412,
               "neighbours_ids": [
@@ -28177,6 +29590,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1413,
               "neighbours_ids": [
@@ -28197,6 +29611,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1414,
               "neighbours_ids": [
@@ -28217,6 +29632,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1415,
               "neighbours_ids": [
@@ -28237,6 +29653,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1416,
               "neighbours_ids": [
@@ -28257,6 +29674,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1417,
               "neighbours_ids": [
@@ -28277,6 +29695,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1418,
               "neighbours_ids": [
@@ -28297,6 +29716,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1419,
               "neighbours_ids": [
@@ -28317,6 +29737,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1420,
               "neighbours_ids": [
@@ -28337,6 +29758,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1421,
               "neighbours_ids": [
@@ -28357,6 +29779,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1422,
               "neighbours_ids": [
@@ -28377,6 +29800,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1423,
               "neighbours_ids": [
@@ -28397,6 +29821,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1424,
               "neighbours_ids": [
@@ -28417,6 +29842,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1425,
               "neighbours_ids": [
@@ -28437,6 +29863,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1426,
               "neighbours_ids": [
@@ -28457,6 +29884,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1427,
               "neighbours_ids": [
@@ -28477,6 +29905,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1428,
               "neighbours_ids": [
@@ -28497,6 +29926,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1429,
               "neighbours_ids": [
@@ -28517,6 +29947,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1430,
               "neighbours_ids": [
@@ -28537,6 +29968,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1431,
               "neighbours_ids": [
@@ -28557,6 +29989,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1432,
               "neighbours_ids": [
@@ -28577,6 +30010,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1433,
               "neighbours_ids": [
@@ -28597,6 +30031,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1434,
               "neighbours_ids": [
@@ -28617,6 +30052,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1435,
               "neighbours_ids": [
@@ -28637,6 +30073,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1436,
               "neighbours_ids": [
@@ -28657,6 +30094,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1437,
               "neighbours_ids": [
@@ -28677,6 +30115,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1438,
               "neighbours_ids": [
@@ -28697,6 +30136,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1439,
               "neighbours_ids": [
@@ -28717,6 +30157,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1440,
               "neighbours_ids": [
@@ -28737,6 +30178,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1441,
               "neighbours_ids": [
@@ -28757,6 +30199,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1442,
               "neighbours_ids": [
@@ -28777,6 +30220,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1443,
               "neighbours_ids": [
@@ -28797,6 +30241,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1444,
               "neighbours_ids": [
@@ -28817,6 +30262,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1445,
               "neighbours_ids": [
@@ -28837,6 +30283,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1446,
               "neighbours_ids": [
@@ -28857,6 +30304,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1447,
               "neighbours_ids": [
@@ -28877,6 +30325,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1448,
               "neighbours_ids": [
@@ -28897,6 +30346,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1449,
               "neighbours_ids": [
@@ -28917,6 +30367,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1450,
               "neighbours_ids": [
@@ -28937,6 +30388,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1451,
               "neighbours_ids": [
@@ -28957,6 +30409,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1452,
               "neighbours_ids": [
@@ -28977,6 +30430,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1453,
               "neighbours_ids": [
@@ -28997,6 +30451,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1454,
               "neighbours_ids": [
@@ -29017,6 +30472,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1455,
               "neighbours_ids": [
@@ -29037,6 +30493,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1456,
               "neighbours_ids": [
@@ -29057,6 +30514,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1457,
               "neighbours_ids": [
@@ -29077,6 +30535,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1458,
               "neighbours_ids": [
@@ -29097,6 +30556,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1459,
               "neighbours_ids": [
@@ -29117,6 +30577,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1460,
               "neighbours_ids": [
@@ -29137,6 +30598,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1461,
               "neighbours_ids": [
@@ -29157,6 +30619,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1462,
               "neighbours_ids": [
@@ -29177,6 +30640,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1463,
               "neighbours_ids": [
@@ -29197,6 +30661,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1464,
               "neighbours_ids": [
@@ -29217,6 +30682,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1465,
               "neighbours_ids": [
@@ -29237,6 +30703,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1466,
               "neighbours_ids": [
@@ -29257,6 +30724,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1467,
               "neighbours_ids": [
@@ -29277,6 +30745,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1468,
               "neighbours_ids": [
@@ -29297,6 +30766,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1469,
               "neighbours_ids": [
@@ -29317,6 +30787,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1470,
               "neighbours_ids": [
@@ -29337,6 +30808,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1471,
               "neighbours_ids": [
@@ -29357,6 +30829,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1472,
               "neighbours_ids": [
@@ -29377,6 +30850,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1473,
               "neighbours_ids": [
@@ -29397,6 +30871,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1474,
               "neighbours_ids": [
@@ -29417,6 +30892,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1475,
               "neighbours_ids": [
@@ -29437,6 +30913,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1476,
               "neighbours_ids": [
@@ -29457,6 +30934,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1477,
               "neighbours_ids": [
@@ -29477,6 +30955,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1478,
               "neighbours_ids": [
@@ -29497,6 +30976,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1479,
               "neighbours_ids": [
@@ -29517,6 +30997,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1480,
               "neighbours_ids": [
@@ -29537,6 +31018,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1481,
               "neighbours_ids": [
@@ -29557,6 +31039,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1482,
               "neighbours_ids": [
@@ -29577,6 +31060,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1483,
               "neighbours_ids": [
@@ -29597,6 +31081,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1484,
               "neighbours_ids": [
@@ -29617,6 +31102,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1485,
               "neighbours_ids": [
@@ -29637,6 +31123,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1486,
               "neighbours_ids": [
@@ -29657,6 +31144,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1487,
               "neighbours_ids": [
@@ -29677,6 +31165,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1488,
               "neighbours_ids": [
@@ -29697,6 +31186,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1489,
               "neighbours_ids": [
@@ -29717,6 +31207,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1490,
               "neighbours_ids": [
@@ -29737,6 +31228,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1491,
               "neighbours_ids": [
@@ -29757,6 +31249,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1492,
               "neighbours_ids": [
@@ -29777,6 +31270,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1493,
               "neighbours_ids": [
@@ -29797,6 +31291,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1494,
               "neighbours_ids": [
@@ -29817,6 +31312,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1495,
               "neighbours_ids": [
@@ -29837,6 +31333,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1496,
               "neighbours_ids": [
@@ -29857,6 +31354,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1497,
               "neighbours_ids": [
@@ -29877,6 +31375,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1498,
               "neighbours_ids": [
@@ -29897,6 +31396,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1499,
               "neighbours_ids": [
@@ -29917,6 +31417,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1500,
               "neighbours_ids": [
@@ -29937,6 +31438,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1501,
               "neighbours_ids": [
@@ -29957,6 +31459,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1502,
               "neighbours_ids": [
@@ -29977,6 +31480,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1503,
               "neighbours_ids": [
@@ -29997,6 +31501,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1504,
               "neighbours_ids": [
@@ -30017,6 +31522,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1505,
               "neighbours_ids": [
@@ -30037,6 +31543,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1506,
               "neighbours_ids": [
@@ -30057,6 +31564,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1507,
               "neighbours_ids": [
@@ -30077,6 +31585,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1508,
               "neighbours_ids": [
@@ -30097,6 +31606,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1509,
               "neighbours_ids": [
@@ -30117,6 +31627,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1510,
               "neighbours_ids": [
@@ -30137,6 +31648,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1511,
               "neighbours_ids": [
@@ -30157,6 +31669,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1512,
               "neighbours_ids": [
@@ -30177,6 +31690,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1513,
               "neighbours_ids": [
@@ -30197,6 +31711,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1514,
               "neighbours_ids": [
@@ -30217,6 +31732,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1515,
               "neighbours_ids": [
@@ -30237,6 +31753,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1516,
               "neighbours_ids": [
@@ -30257,6 +31774,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1517,
               "neighbours_ids": [
@@ -30277,6 +31795,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1518,
               "neighbours_ids": [
@@ -30297,6 +31816,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1519,
               "neighbours_ids": [
@@ -30317,6 +31837,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1520,
               "neighbours_ids": [
@@ -30337,6 +31858,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1521,
               "neighbours_ids": [
@@ -30357,6 +31879,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1522,
               "neighbours_ids": [
@@ -30377,6 +31900,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1523,
               "neighbours_ids": [
@@ -30397,6 +31921,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1524,
               "neighbours_ids": [
@@ -30417,6 +31942,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1525,
               "neighbours_ids": [
@@ -30437,6 +31963,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1526,
               "neighbours_ids": [
@@ -30457,6 +31984,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1527,
               "neighbours_ids": [
@@ -30477,6 +32005,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1528,
               "neighbours_ids": [
@@ -30497,6 +32026,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1529,
               "neighbours_ids": [
@@ -30517,6 +32047,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1530,
               "neighbours_ids": [
@@ -30537,6 +32068,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1531,
               "neighbours_ids": [
@@ -30557,6 +32089,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1532,
               "neighbours_ids": [
@@ -30577,6 +32110,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1533,
               "neighbours_ids": [
@@ -30597,6 +32131,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1534,
               "neighbours_ids": [
@@ -30617,6 +32152,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1535,
               "neighbours_ids": [
@@ -30637,6 +32173,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1536,
               "neighbours_ids": [
@@ -30657,6 +32194,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1537,
               "neighbours_ids": [
@@ -30677,6 +32215,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1538,
               "neighbours_ids": [
@@ -30697,6 +32236,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1539,
               "neighbours_ids": [
@@ -30717,6 +32257,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1540,
               "neighbours_ids": [
@@ -30737,6 +32278,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1541,
               "neighbours_ids": [
@@ -30757,6 +32299,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1542,
               "neighbours_ids": [
@@ -30777,6 +32320,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1543,
               "neighbours_ids": [
@@ -30797,6 +32341,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1544,
               "neighbours_ids": [
@@ -30817,6 +32362,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1545,
               "neighbours_ids": [
@@ -30837,6 +32383,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1546,
               "neighbours_ids": [
@@ -30857,6 +32404,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1547,
               "neighbours_ids": [
@@ -30877,6 +32425,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1548,
               "neighbours_ids": [
@@ -30897,6 +32446,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1549,
               "neighbours_ids": [
@@ -30917,6 +32467,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1550,
               "neighbours_ids": [
@@ -30937,6 +32488,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1551,
               "neighbours_ids": [
@@ -30957,6 +32509,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1552,
               "neighbours_ids": [
@@ -30977,6 +32530,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1553,
               "neighbours_ids": [
@@ -30997,6 +32551,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1554,
               "neighbours_ids": [
@@ -31017,6 +32572,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1555,
               "neighbours_ids": [
@@ -31037,6 +32593,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1556,
               "neighbours_ids": [
@@ -31057,6 +32614,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1557,
               "neighbours_ids": [
@@ -31077,6 +32635,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1558,
               "neighbours_ids": [
@@ -31097,6 +32656,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1559,
               "neighbours_ids": [
@@ -31117,6 +32677,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1560,
               "neighbours_ids": [
@@ -31137,6 +32698,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1561,
               "neighbours_ids": [
@@ -31157,6 +32719,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1562,
               "neighbours_ids": [
@@ -31177,6 +32740,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1563,
               "neighbours_ids": [
@@ -31197,6 +32761,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1564,
               "neighbours_ids": [
@@ -31217,6 +32782,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1565,
               "neighbours_ids": [
@@ -31237,6 +32803,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1566,
               "neighbours_ids": [
@@ -31257,6 +32824,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1567,
               "neighbours_ids": [
@@ -31277,6 +32845,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1568,
               "neighbours_ids": [
@@ -31297,6 +32866,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1569,
               "neighbours_ids": [
@@ -31317,6 +32887,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1570,
               "neighbours_ids": [
@@ -31337,6 +32908,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1571,
               "neighbours_ids": [
@@ -31357,6 +32929,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1572,
               "neighbours_ids": [
@@ -31377,6 +32950,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1573,
               "neighbours_ids": [
@@ -31397,6 +32971,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1574,
               "neighbours_ids": [
@@ -31417,6 +32992,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1575,
               "neighbours_ids": [
@@ -31437,6 +33013,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1576,
               "neighbours_ids": [
@@ -31457,6 +33034,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1577,
               "neighbours_ids": [
@@ -31477,6 +33055,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1578,
               "neighbours_ids": [
@@ -31497,6 +33076,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1579,
               "neighbours_ids": [
@@ -31517,6 +33097,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1580,
               "neighbours_ids": [
@@ -31537,6 +33118,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1581,
               "neighbours_ids": [
@@ -31557,6 +33139,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1582,
               "neighbours_ids": [
@@ -31577,6 +33160,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1583,
               "neighbours_ids": [
@@ -31597,6 +33181,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1584,
               "neighbours_ids": [
@@ -31617,6 +33202,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1585,
               "neighbours_ids": [
@@ -31637,6 +33223,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1586,
               "neighbours_ids": [
@@ -31657,6 +33244,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1587,
               "neighbours_ids": [
@@ -31677,6 +33265,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1588,
               "neighbours_ids": [
@@ -31697,6 +33286,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1589,
               "neighbours_ids": [
@@ -31717,6 +33307,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1590,
               "neighbours_ids": [
@@ -31737,6 +33328,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1591,
               "neighbours_ids": [
@@ -31757,6 +33349,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1592,
               "neighbours_ids": [
@@ -31777,6 +33370,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1593,
               "neighbours_ids": [
@@ -31797,6 +33391,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1594,
               "neighbours_ids": [
@@ -31817,6 +33412,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1595,
               "neighbours_ids": [
@@ -31837,6 +33433,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1596,
               "neighbours_ids": [
@@ -31857,6 +33454,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1597,
               "neighbours_ids": [
@@ -31877,6 +33475,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1598,
               "neighbours_ids": [
@@ -31897,6 +33496,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1599,
               "neighbours_ids": [
@@ -31917,6 +33517,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1600,
               "neighbours_ids": [
@@ -31937,6 +33538,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1601,
               "neighbours_ids": [
@@ -31957,6 +33559,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1602,
               "neighbours_ids": [
@@ -31977,6 +33580,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1603,
               "neighbours_ids": [
@@ -31997,6 +33601,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1604,
               "neighbours_ids": [
@@ -32017,6 +33622,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1605,
               "neighbours_ids": [
@@ -32037,6 +33643,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1606,
               "neighbours_ids": [
@@ -32057,6 +33664,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1607,
               "neighbours_ids": [
@@ -32077,6 +33685,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1608,
               "neighbours_ids": [
@@ -32097,6 +33706,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1609,
               "neighbours_ids": [
@@ -32117,6 +33727,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1610,
               "neighbours_ids": [
@@ -32137,6 +33748,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1611,
               "neighbours_ids": [
@@ -32157,6 +33769,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1612,
               "neighbours_ids": [
@@ -32177,6 +33790,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1613,
               "neighbours_ids": [
@@ -32197,6 +33811,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1614,
               "neighbours_ids": [
@@ -32217,6 +33832,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1615,
               "neighbours_ids": [
@@ -32237,6 +33853,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1616,
               "neighbours_ids": [
@@ -32257,6 +33874,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1617,
               "neighbours_ids": [
@@ -32277,6 +33895,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1618,
               "neighbours_ids": [
@@ -32297,6 +33916,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1619,
               "neighbours_ids": [
@@ -32317,6 +33937,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1620,
               "neighbours_ids": [
@@ -32337,6 +33958,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1621,
               "neighbours_ids": [
@@ -32357,6 +33979,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1622,
               "neighbours_ids": [
@@ -32377,6 +34000,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1623,
               "neighbours_ids": [
@@ -32397,6 +34021,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1624,
               "neighbours_ids": [
@@ -32417,6 +34042,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1625,
               "neighbours_ids": [
@@ -32437,6 +34063,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1626,
               "neighbours_ids": [
@@ -32457,6 +34084,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1627,
               "neighbours_ids": [
@@ -32477,6 +34105,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1628,
               "neighbours_ids": [
@@ -32497,6 +34126,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1629,
               "neighbours_ids": [
@@ -32517,6 +34147,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1630,
               "neighbours_ids": [
@@ -32537,6 +34168,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1631,
               "neighbours_ids": [
@@ -32557,6 +34189,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1632,
               "neighbours_ids": [
@@ -32577,6 +34210,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1633,
               "neighbours_ids": [
@@ -32597,6 +34231,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1634,
               "neighbours_ids": [
@@ -32617,6 +34252,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1635,
               "neighbours_ids": [
@@ -32637,6 +34273,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1636,
               "neighbours_ids": [
@@ -32657,6 +34294,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1637,
               "neighbours_ids": [
@@ -32677,6 +34315,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1638,
               "neighbours_ids": [
@@ -32697,6 +34336,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1639,
               "neighbours_ids": [
@@ -32717,6 +34357,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1640,
               "neighbours_ids": [
@@ -32737,6 +34378,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1641,
               "neighbours_ids": [
@@ -32757,6 +34399,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1642,
               "neighbours_ids": [
@@ -32777,6 +34420,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1643,
               "neighbours_ids": [
@@ -32797,6 +34441,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1644,
               "neighbours_ids": [
@@ -32817,6 +34462,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1645,
               "neighbours_ids": [
@@ -32837,6 +34483,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1646,
               "neighbours_ids": [
@@ -32857,6 +34504,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1647,
               "neighbours_ids": [
@@ -32877,6 +34525,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1648,
               "neighbours_ids": [
@@ -32897,6 +34546,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1649,
               "neighbours_ids": [
@@ -32917,6 +34567,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1650,
               "neighbours_ids": [
@@ -32937,6 +34588,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1651,
               "neighbours_ids": [
@@ -32957,6 +34609,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1652,
               "neighbours_ids": [
@@ -32977,6 +34630,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1653,
               "neighbours_ids": [
@@ -32997,6 +34651,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1654,
               "neighbours_ids": [
@@ -33017,6 +34672,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1655,
               "neighbours_ids": [
@@ -33037,6 +34693,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1656,
               "neighbours_ids": [
@@ -33057,6 +34714,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1657,
               "neighbours_ids": [
@@ -33077,6 +34735,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1658,
               "neighbours_ids": [
@@ -33097,6 +34756,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1659,
               "neighbours_ids": [
@@ -33117,6 +34777,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1660,
               "neighbours_ids": [
@@ -33137,6 +34798,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1661,
               "neighbours_ids": [
@@ -33157,6 +34819,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1662,
               "neighbours_ids": [
@@ -33177,6 +34840,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1663,
               "neighbours_ids": [
@@ -33197,6 +34861,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1664,
               "neighbours_ids": [
@@ -33217,6 +34882,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1665,
               "neighbours_ids": [
@@ -33237,6 +34903,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1666,
               "neighbours_ids": [
@@ -33257,6 +34924,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1667,
               "neighbours_ids": [
@@ -33277,6 +34945,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1668,
               "neighbours_ids": [
@@ -33297,6 +34966,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1669,
               "neighbours_ids": [
@@ -33317,6 +34987,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1670,
               "neighbours_ids": [
@@ -33337,6 +35008,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1671,
               "neighbours_ids": [
@@ -33357,6 +35029,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1672,
               "neighbours_ids": [
@@ -33377,6 +35050,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1673,
               "neighbours_ids": [
@@ -33397,6 +35071,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1674,
               "neighbours_ids": [
@@ -33417,6 +35092,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1675,
               "neighbours_ids": [
@@ -33437,6 +35113,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1676,
               "neighbours_ids": [
@@ -33457,6 +35134,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1677,
               "neighbours_ids": [
@@ -33477,6 +35155,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1678,
               "neighbours_ids": [
@@ -33497,6 +35176,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1679,
               "neighbours_ids": [
@@ -33517,6 +35197,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1680,
               "neighbours_ids": [
@@ -33537,6 +35218,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1681,
               "neighbours_ids": [
@@ -33557,6 +35239,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1682,
               "neighbours_ids": [
@@ -33577,6 +35260,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1683,
               "neighbours_ids": [
@@ -33597,6 +35281,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1684,
               "neighbours_ids": [
@@ -33617,6 +35302,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1685,
               "neighbours_ids": [
@@ -33637,6 +35323,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1686,
               "neighbours_ids": [
@@ -33657,6 +35344,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1687,
               "neighbours_ids": [
@@ -33677,6 +35365,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1688,
               "neighbours_ids": [
@@ -33697,6 +35386,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1689,
               "neighbours_ids": [
@@ -33717,6 +35407,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1690,
               "neighbours_ids": [
@@ -33737,6 +35428,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1691,
               "neighbours_ids": [
@@ -33757,6 +35449,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1692,
               "neighbours_ids": [
@@ -33777,6 +35470,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1693,
               "neighbours_ids": [
@@ -33797,6 +35491,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1694,
               "neighbours_ids": [
@@ -33817,6 +35512,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1695,
               "neighbours_ids": [
@@ -33837,6 +35533,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1696,
               "neighbours_ids": [
@@ -33857,6 +35554,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1697,
               "neighbours_ids": [
@@ -33877,6 +35575,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1698,
               "neighbours_ids": [
@@ -33897,6 +35596,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1699,
               "neighbours_ids": [
@@ -33917,6 +35617,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1700,
               "neighbours_ids": [
@@ -33937,6 +35638,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1701,
               "neighbours_ids": [
@@ -33957,6 +35659,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1702,
               "neighbours_ids": [
@@ -33977,6 +35680,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1703,
               "neighbours_ids": [
@@ -33997,6 +35701,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1704,
               "neighbours_ids": [
@@ -34017,6 +35722,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1705,
               "neighbours_ids": [
@@ -34037,6 +35743,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1706,
               "neighbours_ids": [
@@ -34057,6 +35764,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1707,
               "neighbours_ids": [
@@ -34077,6 +35785,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1708,
               "neighbours_ids": [
@@ -34097,6 +35806,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1709,
               "neighbours_ids": [
@@ -34117,6 +35827,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1710,
               "neighbours_ids": [
@@ -34137,6 +35848,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1711,
               "neighbours_ids": [
@@ -34157,6 +35869,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1712,
               "neighbours_ids": [
@@ -34177,6 +35890,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1713,
               "neighbours_ids": [
@@ -34197,6 +35911,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1714,
               "neighbours_ids": [
@@ -34217,6 +35932,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1715,
               "neighbours_ids": [
@@ -34237,6 +35953,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1716,
               "neighbours_ids": [
@@ -34257,6 +35974,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1717,
               "neighbours_ids": [
@@ -34277,6 +35995,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1718,
               "neighbours_ids": [
@@ -34297,6 +36016,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1719,
               "neighbours_ids": [
@@ -34317,6 +36037,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1720,
               "neighbours_ids": [
@@ -34337,6 +36058,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1721,
               "neighbours_ids": [
@@ -34357,6 +36079,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1722,
               "neighbours_ids": [
@@ -34377,6 +36100,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1723,
               "neighbours_ids": [
@@ -34397,6 +36121,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1724,
               "neighbours_ids": [
@@ -34417,6 +36142,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1725,
               "neighbours_ids": [
@@ -34437,6 +36163,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1726,
               "neighbours_ids": [
@@ -34457,6 +36184,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1727,
               "neighbours_ids": [
@@ -34477,6 +36205,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1728,
               "neighbours_ids": [
@@ -34497,6 +36226,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1729,
               "neighbours_ids": [
@@ -34517,6 +36247,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1730,
               "neighbours_ids": [
@@ -34537,6 +36268,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1731,
               "neighbours_ids": [
@@ -34557,6 +36289,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1732,
               "neighbours_ids": [
@@ -34577,6 +36310,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1733,
               "neighbours_ids": [
@@ -34597,6 +36331,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1734,
               "neighbours_ids": [
@@ -34617,6 +36352,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1735,
               "neighbours_ids": [
@@ -34637,6 +36373,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1736,
               "neighbours_ids": [
@@ -34657,6 +36394,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1737,
               "neighbours_ids": [
@@ -34677,6 +36415,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1738,
               "neighbours_ids": [
@@ -34697,6 +36436,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1739,
               "neighbours_ids": [
@@ -34717,6 +36457,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1740,
               "neighbours_ids": [
@@ -34737,6 +36478,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1741,
               "neighbours_ids": [
@@ -34757,6 +36499,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1742,
               "neighbours_ids": [
@@ -34777,6 +36520,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1743,
               "neighbours_ids": [
@@ -34797,6 +36541,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1744,
               "neighbours_ids": [
@@ -34817,6 +36562,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1745,
               "neighbours_ids": [
@@ -34837,6 +36583,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1746,
               "neighbours_ids": [
@@ -34857,6 +36604,7 @@ VALUES
             {
               "display_color": "#87CEFA",
               "display_value": "water",
+              "display_direction": null,
               "events": [],
               "id": 1747,
               "neighbours_ids": [
@@ -34877,6 +36625,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1748,
               "neighbours_ids": [
@@ -34897,6 +36646,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1749,
               "neighbours_ids": [
@@ -34917,6 +36667,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1750,
               "neighbours_ids": [
@@ -34937,6 +36688,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1751,
               "neighbours_ids": [
@@ -34957,6 +36709,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1752,
               "neighbours_ids": [
@@ -34977,6 +36730,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1753,
               "neighbours_ids": [
@@ -34997,6 +36751,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1754,
               "neighbours_ids": [
@@ -35017,6 +36772,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1755,
               "neighbours_ids": [
@@ -35037,6 +36793,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1756,
               "neighbours_ids": [
@@ -35057,6 +36814,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1757,
               "neighbours_ids": [
@@ -35077,6 +36835,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1758,
               "neighbours_ids": [
@@ -35097,6 +36856,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1759,
               "neighbours_ids": [
@@ -35117,6 +36877,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1760,
               "neighbours_ids": [
@@ -35137,6 +36898,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1761,
               "neighbours_ids": [
@@ -35157,6 +36919,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1762,
               "neighbours_ids": [
@@ -35177,6 +36940,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1763,
               "neighbours_ids": [
@@ -35197,6 +36961,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1764,
               "neighbours_ids": [
@@ -35217,6 +36982,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1765,
               "neighbours_ids": [
@@ -35237,6 +37003,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1766,
               "neighbours_ids": [
@@ -35257,6 +37024,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1767,
               "neighbours_ids": [
@@ -35277,6 +37045,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1768,
               "neighbours_ids": [
@@ -35297,6 +37066,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1769,
               "neighbours_ids": [
@@ -35317,6 +37087,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1770,
               "neighbours_ids": [
@@ -35337,6 +37108,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1771,
               "neighbours_ids": [
@@ -35357,6 +37129,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1772,
               "neighbours_ids": [
@@ -35377,6 +37150,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1773,
               "neighbours_ids": [
@@ -35397,6 +37171,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1774,
               "neighbours_ids": [
@@ -35417,6 +37192,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1775,
               "neighbours_ids": [
@@ -35437,6 +37213,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1776,
               "neighbours_ids": [
@@ -35457,6 +37234,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1777,
               "neighbours_ids": [
@@ -35477,6 +37255,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1778,
               "neighbours_ids": [
@@ -35497,6 +37276,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1779,
               "neighbours_ids": [
@@ -35517,6 +37297,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1780,
               "neighbours_ids": [
@@ -35537,6 +37318,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1781,
               "neighbours_ids": [
@@ -35557,6 +37339,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1782,
               "neighbours_ids": [
@@ -35577,6 +37360,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1783,
               "neighbours_ids": [
@@ -35597,6 +37381,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1784,
               "neighbours_ids": [
@@ -35617,6 +37402,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1785,
               "neighbours_ids": [
@@ -35637,6 +37423,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1786,
               "neighbours_ids": [
@@ -35657,6 +37444,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1787,
               "neighbours_ids": [
@@ -35677,6 +37465,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1788,
               "neighbours_ids": [
@@ -35697,6 +37486,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1789,
               "neighbours_ids": [
@@ -35717,6 +37507,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1790,
               "neighbours_ids": [
@@ -35737,6 +37528,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1791,
               "neighbours_ids": [
@@ -35757,6 +37549,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1792,
               "neighbours_ids": [
@@ -35777,6 +37570,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1793,
               "neighbours_ids": [
@@ -35797,6 +37591,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1794,
               "neighbours_ids": [
@@ -35817,6 +37612,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1795,
               "neighbours_ids": [
@@ -35837,6 +37633,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1796,
               "neighbours_ids": [
@@ -35857,6 +37654,7 @@ VALUES
             {
               "display_color": "#DBD257",
               "display_value": "shore",
+              "display_direction": null,
               "events": [],
               "id": 1797,
               "neighbours_ids": [
@@ -35877,6 +37675,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1798,
               "neighbours_ids": [
@@ -35897,6 +37696,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1799,
               "neighbours_ids": [
@@ -35917,6 +37717,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1800,
               "neighbours_ids": [
@@ -35937,6 +37738,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1801,
               "neighbours_ids": [
@@ -35957,6 +37759,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1802,
               "neighbours_ids": [
@@ -35977,6 +37780,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1803,
               "neighbours_ids": [
@@ -35997,6 +37801,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1804,
               "neighbours_ids": [
@@ -36017,6 +37822,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1805,
               "neighbours_ids": [
@@ -36037,6 +37843,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1806,
               "neighbours_ids": [
@@ -36057,6 +37864,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1807,
               "neighbours_ids": [
@@ -36077,6 +37885,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1808,
               "neighbours_ids": [
@@ -36097,6 +37906,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1809,
               "neighbours_ids": [
@@ -36117,6 +37927,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1810,
               "neighbours_ids": [
@@ -36137,6 +37948,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1811,
               "neighbours_ids": [
@@ -36157,6 +37969,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1812,
               "neighbours_ids": [
@@ -36177,6 +37990,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1813,
               "neighbours_ids": [
@@ -36197,6 +38011,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1814,
               "neighbours_ids": [
@@ -36217,6 +38032,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1815,
               "neighbours_ids": [
@@ -36237,6 +38053,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1816,
               "neighbours_ids": [
@@ -36257,6 +38074,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1817,
               "neighbours_ids": [
@@ -36277,6 +38095,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1818,
               "neighbours_ids": [
@@ -36297,6 +38116,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1819,
               "neighbours_ids": [
@@ -36317,6 +38137,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1820,
               "neighbours_ids": [
@@ -36337,6 +38158,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1821,
               "neighbours_ids": [
@@ -36357,6 +38179,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1822,
               "neighbours_ids": [
@@ -36377,6 +38200,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1823,
               "neighbours_ids": [
@@ -36397,6 +38221,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1824,
               "neighbours_ids": [
@@ -36417,6 +38242,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1825,
               "neighbours_ids": [
@@ -36437,6 +38263,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1826,
               "neighbours_ids": [
@@ -36457,6 +38284,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1827,
               "neighbours_ids": [
@@ -36477,6 +38305,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1828,
               "neighbours_ids": [
@@ -36497,6 +38326,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1829,
               "neighbours_ids": [
@@ -36517,6 +38347,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1830,
               "neighbours_ids": [
@@ -36537,6 +38368,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1831,
               "neighbours_ids": [
@@ -36557,6 +38389,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1832,
               "neighbours_ids": [
@@ -36577,6 +38410,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1833,
               "neighbours_ids": [
@@ -36597,6 +38431,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1834,
               "neighbours_ids": [
@@ -36617,6 +38452,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1835,
               "neighbours_ids": [
@@ -36637,6 +38473,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1836,
               "neighbours_ids": [
@@ -36657,6 +38494,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1837,
               "neighbours_ids": [
@@ -36677,6 +38515,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1838,
               "neighbours_ids": [
@@ -36697,6 +38536,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1839,
               "neighbours_ids": [
@@ -36717,6 +38557,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1840,
               "neighbours_ids": [
@@ -36737,6 +38578,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1841,
               "neighbours_ids": [
@@ -36757,6 +38599,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1842,
               "neighbours_ids": [
@@ -36777,6 +38620,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1843,
               "neighbours_ids": [
@@ -36797,6 +38641,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1844,
               "neighbours_ids": [
@@ -36817,6 +38662,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1845,
               "neighbours_ids": [
@@ -36837,6 +38683,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1846,
               "neighbours_ids": [
@@ -36857,6 +38704,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1847,
               "neighbours_ids": [
@@ -36877,6 +38725,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1848,
               "neighbours_ids": [
@@ -36897,6 +38746,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1849,
               "neighbours_ids": [
@@ -36917,6 +38767,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1850,
               "neighbours_ids": [
@@ -36937,6 +38788,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1851,
               "neighbours_ids": [
@@ -36957,6 +38809,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1852,
               "neighbours_ids": [
@@ -36977,6 +38830,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1853,
               "neighbours_ids": [
@@ -36997,6 +38851,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1854,
               "neighbours_ids": [
@@ -37017,6 +38872,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1855,
               "neighbours_ids": [
@@ -37037,6 +38893,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1856,
               "neighbours_ids": [
@@ -37057,6 +38914,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1857,
               "neighbours_ids": [
@@ -37077,6 +38935,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1858,
               "neighbours_ids": [
@@ -37097,6 +38956,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1859,
               "neighbours_ids": [
@@ -37117,6 +38977,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1860,
               "neighbours_ids": [
@@ -37137,6 +38998,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1861,
               "neighbours_ids": [
@@ -37157,6 +39019,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1862,
               "neighbours_ids": [
@@ -37177,6 +39040,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1863,
               "neighbours_ids": [
@@ -37197,6 +39061,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1864,
               "neighbours_ids": [
@@ -37217,6 +39082,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1865,
               "neighbours_ids": [
@@ -37237,6 +39103,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1866,
               "neighbours_ids": [
@@ -37257,6 +39124,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1867,
               "neighbours_ids": [
@@ -37277,6 +39145,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1868,
               "neighbours_ids": [
@@ -37297,6 +39166,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1869,
               "neighbours_ids": [
@@ -37317,6 +39187,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1870,
               "neighbours_ids": [
@@ -37337,6 +39208,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1871,
               "neighbours_ids": [
@@ -37357,6 +39229,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1872,
               "neighbours_ids": [
@@ -37377,6 +39250,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1873,
               "neighbours_ids": [
@@ -37397,6 +39271,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1874,
               "neighbours_ids": [
@@ -37417,6 +39292,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1875,
               "neighbours_ids": [
@@ -37437,6 +39313,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1876,
               "neighbours_ids": [
@@ -37457,6 +39334,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1877,
               "neighbours_ids": [
@@ -37477,6 +39355,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1878,
               "neighbours_ids": [
@@ -37497,6 +39376,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1879,
               "neighbours_ids": [
@@ -37517,6 +39397,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1880,
               "neighbours_ids": [
@@ -37537,6 +39418,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1881,
               "neighbours_ids": [
@@ -37557,6 +39439,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1882,
               "neighbours_ids": [
@@ -37577,6 +39460,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1883,
               "neighbours_ids": [
@@ -37597,6 +39481,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1884,
               "neighbours_ids": [
@@ -37617,6 +39502,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1885,
               "neighbours_ids": [
@@ -37637,6 +39523,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1886,
               "neighbours_ids": [
@@ -37657,6 +39544,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1887,
               "neighbours_ids": [
@@ -37677,6 +39565,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1888,
               "neighbours_ids": [
@@ -37697,6 +39586,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1889,
               "neighbours_ids": [
@@ -37717,6 +39607,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1890,
               "neighbours_ids": [
@@ -37737,6 +39628,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1891,
               "neighbours_ids": [
@@ -37757,6 +39649,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1892,
               "neighbours_ids": [
@@ -37777,6 +39670,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1893,
               "neighbours_ids": [
@@ -37797,6 +39691,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1894,
               "neighbours_ids": [
@@ -37817,6 +39712,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1895,
               "neighbours_ids": [
@@ -37837,6 +39733,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1896,
               "neighbours_ids": [
@@ -37857,6 +39754,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1897,
               "neighbours_ids": [
@@ -37877,6 +39775,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1898,
               "neighbours_ids": [
@@ -37897,6 +39796,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1899,
               "neighbours_ids": [
@@ -37917,6 +39817,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1900,
               "neighbours_ids": [
@@ -37937,6 +39838,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1901,
               "neighbours_ids": [
@@ -37957,6 +39859,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1902,
               "neighbours_ids": [
@@ -37977,6 +39880,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1903,
               "neighbours_ids": [
@@ -37997,6 +39901,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1904,
               "neighbours_ids": [
@@ -38017,6 +39922,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1905,
               "neighbours_ids": [
@@ -38037,6 +39943,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1906,
               "neighbours_ids": [
@@ -38057,6 +39964,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1907,
               "neighbours_ids": [
@@ -38077,6 +39985,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1908,
               "neighbours_ids": [
@@ -38097,6 +40006,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1909,
               "neighbours_ids": [
@@ -38117,6 +40027,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1910,
               "neighbours_ids": [
@@ -38137,6 +40048,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1911,
               "neighbours_ids": [
@@ -38157,6 +40069,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1912,
               "neighbours_ids": [
@@ -38177,6 +40090,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1913,
               "neighbours_ids": [
@@ -38197,6 +40111,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1914,
               "neighbours_ids": [
@@ -38217,6 +40132,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1915,
               "neighbours_ids": [
@@ -38237,6 +40153,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1916,
               "neighbours_ids": [
@@ -38257,6 +40174,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1917,
               "neighbours_ids": [
@@ -38277,6 +40195,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1918,
               "neighbours_ids": [
@@ -38297,6 +40216,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1919,
               "neighbours_ids": [
@@ -38317,6 +40237,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1920,
               "neighbours_ids": [
@@ -38337,6 +40258,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1921,
               "neighbours_ids": [
@@ -38357,6 +40279,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1922,
               "neighbours_ids": [
@@ -38377,6 +40300,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1923,
               "neighbours_ids": [
@@ -38397,6 +40321,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1924,
               "neighbours_ids": [
@@ -38417,6 +40342,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1925,
               "neighbours_ids": [
@@ -38437,6 +40363,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1926,
               "neighbours_ids": [
@@ -38457,6 +40384,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1927,
               "neighbours_ids": [
@@ -38477,6 +40405,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1928,
               "neighbours_ids": [
@@ -38497,6 +40426,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1929,
               "neighbours_ids": [
@@ -38517,6 +40447,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1930,
               "neighbours_ids": [
@@ -38537,6 +40468,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1931,
               "neighbours_ids": [
@@ -38557,6 +40489,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1932,
               "neighbours_ids": [
@@ -38577,6 +40510,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1933,
               "neighbours_ids": [
@@ -38597,6 +40531,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1934,
               "neighbours_ids": [
@@ -38617,6 +40552,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1935,
               "neighbours_ids": [
@@ -38637,6 +40573,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1936,
               "neighbours_ids": [
@@ -38657,6 +40594,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1937,
               "neighbours_ids": [
@@ -38677,6 +40615,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1938,
               "neighbours_ids": [
@@ -38697,6 +40636,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1939,
               "neighbours_ids": [
@@ -38717,6 +40657,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1940,
               "neighbours_ids": [
@@ -38737,6 +40678,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1941,
               "neighbours_ids": [
@@ -38757,6 +40699,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1942,
               "neighbours_ids": [
@@ -38777,6 +40720,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1943,
               "neighbours_ids": [
@@ -38797,6 +40741,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1944,
               "neighbours_ids": [
@@ -38817,6 +40762,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1945,
               "neighbours_ids": [
@@ -38837,6 +40783,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1946,
               "neighbours_ids": [
@@ -38857,6 +40804,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1947,
               "neighbours_ids": [
@@ -38877,6 +40825,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1948,
               "neighbours_ids": [
@@ -38897,6 +40846,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1949,
               "neighbours_ids": [
@@ -38917,6 +40867,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1950,
               "neighbours_ids": [
@@ -38937,6 +40888,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1951,
               "neighbours_ids": [
@@ -38957,6 +40909,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1952,
               "neighbours_ids": [
@@ -38977,6 +40930,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1953,
               "neighbours_ids": [
@@ -38997,6 +40951,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1954,
               "neighbours_ids": [
@@ -39017,6 +40972,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1955,
               "neighbours_ids": [
@@ -39037,6 +40993,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1956,
               "neighbours_ids": [
@@ -39057,6 +41014,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1957,
               "neighbours_ids": [
@@ -39077,6 +41035,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1958,
               "neighbours_ids": [
@@ -39097,6 +41056,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1959,
               "neighbours_ids": [
@@ -39117,6 +41077,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1960,
               "neighbours_ids": [
@@ -39137,6 +41098,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1961,
               "neighbours_ids": [
@@ -39157,6 +41119,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1962,
               "neighbours_ids": [
@@ -39177,6 +41140,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1963,
               "neighbours_ids": [
@@ -39197,6 +41161,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1964,
               "neighbours_ids": [
@@ -39217,6 +41182,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1965,
               "neighbours_ids": [
@@ -39237,6 +41203,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1966,
               "neighbours_ids": [
@@ -39257,6 +41224,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1967,
               "neighbours_ids": [
@@ -39277,6 +41245,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1968,
               "neighbours_ids": [
@@ -39297,6 +41266,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1969,
               "neighbours_ids": [
@@ -39317,6 +41287,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1970,
               "neighbours_ids": [
@@ -39337,6 +41308,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1971,
               "neighbours_ids": [
@@ -39357,6 +41329,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1972,
               "neighbours_ids": [
@@ -39377,6 +41350,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1973,
               "neighbours_ids": [
@@ -39397,6 +41371,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1974,
               "neighbours_ids": [
@@ -39417,6 +41392,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1975,
               "neighbours_ids": [
@@ -39437,6 +41413,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1976,
               "neighbours_ids": [
@@ -39457,6 +41434,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1977,
               "neighbours_ids": [
@@ -39477,6 +41455,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1978,
               "neighbours_ids": [
@@ -39497,6 +41476,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1979,
               "neighbours_ids": [
@@ -39517,6 +41497,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1980,
               "neighbours_ids": [
@@ -39537,6 +41518,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1981,
               "neighbours_ids": [
@@ -39557,6 +41539,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1982,
               "neighbours_ids": [
@@ -39577,6 +41560,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1983,
               "neighbours_ids": [
@@ -39597,6 +41581,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1984,
               "neighbours_ids": [
@@ -39617,6 +41602,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1985,
               "neighbours_ids": [
@@ -39637,6 +41623,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1986,
               "neighbours_ids": [
@@ -39657,6 +41644,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1987,
               "neighbours_ids": [
@@ -39677,6 +41665,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1988,
               "neighbours_ids": [
@@ -39697,6 +41686,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1989,
               "neighbours_ids": [
@@ -39717,6 +41707,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1990,
               "neighbours_ids": [
@@ -39737,6 +41728,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1991,
               "neighbours_ids": [
@@ -39757,6 +41749,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1992,
               "neighbours_ids": [
@@ -39777,6 +41770,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1993,
               "neighbours_ids": [
@@ -39797,6 +41791,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1994,
               "neighbours_ids": [
@@ -39817,6 +41812,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1995,
               "neighbours_ids": [
@@ -39837,6 +41833,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 1996,
               "neighbours_ids": [
@@ -39857,6 +41854,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 1997,
               "neighbours_ids": [
@@ -39877,6 +41875,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1998,
               "neighbours_ids": [
@@ -39897,6 +41896,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 1999,
               "neighbours_ids": [
@@ -39917,6 +41917,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2000,
               "neighbours_ids": [
@@ -39937,6 +41938,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2001,
               "neighbours_ids": [
@@ -39957,6 +41959,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2002,
               "neighbours_ids": [
@@ -39977,6 +41980,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2003,
               "neighbours_ids": [
@@ -39997,6 +42001,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2004,
               "neighbours_ids": [
@@ -40017,6 +42022,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2005,
               "neighbours_ids": [
@@ -40037,6 +42043,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2006,
               "neighbours_ids": [
@@ -40057,6 +42064,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2007,
               "neighbours_ids": [
@@ -40077,6 +42085,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2008,
               "neighbours_ids": [
@@ -40097,6 +42106,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2009,
               "neighbours_ids": [
@@ -40117,6 +42127,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2010,
               "neighbours_ids": [
@@ -40137,6 +42148,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2011,
               "neighbours_ids": [
@@ -40157,6 +42169,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2012,
               "neighbours_ids": [
@@ -40177,6 +42190,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2013,
               "neighbours_ids": [
@@ -40197,6 +42211,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2014,
               "neighbours_ids": [
@@ -40217,6 +42232,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2015,
               "neighbours_ids": [
@@ -40237,6 +42253,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2016,
               "neighbours_ids": [
@@ -40257,6 +42274,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2017,
               "neighbours_ids": [
@@ -40277,6 +42295,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2018,
               "neighbours_ids": [
@@ -40297,6 +42316,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2019,
               "neighbours_ids": [
@@ -40317,6 +42337,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2020,
               "neighbours_ids": [
@@ -40337,6 +42358,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2021,
               "neighbours_ids": [
@@ -40357,6 +42379,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2022,
               "neighbours_ids": [
@@ -40377,6 +42400,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2023,
               "neighbours_ids": [
@@ -40397,6 +42421,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2024,
               "neighbours_ids": [
@@ -40417,6 +42442,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2025,
               "neighbours_ids": [
@@ -40437,6 +42463,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2026,
               "neighbours_ids": [
@@ -40457,6 +42484,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2027,
               "neighbours_ids": [
@@ -40477,6 +42505,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2028,
               "neighbours_ids": [
@@ -40497,6 +42526,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2029,
               "neighbours_ids": [
@@ -40517,6 +42547,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2030,
               "neighbours_ids": [
@@ -40537,6 +42568,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2031,
               "neighbours_ids": [
@@ -40557,6 +42589,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2032,
               "neighbours_ids": [
@@ -40577,6 +42610,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2033,
               "neighbours_ids": [
@@ -40597,6 +42631,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2034,
               "neighbours_ids": [
@@ -40617,6 +42652,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2035,
               "neighbours_ids": [
@@ -40637,6 +42673,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2036,
               "neighbours_ids": [
@@ -40657,6 +42694,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2037,
               "neighbours_ids": [
@@ -40677,6 +42715,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2038,
               "neighbours_ids": [
@@ -40697,6 +42736,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2039,
               "neighbours_ids": [
@@ -40717,6 +42757,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2040,
               "neighbours_ids": [
@@ -40737,6 +42778,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2041,
               "neighbours_ids": [
@@ -40757,6 +42799,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2042,
               "neighbours_ids": [
@@ -40777,6 +42820,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2043,
               "neighbours_ids": [
@@ -40797,6 +42841,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2044,
               "neighbours_ids": [
@@ -40817,6 +42862,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2045,
               "neighbours_ids": [
@@ -40837,6 +42883,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2046,
               "neighbours_ids": [
@@ -40857,6 +42904,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2047,
               "neighbours_ids": [
@@ -40877,6 +42925,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2048,
               "neighbours_ids": [
@@ -40897,6 +42946,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2049,
               "neighbours_ids": [
@@ -40917,6 +42967,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2050,
               "neighbours_ids": [
@@ -40937,6 +42988,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2051,
               "neighbours_ids": [
@@ -40957,6 +43009,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2052,
               "neighbours_ids": [
@@ -40977,6 +43030,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2053,
               "neighbours_ids": [
@@ -40997,6 +43051,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2054,
               "neighbours_ids": [
@@ -41017,6 +43072,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2055,
               "neighbours_ids": [
@@ -41037,6 +43093,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2056,
               "neighbours_ids": [
@@ -41057,6 +43114,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2057,
               "neighbours_ids": [
@@ -41077,6 +43135,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2058,
               "neighbours_ids": [
@@ -41097,6 +43156,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2059,
               "neighbours_ids": [
@@ -41117,6 +43177,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2060,
               "neighbours_ids": [
@@ -41137,6 +43198,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2061,
               "neighbours_ids": [
@@ -41157,6 +43219,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2062,
               "neighbours_ids": [
@@ -41177,6 +43240,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2063,
               "neighbours_ids": [
@@ -41197,6 +43261,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2064,
               "neighbours_ids": [
@@ -41217,6 +43282,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2065,
               "neighbours_ids": [
@@ -41237,6 +43303,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2066,
               "neighbours_ids": [
@@ -41257,6 +43324,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2067,
               "neighbours_ids": [
@@ -41277,6 +43345,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2068,
               "neighbours_ids": [
@@ -41297,6 +43366,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2069,
               "neighbours_ids": [
@@ -41317,6 +43387,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2070,
               "neighbours_ids": [
@@ -41337,6 +43408,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2071,
               "neighbours_ids": [
@@ -41357,6 +43429,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2072,
               "neighbours_ids": [
@@ -41377,6 +43450,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2073,
               "neighbours_ids": [
@@ -41397,6 +43471,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2074,
               "neighbours_ids": [
@@ -41417,6 +43492,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2075,
               "neighbours_ids": [
@@ -41437,6 +43513,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2076,
               "neighbours_ids": [
@@ -41457,6 +43534,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2077,
               "neighbours_ids": [
@@ -41477,6 +43555,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2078,
               "neighbours_ids": [
@@ -41497,6 +43576,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2079,
               "neighbours_ids": [
@@ -41517,6 +43597,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2080,
               "neighbours_ids": [
@@ -41537,6 +43618,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2081,
               "neighbours_ids": [
@@ -41557,6 +43639,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2082,
               "neighbours_ids": [
@@ -41577,6 +43660,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2083,
               "neighbours_ids": [
@@ -41597,6 +43681,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2084,
               "neighbours_ids": [
@@ -41617,6 +43702,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2085,
               "neighbours_ids": [
@@ -41637,6 +43723,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2086,
               "neighbours_ids": [
@@ -41657,6 +43744,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2087,
               "neighbours_ids": [
@@ -41677,6 +43765,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2088,
               "neighbours_ids": [
@@ -41697,6 +43786,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2089,
               "neighbours_ids": [
@@ -41717,6 +43807,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2090,
               "neighbours_ids": [
@@ -41737,6 +43828,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2091,
               "neighbours_ids": [
@@ -41757,6 +43849,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2092,
               "neighbours_ids": [
@@ -41777,6 +43870,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2093,
               "neighbours_ids": [
@@ -41797,6 +43891,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2094,
               "neighbours_ids": [
@@ -41817,6 +43912,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2095,
               "neighbours_ids": [
@@ -41837,6 +43933,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2096,
               "neighbours_ids": [
@@ -41857,6 +43954,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2097,
               "neighbours_ids": [
@@ -41877,6 +43975,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2098,
               "neighbours_ids": [
@@ -41897,6 +43996,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2099,
               "neighbours_ids": [
@@ -41917,6 +44017,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2100,
               "neighbours_ids": [
@@ -41937,6 +44038,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2101,
               "neighbours_ids": [
@@ -41957,6 +44059,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2102,
               "neighbours_ids": [
@@ -41977,6 +44080,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2103,
               "neighbours_ids": [
@@ -41997,6 +44101,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2104,
               "neighbours_ids": [
@@ -42017,6 +44122,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2105,
               "neighbours_ids": [
@@ -42037,6 +44143,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2106,
               "neighbours_ids": [
@@ -42057,6 +44164,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2107,
               "neighbours_ids": [
@@ -42077,6 +44185,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2108,
               "neighbours_ids": [
@@ -42097,6 +44206,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2109,
               "neighbours_ids": [
@@ -42117,6 +44227,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2110,
               "neighbours_ids": [
@@ -42137,6 +44248,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2111,
               "neighbours_ids": [
@@ -42157,6 +44269,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2112,
               "neighbours_ids": [
@@ -42177,6 +44290,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2113,
               "neighbours_ids": [
@@ -42197,6 +44311,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2114,
               "neighbours_ids": [
@@ -42217,6 +44332,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2115,
               "neighbours_ids": [
@@ -42237,6 +44353,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2116,
               "neighbours_ids": [
@@ -42257,6 +44374,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2117,
               "neighbours_ids": [
@@ -42277,6 +44395,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2118,
               "neighbours_ids": [
@@ -42297,6 +44416,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2119,
               "neighbours_ids": [
@@ -42317,6 +44437,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2120,
               "neighbours_ids": [
@@ -42337,6 +44458,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2121,
               "neighbours_ids": [
@@ -42357,6 +44479,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2122,
               "neighbours_ids": [
@@ -42377,6 +44500,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2123,
               "neighbours_ids": [
@@ -42397,6 +44521,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2124,
               "neighbours_ids": [
@@ -42417,6 +44542,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2125,
               "neighbours_ids": [
@@ -42437,6 +44563,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2126,
               "neighbours_ids": [
@@ -42457,6 +44584,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2127,
               "neighbours_ids": [
@@ -42477,6 +44605,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2128,
               "neighbours_ids": [
@@ -42497,6 +44626,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2129,
               "neighbours_ids": [
@@ -42517,6 +44647,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2130,
               "neighbours_ids": [
@@ -42537,6 +44668,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2131,
               "neighbours_ids": [
@@ -42557,6 +44689,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2132,
               "neighbours_ids": [
@@ -42577,6 +44710,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2133,
               "neighbours_ids": [
@@ -42597,6 +44731,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2134,
               "neighbours_ids": [
@@ -42617,6 +44752,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2135,
               "neighbours_ids": [
@@ -42637,6 +44773,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2136,
               "neighbours_ids": [
@@ -42657,6 +44794,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2137,
               "neighbours_ids": [
@@ -42677,6 +44815,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2138,
               "neighbours_ids": [
@@ -42697,6 +44836,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2139,
               "neighbours_ids": [
@@ -42717,6 +44857,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2140,
               "neighbours_ids": [
@@ -42737,6 +44878,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2141,
               "neighbours_ids": [
@@ -42757,6 +44899,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2142,
               "neighbours_ids": [
@@ -42777,6 +44920,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2143,
               "neighbours_ids": [
@@ -42797,6 +44941,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2144,
               "neighbours_ids": [
@@ -42817,6 +44962,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2145,
               "neighbours_ids": [
@@ -42837,6 +44983,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2146,
               "neighbours_ids": [
@@ -42857,6 +45004,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2147,
               "neighbours_ids": [
@@ -42877,6 +45025,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2148,
               "neighbours_ids": [
@@ -42897,6 +45046,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2149,
               "neighbours_ids": [
@@ -42917,6 +45067,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2150,
               "neighbours_ids": [
@@ -42937,6 +45088,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2151,
               "neighbours_ids": [
@@ -42957,6 +45109,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2152,
               "neighbours_ids": [
@@ -42977,6 +45130,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2153,
               "neighbours_ids": [
@@ -42997,6 +45151,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2154,
               "neighbours_ids": [
@@ -43017,6 +45172,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2155,
               "neighbours_ids": [
@@ -43037,6 +45193,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2156,
               "neighbours_ids": [
@@ -43057,6 +45214,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2157,
               "neighbours_ids": [
@@ -43077,6 +45235,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2158,
               "neighbours_ids": [
@@ -43097,6 +45256,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2159,
               "neighbours_ids": [
@@ -43117,6 +45277,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2160,
               "neighbours_ids": [
@@ -43137,6 +45298,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2161,
               "neighbours_ids": [
@@ -43157,6 +45319,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2162,
               "neighbours_ids": [
@@ -43177,6 +45340,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2163,
               "neighbours_ids": [
@@ -43197,6 +45361,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2164,
               "neighbours_ids": [
@@ -43217,6 +45382,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2165,
               "neighbours_ids": [
@@ -43237,6 +45403,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2166,
               "neighbours_ids": [
@@ -43257,6 +45424,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2167,
               "neighbours_ids": [
@@ -43277,6 +45445,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2168,
               "neighbours_ids": [
@@ -43297,6 +45466,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2169,
               "neighbours_ids": [
@@ -43317,6 +45487,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2170,
               "neighbours_ids": [
@@ -43337,6 +45508,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2171,
               "neighbours_ids": [
@@ -43357,6 +45529,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2172,
               "neighbours_ids": [
@@ -43377,6 +45550,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2173,
               "neighbours_ids": [
@@ -43397,6 +45571,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2174,
               "neighbours_ids": [
@@ -43417,6 +45592,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2175,
               "neighbours_ids": [
@@ -43437,6 +45613,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2176,
               "neighbours_ids": [
@@ -43457,6 +45634,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2177,
               "neighbours_ids": [
@@ -43477,6 +45655,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2178,
               "neighbours_ids": [
@@ -43497,6 +45676,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2179,
               "neighbours_ids": [
@@ -43517,6 +45697,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2180,
               "neighbours_ids": [
@@ -43537,6 +45718,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2181,
               "neighbours_ids": [
@@ -43557,6 +45739,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2182,
               "neighbours_ids": [
@@ -43577,6 +45760,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2183,
               "neighbours_ids": [
@@ -43597,6 +45781,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2184,
               "neighbours_ids": [
@@ -43617,6 +45802,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2185,
               "neighbours_ids": [
@@ -43637,6 +45823,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2186,
               "neighbours_ids": [
@@ -43657,6 +45844,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2187,
               "neighbours_ids": [
@@ -43677,6 +45865,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2188,
               "neighbours_ids": [
@@ -43697,6 +45886,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2189,
               "neighbours_ids": [
@@ -43717,6 +45907,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2190,
               "neighbours_ids": [
@@ -43737,6 +45928,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2191,
               "neighbours_ids": [
@@ -43757,6 +45949,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2192,
               "neighbours_ids": [
@@ -43777,6 +45970,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2193,
               "neighbours_ids": [
@@ -43797,6 +45991,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2194,
               "neighbours_ids": [
@@ -43817,6 +46012,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2195,
               "neighbours_ids": [
@@ -43837,6 +46033,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2196,
               "neighbours_ids": [
@@ -43857,6 +46054,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2197,
               "neighbours_ids": [
@@ -43877,6 +46075,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2198,
               "neighbours_ids": [
@@ -43897,6 +46096,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2199,
               "neighbours_ids": [
@@ -43917,6 +46117,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2200,
               "neighbours_ids": [
@@ -43937,6 +46138,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2201,
               "neighbours_ids": [
@@ -43957,6 +46159,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2202,
               "neighbours_ids": [
@@ -43977,6 +46180,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2203,
               "neighbours_ids": [
@@ -43997,6 +46201,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2204,
               "neighbours_ids": [
@@ -44017,6 +46222,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2205,
               "neighbours_ids": [
@@ -44037,6 +46243,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2206,
               "neighbours_ids": [
@@ -44057,6 +46264,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2207,
               "neighbours_ids": [
@@ -44077,6 +46285,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2208,
               "neighbours_ids": [
@@ -44097,6 +46306,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2209,
               "neighbours_ids": [
@@ -44117,6 +46327,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2210,
               "neighbours_ids": [
@@ -44137,6 +46348,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2211,
               "neighbours_ids": [
@@ -44157,6 +46369,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2212,
               "neighbours_ids": [
@@ -44177,6 +46390,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2213,
               "neighbours_ids": [
@@ -44197,6 +46411,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2214,
               "neighbours_ids": [
@@ -44217,6 +46432,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2215,
               "neighbours_ids": [
@@ -44237,6 +46453,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2216,
               "neighbours_ids": [
@@ -44257,6 +46474,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2217,
               "neighbours_ids": [
@@ -44277,6 +46495,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2218,
               "neighbours_ids": [
@@ -44297,6 +46516,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2219,
               "neighbours_ids": [
@@ -44317,6 +46537,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2220,
               "neighbours_ids": [
@@ -44337,6 +46558,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2221,
               "neighbours_ids": [
@@ -44357,6 +46579,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2222,
               "neighbours_ids": [
@@ -44377,6 +46600,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2223,
               "neighbours_ids": [
@@ -44397,6 +46621,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2224,
               "neighbours_ids": [
@@ -44417,6 +46642,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2225,
               "neighbours_ids": [
@@ -44437,6 +46663,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2226,
               "neighbours_ids": [
@@ -44457,6 +46684,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2227,
               "neighbours_ids": [
@@ -44477,6 +46705,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2228,
               "neighbours_ids": [
@@ -44497,6 +46726,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2229,
               "neighbours_ids": [
@@ -44517,6 +46747,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2230,
               "neighbours_ids": [
@@ -44537,6 +46768,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2231,
               "neighbours_ids": [
@@ -44557,6 +46789,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2232,
               "neighbours_ids": [
@@ -44577,6 +46810,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2233,
               "neighbours_ids": [
@@ -44597,6 +46831,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2234,
               "neighbours_ids": [
@@ -44617,6 +46852,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2235,
               "neighbours_ids": [
@@ -44637,6 +46873,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2236,
               "neighbours_ids": [
@@ -44657,6 +46894,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2237,
               "neighbours_ids": [
@@ -44677,6 +46915,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2238,
               "neighbours_ids": [
@@ -44697,6 +46936,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2239,
               "neighbours_ids": [
@@ -44717,6 +46957,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2240,
               "neighbours_ids": [
@@ -44737,6 +46978,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2241,
               "neighbours_ids": [
@@ -44757,6 +46999,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2242,
               "neighbours_ids": [
@@ -44777,6 +47020,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2243,
               "neighbours_ids": [
@@ -44797,6 +47041,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2244,
               "neighbours_ids": [
@@ -44817,6 +47062,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2245,
               "neighbours_ids": [
@@ -44837,6 +47083,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2246,
               "neighbours_ids": [
@@ -44857,6 +47104,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2247,
               "neighbours_ids": [
@@ -44877,6 +47125,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2248,
               "neighbours_ids": [
@@ -44897,6 +47146,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2249,
               "neighbours_ids": [
@@ -44917,6 +47167,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2250,
               "neighbours_ids": [
@@ -44937,6 +47188,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2251,
               "neighbours_ids": [
@@ -44957,6 +47209,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2252,
               "neighbours_ids": [
@@ -44977,6 +47230,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2253,
               "neighbours_ids": [
@@ -44997,6 +47251,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2254,
               "neighbours_ids": [
@@ -45017,6 +47272,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2255,
               "neighbours_ids": [
@@ -45037,6 +47293,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2256,
               "neighbours_ids": [
@@ -45057,6 +47314,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2257,
               "neighbours_ids": [
@@ -45077,6 +47335,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2258,
               "neighbours_ids": [
@@ -45097,6 +47356,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2259,
               "neighbours_ids": [
@@ -45117,6 +47377,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2260,
               "neighbours_ids": [
@@ -45137,6 +47398,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2261,
               "neighbours_ids": [
@@ -45157,6 +47419,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2262,
               "neighbours_ids": [
@@ -45177,6 +47440,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2263,
               "neighbours_ids": [
@@ -45197,6 +47461,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2264,
               "neighbours_ids": [
@@ -45217,6 +47482,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2265,
               "neighbours_ids": [
@@ -45237,6 +47503,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2266,
               "neighbours_ids": [
@@ -45257,6 +47524,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2267,
               "neighbours_ids": [
@@ -45277,6 +47545,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2268,
               "neighbours_ids": [
@@ -45297,6 +47566,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2269,
               "neighbours_ids": [
@@ -45317,6 +47587,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2270,
               "neighbours_ids": [
@@ -45337,6 +47608,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2271,
               "neighbours_ids": [
@@ -45357,6 +47629,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2272,
               "neighbours_ids": [
@@ -45377,6 +47650,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2273,
               "neighbours_ids": [
@@ -45397,6 +47671,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2274,
               "neighbours_ids": [
@@ -45417,6 +47692,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2275,
               "neighbours_ids": [
@@ -45437,6 +47713,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2276,
               "neighbours_ids": [
@@ -45457,6 +47734,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2277,
               "neighbours_ids": [
@@ -45477,6 +47755,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2278,
               "neighbours_ids": [
@@ -45497,6 +47776,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2279,
               "neighbours_ids": [
@@ -45517,6 +47797,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2280,
               "neighbours_ids": [
@@ -45537,6 +47818,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2281,
               "neighbours_ids": [
@@ -45557,6 +47839,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2282,
               "neighbours_ids": [
@@ -45577,6 +47860,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2283,
               "neighbours_ids": [
@@ -45597,6 +47881,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2284,
               "neighbours_ids": [
@@ -45617,6 +47902,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2285,
               "neighbours_ids": [
@@ -45637,6 +47923,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2286,
               "neighbours_ids": [
@@ -45657,6 +47944,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2287,
               "neighbours_ids": [
@@ -45677,6 +47965,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2288,
               "neighbours_ids": [
@@ -45697,6 +47986,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2289,
               "neighbours_ids": [
@@ -45717,6 +48007,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2290,
               "neighbours_ids": [
@@ -45737,6 +48028,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2291,
               "neighbours_ids": [
@@ -45757,6 +48049,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2292,
               "neighbours_ids": [
@@ -45777,6 +48070,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2293,
               "neighbours_ids": [
@@ -45797,6 +48091,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2294,
               "neighbours_ids": [
@@ -45817,6 +48112,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2295,
               "neighbours_ids": [
@@ -45837,6 +48133,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2296,
               "neighbours_ids": [
@@ -45857,6 +48154,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2297,
               "neighbours_ids": [
@@ -45877,6 +48175,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2298,
               "neighbours_ids": [
@@ -45897,6 +48196,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2299,
               "neighbours_ids": [
@@ -45917,6 +48217,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2300,
               "neighbours_ids": [
@@ -45937,6 +48238,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2301,
               "neighbours_ids": [
@@ -45957,6 +48259,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2302,
               "neighbours_ids": [
@@ -45977,6 +48280,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2303,
               "neighbours_ids": [
@@ -45997,6 +48301,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2304,
               "neighbours_ids": [
@@ -46017,6 +48322,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2305,
               "neighbours_ids": [
@@ -46037,6 +48343,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2306,
               "neighbours_ids": [
@@ -46057,6 +48364,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2307,
               "neighbours_ids": [
@@ -46077,6 +48385,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2308,
               "neighbours_ids": [
@@ -46097,6 +48406,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2309,
               "neighbours_ids": [
@@ -46117,6 +48427,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2310,
               "neighbours_ids": [
@@ -46137,6 +48448,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2311,
               "neighbours_ids": [
@@ -46157,6 +48469,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2312,
               "neighbours_ids": [
@@ -46177,6 +48490,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2313,
               "neighbours_ids": [
@@ -46197,6 +48511,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2314,
               "neighbours_ids": [
@@ -46217,6 +48532,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2315,
               "neighbours_ids": [
@@ -46237,6 +48553,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2316,
               "neighbours_ids": [
@@ -46257,6 +48574,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2317,
               "neighbours_ids": [
@@ -46277,6 +48595,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2318,
               "neighbours_ids": [
@@ -46297,6 +48616,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2319,
               "neighbours_ids": [
@@ -46317,6 +48637,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2320,
               "neighbours_ids": [
@@ -46337,6 +48658,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2321,
               "neighbours_ids": [
@@ -46357,6 +48679,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2322,
               "neighbours_ids": [
@@ -46377,6 +48700,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2323,
               "neighbours_ids": [
@@ -46397,6 +48721,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2324,
               "neighbours_ids": [
@@ -46417,6 +48742,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2325,
               "neighbours_ids": [
@@ -46437,6 +48763,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2326,
               "neighbours_ids": [
@@ -46457,6 +48784,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2327,
               "neighbours_ids": [
@@ -46477,6 +48805,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2328,
               "neighbours_ids": [
@@ -46497,6 +48826,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2329,
               "neighbours_ids": [
@@ -46517,6 +48847,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2330,
               "neighbours_ids": [
@@ -46537,6 +48868,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2331,
               "neighbours_ids": [
@@ -46557,6 +48889,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2332,
               "neighbours_ids": [
@@ -46577,6 +48910,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2333,
               "neighbours_ids": [
@@ -46597,6 +48931,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2334,
               "neighbours_ids": [
@@ -46617,6 +48952,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2335,
               "neighbours_ids": [
@@ -46637,6 +48973,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2336,
               "neighbours_ids": [
@@ -46657,6 +48994,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2337,
               "neighbours_ids": [
@@ -46677,6 +49015,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2338,
               "neighbours_ids": [
@@ -46697,6 +49036,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2339,
               "neighbours_ids": [
@@ -46717,6 +49057,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2340,
               "neighbours_ids": [
@@ -46737,6 +49078,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2341,
               "neighbours_ids": [
@@ -46757,6 +49099,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2342,
               "neighbours_ids": [
@@ -46777,6 +49120,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2343,
               "neighbours_ids": [
@@ -46797,6 +49141,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2344,
               "neighbours_ids": [
@@ -46817,6 +49162,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2345,
               "neighbours_ids": [
@@ -46837,6 +49183,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2346,
               "neighbours_ids": [
@@ -46857,6 +49204,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2347,
               "neighbours_ids": [
@@ -46877,6 +49225,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2348,
               "neighbours_ids": [
@@ -46897,6 +49246,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2349,
               "neighbours_ids": [
@@ -46917,6 +49267,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2350,
               "neighbours_ids": [
@@ -46937,6 +49288,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2351,
               "neighbours_ids": [
@@ -46957,6 +49309,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2352,
               "neighbours_ids": [
@@ -46977,6 +49330,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2353,
               "neighbours_ids": [
@@ -46997,6 +49351,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2354,
               "neighbours_ids": [
@@ -47017,6 +49372,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2355,
               "neighbours_ids": [
@@ -47037,6 +49393,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2356,
               "neighbours_ids": [
@@ -47057,6 +49414,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2357,
               "neighbours_ids": [
@@ -47077,6 +49435,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2358,
               "neighbours_ids": [
@@ -47097,6 +49456,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2359,
               "neighbours_ids": [
@@ -47117,6 +49477,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2360,
               "neighbours_ids": [
@@ -47137,6 +49498,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2361,
               "neighbours_ids": [
@@ -47157,6 +49519,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2362,
               "neighbours_ids": [
@@ -47177,6 +49540,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2363,
               "neighbours_ids": [
@@ -47197,6 +49561,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2364,
               "neighbours_ids": [
@@ -47217,6 +49582,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2365,
               "neighbours_ids": [
@@ -47237,6 +49603,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2366,
               "neighbours_ids": [
@@ -47257,6 +49624,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2367,
               "neighbours_ids": [
@@ -47277,6 +49645,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2368,
               "neighbours_ids": [
@@ -47297,6 +49666,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2369,
               "neighbours_ids": [
@@ -47317,6 +49687,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2370,
               "neighbours_ids": [
@@ -47337,6 +49708,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2371,
               "neighbours_ids": [
@@ -47357,6 +49729,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2372,
               "neighbours_ids": [
@@ -47377,6 +49750,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2373,
               "neighbours_ids": [
@@ -47397,6 +49771,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2374,
               "neighbours_ids": [
@@ -47417,6 +49792,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2375,
               "neighbours_ids": [
@@ -47437,6 +49813,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2376,
               "neighbours_ids": [
@@ -47457,6 +49834,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2377,
               "neighbours_ids": [
@@ -47477,6 +49855,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2378,
               "neighbours_ids": [
@@ -47497,6 +49876,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2379,
               "neighbours_ids": [
@@ -47517,6 +49897,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2380,
               "neighbours_ids": [
@@ -47537,6 +49918,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2381,
               "neighbours_ids": [
@@ -47557,6 +49939,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2382,
               "neighbours_ids": [
@@ -47577,6 +49960,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2383,
               "neighbours_ids": [
@@ -47597,6 +49981,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2384,
               "neighbours_ids": [
@@ -47617,6 +50002,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2385,
               "neighbours_ids": [
@@ -47637,6 +50023,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2386,
               "neighbours_ids": [
@@ -47657,6 +50044,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2387,
               "neighbours_ids": [
@@ -47677,6 +50065,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2388,
               "neighbours_ids": [
@@ -47697,6 +50086,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2389,
               "neighbours_ids": [
@@ -47717,6 +50107,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2390,
               "neighbours_ids": [
@@ -47737,6 +50128,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2391,
               "neighbours_ids": [
@@ -47757,6 +50149,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2392,
               "neighbours_ids": [
@@ -47777,6 +50170,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2393,
               "neighbours_ids": [
@@ -47797,6 +50191,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2394,
               "neighbours_ids": [
@@ -47817,6 +50212,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2395,
               "neighbours_ids": [
@@ -47837,6 +50233,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2396,
               "neighbours_ids": [
@@ -47857,6 +50254,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2397,
               "neighbours_ids": [
@@ -47877,6 +50275,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2398,
               "neighbours_ids": [
@@ -47897,6 +50296,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2399,
               "neighbours_ids": [
@@ -47917,6 +50317,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2400,
               "neighbours_ids": [
@@ -47937,6 +50338,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2401,
               "neighbours_ids": [
@@ -47957,6 +50359,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2402,
               "neighbours_ids": [
@@ -47977,6 +50380,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2403,
               "neighbours_ids": [
@@ -47997,6 +50401,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2404,
               "neighbours_ids": [
@@ -48017,6 +50422,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2405,
               "neighbours_ids": [
@@ -48037,6 +50443,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2406,
               "neighbours_ids": [
@@ -48057,6 +50464,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2407,
               "neighbours_ids": [
@@ -48077,6 +50485,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2408,
               "neighbours_ids": [
@@ -48097,6 +50506,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2409,
               "neighbours_ids": [
@@ -48117,6 +50527,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2410,
               "neighbours_ids": [
@@ -48137,6 +50548,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2411,
               "neighbours_ids": [
@@ -48157,6 +50569,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2412,
               "neighbours_ids": [
@@ -48177,6 +50590,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2413,
               "neighbours_ids": [
@@ -48197,6 +50611,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2414,
               "neighbours_ids": [
@@ -48217,6 +50632,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2415,
               "neighbours_ids": [
@@ -48237,6 +50653,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2416,
               "neighbours_ids": [
@@ -48257,6 +50674,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2417,
               "neighbours_ids": [
@@ -48277,6 +50695,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2418,
               "neighbours_ids": [
@@ -48297,6 +50716,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2419,
               "neighbours_ids": [
@@ -48317,6 +50737,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2420,
               "neighbours_ids": [
@@ -48337,6 +50758,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2421,
               "neighbours_ids": [
@@ -48357,6 +50779,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2422,
               "neighbours_ids": [
@@ -48377,6 +50800,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2423,
               "neighbours_ids": [
@@ -48397,6 +50821,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2424,
               "neighbours_ids": [
@@ -48417,6 +50842,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2425,
               "neighbours_ids": [
@@ -48437,6 +50863,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2426,
               "neighbours_ids": [
@@ -48457,6 +50884,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2427,
               "neighbours_ids": [
@@ -48477,6 +50905,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2428,
               "neighbours_ids": [
@@ -48497,6 +50926,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2429,
               "neighbours_ids": [
@@ -48517,6 +50947,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2430,
               "neighbours_ids": [
@@ -48537,6 +50968,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2431,
               "neighbours_ids": [
@@ -48557,6 +50989,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2432,
               "neighbours_ids": [
@@ -48577,6 +51010,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2433,
               "neighbours_ids": [
@@ -48597,6 +51031,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2434,
               "neighbours_ids": [
@@ -48617,6 +51052,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2435,
               "neighbours_ids": [
@@ -48637,6 +51073,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2436,
               "neighbours_ids": [
@@ -48657,6 +51094,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2437,
               "neighbours_ids": [
@@ -48677,6 +51115,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2438,
               "neighbours_ids": [
@@ -48697,6 +51136,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2439,
               "neighbours_ids": [
@@ -48717,6 +51157,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2440,
               "neighbours_ids": [
@@ -48737,6 +51178,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2441,
               "neighbours_ids": [
@@ -48757,6 +51199,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2442,
               "neighbours_ids": [
@@ -48777,6 +51220,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2443,
               "neighbours_ids": [
@@ -48797,6 +51241,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2444,
               "neighbours_ids": [
@@ -48817,6 +51262,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2445,
               "neighbours_ids": [
@@ -48837,6 +51283,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2446,
               "neighbours_ids": [
@@ -48857,6 +51304,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2447,
               "neighbours_ids": [
@@ -48877,6 +51325,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2448,
               "neighbours_ids": [
@@ -48897,6 +51346,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2449,
               "neighbours_ids": [
@@ -48917,6 +51367,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2450,
               "neighbours_ids": [
@@ -48937,6 +51388,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2451,
               "neighbours_ids": [
@@ -48957,6 +51409,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2452,
               "neighbours_ids": [
@@ -48977,6 +51430,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2453,
               "neighbours_ids": [
@@ -48997,6 +51451,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2454,
               "neighbours_ids": [
@@ -49017,6 +51472,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2455,
               "neighbours_ids": [
@@ -49037,6 +51493,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2456,
               "neighbours_ids": [
@@ -49057,6 +51514,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2457,
               "neighbours_ids": [
@@ -49077,6 +51535,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2458,
               "neighbours_ids": [
@@ -49097,6 +51556,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2459,
               "neighbours_ids": [
@@ -49117,6 +51577,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2460,
               "neighbours_ids": [
@@ -49137,6 +51598,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2461,
               "neighbours_ids": [
@@ -49157,6 +51619,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2462,
               "neighbours_ids": [
@@ -49177,6 +51640,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2463,
               "neighbours_ids": [
@@ -49197,6 +51661,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2464,
               "neighbours_ids": [
@@ -49217,6 +51682,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2465,
               "neighbours_ids": [
@@ -49237,6 +51703,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2466,
               "neighbours_ids": [
@@ -49257,6 +51724,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2467,
               "neighbours_ids": [
@@ -49277,6 +51745,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2468,
               "neighbours_ids": [
@@ -49297,6 +51766,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2469,
               "neighbours_ids": [
@@ -49317,6 +51787,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2470,
               "neighbours_ids": [
@@ -49337,6 +51808,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2471,
               "neighbours_ids": [
@@ -49357,6 +51829,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2472,
               "neighbours_ids": [
@@ -49377,6 +51850,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2473,
               "neighbours_ids": [
@@ -49397,6 +51871,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2474,
               "neighbours_ids": [
@@ -49417,6 +51892,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2475,
               "neighbours_ids": [
@@ -49437,6 +51913,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2476,
               "neighbours_ids": [
@@ -49457,6 +51934,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2477,
               "neighbours_ids": [
@@ -49477,6 +51955,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2478,
               "neighbours_ids": [
@@ -49497,6 +51976,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2479,
               "neighbours_ids": [
@@ -49517,6 +51997,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2480,
               "neighbours_ids": [
@@ -49537,6 +52018,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2481,
               "neighbours_ids": [
@@ -49557,6 +52039,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2482,
               "neighbours_ids": [
@@ -49577,6 +52060,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2483,
               "neighbours_ids": [
@@ -49597,6 +52081,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2484,
               "neighbours_ids": [
@@ -49617,6 +52102,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2485,
               "neighbours_ids": [
@@ -49637,6 +52123,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2486,
               "neighbours_ids": [
@@ -49657,6 +52144,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2487,
               "neighbours_ids": [
@@ -49677,6 +52165,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2488,
               "neighbours_ids": [
@@ -49697,6 +52186,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2489,
               "neighbours_ids": [
@@ -49717,6 +52207,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2490,
               "neighbours_ids": [
@@ -49737,6 +52228,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2491,
               "neighbours_ids": [
@@ -49757,6 +52249,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2492,
               "neighbours_ids": [
@@ -49777,6 +52270,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2493,
               "neighbours_ids": [
@@ -49797,6 +52291,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2494,
               "neighbours_ids": [
@@ -49817,6 +52312,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2495,
               "neighbours_ids": [
@@ -49837,6 +52333,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2496,
               "neighbours_ids": [
@@ -49857,6 +52354,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2497,
               "neighbours_ids": [
@@ -49877,6 +52375,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2498,
               "neighbours_ids": [
@@ -49897,6 +52396,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2499,
               "neighbours_ids": [
@@ -49917,6 +52417,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2500,
               "neighbours_ids": [
@@ -49937,6 +52438,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2501,
               "neighbours_ids": [
@@ -49957,6 +52459,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2502,
               "neighbours_ids": [
@@ -49977,6 +52480,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2503,
               "neighbours_ids": [
@@ -49997,6 +52501,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2504,
               "neighbours_ids": [
@@ -50017,6 +52522,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2505,
               "neighbours_ids": [
@@ -50037,6 +52543,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2506,
               "neighbours_ids": [
@@ -50057,6 +52564,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2507,
               "neighbours_ids": [
@@ -50077,6 +52585,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2508,
               "neighbours_ids": [
@@ -50097,6 +52606,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2509,
               "neighbours_ids": [
@@ -50117,6 +52627,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2510,
               "neighbours_ids": [
@@ -50137,6 +52648,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2511,
               "neighbours_ids": [
@@ -50157,6 +52669,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2512,
               "neighbours_ids": [
@@ -50177,6 +52690,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2513,
               "neighbours_ids": [
@@ -50197,6 +52711,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2514,
               "neighbours_ids": [
@@ -50217,6 +52732,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2515,
               "neighbours_ids": [
@@ -50237,6 +52753,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2516,
               "neighbours_ids": [
@@ -50257,6 +52774,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2517,
               "neighbours_ids": [
@@ -50277,6 +52795,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2518,
               "neighbours_ids": [
@@ -50297,6 +52816,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2519,
               "neighbours_ids": [
@@ -50317,6 +52837,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2520,
               "neighbours_ids": [
@@ -50337,6 +52858,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2521,
               "neighbours_ids": [
@@ -50357,6 +52879,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2522,
               "neighbours_ids": [
@@ -50377,6 +52900,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2523,
               "neighbours_ids": [
@@ -50397,6 +52921,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2524,
               "neighbours_ids": [
@@ -50417,6 +52942,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2525,
               "neighbours_ids": [
@@ -50437,6 +52963,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2526,
               "neighbours_ids": [
@@ -50457,6 +52984,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2527,
               "neighbours_ids": [
@@ -50477,6 +53005,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2528,
               "neighbours_ids": [
@@ -50497,6 +53026,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2529,
               "neighbours_ids": [
@@ -50517,6 +53047,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2530,
               "neighbours_ids": [
@@ -50537,6 +53068,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2531,
               "neighbours_ids": [
@@ -50557,6 +53089,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2532,
               "neighbours_ids": [
@@ -50577,6 +53110,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2533,
               "neighbours_ids": [
@@ -50597,6 +53131,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2534,
               "neighbours_ids": [
@@ -50617,6 +53152,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2535,
               "neighbours_ids": [
@@ -50637,6 +53173,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2536,
               "neighbours_ids": [
@@ -50657,6 +53194,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2537,
               "neighbours_ids": [
@@ -50677,6 +53215,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2538,
               "neighbours_ids": [
@@ -50697,6 +53236,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2539,
               "neighbours_ids": [
@@ -50717,6 +53257,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2540,
               "neighbours_ids": [
@@ -50737,6 +53278,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2541,
               "neighbours_ids": [
@@ -50757,6 +53299,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2542,
               "neighbours_ids": [
@@ -50777,6 +53320,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2543,
               "neighbours_ids": [
@@ -50797,6 +53341,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2544,
               "neighbours_ids": [
@@ -50817,6 +53362,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2545,
               "neighbours_ids": [
@@ -50837,6 +53383,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2546,
               "neighbours_ids": [
@@ -50857,6 +53404,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2547,
               "neighbours_ids": [
@@ -50877,6 +53425,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2548,
               "neighbours_ids": [
@@ -50897,6 +53446,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2549,
               "neighbours_ids": [
@@ -50917,6 +53467,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2550,
               "neighbours_ids": [
@@ -50937,6 +53488,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2551,
               "neighbours_ids": [
@@ -50957,6 +53509,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2552,
               "neighbours_ids": [
@@ -50977,6 +53530,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2553,
               "neighbours_ids": [
@@ -50997,6 +53551,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2554,
               "neighbours_ids": [
@@ -51017,6 +53572,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2555,
               "neighbours_ids": [
@@ -51037,6 +53593,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2556,
               "neighbours_ids": [
@@ -51057,6 +53614,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2557,
               "neighbours_ids": [
@@ -51077,6 +53635,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2558,
               "neighbours_ids": [
@@ -51097,6 +53656,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2559,
               "neighbours_ids": [
@@ -51117,6 +53677,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2560,
               "neighbours_ids": [
@@ -51137,6 +53698,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2561,
               "neighbours_ids": [
@@ -51157,6 +53719,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2562,
               "neighbours_ids": [
@@ -51177,6 +53740,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2563,
               "neighbours_ids": [
@@ -51197,6 +53761,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2564,
               "neighbours_ids": [
@@ -51217,6 +53782,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2565,
               "neighbours_ids": [
@@ -51237,6 +53803,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2566,
               "neighbours_ids": [
@@ -51257,6 +53824,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2567,
               "neighbours_ids": [
@@ -51277,6 +53845,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2568,
               "neighbours_ids": [
@@ -51297,6 +53866,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2569,
               "neighbours_ids": [
@@ -51317,6 +53887,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2570,
               "neighbours_ids": [
@@ -51337,6 +53908,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2571,
               "neighbours_ids": [
@@ -51357,6 +53929,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2572,
               "neighbours_ids": [
@@ -51377,6 +53950,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2573,
               "neighbours_ids": [
@@ -51397,6 +53971,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2574,
               "neighbours_ids": [
@@ -51417,6 +53992,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2575,
               "neighbours_ids": [
@@ -51437,6 +54013,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2576,
               "neighbours_ids": [
@@ -51457,6 +54034,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2577,
               "neighbours_ids": [
@@ -51477,6 +54055,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2578,
               "neighbours_ids": [
@@ -51497,6 +54076,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2579,
               "neighbours_ids": [
@@ -51517,6 +54097,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2580,
               "neighbours_ids": [
@@ -51537,6 +54118,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2581,
               "neighbours_ids": [
@@ -51557,6 +54139,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2582,
               "neighbours_ids": [
@@ -51577,6 +54160,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2583,
               "neighbours_ids": [
@@ -51597,6 +54181,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2584,
               "neighbours_ids": [
@@ -51617,6 +54202,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2585,
               "neighbours_ids": [
@@ -51637,6 +54223,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2586,
               "neighbours_ids": [
@@ -51657,6 +54244,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2587,
               "neighbours_ids": [
@@ -51677,6 +54265,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2588,
               "neighbours_ids": [
@@ -51697,6 +54286,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2589,
               "neighbours_ids": [
@@ -51717,6 +54307,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2590,
               "neighbours_ids": [
@@ -51737,6 +54328,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2591,
               "neighbours_ids": [
@@ -51757,6 +54349,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2592,
               "neighbours_ids": [
@@ -51777,6 +54370,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2593,
               "neighbours_ids": [
@@ -51797,6 +54391,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2594,
               "neighbours_ids": [
@@ -51817,6 +54412,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2595,
               "neighbours_ids": [
@@ -51837,6 +54433,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2596,
               "neighbours_ids": [
@@ -51857,6 +54454,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2597,
               "neighbours_ids": [
@@ -51877,6 +54475,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2598,
               "neighbours_ids": [
@@ -51897,6 +54496,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2599,
               "neighbours_ids": [
@@ -51917,6 +54517,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2600,
               "neighbours_ids": [
@@ -51937,6 +54538,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2601,
               "neighbours_ids": [
@@ -51957,6 +54559,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2602,
               "neighbours_ids": [
@@ -51977,6 +54580,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2603,
               "neighbours_ids": [
@@ -51997,6 +54601,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2604,
               "neighbours_ids": [
@@ -52017,6 +54622,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2605,
               "neighbours_ids": [
@@ -52037,6 +54643,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2606,
               "neighbours_ids": [
@@ -52057,6 +54664,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2607,
               "neighbours_ids": [
@@ -52077,6 +54685,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2608,
               "neighbours_ids": [
@@ -52097,6 +54706,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2609,
               "neighbours_ids": [
@@ -52117,6 +54727,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2610,
               "neighbours_ids": [
@@ -52137,6 +54748,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2611,
               "neighbours_ids": [
@@ -52157,6 +54769,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2612,
               "neighbours_ids": [
@@ -52177,6 +54790,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2613,
               "neighbours_ids": [
@@ -52197,6 +54811,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2614,
               "neighbours_ids": [
@@ -52217,6 +54832,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2615,
               "neighbours_ids": [
@@ -52237,6 +54853,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2616,
               "neighbours_ids": [
@@ -52257,6 +54874,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2617,
               "neighbours_ids": [
@@ -52277,6 +54895,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2618,
               "neighbours_ids": [
@@ -52297,6 +54916,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2619,
               "neighbours_ids": [
@@ -52317,6 +54937,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2620,
               "neighbours_ids": [
@@ -52337,6 +54958,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2621,
               "neighbours_ids": [
@@ -52357,6 +54979,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2622,
               "neighbours_ids": [
@@ -52377,6 +55000,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2623,
               "neighbours_ids": [
@@ -52397,6 +55021,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2624,
               "neighbours_ids": [
@@ -52417,6 +55042,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2625,
               "neighbours_ids": [
@@ -52437,6 +55063,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2626,
               "neighbours_ids": [
@@ -52457,6 +55084,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2627,
               "neighbours_ids": [
@@ -52477,6 +55105,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2628,
               "neighbours_ids": [
@@ -52497,6 +55126,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2629,
               "neighbours_ids": [
@@ -52517,6 +55147,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2630,
               "neighbours_ids": [
@@ -52537,6 +55168,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2631,
               "neighbours_ids": [
@@ -52557,6 +55189,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2632,
               "neighbours_ids": [
@@ -52577,6 +55210,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2633,
               "neighbours_ids": [
@@ -52597,6 +55231,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2634,
               "neighbours_ids": [
@@ -52617,6 +55252,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2635,
               "neighbours_ids": [
@@ -52637,6 +55273,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2636,
               "neighbours_ids": [
@@ -52657,6 +55294,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2637,
               "neighbours_ids": [
@@ -52677,6 +55315,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2638,
               "neighbours_ids": [
@@ -52697,6 +55336,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2639,
               "neighbours_ids": [
@@ -52717,6 +55357,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2640,
               "neighbours_ids": [
@@ -52737,6 +55378,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2641,
               "neighbours_ids": [
@@ -52757,6 +55399,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2642,
               "neighbours_ids": [
@@ -52777,6 +55420,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2643,
               "neighbours_ids": [
@@ -52797,6 +55441,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2644,
               "neighbours_ids": [
@@ -52817,6 +55462,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2645,
               "neighbours_ids": [
@@ -52837,6 +55483,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2646,
               "neighbours_ids": [
@@ -52857,6 +55504,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2647,
               "neighbours_ids": [
@@ -52877,6 +55525,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2648,
               "neighbours_ids": [
@@ -52897,6 +55546,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2649,
               "neighbours_ids": [
@@ -52917,6 +55567,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2650,
               "neighbours_ids": [
@@ -52937,6 +55588,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2651,
               "neighbours_ids": [
@@ -52957,6 +55609,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2652,
               "neighbours_ids": [
@@ -52977,6 +55630,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2653,
               "neighbours_ids": [
@@ -52997,6 +55651,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2654,
               "neighbours_ids": [
@@ -53017,6 +55672,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2655,
               "neighbours_ids": [
@@ -53037,6 +55693,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2656,
               "neighbours_ids": [
@@ -53057,6 +55714,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2657,
               "neighbours_ids": [
@@ -53077,6 +55735,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2658,
               "neighbours_ids": [
@@ -53097,6 +55756,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2659,
               "neighbours_ids": [
@@ -53117,6 +55777,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2660,
               "neighbours_ids": [
@@ -53137,6 +55798,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2661,
               "neighbours_ids": [
@@ -53157,6 +55819,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2662,
               "neighbours_ids": [
@@ -53177,6 +55840,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2663,
               "neighbours_ids": [
@@ -53197,6 +55861,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2664,
               "neighbours_ids": [
@@ -53217,6 +55882,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2665,
               "neighbours_ids": [
@@ -53237,6 +55903,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2666,
               "neighbours_ids": [
@@ -53257,6 +55924,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2667,
               "neighbours_ids": [
@@ -53277,6 +55945,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2668,
               "neighbours_ids": [
@@ -53297,6 +55966,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2669,
               "neighbours_ids": [
@@ -53317,6 +55987,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2670,
               "neighbours_ids": [
@@ -53337,6 +56008,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2671,
               "neighbours_ids": [
@@ -53357,6 +56029,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2672,
               "neighbours_ids": [
@@ -53377,6 +56050,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2673,
               "neighbours_ids": [
@@ -53397,6 +56071,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2674,
               "neighbours_ids": [
@@ -53417,6 +56092,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2675,
               "neighbours_ids": [
@@ -53437,6 +56113,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2676,
               "neighbours_ids": [
@@ -53457,6 +56134,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2677,
               "neighbours_ids": [
@@ -53477,6 +56155,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2678,
               "neighbours_ids": [
@@ -53497,6 +56176,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2679,
               "neighbours_ids": [
@@ -53517,6 +56197,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2680,
               "neighbours_ids": [
@@ -53537,6 +56218,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2681,
               "neighbours_ids": [
@@ -53557,6 +56239,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2682,
               "neighbours_ids": [
@@ -53577,6 +56260,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2683,
               "neighbours_ids": [
@@ -53597,6 +56281,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2684,
               "neighbours_ids": [
@@ -53617,6 +56302,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2685,
               "neighbours_ids": [
@@ -53637,6 +56323,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2686,
               "neighbours_ids": [
@@ -53657,6 +56344,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2687,
               "neighbours_ids": [
@@ -53677,6 +56365,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2688,
               "neighbours_ids": [
@@ -53697,6 +56386,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2689,
               "neighbours_ids": [
@@ -53717,6 +56407,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2690,
               "neighbours_ids": [
@@ -53737,6 +56428,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2691,
               "neighbours_ids": [
@@ -53757,6 +56449,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2692,
               "neighbours_ids": [
@@ -53777,6 +56470,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2693,
               "neighbours_ids": [
@@ -53797,6 +56491,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2694,
               "neighbours_ids": [
@@ -53817,6 +56512,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2695,
               "neighbours_ids": [
@@ -53837,6 +56533,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2696,
               "neighbours_ids": [
@@ -53857,6 +56554,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2697,
               "neighbours_ids": [
@@ -53877,6 +56575,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2698,
               "neighbours_ids": [
@@ -53897,6 +56596,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2699,
               "neighbours_ids": [
@@ -53917,6 +56617,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2700,
               "neighbours_ids": [
@@ -53937,6 +56638,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2701,
               "neighbours_ids": [
@@ -53957,6 +56659,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2702,
               "neighbours_ids": [
@@ -53977,6 +56680,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2703,
               "neighbours_ids": [
@@ -53997,6 +56701,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2704,
               "neighbours_ids": [
@@ -54017,6 +56722,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2705,
               "neighbours_ids": [
@@ -54037,6 +56743,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2706,
               "neighbours_ids": [
@@ -54057,6 +56764,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2707,
               "neighbours_ids": [
@@ -54077,6 +56785,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2708,
               "neighbours_ids": [
@@ -54097,6 +56806,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2709,
               "neighbours_ids": [
@@ -54117,6 +56827,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2710,
               "neighbours_ids": [
@@ -54137,6 +56848,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2711,
               "neighbours_ids": [
@@ -54157,6 +56869,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2712,
               "neighbours_ids": [
@@ -54177,6 +56890,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2713,
               "neighbours_ids": [
@@ -54197,6 +56911,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2714,
               "neighbours_ids": [
@@ -54217,6 +56932,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2715,
               "neighbours_ids": [
@@ -54237,6 +56953,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2716,
               "neighbours_ids": [
@@ -54257,6 +56974,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2717,
               "neighbours_ids": [
@@ -54277,6 +56995,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2718,
               "neighbours_ids": [
@@ -54297,6 +57016,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2719,
               "neighbours_ids": [
@@ -54317,6 +57037,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2720,
               "neighbours_ids": [
@@ -54337,6 +57058,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2721,
               "neighbours_ids": [
@@ -54357,6 +57079,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2722,
               "neighbours_ids": [
@@ -54377,6 +57100,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2723,
               "neighbours_ids": [
@@ -54397,6 +57121,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2724,
               "neighbours_ids": [
@@ -54417,6 +57142,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2725,
               "neighbours_ids": [
@@ -54437,6 +57163,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2726,
               "neighbours_ids": [
@@ -54457,6 +57184,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2727,
               "neighbours_ids": [
@@ -54477,6 +57205,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2728,
               "neighbours_ids": [
@@ -54497,6 +57226,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2729,
               "neighbours_ids": [
@@ -54517,6 +57247,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2730,
               "neighbours_ids": [
@@ -54537,6 +57268,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2731,
               "neighbours_ids": [
@@ -54557,6 +57289,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2732,
               "neighbours_ids": [
@@ -54577,6 +57310,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2733,
               "neighbours_ids": [
@@ -54597,6 +57331,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2734,
               "neighbours_ids": [
@@ -54617,6 +57352,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2735,
               "neighbours_ids": [
@@ -54637,6 +57373,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2736,
               "neighbours_ids": [
@@ -54657,6 +57394,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2737,
               "neighbours_ids": [
@@ -54677,6 +57415,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2738,
               "neighbours_ids": [
@@ -54697,6 +57436,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2739,
               "neighbours_ids": [
@@ -54717,6 +57457,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2740,
               "neighbours_ids": [
@@ -54737,6 +57478,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2741,
               "neighbours_ids": [
@@ -54757,6 +57499,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2742,
               "neighbours_ids": [
@@ -54777,6 +57520,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2743,
               "neighbours_ids": [
@@ -54797,6 +57541,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2744,
               "neighbours_ids": [
@@ -54817,6 +57562,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2745,
               "neighbours_ids": [
@@ -54837,6 +57583,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2746,
               "neighbours_ids": [
@@ -54857,6 +57604,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2747,
               "neighbours_ids": [
@@ -54877,6 +57625,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2748,
               "neighbours_ids": [
@@ -54897,6 +57646,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2749,
               "neighbours_ids": [
@@ -54917,6 +57667,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2750,
               "neighbours_ids": [
@@ -54937,6 +57688,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2751,
               "neighbours_ids": [
@@ -54957,6 +57709,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2752,
               "neighbours_ids": [
@@ -54977,6 +57730,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2753,
               "neighbours_ids": [
@@ -54997,6 +57751,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2754,
               "neighbours_ids": [
@@ -55017,6 +57772,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2755,
               "neighbours_ids": [
@@ -55037,6 +57793,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2756,
               "neighbours_ids": [
@@ -55057,6 +57814,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2757,
               "neighbours_ids": [
@@ -55077,6 +57835,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2758,
               "neighbours_ids": [
@@ -55097,6 +57856,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2759,
               "neighbours_ids": [
@@ -55117,6 +57877,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2760,
               "neighbours_ids": [
@@ -55137,6 +57898,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2761,
               "neighbours_ids": [
@@ -55157,6 +57919,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2762,
               "neighbours_ids": [
@@ -55177,6 +57940,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2763,
               "neighbours_ids": [
@@ -55197,6 +57961,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2764,
               "neighbours_ids": [
@@ -55217,6 +57982,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2765,
               "neighbours_ids": [
@@ -55237,6 +58003,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2766,
               "neighbours_ids": [
@@ -55257,6 +58024,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2767,
               "neighbours_ids": [
@@ -55277,6 +58045,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2768,
               "neighbours_ids": [
@@ -55297,6 +58066,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2769,
               "neighbours_ids": [
@@ -55317,6 +58087,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2770,
               "neighbours_ids": [
@@ -55337,6 +58108,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2771,
               "neighbours_ids": [
@@ -55357,6 +58129,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2772,
               "neighbours_ids": [
@@ -55377,6 +58150,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2773,
               "neighbours_ids": [
@@ -55397,6 +58171,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2774,
               "neighbours_ids": [
@@ -55417,6 +58192,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2775,
               "neighbours_ids": [
@@ -55437,6 +58213,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2776,
               "neighbours_ids": [
@@ -55457,6 +58234,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2777,
               "neighbours_ids": [
@@ -55477,6 +58255,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2778,
               "neighbours_ids": [
@@ -55497,6 +58276,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2779,
               "neighbours_ids": [
@@ -55517,6 +58297,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2780,
               "neighbours_ids": [
@@ -55537,6 +58318,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2781,
               "neighbours_ids": [
@@ -55557,6 +58339,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2782,
               "neighbours_ids": [
@@ -55577,6 +58360,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2783,
               "neighbours_ids": [
@@ -55597,6 +58381,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2784,
               "neighbours_ids": [
@@ -55617,6 +58402,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2785,
               "neighbours_ids": [
@@ -55637,6 +58423,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2786,
               "neighbours_ids": [
@@ -55657,6 +58444,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2787,
               "neighbours_ids": [
@@ -55677,6 +58465,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2788,
               "neighbours_ids": [
@@ -55697,6 +58486,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2789,
               "neighbours_ids": [
@@ -55717,6 +58507,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2790,
               "neighbours_ids": [
@@ -55737,6 +58528,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2791,
               "neighbours_ids": [
@@ -55757,6 +58549,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2792,
               "neighbours_ids": [
@@ -55777,6 +58570,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2793,
               "neighbours_ids": [
@@ -55797,6 +58591,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2794,
               "neighbours_ids": [
@@ -55817,6 +58612,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2795,
               "neighbours_ids": [
@@ -55837,6 +58633,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2796,
               "neighbours_ids": [
@@ -55857,6 +58654,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2797,
               "neighbours_ids": [
@@ -55877,6 +58675,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2798,
               "neighbours_ids": [
@@ -55897,6 +58696,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2799,
               "neighbours_ids": [
@@ -55917,6 +58717,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2800,
               "neighbours_ids": [
@@ -55937,6 +58738,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2801,
               "neighbours_ids": [
@@ -55957,6 +58759,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2802,
               "neighbours_ids": [
@@ -55977,6 +58780,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2803,
               "neighbours_ids": [
@@ -55997,6 +58801,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2804,
               "neighbours_ids": [
@@ -56017,6 +58822,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2805,
               "neighbours_ids": [
@@ -56037,6 +58843,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2806,
               "neighbours_ids": [
@@ -56057,6 +58864,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2807,
               "neighbours_ids": [
@@ -56077,6 +58885,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2808,
               "neighbours_ids": [
@@ -56097,6 +58906,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2809,
               "neighbours_ids": [
@@ -56117,6 +58927,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2810,
               "neighbours_ids": [
@@ -56137,6 +58948,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2811,
               "neighbours_ids": [
@@ -56157,6 +58969,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2812,
               "neighbours_ids": [
@@ -56177,6 +58990,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2813,
               "neighbours_ids": [
@@ -56197,6 +59011,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2814,
               "neighbours_ids": [
@@ -56217,6 +59032,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2815,
               "neighbours_ids": [
@@ -56237,6 +59053,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2816,
               "neighbours_ids": [
@@ -56257,6 +59074,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2817,
               "neighbours_ids": [
@@ -56277,6 +59095,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2818,
               "neighbours_ids": [
@@ -56297,6 +59116,7 @@ VALUES
             {
               "display_color": "#BDB76B",
               "display_value": "grass",
+              "display_direction": null,
               "events": [],
               "id": 2819,
               "neighbours_ids": [
@@ -56317,6 +59137,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2820,
               "neighbours_ids": [
@@ -56337,6 +59158,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2821,
               "neighbours_ids": [
@@ -56357,6 +59179,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2822,
               "neighbours_ids": [
@@ -56377,6 +59200,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2823,
               "neighbours_ids": [
@@ -56397,6 +59221,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2824,
               "neighbours_ids": [
@@ -56417,6 +59242,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2825,
               "neighbours_ids": [
@@ -56437,6 +59263,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2826,
               "neighbours_ids": [
@@ -56457,6 +59284,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2827,
               "neighbours_ids": [
@@ -56477,6 +59305,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2828,
               "neighbours_ids": [
@@ -56497,6 +59326,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2829,
               "neighbours_ids": [
@@ -56517,6 +59347,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2830,
               "neighbours_ids": [
@@ -56537,6 +59368,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2831,
               "neighbours_ids": [
@@ -56557,6 +59389,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2832,
               "neighbours_ids": [
@@ -56577,6 +59410,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2833,
               "neighbours_ids": [
@@ -56597,6 +59431,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2834,
               "neighbours_ids": [
@@ -56617,6 +59452,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2835,
               "neighbours_ids": [
@@ -56637,6 +59473,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2836,
               "neighbours_ids": [
@@ -56657,6 +59494,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2837,
               "neighbours_ids": [
@@ -56677,6 +59515,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2838,
               "neighbours_ids": [
@@ -56697,6 +59536,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2839,
               "neighbours_ids": [
@@ -56717,6 +59557,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2840,
               "neighbours_ids": [
@@ -56737,6 +59578,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2841,
               "neighbours_ids": [
@@ -56757,6 +59599,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2842,
               "neighbours_ids": [
@@ -56777,6 +59620,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2843,
               "neighbours_ids": [
@@ -56797,6 +59641,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2844,
               "neighbours_ids": [
@@ -56817,6 +59662,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2845,
               "neighbours_ids": [
@@ -56837,6 +59683,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2846,
               "neighbours_ids": [
@@ -56857,6 +59704,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2847,
               "neighbours_ids": [
@@ -56877,6 +59725,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2848,
               "neighbours_ids": [
@@ -56897,6 +59746,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2849,
               "neighbours_ids": [
@@ -56917,6 +59767,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2850,
               "neighbours_ids": [
@@ -56937,6 +59788,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2851,
               "neighbours_ids": [
@@ -56957,6 +59809,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2852,
               "neighbours_ids": [
@@ -56977,6 +59830,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2853,
               "neighbours_ids": [
@@ -56997,6 +59851,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2854,
               "neighbours_ids": [
@@ -57017,6 +59872,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2855,
               "neighbours_ids": [
@@ -57037,6 +59893,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2856,
               "neighbours_ids": [
@@ -57057,6 +59914,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2857,
               "neighbours_ids": [
@@ -57077,6 +59935,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2858,
               "neighbours_ids": [
@@ -57097,6 +59956,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2859,
               "neighbours_ids": [
@@ -57117,6 +59977,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2860,
               "neighbours_ids": [
@@ -57137,6 +59998,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2861,
               "neighbours_ids": [
@@ -57157,6 +60019,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2862,
               "neighbours_ids": [
@@ -57177,6 +60040,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2863,
               "neighbours_ids": [
@@ -57197,6 +60061,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2864,
               "neighbours_ids": [
@@ -57217,6 +60082,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2865,
               "neighbours_ids": [
@@ -57237,6 +60103,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2866,
               "neighbours_ids": [
@@ -57257,6 +60124,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2867,
               "neighbours_ids": [
@@ -57277,6 +60145,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2868,
               "neighbours_ids": [
@@ -57297,6 +60166,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2869,
               "neighbours_ids": [
@@ -57317,6 +60187,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2870,
               "neighbours_ids": [
@@ -57337,6 +60208,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2871,
               "neighbours_ids": [
@@ -57357,6 +60229,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2872,
               "neighbours_ids": [
@@ -57377,6 +60250,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2873,
               "neighbours_ids": [
@@ -57397,6 +60271,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2874,
               "neighbours_ids": [
@@ -57417,6 +60292,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2875,
               "neighbours_ids": [
@@ -57437,6 +60313,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2876,
               "neighbours_ids": [
@@ -57457,6 +60334,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2877,
               "neighbours_ids": [
@@ -57477,6 +60355,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2878,
               "neighbours_ids": [
@@ -57497,6 +60376,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2879,
               "neighbours_ids": [
@@ -57517,6 +60397,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2880,
               "neighbours_ids": [
@@ -57537,6 +60418,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2881,
               "neighbours_ids": [
@@ -57557,6 +60439,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2882,
               "neighbours_ids": [
@@ -57577,6 +60460,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2883,
               "neighbours_ids": [
@@ -57597,6 +60481,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2884,
               "neighbours_ids": [
@@ -57617,6 +60502,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2885,
               "neighbours_ids": [
@@ -57637,6 +60523,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2886,
               "neighbours_ids": [
@@ -57657,6 +60544,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2887,
               "neighbours_ids": [
@@ -57677,6 +60565,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2888,
               "neighbours_ids": [
@@ -57697,6 +60586,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2889,
               "neighbours_ids": [
@@ -57717,6 +60607,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2890,
               "neighbours_ids": [
@@ -57737,6 +60628,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2891,
               "neighbours_ids": [
@@ -57757,6 +60649,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2892,
               "neighbours_ids": [
@@ -57777,6 +60670,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2893,
               "neighbours_ids": [
@@ -57797,6 +60691,7 @@ VALUES
             {
               "display_color": "#C8FF1380",
               "display_value": "border",
+              "display_direction": null,
               "events": [],
               "id": 2894,
               "neighbours_ids": [
@@ -57817,6 +60712,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2895,
               "neighbours_ids": [
@@ -57837,6 +60733,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2896,
               "neighbours_ids": [
@@ -57857,6 +60754,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2897,
               "neighbours_ids": [
@@ -57877,6 +60775,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2898,
               "neighbours_ids": [
@@ -57897,6 +60796,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2899,
               "neighbours_ids": [
@@ -57917,6 +60817,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2900,
               "neighbours_ids": [
@@ -57936,6 +60837,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2901,
               "neighbours_ids": [
@@ -57954,6 +60856,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2902,
               "neighbours_ids": [
@@ -57972,6 +60875,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2903,
               "neighbours_ids": [
@@ -57990,6 +60894,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2904,
               "neighbours_ids": [
@@ -58008,6 +60913,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2905,
               "neighbours_ids": [
@@ -58026,6 +60932,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2906,
               "neighbours_ids": [
@@ -58044,6 +60951,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2907,
               "neighbours_ids": [
@@ -58062,6 +60970,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2908,
               "neighbours_ids": [
@@ -58080,6 +60989,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2909,
               "neighbours_ids": [
@@ -58098,6 +61008,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2910,
               "neighbours_ids": [
@@ -58116,6 +61027,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2911,
               "neighbours_ids": [
@@ -58134,6 +61046,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2912,
               "neighbours_ids": [
@@ -58152,6 +61065,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2913,
               "neighbours_ids": [
@@ -58170,6 +61084,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2914,
               "neighbours_ids": [
@@ -58188,6 +61103,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2915,
               "neighbours_ids": [
@@ -58206,6 +61122,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2916,
               "neighbours_ids": [
@@ -58224,6 +61141,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2917,
               "neighbours_ids": [
@@ -58242,6 +61160,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2918,
               "neighbours_ids": [
@@ -58260,6 +61179,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2919,
               "neighbours_ids": [
@@ -58278,6 +61198,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2920,
               "neighbours_ids": [
@@ -58296,6 +61217,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2921,
               "neighbours_ids": [
@@ -58314,6 +61236,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2922,
               "neighbours_ids": [
@@ -58332,6 +61255,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2923,
               "neighbours_ids": [
@@ -58350,6 +61274,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2924,
               "neighbours_ids": [
@@ -58368,6 +61293,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2925,
               "neighbours_ids": [
@@ -58386,6 +61312,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2926,
               "neighbours_ids": [
@@ -58404,6 +61331,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2927,
               "neighbours_ids": [
@@ -58422,6 +61350,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2928,
               "neighbours_ids": [
@@ -58440,6 +61369,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2929,
               "neighbours_ids": [
@@ -58458,6 +61388,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2930,
               "neighbours_ids": [
@@ -58476,6 +61407,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2931,
               "neighbours_ids": [
@@ -58494,6 +61426,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2932,
               "neighbours_ids": [
@@ -58512,6 +61445,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2933,
               "neighbours_ids": [
@@ -58530,6 +61464,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2934,
               "neighbours_ids": [
@@ -58548,6 +61483,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2935,
               "neighbours_ids": [
@@ -58566,6 +61502,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2936,
               "neighbours_ids": [
@@ -58584,6 +61521,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2937,
               "neighbours_ids": [
@@ -58602,6 +61540,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2938,
               "neighbours_ids": [
@@ -58620,6 +61559,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2939,
               "neighbours_ids": [
@@ -58638,6 +61578,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2940,
               "neighbours_ids": [
@@ -58656,6 +61597,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2941,
               "neighbours_ids": [
@@ -58674,6 +61616,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2942,
               "neighbours_ids": [
@@ -58692,6 +61635,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2943,
               "neighbours_ids": [
@@ -58710,6 +61654,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2944,
               "neighbours_ids": [
@@ -58728,6 +61673,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2945,
               "neighbours_ids": [
@@ -58746,6 +61692,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2946,
               "neighbours_ids": [
@@ -58764,6 +61711,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2947,
               "neighbours_ids": [
@@ -58782,6 +61730,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2948,
               "neighbours_ids": [
@@ -58800,6 +61749,7 @@ VALUES
             {
               "display_color": "#5EDB35CC",
               "display_value": "tree",
+              "display_direction": null,
               "events": [],
               "id": 2949,
               "neighbours_ids": [

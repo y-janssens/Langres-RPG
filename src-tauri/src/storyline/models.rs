@@ -1,6 +1,7 @@
 use diesel::{prelude::*, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
 
+use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::utils::errors::ValidationError;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::events::models::{Event, EventType};
@@ -70,27 +71,24 @@ impl Story {
         Ok(_storyline)
     }
 
-    pub fn save(
-        connection: &mut SqliteConnection,
-        id: i32,
-        data: &mut Story,
-    ) -> QueryResult<usize> {
-        for act in data.story.acts.iter_mut() {
+    pub fn save(&mut self, connection: &mut SqliteConnection) {
+        for act in self.story.acts.iter_mut() {
             act.validate_acts();
         }
-        let updated_json = serde_json::to_string(&data.story.acts).map_err(|e| {
-            diesel::result::Error::DatabaseError(
-                diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                Box::new(e.to_string()),
-            )
-        })?;
+        let updated_json = serde_json::to_string(&self.story.acts)
+            .map_err(|e| {
+                diesel::result::Error::DatabaseError(
+                    diesel::result::DatabaseErrorKind::UnableToSendCommand,
+                    Box::new(e.to_string()),
+                )
+            })
+            .expect(BASE_ERROR);
 
-        let result = diesel::update(storyline.find(id))
+        let _ = diesel::update(storyline.find(self.id))
             .set(crate::schema::storyline::story.eq(updated_json.clone()))
             .execute(connection);
 
         Self::edit_existing_games(connection);
-        result
     }
 
     fn find_tile<F>(
@@ -115,9 +113,9 @@ impl Story {
                 .iter_mut()
                 .filter(|tile| tiles.contains(&tile.id))
                 .for_each(operation);
+            map.compute_directions();
+            story.save(connection);
         }
-
-        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
     }
 
     pub fn edit_tiles(
@@ -240,7 +238,7 @@ impl Story {
             }
         }
 
-        Self::save(connection, story.id, &mut story).expect("Failed to save Story");
+        story.save(connection);
         Ok(())
     }
 

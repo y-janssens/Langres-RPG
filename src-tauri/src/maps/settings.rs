@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use lazy_static::lazy_static;
 
 use super::{actions::generator::Params, config::Values};
@@ -5,6 +7,17 @@ use super::{actions::generator::Params, config::Values};
 lazy_static! {
     pub static ref DEFAULT_MAP_SIZE : u32 = 50;
     pub static ref DEFAULT_MAP_SIZE_FACTOR : u32 = 50;
+    pub static ref DEFAULT_MAP_SIZE_ROWS : u32 = ((*DEFAULT_MAP_SIZE as f32 + (*DEFAULT_MAP_SIZE as f32).sqrt()).ceil() + 1_f32) as u32;
+    pub static ref DEFAULT_MAP_SIZE_THRESHOLD : u32 =  *DEFAULT_MAP_SIZE_ROWS - *DEFAULT_MAP_SIZE;
+    pub static ref DEFAULT_MAP_SIZE_GRID : u32 = *DEFAULT_MAP_SIZE * *DEFAULT_MAP_SIZE_ROWS;
+    pub static ref OFFSET_KEYS: Vec<&'static str> = vec!["left", "right", "top_left", "top_right", "bottom_left", "bottom_right"];
+    pub static ref DIRECTIONAL_VALUES: Vec<&'static str> = vec![BORDER.val(), SHORE.val(), ROAD.val(), FENCE.val()];
+    pub static ref DIRECTIONAL_MATCHES: Vec<&'static str> = vec![WATER.val(), TREE.val()];
+    pub static ref DIRECTIONAL_KEYS: HashMap<&'static str, [&'static str; 2]> = HashMap::from([
+            ("top", ["top_left", "top_right"]),
+            ("bottom", ["bottom_left", "bottom_right"]),
+        ]);
+    pub static ref DIRECTIONAL_PRIORITY: Vec<&'static str> = ["top", "bottom"].iter().chain(OFFSET_KEYS.iter()).cloned().collect();
 
     // Base map types definitions
     pub static ref GRASS: Values = Values::store("-", "grass",  true, "#BDB76B");
