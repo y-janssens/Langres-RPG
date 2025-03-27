@@ -1,3 +1,5 @@
+export const DIRECTIONS = [null, 'top', 'bottom', 'left', 'right', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
+
 export default class World {
     constructor(options = {}) {
         Object.keys(options).forEach((key) => {

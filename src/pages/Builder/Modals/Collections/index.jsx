@@ -7,13 +7,11 @@ import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './collections.module.css';
 
-const Collections = ({ type, open, form, setForm, setFormObject, onClose }) => {
+const Collections = ({ type, form, setForm, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [selectedMap, setSelectedMap] = useState(null);
 
-    const [collections, , syncCollections] = Collection.useCommand({
-        launch: open
-    });
+    const [collections, , syncCollections] = Collection.useCommand();
 
     const handleApply = useCallback(() => {
         let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
@@ -35,10 +33,6 @@ const Collections = ({ type, open, form, setForm, setFormObject, onClose }) => {
         },
         [syncCollections]
     );
-
-    if (!open) {
-        return null;
-    }
 
     return (
         <BuilderModalWrapper

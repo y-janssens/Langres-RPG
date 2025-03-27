@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 const MODALS = [
@@ -30,39 +30,30 @@ class ModalGenerator {
     }
 }
 
-const BuilderModal = ({ title, subtitle, datas, onClose, form, setForm, setFormObject, sync }) => {
-    const { type, open, value } = datas;
+const BuilderModal = ({ form, setForm, setFormObject, sync }) => {
+    const { type, open, value } = useMemo(() => ({ ...form.modal }), [form.modal]);
 
-    if (!type) {
+    if (!type || !open) {
         return null;
     }
     const ActionComponent = new ModalGenerator(type).get_component();
     return (
         <Suspense>
-            {open && (
-                <ActionComponent
-                    title={title}
-                    subtitle={subtitle}
-                    type={type}
-                    value={value}
-                    form={form}
-                    setForm={setForm}
-                    setFormObject={setFormObject}
-                    onClose={onClose}
-                    sync={sync}
-                    open={open}
-                    storyline={form.storyLine}
-                />
-            )}
+            <ActionComponent
+                type={type}
+                value={value}
+                form={form}
+                setForm={setForm}
+                setFormObject={setFormObject}
+                onClose={() => setForm('modal', { type: null, open: false, value: null })}
+                sync={sync}
+                storyline={form.storyLine}
+            />
         </Suspense>
     );
 };
 
 BuilderModal.propTypes = {
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    datas: PropTypes.object.isRequired,
-    onClose: PropTypes.func,
     form: PropTypes.object.isRequired,
     setForm: PropTypes.func.isRequired,
     setFormObject: PropTypes.func.isRequired,

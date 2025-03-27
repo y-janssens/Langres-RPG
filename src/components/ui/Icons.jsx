@@ -1,10 +1,11 @@
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium, IoHome } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine, RiLandscapeFill } from 'react-icons/ri';
 import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
+import { BsArrowRight, BsArrowLeft, BsArrowDownLeft, BsArrowDownRight, BsArrowUpLeft, BsArrowUpRight, BsArrowUp, BsArrowDown } from 'react-icons/bs';
 import { GrView, GrPowerReset } from 'react-icons/gr';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { BiSolidTree } from 'react-icons/bi';
-import { FaBridgeWater, FaMagnifyingGlass, FaPlus } from 'react-icons/fa6';
+import { FaBridgeWater, FaMagnifyingGlass, FaPlus, FaRegCircleQuestion } from 'react-icons/fa6';
 import { AiOutlineClear } from 'react-icons/ai';
 import { GiForest, GiStoneBlock, GiDungeonGate, GiRiver, GiFallingLeaf, GiGrass, GiHorizonRoad, GiHouse } from 'react-icons/gi';
 import { FaFlagCheckered, FaCog, FaEye } from 'react-icons/fa';
@@ -13,6 +14,8 @@ import { GoSync } from 'react-icons/go';
 import { IoMdCreate } from 'react-icons/io';
 import { RxHamburgerMenu, RxDotsHorizontal } from 'react-icons/rx';
 import { PiExport } from 'react-icons/pi';
+
+export { FaRegCircleQuestion as Unknown };
 
 export { BsTrash as Delete };
 export { PiExport as Export };
@@ -51,3 +54,12 @@ export { GiHorizonRoad as Road };
 export { GiHouse as House };
 export { FaCog as Settings };
 export { FaEye as Preview };
+
+export { BsArrowRight as Right };
+export { BsArrowUp as Top };
+export { BsArrowDown as Bottom };
+export { BsArrowLeft as Left };
+export { BsArrowDownLeft as Bottom_left };
+export { BsArrowDownRight as Bottom_right };
+export { BsArrowUpLeft as Top_left };
+export { BsArrowUpRight as Top_right };

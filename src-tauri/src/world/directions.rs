@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::ops::Deref;
 use strum_macros::{Display, EnumString};
 
 use super::models::Item;
@@ -41,18 +40,44 @@ impl Direction {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Model)]
-pub struct Directions(HashMap<String, String>);
+// pub struct Directions(HashMap<String, String>);
+pub struct Directions {
+    pub values: Option<HashMap<String, String>>,
+    pub output: Option<String>,
+    pub custom: bool,
+}
 
-impl Deref for Directions {
-    type Target = HashMap<String, String>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.0
+impl Default for Directions {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
 impl Directions {
+    pub fn new() -> Self {
+        Self {
+            values: None,
+            output: None,
+            custom: false,
+        }
+    }
+
+    fn generate(values: HashMap<String, String>) -> Self {
+        Self {
+            values: Some(values),
+            output: None,
+            custom: false,
+        }
+    }
+
+    fn export(&mut self, output: String) -> Option<Self> {
+        self.output = Some(output);
+        Some(self.clone())
+    }
+
     /// Filter neighbouring items and computes directional matches
+    /// For each directional tile, match with directional matches and compute tile direction toward it's match
+    /// Used to rotate textures in frontend and maintain a coherent and consistent game design
     pub fn compute(item: &Item, neighbours_values: HashMap<usize, String>) -> Self {
         let mut directions = HashMap::new();
         let filtered_values: HashMap<usize, String> = neighbours_values
@@ -83,38 +108,36 @@ impl Directions {
                 directions.insert(dir.to_string(), value);
             }
         }
-        Self(directions)
+        Self::generate(directions)
     }
 
     /// Resolve item's display direction based on compute's matching
-    pub fn resolve(self) -> Option<String> {
-        if self.is_empty() {
+    pub fn resolve(&mut self) -> Option<Self> {
+        if self.values.clone().is_none_or(|values| values.is_empty()) {
             return None;
         }
 
-        if self.len() > 1 {
-            if self.contains_key("top") && self.contains_key("right") {
-                return Some("top_right".to_string());
+        if let Some(values) = &self.values {
+            if values.len() > 1 {
+                if values.contains_key("top") && values.contains_key("right") {
+                    return self.export("top_right".to_string());
+                } else if values.contains_key("top") && values.contains_key("left") {
+                    return self.export("top_left".to_string());
+                } else if values.contains_key("bottom") && values.contains_key("left") {
+                    return self.export("bottom_left".to_string());
+                } else if values.contains_key("bottom") && values.contains_key("right") {
+                    return self.export("bottom_right".to_string());
+                }
             }
-            if self.contains_key("top") && self.contains_key("left") {
-                return Some("top_left".to_string());
-            }
-            if self.contains_key("bottom") && self.contains_key("left") {
-                return Some("bottom_left".to_string());
-            }
-            if self.contains_key("bottom") && self.contains_key("right") {
-                return Some("bottom_right".to_string());
+
+            for dir in DIRECTIONAL_PRIORITY.clone() {
+                if values.contains_key(dir) {
+                    return self.export(dir.to_string());
+                }
             }
         }
 
-        for dir in DIRECTIONAL_PRIORITY.clone() {
-            if self.contains_key(dir) {
-                return Some(dir.to_string());
-            }
-        }
-
-        // Default value, should never reach this point
-        self.iter().next().map(|(dir, _)| dir.clone())
+        Some(self.clone())
     }
 
     /// Check neighbour's direction for base directional values
@@ -160,8 +183,10 @@ impl Directions {
 
     /// Get ASCII value for testing outputs
     pub fn display(item: &Item) -> &str {
-        if let Some(val) = &item.display_direction {
-            return Direction::get_display_value(val);
+        if let Some(dir) = &item.display_direction {
+            if let Some(output) = &dir.output {
+                return Direction::get_display_value(output.as_str());
+            }
         };
         &item.value
     }

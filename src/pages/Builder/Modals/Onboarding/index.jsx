@@ -4,7 +4,7 @@ import { Storyline } from '../../../../models';
 import { StoryStep, ActStep } from '../Manager/Steps';
 import { BuilderModalWrapper } from '../Wrapper';
 
-const Onboarding = ({ open, type, value, storyline = {}, sync, onClose }) => {
+const Onboarding = ({ type, value, storyline = {}, sync, onClose }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useDynamicForm({
@@ -34,7 +34,7 @@ const Onboarding = ({ open, type, value, storyline = {}, sync, onClose }) => {
         }
     }, [form, value]);
 
-    if (!open || !form.id) {
+    if (!form.id) {
         return null;
     }
 

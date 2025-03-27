@@ -62,7 +62,7 @@ pub struct Item {
     pub value: String,
     pub display_value: String,
     pub display_color: String,
-    pub display_direction: Option<String>,
+    pub display_direction: Option<Directions>,
     pub events: Vec<Event>,
     pub walkable: bool,
     pub entropy: u32,
@@ -131,7 +131,7 @@ impl Item {
         values
     }
 
-    pub fn get_display_direction(&mut self, items: &[Self]) -> Option<String> {
+    pub fn get_display_direction(&mut self, items: &[Self]) -> Option<Directions> {
         if !DIRECTIONAL_VALUES.contains(&self.value.as_str()) {
             return None;
         }
@@ -240,7 +240,10 @@ impl World {
                 .filter(|it| item.neighbours_ids.contains(&it.id))
                 .cloned()
                 .collect();
-            item.get_display_direction(&neighbours);
+
+            if item.display_direction.clone().is_none_or(|dir| !dir.custom) {
+                item.get_display_direction(&neighbours);
+            }
         }
     }
 

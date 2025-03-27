@@ -16,11 +16,21 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
     const navigate = useNavigate();
 
     const handleSave = useCallback(() => {
-        invoke('save_storyline', { data: datas, id: datas.id }).then(() => {
+        invoke('save_storyline', { story: datas }).then(() => {
             sync();
             clear();
         });
     }, [sync, clear, datas]);
+
+    const computeMapDirections = useCallback(async () => {
+        let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
+        let mapIndex = act.content.maps.findIndex((mp) => mp.id === form.selectedMap.id);
+
+        await invoke('compute_map_directions', { map: form.selectedMap }).then((result) => {
+            act.content.maps[mapIndex] = result;
+            setObject({ ...form, selectedMap: result, selectedTiles: [] });
+        });
+    }, [form]);
 
     const handleExport = useCallback(async () => {
         let _datas = { ...datas }.story.acts;
@@ -56,10 +66,10 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
 
     const handleCheck = useCallback(
         (value, checked) => {
-            const values = ['showIcons', 'showValues'].filter((v) => v !== value);
+            const values = ['showIcons', 'showValues', 'showDirections'].filter((v) => v !== value);
             // Complicated switch, but can easily evolve later if needed
-            const key = values.reduce((a, v) => ({ ...a, [v]: !checked }), {});
-            setObject({ ...form, [value]: checked, ...key });
+            const toggles = values.reduce((a, v) => ({ ...a, [v]: !checked }), {});
+            setObject({ ...form, [value]: checked, ...toggles });
         },
         [form]
     );
@@ -73,7 +83,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
             return t('builder.selector.map');
         }
         return `${form.selectedAct.name} - ${form.selectedMap.name}`;
-    }, [form]);
+    }, [form, disabled]);
 
     return (
         <div className={css['builder-navbar-container']}>
@@ -101,42 +111,19 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                             <HistoryIcons index={index} history={history} onChange={handleHistory} disabled={disabled} />
 
                             <div className={css['builder-navbar-flatDisplay-toggles']}>
-                                <MultiButton label={t('builder.toggles.display')} open={form.displayOptions} name={'displayOptions'} setOpen={setForm}>
-                                    <Toggle title={t('builder.toggles.ids')} active={form.showIds} onChange={() => handleCheck('showIds', !form.showIds)} disabled={disabled} />
-                                    <Toggle
-                                        title={t('builder.toggles.values')}
-                                        active={form.showValues}
-                                        onChange={() => handleCheck('showValues', !form.showValues)}
-                                        disabled={disabled}
-                                    />
-                                    <Toggle
-                                        title={t('builder.toggles.icons')}
-                                        active={form.showIcons}
-                                        onChange={() => handleCheck('showIcons', !form.showIcons)}
-                                        disabled={disabled || !form.flatDisplay}
-                                    />
-                                    <Toggle
-                                        title={t('builder.toggles.constraints')}
-                                        active={form.showConstraints}
-                                        onChange={() => setForm('showConstraints', !form.showConstraints)}
-                                        disabled={disabled}
-                                    />
-                                    <Toggle
-                                        title={t('builder.toggles.meshes')}
-                                        active={form.showObjects}
-                                        onChange={() => setForm('showObjects', !form.showObjects)}
-                                        disabled={disabled || form.flatDisplay}
-                                    />
+                                <MultiButton label={t('builder.toggles.display')} name="displayOptions" open={form.displayOptions} setOpen={setForm}>
+                                    <Toggles form={form} handleCheck={handleCheck} disabled={disabled} />
                                 </MultiButton>
                             </div>
                         </div>
-                        <Zoom form={form} setValues={setObject} disabled={!form.flatDisplay || !form.selectedMap} />
+                        <Zoom form={form} setObject={setObject} disabled={!form.flatDisplay || !form.selectedMap} />
                     </div>
 
                     <div className={css['builder-navbar-cta']}>
                         <Divider className={css['builder-navbar-divider']} horizontal />
-                        <ButtonIcon icon={<Icon name="preview" />} size="sm" onClick={() => setForm('modal', { type: 'preview', open: true, value: form.selectedMap })} />
-                        <ButtonLabel variant="outline" label={t('common.actions.export')} onClick={handleExport} />
+                        <MultiButton icon="actions" name="displayActions" open={form.displayActions} setOpen={setForm}>
+                            <Actions form={form} setForm={setForm} handleExport={handleExport} computeMapDirections={computeMapDirections} />
+                        </MultiButton>
                         <ButtonLabel
                             variant="outline"
                             label={t('common.actions.reset')}
@@ -154,11 +141,61 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
     );
 };
 
+const Toggles = ({ form, disabled, handleCheck }) => {
+    const { t } = useTranslation();
+
+    const toggles = useMemo(
+        () => [
+            { key: 'ids', value: 'showIds', disabled: disabled },
+            { key: 'values', value: 'showValues', disabled: disabled },
+            { key: 'icons', value: 'showIcons', disabled: disabled || !form.flatDisplay },
+            { key: 'constraints', value: 'showConstraints', disabled: disabled },
+            { key: 'meshes', value: 'showObjects', disabled: disabled || form.flatDisplay },
+            { key: 'directions', value: 'showDirections', disabled: disabled || !form.flatDisplay }
+        ],
+        [form, disabled]
+    );
+
+    return toggles.map((it, index) => (
+        <Toggle key={index} title={t(`builder.toggles.${it.key}`)} active={form[it.value]} onChange={() => handleCheck(it.value, !form[it.value])} disabled={it.disabled} />
+    ));
+};
+
+const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
+    const { t } = useTranslation();
+
+    const handleAction = useCallback(
+        (action) => {
+            const actions = {
+                handleExport: () => handleExport(),
+                computeMapDirections: () => computeMapDirections(),
+                previewMap: () => setForm('modal', { type: 'preview', open: true, value: form.selectedMap })
+            };
+
+            try {
+                actions[action]();
+                setForm('displayActions', false);
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        [handleExport, form.selectedMap, computeMapDirections]
+    );
+
+    return (
+        <>
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.export')} onClick={() => handleAction('handleExport')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.preview')} onClick={() => handleAction('previewMap')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.compute')} onClick={() => handleAction('computeMapDirections')} />
+        </>
+    );
+};
+
 const HistoryIcons = ({ index, history, onChange, disabled }) => {
     return (
         <>
-            <ButtonIcon icon={<Icon name="undo" />} size="sm" disabled={disabled || index === 0} onClick={() => onChange('undo')} />
-            <ButtonIcon icon={<Icon name="redo" />} size="sm" disabled={disabled || index === history.length - 1} onClick={() => onChange('redo')} />
+            <ButtonIcon icon={<Icon name="undo" />} disabled={disabled || index === 0} onClick={() => onChange('undo')} />
+            <ButtonIcon icon={<Icon name="redo" />} disabled={disabled || index === history.length - 1} onClick={() => onChange('redo')} />
         </>
     );
 };

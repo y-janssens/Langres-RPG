@@ -8,8 +8,12 @@ function Icon({ tooltip = false, name = null, color = '#000', onClick, size = 'm
     const IconComponent = useMemo(() => {
         const icons = { ...Icons };
         let iconName = name?.charAt(0).toUpperCase() + name?.slice(1);
-
-        return icons[iconName];
+        try {
+            return icons[iconName];
+        } catch {
+            console.error(`${name} icon is not registered, providing a fallback...`);
+            return icons['Unknown'];
+        }
     }, [name]);
 
     const toggleTooltip = useMemo(() => {

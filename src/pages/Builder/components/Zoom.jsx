@@ -5,11 +5,12 @@ import { ButtonIcon } from './ButtonLabel';
 
 import css from '../builder.module.css';
 
-const GAP = 20;
+const GAP = 10;
 const MIN = 40;
 const MAX = 100;
+const DEFAULT = 80;
 
-const Zoom = ({ form, setValues, disabled }) => {
+const Zoom = ({ form, setObject, disabled }) => {
     const handleZoom = useCallback(
         (zoom) => {
             let newValue = form.zoom;
@@ -22,22 +23,22 @@ const Zoom = ({ form, setValues, disabled }) => {
                     newValue = Math.min(Math.max(form.zoom - GAP, MIN), MAX);
                     break;
                 case undefined:
-                    newValue = MAX;
+                    newValue = DEFAULT;
                     break;
                 default:
                     break;
             }
 
-            return setValues({ ...form, zoom: newValue, showIds: Boolean(newValue > 60) });
+            return setObject({ ...form, zoom: newValue, showIds: Boolean(newValue > 60) });
         },
         [form]
     );
 
     return (
         <div className={css[`builder-navbar-zoom-${disabled ? 'inactive' : 'active'}`]}>
-            <ButtonIcon icon={<Icon name="zoomin" />} size="sm" disabled={disabled || form.zoom === MAX} onClick={() => handleZoom(true)} />
+            <ButtonIcon icon={<Icon name="zoomin" />} disabled={disabled || form.zoom === MAX} onClick={() => handleZoom(true)} />
             <div onClick={() => handleZoom()}>{`${form.zoom}%`}</div>
-            <ButtonIcon icon={<Icon name="zoomout" />} size="sm" disabled={disabled || form.zoom <= MIN} onClick={() => handleZoom(false)} />
+            <ButtonIcon icon={<Icon name="zoomout" />} disabled={disabled || form.zoom <= MIN} onClick={() => handleZoom(false)} />
         </div>
     );
 };

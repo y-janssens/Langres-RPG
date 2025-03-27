@@ -4,6 +4,17 @@
     "json": "Éditeur Json",
     "manager": "Gérez vos scénarios",
     "menu": {
+      "directions": {
+        "null": "Effacer",
+        "top": "Haut",
+        "bottom": "Bas",
+        "left": "Gauche",
+        "right": "Droite",
+        "top_left": "Haut gauche",
+        "top_right": "Haut droite",
+        "bottom_left": "Bas gauche",
+        "bottom_right": "Bas droite"
+      },
       "functions": {
         "clear-map": "Effacer la carte",
         "regenerate-map": "Regénérer la carte",
@@ -12,6 +23,7 @@
         "label": "Fonctions"
       },
       "items": {
+        "directions": "Directions",
         "items": "Éléments",
         "objects": "Objets"
       },
@@ -97,13 +109,14 @@
       "map": "Sélectionner une carte"
     },
     "toggles": {
-      "constraints": "Voir les contraintes",
-      "coordinates": "Voir les coordonnées",
-      "display": "Affichage",
-      "icons": "Voir les icônes",
-      "ids": "Voir les ids",
-      "meshes": "Voir les meshs",
-      "values": "Voir les valeurs",
+      "constraints": "Afficher les contraintes",
+      "coordinates": "Afficher les coordonnées",
+      "directions": "Afficher les directions",
+      "display": "Paramètres d'affichage",
+      "icons": "Afficher les icônes",
+      "ids": "Afficher les ids",
+      "meshes": "Afficher les meshs",
+      "values": "Afficher les valeurs",
       "viewport": "Plan 3D"
     }
   },
@@ -113,6 +126,7 @@
       "add": "Ajouter",
       "apply": "Appliquer",
       "cancel": "Annuler",
+      "compute": "Calculer les directions",
       "confirm": "Confirmer",
       "continue": "Continuer",
       "delete": "Supprimer",
@@ -120,6 +134,7 @@
       "export": "Exporter",
       "load": "Charger",
       "new": "Nouvelle",
+      "preview": "Prévisualiser la carte",
       "reset": "Réinitialiser",
       "save": "Enregistrer",
       "search": "Rechercher",

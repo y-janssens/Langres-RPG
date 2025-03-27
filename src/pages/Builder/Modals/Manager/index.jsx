@@ -8,7 +8,7 @@ import { Stepper } from './Stepper/Stepper';
 import { ActStep, StoryStep, SummaryStep } from './Steps';
 import { BuilderModalWrapper } from '../Wrapper';
 
-const Manager = ({ open, type, storyline = {}, onClose = () => {}, sync = () => {} }) => {
+const Manager = ({ type, storyline = {}, onClose = () => {}, sync = () => {} }) => {
     const { t } = useTranslation();
 
     const [form, setForm] = useDynamicForm({
@@ -28,7 +28,7 @@ const Manager = ({ open, type, storyline = {}, onClose = () => {}, sync = () => 
         });
     }, [form, sync, onClose]);
 
-    if (!open || !form.id) {
+    if (!form.id) {
         return null;
     }
 

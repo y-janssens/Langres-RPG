@@ -107,8 +107,8 @@ tasks:
         aliases:
             - todos
         cmds:
-            - grep -rn "// TODO" ./src-tauri/src
-            - grep -rn "// TODO" ./src
+            - grep -rn "TODO" ./src-tauri/src
+            - grep -rn "TODO" ./src
         silent: true
 
     # Docker commands

@@ -29,7 +29,7 @@ export const PreviewBlock = memo(({ map, index, label = true, selected, setSelec
             <div className={css[blockClass]} onClick={() => handleSelect({ id: index, map })}>
                 {!loading && (
                     <div className={css['map-preview-actions']}>
-                        <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant={'link'} size="sm" onClick={() => setPreview(index)} />
+                        <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant="link" onClick={() => setPreview(index)} />
                     </div>
                 )}
                 <MapThumbnail key={index} map={map} />
