@@ -10,9 +10,11 @@ import { Icon } from '../../../components';
 import Zoom from './Zoom';
 
 import css from '../builder.module.css';
+import { useToast } from '../../../hooks/useToast';
 
 export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
+    const toast = useToast();
     const navigate = useNavigate();
 
     const handleSave = useCallback(() => {
@@ -26,13 +28,14 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
         let mapIndex = act.content.maps.findIndex((mp) => mp.id === form.selectedMap.id);
 
+        toast.info(t('builder.toasts.compute'));
         await invoke('compute_map_directions', { map: form.selectedMap }).then((result) => {
             act.content.maps[mapIndex] = result;
-            setObject({ ...form, selectedMap: result, selectedTiles: [] });
+            setObject({ ...form, displayActions: false, selectedMap: result, selectedTiles: [] });
         });
     }, [form]);
 
-    const handleExport = useCallback(async () => {
+    const handleExport = useCallback(() => {
         let _datas = { ...datas }.story.acts;
         _datas.map((act) => {
             return act.content.maps.map((mp) => {
@@ -40,10 +43,9 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                 return mp;
             });
         });
-        await navigator.clipboard.writeText(JSON.stringify(_datas, null, 2)).then(() => {
-            sync();
-        });
-    }, [datas, sync]);
+        navigator.clipboard.writeText(JSON.stringify(_datas, null, 2));
+        toast.info(t('builder.toasts.export'));
+    }, [datas]);
 
     const handleHistory = useCallback(
         (direction) => {

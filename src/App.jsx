@@ -4,6 +4,7 @@ import { PermissionsContextLayer, GameContextLayer } from './context';
 import { AdminRouter } from './router';
 
 import { Controler } from './pages';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                             <Route path="*" element={<Navigate to="/" replace />} />
                         </Routes>
                     </Router>
+                    <ToastContainer />
                 </GameContextLayer>
             </PermissionsContextLayer>
         </div>

@@ -108,6 +108,10 @@
       "act": "Sélectionner un acte",
       "map": "Sélectionner une carte"
     },
+    "toasts": {
+      "compute": "Calcul des directions en cours",
+      "export": "Données exportées avec succès et copiées dans le presse-papiers!"
+    },
     "toggles": {
       "constraints": "Afficher les contraintes",
       "coordinates": "Afficher les coordonnées",

@@ -127,13 +127,13 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
 };
 
 export const MultiButton = ({ label = '', name, icon = null, open = false, setOpen, children }) => {
+    const handleClose = useCallback(() => {
+        setOpen(name, !open);
+    }, [name, open]);
+
     return (
         <div className={css[`select-multi-${icon ? 'icon' : 'buttons'}`]}>
-            {icon ? (
-                <ButtonIcon icon={<Icon name={icon} />} onClick={() => setOpen(name, !open)} />
-            ) : (
-                <SelectButton open={open} label={label} onClick={() => setOpen(name, !open)} />
-            )}
+            {icon ? <ButtonIcon icon={<Icon name={icon} />} onClick={handleClose} /> : <SelectButton open={open} label={label} onClick={handleClose} />}
             {open && <div className={css['select-multi-content']}>{children}</div>}
         </div>
     );

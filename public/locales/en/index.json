@@ -108,6 +108,10 @@
       "act": "Select an act",
       "map": "Select a map"
     },
+    "toasts": {
+      "compute": "Directions computation in progress",
+      "export": "Datas successfully exported and copied into clipboard!"
+    },
     "toggles": {
       "constraints": "Display constraints",
       "coordinates": "Display coordinates",

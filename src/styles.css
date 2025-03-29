@@ -75,6 +75,10 @@ button {
     outline: none;
 }
 
+.Toastify__toast {
+    font-size: 14px;
+}
+
 .main-container,
 .ingame-menu-container {
     position: absolute;
