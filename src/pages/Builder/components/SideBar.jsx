@@ -141,27 +141,25 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 </MenuBlock>
             )}
             {!!form.selectedTiles.length && (
-                <>
-                    <MenuBlock title={t('builder.menu.tile.label')} grid={false}>
-                        <div className={css['builder-map-infos-selected']}>
-                            {form.selectedTiles
-                                .sort((a, b) => a.id - b.id)
-                                .map((it) => (
-                                    <div className={css['builder-map-infos-selected-detail']} key={it.id}>
-                                        <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
-                                        <Input readOnly size="xs" color="neutral" dataTheme="dark" value={it.value} />
-                                    </div>
-                                ))}
-                        </div>
-                    </MenuBlock>
-                </>
+                <MenuBlock title={t('builder.menu.tile.label')} grid={false}>
+                    <div className={css['builder-map-infos-selected']}>
+                        {form.selectedTiles
+                            ?.sort((a, b) => a.id - b.id)
+                            .map((it) => (
+                                <div className={css['builder-map-infos-selected-detail']} key={it.id}>
+                                    <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
+                                    <Input readOnly size="xs" color="neutral" dataTheme="dark" value={it.value} />
+                                </div>
+                            ))}
+                    </div>
+                </MenuBlock>
             )}
             {form.showDirections && (
-                <MenuBlock title={t('builder.menu.items.directions')}>
+                <MenuBlock title={t('builder.menu.items.directions')} gridSize={3}>
                     {form.directions.map((it, index) => (
                         <MenuItem
                             key={index}
-                            icon={it.display_direction?.output || null}
+                            icon={it.display_direction?.output || 'erase'}
                             label={t(`builder.menu.directions.${it.display_direction?.output || null}`)}
                             disabled={!form.selectedMap || !form.selectedTiles.length}
                             onClick={() => handleDirections(it)}
@@ -191,7 +189,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                             icon={it.name}
                             label={t(`builder.menu.objects.${it.name}`)}
                             active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
-                            disabled={form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id}
+                            disabled={(form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id) || form.showDirections}
                             onClick={() => handleObject(it)}
                         />
                     ))}
@@ -255,21 +253,31 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
     );
 };
 
-export const MenuBlock = ({ title = '', children, grid = true, open = true }) => {
+export const MenuBlock = ({ title = '', children, grid = true, open = true, gridSize = 4 }) => {
     const [toggle, setToggle] = useState(open);
 
     const active = useMemo(() => {
         if (!open) {
-            return false;
+            return !toggle;
         }
         return toggle;
     }, [open, toggle]);
+
     return (
         <div className={css['builder-sidebar-block']}>
             <Button dataTheme="light" size="sm" color="neutral" onClick={() => setToggle(!toggle)}>
                 {title}
             </Button>
-            {active && <div className={css[grid ? 'builder-sidebar-block-content' : 'builder-sidebar-block-settings']}>{children}</div>}
+            {active && (
+                <div
+                    style={{
+                        gridTemplateColumns: `repeat(${gridSize}, minmax(0, 1fr))`
+                    }}
+                    className={css[grid ? 'builder-sidebar-block-content' : 'builder-sidebar-block-settings']}
+                >
+                    {children}
+                </div>
+            )}
         </div>
     );
 };

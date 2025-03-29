@@ -5,6 +5,7 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const progress = useRef(0);
+    const timeoutRef = useRef(null);
 
     const batch = useCallback(async () => {
         if (progress.current < amount) {
@@ -14,7 +15,7 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
                     progress.current += 1;
 
                     if (progress.current < amount) {
-                        setTimeout(batch, 1000);
+                        timeoutRef.current = setTimeout(batch, 1000);
                     } else {
                         setLoading(false);
                     }
@@ -27,17 +28,21 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
         if (progress.current === amount) {
             onSuccess();
         }
-    }, [progress, amount, options, onSuccess]);
+    }, [progress, amount, map, options, onSuccess]);
 
-    const sync = useCallback(() => {
-        setData([]);
+    const cancel = useCallback(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
         setLoading(false);
         progress.current = 0;
-    }, [progress]);
+    }, []);
 
-    const clear = useCallback(() => {
-        sync();
-    }, [sync]);
+    const sync = useCallback(() => {
+        cancel();
+        setData([]);
+    }, [cancel]);
 
     useEffect(() => {
         if (launch) {
@@ -45,13 +50,17 @@ const useMapBatch = ({ map = {}, options = {}, amount = 5, launch = true, onSucc
             batch();
 
             return () => {
+                if (timeoutRef.current) {
+                    clearTimeout(timeoutRef.current);
+                    timeoutRef.current = null;
+                }
                 setLoading(false);
                 progress.current = amount;
             };
         }
     }, [launch]);
 
-    return [data, progress.current, loading, sync, clear];
+    return [data, progress.current, loading, sync, cancel];
 };
 
 export { useMapBatch };

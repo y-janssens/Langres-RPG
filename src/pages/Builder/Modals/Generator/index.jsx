@@ -24,7 +24,7 @@ const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
         }
     });
 
-    const [maps, progress, loadingMaps, regenerate, clear] = useMapBatch({
+    const [maps, progress, loadingMaps, sync, cancel] = useMapBatch({
         map: form.selectedMap,
         options: { ...batchSettings }.options,
         amount: { ...batchSettings }.options?.amount,
@@ -59,13 +59,19 @@ const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
         setSelectedMap({ id: null, map: null });
         setSelectedPreview(null);
         setDisplaySettings(false);
-        regenerate();
-    }, [regenerate]);
+        sync();
+    }, [sync]);
 
     const handleReset = useCallback(() => {
-        clear();
+        sync();
         setBatchSettings({ ...generatorOptions.defaultOptions });
-    }, [generatorOptions, clear]);
+        setDisplaySettings(true);
+    }, [generatorOptions, sync]);
+
+    const handleCancel = useCallback(() => {
+        cancel();
+        setReady(false);
+    }, [cancel]);
 
     const handleSave = useCallback(async () => {
         let collection = await Collection.new();
@@ -94,6 +100,8 @@ const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
                     disabled={loadingMaps || Boolean(selectedPreview)}
                     progress={progress}
                     loading={loading}
+                    handleCancel={handleCancel}
+                    maps={maps}
                     handleReset={handleReset}
                     handleSelect={handleSelect}
                     onLaunch={handleLaunch}
@@ -131,27 +139,26 @@ const GeneratorActions = ({
     disabled,
     progress,
     loading,
+    maps,
     displaySettings,
     setDisplaySettings,
+    handleCancel = () => {},
     handleReset = () => {},
     onLaunch = () => {},
     handleSelect = () => {}
 }) => {
     const { t } = useTranslation();
 
-    const handleClear = useCallback(() => {
-        setDisplaySettings(!displaySettings);
-    }, [displaySettings]);
-
     return (
         <>
             <div className={css['map-preview-cta']}>
                 <span>{`${t('builder.modals.generator.subtitle')}: ${progress}/${settings.options?.amount}`}</span>
                 <div className={css['map-preview-cta-btns']}>
-                    <ButtonLabel color="primary" label={t('builder.modals.generator.settings')} onClick={handleClear} disabled={loading} />
-                    <ButtonLabel variant="outline" label={t('builder.modals.generator.reset')} onClick={handleReset} disabled={loading} />
+                    <ButtonLabel color="primary" label={t('builder.modals.generator.settings')} onClick={() => setDisplaySettings((prev) => !prev)} disabled={loading} />
 
-                    <ButtonIcon icon={<Icon name="reload" />} disabled={disabled} onClick={() => onLaunch()} />
+                    <ButtonIcon icon={<Icon name="reload" />} disabled={!maps?.length || loading} onClick={handleReset} />
+                    <ButtonIcon icon={<Icon name="stop" />} disabled={!disabled} onClick={handleCancel} />
+                    <ButtonIcon icon={<Icon name="play" />} disabled={disabled} onClick={onLaunch} />
                 </div>
             </div>
             <GeneratorSettings settings={settings} options={options} handleSelect={handleSelect} display={displaySettings && !loading} />

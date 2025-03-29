@@ -25,11 +25,11 @@ export const PreviewBlock = memo(({ map, index, label = true, selected, setSelec
     );
     return (
         <div className={css['map-preview-item']}>
-            {label && <span>{`Map_${index}`}</span>}
+            {label && <span>{`Map ${index}`}</span>}
             <div className={css[blockClass]} onClick={() => handleSelect({ id: index, map })}>
                 {!loading && (
                     <div className={css['map-preview-actions']}>
-                        <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant="link" onClick={() => setPreview(index)} />
+                        <ButtonIcon icon={<Icon name="zoom" />} disabled={loading} variant="outline" onClick={() => setPreview(index)} />
                     </div>
                 )}
                 <MapThumbnail key={index} map={map} />
@@ -41,7 +41,7 @@ export const PreviewBlock = memo(({ map, index, label = true, selected, setSelec
 export const EmptyBlock = memo(({ index }) => {
     return (
         <div className={css['map-preview-item']}>
-            <span>{`Map_${index}`}</span>
+            <span>{`Map ${index}`}</span>
             <div className={css['map-preview-loading']}>
                 <Loading loading text={false} scale={0.5} />
             </div>

@@ -106,7 +106,6 @@
     font-size: 18px !important;
 }
 
-.builder-icon-btn svg path,
 .builder-sidebar-functions-item svg path {
     fill: rgb(166, 173, 186);
 }
@@ -297,7 +296,6 @@
 .builder-sidebar-block-content,
 .builder-sidebar-block-settings {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-gap: 15px;
     margin-top: 15px;
     grid-auto-flow: dense;
@@ -313,6 +311,13 @@
 }
 .builder-sidebar-block-settings p {
     margin: 0 5px 0 5px;
+}
+
+.builder-sidebar-functions-item {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .builder-sidebar-functions-item .btn div {
@@ -362,7 +367,7 @@
 .builder-map-infos-selected {
     display: flex;
     flex-direction: column;
-    max-height: 250px;
+    max-height: 200px;
     overflow-y: auto;
 }
 
@@ -376,9 +381,3 @@
     margin-right: 5px;
     outline: none !important;
 }
-
-/* @media screen and (max-width: 600px) {
-    .builder-navbar-left {
-        width: 250px;
-    }
-} */
