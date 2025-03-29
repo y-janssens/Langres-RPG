@@ -11,7 +11,7 @@ export const ButtonLabel = ({ ...props }) => {
 
 export const ButtonIcon = ({ variant = 'outline', ...props }) => {
     return (
-        <Button className={css['builder-icon-btn']} dataTheme="dark" shape="square" variant={variant} color="neutral" size={props.size} disabled={props.disabled} {...props}>
+        <Button className={css['builder-icon-btn']} dataTheme="dark" shape="square" variant={variant} color="neutral" size="sm" disabled={props.disabled} {...props}>
             {props.icon}
         </Button>
     );

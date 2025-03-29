@@ -1,32 +1,32 @@
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
+use std::mem::take;
 
 use super::actions::generator::Generator;
 use super::config::Values;
 use super::constraints::Constraints;
 use super::settings::GRASS;
+use crate::backend::utils::functions::get_weighted_random_value;
 use crate::maps::config::Conf;
 use crate::world::models::{Item, Options};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {
-    settings: Conf,      // Procedural generation configuration
-    options: Options,    // Request parameters
-    content: Vec<Item>,  // Map content
-    values: Vec<String>, // Array of values to be processed as items values
+    settings: Conf,     // Procedural generation configuration
+    options: Options,   // Request parameters
+    content: Vec<Item>, // Map content
 }
 
 impl Map {
     /// Procedural map generation entry point
     pub fn generate(tiles: Vec<Item>, options: Options) -> Vec<Item> {
         let settings = Conf::get_config(&options.r#type);
-        let values = Conf::get_values(&settings);
         let mut config = Self {
             settings: settings.clone(),
             options: options.clone(),
             content: vec![],
-            values,
         };
         config.get_content(tiles);
         config.collapse();
@@ -51,13 +51,13 @@ impl Map {
 
             if let Some(&index) = filtered_indices.choose(&mut rng) {
                 let neighbours = items[index].get_neighbours_values(items);
-                let constraints = Constraints::apply(neighbours.0, &self.values);
+                let constraints = Constraints::apply(neighbours.clone(), &self.settings);
                 let value = Self::get_random_value(&constraints.0);
 
                 items[index].value = value;
                 items[index].entropy = 0;
 
-                for neighbour_index in neighbours.1 {
+                for neighbour_index in neighbours.keys().cloned().collect::<Vec<usize>>() {
                     if items[neighbour_index].entropy > 0 && !constraints.0.is_empty() {
                         // Assign entropy value based on remaining possibilities
                         items[neighbour_index].entropy = constraints.1.len() as u32;
@@ -76,30 +76,23 @@ impl Map {
 
     /// Convert back to World Tiles for game usage
     fn export(&mut self) -> Vec<Item> {
-        let items = &mut self.content;
+        let items = take(&mut self.content);
         items
-            .iter()
-            .map(|tile| {
-                let value = Constraints::ensure_consistency(tile, items);
+            .clone()
+            .into_iter()
+            .map(|mut tile| {
+                let value = Constraints::ensure_consistency(&tile, &items);
                 let (display_value, display_color, walkable) = Values::get_value(&value);
 
-                Item {
-                    id: tile.id,
-                    x: tile.x,
-                    y: tile.y,
-                    z: tile.z,
-                    value,
-                    walkable,
-                    display_value,
-                    display_color,
-                    events: tile.events.clone(),
-                    neighbours_ids: tile.neighbours_ids.clone(),
-                    entropy: tile.entropy,
-                }
+                tile.value = value.clone();
+                tile.walkable = walkable;
+                tile.display_value = display_value;
+                tile.display_color = display_color;
+
+                tile
             })
             .collect()
     }
-
     /// Reduce items list to a list of lowest entropy indices for random picking
     fn get_items_indices(items: &[Item]) -> Vec<usize> {
         let min_entropy = items
@@ -118,12 +111,13 @@ impl Map {
     }
 
     /// Pick a random value for a tile to be collapsed
-    fn get_random_value(remaining_values: &[String]) -> String {
-        let mut rng = rand::thread_rng();
-        match remaining_values.len() {
+    fn get_random_value(values: &HashMap<String, u32>) -> String {
+        let keys: Vec<&str> = values.keys().map(|k| k.as_str()).collect();
+
+        match keys.len() {
             0 => GRASS.value(),
-            1 => String::from(&remaining_values[0]),
-            _ => String::from(remaining_values.choose(&mut rng).unwrap()),
+            1 => String::from(keys[0]),
+            _ => get_weighted_random_value(values),
         }
     }
 }

@@ -37,7 +37,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                         {
                             ...tile,
                             value: item.value || tile.value,
-                            walkable: item.walkable,
+                            walkable: item.walkable || tile.walkable,
                             display_value: item.display_value || tile.display_value,
                             display_color: item.display_color || tile.display_color
                         }
@@ -50,6 +50,32 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             } else {
                 newMap.primary = item;
             }
+            act.content.maps[mapIndex] = newMap;
+            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
+        },
+        [form]
+    );
+
+    const handleDirections = useCallback(
+        (item) => {
+            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+            let newMap = { ...act.content.maps[mapIndex] };
+
+            const updatedItems = new Map(
+                form.selectedTiles.map((tile) => [
+                    tile.id,
+                    {
+                        ...tile,
+                        display_direction: item.display_direction !== 'undefined' ? item.display_direction : tile.display_direction
+                    }
+                ])
+            );
+
+            const newContent = newMap.content.map((mapItem) => (updatedItems.has(mapItem.id) ? updatedItems.get(mapItem.id) : mapItem));
+
+            newMap.content = newContent;
+
             act.content.maps[mapIndex] = newMap;
             setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
         },
@@ -114,20 +140,33 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     </div>
                 </MenuBlock>
             )}
-            {Boolean(form.selectedTiles.length) && (
-                <MenuBlock title={t('builder.menu.tile.label')} grid={false}>
-                    <div className={css['builder-map-infos-selected']}>
-                        {form.selectedTiles
-                            .sort((a, b) => {
-                                return a.id - b.id;
-                            })
-                            .map((it) => (
-                                <div className={css['builder-map-infos-selected-detail']} key={it.id}>
-                                    <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
-                                    <Input dataTheme="dark" size="xs" value={it.value} color="neutral" onChange={() => {}} />
-                                </div>
-                            ))}
-                    </div>
+            {!!form.selectedTiles.length && (
+                <>
+                    <MenuBlock title={t('builder.menu.tile.label')} grid={false}>
+                        <div className={css['builder-map-infos-selected']}>
+                            {form.selectedTiles
+                                .sort((a, b) => a.id - b.id)
+                                .map((it) => (
+                                    <div className={css['builder-map-infos-selected-detail']} key={it.id}>
+                                        <p>{`Id: ${it.id} X: ${it.x} Y: ${it.y}`}</p>
+                                        <Input readOnly size="xs" color="neutral" dataTheme="dark" value={it.value} />
+                                    </div>
+                                ))}
+                        </div>
+                    </MenuBlock>
+                </>
+            )}
+            {form.showDirections && (
+                <MenuBlock title={t('builder.menu.items.directions')}>
+                    {form.directions.map((it, index) => (
+                        <MenuItem
+                            key={index}
+                            icon={it.display_direction?.output || null}
+                            label={t(`builder.menu.directions.${it.display_direction?.output || null}`)}
+                            disabled={!form.selectedMap || !form.selectedTiles.length}
+                            onClick={() => handleDirections(it)}
+                        />
+                    ))}
                 </MenuBlock>
             )}
             <MenuBlock title={t('builder.menu.items.items')}>
@@ -143,7 +182,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                         />
                     ))}
             </MenuBlock>
-            <MenuBlock title={t('builder.menu.items.objects')}>
+            <MenuBlock title={t('builder.menu.items.objects')} open={!form.showDirections}>
                 {form.objects
                     .filter((it) => it.interactive)
                     .map((it) => (
@@ -157,7 +196,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                         />
                     ))}
             </MenuBlock>
-            <MenuBlock title={t('builder.menu.functions.label')}>
+            <MenuBlock title={t('builder.menu.functions.label')} open={!form.showDirections}>
                 <MenuItem
                     icon={'map'}
                     disabled={!form.selectedMap || form.interactiveMode.toggle}
@@ -216,11 +255,18 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
     );
 };
 
-export const MenuBlock = ({ title = '', children, grid = true }) => {
-    const [active, setActive] = useState(true);
+export const MenuBlock = ({ title = '', children, grid = true, open = true }) => {
+    const [toggle, setToggle] = useState(open);
+
+    const active = useMemo(() => {
+        if (!open) {
+            return false;
+        }
+        return toggle;
+    }, [open, toggle]);
     return (
         <div className={css['builder-sidebar-block']}>
-            <Button dataTheme="light" size="sm" color="neutral" onClick={() => setActive(!active)}>
+            <Button dataTheme="light" size="sm" color="neutral" onClick={() => setToggle(!toggle)}>
                 {title}
             </Button>
             {active && <div className={css[grid ? 'builder-sidebar-block-content' : 'builder-sidebar-block-settings']}>{children}</div>}

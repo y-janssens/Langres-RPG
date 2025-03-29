@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { Header, SideBar, Theme } from './components';
 import { useDynamicForm, useStateHistory } from '../../hooks';
-import { Storyline, MapObject, MapFunction } from '../../models';
+import { Storyline, MapObject, MapFunction, DIRECTIONS } from '../../models';
 
 import Map from './Map';
 import { BuilderModal } from './Modals';
@@ -16,17 +16,20 @@ export const Builder = () => {
         selectedAct: null,
         showIds: true,
         showIcons: true,
+        showDirections: false,
         flatDisplay: true,
         showValues: false,
         showObjects: false,
         displayOptions: false,
+        displayActions: false,
         displaySelector: false,
         showConstraints: false,
         objects: [],
         functions: [],
         selectedTiles: [],
         modal: { type: null, open: false, value: null },
-        interactiveMode: { toggle: false, object: null, neighours: [] }
+        interactiveMode: { toggle: false, object: null, neighours: [] },
+        directions: DIRECTIONS.map((dir) => ({ display_direction: dir ? { output: dir, custom: true, values: null } : null }))
     });
 
     const [, loadingStoryline, syncStory] = Storyline.useCommand(
@@ -74,7 +77,7 @@ export const Builder = () => {
             return null;
         }
         return form.selectedMap.content;
-    }, [form]);
+    }, [form.selectedMap]);
 
     const [history, index, forward, backward, clearHistory] = useStateHistory({
         init: Boolean(form.selectedMap),
@@ -116,18 +119,8 @@ export const Builder = () => {
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
-                {display ? (
-                    <Map flatDisplay={form.flatDisplay} history={history} index={index} loading={loadingStoryline} form={form} setForm={setForm} sync={handleSync} />
-                ) : (
-                    <BuilderModal
-                        form={form}
-                        setForm={setForm}
-                        sync={handleSync}
-                        datas={form.modal}
-                        setFormObject={setFormObject}
-                        onClose={() => setForm('modal', { type: null, open: false, value: null })}
-                    />
-                )}
+                {display && <Map flatDisplay={form.flatDisplay} history={history} index={index} loading={loadingStoryline} form={form} setForm={setForm} sync={handleSync} />}
+                <BuilderModal form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
             </div>
         </Theme>
     );

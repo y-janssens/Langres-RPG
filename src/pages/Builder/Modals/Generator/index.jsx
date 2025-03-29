@@ -10,7 +10,7 @@ import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './generator.module.css';
 
-const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
+const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
     const { t } = useTranslation();
     const [ready, setReady] = useState(false);
     const [batchSettings, setBatchSettings] = useState({});
@@ -79,7 +79,7 @@ const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
         return loadingMaps && progress < batchSettings.options?.amount;
     }, [loadingMaps, progress, batchSettings]);
 
-    if (!open || loadingGeneratorOptions) {
+    if (loadingGeneratorOptions) {
         return null;
     }
 
@@ -91,7 +91,7 @@ const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
                     settings={batchSettings}
                     displaySettings={displaySettings}
                     setDisplaySettings={setDisplaySettings}
-                    disabled={loadingMaps || selectedPreview}
+                    disabled={loadingMaps || Boolean(selectedPreview)}
                     progress={progress}
                     loading={loading}
                     handleReset={handleReset}
@@ -99,7 +99,7 @@ const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
                     onLaunch={handleLaunch}
                 />
             }
-            disabled={!selectedMap.id || selectedPreview}
+            disabled={!selectedMap.id || Boolean(selectedPreview)}
             onSave={handleApply}
             onClose={onClose}
             type={type}
@@ -119,7 +119,7 @@ const Generator = ({ open, type, form, setForm, setFormObject, onClose }) => {
                 {maps.map((mp, i) => (
                     <PreviewBlock key={i} map={mp} index={i + 1} selected={selectedMap} setPreview={setSelectedPreview} setSelect={setSelectedMap} loading={loading} />
                 ))}
-                {loading && <EmptyBlock index={progress} />}
+                {loading && <EmptyBlock index={progress + 1} />}
             </div>
         </BuilderModalWrapper>
     );
@@ -151,7 +151,7 @@ const GeneratorActions = ({
                     <ButtonLabel color="primary" label={t('builder.modals.generator.settings')} onClick={handleClear} disabled={loading} />
                     <ButtonLabel variant="outline" label={t('builder.modals.generator.reset')} onClick={handleReset} disabled={loading} />
 
-                    <ButtonIcon icon={<Icon name="reload" />} size="sm" disabled={disabled} onClick={() => onLaunch()} />
+                    <ButtonIcon icon={<Icon name="reload" />} disabled={disabled} onClick={() => onLaunch()} />
                 </div>
             </div>
             <GeneratorSettings settings={settings} options={options} handleSelect={handleSelect} display={displaySettings && !loading} />

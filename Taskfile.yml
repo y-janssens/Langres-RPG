@@ -102,6 +102,15 @@ tasks:
             - cargo clean
         silent: true
 
+    todo:
+        desc: Output all todos.
+        aliases:
+            - todos
+        cmds:
+            - grep -rn "TODO" ./src-tauri/src
+            - grep -rn "TODO" ./src
+        silent: true
+
     # Docker commands
     docker:
         desc: Run migrations through docker environment

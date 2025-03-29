@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use std::ops::Deref;
+use std::{collections::HashMap, ops::Deref};
 
 use super::{
     constraints::Constraints,
@@ -59,7 +59,7 @@ impl Values {
 pub struct Conf {
     pub name: String,
     pub primary_value: String,
-    pub values: Vec<(String, u32)>,
+    pub values: HashMap<String, u32>,
     pub post_process: bool,
 }
 
@@ -100,14 +100,5 @@ impl Conf {
             values: Constraints::get_tiles(50, 18, 13, 5, 5),
             post_process: true,
         }
-    }
-
-    /// Get and compute all available values for a given map type
-    pub fn get_values(conf: &Conf) -> Vec<String> {
-        conf.values
-            .iter()
-            .flat_map(|(value, count)| std::iter::repeat(value).take(*count as usize))
-            .map(|s| s.to_string())
-            .collect()
     }
 }

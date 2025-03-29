@@ -17,7 +17,7 @@ export default class Storyline extends AdminModel {
             return act;
         });
         this.story.acts = acts;
-        invoke('save_storyline', { data: this, id: this.id });
+        invoke('save_storyline', { story: this });
     }
 
     static command() {

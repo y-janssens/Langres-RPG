@@ -135,6 +135,7 @@ pub fn run() {
             world::commands::generate,
             world::commands::regenerate,
             world::commands::generate_forest,
+            world::commands::compute_map_directions,
         ])
         .manage(pool)
         .run(tauri::generate_context!())

@@ -11,13 +11,10 @@ use crate::{
 
 #[tauri::command]
 pub async fn generate_map_content(
-    map: World,
+    mut map: World,
     options: Options,
 ) -> Result<Response, ValidationError> {
-    authenticated_thread(Permission::Editor, || {
-        World::generate_content(map, Some(options))
-    })
-    .await
+    authenticated_thread(Permission::Editor, || map.generate_content(Some(options))).await
 }
 
 #[tauri::command]

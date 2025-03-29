@@ -20,15 +20,23 @@ pub fn generate(
 }
 
 #[tauri::command]
-pub async fn regenerate(map: World) -> Result<Response, ValidationError> {
-    authenticated_thread(Permission::Editor, || World::regenerate(map)).await
+pub async fn regenerate(mut map: World) -> Result<Response, ValidationError> {
+    authenticated_thread(Permission::Editor, || map.regenerate()).await
 }
 
 #[tauri::command]
 pub fn clear(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Editor, || {
-        let content = World::generate(map.size);
+        let content = World::generate();
         map.content = content;
+        map
+    })
+}
+
+#[tauri::command]
+pub fn compute_map_directions(mut map: World) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::Editor, || {
+        map.compute_directions();
         map
     })
 }

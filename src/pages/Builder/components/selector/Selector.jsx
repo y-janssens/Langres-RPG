@@ -2,6 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input } from 'react-daisyui';
 import css from './selector.module.css';
+import { ButtonIcon } from '../ButtonLabel';
+import { Icon } from '../../../../components';
 
 export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }) => {
     const { t } = useTranslation();
@@ -124,10 +126,14 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
     );
 };
 
-export const MultiButton = ({ open, name, setOpen, label = '', children }) => {
+export const MultiButton = ({ label = '', name, icon = null, open = false, setOpen, children }) => {
     return (
-        <div className={css['select-multi-buttons']}>
-            <SelectButton open={open} label={label} onClick={() => setOpen(name, !open)} />
+        <div className={css[`select-multi-${icon ? 'icon' : 'buttons'}`]}>
+            {icon ? (
+                <ButtonIcon icon={<Icon name={icon} />} onClick={() => setOpen(name, !open)} />
+            ) : (
+                <SelectButton open={open} label={label} onClick={() => setOpen(name, !open)} />
+            )}
             {open && <div className={css['select-multi-content']}>{children}</div>}
         </div>
     );

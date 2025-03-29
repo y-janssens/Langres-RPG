@@ -4,6 +4,17 @@
     "json": "Json editor",
     "manager": "Manage storylines",
     "menu": {
+      "directions": {
+        "null": "Erase",
+        "top": "Top",
+        "bottom": "Bottom",
+        "left": "Left",
+        "right": "Right",
+        "top_left": "Top left",
+        "top_right": "Top right",
+        "bottom_left": "Bottom left",
+        "bottom_right": "Bottom right"
+      },
       "functions": {
         "clear-map": "Clear map",
         "regenerate-map": "Regenerate map",
@@ -12,6 +23,7 @@
         "label": "Functions"
       },
       "items": {
+        "directions": "Directions",
         "items": "Items",
         "objects": "Objects"
       },
@@ -97,13 +109,14 @@
       "map": "Select a map"
     },
     "toggles": {
-      "constraints": "Show constraints",
-      "coordinates": "Show coordinates",
-      "display": "Display",
-      "icons": "Show icons",
-      "ids": "Show ids",
-      "meshes": "Show meshes",
-      "values": "Show values",
+      "constraints": "Display constraints",
+      "coordinates": "Display coordinates",
+      "directions": "Display directions",
+      "display": "Display options",
+      "icons": "Display icons",
+      "ids": "Display ids",
+      "meshes": "Display meshes",
+      "values": "Display values",
       "viewport": "3D Viewport"
     }
   },
@@ -113,6 +126,7 @@
       "add": "Add",
       "apply": "Apply",
       "cancel": "Cancel",
+      "compute": "Compute directions",
       "confirm": "Confirm",
       "continue": "Continue",
       "delete": "Delete",
@@ -120,6 +134,7 @@
       "export": "Export",
       "load": "Load",
       "new": "New",
+      "preview": "Preview map",
       "reset": "Reset",
       "save": "Save",
       "search": "Search",

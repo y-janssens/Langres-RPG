@@ -8,7 +8,7 @@ import { BuilderModalWrapper } from '../Wrapper';
 
 import css from './gateway.module.css';
 
-const Gateway = ({ form, type, open, onClose, sync }) => {
+const Gateway = ({ form, type, onClose, sync }) => {
     const { t } = useTranslation();
     const [toggle, setToggle] = useState(false);
     const [selectedMap, setSelectedMap] = useState(null);
@@ -50,9 +50,6 @@ const Gateway = ({ form, type, open, onClose, sync }) => {
             });
     }, [selectedMap, form, sync, onClose, findGateway]);
 
-    if (!open) {
-        return null;
-    }
     return (
         <BuilderModalWrapper type={type} onReset={sync} onSave={handleSave} disabled={!selectedMap} canBeClosed onClose={onClose}>
             <div className={css['gateway-selector-block']}>

@@ -1,8 +1,11 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
-use super::settings::{
-    BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND,
-    INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE, WATER,
+use super::{
+    config::Conf,
+    settings::{
+        BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND,
+        INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE, WATER,
+    },
 };
 use crate::world::models::Item;
 
@@ -19,9 +22,9 @@ impl Constraints {
         water: u32,
         shore: u32,
         border: u32,
-    ) -> Vec<(String, u32)> {
+    ) -> HashMap<String, u32> {
         let factor = *DEFAULT_MAP_SIZE / *DEFAULT_MAP_SIZE_FACTOR;
-        let tiles: Vec<(String, u32)> = vec![
+        HashMap::from([
             (GRASS.value(), grass * factor),
             (TREE.value(), trees * factor),
             (WATER.value(), water * factor),
@@ -30,8 +33,7 @@ impl Constraints {
             (ROAD.value(), 0),
             (FENCE.value(), 0),
             (GROUND.value(), 0),
-        ];
-        tiles
+        ])
     }
 
     pub fn ensure_no_water_tiles() -> Self {
@@ -75,17 +77,22 @@ impl Constraints {
     }
 
     /// Check all item's neighbours to eliminate forbidden values
-    pub fn apply(neighbours: Vec<String>, values: &Vec<String>) -> (Vec<String>, Vec<String>) {
-        let mut filtered_values = Vec::new();
+    pub fn apply(
+        neighbours: HashMap<usize, String>,
+        settings: &Conf,
+    ) -> (HashMap<String, u32>, Vec<String>) {
+        let mut filtered_values = HashMap::new();
         let mut remaining = HashSet::new();
 
-        let neighbours_constraints: HashSet<String> =
-            neighbours.iter().flat_map(|item| Self::get(item)).collect();
+        let neighbours_constraints: HashSet<String> = neighbours
+            .iter()
+            .flat_map(|item| Self::get(item.1))
+            .collect();
 
-        for i in values {
-            if !neighbours_constraints.contains(&i.to_string()) {
-                filtered_values.push(i.to_string());
-                remaining.insert(i.to_string());
+        for (key, value) in settings.values.clone().into_iter() {
+            if !neighbours_constraints.contains(&key) && value > 0 {
+                filtered_values.insert(key.clone(), value);
+                remaining.insert(key);
             }
         }
 
@@ -112,16 +119,20 @@ impl Constraints {
             return value.to_string();
         }
 
-        let neighbours = item.get_neighbours_values(items).0;
+        let neighbours = item
+            .get_neighbours_values(items)
+            .values()
+            .cloned()
+            .collect();
         match value {
-            val if val == SHORE.val() => Self::ensure_no_stranded_shores(value, &neighbours),
-            val if val == BORDER.val() => Self::ensure_no_stranded_borders(value, &neighbours),
-            val if val == ROAD.val() => Self::ensure_roads_consistency(value, &neighbours),
+            val if val == SHORE.val() => Self::ensure_no_stranded_shores(value, neighbours),
+            val if val == BORDER.val() => Self::ensure_no_stranded_borders(value, neighbours),
+            val if val == ROAD.val() => Self::ensure_roads_consistency(value, neighbours),
             _ => value.to_string(),
         }
     }
 
-    fn ensure_no_stranded_shores(value: &str, neighbours: &[String]) -> String {
+    fn ensure_no_stranded_shores(value: &str, neighbours: Vec<String>) -> String {
         let first_value = &neighbours[0];
         match value {
             _ if !neighbours.contains(&WATER.value()) => GRASS.value(),
@@ -130,7 +141,7 @@ impl Constraints {
         }
     }
 
-    fn ensure_no_stranded_borders(value: &str, neighbours: &[String]) -> String {
+    fn ensure_no_stranded_borders(value: &str, neighbours: Vec<String>) -> String {
         match value {
             _ if !neighbours.contains(&TREE.value()) => TREE.value(),
             _ if neighbours
@@ -143,7 +154,7 @@ impl Constraints {
         }
     }
 
-    fn ensure_roads_consistency(value: &str, neighbours: &[String]) -> String {
+    fn ensure_roads_consistency(value: &str, neighbours: Vec<String>) -> String {
         match value {
             _ if ROAD_VALUES
                 .iter()

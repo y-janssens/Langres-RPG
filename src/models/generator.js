@@ -17,7 +17,7 @@ export default class GeneratorOptions extends Fetcher {
             options: {
                 type: this.types[0]?.label,
                 action: this.actions[0]?.label,
-                post_action: this.post_actions[1]?.label,
+                post_action: this.post_actions[0]?.label,
                 amount: this.default_sizes[1].label
             }
         };

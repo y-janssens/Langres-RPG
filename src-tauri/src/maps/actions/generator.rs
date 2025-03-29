@@ -142,7 +142,13 @@ impl Generator {
             let neighbours: Vec<Vec<String>> = self
                 .content
                 .iter()
-                .map(|it| it.clone().get_neighbours_values(&self.content).0)
+                .map(|it| {
+                    it.clone()
+                        .get_neighbours_values(&self.content)
+                        .values()
+                        .cloned()
+                        .collect()
+                })
                 .collect();
 
             for (index, item) in self

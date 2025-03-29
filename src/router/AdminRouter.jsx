@@ -19,7 +19,7 @@ export const AdminRouter = () => {
                 <Route
                     path="editor"
                     element={
-                        <AdminRoute allow={is_admin && editor_enabled} fallback="/">
+                        <AdminRoute allow={is_admin && editor_enabled}>
                             <Builder />
                         </AdminRoute>
                     }
@@ -27,7 +27,7 @@ export const AdminRouter = () => {
                 <Route
                     path="dashboard/*"
                     element={
-                        <AdminRoute allow={is_admin && dashboard_enabled} fallback="/">
+                        <AdminRoute allow={is_admin && dashboard_enabled}>
                             <DashboardRouter />
                         </AdminRoute>
                     }
@@ -35,7 +35,7 @@ export const AdminRouter = () => {
                 <Route
                     path="tools"
                     element={
-                        <AdminRoute allow={is_admin && dev_tools_enabled} fallback="/">
+                        <AdminRoute allow={is_admin && dev_tools_enabled}>
                             <Tools />
                         </AdminRoute>
                     }

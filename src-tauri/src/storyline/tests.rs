@@ -34,10 +34,10 @@ mod tests {
             maps.push(WorldFactory.generate());
             maps.push(WorldFactory.generate());
 
-            let mut patch_data = response.clone();
-            patch_data.story.acts[0].content.maps = maps;
+            let mut patch_story = response.clone();
+            patch_story.story.acts[0].content.maps = maps;
+            patch_story.save(connection);
 
-            let _ = Story::save(connection, response.id, &mut patch_data);
             let patch_response = Story::load(connection).unwrap();
 
             assert_eq!(patch_response.story.acts.len(), 1);
@@ -191,7 +191,7 @@ mod tests {
                     .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
-                let _ = Story::save(connection, story.id, &mut story);
+                story.save(connection);
 
                 let _ = Story::register_object(
                     connection,
@@ -241,7 +241,7 @@ mod tests {
                     .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
-                let _ = Story::save(connection, story.id, &mut story);
+                story.save(connection);
 
                 let _ = Story::register_object(
                     connection,
@@ -316,9 +316,9 @@ mod tests {
             assert_eq!(map[707].value, "-".to_string());
             assert_eq!(map[707].display_value, "grass".to_string());
 
-            let mut patch_data = storyline.clone();
-            patch_data.story.acts[0].content.maps = maps;
-            let _ = Story::save(connection, storyline.id, &mut patch_data);
+            let mut patch_story = storyline.clone();
+            patch_story.story.acts[0].content.maps = maps;
+            patch_story.save(connection);
 
             // Retrieve patched storyline and check datas consistency
             let _act = Story::load(connection).unwrap().story.acts[0].clone();

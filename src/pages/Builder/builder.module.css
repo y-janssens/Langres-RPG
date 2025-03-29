@@ -374,6 +374,7 @@
 .builder-map-infos-selected-detail input {
     width: 100px;
     margin-right: 5px;
+    outline: none !important;
 }
 
 /* @media screen and (max-width: 600px) {

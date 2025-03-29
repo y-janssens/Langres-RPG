@@ -108,6 +108,7 @@ export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect
         >
             <Hex className={css['builder-map-tile-hex']} />
             {form.showIcons && <Icon name={icon} />}
+            {form.showDirections && item.display_direction && item.display_direction.output !== '-' ? <Icon name={item.display_direction.output} /> : ''}
             {form.showValues && !form.showIcons && <span>{Boolean(hover) && hover === item.id ? form.interactiveMode.object.value : item.value}</span>}
             {form.showIds && <span className={css['builder-map-tile-id']}>{item.start ? 'Start' : item.id}</span>}
         </div>
