@@ -15,13 +15,17 @@ pub fn generate(
     primary: bool,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::DevTools, || {
-        World::new(size, name, order, primary)
+        Ok(World::new(size, name, order, primary))
     })
 }
 
 #[tauri::command]
 pub async fn regenerate(mut map: World) -> Result<Response, ValidationError> {
-    authenticated_thread(Permission::Editor, || map.regenerate()).await
+    authenticated_thread(Permission::Editor, || async {
+        let result = map.regenerate().await;
+        Ok(result)
+    })
+    .await
 }
 
 #[tauri::command]
@@ -29,7 +33,7 @@ pub fn clear(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Editor, || {
         let content = World::generate();
         map.content = content;
-        map
+        Ok(map)
     })
 }
 
@@ -37,7 +41,7 @@ pub fn clear(mut map: World) -> Result<Response, ValidationError> {
 pub fn compute_map_directions(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Editor, || {
         map.compute_directions();
-        map
+        Ok(map)
     })
 }
 
@@ -46,6 +50,6 @@ pub fn generate_forest(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::DevTools, || {
         let content = World::generate_forest(map.content);
         map.content = content;
-        map
+        Ok(map)
     })
 }

@@ -7,5 +7,8 @@ use super::models::env::Environment;
 
 #[tauri::command]
 pub fn load_env(date: &str) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::RegularUser, || Environment::initialize(date))
+    authenticated_command(Permission::RegularUser, || {
+        let environment = Environment::initialize(date)?;
+        Ok(environment)
+    })
 }

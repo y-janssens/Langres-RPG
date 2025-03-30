@@ -55,15 +55,20 @@ pub fn authenticated_command<T, R>(
     func: T,
 ) -> Result<Response, ValidationError>
 where
-    T: FnOnce() -> R,
+    T: FnOnce() -> Result<R, Box<dyn Error>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize().config;
+    let credentials = Credentials::initialize()
+        .map_err(|e| ValidationError(e.to_string()))?
+        .config;
 
     if credentials.has_permission(permissions) {
-        match serde_json::to_value(func()) {
-            Ok(result) => Ok(Response::success(result)),
-            Err(_) => Err(Response::error(VALIDATION_ERROR)),
+        match func() {
+            Ok(result) => match serde_json::to_value(result) {
+                Ok(result) => Ok(Response::success(result)),
+                Err(_) => Err(Response::error(VALIDATION_ERROR)),
+            },
+            Err(e) => Err(Response::error(&e.to_string())),
         }
     } else {
         Err(Response::error(PERMISSION_DENIED))
@@ -76,16 +81,20 @@ pub async fn authenticated_thread<T, Fut, R>(
 ) -> Result<Response, ValidationError>
 where
     T: FnOnce() -> Fut,
-    Fut: std::future::Future<Output = R>,
+    Fut: std::future::Future<Output = Result<R, Box<dyn std::error::Error>>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize().config;
+    let credentials = Credentials::initialize()
+        .map_err(|e| ValidationError(e.to_string()))?
+        .config;
 
     if credentials.has_permission(permissions) {
-        let result = func().await;
-        match serde_json::to_value(result) {
-            Ok(result) => Ok(Response::success(result)),
-            Err(_) => Err(Response::error(VALIDATION_ERROR)),
+        match func().await {
+            Ok(result) => match serde_json::to_value(result) {
+                Ok(result) => Ok(Response::success(result)),
+                Err(_) => Err(Response::error(VALIDATION_ERROR)),
+            },
+            Err(e) => Err(Response::error(&e.to_string())),
         }
     } else {
         Err(Response::error(PERMISSION_DENIED))

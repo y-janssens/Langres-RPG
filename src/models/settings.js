@@ -53,6 +53,6 @@ export default class Settings extends Fetcher {
     }
 
     async save(overide = false) { // eslint-disable-line
-        await invoke(`save_app_datas`, { id: this.id, data: this });
+        await invoke(`save_app_datas`, { data: this });
     }
 }

@@ -1,5 +1,6 @@
 use crate::schema::collections::dsl::*;
 use chrono::{DateTime, Local};
+use diesel::result::Error;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -9,7 +10,6 @@ use serde::{Deserialize, Serialize};
 use crate::backend::conf::factories::factories_definitions::WorldFactory;
 use crate::backend::conf::factory::factory_models::Factory;
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::world::models::World;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
@@ -54,26 +54,24 @@ impl Collection {
         Ok(_load)
     }
 
-    pub fn save(
-        data: Self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let map_json = serde_json::to_string(&data.map).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let map_json = serde_json::to_string(&self.map)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableCollection {
             map: map_json,
-            created: data.created,
+            created: self.created,
             modified: Self::get_date(),
-            visible: data.visible,
+            visible: self.visible,
         };
 
         let exists = collections
-            .filter(id.eq(data.id))
+            .filter(id.eq(self.id))
             .first::<Self>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(collections.find(data.id))
+            diesel::update(collections.find(self.id))
                 .set(insertable)
                 .execute(connection)?;
         } else {

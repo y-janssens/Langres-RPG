@@ -1,15 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use crate::achievements::models::Achievement;
     use crate::backend::conf::factories::factories_definitions::{
         AchievementFactory, GameFactory, StatisticFactory,
     };
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
     use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::tests::database::allow_db_access;
-    use crate::game::models::Game;
     use crate::player::journal::models::PlayerJournal;
-    use crate::statistics::models::Statistic;
 
     #[test]
     fn test_load_player_journal() {
@@ -17,12 +14,12 @@ mod tests {
             for _ in 0..25 {
                 let achievement = AchievementFactory.generate();
                 let statistic = StatisticFactory.generate();
-                let _ = Achievement::save(achievement, connection);
-                let _ = Statistic::save(statistic, connection);
+                let _ = achievement.save(connection);
+                let _ = statistic.save(connection);
             }
 
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
 
             let player_journal = PlayerJournal::load(game.id, connection).expect(BASE_ERROR);
 

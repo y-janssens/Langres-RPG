@@ -13,14 +13,12 @@ pub fn load_loots(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Loot::load(&mut connection).expect("Failed to load loots")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Loot::load(&mut connection)?))
 }
 
 #[tauri::command]
 pub fn new_loot(kind: &str) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, || Loot::new(kind))
+    authenticated_command(Permission::Dashboard, || Ok(Loot::new(kind)))
 }
 
 #[tauri::command]
@@ -29,9 +27,7 @@ pub fn save_loot(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Loot::save(data, &mut connection).expect("Failed to save loot")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(data.save(&mut connection)?))
 }
 
 #[tauri::command]
@@ -41,6 +37,6 @@ pub fn delete_loot(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
-        Loot::delete(id, &mut connection).expect("Failed to delete loot")
+        Ok(Loot::delete(id, &mut connection)?)
     })
 }

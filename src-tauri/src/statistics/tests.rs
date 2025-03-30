@@ -10,7 +10,7 @@ mod tests {
     fn test_load_statistics() {
         allow_db_access(|connection| {
             let statistic = StatisticFactory.generate();
-            let _ = Statistic::save(statistic, connection);
+            let _ = statistic.save(connection);
             let result = Statistic::load(connection).unwrap();
 
             assert_eq!(result.len(), 1);
@@ -21,7 +21,7 @@ mod tests {
     fn test_patch_statistic() {
         allow_db_access(|connection| {
             let statistic = StatisticFactory.generate();
-            let _ = Statistic::save(statistic, connection);
+            let _ = statistic.save(connection);
             let result = Statistic::load(connection).unwrap();
 
             let mut patch_statistic = Statistic {
@@ -34,7 +34,7 @@ mod tests {
 
             patch_statistic.name = Translations::generate("nom", "name");
 
-            let _ = Statistic::save(patch_statistic, connection);
+            let _ = patch_statistic.save(connection);
             let patch_result = Statistic::load(connection).unwrap();
 
             assert_eq!(patch_result[0].name.fr, Some("nom".to_string()));
@@ -46,7 +46,7 @@ mod tests {
     fn test_delete_statistic() {
         allow_db_access(|connection| {
             let statistic = StatisticFactory.generate();
-            let _ = Statistic::save(statistic, connection);
+            let _ = statistic.save(connection);
             let result = Statistic::load(connection).unwrap();
 
             let delete = Statistic::delete(result[0].clone().id, connection);

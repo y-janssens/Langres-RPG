@@ -1,5 +1,6 @@
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
+use diesel::result::Error;
 use diesel::sql_types::Text;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
@@ -7,7 +8,6 @@ use diesel::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 use crate::game::models::Game;
 use crate::quests::models::{Quest, Status};
@@ -53,14 +53,17 @@ impl Queryable<Text, Sqlite> for Translations {
 }
 
 impl PlayerQuest {
-    pub fn generate(_id: String, connection: &mut SqliteConnection) {
+    pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
         println!("Generating game quests...");
         let base_quests = Quest::load();
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
-            let status_json = serde_json::to_string(&quest.status).expect(BASE_ERROR);
-            let name_json = serde_json::to_string(&quest.name).expect(BASE_ERROR);
-            let description_json = serde_json::to_string(&quest.description).expect(BASE_ERROR);
+            let status_json = serde_json::to_string(&quest.status)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let name_json = serde_json::to_string(&quest.name)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let description_json = serde_json::to_string(&quest.description)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
             let _quest = InsertablePlayerQuest {
                 id: Uuid::new_v4().to_string(),
                 quest_id: quest.id,
@@ -75,9 +78,9 @@ impl PlayerQuest {
             };
             diesel::insert_into(playerquests::table)
                 .values(&_quest)
-                .execute(connection)
-                .expect("Failed to save quest");
+                .execute(connection)?;
         }
+        Ok(())
     }
 
     pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Vec<PlayerQuest>> {
@@ -94,34 +97,34 @@ impl PlayerQuest {
         Ok(_load)
     }
 
-    pub fn save(
-        quest: PlayerQuest,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let status_json = serde_json::to_string(&quest.status).expect(BASE_ERROR);
-        let name_json = serde_json::to_string(&quest.name).expect(BASE_ERROR);
-        let description_json = serde_json::to_string(&quest.description).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let status_json = serde_json::to_string(&self.status)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertablePlayerQuest {
             id: Uuid::new_v4().to_string(),
-            game_id: quest.clone().game_id,
-            quest_id: quest.clone().id,
+            game_id: self.clone().game_id,
+            quest_id: self.clone().id,
             name: name_json,
             description: description_json,
-            primary: quest.primary,
+            primary: self.primary,
             status: status_json,
-            visible: quest.visible,
-            reward: quest.reward,
-            next: quest.next.clone(),
+            visible: self.visible,
+            reward: self.reward,
+            next: self.next.clone(),
         };
 
         let exists = playerquests
-            .filter(playerquests::id.eq(quest.clone().id))
+            .filter(playerquests::id.eq(self.clone().id))
             .first::<PlayerQuest>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(playerquests.find(quest.clone().id))
+            diesel::update(playerquests.find(self.clone().id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
@@ -133,36 +136,36 @@ impl PlayerQuest {
         Ok(())
     }
 
-    pub fn activate(mut quest: PlayerQuest, connection: &mut SqliteConnection) {
-        quest.status.owned = true;
-        let _ = PlayerQuest::save(quest, connection);
+    pub fn activate(mut self, connection: &mut SqliteConnection) {
+        self.status.owned = true;
+        let _ = self.save(connection);
     }
 
-    pub fn validate(mut quest: PlayerQuest, xp: i32, connection: &mut SqliteConnection) {
-        let mut player_game = Game::get(quest.clone().game_id, connection)
-            .unwrap_or_else(|_| panic!("Failed to load game {}", quest.clone().game_id));
-        Game::compute_character_xp(&mut player_game, xp, connection);
-        quest.status.completed = true;
-        let _ = PlayerQuest::save(quest.clone(), connection);
+    pub fn validate(&mut self, xp: i32, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let mut player_game = Game::get(self.clone().game_id, connection)?;
+        player_game.compute_character_xp(xp, connection);
+        self.status.completed = true;
+        self.clone().save(connection)?;
 
-        if quest.next.is_some() {
-            let mut _next =
-                Self::get(quest.next.unwrap(), connection).expect("Failed to get quest");
-            Self::activate(_next, connection);
+        if let Some(quest) = &self.next {
+            let mut _next = Self::get(quest.clone(), connection)?;
+            _next.activate(connection);
         }
+        Ok(())
     }
 
     pub fn edit(
-        mut quest: PlayerQuest,
+        mut self,
         _status: &str,
         value: bool,
         connection: &mut SqliteConnection,
-    ) {
+    ) -> Result<(), Error> {
         match _status {
-            "failed" => quest.status.failed = value,
-            "abandoned" => quest.status.abandoned = value,
+            "failed" => self.status.failed = value,
+            "abandoned" => self.status.abandoned = value,
             _ => (),
         }
-        let _ = PlayerQuest::save(quest, connection);
+        self.save(connection)?;
+        Ok(())
     }
 }

@@ -14,8 +14,8 @@ mod tests {
                 let mut g2 = GameFactory.generate(connection);
                 g2.visible = false;
 
-                let _ = Game::save(&mut g1, connection);
-                let _ = Game::save(&mut g2, connection);
+                let _ = g1.save(connection);
+                let _ = g2.save(connection);
 
                 let response = Game::fetch(connection).unwrap();
 
@@ -36,8 +36,8 @@ mod tests {
                 let mut g2 = GameFactory.generate(connection);
                 g2.visible = false;
 
-                let _ = Game::save(&mut g1, connection);
-                let _ = Game::save(&mut g2, connection);
+                let _ = g1.save(connection);
+                let _ = g2.save(connection);
 
                 let response = Game::fetch(connection).unwrap();
 
@@ -52,7 +52,7 @@ mod tests {
     fn test_save_games() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
             let request = Game::load(game.id.clone(), connection).unwrap();
 
             assert_eq!(request.player, "game".to_string());
@@ -64,7 +64,7 @@ mod tests {
                 id: 633,
             };
 
-            Game::save(&mut game, connection).unwrap();
+            let _ = game.save(connection).unwrap();
             let patch_response = Game::load(game.clone().id, connection).unwrap();
             assert_eq!(patch_response.save_count, 2);
             assert_eq!(patch_response.last_known_position.x, 8.0);
@@ -77,7 +77,7 @@ mod tests {
     fn test_delete_game() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
             let result = Game::fetch(connection).unwrap();
 
             assert_eq!(result.len(), 1);

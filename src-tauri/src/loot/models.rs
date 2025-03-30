@@ -1,13 +1,12 @@
 use crate::schema::loot;
 use crate::schema::loot::dsl::*;
 use diesel::{
-    deserialize::Queryable, prelude::*, sql_types::Text, sqlite::Sqlite, RunQueryDsl,
-    SqliteConnection,
+    deserialize::Queryable, prelude::*, result::Error, sql_types::Text, sqlite::Sqlite,
+    RunQueryDsl, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
@@ -102,33 +101,33 @@ impl Loot {
         Ok(_load)
     }
 
-    pub fn save(
-        _item: Loot,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let item_type_json = serde_json::to_string(&_item.item_type).expect(BASE_ERROR);
-        let name_json = serde_json::to_string(&_item.name).expect(BASE_ERROR);
-        let description_json = serde_json::to_string(&_item.description).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let item_type_json = serde_json::to_string(&self.item_type)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableLoot {
             id: Uuid::new_v4().to_string(),
             item_type: item_type_json,
             name: name_json,
             description: description_json,
-            armor: _item.armor,
-            damage: _item.damage,
-            parade: _item.parade,
-            price: _item.price,
-            weight: _item.weight,
+            armor: self.armor,
+            damage: self.damage,
+            parade: self.parade,
+            price: self.price,
+            weight: self.weight,
         };
 
         let exists = loot
-            .filter(id.eq(_item.clone().id))
+            .filter(id.eq(self.clone().id))
             .first::<Loot>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(loot.find(_item.id))
+            diesel::update(loot.find(self.id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {

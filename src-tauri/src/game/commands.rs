@@ -16,7 +16,7 @@ pub fn new_game(
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
         let _name = name.unwrap_or("name".into());
-        Game::new(_name, &mut connection)
+        Ok(Game::new(_name, &mut connection)?)
     })
 }
 
@@ -26,7 +26,7 @@ pub fn load_games(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Game::fetch(&mut connection).expect("Failed to load games")
+        Ok(Game::fetch(&mut connection)?)
     })
 }
 
@@ -37,7 +37,7 @@ pub fn load_game(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Game::load(id, &mut connection).expect("Failed to load game")
+        Ok(Game::load(id, &mut connection)?)
     })
 }
 
@@ -48,7 +48,7 @@ pub fn delete_game(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Game::delete(id, &mut connection).expect("Failed to delete game")
+        Ok(Game::delete(id, &mut connection)?)
     })
 }
 
@@ -59,6 +59,6 @@ pub fn save_game(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Game::save(&mut data, &mut connection).expect("Failed to save game")
+        Ok(data.save(&mut connection)?)
     })
 }

@@ -1,6 +1,6 @@
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::schema::statistics::dsl::*;
 use crate::{backend::translations::models::Translations, schema::statistics};
+use diesel::result::Error;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -52,27 +52,26 @@ impl Statistic {
         Ok(_load)
     }
 
-    pub fn save(
-        stat: Self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&stat.name).expect(BASE_ERROR);
-        let description_json = serde_json::to_string(&stat.description).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableStatistic {
             id: Uuid::new_v4().to_string(),
             name: name_json,
             description: description_json,
-            value: stat.clone().value,
-            visible: stat.clone().visible,
+            value: self.clone().value,
+            visible: self.clone().visible,
         };
         let exists = statistics
-            .filter(id.eq(stat.clone().id))
+            .filter(id.eq(self.clone().id))
             .first::<Self>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(statistics.find(stat.id))
+            diesel::update(statistics.find(self.id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
@@ -80,7 +79,6 @@ impl Statistic {
                 .values(&insertable)
                 .execute(connection)?;
         }
-
         Ok(())
     }
 

@@ -1,7 +1,44 @@
-use magic_crypt::{new_magic_crypt, MagicCrypt256, MagicCryptTrait};
+use core::fmt;
+use magic_crypt::{new_magic_crypt, MagicCrypt256, MagicCryptError, MagicCryptTrait};
 use serde::{Deserialize, Serialize};
-use serde_json::{json, Value};
+use serde_json::{json, Error, Value};
 use std::env;
+
+use crate::backend::utils::errors::ValidationError;
+
+#[derive(Debug)]
+pub enum ConfigError {
+    DecryptionError(String),
+    ValidationError(String),
+    JsonError(serde_json::Error),
+}
+
+impl From<MagicCryptError> for ConfigError {
+    fn from(err: MagicCryptError) -> Self {
+        ConfigError::DecryptionError(err.to_string())
+    }
+}
+impl From<ValidationError> for ConfigError {
+    fn from(err: ValidationError) -> Self {
+        ConfigError::ValidationError(err.to_string())
+    }
+}
+
+impl From<Error> for ConfigError {
+    fn from(err: Error) -> Self {
+        ConfigError::JsonError(err)
+    }
+}
+
+impl fmt::Display for ConfigError {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            ConfigError::DecryptionError(msg) => write!(f, "{}", msg),
+            ConfigError::ValidationError(msg) => write!(f, "{}", msg),
+            ConfigError::JsonError(err) => write!(f, "{}", err),
+        }
+    }
+}
 
 #[allow(dead_code)]
 pub enum Permission {
@@ -45,7 +82,7 @@ pub struct Credentials {
 #[allow(dead_code)]
 impl Credentials {
     /// Initialize credentials retrieval
-    pub fn initialize() -> Self {
+    pub fn initialize() -> Result<Self, ConfigError> {
         let mut credentials = Self {
             config: Self::get_default_config(),
             configuration_key: None,
@@ -54,23 +91,29 @@ impl Credentials {
 
         if let Some(configuration_key) = Self::check_key("USER_KEY") {
             if let Some(security_key) = Self::check_key("SECRET_KEY") {
-                credentials.config = Self::decrypt_secret_key(&security_key, &configuration_key);
+                credentials.config = Self::decrypt_secret_key(&security_key, &configuration_key)?;
                 credentials.configuration_key = Some(configuration_key);
                 credentials.status = String::from("authenticated_credentials");
             }
         }
 
-        credentials
+        Ok(credentials)
     }
 
     /// Parse proper credentials config is environment variables are provided
-    pub fn decrypt_secret_key(key: &str, configuration_key: &str) -> Config {
+    pub fn decrypt_secret_key(key: &str, configuration_key: &str) -> Result<Config, ConfigError> {
         let encryption_key = Self::get_key(key.to_string());
-        let config = encryption_key
-            .decrypt_base64_to_string(configuration_key)
-            .expect("Error while decrypting configuration");
+        let config = encryption_key.decrypt_base64_to_string(configuration_key)?;
 
-        serde_json::from_str(&config).expect("Configuration is not valid json")
+        Ok(serde_json::from_str(&config)?)
+    }
+
+    pub fn get_default() -> Self {
+        Self {
+            config: Self::get_default_config(),
+            configuration_key: None,
+            status: String::from("default_credentials"),
+        }
     }
 
     /// Default config fallback
@@ -102,7 +145,7 @@ impl Credentials {
             "dev_tools_enabled": true,
             "dev_settings_enabled": true,
         });
-        let key = Self::generate_key(values).unwrap();
+        let key = Self::generate_key(values)?;
         Ok(key)
     }
 
@@ -114,7 +157,7 @@ impl Credentials {
             "dev_tools_enabled": true,
             "dev_settings_enabled": true,
         });
-        let key = Self::generate_key(values).unwrap();
+        let key = Self::generate_key(values)?;
         Ok(key)
     }
 
@@ -126,14 +169,14 @@ impl Credentials {
             "dev_tools_enabled": false,
             "dev_settings_enabled": false,
         });
-        let key = Self::generate_key(values).unwrap();
+        let key = Self::generate_key(values)?;
         Ok(key)
     }
 
     /// Generate new credentials from json values
     pub fn generate_key(values: Value) -> Result<String, Box<dyn std::error::Error>> {
-        let key = Self::check_key("SECRET_KEY").unwrap();
-        let encrypt = Self::get_key(key.to_string());
+        let secret_key = Self::check_key("SECRET_KEY").unwrap();
+        let encrypt = Self::get_key(secret_key.to_string());
         let json = serde_json::to_string(&values)?;
         let key = encrypt.encrypt_str_to_base64(json);
         Ok(key)

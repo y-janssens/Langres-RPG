@@ -62,7 +62,7 @@ impl FrustumCullingUtility {
         let ids = Self::cull(value, size, horizontal, vertical);
         content
             .iter()
-            .filter(|item| ids.contains(&(item.id as i32)))
+            .filter(|item| ids.contains(&(item.id as i32)) && item.walkable)
             .cloned()
             .collect()
     }

@@ -54,18 +54,18 @@ impl Character {
         let new_xp = self.xp + xp;
         let max_xp = self.max_xp;
         if new_xp >= max_xp {
-            return Self::level_up(self, new_xp - max_xp);
+            return self.level_up(new_xp - max_xp);
         }
         self.xp = new_xp;
         self
     }
 
     fn level_up(&mut self, xp: u32) -> &mut Character {
-        let max_xp: u32 = Self::get_max_xp(self);
+        let max_xp: u32 = self.get_max_xp();
         self.max_xp = max_xp;
         self.lvl += 1;
         if xp >= max_xp {
-            return Self::compute_xp(self, self.xp + xp - max_xp);
+            return self.compute_xp(self.xp + xp - max_xp);
         }
         self.xp = xp;
         self
@@ -134,7 +134,7 @@ impl Inventory {
 
     pub fn add_gold(&mut self, loot: Loot) {
         if loot.item_type == ItemTypes::Gold {
-            self.gold += loot.price.unwrap() as u32;
+            self.gold += loot.price.unwrap_or(0) as u32;
         }
     }
 

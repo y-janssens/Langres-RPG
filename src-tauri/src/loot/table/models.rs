@@ -4,7 +4,7 @@ use crate::{
     backend::translations::models::Translations,
     loot::models::{ItemTypes, Loot},
 };
-use diesel::SqliteConnection;
+use diesel::{result::Error, SqliteConnection};
 use rand::{seq::IteratorRandom, thread_rng};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
@@ -17,15 +17,18 @@ pub struct TableLoot {
 }
 
 impl TableLoot {
-    pub fn generate(name: Option<String>, connection: &mut SqliteConnection) -> Vec<Loot> {
+    pub fn generate(
+        name: Option<String>,
+        connection: &mut SqliteConnection,
+    ) -> Result<Vec<Loot>, Error> {
         let config = Conf::get_config();
         let capacity = config.clone().get_level();
         let mut table = Vec::with_capacity(capacity);
 
         if let Some(n) = name {
-            return Self::resolve_named_table(&n, table);
+            return Ok(Self::resolve_named_table(&n, table));
         } else {
-            let base_loot = Loot::load(connection).expect("Failed to load base loot table");
+            let base_loot = Loot::load(connection)?;
 
             let gold = Self::resolve_gold(config.clone());
 
@@ -60,16 +63,17 @@ impl TableLoot {
             }
         }
         let set_loot: HashSet<Loot> = table.clone().into_iter().collect();
-        set_loot.into_iter().collect()
-        // table
+        Ok(set_loot.into_iter().collect())
     }
 
     fn resolve_named_table(name: &str, mut table: Vec<Loot>) -> Vec<Loot> {
         let binding = NAMED_TABLES.clone();
-        let named_table = binding.iter().find(|table| table.name == name).unwrap();
+        let named_table = binding.iter().find(|table| table.name == name);
 
-        for item in &named_table.table.items {
-            table.push(item.clone());
+        if let Some(_table) = named_table {
+            for item in &_table.table.items {
+                table.push(item.clone());
+            }
         }
         table
     }

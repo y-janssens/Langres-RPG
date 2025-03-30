@@ -11,7 +11,7 @@ use crate::{
 
 #[tauri::command]
 pub fn throw_dice(value: u32, cap: u32) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::RegularUser, || Dice::launch(value, cap))
+    authenticated_command(Permission::RegularUser, || Ok(Dice::launch(value, cap)))
 }
 
 #[tauri::command]
@@ -22,7 +22,9 @@ pub fn frustum_cull_ids(
     vertical: usize,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        FrustumCullingUtility::cull(value, size, horizontal, vertical)
+        Ok(FrustumCullingUtility::cull(
+            value, size, horizontal, vertical,
+        ))
     })
 }
 
@@ -35,13 +37,20 @@ pub fn frustum_cull_filter(
     content: Vec<Item>,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        FrustumCullingUtility::cull_filter(value, size, horizontal, vertical, content)
+        Ok(FrustumCullingUtility::cull_filter(
+            value, size, horizontal, vertical, content,
+        ))
     })
 }
 
 #[tauri::command]
 pub fn get_neighbours(size: u32, area: u32, tile_id: u32) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        FrustumCullingUtility::cull(tile_id as i32, size, area as usize, area as usize)
+        Ok(FrustumCullingUtility::cull(
+            tile_id as i32,
+            size,
+            area as usize,
+            area as usize,
+        ))
     })
 }

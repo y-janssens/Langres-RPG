@@ -1,10 +1,10 @@
+use diesel::result::Error;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 use crate::schema::playerstatistics;
 use crate::schema::playerstatistics::dsl::*;
@@ -33,11 +33,12 @@ pub struct InsertablePlayerStatistic {
 }
 
 impl PlayerStatistic {
-    pub fn generate(_id: String, connection: &mut SqliteConnection) {
+    pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
         println!("Generating game statistics...");
-        let base_statistics = Statistic::load(connection).expect("Failed to load statistics");
+        let base_statistics = Statistic::load(connection)?;
         for statistic in base_statistics {
-            let name_json = serde_json::to_string(&statistic.name).expect(BASE_ERROR);
+            let name_json = serde_json::to_string(&statistic.name)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
             let _statistic = InsertablePlayerStatistic {
                 id: Uuid::new_v4().to_string(),
                 game_id: _id.clone(),
@@ -47,9 +48,9 @@ impl PlayerStatistic {
             };
             diesel::insert_into(playerstatistics::table)
                 .values(&_statistic)
-                .execute(connection)
-                .expect("Failed to save statistic");
+                .execute(connection)?;
         }
+        Ok(())
     }
 
     pub fn load(
@@ -69,27 +70,25 @@ impl PlayerStatistic {
         Ok(_load)
     }
 
-    pub fn save(
-        statistic: PlayerStatistic,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&statistic.name).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertablePlayerStatistic {
             id: Uuid::new_v4().to_string(),
-            game_id: statistic.clone().game_id,
-            statistic_id: statistic.clone().id,
+            game_id: self.clone().game_id,
+            statistic_id: self.clone().id,
             name: name_json,
-            value: statistic.clone().value,
+            value: self.clone().value,
         };
 
         let exists = playerstatistics
-            .filter(playerstatistics::id.eq(statistic.clone().id))
+            .filter(playerstatistics::id.eq(self.clone().id))
             .first::<PlayerStatistic>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(playerstatistics.find(statistic.id))
+            diesel::update(playerstatistics.find(self.id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
@@ -97,7 +96,6 @@ impl PlayerStatistic {
                 .values(&insertable)
                 .execute(connection)?;
         }
-
         Ok(())
     }
 }

@@ -174,7 +174,7 @@ impl World {
         let size = *DEFAULT_MAP_SIZE;
         let grid: u32 = *DEFAULT_MAP_SIZE_GRID;
 
-        let mut content = Vec::with_capacity(grid.try_into().unwrap());
+        let mut content = Vec::with_capacity(grid as usize);
 
         for i in 0..grid {
             let col = i % size;
@@ -205,14 +205,11 @@ impl World {
 
     pub async fn generate_content(&mut self, options: Option<Options>) -> Self {
         let (tx, mut rx) = mpsc::channel(100);
-        let mut opts = self.options.clone();
-        if options.is_some() {
-            opts = options.unwrap();
-        }
+        let generator_options = options.unwrap_or_else(|| self.options.clone());
+
         let cleared_content = Self::generate();
-        let opts_for_closure = opts.clone();
         let result =
-            tokio::task::spawn_blocking(move || Map::generate(cleared_content, opts_for_closure))
+            tokio::task::spawn_blocking(move || Map::generate(cleared_content, generator_options))
                 .await
                 .unwrap();
 

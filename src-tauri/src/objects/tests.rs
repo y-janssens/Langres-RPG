@@ -9,7 +9,7 @@ mod tests {
     fn test_load_objects() {
         allow_db_access(|connection| {
             let object = ObjectFactory.generate();
-            let _ = Object::save(object, connection);
+            let _ = object.save(connection);
             let result = Object::load(connection).unwrap();
 
             assert_eq!(result.len(), 13);
@@ -20,7 +20,7 @@ mod tests {
     fn test_patch_object() {
         allow_db_access(|connection| {
             let object = ObjectFactory.generate();
-            let _ = Object::save(object, connection);
+            let _ = object.save(connection);
             let result = Object::load(connection).unwrap();
 
             let mut patch_object = Object {
@@ -36,7 +36,7 @@ mod tests {
 
             patch_object.name = "loul".to_string();
 
-            let _ = Object::save(patch_object, connection);
+            let _ = patch_object.save(connection);
             let patch_result = Object::load(connection).unwrap();
 
             assert_eq!(patch_result[0].name, "loul");
@@ -47,7 +47,7 @@ mod tests {
     fn test_delete_object() {
         allow_db_access(|connection| {
             let object = ObjectFactory.generate();
-            let _ = Object::save(object, connection);
+            let _ = object.save(connection);
             let result = Object::load(connection).unwrap();
 
             let delete = Object::delete(result[0].id, connection);

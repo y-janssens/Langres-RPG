@@ -14,7 +14,7 @@ pub fn load_player_statistics(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerStatistic::load(game_id, &mut connection).expect("Failed to load statistics")
+        Ok(PlayerStatistic::load(game_id, &mut connection)?)
     })
 }
 
@@ -25,7 +25,7 @@ pub fn load_player_statistic(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerStatistic::get(id, &mut connection).expect("Failed to load statistics")
+        Ok(PlayerStatistic::get(id, &mut connection)?)
     })
 }
 
@@ -36,6 +36,6 @@ pub fn save_player_statistic(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerStatistic::save(data, &mut connection).expect("Failed to save statistic")
+        Ok(data.save(&mut connection)?)
     })
 }

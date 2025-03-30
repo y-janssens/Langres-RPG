@@ -14,13 +14,13 @@ pub fn load_statistics(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
-        Statistic::load(&mut connection).expect("Failed to load statistics")
+        Ok(Statistic::load(&mut connection)?)
     })
 }
 
 #[tauri::command]
 pub fn new_statistic() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, Statistic::new)
+    authenticated_command(Permission::Dashboard, || Ok(Statistic::new()))
 }
 
 #[tauri::command]
@@ -29,9 +29,7 @@ pub fn save_statistic(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Statistic::save(data, &mut connection).expect("Failed to save statistic")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(data.save(&mut connection)?))
 }
 
 #[tauri::command]
@@ -41,6 +39,6 @@ pub fn delete_statistic(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
-        Statistic::delete(id, &mut connection).expect("Failed to delete statistic")
+        Ok(Statistic::delete(id, &mut connection)?)
     })
 }

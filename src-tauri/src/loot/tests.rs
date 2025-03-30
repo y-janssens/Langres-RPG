@@ -9,7 +9,7 @@ mod tests {
     fn test_load_loots() {
         allow_db_access(|connection| {
             let loot = LootFactory.generate();
-            let _ = Loot::save(loot, connection);
+            let _ = loot.save(connection);
             let result = Loot::load(connection).unwrap();
 
             assert_eq!(result.len(), 1);
@@ -20,13 +20,13 @@ mod tests {
     fn test_patch_loot() {
         allow_db_access(|connection| {
             let loot = LootFactory.generate();
-            let _ = Loot::save(loot, connection);
+            let _ = loot.save(connection);
             let result = Loot::load(connection).unwrap();
 
             let mut patch_loot = LootFactory.generate();
             patch_loot.price = Some(112);
 
-            let _ = Loot::save(patch_loot, connection);
+            let _ = patch_loot.save(connection);
             let patch_result = Loot::load(connection).unwrap();
 
             assert_eq!(patch_result[0].clone().price, result[0].clone().price);
@@ -37,7 +37,7 @@ mod tests {
     fn test_delete_loot() {
         allow_db_access(|connection| {
             let loot = LootFactory.generate();
-            let _ = Loot::save(loot, connection);
+            let _ = loot.save(connection);
             let result = Loot::load(connection).unwrap();
 
             let delete = Loot::delete(result[0].clone().id, connection);

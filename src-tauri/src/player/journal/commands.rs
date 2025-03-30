@@ -14,6 +14,6 @@ pub fn load_player_journal(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerJournal::load(id, &mut connection).expect("Failed to load journal")
+        Ok(PlayerJournal::load(id, &mut connection)?)
     })
 }

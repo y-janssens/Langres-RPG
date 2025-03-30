@@ -6,7 +6,7 @@ pub mod tests_fixtures {
 
     /// Run "cargo test -- --nocapture" to visualize output
     pub fn render_map_output(map: Vec<Item>, size: u32) {
-        for line in map.chunks(size.try_into().unwrap()) {
+        for line in map.chunks(size as usize) {
             for (index, item) in line.iter().enumerate() {
                 let color_code = match item.value.as_str() {
                     "-" => "\x1b[0m",
@@ -29,7 +29,7 @@ pub mod tests_fixtures {
         }
     }
     pub fn render_map_topology(map: Vec<Item>, size: u32) {
-        for line in map.chunks(size.try_into().unwrap()) {
+        for line in map.chunks(size as usize) {
             for (index, item) in line.iter().enumerate() {
                 let color_code = match item.z {
                     0 => "\x1b[38;2;50;50;50m",    // Dark Gray (Lowest elevation)

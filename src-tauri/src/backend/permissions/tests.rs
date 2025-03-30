@@ -35,11 +35,11 @@ mod tests {
     #[test]
     fn test_permissions_success() {
         with_permissions(Permission::Admin, || {
-            let admin = authenticated_command(Permission::Admin, || mock_value());
-            let dashboard = authenticated_command(Permission::Dashboard, || mock_value());
-            let editor = authenticated_command(Permission::Editor, || mock_value());
-            let dev_tools = authenticated_command(Permission::DevTools, || mock_value());
-            let dev_settings = authenticated_command(Permission::DevSettings, || mock_value());
+            let admin = authenticated_command(Permission::Admin, || Ok(mock_value()));
+            let dashboard = authenticated_command(Permission::Dashboard, || Ok(mock_value()));
+            let editor = authenticated_command(Permission::Editor, || Ok(mock_value()));
+            let dev_tools = authenticated_command(Permission::DevTools, || Ok(mock_value()));
+            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(mock_value()));
 
             assert!(admin.is_ok());
             assert!(dashboard.is_ok());
@@ -52,11 +52,11 @@ mod tests {
     #[test]
     fn test_permissions_error() {
         with_permissions(Permission::RegularUser, || {
-            let admin = authenticated_command(Permission::Admin, || mock_value());
-            let dashboard = authenticated_command(Permission::Dashboard, || mock_value());
-            let editor = authenticated_command(Permission::Editor, || mock_value());
-            let dev_tools = authenticated_command(Permission::DevTools, || mock_value());
-            let dev_settings = authenticated_command(Permission::DevSettings, || mock_value());
+            let admin = authenticated_command(Permission::Admin, || Ok(mock_value()));
+            let dashboard = authenticated_command(Permission::Dashboard, || Ok(mock_value()));
+            let editor = authenticated_command(Permission::Editor, || Ok(mock_value()));
+            let dev_tools = authenticated_command(Permission::DevTools, || Ok(mock_value()));
+            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(mock_value()));
 
             assert!(admin.is_err_and(|r| r.0 == "Permission denied"));
             assert!(dashboard.is_err_and(|r| r.0 == "Permission denied"));

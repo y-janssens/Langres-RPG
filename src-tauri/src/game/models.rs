@@ -2,12 +2,12 @@ use crate::schema::games;
 use crate::schema::games::dsl::*;
 use chrono::{DateTime, Local};
 use diesel::prelude::*;
+use diesel::result::Error;
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use crate::backend::permissions::models::Credentials;
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::character::models::Character;
 use crate::player::achievements::models::PlayerAchievement;
@@ -79,24 +79,24 @@ pub struct GameDatas {
 }
 
 impl Game {
-    pub fn new(name: String, connection: &mut SqliteConnection) -> Self {
+    pub fn new(name: String, connection: &mut SqliteConnection) -> Result<Self, Error> {
         println!("Generating game data...");
 
-        Game {
+        Ok(Game {
             id: Uuid::new_v4().to_string(),
             player: String::from(&name),
             date_created: Self::get_date(),
             last_save_date: Self::get_date(),
             save_count: 0,
             character: Character::new(name),
-            storyline: Story::load(connection).unwrap(),
+            storyline: Story::load(connection)?,
             visible: true,
             last_known_position: Position {
                 x: 0.0,
                 y: 0.0,
                 id: 0,
             },
-        }
+        })
     }
 
     fn get_date() -> String {
@@ -104,14 +104,16 @@ impl Game {
         local.to_string()
     }
 
-    pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+    pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
         self.save_count += 1;
         self.last_save_date = Self::get_date();
 
-        let character_json = serde_json::to_string(&self.character).expect(BASE_ERROR);
-        let storyline_json = serde_json::to_string(&self.storyline).expect(BASE_ERROR);
-        let last_known_position_json =
-            serde_json::to_string(&self.last_known_position).expect(BASE_ERROR);
+        let character_json = serde_json::to_string(&self.character)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let storyline_json = serde_json::to_string(&self.storyline)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let last_known_position_json = serde_json::to_string(&self.last_known_position)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableGame {
             id: self.id.clone(),
@@ -134,7 +136,7 @@ impl Game {
                 .set(&insertable)
                 .execute(connection)?;
         } else {
-            Self::generate_player_datas(self, connection);
+            self.generate_player_datas(connection)?;
             diesel::insert_into(games::table)
                 .values(&insertable)
                 .execute(connection)?;
@@ -145,7 +147,7 @@ impl Game {
 
     pub fn compute_character_xp(&mut self, xp: i32, connection: &mut SqliteConnection) {
         self.character.compute_xp(xp as u32);
-        let _ = Self::save(self, connection);
+        let _ = self.save(connection);
     }
 
     pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<Self> {
@@ -156,7 +158,7 @@ impl Game {
     pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<GameDatas> {
         let mut game: Self = games.find(_id).first(connection)?;
         for act in &mut game.storyline.story.acts {
-            act.validate_acts();
+            act.validate_act();
         }
         let datas = GameDatas {
             id: game.id.clone(),
@@ -168,14 +170,15 @@ impl Game {
             storyline: game.storyline,
             visible: game.visible,
             last_known_position: game.last_known_position,
-            journal: PlayerJournal::load(game.id, connection)
-                .expect("Failed to fetch player journal"),
+            journal: PlayerJournal::load(game.id, connection)?,
         };
         Ok(datas)
     }
 
     pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
-        let credentials = Credentials::initialize().config;
+        let credentials = Credentials::initialize()
+            .unwrap_or(Credentials::get_default())
+            .config;
         let _games = if credentials.is_admin {
             crate::schema::games::table.load(connection)?
         } else {
@@ -191,8 +194,8 @@ impl Game {
         Ok(())
     }
 
-    pub fn patch_game_storyline(&mut self, connection: &mut SqliteConnection) {
-        let story = Story::load(connection).expect("Failed to load storyline");
+    pub fn patch_game_storyline(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let story = Story::load(connection)?;
         println!("GameId: {} - Patching storyline", self.id);
 
         let (current_item, current_map, current_act) = self
@@ -242,8 +245,8 @@ impl Game {
                 }
             }
         }
-
-        let _ = self.save(connection);
+        self.save(connection)?;
+        Ok(())
     }
 
     fn relocate_character(&mut self, current_map: World) {
@@ -268,8 +271,7 @@ impl Game {
     }
 
     fn get_new_position(&mut self, items: Vec<Item>) {
-        let _items: Vec<Item> = items.iter().filter(|i| i.walkable).cloned().collect();
-        let new_position = _items.choose(&mut rand::thread_rng()).unwrap();
+        let new_position = items.choose(&mut rand::thread_rng()).unwrap();
         self.last_known_position = Position::resolve(Self::resolve_new_position(new_position));
         println!("GameId: {} - New position: {}", self.id, new_position.id);
     }
@@ -285,9 +287,10 @@ impl Game {
         (x.abs() as f32, y.abs() as f32, item.id)
     }
 
-    pub fn generate_player_datas(&self, connection: &mut SqliteConnection) {
-        PlayerQuest::generate(self.id.clone(), connection);
-        PlayerAchievement::generate(self.id.clone(), connection);
-        PlayerStatistic::generate(self.id.clone(), connection);
+    pub fn generate_player_datas(&self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        PlayerQuest::generate(self.id.clone(), connection)?;
+        PlayerAchievement::generate(self.id.clone(), connection)?;
+        PlayerStatistic::generate(self.id.clone(), connection)?;
+        Ok(())
     }
 }

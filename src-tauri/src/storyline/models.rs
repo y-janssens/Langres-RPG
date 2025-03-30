@@ -1,8 +1,7 @@
+use diesel::result::Error;
 use diesel::{prelude::*, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
 
-use crate::backend::settings::errors::BASE_ERROR;
-use crate::backend::utils::errors::ValidationError;
 use crate::backend::utils::models::FrustumCullingUtility;
 use crate::events::models::{Event, EventType};
 use crate::game::models::Game;
@@ -39,7 +38,7 @@ pub struct Act {
 }
 
 impl Act {
-    pub fn validate_acts(&mut self) {
+    pub fn validate_act(&mut self) {
         let all_primary_maps_complete = self
             .content
             .maps
@@ -71,24 +70,19 @@ impl Story {
         Ok(_storyline)
     }
 
-    pub fn save(&mut self, connection: &mut SqliteConnection) {
+    pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
         for act in self.story.acts.iter_mut() {
-            act.validate_acts();
+            act.validate_act();
         }
         let updated_json = serde_json::to_string(&self.story.acts)
-            .map_err(|e| {
-                diesel::result::Error::DatabaseError(
-                    diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                    Box::new(e.to_string()),
-                )
-            })
-            .expect(BASE_ERROR);
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let _ = diesel::update(storyline.find(self.id))
             .set(crate::schema::storyline::story.eq(updated_json.clone()))
             .execute(connection);
 
-        Self::edit_existing_games(connection);
+        Self::edit_existing_games(connection)?;
+        Ok(())
     }
 
     fn find_tile<F>(
@@ -97,10 +91,11 @@ impl Story {
         map_id: i32,
         tiles: Vec<u32>,
         operation: F,
-    ) where
+    ) -> Result<(), Error>
+    where
         F: FnMut(&mut Item),
     {
-        let mut story = Self::load(connection).expect("Failed to load Story");
+        let mut story = Self::load(connection)?;
 
         if let Some(map) = story
             .story
@@ -114,8 +109,9 @@ impl Story {
                 .filter(|tile| tiles.contains(&tile.id))
                 .for_each(operation);
             map.compute_directions();
-            story.save(connection);
-        }
+            story.save(connection)?;
+        };
+        Ok(())
     }
 
     pub fn edit_tiles(
@@ -124,15 +120,17 @@ impl Story {
         map_id: i32,
         tiles: Vec<u32>,
         object_id: i32,
-    ) {
-        let object = Object::get(object_id, connection).expect("Failed to get object");
+    ) -> Result<(), Error> {
+        let object = Object::get(object_id, connection)?;
 
         Self::find_tile(connection, act_id, map_id, tiles, |tile| {
-            if object.value.is_some() {
-                tile.value = object.value.clone().unwrap();
+            if let Some(value) = &object.value {
+                tile.value = value.to_string();
             }
             tile.walkable = object.walkable;
-        });
+        })?;
+
+        Ok(())
     }
 
     pub fn register_gateway(
@@ -141,10 +139,10 @@ impl Story {
         map_id: i32,
         tile_id: u32,
         gateway: (Option<i32>, bool),
-    ) {
+    ) -> Result<(), Error> {
         Self::find_tile(connection, act_id, map_id, [tile_id].to_vec(), |tile| {
             if let Some(gateway_id) = gateway.0 {
-                let gateway_event = Event::get_gateway(Some(gateway_id), gateway.1);
+                let gateway_event = Event::get_gateway(gateway_id, gateway.1);
                 let pos = tile
                     .events
                     .iter()
@@ -157,7 +155,8 @@ impl Story {
                 tile.events
                     .retain(|event| !matches!(event.r#type, EventType::GateWay(_, _)));
             }
-        });
+        })?;
+        Ok(())
     }
 
     pub fn register_checkpoint(
@@ -166,10 +165,10 @@ impl Story {
         map_id: i32,
         tile_id: u32,
         checkpoint: Option<i32>,
-    ) {
+    ) -> Result<(), Error> {
         Self::find_tile(connection, act_id, map_id, [tile_id].to_vec(), |tile| {
             if let Some(checkpoint_id) = checkpoint {
-                let checkpoint_event = Event::get_checkpoint(Some(checkpoint_id));
+                let checkpoint_event = Event::get_checkpoint(checkpoint_id);
                 let pos = tile
                     .events
                     .iter()
@@ -182,7 +181,8 @@ impl Story {
                 tile.events
                     .retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
             }
-        });
+        })?;
+        Ok(())
     }
 
     pub fn register_object(
@@ -192,8 +192,8 @@ impl Story {
         tile_id: u32,
         object_id: i32,
         enable: bool,
-    ) -> Result<(), ValidationError> {
-        let mut story = Self::load(connection).expect("Failed to load Story");
+    ) -> Result<(), Error> {
+        let mut story = Self::load(connection)?;
 
         let map = story
             .story
@@ -201,15 +201,14 @@ impl Story {
             .iter_mut()
             .find(|act| act.id == act_id)
             .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
-            .expect("Failed to get map");
+            .ok_or(Error::NotFound)?;
 
-        let obj = Object::get(object_id, connection).expect("Failed to get object");
+        let obj = Object::get(object_id, connection)?;
 
         if !obj.interactive {
-            return Err(ValidationError(format!(
-                "Object: {} is not registrable",
-                object_id
-            )));
+            return Err(Error::SerializationError(
+                format!("Object: {} is not registrable", object_id).into(),
+            ));
         }
         // Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
         let neighbours_ids = FrustumCullingUtility::cull(
@@ -226,7 +225,7 @@ impl Story {
         {
             if enable {
                 _tile.value = if _tile.id == tile_id {
-                    obj.value.clone().unwrap()
+                    obj.value.clone().unwrap_or_else(|| String::from("#"))
                 } else {
                     String::from("#")
                 };
@@ -238,7 +237,7 @@ impl Story {
             }
         }
 
-        story.save(connection);
+        story.save(connection)?;
         Ok(())
     }
 
@@ -249,28 +248,32 @@ impl Story {
         map_id: i32,
         tile_id: u32,
         object_id: i32,
-    ) -> Vec<i32> {
-        let story = Self::load(connection).expect("Failed to load Story");
+    ) -> Result<Vec<i32>, Error> {
+        let mut story = Self::load(connection)?;
+
         let map = story
             .story
             .acts
-            .iter()
+            .iter_mut()
             .find(|act| act.id == act_id)
-            .and_then(|act| act.content.maps.iter().find(|map| map.id == map_id))
-            .expect("Failed to get map");
+            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .ok_or(Error::NotFound)?;
 
-        let obj = Object::get(object_id, connection).expect("Failed to get object");
-        FrustumCullingUtility::cull(
+        let obj = Object::get(object_id, connection)?;
+        Ok(FrustumCullingUtility::cull(
             tile_id as i32,
             map.size,
             obj.area.x as usize,
             obj.area.y as usize,
-        )
+        ))
     }
 
-    fn edit_existing_games(connection: &mut SqliteConnection) {
-        let mut games = Game::fetch(connection).expect("Failed to fetch games");
+    fn edit_existing_games(connection: &mut SqliteConnection) -> Result<(), Error> {
+        let mut games = Game::fetch(connection)?;
         let _games = games.iter_mut().filter(|g| g.visible);
-        _games.for_each(|game| game.patch_game_storyline(connection));
+        _games.for_each(|game| {
+            let _ = game.patch_game_storyline(connection);
+        });
+        Ok(())
     }
 }

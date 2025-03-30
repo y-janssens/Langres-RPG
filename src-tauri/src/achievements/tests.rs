@@ -9,7 +9,7 @@ mod tests {
     fn test_load_achievements() {
         allow_db_access(|connection| {
             let achievement = AchievementFactory.generate();
-            let _ = Achievement::save(achievement, connection);
+            let _ = achievement.save(connection);
             let result = Achievement::load(connection).unwrap();
 
             assert_eq!(result.len(), 1);
@@ -20,7 +20,7 @@ mod tests {
     fn test_patch_achievement() {
         allow_db_access(|connection| {
             let achievement = AchievementFactory.generate();
-            let _ = Achievement::save(achievement, connection);
+            let _ = achievement.save(connection);
             let result = Achievement::load(connection).unwrap();
 
             let mut patch_achievement = Achievement {
@@ -33,7 +33,7 @@ mod tests {
 
             patch_achievement.completed = true;
 
-            let _ = Achievement::save(patch_achievement, connection);
+            let _ = patch_achievement.save(connection);
             let patch_result = Achievement::load(connection).unwrap();
 
             assert!(patch_result[0].completed);
@@ -44,7 +44,7 @@ mod tests {
     fn test_delete_achievement() {
         allow_db_access(|connection| {
             let achievement = AchievementFactory.generate();
-            let _ = Achievement::save(achievement, connection);
+            let _ = achievement.save(connection);
             let result = Achievement::load(connection).unwrap();
 
             let delete = Achievement::delete(result[0].clone().id, connection);
