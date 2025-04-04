@@ -10,7 +10,7 @@ mod tests {
     fn test_load_collections() {
         allow_db_access(|connection| {
             let collection = CollectionFactory.generate();
-            let _ = Collection::save(collection, connection);
+            let _ = collection.save(connection);
             let result = Collection::load(connection).unwrap();
 
             assert_eq!(result.len(), 1);
@@ -21,7 +21,7 @@ mod tests {
     fn test_patch_collection() {
         allow_db_access(|connection| {
             let collection = CollectionFactory.generate();
-            let _ = Collection::save(collection, connection);
+            let _ = collection.save(connection);
             let result = Collection::load(connection).unwrap();
 
             let mut patch_collection = Collection {
@@ -34,7 +34,7 @@ mod tests {
 
             patch_collection.map.name = "loul".to_string();
 
-            let _ = Collection::save(patch_collection, connection);
+            let _ = patch_collection.save(connection);
             let patch_result = Collection::load(connection).unwrap();
 
             assert_eq!(patch_result[0].map.name, "loul");
@@ -45,7 +45,7 @@ mod tests {
     fn test_delete_collection() {
         allow_db_access(|connection| {
             let collection = CollectionFactory.generate();
-            let _ = Collection::save(collection, connection);
+            let _ = collection.save(connection);
             let result = Collection::load(connection).unwrap();
 
             let delete = Collection::delete(result[0].id, connection);

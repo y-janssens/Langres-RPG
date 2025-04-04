@@ -16,7 +16,7 @@ mod tests {
             assert_eq!(result.len(), 2);
 
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
             let player_quests = PlayerQuest::load(game.id, connection).expect(BASE_ERROR);
 
             assert_eq!(player_quests.len(), 2);
@@ -29,7 +29,7 @@ mod tests {
     fn test_activate_player_quest() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
 
             let player_quests = PlayerQuest::load(game.id, connection).expect(BASE_ERROR);
             let player_quest = &player_quests[0];
@@ -46,16 +46,14 @@ mod tests {
     fn test_validate_player_quest() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
 
             let player_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_quest = &player_quests[1];
 
-            PlayerQuest::validate(
-                player_quest.clone(),
-                player_quest.clone().reward,
-                connection,
-            );
+            let _ = player_quest
+                .clone()
+                .validate(player_quest.reward, connection);
 
             let player = Game::load(game.id, connection).expect(BASE_ERROR).character;
             assert_eq!(player.lvl, 2);
@@ -68,16 +66,14 @@ mod tests {
     fn test_validate_player_quest_next() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
 
             let player_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_quest = &player_quests[0];
 
-            PlayerQuest::validate(
-                player_quest.clone(),
-                player_quest.clone().reward,
-                connection,
-            );
+            let _ = player_quest
+                .clone()
+                .validate(player_quest.reward, connection);
 
             let patched_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
 
@@ -92,12 +88,15 @@ mod tests {
     fn test_edit_player_quest() {
         allow_db_access(|connection| {
             let mut game = GameFactory.generate(connection);
-            let _ = Game::save(&mut game, connection);
+            let _ = game.save(connection);
 
             let player_quests = PlayerQuest::load(game.id, connection).expect(BASE_ERROR);
             let player_quest = &player_quests[0];
 
-            PlayerQuest::edit(player_quest.clone(), "failed", true, connection);
+            player_quest
+                .clone()
+                .edit("failed", true, connection)
+                .expect(BASE_ERROR);
 
             let patched_quest =
                 PlayerQuest::get(player_quest.clone().id, connection).expect(BASE_ERROR);

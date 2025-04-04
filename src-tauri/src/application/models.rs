@@ -1,4 +1,4 @@
-use diesel::{prelude::*, sqlite::Sqlite};
+use diesel::{prelude::*, result::Error, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
 use std::ops::{Deref, DerefMut};
 
@@ -35,26 +35,21 @@ impl ApplicationSettings {
         Ok(_load)
     }
 
-    pub fn save(
-        _id: i32,
-        data: ApplicationSettings,
-        connection: &mut SqliteConnection,
-    ) -> QueryResult<usize> {
-        let languages_json = serde_json::to_string(&data.languages.0).map_err(|e| {
+    pub fn save(self, connection: &mut SqliteConnection) -> QueryResult<usize> {
+        let languages_json = serde_json::to_string(&self.languages.0).map_err(|e| {
             diesel::result::Error::DatabaseError(
                 diesel::result::DatabaseErrorKind::UnableToSendCommand,
                 Box::new(e.to_string()),
             )
         })?;
 
-        diesel::update(settings.find(_id))
+        diesel::update(settings.find(&self.id))
             .set((
-                id.eq(_id),
-                language.eq(&data.language),
+                language.eq(&self.language),
                 languages.eq(&languages_json),
-                sound.eq(data.sound),
-                volume.eq(data.volume),
-                music.eq(data.music),
+                sound.eq(self.sound),
+                volume.eq(self.volume),
+                music.eq(self.music),
             ))
             .execute(connection)
     }
@@ -135,18 +130,20 @@ impl ApplicationMenu {
     fn new() -> Self {
         Self(vec![])
     }
-    pub fn load_main_menu(connection: &mut SqliteConnection) -> Self {
+    pub fn load_main_menu(connection: &mut SqliteConnection) -> Result<Self, Error> {
         let mut menu = Self::new();
         let mut order = MenuOrdering::new();
-        let credentials = Credentials::initialize().config;
-        let games = Game::fetch(connection).expect("Failed to load games");
+        let credentials = Credentials::initialize()
+            .unwrap_or(Credentials::get_default())
+            .config;
+        let games = Game::fetch(connection)?;
 
         menu.add_main_menu_items(&mut order, games);
         menu.add_common_items(&mut order);
         menu.add_admin_menu_items(&credentials, &mut order);
         menu.add_item(&mut order, "exit", Some(Func::new(Some("exit"), "/")));
 
-        menu
+        Ok(menu)
     }
 
     pub fn load_ingame_menu() -> Self {

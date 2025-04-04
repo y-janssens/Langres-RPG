@@ -1,7 +1,7 @@
 use crate::schema::functions::dsl::*;
 use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
+    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl,
+    Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 
@@ -42,23 +42,20 @@ impl Function {
         }
     }
 
-    pub fn save(
-        data: Self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
         let insertable = InsertableFunction {
-            icon: data.icon,
-            label: data.label,
-            command: data.command,
+            icon: self.icon,
+            label: self.label,
+            command: self.command,
         };
 
         let exists = functions
-            .filter(id.eq(data.id))
+            .filter(id.eq(self.id))
             .first::<Self>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(functions.find(data.id))
+            diesel::update(functions.find(self.id))
                 .set(insertable)
                 .execute(connection)?;
         } else {

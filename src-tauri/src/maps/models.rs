@@ -100,7 +100,7 @@ impl Map {
             .filter(|tile| tile.entropy > 0)
             .map(|tile| tile.entropy)
             .min()
-            .unwrap();
+            .unwrap_or(0);
 
         items
             .iter()

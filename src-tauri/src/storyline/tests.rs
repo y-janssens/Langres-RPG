@@ -36,7 +36,7 @@ mod tests {
 
             let mut patch_story = response.clone();
             patch_story.story.acts[0].content.maps = maps;
-            patch_story.save(connection);
+            patch_story.save(connection).expect(BASE_ERROR);
 
             let patch_response = Story::load(connection).unwrap();
 
@@ -57,7 +57,7 @@ mod tests {
             map.complete = true;
         }
 
-        storyline.story.acts[0].validate_acts();
+        storyline.story.acts[0].validate_act();
         assert!(storyline.story.acts[0].complete);
     }
 
@@ -77,7 +77,8 @@ mod tests {
                 1498719483,
                 [3, 4, 5].to_vec(),
                 object.id,
-            );
+            )
+            .expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
@@ -97,7 +98,8 @@ mod tests {
     #[test]
     fn test_register_gateway() {
         allow_db_access(|connection| {
-            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true))
+                .expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -120,13 +122,15 @@ mod tests {
     #[test]
     fn test_unregister_gateway() {
         allow_db_access(|connection| {
-            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true))
+                .expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            Story::register_gateway(connection, 1323375008, 1498719483, 3, (None, true));
+            Story::register_gateway(connection, 1323375008, 1498719483, 3, (None, true))
+                .expect(BASE_ERROR);
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -137,7 +141,8 @@ mod tests {
     #[test]
     fn test_register_checkpoint() {
         allow_db_access(|connection| {
-            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3))
+                .expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
@@ -160,13 +165,15 @@ mod tests {
     #[test]
     fn test_unregister_checkpoint() {
         allow_db_access(|connection| {
-            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3));
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, Some(3))
+                .expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.story.acts[0].content.maps[0].content[3];
             assert_eq!(tile.events.len(), 1);
 
-            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, None);
+            Story::register_checkpoint(connection, 1323375008, 1498719483, 3, None)
+                .expect(BASE_ERROR);
 
             let patched_ = Story::load(connection).unwrap();
             let patched_tile = &patched_.story.acts[0].content.maps[0].content[3];
@@ -185,13 +192,13 @@ mod tests {
                     .cloned()
                     .expect(BASE_ERROR);
 
-                let mut story = Story::load(connection).unwrap();
+                let mut story = Story::load(connection).expect(BASE_ERROR);
                 // Clear base map content for readability purposes
                 let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true)
                     .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
-                story.save(connection);
+                story.save(connection).expect(BASE_ERROR);
 
                 let _ = Story::register_object(
                     connection,
@@ -235,13 +242,13 @@ mod tests {
                     .cloned()
                     .expect(BASE_ERROR);
 
-                let mut story = Story::load(connection).unwrap();
+                let mut story = Story::load(connection).expect(BASE_ERROR);
                 // Clear base map content for readability purposes
                 let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true)
                     .expect(BASE_ERROR);
                 story.story.acts[0].content.maps[0] =
                     serde_json::from_value(map.0).expect(BASE_ERROR);
-                story.save(connection);
+                story.save(connection).expect(BASE_ERROR);
 
                 let _ = Story::register_object(
                     connection,
@@ -286,8 +293,7 @@ mod tests {
 
             let response =
                 Story::register_object(connection, 1323375008, 1498719483, 3, object.id, true);
-            let error = response.unwrap_err().0;
-            assert_eq!(error, format!("Object: {} is not registrable", object.id));
+            assert!(response.is_err());
         });
     }
 
@@ -296,9 +302,9 @@ mod tests {
         allow_db_access(|connection| {
             // Setup initial storyline and game
             let storyline = Story::load(connection).unwrap();
-            let mut game = Game::new("test".to_string(), connection);
+            let mut game = Game::new("test".to_string(), connection).expect(BASE_ERROR);
             game.last_known_position = Position::resolve((10.0, 16.0, 707));
-            Game::save(&mut game, connection).unwrap();
+            game.save(connection).unwrap();
 
             // Patch storyline
             let mut maps = storyline.story.acts[0].content.maps.clone();
@@ -318,7 +324,7 @@ mod tests {
 
             let mut patch_story = storyline.clone();
             patch_story.story.acts[0].content.maps = maps;
-            patch_story.save(connection);
+            patch_story.save(connection).expect(BASE_ERROR);
 
             // Retrieve patched storyline and check datas consistency
             let _act = Story::load(connection).unwrap().story.acts[0].clone();

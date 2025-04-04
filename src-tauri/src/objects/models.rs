@@ -1,12 +1,11 @@
 use crate::schema::objects::dsl::*;
 use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
+    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl,
+    Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
-use crate::backend::settings::errors::BASE_ERROR;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::objects)]
@@ -60,29 +59,27 @@ impl Object {
         }
     }
 
-    pub fn save(
-        data: Self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let area_json = serde_json::to_string(&data.area).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let area_json = serde_json::to_string(&self.area)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableObject {
-            name: data.name,
-            value: data.value,
-            display_value: data.display_value,
-            display_color: data.display_color,
+            name: self.name,
+            value: self.value,
+            display_value: self.display_value,
+            display_color: self.display_color,
             area: area_json,
-            walkable: data.walkable,
-            interactive: data.interactive,
+            walkable: self.walkable,
+            interactive: self.interactive,
         };
 
         let exists = objects
-            .filter(id.eq(data.id))
+            .filter(id.eq(self.id))
             .first::<Self>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(objects.find(data.id))
+            diesel::update(objects.find(self.id))
                 .set(insertable)
                 .execute(connection)?;
         } else {

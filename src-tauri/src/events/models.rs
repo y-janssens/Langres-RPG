@@ -49,18 +49,18 @@ impl Event {
         }
     }
 
-    pub fn get_checkpoint(tile_id: Option<i32>) -> Event {
+    pub fn get_checkpoint(tile_id: i32) -> Event {
         Self::get_base_event((
-            EventType::CheckPoint(tile_id.unwrap()),
+            EventType::CheckPoint(tile_id),
             EventMode::Automatic,
             EventStatus::None,
             EventType::None,
         ))
     }
 
-    pub fn get_gateway(map_id: Option<i32>, is_final: bool) -> Event {
+    pub fn get_gateway(map_id: i32, is_final: bool) -> Event {
         Self::get_base_event((
-            EventType::GateWay(map_id.unwrap(), is_final),
+            EventType::GateWay(map_id, is_final),
             EventMode::Automatic,
             EventStatus::None,
             EventType::None,

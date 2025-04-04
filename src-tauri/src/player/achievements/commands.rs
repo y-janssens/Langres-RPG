@@ -14,7 +14,7 @@ pub fn load_player_achievements(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerAchievement::load(game_id, &mut connection).expect("Failed to load achievements")
+        Ok(PlayerAchievement::load(game_id, &mut connection)?)
     })
 }
 
@@ -25,7 +25,7 @@ pub fn load_player_achievement(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerAchievement::get(id, &mut connection).expect("Failed to load achievements")
+        Ok(PlayerAchievement::get(id, &mut connection)?)
     })
 }
 
@@ -36,7 +36,7 @@ pub fn save_player_achievement(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerAchievement::save(data, &mut connection).expect("Failed to save achievement")
+        Ok(data.save(&mut connection)?)
     })
 }
 
@@ -47,6 +47,7 @@ pub fn activate_player_achievement(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerAchievement::activate(data, &mut connection)
+        data.activate(&mut connection);
+        Ok(())
     })
 }

@@ -6,7 +6,5 @@ use crate::backend::{
 
 #[tauri::command]
 pub fn load_admin_dashboard() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, || {
-        AdminDashboard::get().expect("Failed to load admin dashboard")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(AdminDashboard::get()?))
 }

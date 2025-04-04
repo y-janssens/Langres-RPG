@@ -1,5 +1,6 @@
 use crate::schema::playerachievements;
 use crate::schema::playerachievements::dsl::*;
+use diesel::result::Error;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
@@ -7,7 +8,6 @@ use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use crate::achievements::models::Achievement;
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
@@ -35,14 +35,15 @@ pub struct InsertablePlayerAchievement {
 }
 
 impl PlayerAchievement {
-    pub fn generate(_id: String, connection: &mut SqliteConnection) {
+    pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
         println!("Generating game achievements...");
-        let base_achievements = Achievement::load(connection).expect("Failed to load achievements");
+        let base_achievements = Achievement::load(connection)?;
         let mut _achievements: Vec<PlayerAchievement> = vec![];
         for achievement in base_achievements {
-            let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
-            let description_json =
-                serde_json::to_string(&achievement.description).expect(BASE_ERROR);
+            let name_json = serde_json::to_string(&achievement.name)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let description_json = serde_json::to_string(&achievement.description)
+                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
             let _achievement = InsertablePlayerAchievement {
                 id: Uuid::new_v4().to_string(),
                 achievement_id: achievement.id,
@@ -53,9 +54,9 @@ impl PlayerAchievement {
             };
             diesel::insert_into(playerachievements::table)
                 .values(&_achievement)
-                .execute(connection)
-                .expect("Failed to save achievement");
+                .execute(connection)?;
         }
+        Ok(())
     }
 
     pub fn load(
@@ -75,28 +76,27 @@ impl PlayerAchievement {
         Ok(_load)
     }
 
-    pub fn save(
-        achievement: PlayerAchievement,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
-        let description_json = serde_json::to_string(&achievement.description).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
         let insertable = InsertablePlayerAchievement {
             id: Uuid::new_v4().to_string(),
-            game_id: achievement.clone().game_id,
-            achievement_id: achievement.clone().id,
+            game_id: self.clone().game_id,
+            achievement_id: self.clone().id,
             name: name_json,
             description: description_json,
-            completed: achievement.completed,
+            completed: self.completed,
         };
 
         let exists = playerachievements
-            .filter(playerachievements::id.eq(achievement.clone().id))
+            .filter(playerachievements::id.eq(self.clone().id))
             .first::<PlayerAchievement>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(playerachievements.find(achievement.id))
+            diesel::update(playerachievements.find(self.id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
@@ -108,8 +108,8 @@ impl PlayerAchievement {
         Ok(())
     }
 
-    pub fn activate(mut achievement: PlayerAchievement, connection: &mut SqliteConnection) {
-        achievement.completed = true;
-        let _ = PlayerAchievement::save(achievement, connection);
+    pub fn activate(mut self, connection: &mut SqliteConnection) {
+        self.completed = true;
+        let _ = self.save(connection);
     }
 }

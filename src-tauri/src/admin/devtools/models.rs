@@ -62,7 +62,10 @@ impl SettingGroup {
 
 impl DevSettings {
     pub fn get() -> Self {
-        let is_admin = Credentials::initialize().config.is_admin;
+        let is_admin = Credentials::initialize()
+            .unwrap_or(Credentials::get_default())
+            .config
+            .is_admin;
         let mut global = SettingGroup::new();
         let mutable = is_admin;
 

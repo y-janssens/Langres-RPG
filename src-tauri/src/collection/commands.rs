@@ -14,13 +14,13 @@ pub fn load_collections(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Collection::load(&mut connection).expect("Failed to load collections")
+        Ok(Collection::load(&mut connection)?)
     })
 }
 
 #[tauri::command]
 pub fn new_collection() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, Collection::new)
+    authenticated_command(Permission::Dashboard, || Ok(Collection::new()))
 }
 
 #[tauri::command]
@@ -30,7 +30,7 @@ pub fn save_collection(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Collection::save(data, &mut connection).expect("Failed to save collection")
+        Ok(data.save(&mut connection)?)
     })
 }
 
@@ -41,6 +41,6 @@ pub fn delete_collection(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Collection::delete(id, &mut connection).expect("Failed to delete collection")
+        Ok(Collection::delete(id, &mut connection)?)
     })
 }

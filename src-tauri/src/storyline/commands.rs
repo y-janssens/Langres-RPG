@@ -14,7 +14,7 @@ pub fn load_storyline(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Story::load(&mut connection).expect("Failed to load storyline")
+        Ok(Story::load(&mut connection)?)
     })
 }
 
@@ -24,7 +24,10 @@ pub fn save_storyline(
     mut story: Story,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Editor, || story.save(&mut connection))
+    authenticated_command(Permission::Editor, || {
+        story.save(&mut connection)?;
+        Ok(())
+    })
 }
 
 #[tauri::command]
@@ -37,7 +40,8 @@ pub fn edit_tiles(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        Story::edit_tiles(&mut connection, act_id, map_id, tiles, object_id)
+        Story::edit_tiles(&mut connection, act_id, map_id, tiles, object_id)?;
+        Ok(())
     })
 }
 
@@ -51,7 +55,8 @@ pub fn register_gateway(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        Story::register_gateway(&mut connection, act_id, map_id, tile_id, gateway)
+        Story::register_gateway(&mut connection, act_id, map_id, tile_id, gateway)?;
+        Ok(())
     })
 }
 
@@ -65,7 +70,8 @@ pub fn register_checkpoint(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        Story::register_checkpoint(&mut connection, act_id, map_id, tile_id, checkpoint)
+        Story::register_checkpoint(&mut connection, act_id, map_id, tile_id, checkpoint)?;
+        Ok(())
     })
 }
 
@@ -80,7 +86,8 @@ pub fn register_object(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        Story::register_object(&mut connection, act_id, map_id, tile_id, object_id, enable)
+        Story::register_object(&mut connection, act_id, map_id, tile_id, object_id, enable)?;
+        Ok(())
     })
 }
 
@@ -94,6 +101,7 @@ pub fn get_neighbours_ids(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        Story::get_neighbours_ids(&mut connection, act_id, map_id, tile_id, object_id)
+        let ids = Story::get_neighbours_ids(&mut connection, act_id, map_id, tile_id, object_id)?;
+        Ok(ids)
     })
 }

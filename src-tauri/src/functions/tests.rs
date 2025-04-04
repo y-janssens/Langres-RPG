@@ -10,7 +10,7 @@ mod tests {
     fn test_load_functions() {
         allow_db_access(|connection| {
             let function = FunctionFactory.generate();
-            let _ = Function::save(function, connection);
+            let _ = function.save(connection);
             let result = Function::load(connection).unwrap();
 
             assert_eq!(result.len(), 4);
@@ -21,7 +21,7 @@ mod tests {
     fn test_patch_function() {
         allow_db_access(|connection| {
             let function = FunctionFactory.generate();
-            let _ = Function::save(function, connection);
+            let _ = function.save(connection);
             let result = Function::load(connection).unwrap();
 
             let mut patch_function = Function {
@@ -33,7 +33,7 @@ mod tests {
 
             patch_function.label = "loul".to_string();
 
-            let _ = Function::save(patch_function, connection);
+            let _ = patch_function.save(connection);
             let patch_result = Function::load(connection).unwrap();
 
             assert_eq!(patch_result[0].label, "loul");
@@ -44,7 +44,7 @@ mod tests {
     fn test_delete_function() {
         allow_db_access(|connection| {
             let function = FunctionFactory.generate();
-            let _ = Function::save(function, connection);
+            let _ = function.save(connection);
             let result = Function::load(connection).unwrap();
 
             let delete = Function::delete(result[0].id, connection);

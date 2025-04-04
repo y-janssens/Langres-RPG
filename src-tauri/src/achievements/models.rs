@@ -1,5 +1,6 @@
 use crate::schema::achievements;
 use crate::schema::achievements::dsl::*;
+use diesel::result::Error;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
     SqliteConnection,
@@ -7,7 +8,6 @@ use diesel::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-use crate::backend::settings::errors::BASE_ERROR;
 use crate::backend::translations::models::Translations;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
@@ -54,27 +54,26 @@ impl Achievement {
         Ok(_load)
     }
 
-    pub fn save(
-        achievement: Self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
-        let name_json = serde_json::to_string(&achievement.name).expect(BASE_ERROR);
-        let description_json = serde_json::to_string(&achievement.description).expect(BASE_ERROR);
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let name_json = serde_json::to_string(&self.name)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description)
+            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableAchievement {
             id: Uuid::new_v4().to_string(),
             name: name_json,
             description: description_json,
-            completed: achievement.completed,
-            visible: achievement.visible,
+            completed: self.completed,
+            visible: self.visible,
         };
         let exists = achievements
-            .filter(id.eq(achievement.clone().id))
+            .filter(id.eq(self.clone().id))
             .first::<Achievement>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(achievements.find(achievement.id))
+            diesel::update(achievements.find(self.id))
                 .set(&insertable)
                 .execute(connection)?;
         } else {

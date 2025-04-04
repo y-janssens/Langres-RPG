@@ -1,5 +1,5 @@
 pub mod env {
-    use chrono::{Datelike, Local, NaiveDate, Timelike};
+    use chrono::{Datelike, Local, NaiveDate, ParseError, Timelike};
     use rand::{seq::SliceRandom, thread_rng, Rng};
     use serde::{Deserialize, Serialize};
 
@@ -30,15 +30,15 @@ pub mod env {
     }
 
     impl Environment {
-        pub fn initialize(date: &str) -> Environment {
+        pub fn initialize(date: &str) -> Result<Environment, ParseError> {
             let hour = Local::now().hour();
-            let _date = NaiveDate::parse_from_str(date, "%d/%m/%Y").expect("Wrong date");
+            let _date = NaiveDate::parse_from_str(date, "%d/%m/%Y")?;
             let daytime = (5..=18).contains(&hour);
             let temperature = Self::get_temperature(_date.month(), &daytime);
             let weather_state = Self::get_weather(_date.month(), temperature);
             let (danger, wind_force) = Self::get_environmental_factors(&weather_state);
 
-            Environment {
+            Ok(Environment {
                 date: _date.format("%d/%m/%Y").to_string(),
                 daytime,
                 season: Self::get_season(_date.month()),
@@ -46,7 +46,7 @@ pub mod env {
                 danger: if daytime { danger } else { 100 },
                 wind_force,
                 temperature,
-            }
+            })
         }
 
         fn get_weather(month: u32, temperature: i32) -> WeatherState {

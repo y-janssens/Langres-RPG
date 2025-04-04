@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import * as Icons from './Icons';
 import css from './ui.module.css';
 
-function Icon({ tooltip = false, name = null, onClick, size = 'medium' }) {
+function Icon({ tooltip = false, name = null, onClick, size = 'medium', cursor = 'pointer' }) {
     const [hover, setHover] = useState(false);
 
     const IconComponent = useMemo(() => {
@@ -29,7 +29,7 @@ function Icon({ tooltip = false, name = null, onClick, size = 'medium' }) {
 
     return (
         <span className={css[`ui-icon-${size}`]}>
-            <IconComponent onClick={onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} />
+            <IconComponent style={{ cursor }} onClick={onClick} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} />
             {toggleTooltip && <span className="icon-tooltip">{tooltip}</span>}
         </span>
     );

@@ -110,7 +110,7 @@ pub mod factories_definitions {
         type Output = Game;
 
         fn generate(&self, connection: &mut SqliteConnection) -> Self::Output {
-            Game::new("game".to_string(), connection)
+            Game::new("game".to_string(), connection).unwrap()
         }
     }
 

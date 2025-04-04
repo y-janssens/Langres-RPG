@@ -13,7 +13,7 @@ pub fn load_app_datas(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::RegularUser, || {
-        ApplicationSettings::load(&mut connection).expect("Failed to load app datas")
+        Ok(ApplicationSettings::load(&mut connection)?)
     })
 }
 
@@ -23,25 +23,22 @@ pub fn load_main_menu(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::RegularUser, || {
-        ApplicationMenu::load_main_menu(&mut connection)
+        Ok(ApplicationMenu::load_main_menu(&mut connection)?)
     })
 }
 
 #[tauri::command]
 pub fn load_ingame_menu() -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        ApplicationMenu::load_ingame_menu()
+        Ok(ApplicationMenu::load_ingame_menu())
     })
 }
 
 #[tauri::command]
 pub fn save_app_datas(
-    id: i32,
     data: ApplicationSettings,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::RegularUser, || {
-        ApplicationSettings::save(id, data, &mut connection).expect("Failed to save app datas");
-    })
+    authenticated_command(Permission::RegularUser, || Ok(data.save(&mut connection)?))
 }

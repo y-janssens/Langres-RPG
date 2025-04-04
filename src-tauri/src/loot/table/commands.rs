@@ -15,6 +15,7 @@ pub fn generate_loot_table(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
-        TableLoot::generate(name, &mut connection)
+        let table = TableLoot::generate(name, &mut connection)?;
+        Ok(table)
     })
 }

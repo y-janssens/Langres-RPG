@@ -13,14 +13,12 @@ pub fn load_objects(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Object::load(&mut connection).expect("Failed to load objects")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Object::load(&mut connection)?))
 }
 
 #[tauri::command]
 pub fn new_object() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, Object::new)
+    authenticated_command(Permission::Dashboard, || Ok(Object::new()))
 }
 
 #[tauri::command]
@@ -29,9 +27,7 @@ pub fn save_object(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Object::save(data, &mut connection).expect("Failed to save object")
-    })
+    authenticated_command(Permission::Dashboard, || Ok(data.save(&mut connection)?))
 }
 
 #[tauri::command]
@@ -41,6 +37,6 @@ pub fn delete_object(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || {
-        Object::delete(id, &mut connection).expect("Failed to delete object")
+        Ok(Object::delete(id, &mut connection)?)
     })
 }

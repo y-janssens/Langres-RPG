@@ -94,7 +94,8 @@ mod tests {
         let secret_key = TEST_SECRET_KEY;
         let configuration_key = TEST_ADMIN_KEY;
 
-        let credentials = Credentials::decrypt_secret_key(&secret_key, &configuration_key);
+        let credentials =
+            Credentials::decrypt_secret_key(&secret_key, &configuration_key).expect(BASE_ERROR);
 
         assert!(credentials.is_admin);
         assert!(credentials.dashboard_enabled);

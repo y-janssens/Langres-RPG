@@ -11,7 +11,7 @@ use super::models::{Character, Inventory};
 #[tauri::command]
 pub fn compute_xp(mut character: Character, xp: u32) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        Character::compute_xp(&mut character, xp).clone()
+        Ok(Character::compute_xp(&mut character, xp).clone())
     })
 }
 
@@ -19,26 +19,30 @@ pub fn compute_xp(mut character: Character, xp: u32) -> Result<Response, Validat
 pub fn add_gold(mut inventory: Inventory, loot: Loot) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         Inventory::add_gold(&mut inventory, loot);
+        Ok(())
     })
 }
 
 #[tauri::command]
 pub fn remove_gold(mut inventory: Inventory, gold: i32) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        Inventory::remove_gold(&mut inventory, gold)
+        Inventory::remove_gold(&mut inventory, gold);
+        Ok(())
     })
 }
 
 #[tauri::command]
 pub fn add_objects(mut inventory: Inventory, loot: Vec<Loot>) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        Inventory::add_objects(&mut inventory, loot)
+        Inventory::add_objects(&mut inventory, loot);
+        Ok(())
     })
 }
 
 #[tauri::command]
 pub fn remove_object(mut inventory: Inventory, id: String) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        Inventory::remove_object(&mut inventory, id)
+        Inventory::remove_object(&mut inventory, id);
+        Ok(())
     })
 }

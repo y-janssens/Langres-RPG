@@ -6,8 +6,8 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::GameFactory;
     use crate::backend::conf::factory::factory_models::ApiFactory;
     use crate::backend::permissions::models::Permission;
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::tests::database::{allow_db_access, with_permissions};
-    use crate::game::models::Game;
 
     #[test]
     fn test_load_application_datas() {
@@ -26,15 +26,14 @@ mod tests {
         allow_db_access(|connection| {
             let settings = ApplicationSettings::load(connection).unwrap();
             let patch_datas = ApplicationSettings {
-                id: settings.id,
                 language: "en".to_string(),
-                languages: settings.languages,
                 sound: true,
                 volume: 100,
                 music: 100,
+                ..settings
             };
 
-            let _ = ApplicationSettings::save(settings.id, patch_datas, connection);
+            let _ = patch_datas.save(connection);
             let patch_response = ApplicationSettings::load(connection).unwrap();
 
             assert_eq!(patch_response.language, "en");
@@ -57,7 +56,7 @@ mod tests {
     fn test_load_main_menu_admin() {
         allow_db_access(|connection| {
             with_permissions(Permission::Admin, || {
-                let response = ApplicationMenu::load_main_menu(connection);
+                let response = ApplicationMenu::load_main_menu(connection).expect(BASE_ERROR);
                 assert_eq!(response.len(), 6);
                 for i in 0..response.len() {
                     assert_eq!(response[i].order, i as u8)
@@ -70,7 +69,7 @@ mod tests {
     fn test_load_main_menu_user() {
         allow_db_access(|connection| {
             with_permissions(Permission::RegularUser, || {
-                let response = ApplicationMenu::load_main_menu(connection);
+                let response = ApplicationMenu::load_main_menu(connection).expect(BASE_ERROR);
                 assert_eq!(response.len(), 3);
                 for i in 0..response.len() {
                     assert_eq!(response[i].order, i as u8)
@@ -86,10 +85,10 @@ mod tests {
                 let mut g1 = GameFactory.generate(connection);
                 g1.last_save_date = Local::now().to_string();
                 let mut g2 = GameFactory.generate(connection);
-                let _ = Game::save(&mut g1, connection);
-                let _ = Game::save(&mut g2, connection);
+                let _ = g1.save(connection);
+                let _ = g2.save(connection);
 
-                let response = ApplicationMenu::load_main_menu(connection);
+                let response = ApplicationMenu::load_main_menu(connection).expect(BASE_ERROR);
                 assert_eq!(response.len(), 5);
                 for i in 0..response.len() {
                     assert_eq!(response[i].order, i as u8)

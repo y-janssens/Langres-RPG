@@ -14,10 +14,14 @@ pub async fn generate_map_content(
     mut map: World,
     options: Options,
 ) -> Result<Response, ValidationError> {
-    authenticated_thread(Permission::Editor, || map.generate_content(Some(options))).await
+    authenticated_thread(Permission::Editor, || async {
+        let result = map.generate_content(Some(options)).await;
+        Ok(result)
+    })
+    .await
 }
 
 #[tauri::command]
 pub fn load_generator_options() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Editor, GeneratorOptions::load)
+    authenticated_command(Permission::Editor, || Ok(GeneratorOptions::load()))
 }

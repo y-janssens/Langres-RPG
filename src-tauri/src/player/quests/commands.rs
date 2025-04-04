@@ -14,7 +14,7 @@ pub fn load_player_quests(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::load(game_id, &mut connection).expect("Failed to load quests")
+        Ok(PlayerQuest::load(game_id, &mut connection)?)
     })
 }
 
@@ -25,7 +25,7 @@ pub fn load_player_quest(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::get(id, &mut connection).expect("Failed to load quests")
+        Ok(PlayerQuest::get(id, &mut connection)?)
     })
 }
 
@@ -36,7 +36,7 @@ pub fn save_player_quest(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::save(data, &mut connection).expect("Failed to save quest")
+        Ok(data.save(&mut connection)?)
     })
 }
 
@@ -47,19 +47,21 @@ pub fn activate_player_quest(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::activate(data, &mut connection)
+        PlayerQuest::activate(data, &mut connection);
+        Ok(())
     })
 }
 
 #[tauri::command]
 pub fn validate_player_quest(
-    data: PlayerQuest,
+    mut data: PlayerQuest,
     xp: i32,
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::validate(data, xp, &mut connection)
+        PlayerQuest::validate(&mut data, xp, &mut connection)?;
+        Ok(())
     })
 }
 
@@ -72,6 +74,7 @@ pub fn edit_player_quest(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
-        PlayerQuest::edit(data, status, value, &mut connection)
+        PlayerQuest::edit(data, status, value, &mut connection)?;
+        Ok(())
     })
 }

@@ -15,13 +15,13 @@ pub fn load_functions(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Function::load(&mut connection).expect("Failed to load functions")
+        Ok(Function::load(&mut connection)?)
     })
 }
 
 #[tauri::command]
 pub fn new_function() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, Function::new)
+    authenticated_command(Permission::Dashboard, || Ok(Function::new()))
 }
 
 #[tauri::command]
@@ -31,7 +31,7 @@ pub fn save_function(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Function::save(data, &mut connection).expect("Failed to save function")
+        Ok(data.save(&mut connection)?)
     })
 }
 
@@ -42,6 +42,6 @@ pub fn delete_function(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Function::delete(id, &mut connection).expect("Failed to delete function")
+        Ok(Function::delete(id, &mut connection)?)
     })
 }

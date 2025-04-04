@@ -13,13 +13,13 @@ pub fn load_achievements(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Achievement::load(&mut connection).expect("Failed to load achievements")
+        Ok(Achievement::load(&mut connection)?)
     })
 }
 
 #[tauri::command]
 pub fn new_achievement() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Dashboard, Achievement::new)
+    authenticated_command(Permission::Dashboard, || Ok(Achievement::new()))
 }
 
 #[tauri::command]
@@ -29,7 +29,7 @@ pub fn save_achievement(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Achievement::save(data, &mut connection).expect("Failed to save achievement")
+        Ok(data.save(&mut connection)?)
     })
 }
 
@@ -40,6 +40,6 @@ pub fn delete_achievement(
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
-        Achievement::delete(id, &mut connection).expect("Failed to delete achievement")
+        Ok(Achievement::delete(id, &mut connection)?)
     })
 }
