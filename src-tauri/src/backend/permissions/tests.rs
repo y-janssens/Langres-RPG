@@ -1,18 +1,24 @@
 #[cfg(test)]
 mod tests {
+    use rstest::*;
+
     use crate::backend::{
         database::authenticated_command,
-        fixtures::tests_fixtures::mock_value,
         permissions::{commands::load_permissions, models::Permission},
         tests::database::with_permissions,
     };
 
-    #[test]
-    fn test_load_permissions_success() {
-        with_permissions(Permission::Admin, || {
+    #[rstest]
+    #[case::admin(Permission::Admin, true)]
+    #[case::editor(Permission::Editor, false)]
+    #[case::dev_tools(Permission::DevTools, false)]
+    #[case::dashboard(Permission::Dashboard, false)]
+    #[case::dev_settings(Permission::DevSettings, false)]
+    #[case::regular_user(Permission::RegularUser, false)]
+    fn test_load_admin_permissions(#[case] authentication_type: Permission, #[case] result: bool) {
+        with_permissions(authentication_type, || {
             let permissions = load_permissions();
-
-            assert!(permissions.is_ok_and(|result| result["is_admin"] == true));
+            assert!(permissions.is_ok_and(|res| res["is_admin"] == result));
         });
     }
 
@@ -24,22 +30,13 @@ mod tests {
     }
 
     #[test]
-    fn test_load_permissions_unauthorized() {
-        with_permissions(Permission::RegularUser, || {
-            let permissions = load_permissions();
-
-            assert!(permissions.is_ok_and(|result| result["is_admin"] == false));
-        });
-    }
-
-    #[test]
     fn test_permissions_success() {
         with_permissions(Permission::Admin, || {
-            let admin = authenticated_command(Permission::Admin, || Ok(mock_value()));
-            let dashboard = authenticated_command(Permission::Dashboard, || Ok(mock_value()));
-            let editor = authenticated_command(Permission::Editor, || Ok(mock_value()));
-            let dev_tools = authenticated_command(Permission::DevTools, || Ok(mock_value()));
-            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(mock_value()));
+            let admin = authenticated_command(Permission::Admin, || Ok(()));
+            let dashboard = authenticated_command(Permission::Dashboard, || Ok(()));
+            let editor = authenticated_command(Permission::Editor, || Ok(()));
+            let dev_tools = authenticated_command(Permission::DevTools, || Ok(()));
+            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(()));
 
             assert!(admin.is_ok());
             assert!(dashboard.is_ok());
@@ -52,11 +49,11 @@ mod tests {
     #[test]
     fn test_permissions_error() {
         with_permissions(Permission::RegularUser, || {
-            let admin = authenticated_command(Permission::Admin, || Ok(mock_value()));
-            let dashboard = authenticated_command(Permission::Dashboard, || Ok(mock_value()));
-            let editor = authenticated_command(Permission::Editor, || Ok(mock_value()));
-            let dev_tools = authenticated_command(Permission::DevTools, || Ok(mock_value()));
-            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(mock_value()));
+            let admin = authenticated_command(Permission::Admin, || Ok(()));
+            let dashboard = authenticated_command(Permission::Dashboard, || Ok(()));
+            let editor = authenticated_command(Permission::Editor, || Ok(()));
+            let dev_tools = authenticated_command(Permission::DevTools, || Ok(()));
+            let dev_settings = authenticated_command(Permission::DevSettings, || Ok(()));
 
             assert!(admin.is_err_and(|r| r.0 == "Permission denied"));
             assert!(dashboard.is_err_and(|r| r.0 == "Permission denied"));

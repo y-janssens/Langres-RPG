@@ -11,11 +11,10 @@ pub mod factories_definitions {
     use crate::functions::models::Function;
     use crate::game::models::Game;
     use crate::loot::models::{ItemTypes, Loot};
-    use crate::maps::settings::DEFAULT_MAP_SIZE;
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
-    use crate::world::models::World;
+    use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::World};
 
     pub struct StoryLineFactory;
     pub struct ActsFactory;

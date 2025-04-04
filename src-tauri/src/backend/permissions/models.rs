@@ -41,6 +41,7 @@ impl fmt::Display for ConfigError {
 }
 
 #[allow(dead_code)]
+#[derive(Debug, Clone)]
 pub enum Permission {
     Admin,
     Editor,

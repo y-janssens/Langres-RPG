@@ -16,7 +16,6 @@ pub mod events;
 pub mod functions;
 pub mod game;
 pub mod loot;
-pub mod maps;
 pub mod npcs;
 pub mod objects;
 pub mod player;
@@ -81,8 +80,8 @@ pub fn run() {
             game::commands::save_game,
             game::commands::delete_game,
             // Map generator commands
-            maps::commands::generate_map_content,
-            maps::commands::load_generator_options,
+            world::builder::commands::generate_map_content,
+            world::builder::commands::load_generator_options,
             // Loot commands
             loot::commands::new_loot,
             loot::commands::load_loots,

@@ -3,9 +3,8 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 use std::iter::FromIterator;
 
-use crate::{maps::settings::DEFAULT_MAP_SIZE, world::models::Item};
-
 use super::functions::{array_from_set, clamp};
+use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Dice {

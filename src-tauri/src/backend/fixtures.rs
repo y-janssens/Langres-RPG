@@ -1,11 +1,10 @@
 #[allow(dead_code)]
 pub mod tests_fixtures {
-    use serde_json::{json, Value};
-
-    use crate::world::models::Item;
+    use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
 
     /// Run "cargo test -- --nocapture" to visualize output
-    pub fn render_map_output(map: Vec<Item>, size: u32) {
+    pub fn render_map_output(map: Vec<Item>) {
+        let size = *DEFAULT_MAP_SIZE;
         for line in map.chunks(size as usize) {
             for (index, item) in line.iter().enumerate() {
                 let color_code = match item.value.as_str() {
@@ -28,7 +27,8 @@ pub mod tests_fixtures {
             println!();
         }
     }
-    pub fn render_map_topology(map: Vec<Item>, size: u32) {
+    pub fn render_map_topology(map: Vec<Item>) {
+        let size = *DEFAULT_MAP_SIZE;
         for line in map.chunks(size as usize) {
             for (index, item) in line.iter().enumerate() {
                 let color_code = match item.z {
@@ -55,14 +55,5 @@ pub mod tests_fixtures {
     pub fn compute_map_size(size: u32) -> u32 {
         let rows = ((size as f32 + (size as f32).sqrt()).ceil() + 1_f32) as u32;
         size * rows
-    }
-
-    pub fn mock_value() -> Value {
-        json!([
-            {"name": "QuantumEntanglement_42"},
-            {"name": "NeuralNet_Override_v3.14"},
-            {"name": "Hyperdrive_Stabilization_Unit"},
-            {"name": "Exabyte_Cache_Cluster"},
-        ])
     }
 }
