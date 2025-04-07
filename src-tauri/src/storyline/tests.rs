@@ -7,9 +7,9 @@ mod tests {
     use crate::backend::tests::database::{allow_db_access, with_permissions};
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::game::models::{Game, Position};
-    use crate::maps::settings::DEFAULT_MAP_SIZE;
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
+    use crate::world::builder::settings::DEFAULT_MAP_SIZE;
     use crate::world::commands::generate;
     use crate::world::models::Item;
 

@@ -5,11 +5,10 @@ use std::collections::HashMap;
 use std::mem::take;
 
 use super::actions::generator::Generator;
-use super::config::Values;
+use super::config::{Conf, Values};
 use super::constraints::Constraints;
 use super::settings::GRASS;
 use crate::backend::utils::functions::get_weighted_random_value;
-use crate::maps::config::Conf;
 use crate::world::models::{Item, Options};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]

@@ -46,10 +46,13 @@ pub mod database {
             Permission::Admin => {
                 env::set_var("USER_KEY", TEST_ADMIN_KEY);
             }
-            Permission::RegularUser => {
+            Permission::RegularUser
+            | Permission::Dashboard
+            | Permission::DevSettings
+            | Permission::DevTools
+            | Permission::Editor => {
                 env::set_var("USER_KEY", TEST_USER_KEY);
             }
-            _ => (),
         }
         env::set_var("SECRET_KEY", TEST_SECRET_KEY);
         dotenv().ok();

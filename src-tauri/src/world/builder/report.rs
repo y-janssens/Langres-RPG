@@ -1,7 +1,7 @@
 #[allow(dead_code)]
-use crate::maps::models::generation::{Map, Tile};
-use crate::maps::tiles::map_config_tiles::get_neighbours_values;
-use crate::maps::tiles::map_config_tiles::get_tiles_values;
+use crate::world::builder::models::generation::{Map, Tile};
+use crate::world::builder::tiles::map_config_tiles::get_neighbours_values;
+use crate::world::builder::tiles::map_config_tiles::get_tiles_values;
 
 #[derive(Debug)]
 pub struct Report {

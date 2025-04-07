@@ -2,10 +2,10 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use strum_macros::{Display, EnumString};
 
-use super::models::Item;
-use crate::maps::settings::{
+use super::builder::settings::{
     DEFAULT_MAP_SIZE_GRID, DIRECTIONAL_KEYS, DIRECTIONAL_MATCHES, DIRECTIONAL_PRIORITY,
 };
+use super::models::Item;
 
 use models_registry::Model;
 

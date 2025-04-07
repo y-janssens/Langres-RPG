@@ -23,18 +23,10 @@ mod tests {
             let _ = object.save(connection);
             let result = Object::load(connection).unwrap();
 
-            let mut patch_object = Object {
-                id: result[0].id,
-                name: result[0].clone().name,
-                value: result[0].clone().value,
-                display_value: result[0].clone().display_value,
-                display_color: result[0].clone().display_color,
-                area: result[0].clone().area,
-                walkable: result[0].clone().walkable,
-                interactive: result[0].clone().interactive,
+            let patch_object = Object {
+                name: "loul".to_string(),
+                ..result[0].clone()
             };
-
-            patch_object.name = "loul".to_string();
 
             let _ = patch_object.save(connection);
             let patch_result = Object::load(connection).unwrap();

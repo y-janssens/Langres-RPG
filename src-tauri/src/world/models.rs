@@ -8,11 +8,11 @@ use super::directions::Directions;
 use crate::backend::utils::functions::{get_weighted_random_value, to_weighted_map};
 use crate::events::models::Event;
 use crate::game::models::Position;
-use crate::maps::config::Values;
-use crate::maps::models::Map;
-use crate::maps::settings::*;
-use crate::maps::settings::{DIRECTIONAL_VALUES, OFFSET_KEYS};
 use crate::npcs::models::Npc;
+use crate::world::builder::config::Values;
+use crate::world::builder::models::Map;
+use crate::world::builder::settings::*;
+use crate::world::builder::settings::{DIRECTIONAL_VALUES, OFFSET_KEYS};
 
 use models_registry::Model;
 
@@ -35,6 +35,14 @@ impl Options {
             r#type: "forest".to_string(),
             action: None,
             post_action: None,
+        }
+    }
+
+    pub fn generate(r#type: &str, action: Option<String>, post_action: Option<String>) -> Self {
+        Self {
+            r#type: r#type.to_string(),
+            action,
+            post_action,
         }
     }
 }
