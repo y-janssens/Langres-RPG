@@ -1,4 +1,5 @@
 pub mod admin;
+pub mod analysis;
 pub mod builder;
 pub mod commands;
 pub mod directions;

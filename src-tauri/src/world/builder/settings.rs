@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use lazy_static::lazy_static;
 
-use crate::world::builder::{actions::generator::Params, config::Values};
+use super::{actions::generator::Params, config::Values};
 
 lazy_static! {
     pub static ref DEFAULT_MAP_SIZE : u32 = 50;

@@ -79,9 +79,6 @@ pub fn run() {
             game::commands::load_games,
             game::commands::save_game,
             game::commands::delete_game,
-            // Map generator commands
-            world::builder::commands::generate_map_content,
-            world::builder::commands::load_generator_options,
             // Loot commands
             loot::commands::new_loot,
             loot::commands::load_loots,
@@ -135,6 +132,10 @@ pub fn run() {
             world::commands::regenerate,
             world::commands::generate_forest,
             world::commands::compute_map_directions,
+            // Map generator commands
+            world::analysis::commands::generate_map_analysis,
+            world::builder::commands::generate_map_content,
+            world::builder::commands::load_generator_options,
         ])
         .manage(pool)
         .run(tauri::generate_context!())
