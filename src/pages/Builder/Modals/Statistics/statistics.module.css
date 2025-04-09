@@ -1,0 +1,54 @@
+.map-statistics-content {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(29, 35, 42, 0.25);
+    overflow-y: auto;
+    border-radius: 4px;
+}
+
+.map-statistics-label {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 0.5px;
+}
+
+.map-statistics-details {
+    padding: 0 10px;
+    margin: -5px;
+}
+
+.map-statistics-toggle {
+    cursor: pointer;
+    color: white;
+}
+
+.map-statistics-toggle:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 3px;
+    transition: 250ms all;
+}
+
+.map-statistics-toggle,
+.map-statistics-key {
+    margin-right: 3px;
+    color: white;
+}
+
+.map-statistics-value {
+    margin-left: 10px;
+}
+
+.map-statistics-block button {
+    border-radius: 4px !important;
+}
+
+.map-statistics-block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+}

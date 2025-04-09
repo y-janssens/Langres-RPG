@@ -171,7 +171,8 @@ const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
             const actions = {
                 handleExport: () => handleExport(),
                 computeMapDirections: () => computeMapDirections(),
-                previewMap: () => setForm('modal', { type: 'preview', open: true, value: form.selectedMap })
+                previewMap: () => setForm('modal', { type: 'preview', open: true, value: form.selectedMap }),
+                displayStatistics: () => setForm('modal', { type: 'statistics', open: true, value: form.selectedMap })
             };
 
             try {
@@ -187,6 +188,7 @@ const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
     return (
         <>
             <ButtonLabel fullWidth color="primary" label={t('common.actions.export')} onClick={() => handleAction('handleExport')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.statistics')} onClick={() => handleAction('displayStatistics')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.preview')} onClick={() => handleAction('previewMap')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.compute')} onClick={() => handleAction('computeMapDirections')} />
         </>

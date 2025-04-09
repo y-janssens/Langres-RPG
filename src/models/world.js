@@ -1,3 +1,5 @@
+import Fetcher from './fetcher';
+
 export const DIRECTIONS = [null, 'top', 'bottom', 'left', 'right', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
 
 export default class World {
@@ -37,5 +39,22 @@ export class Tile {
             return null;
         }
         return this.events.find((ev) => Object.keys(ev.type)[0] === 'GateWay')?.type['GateWay'];
+    }
+}
+
+export class WorldStatistics extends Fetcher {
+    constructor(options = {}) {
+        super();
+        Object.keys(options).forEach((key) => {
+            this[key] = options[key];
+        });
+    }
+
+    static fromApi(_, data) {
+        return new this(data);
+    }
+
+    static command() {
+        return 'generate_map_analysis';
     }
 }

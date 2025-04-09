@@ -89,6 +89,24 @@
       "preview": {
         "title": "Preview"
       },
+      "statistics": {
+        "free_space": "Free space",
+        "groups": {
+          "summary": "Summary",
+          "distribution": "Distribution",
+          "details": "Details"
+        },
+        "keys": {
+          "Inconsistent": "Inconsistent values",
+          "Invalid": "Invalid values",
+          "Unchanged": "Unchanged values",
+          "Valid": "Valid values"
+        },
+        "most_common": "Most common value",
+        "summary": "Summary",
+        "title": "Map analysis and values distribution",
+        "values": "Values"
+      },
       "steps": {
         "acts": {
           "subtitle": "Edit and order your story's acts",
@@ -144,7 +162,8 @@
       "search": "Search",
       "select": "Select",
       "settings": "Settings",
-      "start": "Start"
+      "start": "Start",
+      "statistics": "Statistics"
     },
     "date": "Date",
     "game": "Langres",

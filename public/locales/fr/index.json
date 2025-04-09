@@ -89,6 +89,24 @@
       "preview": {
         "title": "Prévisualisation"
       },
+      "statistics": {
+        "free_space": "Espace libre",
+        "groups": {
+          "summary": "Résumé",
+          "distribution": "Distribution",
+          "details": "Détails"
+        },
+        "keys": {
+          "Inconsistent": "Valeurs incohérentes",
+          "Invalid": "Valeurs invalides",
+          "Unchanged": "Valeurs non modifiées",
+          "Valid": "Valeurs valides"
+        },
+        "most_common": "Valeur la plus courante",
+        "summary": "Résumé",
+        "title": "Analyse de la carte et distribution des valeurs",
+        "values": "Valeurs"
+      },
       "steps": {
         "acts": {
           "subtitle": "Éditez et organisez les actes de votre scénario",
@@ -144,7 +162,8 @@
       "search": "Rechercher",
       "select": "Sélectionner",
       "settings": "Paramètres",
-      "start": "Commencer"
+      "start": "Commencer",
+      "statistics": "Statistiques"
     },
     "date": "Date",
     "game": "Langres",
