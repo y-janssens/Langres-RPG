@@ -253,7 +253,7 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
     );
 };
 
-export const MenuBlock = ({ title = '', children, grid = true, open = true, gridSize = 4 }) => {
+export const MenuBlock = ({ title = '', children, grid = true, open = true, gridSize = 4, ...props }) => {
     const [toggle, setToggle] = useState(open);
 
     const active = useMemo(() => {
@@ -265,7 +265,7 @@ export const MenuBlock = ({ title = '', children, grid = true, open = true, grid
 
     return (
         <div className={css['builder-sidebar-block']}>
-            <Button dataTheme="light" size="sm" color="neutral" onClick={() => setToggle(!toggle)}>
+            <Button dataTheme="light" size="sm" color="neutral" onClick={() => setToggle(!toggle)} fullWidth={props.fullWidth}>
                 {title}
             </Button>
             {active && (

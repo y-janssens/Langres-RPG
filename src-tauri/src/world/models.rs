@@ -2,6 +2,7 @@ use diesel::prelude::Queryable;
 use rand::Rng;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::io::Error;
 use tokio::sync::mpsc;
 
 use super::directions::Directions;
@@ -9,6 +10,7 @@ use crate::backend::utils::functions::{get_weighted_random_value, to_weighted_ma
 use crate::events::models::Event;
 use crate::game::models::Position;
 use crate::npcs::models::Npc;
+use crate::world::analysis::report::MapReport;
 use crate::world::builder::config::Values;
 use crate::world::builder::models::Map;
 use crate::world::builder::settings::*;
@@ -172,7 +174,7 @@ impl World {
         }
     }
 
-    pub async fn regenerate(&mut self) -> World {
+    pub async fn regenerate(&mut self) -> Self {
         self.generate_content(None).await
     }
 
@@ -266,5 +268,27 @@ impl World {
             item.walkable = value != TREE.val();
         }
         content
+    }
+
+    pub fn generate_report(&self) -> Result<MapReport, Error> {
+        let mut report = MapReport::new();
+        report.generate(&self.content, &self.options)
+    }
+
+    pub fn fix_inconsistencies(&mut self) {
+        let original_content = self.content.clone();
+        let report = MapReport::new()
+            .generate(&original_content, &self.options)
+            .unwrap();
+
+        for item in &mut self.content {
+            let value = Map::get_value(&report, item, &original_content);
+            let (display_value, display_color, walkable) = Values::get_value(&value);
+
+            item.value = value;
+            item.walkable = walkable;
+            item.display_value = display_value;
+            item.display_color = display_color;
+        }
     }
 }

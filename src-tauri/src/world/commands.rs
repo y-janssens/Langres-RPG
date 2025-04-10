@@ -46,6 +46,14 @@ pub fn compute_map_directions(mut map: World) -> Result<Response, ValidationErro
 }
 
 #[tauri::command]
+pub fn fix_map_inconsistencies(mut map: World) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::Editor, || {
+        map.fix_inconsistencies();
+        Ok(map)
+    })
+}
+
+#[tauri::command]
 pub fn generate_forest(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::DevTools, || {
         let content = World::generate_forest(map.content);

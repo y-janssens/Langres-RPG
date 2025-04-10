@@ -7,7 +7,8 @@ const MODALS = [
     { name: 'generator', component: React.lazy(() => import('./Generator')) },
     { name: 'manager', component: React.lazy(() => import('./Manager')) },
     { name: 'onboarding', component: React.lazy(() => import('./Onboarding')) },
-    { name: 'preview', component: React.lazy(() => import('./Preview')) }
+    { name: 'preview', component: React.lazy(() => import('./Preview')) },
+    { name: 'statistics', component: React.lazy(() => import('./Statistics')) }
 ];
 
 class ModalGenerator {
