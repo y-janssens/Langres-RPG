@@ -274,4 +274,21 @@ impl World {
         let mut report = MapReport::new();
         report.generate(&self.content, &self.options)
     }
+
+    pub fn fix_inconsistencies(&mut self) {
+        let original_content = self.content.clone();
+        let report = MapReport::new()
+            .generate(&original_content, &self.options)
+            .unwrap();
+
+        for item in &mut self.content {
+            let value = Map::get_value(&report, item, &original_content);
+            let (display_value, display_color, walkable) = Values::get_value(&value);
+
+            item.value = value;
+            item.walkable = walkable;
+            item.display_value = display_value;
+            item.display_color = display_color;
+        }
+    }
 }

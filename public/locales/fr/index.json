@@ -127,8 +127,9 @@
       "map": "Sélectionner une carte"
     },
     "toasts": {
-      "compute": "Calcul des directions en cours",
-      "export": "Données exportées avec succès et copiées dans le presse-papiers!"
+      "compute_map_directions": "Directions calculées avec succès!",
+      "export": "Données exportées avec succès et copiées dans le presse-papiers!",
+      "fix_map_inconsistencies": "Valeurs incohérentes corrigées avec succès!"
     },
     "toggles": {
       "constraints": "Afficher les contraintes",
@@ -154,6 +155,7 @@
       "delete": "Supprimer",
       "edit": "Modifier",
       "export": "Exporter",
+      "inconsistencies": "Corriger les valeurs incohérentes",
       "load": "Charger",
       "new": "Nouvelle",
       "preview": "Prévisualiser la carte",

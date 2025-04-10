@@ -127,8 +127,9 @@
       "map": "Select a map"
     },
     "toasts": {
-      "compute": "Directions computation in progress",
-      "export": "Datas successfully exported and copied into clipboard!"
+      "compute_map_directions": "Directions successfully computed!",
+      "export": "Datas successfully exported and copied into clipboard!",
+      "fix_map_inconsistencies": "Inconsistent values successfully fixed!"
     },
     "toggles": {
       "constraints": "Display constraints",
@@ -154,6 +155,7 @@
       "delete": "Delete",
       "edit": "Edit",
       "export": "Export",
+      "inconsistencies": "Fix inconsistent values",
       "load": "Load",
       "new": "New",
       "preview": "Preview map",

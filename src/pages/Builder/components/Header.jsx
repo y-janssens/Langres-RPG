@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { invoke } from '@tauri-apps/api/core';
+import { useToast } from '../../../hooks';
 
 import { Navbar, Divider, Button } from 'react-daisyui';
 
@@ -10,7 +11,6 @@ import { Icon } from '../../../components';
 import Zoom from './Zoom';
 
 import css from '../builder.module.css';
-import { useToast } from '../../../hooks/useToast';
 
 export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
@@ -24,16 +24,19 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         });
     }, [sync, clear, datas]);
 
-    const computeMapDirections = useCallback(async () => {
-        let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-        let mapIndex = act.content.maps.findIndex((mp) => mp.id === form.selectedMap.id);
+    const handleMapAction = useCallback(
+        async (action) => {
+            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.content.maps.findIndex((mp) => mp.id === form.selectedMap.id);
 
-        toast.info(t('builder.toasts.compute'));
-        await invoke('compute_map_directions', { map: form.selectedMap }).then((result) => {
-            act.content.maps[mapIndex] = result;
-            setObject({ ...form, displayActions: false, selectedMap: result, selectedTiles: [] });
-        });
-    }, [form]);
+            await invoke(action, { map: form.selectedMap }).then((result) => {
+                act.content.maps[mapIndex] = result;
+                setObject({ ...form, displayActions: false, selectedMap: result, selectedTiles: [] });
+                toast.info(t(`builder.toasts.${action}`));
+            });
+        },
+        [form]
+    );
 
     const handleExport = useCallback(() => {
         let _datas = { ...datas }.story.acts;
@@ -124,7 +127,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                     <div className={css['builder-navbar-cta']}>
                         <Divider className={css['builder-navbar-divider']} horizontal />
                         <MultiButton icon="actions" name="displayActions" open={form.displayActions} setOpen={setForm}>
-                            <Actions form={form} setForm={setForm} handleExport={handleExport} computeMapDirections={computeMapDirections} />
+                            <Actions form={form} setForm={setForm} handleExport={handleExport} handleMapAction={handleMapAction} />
                         </MultiButton>
                         <ButtonLabel
                             variant="outline"
@@ -163,14 +166,13 @@ const Toggles = ({ form, disabled, handleCheck }) => {
     ));
 };
 
-const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
+const Actions = ({ form, setForm, handleExport, handleMapAction }) => {
     const { t } = useTranslation();
 
     const handleAction = useCallback(
         (action) => {
             const actions = {
                 handleExport: () => handleExport(),
-                computeMapDirections: () => computeMapDirections(),
                 previewMap: () => setForm('modal', { type: 'preview', open: true, value: form.selectedMap }),
                 displayStatistics: () => setForm('modal', { type: 'statistics', open: true, value: form.selectedMap })
             };
@@ -182,7 +184,7 @@ const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
                 console.error(error);
             }
         },
-        [handleExport, form.selectedMap, computeMapDirections]
+        [handleExport, form.selectedMap]
     );
 
     return (
@@ -190,7 +192,8 @@ const Actions = ({ form, setForm, computeMapDirections, handleExport }) => {
             <ButtonLabel fullWidth color="primary" label={t('common.actions.export')} onClick={() => handleAction('handleExport')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.statistics')} onClick={() => handleAction('displayStatistics')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.preview')} onClick={() => handleAction('previewMap')} />
-            <ButtonLabel fullWidth color="primary" label={t('common.actions.compute')} onClick={() => handleAction('computeMapDirections')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.compute')} onClick={() => handleMapAction('compute_map_directions')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.inconsistencies')} onClick={() => handleMapAction('fix_map_inconsistencies')} />
         </>
     );
 };

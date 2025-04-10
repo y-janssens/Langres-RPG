@@ -132,6 +132,7 @@ pub fn run() {
             world::commands::regenerate,
             world::commands::generate_forest,
             world::commands::compute_map_directions,
+            world::commands::fix_map_inconsistencies,
             // Map generator commands
             world::analysis::commands::generate_map_analysis,
             world::builder::commands::generate_map_content,

@@ -125,7 +125,7 @@ impl Map {
     }
 
     /// Correct inconsistent values based on map analysis or not
-    fn get_value(report: &MapReport, tile: &Item, items: &[Item]) -> String {
+    pub fn get_value(report: &MapReport, tile: &Item, items: &[Item]) -> String {
         if let Some(inconsistencies) = report.details.get(&MapReportEntry::Inconsistent) {
             if !inconsistencies.is_empty() {
                 return Constraints::ensure_consistency(tile, items);
