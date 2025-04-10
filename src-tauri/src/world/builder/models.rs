@@ -9,6 +9,7 @@ use super::config::{Conf, Values};
 use super::constraints::Constraints;
 use super::settings::GRASS;
 use crate::backend::utils::functions::get_weighted_random_value;
+use crate::world::analysis::report::{MapReport, MapReportEntry};
 use crate::world::models::{Item, Options};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -76,14 +77,16 @@ impl Map {
     /// Convert back to World Tiles for game usage
     fn export(&mut self) -> Vec<Item> {
         let items = take(&mut self.content);
+        let report = MapReport::new().generate(&items, &self.options).unwrap();
+
         items
             .clone()
             .into_iter()
             .map(|mut tile| {
-                let value = Constraints::ensure_consistency(&tile, &items);
+                let value = Self::get_value(&report, &tile, &items);
                 let (display_value, display_color, walkable) = Values::get_value(&value);
 
-                tile.value = value.clone();
+                tile.value = value;
                 tile.walkable = walkable;
                 tile.display_value = display_value;
                 tile.display_color = display_color;
@@ -92,6 +95,7 @@ impl Map {
             })
             .collect()
     }
+
     /// Reduce items list to a list of lowest entropy indices for random picking
     fn get_items_indices(items: &[Item]) -> Vec<usize> {
         let min_entropy = items
@@ -118,5 +122,15 @@ impl Map {
             1 => String::from(keys[0]),
             _ => get_weighted_random_value(values),
         }
+    }
+
+    /// Correct inconsistent values based on map analysis or not
+    fn get_value(report: &MapReport, tile: &Item, items: &[Item]) -> String {
+        if let Some(inconsistencies) = report.details.get(&MapReportEntry::Inconsistent) {
+            if !inconsistencies.is_empty() {
+                return Constraints::ensure_consistency(tile, items);
+            }
+        }
+        tile.value.clone()
     }
 }
