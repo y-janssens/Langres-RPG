@@ -43,7 +43,7 @@ const Sidebar = ({ form, handleFunction }) => {
                         <>
                             <div className={css['tools-infos-title']}>{t('common.result')}</div>
                             <Information label={t('tools.sidebar.algorithm')} text={form.algorithm} />
-                            <Information label={t('tools.sidebar.operations')} text={form.output.operations} />
+                            {form.algorithm === 'Astar' && <Information label={t('tools.sidebar.operations')} text={form.output.operations} />}
                             <Information label={t('tools.sidebar.time')} text={`${form.output.time}s`} />
                         </>
                     )}

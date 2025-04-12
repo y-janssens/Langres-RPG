@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { useDynamicForm } from '../../hooks';
 import { PathFinder as Path, FieldOfView } from '../../models/ia';
-import { World } from '../../models';
+import { World, CARDINAL_DIRECTIONS } from '../../models';
 
 import _ from 'lodash';
 import { executionTime, uniqueSelection } from '../../utils';
@@ -12,6 +12,7 @@ import { Theme, Sidebar, NavBar, TileInfo } from './components';
 import css from './tools.module.css';
 
 export const Tools = () => {
+    const [index, setIndex] = useState(0);
     const [form, setForm, setFormObject] = useDynamicForm({
         map: {},
         start: null,
@@ -28,13 +29,21 @@ export const Tools = () => {
 
     const generate_world = useCallback(async () => {
         await invoke('generate', { size: 50, name: 'pathfinding', order: 1, primary: true }).then((response) => {
+            // TODO remove test values
+            response.content = response.content.map((it) => {
+                if ([251, 252, 253, 354, 404, 454, 552, 553, 554, 258, 261, 412, 406, 558, 561].includes(it.id)) {
+                    it.walkable = false;
+                }
+                return it;
+            });
+
             const width = response.size;
             const height = _.last(response.content).y;
             const obstacles = response.content.filter((it) => !it.walkable).map((it) => it.id);
             const borderCount = width * 2 - 2 + height * 2;
             const start = response.content.find((it) => it.id === 403);
             const end = response.content.find((it) => it.id === 716);
-
+            setIndex(0);
             setFormObject({ ...form, start, end, map: new World(response), baseObstacles: obstacles, obstacles, borderCount, path: [], output: {} });
         });
     }, [form]);
@@ -87,9 +96,11 @@ export const Tools = () => {
     }, [form]);
 
     const handleCull = useCallback(() => {
-        const { result: cull, time } = executionTime(() => new FieldOfView({ item: form.start, map: form.map }).process());
+        const directions = CARDINAL_DIRECTIONS;
+        const { result: cull, time } = executionTime(() => new FieldOfView({ item: form.start, map: form.map, direction: directions[index] }).process());
         setFormObject({ ...form, algorithm: 'FieldOfView', path: cull, output: { time, operations: 0 } });
-    }, [form]);
+        setIndex((prev) => (prev < 5 ? prev + 1 : 0));
+    }, [form, index]);
 
     const handleFunction = useCallback(
         (action) => {
@@ -105,7 +116,7 @@ export const Tools = () => {
     );
 
     useEffect(() => {
-        // Rather use this than hardcode an entire map into static datas
+        // Avoid hardcoding an entire map into static datas
         if (!Object.keys(form.map).length) {
             generate_world();
         }
