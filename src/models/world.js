@@ -1,6 +1,7 @@
 import Fetcher from './fetcher';
 
 export const DIRECTIONS = [null, 'top', 'bottom', 'left', 'right', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
+export const CARDINAL_DIRECTIONS = ['left', 'top_left', 'top_right', 'right', 'bottom_right', 'bottom_left'];
 
 export default class World {
     constructor(options = {}) {

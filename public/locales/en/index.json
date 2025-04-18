@@ -387,7 +387,7 @@
   },
   "tools": {
     "actions": {
-      "cull": "Cull tiles",
+      "cull": "Field of view",
       "path": "Find path",
       "randomize": "Randomize map"
     },

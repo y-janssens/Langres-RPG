@@ -8,6 +8,8 @@ export default class FieldOfView {
         this.area = area;
         this.size = map.size;
         this.direction = direction || 'right';
+        this.xBoundary = this.getBoundary('x');
+        this.yBoundary = this.getBoundary('y');
     }
 
     validate() {
@@ -24,129 +26,80 @@ export default class FieldOfView {
     }
 
     getPointOfView() {
-        const { target, secondary } = this.getTargets();
-        const baseIds = this.getNeighbours({ id: target - this.getThreshold(target), flat: true });
-        const intermediateIds = this.getNeighbours({ id: secondary, flat: true });
-        const fullIds = this.computeIds(baseIds);
+        const { target, primary, secondary } = this.getTargets(this.item.id);
 
-        this.ids = uniqueList(fullIds, intermediateIds);
+        const baseIds = this.getNeighbours({ id: target, flat: true });
+        const primaryIds = this.getNeighbours({ id: primary, flat: true });
+        const secondaryIds = this.getNeighbours({ id: secondary, flat: true });
+        const fullIds = baseIds.flatMap((id) => this.getNeighbours({ id, flat: true }));
+
+        this.ids = uniqueList(fullIds, secondaryIds, primaryIds);
+    }
+
+    getDirectionalView(id) {
+        const { target, primary, secondary } = this.getTargets(id);
+
+        const baseIds = this.getNeighbours({ id: target, flat: true });
+        const primaryIds = this.getNeighbours({ id: primary, flat: true });
+        const secondaryIds = this.getNeighbours({ id: secondary, flat: true });
+        const fullIds = baseIds.flatMap((id) => this.getNeighbours({ id, flat: true }));
+
+        const proximity = this.item.neighbours_ids.some((nb) => primaryIds.includes(nb));
+
+        const neighbours_ids = this.map.content
+            .filter((it) => (proximity ? fullIds.includes(it.id) && it.walkable : secondaryIds.includes(it.id)))
+            .flatMap((it) => it.neighbours_ids);
+
+        return uniqueList(fullIds, neighbours_ids);
     }
 
     filterObstacles() {
-        const { contiguousObstacles, isolatedObstacles } = new Obstacles({
-            obstacles: this.map.content.filter((it) => !it.walkable).map((it) => it),
-            filterIds: this.ids
-        });
-
-        const standalone_obstacles = this.parseObstaclesList(isolatedObstacles);
-        const contiguous_obstacles = contiguousObstacles.flatMap((obsts) => this.parseObstaclesList(obsts));
-
-        this.ids = this.outputObstacles(uniqueList(standalone_obstacles, contiguous_obstacles));
-    }
-
-    outputObstacles(obstacles) {
-        const baseNeighbours = this.getNeighbours({ id: this.item.id, flat: true });
-        if (baseNeighbours.some((it) => obstacles.includes(it))) {
-            return [];
-        }
-        return this.ids.filter((it) => !obstacles.includes(it));
-    }
-
-    parseObstaclesList(list) {
-        return list.flatMap((obs) => {
-            const obstacle = this.getTarget(obs.id);
-            return uniqueList(obs.id, obstacle, ...Object.values(this.getObstacles(obstacle)));
-        });
-    }
-
-    getObstacles(id, strict = false) {
-        const ids = this.getNeighbours({ id });
-        return Object.entries(ids)
-            .filter(([direction]) => {
-                if (!strict) {
-                    return direction.includes(this.direction);
-                }
-                return direction === this.direction;
-            })
-            .reduce((acc, [key, value]) => ((acc[key] = value), acc), {});
-    }
-
-    computeIds(ids) {
-        const indexes = Array.from({ length: this.area - 1 }, (_, i) => i);
-        return indexes.reduce((acc) => acc.flatMap((id) => this.getNeighbours({ id, flat: true })), ids);
+        const obstacles = this.map.content.filter((it) => this.ids.includes(it.id) && this.filterBoundaries(it) && !it.walkable).map((it) => it.id);
+        const obstaclesIds = new Set(obstacles.flatMap((obs) => this.getDirectionalView(obs)).filter((id) => id > 0));
+        this.ids = this.ids.filter((id) => !obstaclesIds.has(id));
     }
 
     getNeighbours({ id, index = 1, flat = false }) {
+        const threshold = this.getThreshold(id);
         const neighbours = {
-            top_right: id - index * this.size + index - this.getThreshold(id),
-            right: id + index,
-            bottom_right: id + index * this.size + index - this.getThreshold(id),
-            bottom_left: id + index * this.size - this.getThreshold(id),
             left: id - index,
-            top_left: id - index * this.size - this.getThreshold(id)
+            right: id + index,
+            top_left: id - index * this.size - threshold,
+            top_right: id - index * this.size + index - threshold,
+            bottom_left: id + index * this.size - threshold,
+            bottom_right: id + index * this.size + index - threshold
         };
         return flat ? flatten(neighbours) : neighbours;
     }
 
+    getTargets(id) {
+        const threshold = this.getThreshold(id);
+        const linear = ['left', 'right'].includes(this.direction);
+        return {
+            target: this.getTarget(id - (linear ? threshold : 2), this.area + 2),
+            primary: this.getTarget(id - threshold, this.area - 1),
+            secondary: this.getTarget(id - (linear ? threshold : 1), this.area)
+        };
+    }
+
     getTarget(id, index) {
-        return this.getNeighbours({ id, index })[this.direction];
+        return this.getNeighbours({ id, index })[this.direction] + this.getThreshold(id);
     }
 
     getThreshold(id) {
-        const item = this.map.content.find((it) => it.id === id);
-        return item.y % 2 === 0 ? 0 : 1;
+        const item = this.map.content.find((it) => it.id === Math.min(Math.max(id, 0), this.map.content.length));
+        return item?.y % 2 === 0 ? 0 : 1;
     }
 
-    getTargets() {
-        const linear = ['left', 'right'].includes(this.direction);
-        return {
-            target: this.getTarget(this.item.id - (linear ? 0 : 2), this.area + 2),
-            secondary: this.getTarget(this.item.id - (linear ? 0 : 1), this.area)
-        };
-    }
-}
-
-class Obstacles {
-    constructor({ obstacles, filterIds }) {
-        this.filterIds = filterIds;
-        this.obstacles = this.filterObstacles(obstacles);
-        this.contiguousObstacles = this.groupContiguousObstacles();
-        this.isolatedObstacles = this.filterIsolatedObstacles();
-    }
-
-    filterObstacles(obstacles) {
-        return obstacles.filter((it) => !this.filterIds || this.filterIds.includes(it.id)).sort((a, b) => a.id - b.id);
-    }
-
-    groupContiguousObstacles() {
-        if (!this.obstacles?.length) {
-            return [];
+    filterBoundaries(item) {
+        if (item.y % 2 == 0) {
+            return item.x > 1 && item.x < this.xBoundary - 1 && item.y > 0 && item.y < this.yBoundary;
         }
 
-        const result = [];
-        let currentSuite = [this.obstacles[0]];
-
-        for (let i = 1; i < this.obstacles.length; i++) {
-            const item = this.obstacles[i];
-            if (item.id === this.obstacles[i - 1].id + 1) {
-                currentSuite.push(item);
-            } else {
-                if (currentSuite.length > 1) {
-                    result.push(currentSuite);
-                }
-                currentSuite = [item];
-            }
-        }
-
-        if (currentSuite.length > 1) {
-            result.push(currentSuite);
-        }
-
-        return result;
+        return item.x > 0 && item.x < this.xBoundary && item.y > 0 && item.y < this.yBoundary;
     }
 
-    filterIsolatedObstacles() {
-        const contiguousIds = this.contiguousObstacles.flatMap((it) => it).map((it) => it.id);
-        return this.obstacles.filter((it) => !contiguousIds.includes(it.id));
+    getBoundary(key) {
+        return this.map.content.reduce((highest, current) => (current[key] > highest[key] ? current : highest), this.map.content[0])[key];
     }
 }

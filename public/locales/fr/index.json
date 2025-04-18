@@ -387,7 +387,7 @@
   },
   "tools": {
     "actions": {
-      "cull": "Filtrer les tuiles",
+      "cull": "Champ de vision",
       "path": "Trouver un chemin",
       "randomize": "Carte aléatoire"
     },
