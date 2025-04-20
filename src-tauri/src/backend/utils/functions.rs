@@ -1,6 +1,8 @@
 use std::collections::{HashMap, HashSet};
 
+use diesel::result::Error;
 use rand::{distributions::WeightedIndex, prelude::Distribution, thread_rng};
+use serde::Serialize;
 
 pub fn array_from_set(values: HashSet<i32>) -> Vec<i32> {
     let mut array: Vec<i32> = Vec::from_iter(values);
@@ -28,4 +30,8 @@ pub fn get_weighted_random_value(values: &HashMap<String, u32>) -> String {
     let weights: Vec<u32> = values.values().cloned().collect();
     let dist = WeightedIndex::new(&weights).unwrap();
     items[dist.sample(&mut rng)].to_string()
+}
+
+pub fn to_json<T: Serialize>(value: &T) -> Result<String, Error> {
+    serde_json::to_string(value).map_err(|e| Error::DeserializationError(Box::new(e)))
 }

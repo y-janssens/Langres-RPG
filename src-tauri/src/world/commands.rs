@@ -1,5 +1,8 @@
+use diesel::r2d2::ConnectionManager;
+use diesel::SqliteConnection;
+
 use crate::backend::{
-    database::{authenticated_command, authenticated_thread},
+    database::{authenticated_command, authenticated_thread, get_connection},
     permissions::models::Permission,
     response::Response,
     utils::errors::ValidationError,
@@ -29,10 +32,16 @@ pub async fn regenerate(mut map: World) -> Result<Response, ValidationError> {
 }
 
 #[tauri::command]
-pub fn clear(mut map: World) -> Result<Response, ValidationError> {
+pub fn clear_npcs(
+    mut map: World,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         let content = World::generate();
+        let _ = map.clear_npcs(&mut connection);
         map.content = content;
+        map.npcs = vec![];
         Ok(map)
     })
 }
@@ -58,6 +67,19 @@ pub fn generate_forest(mut map: World) -> Result<Response, ValidationError> {
     authenticated_command(Permission::DevTools, || {
         let content = World::generate_forest(map.content);
         map.content = content;
+        Ok(map)
+    })
+}
+
+#[tauri::command]
+pub fn generate_npcs(
+    mut map: World,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::DevTools, || {
+        let npcs = map.generate_npcs(&mut connection)?;
+        map.npcs = npcs;
         Ok(map)
     })
 }

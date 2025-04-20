@@ -58,6 +58,37 @@ diesel::table! {
 }
 
 diesel::table! {
+    npc (id) {
+        id -> Text,
+        first_name -> Text,
+        last_name -> Text,
+        title -> Text,
+        class -> Text,
+        end -> Integer,
+        #[sql_name = "for"]
+        for_ -> Integer,
+        hab -> Integer,
+        cha -> Integer,
+        int -> Integer,
+        ini -> Integer,
+        pv -> Integer,
+        level -> Integer,
+        gender -> Text,
+        map_id -> Integer,
+        unique -> Bool,
+        #[sql_name = "static"]
+        static_ -> Bool,
+        hostile -> Bool,
+        can_be_hostile -> Bool,
+        is_alive -> Bool,
+        inventory -> Text,
+        quests -> Text,
+        dialogs -> Text,
+        starting_point -> Text,
+    }
+}
+
+diesel::table! {
     objects (id) {
         id -> Integer,
         name -> Text,
@@ -143,6 +174,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     functions,
     games,
     loot,
+    npc,
     objects,
     playerachievements,
     playerquests,

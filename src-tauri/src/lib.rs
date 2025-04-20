@@ -85,6 +85,12 @@ pub fn run() {
             loot::commands::save_loot,
             loot::commands::delete_loot,
             loot::table::commands::generate_loot_table,
+            // Npcs commands
+            npcs::commands::new_npc,
+            npcs::commands::save_npc,
+            npcs::commands::load_npc,
+            npcs::commands::load_npcs,
+            npcs::commands::delete_npc,
             // Objects commands
             objects::commands::new_object,
             objects::commands::load_objects,
@@ -127,9 +133,10 @@ pub fn run() {
             backend::utils::commands::get_neighbours,
             backend::utils::commands::frustum_cull_filter,
             // World building commands
-            world::commands::clear,
             world::commands::generate,
             world::commands::regenerate,
+            world::commands::clear_npcs,
+            world::commands::generate_npcs,
             world::commands::generate_forest,
             world::commands::compute_map_directions,
             world::commands::fix_map_inconsistencies,

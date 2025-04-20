@@ -6,9 +6,7 @@ use lazy_static::lazy_static;
 lazy_static! {
     // Predefined npcs
     pub static ref BASE_ZOMBIE: Npc = Npc::get_zombie(
-        Gender::Unknown,
         1498719483,
-        Inventory::empty(),
         (15.0, 32.0, 1607)
     );
 

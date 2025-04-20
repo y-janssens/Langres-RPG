@@ -1,0 +1,27 @@
+-- Your SQL goes here
+create table npc (
+    id TEXT NOT NULL PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    title TEXT NOT NULL,
+    class TEXT NOT NULL,
+    end INTEGER NOT NULL,
+    "for" INTEGER NOT NULL,
+    hab INTEGER NOT NULL,
+    cha INTEGER NOT NULL,
+    int INTEGER NOT NULL,
+    ini INTEGER NOT NULL,
+    pv INTEGER NOT NULL,
+    level INTEGER NOT NULL,
+    gender TEXT NOT NULL,
+    map_id INTEGER NOT NULL,
+    "unique" BOOLEAN NOT NULL,
+    static BOOLEAN NOT NULL,
+    hostile BOOLEAN NOT NULL,
+    can_be_hostile BOOLEAN NOT NULL,
+    is_alive BOOLEAN NOT NULL,
+    inventory TEXT NOT NULL,
+    quests TEXT NOT NULL,
+    dialogs TEXT NOT NULL,
+    starting_point TEXT NOT NULL
+)

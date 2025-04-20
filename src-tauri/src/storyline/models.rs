@@ -64,7 +64,7 @@ impl Story {
 
         for act in _storyline.story.acts.iter_mut() {
             for map in act.content.maps.iter_mut() {
-                map.npcs = Npc::get_for_map(map.id);
+                map.npcs = Npc::get_for_map(map.id, connection)?;
             }
         }
         Ok(_storyline)
