@@ -5,22 +5,24 @@
     "manager": "Manage storylines",
     "menu": {
       "directions": {
-        "null": "Erase",
-        "top": "Top",
         "bottom": "Bottom",
-        "left": "Left",
-        "right": "Right",
-        "top_left": "Top left",
-        "top_right": "Top right",
         "bottom_left": "Bottom left",
-        "bottom_right": "Bottom right"
+        "bottom_right": "Bottom right",
+        "left": "Left",
+        "null": "Erase",
+        "right": "Right",
+        "top": "Top",
+        "top_left": "Top left",
+        "top_right": "Top right"
       },
       "functions": {
         "clear-map": "Clear map",
-        "regenerate-map": "Regenerate map",
+        "clear-npcs": "Delete npcs",
         "generate-forest": "Generate trees",
         "generate-maps": "Generate maps",
-        "label": "Functions"
+        "generate-npcs": "Generate npcs",
+        "label": "Functions",
+        "regenerate-map": "Regenerate map"
       },
       "items": {
         "directions": "Directions",
@@ -36,16 +38,17 @@
         "start": "Start"
       },
       "objects": {
-        "start": "Start",
+        "bridge": "Bridge",
+        "clearing": "Ground",
         "gate": "Gate",
         "grass": "Grass",
-        "clearing": "Ground",
-        "tree": "Tree",
+        "house": "House",
+        "npc": "Npc",
         "road": "Road",
-        "water": "Water",
         "shore": "Shore",
-        "bridge": "Bridge",
-        "house": "House"
+        "start": "Start",
+        "tree": "Tree",
+        "water": "Water"
       },
       "tile": {
         "label": "Tiles settings"
@@ -53,8 +56,8 @@
     },
     "modals": {
       "collections": {
-        "title": "Visualize and edit your collection of maps",
-        "subtitle": "Existing maps"
+        "subtitle": "Existing maps",
+        "title": "Visualize and edit your collection of maps"
       },
       "editor": {
         "title": "Edit your map's content"
@@ -64,27 +67,36 @@
         "title": "Manage gateways between your maps"
       },
       "generator": {
-        "type": "Map type",
         "action": "Action type",
-        "post_action": "Post action type",
         "amount": "Map batch's size",
+        "post_action": "Post action type",
+        "reset": "Reset",
         "save": "Save in collections",
+        "settings": "Map settings",
         "subtitle": "Generate a batch of maps",
         "title": "Generate and select random maps",
-        "reset": "Reset",
-        "settings": "Map settings",
+        "type": "Map type",
         "types": {
+          "dirt": "Dirt",
           "forest": "Forest",
-          "swamp": "Swamp",
           "ground": "Ground",
           "null": "None",
-          "dirt": "Dirt",
-          "town": "Town",
-          "shanty": "Village"
+          "shanty": "Village",
+          "swamp": "Swamp",
+          "town": "Town"
         }
       },
       "manager": {
         "title": "Create and edit storylines and maps"
+      },
+      "npc": {
+        "base": "Base",
+        "dialogs": "Dialogs",
+        "inventory": "Inventory",
+        "parameters": "Parameters",
+        "quests": "Quests",
+        "statistics": "Statistics",
+        "title": "Non playing character"
       },
       "preview": {
         "title": "Preview"
@@ -92,9 +104,9 @@
       "statistics": {
         "free_space": "Free space",
         "groups": {
-          "summary": "Summary",
+          "details": "Details",
           "distribution": "Distribution",
-          "details": "Details"
+          "summary": "Summary"
         },
         "keys": {
           "Inconsistent": "Inconsistent values",
@@ -167,11 +179,23 @@
       "start": "Start",
       "statistics": "Statistics"
     },
+    "character": {
+      "can_be_hostile": "Neutral",
+      "class": "Class",
+      "first_name": "First name",
+      "hostile": "Hostile",
+      "is_alive": "Alive",
+      "last_name": "Last name",
+      "static": "Static",
+      "unique": "Unique",
+      "unique_description": "(Unique npcs can have their own dialogs, quests and inventories)"
+    },
     "date": "Date",
     "game": "Langres",
     "informations": "Informations",
     "name": "Name",
     "order": "Order",
+    "position": "Position",
     "result": "Result",
     "size": "Size",
     "title": "Title"
@@ -188,8 +212,8 @@
         "damage": "Damage",
         "date_created": "Created",
         "description": "Description",
-        "display_value": "Display value",
         "display_color": "Display color",
+        "display_value": "Display value",
         "icon": "Icon",
         "id": "Id",
         "interactive": "Interactive",
@@ -201,8 +225,8 @@
         "modified": "Modified",
         "name": "Name",
         "parade": "Parade",
-        "price": "Price",
         "player": "Name",
+        "price": "Price",
         "primary": "Primary",
         "reward": "Reward",
         "status": "Status",
@@ -286,12 +310,12 @@
       "object": {
         "actions": "Actions",
         "area": "Area",
+        "display_color": "Display color",
+        "display_value": "Display value",
         "id": "Id",
         "interactive": "Interactive",
         "name": "Name",
         "value": "Value",
-        "display_color": "Display color",
-        "display_value": "Display value",
         "walkable": "Walkable"
       },
       "quest": {
@@ -333,14 +357,14 @@
       "title": "Settings",
       "values": {
         "collisions": "Compute collisions",
-        "isometric": "Isometric viewport",
-        "performances": "Performances mode",
         "displayLoadingScreen": "Display loading screen",
         "displayMeshes": "Display meshes",
         "displayObstacles": "Display obstacles",
         "displayText": "Display tiles informations",
         "displayTextures": "Display textures",
         "displayWater": "Display water",
+        "isometric": "Isometric viewport",
+        "performances": "Performances mode",
         "pixelization": "Pixelization",
         "zoom": "Zoom"
       }
@@ -374,9 +398,9 @@
       "exit-game": "Main Menu",
       "load": "Load Game",
       "new": "New Game",
-      "tools": "Tools",
       "save": "Save Game",
-      "settings": "Settings"
+      "settings": "Settings",
+      "tools": "Tools"
     },
     "settings": {
       "language": "Language: ",
@@ -385,6 +409,11 @@
       "volume": "Volume: "
     }
   },
+  "npcs": {
+    "bandit": "Bandit",
+    "soldier": "Soldier",
+    "zombie": "Zombie"
+  },
   "tools": {
     "actions": {
       "cull": "Field of view",
@@ -392,11 +421,11 @@
       "randomize": "Randomize map"
     },
     "sidebar": {
-      "start": "Start",
+      "algorithm": "Algorithm",
       "end": "End",
       "obstacles": "Obstacles",
       "operations": "Operations",
-      "algorithm": "Algorithm",
+      "start": "Start",
       "time": "Time elapsed"
     }
   }

@@ -138,3 +138,30 @@ export const MultiButton = ({ label = '', name, icon = null, open = false, setOp
         </div>
     );
 };
+
+export const Select = ({ label = '', options = [], onSelect = () => {} }) => {
+    const [open, setOpen] = useState(false);
+
+    const handleSelect = useCallback(
+        (value) => {
+            onSelect(value);
+            setOpen(false);
+        },
+        [onSelect]
+    );
+
+    return (
+        <>
+            <SelectButton open={open} label={label} onClick={() => setOpen((prev) => !prev)} />
+            {open && (
+                <div className={css['select-content']}>
+                    {options.map((it) => (
+                        <div key={it.key} className={css['select-item']} onClick={() => handleSelect(it.value)}>
+                            <span>{it.text}</span>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </>
+    );
+};

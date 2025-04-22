@@ -1,0 +1,57 @@
+.npc-modal-container {
+    height: -webkit-fill-available;
+    overflow-y: auto;
+}
+
+.npc-block button {
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.npc-stats-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 65px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.npc-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+}
+
+.npc-stat input {
+    width: 65px;
+}
+
+.npc-parameters-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 10px;
+}
+
+.npc-base-block div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.npc-base-block div label {
+    padding-left: 0;
+}
+
+.npc-parameters-block label {
+    width: 75px;
+}
+
+.npc-parameters-block label span,
+.npc-base-block label span,
+.npc-parameters-block p {
+    font-size: 11px !important;
+}

@@ -14,6 +14,7 @@ export { default as AdminModel } from './admin';
 export { default as Storyline } from './storyline';
 export { default as MapObject } from './objects';
 export { default as MapFunction } from './functions';
+export { default as Npc } from './npcs';
 export { default as Permissions } from './permissions';
 export { default as Quest } from './quests';
 export { default as Achievement } from './achievements';
