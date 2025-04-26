@@ -138,6 +138,19 @@ diesel::table! {
 }
 
 diesel::table! {
+    quests (id) {
+        id -> Text,
+        name -> Text,
+        description -> Text,
+        primary -> Bool,
+        status -> Text,
+        visible -> Bool,
+        reward -> Integer,
+        next -> Nullable<Text>,
+    }
+}
+
+diesel::table! {
     settings (id) {
         id -> Integer,
         language -> Text,
@@ -179,6 +192,7 @@ diesel::allow_tables_to_appear_in_same_query!(
     playerachievements,
     playerquests,
     playerstatistics,
+    quests,
     settings,
     statistics,
     storyline,

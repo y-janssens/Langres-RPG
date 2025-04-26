@@ -1,10 +1,14 @@
-use crate::backend::translations::models::Translations;
-use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};
+use crate::backend::{translations::models::Translations, utils::functions::to_json};
+use crate::schema::quests;
+use crate::schema::quests::dsl::*;
+use diesel::{
+    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
+    SqliteConnection,
+};
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
-use super::definitions::get_all;
-
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Status {
     pub owned: bool,
     pub completed: bool,
@@ -38,15 +42,9 @@ impl Status {
     }
 }
 
-impl Queryable<Text, Sqlite> for Status {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
-#[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+#[diesel(table_name = crate::schema::quests)]
+#[diesel(check_for_backend(Sqlite))]
 pub struct Quest {
     pub id: String,
     pub name: Translations,
@@ -58,8 +56,93 @@ pub struct Quest {
     pub next: Option<String>,
 }
 
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
+#[diesel(table_name = crate::schema::quests)]
+#[diesel(check_for_backend(Sqlite))]
+pub struct InsertableQuest {
+    id: String,
+    name: String,
+    description: String,
+    primary: bool,
+    status: String,
+    visible: bool,
+    reward: i32,
+    next: Option<String>,
+}
+
+impl Default for Quest {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Quest {
-    pub fn load() -> Vec<Quest> {
-        get_all()
+    pub fn new() -> Self {
+        Self {
+            id: Uuid::new_v4().to_string(),
+            name: Translations::blank(),
+            description: Translations::blank(),
+            primary: true,
+            status: Status {
+                owned: false,
+                completed: false,
+                failed: false,
+                abandoned: false,
+            },
+            visible: true,
+            reward: 0,
+            next: None,
+        }
+    }
+
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Quest>> {
+        let _load = quests::table.load(connection)?;
+        Ok(_load)
+    }
+
+    pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<Quest> {
+        let _load = crate::schema::quests::table
+            .filter(quests::id.eq(_id))
+            .first::<Quest>(connection)?;
+        Ok(_load)
+    }
+
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+        println!("{:#?}", self.clone());
+        let name_json = to_json(&self.name)?;
+        let description_json = to_json(&self.description)?;
+        let status_json = to_json(&self.status)?;
+
+        let insertable = InsertableQuest {
+            id: self.id.clone(),
+            name: name_json,
+            description: description_json,
+            primary: self.primary,
+            status: status_json,
+            visible: self.visible,
+            reward: self.reward,
+            next: self.next.clone(),
+        };
+        let exists = quests
+            .filter(id.eq(self.id.clone()))
+            .first::<Quest>(connection)
+            .is_ok();
+
+        if exists {
+            diesel::update(quests.find(&self.id.clone()))
+                .set(&insertable)
+                .execute(connection)?;
+        } else {
+            diesel::insert_into(quests::table)
+                .values(&insertable)
+                .execute(connection)?;
+        }
+
+        Ok(())
+    }
+
+    pub fn delete(_id: String, connection: &mut SqliteConnection) -> QueryResult<()> {
+        diesel::delete(quests.filter(id.eq(_id))).execute(connection)?;
+        Ok(())
     }
 }

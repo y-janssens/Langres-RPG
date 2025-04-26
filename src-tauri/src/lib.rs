@@ -96,6 +96,11 @@ pub fn run() {
             objects::commands::load_objects,
             objects::commands::save_object,
             objects::commands::delete_object,
+            // Quests commands
+            quests::commands::new_quest,
+            quests::commands::load_quests,
+            quests::commands::save_quest,
+            quests::commands::delete_quest,
             // Player achievements commands
             player::achievements::commands::load_player_achievements,
             player::achievements::commands::load_player_achievement,

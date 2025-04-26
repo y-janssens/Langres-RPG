@@ -38,7 +38,7 @@ pub enum Class {
     Merchant,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Queryable, Selectable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
 #[diesel(table_name = crate::schema::npc)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Npc {
@@ -70,9 +70,7 @@ pub struct Npc {
     pub starting_point: Position,
 }
 
-#[derive(
-    Debug, Serialize, Deserialize, Clone, PartialEq, Queryable, Selectable, Insertable, AsChangeset,
-)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
 #[diesel(table_name = crate::schema::npc)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableNpc {
@@ -122,35 +120,48 @@ impl Npc {
     }
 
     pub fn save(&self, connection: &mut SqliteConnection) -> Result<(), Error> {
+        let _npc = &mut self.clone();
+
+        if !_npc.unique {
+            _npc.title = Translations::blank();
+            _npc.inventory = Inventory::empty();
+            _npc.quests = NpcQuests::empty();
+            _npc.dialogs = NpcDialogs::empty();
+        }
+
+        if _npc.hostile {
+            _npc.can_be_hostile = true;
+        }
+
         let title_json = to_json(&Translations::blank())?;
-        let class_json = to_json(&self.class)?;
-        let inventory_json = to_json(&self.inventory)?;
-        let gender_json = to_json(&self.gender)?;
-        let quests_json = to_json(&self.quests)?;
-        let dialogs_json = to_json(&self.dialogs)?;
-        let starting_point_json = to_json(&self.starting_point)?;
+        let class_json = to_json(&_npc.class)?;
+        let inventory_json = to_json(&_npc.inventory)?;
+        let gender_json = to_json(&_npc.gender)?;
+        let quests_json = to_json(&_npc.quests)?;
+        let dialogs_json = to_json(&_npc.dialogs)?;
+        let starting_point_json = to_json(&_npc.starting_point)?;
 
         let insertable = InsertableNpc {
-            id: self.id.clone(),
-            first_name: self.first_name.clone(),
-            last_name: self.last_name.clone(),
+            id: _npc.id.clone(),
+            first_name: _npc.first_name.clone(),
+            last_name: _npc.last_name.clone(),
             title: title_json,
             class: class_json,
-            end: self.end,
-            r#for: self.r#for,
-            hab: self.hab,
-            cha: self.cha,
-            int: self.int,
-            ini: self.ini,
-            pv: self.pv,
-            level: self.level,
+            end: _npc.end,
+            r#for: _npc.r#for,
+            hab: _npc.hab,
+            cha: _npc.cha,
+            int: _npc.int,
+            ini: _npc.ini,
+            pv: _npc.pv,
+            level: _npc.level,
             gender: gender_json,
-            map_id: self.map_id,
-            unique: self.unique,
-            r#static: self.r#static,
-            hostile: self.hostile,
-            is_alive: self.is_alive,
-            can_be_hostile: self.can_be_hostile,
+            map_id: _npc.map_id,
+            unique: _npc.unique,
+            r#static: _npc.r#static,
+            hostile: _npc.hostile,
+            is_alive: _npc.is_alive,
+            can_be_hostile: _npc.can_be_hostile,
             inventory: inventory_json,
             quests: quests_json,
             dialogs: dialogs_json,
@@ -158,12 +169,12 @@ impl Npc {
         };
 
         let exists = npc
-            .filter(id.eq(self.id.clone()))
+            .filter(id.eq(_npc.id.clone()))
             .first::<Npc>(connection)
             .is_ok();
 
         if exists {
-            diesel::update(npc.find(self.id.clone()))
+            diesel::update(npc.find(_npc.id.clone()))
                 .set(&insertable)
                 .execute(connection)?;
         } else {
@@ -188,8 +199,8 @@ impl Npc {
     pub fn get_zombie(_map_id: i32, position: (f32, f32, u32)) -> Result<Npc, Error> {
         Ok(Npc {
             id: Uuid::new_v4().to_string(),
-            first_name: "???".to_string(),
-            last_name: "???".to_string(),
+            first_name: "".to_string(),
+            last_name: "".to_string(),
             title: Translations::blank(),
             class: Class::Zombie,
             end: 12,
@@ -278,7 +289,7 @@ impl NpcDialogs {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct NpcQuests(pub Vec<Quest>);
 
 impl NpcQuests {
@@ -286,11 +297,14 @@ impl NpcQuests {
         NpcQuests(vec![])
     }
 
-    pub fn get_quests(ids: Option<Vec<String>>) -> NpcQuests {
+    pub fn get_quests(
+        ids: Option<Vec<String>>,
+        connection: &mut SqliteConnection,
+    ) -> Result<NpcQuests, Error> {
         let mut result: Vec<Quest> = Vec::new();
 
         if let Some(ids) = ids {
-            let _quests = Quest::load();
+            let _quests = Quest::load(connection)?;
 
             for quest in _quests {
                 if ids.contains(&quest.id) {
@@ -299,6 +313,6 @@ impl NpcQuests {
             }
         }
 
-        NpcQuests(result)
+        Ok(NpcQuests(result))
     }
 }

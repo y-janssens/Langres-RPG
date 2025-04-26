@@ -1,7 +1,6 @@
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
 use diesel::result::Error;
-use diesel::sql_types::Text;
 use diesel::{
     deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
 };
@@ -44,18 +43,10 @@ pub struct InsertablePlayerQuest {
     pub next: Option<String>,
 }
 
-impl Queryable<Text, Sqlite> for Translations {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
-}
-
 impl PlayerQuest {
     pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
         println!("Generating game quests...");
-        let base_quests = Quest::load();
+        let base_quests = Quest::load(connection)?;
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
             let status_json = serde_json::to_string(&quest.status)
