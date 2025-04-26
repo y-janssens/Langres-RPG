@@ -1,5 +1,6 @@
 import Fetcher from './fetcher';
 import { invoke } from '@tauri-apps/api/core';
+import Inventory from './inventory';
 
 export default class Npc extends Fetcher {
     constructor(options = {}) {
@@ -24,8 +25,11 @@ export default class Npc extends Fetcher {
         await invoke(`delete_npc`, { npc: this });
     }
 
+    // eslint-disable-next-line
     static fromApi(id, data) {
-        return new this(data);
+        let npc = new this(data);
+        npc.inventory = new Inventory(data.inventory);
+        return npc;
     }
 
     static get statsKeys() {

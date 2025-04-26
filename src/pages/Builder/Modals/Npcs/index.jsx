@@ -28,9 +28,6 @@ const Npc = ({ form, type, value, sync, onClose }) => {
 
     const handleSave = useCallback(async () => {
         let npc = new NpcModel({ ...npcForm });
-        if (npc.hostile) {
-            npc.can_be_hostile = true;
-        }
         await npc.save().then(() => {
             sync();
         });

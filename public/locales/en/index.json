@@ -92,11 +92,28 @@
       "npc": {
         "base": "Base",
         "dialogs": "Dialogs",
-        "inventory": "Inventory",
         "parameters": "Parameters",
-        "quests": "Quests",
         "statistics": "Statistics",
-        "title": "Non playing character"
+        "title": "Non playing character",
+        "inventory": {
+          "armor": "Armor",
+          "damage": "Damage",
+          "head": "Head",
+          "label": "Inventory",
+          "left_hand": "Left hand",
+          "legs": "Legs",
+          "placeholder": "Select an equipment",
+          "price": "Price",
+          "right_hand": "Right hand",
+          "torso": "Armor",
+          "weight": "Weight"
+        },
+        "quests": {
+          "label": "Quests",
+          "placeholder": "Select a quest",
+          "primary": "Main quests",
+          "secondary": "Secondary quests"
+        }
       },
       "preview": {
         "title": "Preview"
@@ -188,7 +205,7 @@
       "last_name": "Last name",
       "static": "Static",
       "unique": "Unique",
-      "unique_description": "(Unique npcs can have their own dialogs, quests and inventories)"
+      "unique_description": "(Unique npcs can have their own titles, dialogs, quests and inventories)"
     },
     "date": "Date",
     "game": "Langres",

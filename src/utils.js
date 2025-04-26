@@ -126,3 +126,11 @@ export const executionTime = (fn, ...args) => {
 export const flatten = (args) => {
     return Object.values(args);
 };
+
+export const capitalizeFirstLetter = (string) => {
+    if (!string || string.length === 0) {
+        return '';
+    }
+
+    return `${string.charAt(0).toUpperCase()}${string.slice(1).toLowerCase()}`;
+};

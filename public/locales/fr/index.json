@@ -92,11 +92,28 @@
       "npc": {
         "base": "Base",
         "dialogs": "Dialogues",
-        "inventory": "Inventaire",
         "parameters": "Paramètres",
-        "quests": "Quêtes",
         "statistics": "Statistiques",
-        "title": "Personnage non joueur"
+        "title": "Personnage non joueur",
+        "inventory": {
+          "armor": "Armure",
+          "damage": "Dégâts",
+          "head": "Tête",
+          "label": "Inventaire",
+          "left_hand": "Main gauche",
+          "legs": "Jambes",
+          "placeholder": "Sélectionner un équipement",
+          "price": "Prix",
+          "right_hand": "Main droite",
+          "torso": "Armure",
+          "weight": "Poids"
+        },
+        "quests": {
+          "label": "Quêtes",
+          "placeholder": "Sélectionner une quête",
+          "primary": "Quêtes principales",
+          "secondary": "Quêtes secondaires"
+        }
       },
       "preview": {
         "title": "Prévisualisation"
@@ -188,7 +205,7 @@
       "last_name": "Nom",
       "static": "Statique",
       "unique": "Unique",
-      "unique_description": "(Les pnjs uniques peuvent avoir leurs propres dialogues, quêtes et inventaires)"
+      "unique_description": "(Les pnjs uniques peuvent avoir leurs propres titres, dialogues, quêtes et inventaires)"
     },
     "date": "Date",
     "game": "Langres",

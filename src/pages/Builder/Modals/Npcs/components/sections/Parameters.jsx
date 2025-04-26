@@ -1,7 +1,8 @@
 import { useTranslation } from '../../../../../../hooks';
 
-import { Select, Toggle } from '../../../../components';
 import { Input } from 'react-daisyui';
+
+import { Select, Toggle, TranslatableField } from '../../../../components';
 import Section from '../Section';
 
 import css from '../npcs.module.css';
@@ -20,6 +21,7 @@ const Parameters = ({ npcForm, setNpcForm }) => {
             <div className={css['npc-parameters-block']}>
                 {npcForm.unique && (
                     <>
+                        <TranslatableField form={npcForm} setForm={setNpcForm} label={'Title'} entry="title" />
                         <p>{t('common.character.first_name')}</p>
                         <Input size="sm" color="neutral" dataTheme="dark" value={npcForm.first_name} onChange={({ target: { value } }) => setNpcForm('first_name', value)} />
                         <p>{t('common.character.last_name')}</p>
@@ -28,7 +30,7 @@ const Parameters = ({ npcForm, setNpcForm }) => {
                 )}
 
                 <p>{t('common.character.class')}</p>
-                <Select label={npcForm.class} options={classOptions} onSelect={(value) => setNpcForm('class', value)} />
+                <Select value={npcForm.class} options={classOptions} onSelect={(value) => setNpcForm('class', value)} />
 
                 <Toggle title={t('common.character.static')} active={npcForm.static} onChange={({ target: { checked } }) => setNpcForm('static', checked)} />
                 <Toggle title={t('common.character.is_alive')} active={npcForm.is_alive} onChange={({ target: { checked } }) => setNpcForm('is_alive', checked)} />

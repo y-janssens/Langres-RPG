@@ -17,25 +17,37 @@ export default class Loot extends AdminModel {
         return super.display(key);
     }
 
-    static command(generate) { // eslint-disable-line
+    get label() {
+        const { language } = i18next;
+        return `${this.name[language]} - ${this.description[language]}`;
+    }
+
+    get stats() {
+        const { t } = i18next;
+        return `${t('builder.modals.npc.inventory.armor')}: ${this.armor} - ${t('builder.modals.npc.inventory.damage')}: ${this.damage} - ${t(
+            'builder.modals.npc.inventory.price'
+        )}: ${this.price} - ${t('builder.modals.npc.inventory.weight')}: ${this.weight}`;
+    }
+
+    static command(generate) {
+        // eslint-disable-line
         if (!generate) {
             return 'load_loots';
         }
-        return 'generate_loot'
+        return 'generate_loot';
     }
 }
 
-
 export class LootTable extends Fetcher {
     constructor(options = {}) {
-        super()
+        super();
         Object.keys(options).forEach((key) => {
             this[key] = options[key];
         });
     }
 
-
-    static command(id) { // eslint-disable-line
-        return 'generate_loot_table'
+    // eslint-disable-next-line
+    static command(id) {
+        return 'generate_loot_table';
     }
 }

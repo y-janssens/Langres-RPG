@@ -68,13 +68,27 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
     );
 };
 
-export const SelectButton = ({ label, open = false, onClick = () => {}, size = 'xs' }) => {
+export const SelectButton = ({ label, placeholder, open = false, onClick = () => {}, size = 'xs', deletable = false, onDelete = () => {} }) => {
+    const value = label ?? placeholder;
     return (
         <div className={css['selector-select-btn']}>
             <Button dataTheme="dark" size={size} color="neutral" active variant="outline" fullWidth onClick={onClick} animation={false}>
                 <div className={css['select-multi-label']}>
-                    <span>{label}</span>
-                    <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                    <span className={css[`select-multi-${label ? 'value' : 'placeholder'}`]}>{value}</span>
+                    <span className={css['select-multi-toggle']}>
+                        <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                        {deletable && (
+                            <span className={css['select-multi-delete']} datatype={!label ? 'disabled' : null}>
+                                <Icon
+                                    name="erase"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onDelete();
+                                    }}
+                                />
+                            </span>
+                        )}
+                    </span>
                 </div>
             </Button>
         </div>
@@ -139,7 +153,7 @@ export const MultiButton = ({ label = '', name, icon = null, open = false, setOp
     );
 };
 
-export const Select = ({ label = '', options = [], onSelect = () => {} }) => {
+export const Select = ({ value, placeholder, options = [], onSelect = () => {}, deletable = false }) => {
     const [open, setOpen] = useState(false);
 
     const handleSelect = useCallback(
@@ -152,7 +166,15 @@ export const Select = ({ label = '', options = [], onSelect = () => {} }) => {
 
     return (
         <>
-            <SelectButton open={open} label={label} onClick={() => setOpen((prev) => !prev)} />
+            <SelectButton
+                open={open}
+                label={value}
+                placeholder={placeholder}
+                onClick={() => setOpen((prev) => !prev)}
+                size="sm"
+                deletable={deletable}
+                onDelete={() => handleSelect(null)}
+            />
             {open && (
                 <div className={css['select-content']}>
                     {options.map((it) => (

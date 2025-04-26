@@ -5,3 +5,4 @@ export { Header } from './Header';
 export { SideBar, MenuItem, MenuBlock } from './SideBar';
 export { MultiSelect, SelectGroup, MultiButton, Select } from './selector/Selector';
 export { ButtonLabel, ButtonIcon, ButtonToggle } from './ButtonLabel';
+export { default as TranslatableField } from './TranslatableField';

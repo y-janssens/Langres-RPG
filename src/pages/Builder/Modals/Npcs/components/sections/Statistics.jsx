@@ -5,6 +5,7 @@ import { Input } from 'react-daisyui';
 import Section from '../Section';
 
 import css from '../npcs.module.css';
+import { capitalizeFirstLetter } from '../../../../../../utils';
 
 const Statistics = ({ npcForm, setNpcForm }) => {
     const { t } = useTranslation();
@@ -25,7 +26,7 @@ export default Statistics;
 const Stat = ({ form, setForm, stat }) => {
     return (
         <span className={css['npc-stat']}>
-            <p>{stat}</p>
+            <p>{capitalizeFirstLetter(stat)}</p>
             <Input type="number" size="sm" color="neutral" dataTheme="dark" value={form[stat]} onChange={({ target: { value } }) => setForm(stat, Number(value))} />
         </span>
     );

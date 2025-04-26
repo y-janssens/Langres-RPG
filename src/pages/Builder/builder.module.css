@@ -377,8 +377,25 @@
     justify-content: space-between;
     margin-bottom: 10px;
 }
+
 .builder-map-infos-selected-detail input {
     width: 100px;
     margin-right: 5px;
     outline: none !important;
+}
+
+.translatable-fields {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 5px;
+}
+
+.translatable-field {
+    display: flex;
+    align-items: flex-end;
+}
+
+.translatable-field input {
+    width: -webkit-fill-available;
 }
