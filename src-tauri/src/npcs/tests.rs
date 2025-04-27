@@ -25,7 +25,7 @@ mod tests {
     fn test_save_npc() {
         allow_db_access(|connection| {
             let world = WorldFactory.generate();
-            let npc = Npc::get_zombie(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
+            let npc = Npc::new(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
             let _ = npc.save(connection);
 
             let npcs = Npc::get_for_map(world.id, connection);
@@ -60,7 +60,7 @@ mod tests {
                 can_be_hostile: true,
                 inventory: Inventory::new(),
                 quests: NpcQuests::empty(),
-                dialogs: NpcDialogs::get_merchant_dialogs(),
+                dialogs: NpcDialogs::empty(),
                 starting_point: Position::resolve((15.0, 32.0, 1607)),
             };
 
@@ -80,7 +80,7 @@ mod tests {
     fn test_delete_npc() {
         allow_db_access(|connection| {
             let world = WorldFactory.generate();
-            let npc = Npc::get_zombie(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
+            let npc = Npc::new(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
 
             let _ = npc.save(connection);
 

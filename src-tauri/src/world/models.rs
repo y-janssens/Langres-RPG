@@ -307,7 +307,7 @@ impl World {
 
         let chosen_items: Vec<Item> = items.choose_multiple(&mut rng, count).cloned().collect();
         for item in chosen_items {
-            let npc = Npc::get_zombie(self.id, (item.x as f32, item.y as f32, item.id))?;
+            let npc = Npc::new(self.id, (item.x as f32, item.y as f32, item.id))?;
             npc.save(connection)?;
         }
         Npc::get_for_map(self.id, connection)

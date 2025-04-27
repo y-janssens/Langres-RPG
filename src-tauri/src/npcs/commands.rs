@@ -30,9 +30,7 @@ pub fn load_npc(
 
 #[tauri::command]
 pub fn new_npc(map_id: i32, position: (f32, f32, u32)) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::Editor, || {
-        Ok(Npc::get_zombie(map_id, position)?)
-    })
+    authenticated_command(Permission::Editor, || Ok(Npc::new(map_id, position)?))
 }
 
 #[tauri::command]

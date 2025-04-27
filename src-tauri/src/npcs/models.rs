@@ -103,6 +103,35 @@ pub struct InsertableNpc {
 }
 
 impl Npc {
+    pub fn new(_map_id: i32, position: (f32, f32, u32)) -> Result<Npc, Error> {
+        Ok(Npc {
+            id: Uuid::new_v4().to_string(),
+            first_name: "".to_string(),
+            last_name: "".to_string(),
+            title: Translations::blank(),
+            class: Class::Zombie,
+            end: 8,
+            r#for: 8,
+            hab: 8,
+            cha: 8,
+            int: 8,
+            ini: 8,
+            pv: 60,
+            level: 1,
+            gender: Gender::Unknown,
+            map_id: _map_id,
+            unique: false,
+            hostile: true,
+            is_alive: true,
+            r#static: false,
+            can_be_hostile: true,
+            inventory: Inventory::empty(),
+            quests: NpcQuests::empty(),
+            dialogs: NpcDialogs::empty(),
+            starting_point: Position::resolve(position),
+        })
+    }
+
     pub fn get_for_map(_map_id: i32, connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let npcs: Vec<Npc> = crate::schema::npc::table
             .filter(map_id.eq(&_map_id))
@@ -133,7 +162,7 @@ impl Npc {
             _npc.can_be_hostile = true;
         }
 
-        let title_json = to_json(&Translations::blank())?;
+        let title_json = to_json(&_npc.title)?;
         let class_json = to_json(&_npc.class)?;
         let inventory_json = to_json(&_npc.inventory)?;
         let gender_json = to_json(&_npc.gender)?;
@@ -195,35 +224,6 @@ impl Npc {
         diesel::delete(npc.filter(map_id.eq(&map.id))).execute(connection)?;
         Ok(())
     }
-
-    pub fn get_zombie(_map_id: i32, position: (f32, f32, u32)) -> Result<Npc, Error> {
-        Ok(Npc {
-            id: Uuid::new_v4().to_string(),
-            first_name: "".to_string(),
-            last_name: "".to_string(),
-            title: Translations::blank(),
-            class: Class::Zombie,
-            end: 12,
-            r#for: 12,
-            hab: 12,
-            cha: 12,
-            int: 12,
-            ini: 12,
-            pv: 100,
-            level: 1,
-            gender: Gender::Unknown,
-            map_id: _map_id,
-            unique: false,
-            hostile: true,
-            is_alive: true,
-            r#static: false,
-            can_be_hostile: true,
-            inventory: Inventory::basic(vec![]),
-            quests: NpcQuests::empty(),
-            dialogs: NpcDialogs::empty(),
-            starting_point: Position::resolve(position),
-        })
-    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
@@ -245,48 +245,6 @@ impl NpcDialogs {
             player: vec![],
         }
     }
-
-    pub fn get_merchant_dialogs() -> NpcDialogs {
-        NpcDialogs {
-            npc: vec![
-                Quote {
-                    order: 0,
-                    quote: Translations::generate("Bonjour", "Hello"),
-                },
-                Quote {
-                    order: 1,
-                    quote: Translations::generate(
-                        "Jetez donc un oeil à mes marchandises!",
-                        "Take a look at my goods",
-                    ),
-                },
-            ],
-            player: vec![],
-        }
-    }
-
-    pub fn generate(quotes: Vec<Translations>) -> NpcDialogs {
-        let mut result = NpcDialogs {
-            npc: vec![],
-            player: vec![],
-        };
-
-        for (index, quote) in quotes.iter().enumerate() {
-            if index % 2 == 0 {
-                result.npc.push(Quote {
-                    order: index as u8,
-                    quote: quote.clone(),
-                })
-            } else {
-                result.player.push(Quote {
-                    order: index as u8,
-                    quote: quote.clone(),
-                })
-            }
-        }
-
-        result
-    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -295,24 +253,5 @@ pub struct NpcQuests(pub Vec<Quest>);
 impl NpcQuests {
     pub fn empty() -> NpcQuests {
         NpcQuests(vec![])
-    }
-
-    pub fn get_quests(
-        ids: Option<Vec<String>>,
-        connection: &mut SqliteConnection,
-    ) -> Result<NpcQuests, Error> {
-        let mut result: Vec<Quest> = Vec::new();
-
-        if let Some(ids) = ids {
-            let _quests = Quest::load(connection)?;
-
-            for quest in _quests {
-                if ids.contains(&quest.id) {
-                    result.push(quest);
-                }
-            }
-        }
-
-        Ok(NpcQuests(result))
     }
 }
