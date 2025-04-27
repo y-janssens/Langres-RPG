@@ -10,7 +10,7 @@ import { Icon } from '../../../../../../components';
 
 import css from '../npcs.module.css';
 
-const Quests = ({ npcForm, setNpcForm }) => {
+const Quests = ({ index, active, handleToggle, npcForm, setNpcForm }) => {
     const { language } = i18next;
     const { t } = useTranslation();
 
@@ -59,7 +59,7 @@ const Quests = ({ npcForm, setNpcForm }) => {
     );
 
     return (
-        <Section label={t('builder.modals.npc.quests.label')} disabled={!npcForm.unique}>
+        <Section index={index} active={active} onToggle={() => handleToggle(index)} label={t('builder.modals.npc.quests.label')} disabled={!npcForm.unique}>
             <div className={css['npc-parameters-block']}>
                 <QuestsBlock primary options={options} npcForm={npcForm} language={language} handleSelect={handleSelect} handleDelete={handleDelete} />
                 <QuestsBlock options={options} npcForm={npcForm} language={language} handleSelect={handleSelect} handleDelete={handleDelete} />
@@ -73,29 +73,36 @@ const QuestsBlock = ({ npcForm, language, options, primary = false, handleSelect
 
     const type = primary ? 'primary' : 'secondary';
 
+    const quests = useMemo(() => {
+        return npcForm.quests.filter((qst) => qst['primary'] === primary);
+    }, [npcForm.quests, primary]);
+
     return (
         <>
             <p>{t(`builder.modals.npc.quests.${type}`)}</p>
-            <Select value={null} placeholder={t('builder.modals.npc.quests.placeholder')} options={options[type]} onSelect={(value) => handleSelect(value)} />
+            <Select
+                value={quests?.length > 0 ? `${quests.length} ${t('builder.modals.npc.quests.selected')}` : null}
+                placeholder={t('builder.modals.npc.quests.placeholder')}
+                options={options[type]}
+                onSelect={(value) => handleSelect(value)}
+            />
             <div>
-                {npcForm.quests
-                    .filter((qst) => qst['primary'] === primary)
-                    .map((quest) => (
-                        <div className={css['npc-selected-item']} key={quest.id}>
-                            <ButtonLabel
-                                size="sm"
-                                fullWidth
-                                variant="outline"
-                                animation={false}
-                                label={
-                                    <div className={css['npc-quest-label']}>
-                                        <span>{`${quest.id} - ${quest.name[language]}`}</span>
-                                        <Icon name="erase" onClick={() => handleDelete(quest.id)} />
-                                    </div>
-                                }
-                            />
-                        </div>
-                    ))}
+                {quests.map((quest) => (
+                    <div className={css['npc-selected-item']} key={quest.id}>
+                        <ButtonLabel
+                            size="sm"
+                            fullWidth
+                            variant="outline"
+                            animation={false}
+                            label={
+                                <div className={css['npc-quest-label']}>
+                                    <span>{`${quest.id} - ${quest.name[language]}`}</span>
+                                    <Icon name="erase" onClick={() => handleDelete(quest.id)} />
+                                </div>
+                            }
+                        />
+                    </div>
+                ))}
             </div>
         </>
     );

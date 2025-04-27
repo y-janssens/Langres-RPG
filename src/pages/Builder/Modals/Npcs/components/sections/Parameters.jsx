@@ -7,7 +7,7 @@ import Section from '../Section';
 
 import css from '../npcs.module.css';
 
-const Parameters = ({ npcForm, setNpcForm }) => {
+const Parameters = ({ index, active, handleToggle, npcForm, setNpcForm }) => {
     const { t } = useTranslation();
 
     const classOptions = [
@@ -17,15 +17,33 @@ const Parameters = ({ npcForm, setNpcForm }) => {
     ];
 
     return (
-        <Section label={t('builder.modals.npc.parameters')}>
+        <Section index={index} active={active} onToggle={() => handleToggle(index)} label={t('builder.modals.npc.parameters')}>
+            <div className={css['npc-base-block']}>
+                <Toggle title={t('common.character.unique')} active={npcForm.unique} onChange={({ target: { checked } }) => setNpcForm('unique', checked)} />
+                <span>{t('common.character.unique_description')}</span>
+            </div>
             <div className={css['npc-parameters-block']}>
                 {npcForm.unique && (
                     <>
-                        <TranslatableField form={npcForm} setForm={setNpcForm} label={'Title'} entry="title" />
+                        <TranslatableField form={npcForm} setForm={setNpcForm} label={t('common.character.title')} entry="title" />
                         <p>{t('common.character.first_name')}</p>
-                        <Input size="sm" color="neutral" dataTheme="dark" value={npcForm.first_name} onChange={({ target: { value } }) => setNpcForm('first_name', value)} />
+                        <Input
+                            size="sm"
+                            color="neutral"
+                            dataTheme="dark"
+                            placeholder={t('common.character.first_name')}
+                            value={npcForm.first_name}
+                            onChange={({ target: { value } }) => setNpcForm('first_name', value)}
+                        />
                         <p>{t('common.character.last_name')}</p>
-                        <Input size="sm" color="neutral" dataTheme="dark" value={npcForm.last_name} onChange={({ target: { value } }) => setNpcForm('last_name', value)} />
+                        <Input
+                            size="sm"
+                            color="neutral"
+                            dataTheme="dark"
+                            placeholder={t('common.character.last_name')}
+                            value={npcForm.last_name}
+                            onChange={({ target: { value } }) => setNpcForm('last_name', value)}
+                        />
                     </>
                 )}
 

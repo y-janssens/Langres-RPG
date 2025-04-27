@@ -1,17 +1,26 @@
-import React, { useCallback, useState } from 'react';
+import React, { Suspense, useCallback, useState } from 'react';
 import { Npc as NpcModel } from '../../../../models';
-import { useDynamicForm, useTranslation } from '../../../../hooks';
+import { useDynamicForm, useGameContext, useTranslation } from '../../../../hooks';
 
 import { BuilderModalWrapper } from '../Wrapper';
 import { Loading } from '../../../../components';
-import { Base, Dialogs, Inventory, Parameters, Quests, Statistics } from './components';
 
 import css from './components/npcs.module.css';
 
+const sections = [
+    { Component: React.lazy(() => import('./components/sections/Statistics')) },
+    { Component: React.lazy(() => import('./components/sections/Parameters')) },
+    { Component: React.lazy(() => import('./components/sections/Inventory')) },
+    { Component: React.lazy(() => import('./components/sections/Dialogs')) },
+    { Component: React.lazy(() => import('./components/sections/Quests')) }
+];
+
 const Npc = ({ form, type, value, sync, onClose }) => {
     const { t } = useTranslation();
+    const [{ applicationData: settings }] = useGameContext();
     const [existing] = useState(() => form.selectedMap.npcs.some((npc) => npc.starting_point.id === value.id));
     const [id] = useState(() => (existing ? form.selectedMap.npcs.find((npc) => npc.starting_point.id === value.id)?.id : null));
+    const [activeSection, setActiveSection] = useState(1);
 
     const [npcForm, setNpcForm, setNpcFormObject] = useDynamicForm({});
 
@@ -22,7 +31,7 @@ const Npc = ({ form, type, value, sync, onClose }) => {
             position: [value.x, value.y, value.id]
         },
         onSuccess: (response) => {
-            setNpcFormObject(response);
+            setNpcFormObject({ ...npcForm, ...response });
         }
     });
 
@@ -55,12 +64,19 @@ const Npc = ({ form, type, value, sync, onClose }) => {
         >
             <Loading loading={loadingNpc || !Object.keys(npcForm).length}>
                 <div className={css['npc-modal-container']}>
-                    <Base npcForm={npcForm} setNpcForm={setNpcForm} />
-                    <Statistics npcForm={npcForm} setNpcForm={setNpcForm} />
-                    <Parameters npcForm={npcForm} setNpcForm={setNpcForm} />
-                    <Inventory npcForm={npcForm} setNpcForm={setNpcForm} />
-                    <Dialogs npcForm={npcForm} setNpcForm={setNpcForm} />
-                    <Quests npcForm={npcForm} setNpcForm={setNpcForm} />
+                    <Suspense>
+                        {sections.map(({ Component }, index) => (
+                            <Component
+                                key={index}
+                                index={index}
+                                npcForm={npcForm}
+                                settings={settings}
+                                setNpcForm={setNpcForm}
+                                active={activeSection === index}
+                                handleToggle={() => setActiveSection((prev) => (prev === index ? null : index))}
+                            />
+                        ))}
+                    </Suspense>
                 </div>
             </Loading>
         </BuilderModalWrapper>

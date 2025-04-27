@@ -10,7 +10,7 @@ import Section from '../Section';
 
 import css from '../npcs.module.css';
 
-const Inventory = ({ npcForm, setNpcForm }) => {
+const Inventory = ({ index, active, handleToggle, npcForm, setNpcForm }) => {
     const { language } = i18next;
     const { t } = useTranslation();
 
@@ -47,7 +47,7 @@ const Inventory = ({ npcForm, setNpcForm }) => {
     }, [npcForm.inventory]);
 
     return (
-        <Section label={t('builder.modals.npc.inventory.label')} disabled={!npcForm.unique}>
+        <Section index={index} active={active} onToggle={() => handleToggle(index)} label={t('builder.modals.npc.inventory.label')} disabled={!npcForm.unique}>
             <div className={css['npc-parameters-block']}>
                 {sections.map((section) => (
                     <InventorySection key={section.key} section={section} npcForm={npcForm} setNpcForm={setNpcForm} options={options} />

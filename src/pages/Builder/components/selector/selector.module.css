@@ -24,9 +24,12 @@
     width: 250px;
 }
 
-.select-content {
-    position: static !important;
-    width: 100% !important;
+.select-content-wrapper {
+    position: relative;
+}
+
+.select-content-block {
+    position: relative;
 }
 
 .select-multi-icon .select-multi-content button {
@@ -84,8 +87,13 @@
     background-color: rgb(39, 41, 53);
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
-    /* filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.25)); */
     overflow-y: auto;
+}
+
+.select-content {
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 1000;
 }
 
 .select-multi-btn .select-multi-chevron {

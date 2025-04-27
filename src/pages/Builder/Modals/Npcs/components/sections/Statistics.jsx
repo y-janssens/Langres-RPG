@@ -1,17 +1,17 @@
 import { Npc as NpcModel } from '../../../../../../models';
 import { useTranslation } from '../../../../../../hooks';
+import { capitalizeFirstLetter } from '../../../../../../utils';
 
 import { Input } from 'react-daisyui';
 import Section from '../Section';
 
 import css from '../npcs.module.css';
-import { capitalizeFirstLetter } from '../../../../../../utils';
 
-const Statistics = ({ npcForm, setNpcForm }) => {
+const Statistics = ({ index, npcForm, setNpcForm }) => {
     const { t } = useTranslation();
 
     return (
-        <Section label={t('builder.modals.npc.statistics')}>
+        <Section index={index} active label={t('builder.modals.npc.statistics')}>
             <div className={css['npc-stats-block']}>
                 {NpcModel.statsKeys.map((k) => (
                     <Stat key={k} form={npcForm} setForm={setNpcForm} stat={k} />

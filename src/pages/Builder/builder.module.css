@@ -393,9 +393,14 @@
 
 .translatable-field {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.translatable-field button {
+    width: 100px;
 }
 
 .translatable-field input {
     width: -webkit-fill-available;
+    margin-right: 10px;
 }

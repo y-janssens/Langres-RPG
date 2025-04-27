@@ -91,10 +91,17 @@
       },
       "npc": {
         "base": "Base",
-        "dialogs": "Dialogs",
         "parameters": "Parameters",
         "statistics": "Statistics",
         "title": "Non playing character",
+        "dialogs": {
+          "label": "Dialogs",
+          "new_sequence": "Add a new dialogs sequence",
+          "npc": "Non playing character",
+          "player": "Player",
+          "sequence": "Dialogs sequence",
+          "subtitle": "Dialogs ordering determines sequences display"
+        },
         "inventory": {
           "armor": "Armor",
           "damage": "Damage",
@@ -112,7 +119,8 @@
           "label": "Quests",
           "placeholder": "Select a quest",
           "primary": "Main quests",
-          "secondary": "Secondary quests"
+          "secondary": "Secondary quests",
+          "selected": "Selected quest(s)"
         }
       },
       "preview": {
@@ -204,6 +212,7 @@
       "is_alive": "Alive",
       "last_name": "Last name",
       "static": "Static",
+      "title": "Title",
       "unique": "Unique",
       "unique_description": "(Unique npcs can have their own titles, dialogs, quests and inventories)"
     },

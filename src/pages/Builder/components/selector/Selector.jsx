@@ -153,8 +153,10 @@ export const MultiButton = ({ label = '', name, icon = null, open = false, setOp
     );
 };
 
-export const Select = ({ value, placeholder, options = [], onSelect = () => {}, deletable = false }) => {
+export const Select = ({ value = null, placeholder, options = [], onSelect = () => {}, deletable = false }) => {
     const [open, setOpen] = useState(false);
+
+    const selected = useMemo(() => options.find((ln) => ln.key === value)?.text, [options, value]);
 
     const handleSelect = useCallback(
         (value) => {
@@ -165,25 +167,27 @@ export const Select = ({ value, placeholder, options = [], onSelect = () => {}, 
     );
 
     return (
-        <>
-            <SelectButton
-                open={open}
-                label={value}
-                placeholder={placeholder}
-                onClick={() => setOpen((prev) => !prev)}
-                size="sm"
-                deletable={deletable}
-                onDelete={() => handleSelect(null)}
-            />
-            {open && (
-                <div className={css['select-content']}>
-                    {options.map((it) => (
-                        <div key={it.key} className={css['select-item']} onClick={() => handleSelect(it.value)}>
-                            <span>{it.text}</span>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </>
+        <div className={css['select-content-wrapper']}>
+            <div className={css['select-content-block']}>
+                <SelectButton
+                    size="sm"
+                    open={open}
+                    label={selected || value}
+                    deletable={deletable}
+                    placeholder={placeholder}
+                    onDelete={() => handleSelect(null)}
+                    onClick={() => setOpen((prev) => !prev)}
+                />
+                {open && !!options?.length && (
+                    <div className={css['select-content']}>
+                        {options.map((it) => (
+                            <div key={it.key} className={css['select-item']} onClick={() => handleSelect(it.value)}>
+                                <span>{it.text}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </div>
     );
 };

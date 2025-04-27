@@ -91,10 +91,17 @@
       },
       "npc": {
         "base": "Base",
-        "dialogs": "Dialogues",
         "parameters": "Paramètres",
         "statistics": "Statistiques",
         "title": "Personnage non joueur",
+        "dialogs": {
+          "label": "Dialogues",
+          "new_sequence": "Ajouter une nouvelle séquence de dialogues",
+          "npc": "Personnage non joueur",
+          "player": "Joueur",
+          "sequence": "Séquence de dialogues",
+          "subtitle": "L'ordre des dialogues détermine l'affichage des séquences"
+        },
         "inventory": {
           "armor": "Armure",
           "damage": "Dégâts",
@@ -112,7 +119,8 @@
           "label": "Quêtes",
           "placeholder": "Sélectionner une quête",
           "primary": "Quêtes principales",
-          "secondary": "Quêtes secondaires"
+          "secondary": "Quêtes secondaires",
+          "selected": "Quête(s) sélectionnée(s)"
         }
       },
       "preview": {
@@ -204,6 +212,7 @@
       "is_alive": "Vivant",
       "last_name": "Nom",
       "static": "Statique",
+      "title": "Titre",
       "unique": "Unique",
       "unique_description": "(Les pnjs uniques peuvent avoir leurs propres titres, dialogues, quêtes et inventaires)"
     },

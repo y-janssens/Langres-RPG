@@ -226,24 +226,26 @@ impl Npc {
     }
 }
 
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString)]
+#[strum(serialize_all = "snake_case")]
+pub enum QuoteType {
+    Npc,
+    Player,
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Quote {
+    pub r#type: QuoteType,
     pub order: u8,
     pub quote: Translations,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
-pub struct NpcDialogs {
-    pub npc: Vec<Quote>,
-    pub player: Vec<Quote>,
-}
+pub struct NpcDialogs(pub Vec<Quote>);
 
 impl NpcDialogs {
-    pub fn empty() -> NpcDialogs {
-        NpcDialogs {
-            npc: vec![],
-            player: vec![],
-        }
+    pub fn empty() -> Self {
+        Self(vec![])
     }
 }
 
@@ -251,7 +253,7 @@ impl NpcDialogs {
 pub struct NpcQuests(pub Vec<Quest>);
 
 impl NpcQuests {
-    pub fn empty() -> NpcQuests {
-        NpcQuests(vec![])
+    pub fn empty() -> Self {
+        Self(vec![])
     }
 }
