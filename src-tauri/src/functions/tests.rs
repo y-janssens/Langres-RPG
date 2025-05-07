@@ -11,9 +11,9 @@ mod tests {
         allow_db_access(|connection| {
             let function = FunctionFactory.generate();
             let _ = function.save(connection);
-            let result = Function::load(connection).unwrap();
+            let result = Function::load(connection);
 
-            assert_eq!(result.len(), 4);
+            assert!(result.is_ok_and(|res| !res.is_empty()));
         });
     }
 

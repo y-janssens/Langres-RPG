@@ -45,7 +45,7 @@ export const Select = ({ label, value, options, onChange }) => {
 const Option = ({ item, onClick, onclose }) => {
     return (
         <div
-            className={css['ui-selector-option']}
+            className={css['dashboard-selector-option']}
             onClick={() => {
                 onClick(item.value);
                 onclose();

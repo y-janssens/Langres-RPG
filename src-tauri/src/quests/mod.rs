@@ -1,3 +1,4 @@
 pub mod admin;
-pub mod definitions;
+pub mod commands;
 pub mod models;
+pub mod types;

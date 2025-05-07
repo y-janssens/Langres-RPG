@@ -11,7 +11,7 @@ use uuid::Uuid;
 
 use super::{config::Conf, definitions::NAMED_TABLES};
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct TableLoot {
     pub items: Vec<Loot>,
 }

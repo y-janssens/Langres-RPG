@@ -1,0 +1,211 @@
+.npc-modal-container {
+    height: -webkit-fill-available;
+    overflow-y: auto;
+}
+
+.npc-sub-section {
+    position: relative;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.npc-sub-section-content {
+    padding: 0px 10px 10px 10px;
+    background-color: rgba(39, 41, 52, 0.5);
+}
+
+.npc-section button,
+.npc-sub-section button {
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.npc-sub-section button {
+    margin: 0px;
+    background-color: rgb(97, 112, 150);
+    border: none;
+    color: white;
+}
+
+.npc-dialogs-label-id {
+    padding: 5px;
+    width: 21px;
+    height: 21px;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: rgb(63, 71, 96);
+}
+
+.npc-stats-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 65px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.npc-stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+}
+
+.npc-stat input {
+    width: 65px;
+}
+
+.npc-parameters-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px 10px 0px 10px;
+}
+
+.npc-base-block {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.npc-base-block div {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.npc-base-block div label {
+    padding-left: 0;
+}
+
+.npc-parameters-block label {
+    width: 75px;
+}
+
+.npc-parameters-block label span,
+.npc-base-block label span,
+.npc-parameters-block p {
+    font-size: 11px !important;
+}
+
+.npc-inventory-option p {
+    font-size: 12px !important;
+    margin-bottom: -5px;
+}
+
+.npc-selected-item,
+.npc-inventory-item {
+    margin: 10px;
+}
+
+.npc-inventory-item button {
+    height: 50px;
+}
+
+.npc-quest-label {
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.npc-inventory-label {
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.npc-inventory-stats {
+    font-size: 9px !important;
+}
+
+.npc-dialogs-selector-block {
+    position: absolute;
+    right: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.npc-dialogs-selector {
+    margin-top: 10px;
+    width: 100px;
+}
+
+.npc-dialogs-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+
+.npc-dialogs-block,
+.npc-dialogs-cta,
+.npc-dialogs-label-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.npc-dialogs-item {
+    width: -webkit-fill-available;
+    padding-top: 5px;
+}
+
+.npc-dialogs-cta-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.npc-dialogs-cta-btn,
+.npc-dialogs-cta-btn-delete {
+    padding: 3px;
+    margin-top: -1px;
+    margin-left: 5px;
+    color: white;
+    border-radius: 4px;
+    background-color: rgb(63, 71, 96);
+}
+
+.npc-dialogs-cta-btn-delete {
+    background-color: rgb(207, 116, 122);
+}
+
+.npc-dialogs-cta-btn:hover,
+.npc-dialogs-cta-btn-delete:hover {
+    filter: brightness(1.25);
+}
+
+.npc-dialogs-npc,
+.npc-dialogs-player {
+    display: flex;
+    flex-direction: column;
+    width: -webkit-fill-available;
+    margin-right: 10px;
+}
+
+.npc-dialogs-npc p,
+.npc-dialogs-player p {
+    margin: 0 5px;
+}
+
+.npc-dialogs-npc {
+    align-items: flex-start;
+}
+
+.npc-dialogs-player {
+    align-items: flex-end;
+}
+
+.npc-dialogs-npc textarea,
+.npc-dialogs-player textarea {
+    width: 75%;
+    height: 100px;
+}

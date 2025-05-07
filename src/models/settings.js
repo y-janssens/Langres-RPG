@@ -23,6 +23,10 @@ export default class Settings extends Fetcher {
         i18next.changeLanguage(this.language);
     }
 
+    get languagesOptions() {
+        return this.languages.map((ln) => ({ ...ln, text: ln.value, value: ln.key }));
+    }
+
     update(data) {
         this.language = data.language;
         this.sound = data.sound;
@@ -44,15 +48,18 @@ export default class Settings extends Fetcher {
         return await invoke(this.command()).then((response) => new this(response));
     }
 
-    static command(id) { // eslint-disable-line
+    // eslint-disable-next-line
+    static command(id) {
         return 'load_app_datas';
     }
 
-    static fromApi(id, data) { // eslint-disable-line
+    // eslint-disable-next-line
+    static fromApi(id, data) {
         return new this(data);
     }
 
-    async save(overide = false) { // eslint-disable-line
+    // eslint-disable-next-line
+    async save(overide = false) {
         await invoke(`save_app_datas`, { data: this });
     }
 }

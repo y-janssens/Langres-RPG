@@ -1,3 +1,4 @@
+use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq, Hash)]
@@ -9,6 +10,14 @@ pub struct Translations {
 impl Default for Translations {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+impl Queryable<Text, Sqlite> for Translations {
+    type Row = String;
+    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
+        serde_json::from_str(&row)
+            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
     }
 }
 

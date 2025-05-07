@@ -20,6 +20,9 @@ export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect
         if (name === 'clear') {
             return null;
         }
+        if (form.selectedMap.npcs.some((npc) => npc.starting_point.id === item.id)) {
+            return 'npc';
+        }
         return name;
     }, [form, item, item.value]);
 
@@ -39,6 +42,9 @@ export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect
 
     const color = useMemo(() => {
         if (!form.showConstraints) {
+            if (form.selectedMap.npcs.some((npc) => npc.starting_point.id === item.id)) {
+                return '#B22222';
+            }
             return item.display_color;
         }
 

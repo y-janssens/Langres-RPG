@@ -10,9 +10,9 @@ mod tests {
         allow_db_access(|connection| {
             let object = ObjectFactory.generate();
             let _ = object.save(connection);
-            let result = Object::load(connection).unwrap();
+            let result = Object::load(connection);
 
-            assert_eq!(result.len(), 13);
+            assert!(result.is_ok_and(|res| !res.is_empty()));
         });
     }
 

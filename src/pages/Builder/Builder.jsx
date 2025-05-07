@@ -57,7 +57,14 @@ export const Builder = () => {
                         } else {
                             const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
                             const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
-                            setFormObject({ ...form, displayActions: false, storyLine: response, selectedAct: act, selectedMap: map });
+                            setFormObject({
+                                ...form,
+                                displayActions: false,
+                                storyLine: response,
+                                selectedAct: act,
+                                selectedMap: map,
+                                modal: { type: null, open: false, value: null }
+                            });
                         }
                         break;
                 }

@@ -1,15 +1,17 @@
 use crate::schema::loot;
 use crate::schema::loot::dsl::*;
 use diesel::{
-    deserialize::Queryable, prelude::*, result::Error, sql_types::Text, sqlite::Sqlite,
-    RunQueryDsl, SqliteConnection,
+    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, RunQueryDsl,
+    SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
+use strum_macros::{Display, EnumString};
 use uuid::Uuid;
 
 use crate::backend::translations::models::Translations;
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash, Display, EnumString)]
+#[strum(serialize_all = "snake_case")]
 pub enum ItemTypes {
     Gold,
     Weapon,
@@ -33,19 +35,7 @@ pub struct Loot {
     pub weight: Option<i32>,
 }
 
-#[derive(
-    Debug,
-    Serialize,
-    Deserialize,
-    Clone,
-    Queryable,
-    Selectable,
-    Insertable,
-    AsChangeset,
-    PartialEq,
-    Eq,
-    Hash,
-)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
 #[diesel(table_name = crate::schema::loot)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableLoot {
@@ -58,14 +48,6 @@ pub struct InsertableLoot {
     pub parade: Option<i32>,
     pub price: Option<i32>,
     pub weight: Option<i32>,
-}
-
-impl Queryable<Text, Sqlite> for ItemTypes {
-    type Row = String;
-    fn build(row: Self::Row) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
-        serde_json::from_str(&row)
-            .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)
-    }
 }
 
 impl Loot {

@@ -24,6 +24,14 @@
     width: 250px;
 }
 
+.select-content-wrapper {
+    position: relative;
+}
+
+.select-content-block {
+    position: relative;
+}
+
 .select-multi-icon .select-multi-content button {
     margin: 5px 0;
 }
@@ -40,16 +48,35 @@
     align-items: center;
 }
 
+.select-multi-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.select-multi-delete {
+    margin-left: 5px;
+}
+
+.select-multi-delete[datatype='disabled'] {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .select-multi-chevron {
     font-size: 10px !important;
     transform: scaleX(1.75);
+}
+
+.select-multi-placeholder {
+    opacity: 0.5;
 }
 
 .select-multi-searchbar {
     margin-bottom: 5px;
 }
 
-.select-multi-content {
+.select-multi-content,
+.select-content {
     position: fixed;
     width: inherit;
     display: flex;
@@ -60,8 +87,13 @@
     background-color: rgb(39, 41, 53);
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
-    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.25));
     overflow-y: auto;
+}
+
+.select-content {
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 1000;
 }
 
 .select-multi-btn .select-multi-chevron {
@@ -92,13 +124,27 @@
     cursor: pointer;
 }
 
-.select-multi-group span:hover {
+.select-multi-group span:hover,
+.select-content span:hover {
     filter: brightness(1.25);
+    cursor: pointer;
 }
 
 .select-multi-group-item {
     margin-left: 15px;
     cursor: pointer;
+}
+
+.select-item {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 250ms all;
+}
+
+.select-item:hover {
+    background-color: rgba(46, 51, 57, 0.5);
 }
 
 @media screen and (max-width: 750px) {

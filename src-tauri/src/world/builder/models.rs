@@ -5,7 +5,7 @@ use std::collections::HashMap;
 use std::mem::take;
 
 use super::actions::generator::Generator;
-use super::config::{Conf, Values};
+use super::config::Conf;
 use super::constraints::Constraints;
 use super::settings::GRASS;
 use crate::backend::utils::functions::get_weighted_random_value;
@@ -54,7 +54,7 @@ impl Map {
                 let constraints = Constraints::apply(neighbours.clone(), &self.settings);
                 let value = Self::get_random_value(&constraints.0);
 
-                items[index].value = value;
+                items[index].edit(value);
                 items[index].entropy = 0;
 
                 for neighbour_index in neighbours.keys().cloned().collect::<Vec<usize>>() {
@@ -84,13 +84,7 @@ impl Map {
             .into_iter()
             .map(|mut tile| {
                 let value = Self::get_value(&report, &tile, &items);
-                let (display_value, display_color, walkable) = Values::get_value(&value);
-
-                tile.value = value;
-                tile.walkable = walkable;
-                tile.display_value = display_value;
-                tile.display_color = display_color;
-
+                tile.edit(value);
                 tile
             })
             .collect()

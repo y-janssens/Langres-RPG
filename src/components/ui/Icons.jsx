@@ -8,11 +8,13 @@ import { RxHamburgerMenu, RxDotsHorizontal, RxCross2 } from 'react-icons/rx';
 import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
 import { FaFlagCheckered, FaCog, FaEye } from 'react-icons/fa';
 import { GrView, GrPowerReset } from 'react-icons/gr';
+
 import { HiZoomIn, HiZoomOut } from 'react-icons/hi';
 import { PiExport, PiPlay } from 'react-icons/pi';
 import { AiOutlineClear } from 'react-icons/ai';
 import { BiSolidTree } from 'react-icons/bi';
 import { IoMdCreate } from 'react-icons/io';
+import { LuSwords } from 'react-icons/lu';
 import { GoSync } from 'react-icons/go';
 
 export { FaRegCircleQuestion as Unknown };
@@ -43,6 +45,7 @@ export { BiSolidTree as Tree };
 export { IoMdCreate as Craft };
 export { PiExport as Export };
 export { HiZoomIn as Zoomin };
+export { LuSwords as Npc };
 export { GiForest as Trees };
 export { BsTrash as Delete };
 export { FaCog as Settings };

@@ -1,5 +1,7 @@
 use diesel::prelude::Queryable;
-use rand::Rng;
+use diesel::SqliteConnection;
+use rand::seq::SliceRandom;
+use rand::{thread_rng, Rng};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::io::Error;
@@ -151,6 +153,15 @@ impl Item {
 
         direction
     }
+
+    pub fn edit(&mut self, value: String) {
+        let (display_value, display_color, walkable) = Values::get_value(&value);
+
+        self.value = value;
+        self.walkable = walkable;
+        self.display_value = display_value;
+        self.display_color = display_color;
+    }
 }
 
 impl World {
@@ -264,10 +275,49 @@ impl World {
             .filter(|i| WALKABLE_VALUES.contains(&i.value.as_str()))
         {
             let value = get_weighted_random_value(&values);
-            item.value = value.clone();
-            item.walkable = value != TREE.val();
+            item.edit(value);
         }
         content
+    }
+
+    pub fn generate_npcs(
+        &self,
+        connection: &mut SqliteConnection,
+    ) -> Result<Vec<Npc>, diesel::result::Error> {
+        println!("Populating map Npcs...");
+        let mut rng = thread_rng();
+        let count = rng.gen_range(1..50);
+
+        let npcs: Vec<Npc> = Npc::get_for_map(self.id, connection)?;
+
+        let npcs_positions: Vec<u32> = npcs.iter().map(|npc| npc.starting_point.id).collect();
+
+        let items: Vec<Item> = self
+            .content
+            .iter()
+            .filter(|it| {
+                it.walkable
+                    && !it
+                        .neighbours_ids
+                        .iter()
+                        .any(|id| npcs_positions.contains(id)) // Limit npcs packs as much as possible
+            })
+            .cloned()
+            .collect();
+
+        let chosen_items: Vec<Item> = items.choose_multiple(&mut rng, count).cloned().collect();
+        for item in chosen_items {
+            let npc = Npc::new(self.id, (item.x as f32, item.y as f32, item.id))?;
+            npc.save(connection)?;
+        }
+        Npc::get_for_map(self.id, connection)
+    }
+
+    pub fn clear_npcs(
+        &self,
+        connection: &mut SqliteConnection,
+    ) -> Result<(), diesel::result::Error> {
+        Npc::clear(self, connection)
     }
 
     pub fn generate_report(&self) -> Result<MapReport, Error> {
@@ -283,12 +333,7 @@ impl World {
 
         for item in &mut self.content {
             let value = Map::get_value(&report, item, &original_content);
-            let (display_value, display_color, walkable) = Values::get_value(&value);
-
-            item.value = value;
-            item.walkable = walkable;
-            item.display_value = display_value;
-            item.display_color = display_color;
+            item.edit(value);
         }
     }
 }

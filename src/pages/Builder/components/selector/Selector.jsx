@@ -68,13 +68,27 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
     );
 };
 
-export const SelectButton = ({ label, open = false, onClick = () => {}, size = 'xs' }) => {
+export const SelectButton = ({ label, placeholder, open = false, onClick = () => {}, size = 'xs', deletable = false, onDelete = () => {} }) => {
+    const value = label ?? placeholder;
     return (
         <div className={css['selector-select-btn']}>
             <Button dataTheme="dark" size={size} color="neutral" active variant="outline" fullWidth onClick={onClick} animation={false}>
                 <div className={css['select-multi-label']}>
-                    <span>{label}</span>
-                    <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                    <span className={css[`select-multi-${label ? 'value' : 'placeholder'}`]}>{value}</span>
+                    <span className={css['select-multi-toggle']}>
+                        <span className={css['select-multi-chevron']}>{String.fromCharCode(open ? '9650' : '9660')}</span>
+                        {deletable && (
+                            <span className={css['select-multi-delete']} datatype={!label ? 'disabled' : null}>
+                                <Icon
+                                    name="erase"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        onDelete();
+                                    }}
+                                />
+                            </span>
+                        )}
+                    </span>
                 </div>
             </Button>
         </div>
@@ -135,6 +149,45 @@ export const MultiButton = ({ label = '', name, icon = null, open = false, setOp
         <div className={css[`select-multi-${icon ? 'icon' : 'buttons'}`]}>
             {icon ? <ButtonIcon icon={<Icon name={icon} />} onClick={handleClose} /> : <SelectButton open={open} label={label} onClick={handleClose} />}
             {open && <div className={css['select-multi-content']}>{children}</div>}
+        </div>
+    );
+};
+
+export const Select = ({ value = null, placeholder, options = [], onSelect = () => {}, deletable = false }) => {
+    const [open, setOpen] = useState(false);
+
+    const selected = useMemo(() => options.find((ln) => ln.key === value)?.text, [options, value]);
+
+    const handleSelect = useCallback(
+        (value) => {
+            onSelect(value);
+            setOpen(false);
+        },
+        [onSelect]
+    );
+
+    return (
+        <div className={css['select-content-wrapper']}>
+            <div className={css['select-content-block']}>
+                <SelectButton
+                    size="sm"
+                    open={open}
+                    label={selected || value}
+                    deletable={deletable}
+                    placeholder={placeholder}
+                    onDelete={() => handleSelect(null)}
+                    onClick={() => setOpen((prev) => !prev)}
+                />
+                {open && !!options?.length && (
+                    <div className={css['select-content']}>
+                        {options.map((it) => (
+                            <div key={it.key} className={css['select-item']} onClick={() => handleSelect(it.value)}>
+                                <span>{it.text}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

@@ -15,6 +15,7 @@ VALUES
     -- Base
     ('start', NULL, NULL, NULL, json('{"x": 1, "y": 1}'), 0, 1),
     ('gate', NULL, NULL, NULL, json('{"x": 1, "y": 1}'), 0, 1),
+    ('npc', NULL, NULL, NULL, json('{"x": 1, "y": 1}'), 0, 1),
     -- Landscape
     ('grass', '-', 'grass', '#BDB76B', json('{"x": 1, "y": 1}'), 0, 1),
     ('clearing', 'C', 'border', '#C8FF1380', json('{"x": 1, "y": 1}'), 0, 1),

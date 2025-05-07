@@ -5,22 +5,24 @@
     "manager": "Gérez vos scénarios",
     "menu": {
       "directions": {
-        "null": "Effacer",
-        "top": "Haut",
         "bottom": "Bas",
-        "left": "Gauche",
-        "right": "Droite",
-        "top_left": "Haut gauche",
-        "top_right": "Haut droite",
         "bottom_left": "Bas gauche",
-        "bottom_right": "Bas droite"
+        "bottom_right": "Bas droite",
+        "left": "Gauche",
+        "null": "Effacer",
+        "right": "Droite",
+        "top": "Haut",
+        "top_left": "Haut gauche",
+        "top_right": "Haut droite"
       },
       "functions": {
         "clear-map": "Effacer la carte",
-        "regenerate-map": "Regénérer la carte",
+        "clear-npcs": "Supprimer les pnjs",
         "generate-forest": "Générer des arbres",
         "generate-maps": "Générer des cartes",
-        "label": "Fonctions"
+        "generate-npcs": "Générer des pnjs",
+        "label": "Fonctions",
+        "regenerate-map": "Regénérer la carte"
       },
       "items": {
         "directions": "Directions",
@@ -36,16 +38,17 @@
         "start": "Départ"
       },
       "objects": {
-        "start": "Départ",
+        "bridge": "Pont",
+        "clearing": "Sol",
         "gate": "Portail",
         "grass": "Herbe",
-        "clearing": "Sol",
-        "tree": "Arbre",
+        "house": "Maison",
+        "npc": "Pnj",
         "road": "Route",
-        "water": "Eau",
         "shore": "Rivage",
-        "bridge": "Pont",
-        "house": "Maison"
+        "start": "Départ",
+        "tree": "Arbre",
+        "water": "Eau"
       },
       "tile": {
         "label": "Paramètres des cases"
@@ -53,8 +56,8 @@
     },
     "modals": {
       "collections": {
-        "title": "Visualisez et éditez votre collection de cartes",
-        "subtitle": "Cartes existantes"
+        "subtitle": "Cartes existantes",
+        "title": "Visualisez et éditez votre collection de cartes"
       },
       "editor": {
         "title": "Éditez le contenu de vos cartes"
@@ -64,27 +67,61 @@
         "title": "Éditez et organisez les passages entre vos cartes"
       },
       "generator": {
-        "type": "Type de carte",
         "action": "Type d'action",
-        "post_action": "Type d'action secondaire",
         "amount": "Taille du lot de cartes",
-        "subtitle": "Générez un lot de cartes",
-        "title": "Générez et sélectionnez des cartes aléatoires",
+        "post_action": "Type d'action secondaire",
         "reset": "Réinitialiser",
         "save": "Enregistrer dans les collections",
         "settings": "Paramètres de la carte",
+        "subtitle": "Générez un lot de cartes",
+        "title": "Générez et sélectionnez des cartes aléatoires",
+        "type": "Type de carte",
         "types": {
+          "dirt": "Terre",
           "forest": "Forêt",
-          "swamp": "Marécage",
           "ground": "Sol",
           "null": "Aucun",
-          "dirt": "Terre",
-          "town": "Ville",
-          "shanty": "Villages"
+          "shanty": "Villages",
+          "swamp": "Marécage",
+          "town": "Ville"
         }
       },
       "manager": {
         "title": "Créez et modifiez vos scénarios et cartes"
+      },
+      "npc": {
+        "base": "Base",
+        "parameters": "Paramètres",
+        "statistics": "Statistiques",
+        "title": "Personnage non joueur",
+        "dialogs": {
+          "label": "Dialogues",
+          "new_sequence": "Ajouter une nouvelle séquence de dialogues",
+          "npc": "Personnage non joueur",
+          "player": "Joueur",
+          "sequence": "Séquence de dialogues",
+          "subtitle": "L'ordre des dialogues détermine l'affichage des séquences"
+        },
+        "inventory": {
+          "armor": "Armure",
+          "damage": "Dégâts",
+          "head": "Tête",
+          "label": "Inventaire",
+          "left_hand": "Main gauche",
+          "legs": "Jambes",
+          "placeholder": "Sélectionner un équipement",
+          "price": "Prix",
+          "right_hand": "Main droite",
+          "torso": "Armure",
+          "weight": "Poids"
+        },
+        "quests": {
+          "label": "Quêtes",
+          "placeholder": "Sélectionner une quête",
+          "primary": "Quêtes principales",
+          "secondary": "Quêtes secondaires",
+          "selected": "Quête(s) sélectionnée(s)"
+        }
       },
       "preview": {
         "title": "Prévisualisation"
@@ -92,9 +129,9 @@
       "statistics": {
         "free_space": "Espace libre",
         "groups": {
-          "summary": "Résumé",
+          "details": "Détails",
           "distribution": "Distribution",
-          "details": "Détails"
+          "summary": "Résumé"
         },
         "keys": {
           "Inconsistent": "Valeurs incohérentes",
@@ -167,11 +204,24 @@
       "start": "Commencer",
       "statistics": "Statistiques"
     },
+    "character": {
+      "can_be_hostile": "Neutre",
+      "class": "Classe",
+      "first_name": "Prénom",
+      "hostile": "Hostile",
+      "is_alive": "Vivant",
+      "last_name": "Nom",
+      "static": "Statique",
+      "title": "Titre",
+      "unique": "Unique",
+      "unique_description": "(Les pnjs uniques peuvent avoir leurs propres titres, dialogues, quêtes et inventaires)"
+    },
     "date": "Date",
     "game": "Langres",
     "informations": "Informations",
     "name": "Nom",
     "order": "Ordre",
+    "position": "Position",
     "result": "Resultat",
     "size": "Taille",
     "title": "Titre"
@@ -188,8 +238,8 @@
         "damage": "Dégâts",
         "date_created": "Créé",
         "description": "Description",
-        "display_value": "Valeur d'affichage",
         "display_color": "Couleur",
+        "display_value": "Valeur d'affichage",
         "icon": "Icône",
         "id": "Id",
         "interactive": "Interactif",
@@ -286,12 +336,12 @@
       "object": {
         "actions": "Actions",
         "area": "Zone",
+        "display_color": "Couleur",
+        "display_value": "Valeur d'affichage",
         "id": "Id",
         "interactive": "Interactif",
         "name": "Nom",
         "value": "Valeur",
-        "display_value": "Valeur d'affichage",
-        "display_color": "Couleur",
         "walkable": "Accessible"
       },
       "quest": {
@@ -333,14 +383,14 @@
       "title": "Paramètres",
       "values": {
         "collisions": "Calculer les collisions",
-        "isometric": "Rendu isométrique",
-        "performances": "Mode performances",
         "displayLoadingScreen": "Afficher l'écran de chargement",
         "displayMeshes": "Afficher les objets",
         "displayObstacles": "Afficher les obstacles",
         "displayText": "Afficher les informations des cases",
         "displayTextures": "Afficher les textures",
         "displayWater": "Afficher l'eau",
+        "isometric": "Rendu isométrique",
+        "performances": "Mode performances",
         "pixelization": "Pixellisation",
         "zoom": "Zoom"
       }
@@ -374,9 +424,9 @@
       "exit-game": "Menu Principal",
       "load": "Charger une partie",
       "new": "Nouvelle partie",
-      "tools": "Outils",
       "save": "Enregistrer la partie",
-      "settings": "Paramètres"
+      "settings": "Paramètres",
+      "tools": "Outils"
     },
     "settings": {
       "language": "Langage: ",
@@ -385,6 +435,11 @@
       "volume": "Volume: "
     }
   },
+  "npcs": {
+    "bandit": "Bandit",
+    "soldier": "Soldat",
+    "zombie": "Zombie"
+  },
   "tools": {
     "actions": {
       "cull": "Champ de vision",
@@ -392,11 +447,11 @@
       "randomize": "Carte aléatoire"
     },
     "sidebar": {
-      "start": "Départ",
+      "algorithm": "Algorithme",
       "end": "Arrivée",
       "obstacles": "Obstacles",
       "operations": "Opérations",
-      "algorithm": "Algorithme",
+      "start": "Départ",
       "time": "Temps écoulé"
     }
   }

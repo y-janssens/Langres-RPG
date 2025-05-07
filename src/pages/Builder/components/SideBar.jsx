@@ -19,8 +19,13 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
     const handleChange = useCallback(
         (item, primary = false) => {
             const gateWayOpened = form.modal.type === 'gateway';
+            const npcOpened = form.modal.type === 'npc';
+
             if (item.name === 'gate') {
                 return setForm('modal', { type: gateWayOpened ? null : 'gateway', open: !gateWayOpened, value: null });
+            }
+            if (item.name === 'npc') {
+                return setForm('modal', { type: npcOpened ? null : 'npc', open: !npcOpened, value: form.selectedTiles[0] });
             }
 
             let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
