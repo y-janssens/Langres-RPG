@@ -96,6 +96,150 @@ mod tests {
     }
 
     #[test]
+    fn test_reset_map_tile() {
+        allow_db_access(|connection| {
+            let story = Story::load(connection).unwrap();
+
+            let objects = Object::load(connection).expect(BASE_ERROR);
+            let object = objects
+                .iter()
+                .find(|it| it.name == "water")
+                .cloned()
+                .expect(BASE_ERROR);
+
+            let act = story.story.acts[0].clone();
+            let map = act.content.maps[0].clone();
+
+            Story::edit_tiles(connection, 1323375008, 1498719483, vec![1], object.id)
+                .expect(BASE_ERROR);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [1].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert_eq!(tile.value, "W");
+                assert!(!tile.walkable);
+            }
+
+            Story::reset_tiles(connection, act.id, map.id, vec![1]).expect(BASE_ERROR);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [1].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert_eq!(tile.value, "-");
+                assert!(tile.walkable);
+            }
+        });
+    }
+
+    #[test]
+    fn test_delete_map_npc() {
+        allow_db_access(|connection| {
+            let mut story = Story::load(connection).unwrap();
+
+            let act = story.story.acts[0].clone();
+            let mut map = act.content.maps[0].clone();
+            map.npcs = map.generate_npcs(connection).expect(BASE_ERROR);
+
+            let _ = story.save(connection);
+
+            let initial_npcs_count = map.npcs.len();
+            let npc_to_delete = map.npcs[0].clone();
+
+            let _ = Story::delete_tiles_npcs(
+                connection,
+                act.id,
+                map.id,
+                vec![npc_to_delete.starting_point.id],
+            );
+            let response = Story::load(connection).unwrap();
+
+            let _act = response.story.acts[0].clone();
+            let _map = _act.content.maps[0].clone();
+            assert!(_map.npcs.len() == initial_npcs_count - 1)
+        });
+    }
+
+    #[test]
+    fn test_compute_map_tile_direction() {
+        allow_db_access(|connection| {
+            let story = Story::load(connection).unwrap();
+
+            let objects = Object::load(connection).expect(BASE_ERROR);
+            let water = objects
+                .iter()
+                .find(|it| it.name == "water")
+                .cloned()
+                .expect(BASE_ERROR);
+            let grass = objects
+                .iter()
+                .find(|it| it.name == "shore")
+                .cloned()
+                .expect(BASE_ERROR);
+
+            let act = story.story.acts[0].clone();
+            let map = act.content.maps[0].clone();
+            let tile = map.content.iter().find(|t| t.id == 50).unwrap();
+
+            Story::edit_tiles(
+                connection,
+                act.id.clone(),
+                map.id.clone(),
+                tile.neighbours_ids.clone(),
+                water.id,
+            )
+            .expect(BASE_ERROR);
+
+            Story::edit_tiles(
+                connection,
+                act.id.clone(),
+                map.id.clone(),
+                vec![tile.id],
+                grass.id,
+            )
+            .expect(BASE_ERROR);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [tile.id].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert!(tile.display_direction.is_none());
+            }
+
+            Story::compute_tiles_directions(connection, act.id, map.id, vec![tile.id])
+                .expect(BASE_ERROR);
+
+            let response = Story::load(connection).unwrap();
+            let _tiles: Vec<Item> = response.story.acts[0].content.maps[0]
+                .content
+                .iter()
+                .filter(|t| [tile.id].contains(&t.id))
+                .cloned()
+                .collect();
+
+            for tile in _tiles.iter() {
+                assert!(tile.display_direction.is_some());
+            }
+        });
+    }
+
+    #[test]
     fn test_register_gateway() {
         allow_db_access(|connection| {
             Story::register_gateway(connection, 1323375008, 1498719483, 3, (Some(5325235), true))

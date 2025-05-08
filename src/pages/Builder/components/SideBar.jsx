@@ -174,13 +174,26 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             )}
             <MenuBlock title={t('builder.menu.items.items')}>
                 {form.objects
-                    .filter((it) => !it.interactive)
+                    .filter((it) => !it.interactive && it.value)
                     .map((it) => (
                         <MenuItem
                             key={it.id}
                             icon={it.name}
                             label={t(`builder.menu.objects.${it.name}`)}
-                            disabled={!form.selectedMap || !form.selectedTiles.length || (!it.value && form.selectedTiles.length > 1)}
+                            disabled={!form.selectedMap || !form.selectedTiles.length}
+                            onClick={() => handleChange(it)}
+                        />
+                    ))}
+            </MenuBlock>
+            <MenuBlock title={t('builder.menu.items.utilities')}>
+                {form.objects
+                    .filter((it) => !it.value)
+                    .map((it) => (
+                        <MenuItem
+                            key={it.id}
+                            icon={it.name}
+                            label={t(`builder.menu.objects.${it.name}`)}
+                            disabled={!form.selectedMap || !form.selectedTiles.length || form.selectedTiles.length > 1}
                             onClick={() => handleChange(it)}
                         />
                     ))}

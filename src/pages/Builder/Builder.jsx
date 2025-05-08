@@ -7,6 +7,7 @@ import Map from './Map';
 import { BuilderModal } from './Modals';
 
 import css from './builder.module.css';
+import BuilderContextualMenus from './Contextual/ContextualMenus';
 
 export const Builder = () => {
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
@@ -28,6 +29,7 @@ export const Builder = () => {
         functions: [],
         selectedTiles: [],
         modal: { type: null, open: false, value: null },
+        contextual: { type: null, open: false, value: null, position: { x: null, y: null } },
         interactiveMode: { toggle: false, object: null, neighours: [] },
         directions: DIRECTIONS.map((dir) => ({ display_direction: dir ? { output: dir, custom: true, values: null } : null }))
     });
@@ -63,7 +65,9 @@ export const Builder = () => {
                                 storyLine: response,
                                 selectedAct: act,
                                 selectedMap: map,
-                                modal: { type: null, open: false, value: null }
+                                modal: { type: null, open: false, value: null },
+                                contextual: { type: null, open: false, value: null },
+                                selectedTiles: []
                             });
                         }
                         break;
@@ -132,8 +136,20 @@ export const Builder = () => {
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
-                {display && <Map flatDisplay={form.flatDisplay} history={history} index={index} loading={loadingStoryline} form={form} setForm={setForm} sync={handleSync} />}
+                {display && (
+                    <Map
+                        flatDisplay={form.flatDisplay}
+                        history={history}
+                        index={index}
+                        loading={loadingStoryline && !form.storyLine.id}
+                        form={form}
+                        setForm={setForm}
+                        setFormObject={setFormObject}
+                        sync={handleSync}
+                    />
+                )}
                 <BuilderModal form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
+                <BuilderContextualMenus form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
             </div>
         </Theme>
     );

@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useEffect, useState } from 'react';
 import { useDragSelect } from '../../../../context';
 import { Maptile } from './Tile';
 
-export const MapGrid = ({ form, setForm, data, handleSelect }) => {
+export const MapGrid = ({ form, setForm, setFormObject, data, handleSelect }) => {
     const [hover, setHover] = useState(null);
     const ds = useDragSelect();
 
@@ -37,6 +37,8 @@ export const MapGrid = ({ form, setForm, data, handleSelect }) => {
     }, [ds]);
 
     return mapItems?.map((item, index) => {
-        return <Maptile key={index} ds={ds} item={item} form={form} setForm={setForm} hover={hover} setHover={setHover} handleSelect={handleSelect} />;
+        return (
+            <Maptile key={index} ds={ds} item={item} form={form} setForm={setForm} setFormObject={setFormObject} hover={hover} setHover={setHover} handleSelect={handleSelect} />
+        );
     });
 };

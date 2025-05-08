@@ -3,6 +3,12 @@
     "collections": "Gérez vos collections",
     "json": "Éditeur Json",
     "manager": "Gérez vos scénarios",
+    "contextual": {
+      "compute_direction": "Calculer la direction",
+      "delete_npc": "Supprimer le personnage non joueur",
+      "informations": "Informations",
+      "reset_tile": "Réinitialiser"
+    },
     "menu": {
       "directions": {
         "bottom": "Bas",
@@ -27,7 +33,8 @@
       "items": {
         "directions": "Directions",
         "items": "Éléments",
-        "objects": "Objets"
+        "objects": "Objets",
+        "utilities": "Utilitaires"
       },
       "map": {
         "id": "Id",
