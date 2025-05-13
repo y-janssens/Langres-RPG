@@ -46,6 +46,48 @@ pub fn edit_tiles(
 }
 
 #[tauri::command]
+pub fn reset_tiles(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    act_id: i32,
+    map_id: i32,
+    tiles: Vec<u32>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::Editor, || {
+        Story::reset_tiles(&mut connection, act_id, map_id, tiles)?;
+        Ok(())
+    })
+}
+
+#[tauri::command]
+pub fn delete_tiles_npcs(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    act_id: i32,
+    map_id: i32,
+    tiles: Vec<u32>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::Editor, || {
+        Story::delete_tiles_npcs(&mut connection, act_id, map_id, tiles)?;
+        Ok(())
+    })
+}
+
+#[tauri::command]
+pub fn compute_tiles_directions(
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+    act_id: i32,
+    map_id: i32,
+    tiles: Vec<u32>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::Editor, || {
+        Story::compute_tiles_directions(&mut connection, act_id, map_id, tiles)?;
+        Ok(())
+    })
+}
+
+#[tauri::command]
 pub fn register_gateway(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
     act_id: i32,

@@ -1,0 +1,99 @@
+.contextual-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 250px);
+    height: calc(100% - 91px);
+    z-index: 100;
+}
+
+.contextual-body {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(39, 41, 53);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contextual-body-header {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    font-size: 13px !important;
+    margin-bottom: 10px;
+    background-color: rgb(43, 52, 64);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.25);
+}
+
+.contextual-body-header-exit {
+    position: absolute;
+    right: 10px;
+    border-radius: 4px !important;
+}
+
+.contextual-card-block {
+    position: absolute;
+    height: calc(100% - 45px);
+    width: 100%;
+    padding: 5px 15px 15px;
+}
+
+.contextual-card-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgb(43, 52, 64);
+    box-sizing: border-box;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.contextual-card-content {
+    overflow: hidden;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.contextual-base-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: fit-content;
+    z-index: 100;
+    border-radius: 4px;
+    background-color: rgb(39, 41, 53);
+}
+
+.contextual-base-menu-item {
+    width: -webkit-fill-available;
+    transition: 250ms all;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contextual-base-menu-item[datatype~='disabled'] {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.contextual-base-menu-item[datatype~='delete']:hover {
+    background-color: rgba(128, 51, 57, 0.25);
+}
+
+.contextual-base-menu-item span {
+    font-size: 12px !important;
+}
+
+.contextual-base-menu-item:hover {
+    background-color: rgb(46, 51, 57);
+}

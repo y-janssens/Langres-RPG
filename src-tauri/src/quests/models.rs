@@ -108,7 +108,6 @@ impl Quest {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
-        println!("{:#?}", self.clone());
         let name_json = to_json(&self.name)?;
         let description_json = to_json(&self.description)?;
         let status_json = to_json(&self.status)?;

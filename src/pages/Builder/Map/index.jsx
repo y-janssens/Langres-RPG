@@ -9,7 +9,7 @@ import { Scene } from './3D/Scene';
 
 import css from '../builder.module.css';
 
-export default function Map({ loading, flatDisplay, form, setForm, history, index, sync }) {
+export default function Map({ loading, flatDisplay, form, setForm, setFormObject, history, index, sync }) {
     const world = useMemo(() => {
         if (!form.selectedMap || !history.length) {
             return [];
@@ -43,22 +43,24 @@ export default function Map({ loading, flatDisplay, form, setForm, history, inde
 
     const handleSelect = useCallback(
         async (item) => {
+            if (form.contextual.open) return;
             if (!form.interactiveMode.toggle) {
                 let selected = [...form.selectedTiles];
                 const isAlreadySelected = selected.find((it) => it.id === item.id);
 
                 return setForm('selectedTiles', isAlreadySelected ? selected.filter((it) => it.id !== item.id) : [...selected, item]);
             }
+
             return handleRegister(item);
         },
-        [form.interactiveMode, form.selectedTiles, handleRegister]
+        [form.interactiveMode, form.selectedTiles, form.contextual.open, handleRegister]
     );
 
     return (
         <div className={css[`builder-body`]}>
             <Loading loading={loading}>
                 {flatDisplay ? (
-                    <FlatMap form={form} setForm={setForm} world={world} handleSelect={handleSelect} />
+                    <FlatMap form={form} setForm={setForm} setFormObject={setFormObject} world={world} handleSelect={handleSelect} />
                 ) : (
                     <Scene form={form} world={world} handleSelect={handleSelect} />
                 )}

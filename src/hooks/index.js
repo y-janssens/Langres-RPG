@@ -9,4 +9,5 @@ export { default as usePermissionsContext } from './usePermissionsContext';
 export { default as useDashboardContext } from './useDashboardContext';
 export { default as useSettingsProperties } from './useSettingsProperties';
 export { default as useFirstRender } from './useFirstRender';
+export { default as useOutsideClick } from './useOutsideClick';
 export { useTranslation } from 'react-i18next';

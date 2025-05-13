@@ -162,6 +162,16 @@ impl Item {
         self.display_value = display_value;
         self.display_color = display_color;
     }
+
+    pub fn reset(&mut self) {
+        let value = GRASS.val();
+        let (display_value, display_color, walkable) = Values::get_value(value);
+
+        self.value = value.to_string();
+        self.walkable = walkable;
+        self.display_value = display_value;
+        self.display_color = display_color;
+    }
 }
 
 impl World {

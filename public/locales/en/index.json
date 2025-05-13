@@ -3,6 +3,12 @@
     "collections": "Manage collections",
     "json": "Json editor",
     "manager": "Manage storylines",
+    "contextual": {
+      "compute_direction": "Compute direction",
+      "informations": "Informations",
+      "delete_npc": "Delete non playing character",
+      "reset_tile": "Reset"
+    },
     "menu": {
       "directions": {
         "bottom": "Bottom",
@@ -27,7 +33,8 @@
       "items": {
         "directions": "Directions",
         "items": "Items",
-        "objects": "Objects"
+        "objects": "Objects",
+        "utilities": "Utilities"
       },
       "map": {
         "id": "Id",

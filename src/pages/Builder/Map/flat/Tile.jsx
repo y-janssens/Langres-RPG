@@ -5,7 +5,7 @@ import { Icon, Hex } from '../../../../components';
 
 import css from '../../builder.module.css';
 
-export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect }) => {
+export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, item, handleSelect }) => {
     const tileRef = useRef();
 
     const active = useMemo(() => {
@@ -103,6 +103,11 @@ export const Maptile = ({ form, setForm, hover, setHover, ds, item, handleSelect
             onClick={() => handleSelect(item)}
             onMouseEnter={() => handleHover(true)}
             onMouseLeave={() => handleHover(false)}
+            onContextMenu={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setFormObject({ ...form, contextual: { type: null, open: true, value: item, position: { x: e.clientX, y: e.clientY } }, selectedTiles: [item] });
+            }}
             aria-labelledby="Selectable"
             style={{
                 filter: filters,
