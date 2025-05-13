@@ -45,11 +45,10 @@ impl StoryUtils {
 
         if let Some(map) = utility
             .story
-            .story
             .acts
             .iter_mut()
             .find(|act| act.id == act_id)
-            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .and_then(|act| act.maps.iter_mut().find(|map| map.id == map_id))
         {
             let mut _map = map.clone();
             for item in map
@@ -81,11 +80,10 @@ impl StoryUtils {
 
         if let Some(map) = utility
             .story
-            .story
             .acts
             .iter_mut()
             .find(|act| act.id == act_id)
-            .and_then(|act| act.content.maps.iter_mut().find(|map| map.id == map_id))
+            .and_then(|act| act.maps.iter_mut().find(|map| map.id == map_id))
         {
             operation(map);
             utility.save(connection)?;

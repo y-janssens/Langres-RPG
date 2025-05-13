@@ -40,9 +40,7 @@ pub mod factories_definitions {
                 name: StringFaker.generate().value(),
                 created: StringFaker.generate().value(),
                 modified: StringFaker.generate().value(),
-                story: Acts {
-                    acts: vec![ActFactory.generate()],
-                },
+                acts: ActsFactory.generate(),
             }
         }
     }
@@ -51,9 +49,7 @@ pub mod factories_definitions {
         type Output = Acts;
 
         fn generate(&self) -> Self::Output {
-            Acts {
-                acts: vec![ActFactory.generate()],
-            }
+            Acts(vec![ActFactory.generate()])
         }
     }
 
@@ -67,7 +63,7 @@ pub mod factories_definitions {
                 name: "name".to_string(),
                 title: StringFaker.generate().value().to_string(),
                 date: StringFaker.generate().value().to_string(),
-                content: ContentFactory.generate(),
+                maps: ContentFactory.generate(),
                 complete: false,
             }
         }
@@ -77,9 +73,7 @@ pub mod factories_definitions {
         type Output = Content;
 
         fn generate(&self) -> Self::Output {
-            Content {
-                maps: vec![WorldFactory.generate(), WorldFactory.generate()],
-            }
+            Content(vec![WorldFactory.generate(), WorldFactory.generate()])
         }
     }
 

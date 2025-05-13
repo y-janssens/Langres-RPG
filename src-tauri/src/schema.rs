@@ -177,7 +177,7 @@ diesel::table! {
         name -> Text,
         created -> Text,
         modified -> Text,
-        story -> Text,
+        acts -> Text,
     }
 }
 

@@ -14,7 +14,7 @@ mod tests {
     fn test_get_map_no_npcs() {
         allow_db_access(|connection| {
             let story = Story::load(connection).expect(BASE_ERROR);
-            let map_id = story.story.acts[0].content.maps[0].clone().id;
+            let map_id = story.acts[0].maps[0].clone().id;
             let npcs = Npc::get_for_map(map_id, connection);
 
             assert!(npcs.is_ok_and(|res| res.is_empty()));

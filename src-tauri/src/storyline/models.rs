@@ -1,3 +1,5 @@
+use std::ops::{Deref, DerefMut};
+
 use diesel::result::Error;
 use diesel::{prelude::*, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
@@ -20,12 +22,24 @@ pub struct Story {
     pub name: String,
     pub created: String,
     pub modified: String,
-    pub story: Acts,
+    pub acts: Acts,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Acts {
-    pub acts: Vec<Act>,
+pub struct Acts(pub Vec<Act>);
+
+impl Deref for Acts {
+    type Target = Vec<Act>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for Acts {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -35,37 +49,48 @@ pub struct Act {
     pub name: String,
     pub title: String,
     pub date: String,
-    pub content: Content,
+    pub maps: Content,
     pub complete: bool,
 }
 
 impl Act {
     pub fn validate_act(&mut self) {
         let all_primary_maps_complete = self
-            .content
             .maps
             .iter()
             .filter_map(Some)
             .filter(|map| map.primary)
             .all(|map| map.complete);
 
-        if !self.content.maps.is_empty() && all_primary_maps_complete {
+        if !self.maps.is_empty() && all_primary_maps_complete {
             self.complete = true;
         }
     }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
-pub struct Content {
-    pub maps: Vec<World>,
+pub struct Content(pub Vec<World>);
+
+impl Deref for Content {
+    type Target = Vec<World>;
+
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
+impl DerefMut for Content {
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
 }
 
 impl Story {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<Story> {
         let mut _storyline: Story = crate::schema::storyline::table.first(connection)?;
 
-        for act in _storyline.story.acts.iter_mut() {
-            for map in act.content.maps.iter_mut() {
+        for act in _storyline.acts.iter_mut() {
+            for map in act.maps.iter_mut() {
                 map.npcs = Npc::get_for_map(map.id, connection)?;
             }
         }
@@ -73,14 +98,14 @@ impl Story {
     }
 
     pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        for act in self.story.acts.iter_mut() {
+        for act in self.acts.iter_mut() {
             act.validate_act();
         }
-        let updated_json = serde_json::to_string(&self.story.acts)
+        let updated_json = serde_json::to_string(&self.acts)
             .map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let _ = diesel::update(storyline.find(self.id))
-            .set(crate::schema::storyline::story.eq(updated_json.clone()))
+            .set(crate::schema::storyline::acts.eq(updated_json.clone()))
             .execute(connection);
 
         Self::edit_existing_games(connection)?;

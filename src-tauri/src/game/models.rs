@@ -157,7 +157,7 @@ impl Game {
 
     pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<GameDatas> {
         let mut game: Self = games.find(_id).first(connection)?;
-        for act in &mut game.storyline.story.acts {
+        for act in &mut game.storyline.acts.iter_mut() {
             act.validate_act();
         }
         let datas = GameDatas {
@@ -200,11 +200,10 @@ impl Game {
 
         let (current_item, current_map, current_act) = self
             .storyline
-            .story
             .acts
             .iter()
             .find_map(|act| {
-                act.content.maps.iter().find_map(|map| {
+                act.maps.iter().find_map(|map| {
                     map.content
                         .iter()
                         .find(|item| {
@@ -216,11 +215,10 @@ impl Game {
             .unwrap();
 
         let (storyline_item, storyline_map) = story
-            .story
             .acts
             .iter()
             .find_map(|act| {
-                act.content.maps.iter().find_map(|map| {
+                act.maps.iter().find_map(|map| {
                     map.content
                         .iter()
                         .find(|item| {
@@ -238,8 +236,8 @@ impl Game {
             self.relocate_character(storyline_map.clone());
         }
 
-        for act in self.storyline.story.acts.iter_mut() {
-            for map in act.content.maps.iter_mut() {
+        for act in self.storyline.acts.iter_mut() {
+            for map in act.maps.iter_mut() {
                 if map.id == storyline_map.id {
                     map.content = storyline_map.content.clone();
                 }

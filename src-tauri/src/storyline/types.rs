@@ -34,6 +34,6 @@ impl FromSql<Text, Sqlite> for Acts {
         let t = <String as FromSql<Text, Sqlite>>::from_sql(bytes)?;
         let acts: Vec<Act> = serde_json::from_str(&t)
             .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)?;
-        Ok(Acts { acts })
+        Ok(Acts(acts))
     }
 }
