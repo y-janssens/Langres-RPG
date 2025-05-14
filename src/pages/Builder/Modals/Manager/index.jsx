@@ -15,7 +15,7 @@ const Manager = ({ type, storyline = {}, onClose = () => {}, sync = () => {} }) 
         id: storyline?.id,
         story: new Storyline({ ...storyline }),
         initialStory: cloneDeep({ ...storyline }),
-        acts: { ...storyline }?.story?.acts,
+        acts: { ...storyline }?.acts,
         selectedAct: null,
         selectedMap: null,
         errors: []
@@ -26,7 +26,7 @@ const Manager = ({ type, storyline = {}, onClose = () => {}, sync = () => {} }) 
             sync();
             onClose();
         });
-    }, [form, sync, onClose]);
+    }, [form.story, sync, onClose]);
 
     if (!form.id) {
         return null;

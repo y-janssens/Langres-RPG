@@ -64,6 +64,7 @@
 
 .modal-card-content {
     width: 100%;
+    height: -webkit-fill-available;
     overflow: hidden;
     padding-bottom: 50px;
 }

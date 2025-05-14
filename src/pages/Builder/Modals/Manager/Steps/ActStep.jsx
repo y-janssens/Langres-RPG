@@ -9,11 +9,13 @@ export const ActStep = ({ form, setForm, ...props }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
 
+    console.log(form);
+
     const maps = useMemo(() => {
         if (!form.selectedAct) {
             return [];
         }
-        let list = form.selectedAct.content.maps.sort((a, b) => a.order - b.order);
+        let list = form.selectedAct.maps.sort((a, b) => a.order - b.order);
         if (!list.some((act) => act.temp) && list.every((mp) => mp.size >= 10)) {
             list.push({ complete: false, content: [], name: '', order: list.length, size: 0, primary: true, temp: true });
         }
@@ -33,7 +35,7 @@ export const ActStep = ({ form, setForm, ...props }) => {
             if (map.temp && map.name.length && map.size > 10) {
                 delete map.temp;
             }
-            act.content.maps = maps;
+            act.maps = maps;
             setForm('selectedAct', act);
         },
         [form, maps]
@@ -56,7 +58,7 @@ export const ActStep = ({ form, setForm, ...props }) => {
                 maps[id] = data;
             });
             let act = form.selectedAct;
-            act.content.maps = maps;
+            act.maps = maps;
             setForm('selectedAct', act);
             handleErrors();
         },

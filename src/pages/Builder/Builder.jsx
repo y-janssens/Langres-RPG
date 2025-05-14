@@ -40,10 +40,10 @@ export const Builder = () => {
             onSuccess: (response) => {
                 setForm('storyLine', response);
                 switch (true) {
-                    case !response.story.acts.length:
+                    case !response.acts.length:
                         setForm('modal', { type: 'onboarding', open: true, value: 'acts' });
                         break;
-                    case response.story.acts.length && response.story.acts.every((act) => !act.content.maps.length):
+                    case response.acts.length && response.acts.every((act) => !act.maps.length):
                         setForm('modal', { type: 'onboarding', open: true, value: 'maps' });
                         break;
                     default:
@@ -53,12 +53,12 @@ export const Builder = () => {
                                 ...form,
                                 displayActions: false,
                                 storyLine: response,
-                                selectedAct: response.story.acts[0],
-                                selectedMap: response.story.acts[0].content.maps[0]
+                                selectedAct: response.acts[0],
+                                selectedMap: response.acts[0].maps[0]
                             });
                         } else {
-                            const act = response.story.acts.find((act) => act.id === form.selectedAct.id);
-                            const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+                            const act = response.acts.find((act) => act.id === form.selectedAct.id);
+                            const map = act.maps.find((mp) => mp.name === form.selectedMap.name);
                             setFormObject({
                                 ...form,
                                 displayActions: false,

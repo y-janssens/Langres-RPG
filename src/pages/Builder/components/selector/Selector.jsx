@@ -19,16 +19,16 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
             return [];
         }
         if (!search || search === '') {
-            return datas.story.acts.filter((act) => !act.temp).map((act) => act);
+            return datas.acts.filter((act) => !act.temp).map((act) => act);
         }
-        return datas.story.acts.filter((act) => !act.temp && act.content.maps.filter((mp) => !mp.temp).some((wrl) => matchSearch(wrl.name, search)));
+        return datas.acts.filter((act) => !act.temp && act.maps.filter((mp) => !mp.temp).some((wrl) => matchSearch(wrl.name, search)));
     }, [datas, search, matchSearch]);
 
     const disabled = useMemo(() => {
         if (!Object.keys(datas).length) {
             return true;
         }
-        return datas?.story.acts.every((act) => !act.content.maps.length);
+        return datas?.acts.every((act) => !act.maps.length);
     }, [datas]);
 
     if (!Object.keys(datas).length) {
@@ -108,14 +108,14 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
     );
 
     const disabled = useMemo(() => {
-        return Boolean(!group.content.maps.length);
+        return Boolean(!group.maps.length);
     }, [group]);
 
     const renderContent = useMemo(() => {
         if (!search) {
             return open;
         }
-        return Boolean(search && group.content.maps.length > 0);
+        return Boolean(search && group.maps.length > 0);
     }, [search, open, group]);
 
     return (
@@ -127,7 +127,7 @@ export const SelectGroup = ({ group, search, onSelect = () => {}, onClose = () =
 
             {renderContent && (
                 <div className={css['select-multi-group-content']}>
-                    {group.content.maps.map((wrl, index) => {
+                    {group.maps.map((wrl, index) => {
                         return (
                             <div key={index} className={css['select-multi-group-item']} onClick={() => handleSelect(wrl)}>
                                 <span>{`- ${wrl?.name}`}</span>

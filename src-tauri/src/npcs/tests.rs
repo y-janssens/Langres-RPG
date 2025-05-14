@@ -107,7 +107,7 @@ mod tests {
     #[test]
     fn test_clear_map_npcs() {
         allow_db_access(|connection| {
-            let world = WorldFactory.generate();
+            let mut world = WorldFactory.generate();
             let _ = world.generate_npcs(connection);
 
             let npcs = Npc::get_for_map(world.id, connection);
