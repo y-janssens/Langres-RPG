@@ -324,10 +324,12 @@ impl World {
     }
 
     pub fn clear_npcs(
-        &self,
+        &mut self,
         connection: &mut SqliteConnection,
     ) -> Result<(), diesel::result::Error> {
-        Npc::clear(self, connection)
+        Npc::clear(self, connection)?;
+        self.npcs = vec![];
+        Ok(())
     }
 
     pub fn generate_report(&self) -> Result<MapReport, Error> {

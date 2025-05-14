@@ -141,6 +141,7 @@ pub fn run() {
             backend::utils::commands::get_neighbours,
             backend::utils::commands::frustum_cull_filter,
             // World building commands
+            world::commands::clear,
             world::commands::generate,
             world::commands::regenerate,
             world::commands::clear_npcs,
