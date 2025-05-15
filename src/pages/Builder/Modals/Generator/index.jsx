@@ -44,12 +44,12 @@ const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
     );
 
     const handleApply = useCallback(() => {
-        let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-        let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
-        let newMap = { ...act.content.maps[mapIndex] };
+        let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
+        let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+        let newMap = { ...act.maps[mapIndex] };
 
         newMap = selectedMap.map;
-        act.content.maps[mapIndex] = newMap;
+        act.maps[mapIndex] = newMap;
         setFormObject({ ...form, selectedMap: newMap });
         onClose();
     }, [form, selectedMap, onClose]);

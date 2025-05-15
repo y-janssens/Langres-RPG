@@ -4,18 +4,17 @@ CREATE TABLE "storyline" (
     name TEXT NOT NULL,
     created TEXT NOT NULL,
     modified TEXT NOT NULL,
-    story TEXT NOT NULL
+    acts TEXT NOT NULL
 );
 
 INSERT INTO
-    "storyline"(name, created, modified, story)
+    "storyline"(name, created, modified, acts)
 VALUES
 ('Scénario', '2023-03-23 17:54:05.174732 +01:00', '2024-03-08 17:54:05.174732 +01:00', json('
 [
   {
     "complete": false,
-    "content": {
-      "maps": [
+    "maps": [
         {
           "complete": false,
           "content": [
@@ -61783,8 +61782,7 @@ VALUES
             "y": 36
           }
         }
-      ]
-    },
+      ],
     "date": "21/09/1164",
     "id": 1323375008,
     "name": "Act I",

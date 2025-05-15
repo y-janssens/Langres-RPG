@@ -6,6 +6,8 @@ import css from '../manager.module.css';
 export const StoryStep = ({ form, setForm }) => {
     const { t } = useTranslation();
 
+    console.log(form);
+
     const generateUniquePositiveId = useCallback(() => {
         const maxI32 = 2147483647;
         let uniqueId;
@@ -20,7 +22,7 @@ export const StoryStep = ({ form, setForm }) => {
     const acts = useMemo(() => {
         let list = form.acts.sort((a, b) => a.order - b.order);
         if (!list.some((act) => act.temp)) {
-            list.push({ complete: false, content: { maps: [] }, id: generateUniquePositiveId(), order: list.length, name: '', title: '', date: '', temp: true });
+            list.push({ complete: false, maps: [], id: generateUniquePositiveId(), order: list.length, name: '', title: '', date: '', temp: true });
         }
         return list;
     }, [form, form.acts]);

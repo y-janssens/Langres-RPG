@@ -28,9 +28,9 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 return setForm('modal', { type: npcOpened ? null : 'npc', open: !npcOpened, value: form.selectedTiles[0] });
             }
 
-            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-            let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
-            let newMap = { ...act.content.maps[mapIndex] };
+            let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+            let newMap = { ...act.maps[mapIndex] };
 
             if (!primary) {
                 if (!item.value && form.selectedTiles.length === 1) {
@@ -55,7 +55,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             } else {
                 newMap.primary = item;
             }
-            act.content.maps[mapIndex] = newMap;
+            act.maps[mapIndex] = newMap;
             setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
         },
         [form]
@@ -63,9 +63,9 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
 
     const handleDirections = useCallback(
         (item) => {
-            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-            let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
-            let newMap = { ...act.content.maps[mapIndex] };
+            let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+            let newMap = { ...act.maps[mapIndex] };
 
             const updatedItems = new Map(
                 form.selectedTiles.map((tile) => [
@@ -81,7 +81,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
 
             newMap.content = newContent;
 
-            act.content.maps[mapIndex] = newMap;
+            act.maps[mapIndex] = newMap;
             setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
         },
         [form]
@@ -105,9 +105,9 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             await invoke(command, {
                 map: form.selectedMap
             }).then((data) => {
-                let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-                let mapIndex = act.content.maps.findIndex((mp) => mp.name === form.selectedMap.name);
-                act.content.maps[mapIndex] = data;
+                let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
+                let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+                act.maps[mapIndex] = data;
 
                 setFormObject({ ...form, selectedMap: data, selectedTiles: [] });
             });

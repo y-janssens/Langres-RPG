@@ -21,8 +21,8 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
 
     const handleRegister = useCallback(
         async (item) => {
-            const act = form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id);
-            const map = act.content.maps.find((mp) => mp.name === form.selectedMap.name);
+            const act = form.storyLine.acts.find((act) => act.id === form.selectedAct.id);
+            const map = act.maps.find((mp) => mp.name === form.selectedMap.name);
             await invoke('register_object', {
                 actId: act.id,
                 mapId: map.id,

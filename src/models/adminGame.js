@@ -30,7 +30,7 @@ export default class AdminGameModel extends AdminModel {
     }
 
     get current_act() {
-        return this.storyline.story.acts.find((act) => !act.complete);
+        return this.storyline.acts.find((act) => !act.complete);
     }
 
     get current_map() {

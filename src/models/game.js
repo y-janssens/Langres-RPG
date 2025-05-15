@@ -29,11 +29,11 @@ export default class GameModel extends Fetcher {
     }
 
     get current_act() {
-        return this.storyline.story.acts.find((act) => !act.complete);
+        return this.storyline.acts.find((act) => !act.complete);
     }
 
     get current_map() {
-        return this.current_act.content.maps.find((mp) => (this.engine.mapId ? mp.id === this.engine?.mapId?.id : !mp.complete && mp.primary));
+        return this.current_act.maps.find((mp) => (this.engine.mapId ? mp.id === this.engine?.mapId?.id : !mp.complete && mp.primary));
     }
 
     get current_world() {

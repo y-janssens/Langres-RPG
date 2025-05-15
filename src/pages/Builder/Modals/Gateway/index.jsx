@@ -17,8 +17,8 @@ const Gateway = ({ form, type, onClose, sync }) => {
         if (!form.storyLine || !form.selectedAct || !form.selectedMap) {
             return [];
         }
-        return form.storyLine.story.acts.reduce((acc, act) => {
-            const filteredMaps = act.content.maps.filter((mp) => mp.id !== form.selectedMap.id);
+        return form.storyLine.acts.reduce((acc, act) => {
+            const filteredMaps = act.maps.filter((mp) => mp.id !== form.selectedMap.id);
             return acc.concat(filteredMaps);
         }, []);
     }, [form]);

@@ -26,11 +26,11 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
 
     const handleMapAction = useCallback(
         async (action) => {
-            let act = { ...form.storyLine.story.acts.find((act) => act.id === form.selectedAct.id) };
-            let mapIndex = act.content.maps.findIndex((mp) => mp.id === form.selectedMap.id);
+            let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
+            let mapIndex = act.maps.findIndex((mp) => mp.id === form.selectedMap.id);
 
             await invoke(action, { map: form.selectedMap }).then((result) => {
-                act.content.maps[mapIndex] = result;
+                act.maps[mapIndex] = result;
                 setObject({ ...form, displayActions: false, selectedMap: result, selectedTiles: [] });
                 toast.info(t(`builder.toasts.${action}`));
             });
@@ -39,9 +39,9 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
     );
 
     const handleExport = useCallback(() => {
-        let _datas = { ...datas }.story.acts;
+        let _datas = { ...datas }.acts;
         _datas.map((act) => {
-            return act.content.maps.map((mp) => {
+            return act.maps.map((mp) => {
                 mp.npcs = [];
                 return mp;
             });

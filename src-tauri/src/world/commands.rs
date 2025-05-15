@@ -38,10 +38,20 @@ pub fn clear_npcs(
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
-        let content = World::generate();
-        let _ = map.clear_npcs(&mut connection);
-        map.content = content;
-        map.npcs = vec![];
+        map.clear_npcs(&mut connection)?;
+        Ok(map)
+    })
+}
+
+#[tauri::command]
+pub fn clear(
+    mut map: World,
+    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
+) -> Result<Response, ValidationError> {
+    let mut connection = get_connection(connection);
+    authenticated_command(Permission::Editor, || {
+        map.clear_npcs(&mut connection)?;
+        map.content = World::generate();
         Ok(map)
     })
 }
