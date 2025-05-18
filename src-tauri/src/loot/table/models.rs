@@ -88,6 +88,7 @@ impl TableLoot {
                 description: Translations::blank(),
                 armor: None,
                 damage: None,
+                random: None,
                 parade: None,
                 price: Some(gold as i32),
                 weight: None,

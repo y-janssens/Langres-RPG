@@ -8,18 +8,18 @@ use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Dice {
-    value: u32,
-    status: String,
+    pub value: u32,
+    pub status: String,
 }
 
 impl Dice {
     pub fn launch(dice_value: u32, dice_cap: u32) -> Dice {
         let mut rng = rand::thread_rng();
-        let result = rng.gen_range(1..dice_value);
+        let result = rng.gen_range(1..dice_cap);
         let status = match result {
             1 => "critical_failure",
             20 => "critical_success",
-            _ if result < dice_cap => "failure",
+            _ if result < dice_value => "failure",
             _ => "success",
         };
 
@@ -27,6 +27,11 @@ impl Dice {
             value: result,
             status: String::from(status),
         }
+    }
+
+    pub fn roll(dice_cap: u32) -> u32 {
+        let mut rng = rand::thread_rng();
+        rng.gen_range(1..dice_cap)
     }
 }
 

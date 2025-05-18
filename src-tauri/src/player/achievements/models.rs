@@ -36,7 +36,6 @@ pub struct InsertablePlayerAchievement {
 
 impl PlayerAchievement {
     pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
-        println!("Generating game achievements...");
         let base_achievements = Achievement::load(connection)?;
         let mut _achievements: Vec<PlayerAchievement> = vec![];
         for achievement in base_achievements {

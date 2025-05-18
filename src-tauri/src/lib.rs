@@ -10,6 +10,7 @@ pub mod achievements;
 pub mod admin;
 pub mod application;
 pub mod backend;
+pub mod battle;
 pub mod character;
 pub mod collection;
 pub mod events;
@@ -153,6 +154,10 @@ pub fn run() {
             world::analysis::commands::generate_map_analysis,
             world::builder::commands::generate_map_content,
             world::builder::commands::load_generator_options,
+            // Battle system commands
+            battle::commands::start_battle,
+            battle::commands::battle_action,
+            battle::commands::evaluate_battle_atb,
         ])
         .manage(pool)
         .run(tauri::generate_context!())

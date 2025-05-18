@@ -201,7 +201,6 @@ impl World {
 
     /// Generate base map
     pub fn generate() -> Vec<Item> {
-        println!("Generating world data...");
         let size = *DEFAULT_MAP_SIZE;
         let grid: u32 = *DEFAULT_MAP_SIZE_GRID;
 
@@ -277,7 +276,6 @@ impl World {
 
     /// Generate random trees in available space
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
-        println!("Generating game trees...");
         let values = to_weighted_map([("T", 1), ("-", 7)].to_vec());
 
         for item in content
@@ -294,7 +292,6 @@ impl World {
         &self,
         connection: &mut SqliteConnection,
     ) -> Result<Vec<Npc>, diesel::result::Error> {
-        println!("Populating map Npcs...");
         let mut rng = thread_rng();
         let count = rng.gen_range(1..50);
 
@@ -317,7 +314,7 @@ impl World {
 
         let chosen_items: Vec<Item> = items.choose_multiple(&mut rng, count).cloned().collect();
         for item in chosen_items {
-            let npc = Npc::new(self.id, (item.x as f32, item.y as f32, item.id))?;
+            let npc = Npc::new(self.id, (item.x as f32, item.y as f32, item.id));
             npc.save(connection)?;
         }
         Npc::get_for_map(self.id, connection)

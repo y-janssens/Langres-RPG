@@ -25,7 +25,7 @@ mod tests {
     fn test_save_npc() {
         allow_db_access(|connection| {
             let world = WorldFactory.generate();
-            let npc = Npc::new(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
+            let npc = Npc::new(world.id, (15.0, 32.0, 1607));
             let _ = npc.save(connection);
 
             let npcs = Npc::get_for_map(world.id, connection);
@@ -49,8 +49,14 @@ mod tests {
                 cha: 8,
                 int: 8,
                 ini: 8,
+                att: 8,
+                par: 8,
+                tir: 8,
+                ap: 2,
                 pv: 100,
-                level: 1,
+                max_ap: 2,
+                max_pv: 100,
+                lvl: 1,
                 gender: Gender::Male,
                 map_id: world.id,
                 unique: false, // Saving will reset non unique parameters
@@ -80,7 +86,7 @@ mod tests {
     fn test_delete_npc() {
         allow_db_access(|connection| {
             let world = WorldFactory.generate();
-            let npc = Npc::new(world.id, (15.0, 32.0, 1607)).expect(BASE_ERROR);
+            let npc = Npc::new(world.id, (15.0, 32.0, 1607));
 
             let _ = npc.save(connection);
 

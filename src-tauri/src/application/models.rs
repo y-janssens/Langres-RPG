@@ -27,6 +27,9 @@ pub struct ApplicationSettings {
     pub sound: bool,
     pub volume: i32,
     pub music: i32,
+    pub difficulty: i32,
+    pub battle_realtime: bool,
+    pub battle_automatic: bool,
 }
 
 impl ApplicationSettings {
@@ -50,6 +53,9 @@ impl ApplicationSettings {
                 sound.eq(self.sound),
                 volume.eq(self.volume),
                 music.eq(self.music),
+                difficulty.eq(self.difficulty),
+                battle_realtime.eq(self.battle_realtime),
+                battle_automatic.eq(self.battle_automatic),
             ))
             .execute(connection)
     }

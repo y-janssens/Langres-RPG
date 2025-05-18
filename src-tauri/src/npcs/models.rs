@@ -31,11 +31,40 @@ pub enum Gender {
 pub enum Class {
     Human,
     Soldier,
+    Knight,
     Zombie,
     Zealot,
     Bandit,
     Priest,
     Merchant,
+}
+
+impl Class {
+    pub fn can_dodge(&self) -> bool {
+        match self {
+            Class::Human => false,
+            Class::Soldier => true,
+            Class::Knight => true,
+            Class::Zombie => false,
+            Class::Zealot => true,
+            Class::Bandit => false,
+            Class::Priest => false,
+            Class::Merchant => false,
+        }
+    }
+
+    pub fn can_parry(&self) -> bool {
+        match self {
+            Class::Human => true,
+            Class::Soldier => true,
+            Class::Knight => true,
+            Class::Zombie => true,
+            Class::Zealot => true,
+            Class::Bandit => true,
+            Class::Priest => false,
+            Class::Merchant => false,
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
@@ -54,8 +83,14 @@ pub struct Npc {
     pub cha: i32,
     pub int: i32,
     pub ini: i32,
+    pub att: i32,
+    pub par: i32,
+    pub tir: i32,
+    pub ap: i32,
     pub pv: i32,
-    pub level: i32,
+    pub lvl: i32,
+    pub max_ap: i32,
+    pub max_pv: i32,
     pub gender: Gender,
     pub map_id: i32,
     pub unique: bool,
@@ -86,8 +121,14 @@ pub struct InsertableNpc {
     pub cha: i32,
     pub int: i32,
     pub ini: i32,
+    pub att: i32,
+    pub par: i32,
+    pub tir: i32,
+    pub ap: i32,
     pub pv: i32,
-    pub level: i32,
+    pub lvl: i32,
+    pub max_ap: i32,
+    pub max_pv: i32,
     pub gender: String,
     pub map_id: i32,
     pub unique: bool,
@@ -103,8 +144,8 @@ pub struct InsertableNpc {
 }
 
 impl Npc {
-    pub fn new(_map_id: i32, position: (f32, f32, u32)) -> Result<Npc, Error> {
-        Ok(Npc {
+    pub fn new(_map_id: i32, position: (f32, f32, u32)) -> Self {
+        Npc {
             id: Uuid::new_v4().to_string(),
             first_name: "".to_string(),
             last_name: "".to_string(),
@@ -116,8 +157,14 @@ impl Npc {
             cha: 8,
             int: 8,
             ini: 8,
+            att: 8,
+            par: 8,
+            tir: 8,
+            ap: 8,
             pv: 60,
-            level: 1,
+            max_ap: 4,
+            max_pv: 60,
+            lvl: 1,
             gender: Gender::Unknown,
             map_id: _map_id,
             unique: false,
@@ -129,7 +176,12 @@ impl Npc {
             quests: NpcQuests::empty(),
             dialogs: NpcDialogs::empty(),
             starting_point: Position::resolve(position),
-        })
+        }
+    }
+
+    pub fn with_inventory(&mut self) -> Self {
+        self.inventory = Inventory::new();
+        self.clone()
     }
 
     pub fn get_for_map(_map_id: i32, connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
@@ -138,6 +190,23 @@ impl Npc {
             .load::<Npc>(connection)?;
 
         Ok(npcs)
+    }
+
+    /// Reset ap to default map_ap value
+    pub fn reset_ap(&mut self) {
+        self.ap = self.max_ap;
+    }
+
+    /// Compute aps based on actions cost
+    pub fn validate_and_compute_ap(&mut self, cost: i32) -> bool {
+        if !self.ap >= cost {
+            return false;
+        }
+        self.ap = (self.ap - cost).max(0);
+        true
+    }
+    pub fn inflict_damages(&mut self, damages: i32) {
+        self.pv = (self.pv - damages).max(0)
     }
 
     pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Self> {
@@ -182,8 +251,14 @@ impl Npc {
             cha: _npc.cha,
             int: _npc.int,
             ini: _npc.ini,
+            att: _npc.att,
+            par: _npc.par,
+            tir: _npc.tir,
+            ap: _npc.ap,
+            max_ap: _npc.max_ap,
+            max_pv: _npc.max_pv,
             pv: _npc.pv,
-            level: _npc.level,
+            lvl: _npc.lvl,
             gender: gender_json,
             map_id: _npc.map_id,
             unique: _npc.unique,

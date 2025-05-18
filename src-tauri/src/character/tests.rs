@@ -11,6 +11,7 @@ mod tests {
         character::models::{Character, Inventory},
         game::models::{Game, Position},
         loot::table::base::*,
+        npcs::models::Class,
     };
 
     #[test]
@@ -116,10 +117,17 @@ mod tests {
                     cha: 8,
                     int: 8,
                     ini: 8,
+                    att: 8,
+                    par: 8,
+                    tir: 8,
+                    ap: 2,
                     pv: 8,
                     xp: 8,
-                    max_xp: 8,
+                    max_ap: 2,
+                    max_pv: 60,
+                    max_xp: 150,
                     lvl: 8,
+                    class: Class::Knight,
                     inventory: Inventory {
                         right_hand: Some(BASE_WEAPON.clone()),
                         left_hand: Some(BASE_SHIELD.clone()),

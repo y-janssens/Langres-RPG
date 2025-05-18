@@ -200,7 +200,7 @@ impl AdminModel for AdminLootModel {
         "loot"
     }
     fn options(&self) -> Vec<&'static str> {
-        vec!["Weapon", "Equipment", "Craftable", "Thrash"]
+        vec!["Weapon", "Equipment", "Craftable", "Thrash", "Consumable"]
     }
     fn fields(&self) -> Vec<Field> {
         vec![
@@ -225,7 +225,6 @@ impl AdminDashboard {
     pub fn get() -> Result<Value, Error> {
         let mut dashboard = AdminDashboard { models: Vec::new() };
         dashboard.register_model(AdminGameModel);
-        // dashboard.register_model(AdminStoryLineModel);
         dashboard.register_model(AdminCollectionModel);
         dashboard.register_model(AdminMapObjectsModel);
         dashboard.register_model(AdminMapFunctionsModel);

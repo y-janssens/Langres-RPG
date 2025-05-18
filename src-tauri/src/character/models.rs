@@ -1,24 +1,36 @@
 use diesel::prelude::Queryable;
 use serde::{Deserialize, Serialize};
 
-use crate::loot::{
-    models::{ItemTypes, Loot},
-    table::base::*,
+use crate::{
+    battle::objects::Object,
+    loot::{
+        models::{ItemTypes, Loot},
+        table::base::*,
+    },
+    npcs::models::Class,
 };
+
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Character {
     pub first_name: String,
     pub last_name: String,
-    pub end: u32,
-    pub r#for: u32,
-    pub hab: u32,
-    pub cha: u32,
-    pub int: u32,
-    pub ini: u32,
-    pub pv: u32,
-    pub xp: u32,
-    pub max_xp: u32,
-    pub lvl: u32,
+    pub class: Class,
+    pub end: i32,
+    pub r#for: i32,
+    pub hab: i32,
+    pub cha: i32,
+    pub int: i32,
+    pub ini: i32,
+    pub att: i32,
+    pub par: i32,
+    pub tir: i32,
+    pub ap: i32,
+    pub pv: i32,
+    pub xp: i32,
+    pub lvl: i32,
+    pub max_ap: i32,
+    pub max_pv: i32,
+    pub max_xp: i32,
     pub inventory: Inventory,
 }
 
@@ -42,15 +54,22 @@ impl Character {
             cha: 8,
             int: 8,
             ini: 8,
+            att: 8,
+            par: 8,
+            tir: 8,
+            ap: 8,
             pv: 60,
             xp: 0,
+            max_ap: 4,
+            max_pv: 60,
             max_xp: 150,
             lvl: 1,
+            class: Class::Knight,
             inventory: Inventory::new(),
         }
     }
 
-    pub fn compute_xp(&mut self, xp: u32) -> &mut Character {
+    pub fn compute_xp(&mut self, xp: i32) -> &mut Character {
         let new_xp = self.xp + xp;
         let max_xp = self.max_xp;
         if new_xp >= max_xp {
@@ -60,8 +79,8 @@ impl Character {
         self
     }
 
-    fn level_up(&mut self, xp: u32) -> &mut Character {
-        let max_xp: u32 = self.get_max_xp();
+    fn level_up(&mut self, xp: i32) -> &mut Character {
+        let max_xp = self.get_max_xp();
         self.max_xp = max_xp;
         self.lvl += 1;
         if xp >= max_xp {
@@ -71,8 +90,34 @@ impl Character {
         self
     }
 
-    fn get_max_xp(&self) -> u32 {
-        ((150 + (self.lvl * 100) / 3) as f64).round() as u32
+    fn get_max_xp(&self) -> i32 {
+        ((150 + (self.lvl * 100) / 3) as f64).round() as i32
+    }
+
+    /// Reset ap to default map_ap value
+    pub fn reset_ap(&mut self) {
+        self.ap = self.max_ap;
+    }
+
+    /// Compute aps based on actions cost
+    pub fn validate_and_compute_ap(&mut self, cost: i32) -> bool {
+        if !self.ap >= cost {
+            return false;
+        }
+        self.ap = (self.ap - cost).max(0);
+        true
+    }
+
+    pub fn inflict_damages(&mut self, damages: i32) {
+        self.pv = (self.pv - damages).max(0)
+    }
+
+    pub fn restore_hps(&mut self, hps: i32) {
+        self.pv = (self.pv + hps).min(self.max_pv)
+    }
+
+    pub fn get_consumables(&self, object: Option<&Object>) -> Vec<&Loot> {
+        self.inventory.get_consumables(object)
     }
 }
 
@@ -95,8 +140,6 @@ impl Default for Inventory {
 
 impl Inventory {
     pub fn new() -> Self {
-        println!("Generating inventory...");
-
         Self {
             right_hand: Some(BASE_WEAPON.clone()),
             left_hand: Some(BASE_SHIELD.clone()),
@@ -149,13 +192,25 @@ impl Inventory {
     }
 
     pub fn remove_object(&mut self, id: String) {
-        let objects: Vec<Loot> = self
+        if let Some(index) = self.objects.iter().position(|item| item.id == id) {
+            self.objects.remove(index);
+        }
+    }
+
+    pub fn get_consumables(&self, object: Option<&Object>) -> Vec<&Loot> {
+        let objects: Vec<&Loot> = self
             .objects
             .iter()
-            .filter(|item| item.id != id)
-            .cloned()
+            .filter(|i| i.item_type == ItemTypes::Consumable)
             .collect();
 
-        self.objects = objects;
+        if let Some(obj) = object {
+            return objects
+                .into_iter()
+                .filter(|ob| ob.id == format!("obj_{}", obj))
+                .collect();
+        }
+
+        objects
     }
 }

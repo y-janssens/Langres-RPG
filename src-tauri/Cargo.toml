@@ -61,6 +61,7 @@ strum = "0.27.1"
 strum_macros = "0.27.1"
 rstest = "0.25.0"
 async-std = { version = "1.13.1", features = ["attributes"] }
+comfy-table = "7.1.4"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

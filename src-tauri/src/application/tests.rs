@@ -18,6 +18,9 @@ mod tests {
             assert!(response.sound);
             assert_eq!(response.volume, 100);
             assert_eq!(response.music, 100);
+            assert_eq!(response.difficulty, 0);
+            assert!(!response.battle_automatic);
+            assert!(!response.battle_realtime);
         });
     }
 

@@ -51,6 +51,7 @@ diesel::table! {
         description -> Text,
         armor -> Nullable<Integer>,
         damage -> Nullable<Integer>,
+        random -> Nullable<Integer>,
         parade -> Nullable<Integer>,
         price -> Nullable<Integer>,
         weight -> Nullable<Integer>,
@@ -71,8 +72,14 @@ diesel::table! {
         cha -> Integer,
         int -> Integer,
         ini -> Integer,
+        att -> Integer,
+        par -> Integer,
+        tir -> Integer,
+        ap -> Integer,
         pv -> Integer,
-        level -> Integer,
+        max_ap -> Integer,
+        max_pv -> Integer,
+        lvl -> Integer,
         gender -> Text,
         map_id -> Integer,
         unique -> Bool,
@@ -158,6 +165,9 @@ diesel::table! {
         sound -> Bool,
         volume -> Integer,
         music -> Integer,
+        difficulty -> Integer,
+        battle_realtime -> Bool,
+        battle_automatic -> Bool,
     }
 }
 

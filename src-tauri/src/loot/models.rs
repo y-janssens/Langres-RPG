@@ -1,16 +1,18 @@
-use crate::schema::loot;
 use crate::schema::loot::dsl::*;
+use crate::{backend::utils::models::Dice, schema::loot};
 use diesel::{
     deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, RunQueryDsl,
     SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
-use strum_macros::{Display, EnumString};
+use strum_macros::{Display, EnumIter, EnumString};
 use uuid::Uuid;
 
 use crate::backend::translations::models::Translations;
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash, Display, EnumString)]
+#[derive(
+    Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash, Display, EnumString, EnumIter,
+)]
 #[strum(serialize_all = "snake_case")]
 pub enum ItemTypes {
     Gold,
@@ -18,6 +20,64 @@ pub enum ItemTypes {
     Equipment,
     Craftable,
     Thrash,
+    Consumable,
+}
+
+impl ItemTypes {
+    pub fn resolve(kind: &str) -> Self {
+        match kind {
+            "weapon" => Self::Weapon,
+            "armor" => Self::Equipment,
+            "craftable" => Self::Craftable,
+            "thrash" => Self::Thrash,
+            "gold" => Self::Gold,
+            _ => Self::Weapon,
+        }
+    }
+
+    pub fn default_armor(&self) -> Option<i32> {
+        match self {
+            Self::Gold => None,
+            Self::Weapon => None,
+            Self::Equipment => Some(10),
+            Self::Craftable => None,
+            Self::Thrash => None,
+            Self::Consumable => None,
+        }
+    }
+
+    pub fn default_damage(&self) -> Option<i32> {
+        match self {
+            Self::Gold => None,
+            Self::Weapon => Some(14),
+            Self::Equipment => None,
+            Self::Craftable => None,
+            Self::Thrash => None,
+            Self::Consumable => None,
+        }
+    }
+
+    pub fn default_parade(&self) -> Option<i32> {
+        match self {
+            Self::Gold => None,
+            Self::Weapon => Some(10),
+            Self::Equipment => Some(10),
+            Self::Craftable => None,
+            Self::Thrash => None,
+            Self::Consumable => None,
+        }
+    }
+
+    pub fn default_random(&self) -> Option<i32> {
+        match self {
+            Self::Gold => None,
+            Self::Weapon => Some(6),
+            Self::Equipment => None,
+            Self::Craftable => None,
+            Self::Thrash => None,
+            Self::Consumable => None,
+        }
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq, Eq, Hash)]
@@ -30,9 +90,20 @@ pub struct Loot {
     pub description: Translations,
     pub armor: Option<i32>,
     pub damage: Option<i32>,
+    pub random: Option<i32>,
     pub parade: Option<i32>,
     pub price: Option<i32>,
     pub weight: Option<i32>,
+}
+
+impl Loot {
+    pub fn resolve_damages(&self) -> i32 {
+        let mut dmg = self.damage.unwrap_or(0);
+        if let Some(rand) = self.random {
+            dmg += Dice::roll(rand as u32) as i32;
+        }
+        dmg
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
@@ -45,6 +116,7 @@ pub struct InsertableLoot {
     pub description: String,
     pub armor: Option<i32>,
     pub damage: Option<i32>,
+    pub random: Option<i32>,
     pub parade: Option<i32>,
     pub price: Option<i32>,
     pub weight: Option<i32>,
@@ -58,21 +130,10 @@ impl Loot {
             item_type: _type.clone(),
             name: Translations::new(),
             description: Translations::new(),
-            armor: if _type == ItemTypes::Equipment {
-                Some(10)
-            } else {
-                None
-            },
-            damage: if _type == ItemTypes::Weapon {
-                Some(14)
-            } else {
-                None
-            },
-            parade: if _type == ItemTypes::Equipment || _type == ItemTypes::Weapon {
-                Some(10)
-            } else {
-                None
-            },
+            armor: ItemTypes::default_armor(&_type),
+            damage: ItemTypes::default_damage(&_type),
+            parade: ItemTypes::default_parade(&_type),
+            random: ItemTypes::default_random(&_type),
             price: Some(1),
             weight: Some(1),
         }
@@ -98,6 +159,7 @@ impl Loot {
             description: description_json,
             armor: self.armor,
             damage: self.damage,
+            random: self.random,
             parade: self.parade,
             price: self.price,
             weight: self.weight,
@@ -134,22 +196,10 @@ impl Loot {
             description: Translations::blank(),
             armor: None,
             damage: None,
+            random: None,
             parade: None,
             price: Some(value),
             weight: None,
-        }
-    }
-}
-
-impl ItemTypes {
-    pub fn resolve(kind: &str) -> ItemTypes {
-        match kind {
-            "weapon" => ItemTypes::Weapon,
-            "armor" => ItemTypes::Equipment,
-            "craftable" => ItemTypes::Craftable,
-            "thrash" => ItemTypes::Thrash,
-            "gold" => ItemTypes::Gold,
-            _ => ItemTypes::Weapon,
         }
     }
 }
