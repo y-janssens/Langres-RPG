@@ -45,7 +45,6 @@ pub struct InsertablePlayerQuest {
 
 impl PlayerQuest {
     pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
-        println!("Generating game quests...");
         let base_quests = Quest::load(connection)?;
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {

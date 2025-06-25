@@ -34,7 +34,6 @@ pub struct InsertablePlayerStatistic {
 
 impl PlayerStatistic {
     pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
-        println!("Generating game statistics...");
         let base_statistics = Statistic::load(connection)?;
         for statistic in base_statistics {
             let name_json = serde_json::to_string(&statistic.name)

@@ -80,8 +80,6 @@ pub struct GameDatas {
 
 impl Game {
     pub fn new(name: String, connection: &mut SqliteConnection) -> Result<Self, Error> {
-        println!("Generating game data...");
-
         Ok(Game {
             id: Uuid::new_v4().to_string(),
             player: String::from(&name),
@@ -146,7 +144,7 @@ impl Game {
     }
 
     pub fn compute_character_xp(&mut self, xp: i32, connection: &mut SqliteConnection) {
-        self.character.compute_xp(xp as u32);
+        self.character.compute_xp(xp);
         let _ = self.save(connection);
     }
 

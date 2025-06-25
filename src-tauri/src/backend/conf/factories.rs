@@ -197,6 +197,7 @@ pub mod factories_definitions {
                 ),
                 armor: Some(IntFaker.generate().value()),
                 damage: Some(IntFaker.generate().value()),
+                random: Some(IntFaker.generate().value()),
                 parade: Some(IntFaker.generate().value()),
                 price: Some(IntFaker.generate().value()),
                 weight: Some(IntFaker.generate().value()),

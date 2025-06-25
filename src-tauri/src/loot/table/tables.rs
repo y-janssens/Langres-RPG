@@ -22,6 +22,7 @@ lazy_static! {
                         description: Translations::blank(),
                         armor: None,
                         damage: None,
+                        random: None,
                         parade: None,
                         price: Some(100),
                         weight: None,
@@ -33,6 +34,7 @@ lazy_static! {
                         description: Translations::generate("Une simple longue", "A long sword"),
                         armor: None,
                         damage: Some(12),
+                        random: Some(6),
                         parade: Some(12),
                         price: Some(12),
                         weight: Some(3)
@@ -55,6 +57,7 @@ lazy_static! {
                             "A long sword that belonged to the traitor, Sir Herbert"),
                         armor: None,
                         damage: Some(16),
+                        random: Some(8),
                         parade: Some(14),
                         price: Some(25),
                         weight: Some(4)

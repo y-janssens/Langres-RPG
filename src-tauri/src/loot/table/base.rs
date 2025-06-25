@@ -14,6 +14,7 @@ lazy_static! {
         armor: None,
         damage: None,
         parade: None,
+        random: None,
         price: Some(10),
         weight: None,
     };
@@ -25,6 +26,7 @@ lazy_static! {
         armor: None,
         damage: Some(14),
         parade: Some(14),
+        random: Some(6),
         price: Some(14),
         weight: Some(4)
     };
@@ -36,6 +38,7 @@ lazy_static! {
         armor: Some(14),
         damage: Some(2),
         parade: Some(14),
+        random: None,
         price: Some(16),
         weight: Some(5)
     };
@@ -47,6 +50,7 @@ lazy_static! {
         armor: Some(10),
         damage: None,
         parade: Some(10),
+        random: None,
         price: Some(12),
         weight: Some(2)
     };
@@ -58,6 +62,7 @@ lazy_static! {
         armor: Some(10),
         damage: None,
         parade: Some(10),
+        random: None,
         price: Some(12),
         weight: Some(2)
     };
@@ -69,6 +74,7 @@ lazy_static! {
         armor: Some(10),
         damage: None,
         parade: Some(10),
+        random: None,
         price: Some(12),
         weight: Some(2)
     };
