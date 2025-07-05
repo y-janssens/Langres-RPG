@@ -1,9 +1,12 @@
 use serde::{Deserialize, Serialize};
 
-use crate::battle::{
-    actions::{Action, ActionInfo},
-    alterations::{Alteration, AlterationInfo},
-    objects::{Object, ObjectInfo},
+use crate::{
+    battle::{
+        actions::{Action, ActionInfo},
+        alterations::{Alteration, AlterationInfo},
+        objects::{Object, ObjectInfo},
+    },
+    character::models::Character,
 };
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -14,10 +17,10 @@ pub struct SystemDatas {
 }
 
 impl SystemDatas {
-    pub fn get() -> Self {
+    pub fn get(character: &Character) -> Self {
         Self {
-            actions: Action::get_list(),
-            objects: Object::get_list(),
+            actions: Action::get_list(character),
+            objects: Object::get_list(character),
             alterations: Alteration::get_list(),
         }
     }

@@ -43,7 +43,7 @@ impl BattleSystem {
             turn: 0,
             result: None,
             next: Operator::Character,
-            datas: SystemDatas::get(),
+            datas: SystemDatas::get(&character),
             current: Operator::default(),
             character: character.clone(),
             state: BattleState::default(),
@@ -52,6 +52,11 @@ impl BattleSystem {
             settings: Settings::initialize(connection)?,
             history: Vec::with_capacity(BATTLE_SYSTEM_HISTORY_LENGTH),
         })
+    }
+
+    fn update_datas(&mut self) -> Result<(), Error> {
+        self.datas = SystemDatas::get(&self.character);
+        Ok(())
     }
 
     /// Setup Battle system for different starting entry points
@@ -140,6 +145,7 @@ impl BattleSystem {
                 action.trigger(battle)
             })?;
         }
+        self.update_datas()?;
         Ok(())
     }
 

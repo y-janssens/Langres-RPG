@@ -289,7 +289,9 @@ mod tests {
                     assert_eq!(alteration_log.alteration, Some(Alteration::Burn));
                     assert_eq!(damage_log.alteration, Some(Alteration::Burn));
 
-                    assert!(system.npc.pv < system.npc.max_pv)
+                    assert!(system.npc.pv < system.npc.max_pv);
+
+                    system.debug();
                 });
             });
         });

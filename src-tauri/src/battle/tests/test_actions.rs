@@ -212,6 +212,7 @@ mod tests {
                     let result_log = system.history[3].clone();
 
                     assert_eq!(roll_log.action, Some(act));
+                    assert_eq!(roll_log.initiator, Operator::Character);
                     assert_eq!(result_log.initiator, Operator::default());
                     assert_eq!(result_log.event, "Battle over");
                     assert_eq!(system.state, BattleState::Ended);
@@ -238,8 +239,9 @@ mod tests {
                     let result_log = system.history[3].clone();
 
                     assert_eq!(roll_log.action, Some(act));
+                    assert_eq!(roll_log.initiator, Operator::Character);
                     assert_eq!(result_log.initiator, Operator::Npc);
-                    assert_eq!(result_log.action, Some(Action::CounterAttack));
+                    assert_eq!(result_log.action, Some(Action::Attack));
                 });
             });
         });

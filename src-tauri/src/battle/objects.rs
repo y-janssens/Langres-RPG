@@ -13,12 +13,14 @@ use super::{
 use crate::{
     backend::{settings::errors::BATTLE_SYSTEM_OBJECT_ERROR, utils::models::Dice},
     battle::{alterations::Alteration, settings::TamperMode},
+    character::models::Character,
 };
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct ObjectInfo {
     pub name: String,
     pub quantity: i32,
+    pub disabled: bool,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
@@ -31,11 +33,15 @@ pub enum Object {
 }
 
 impl Object {
-    pub fn get_list() -> Vec<ObjectInfo> {
+    pub fn get_list(character: &Character) -> Vec<ObjectInfo> {
         Self::iter()
-            .map(|object| ObjectInfo {
-                name: object.to_string(),
-                quantity: 0, // todo parse quantity
+            .map(|object| {
+                let objects = character.inventory.get_consumables(Some(&object));
+                return ObjectInfo {
+                    name: object.to_string(),
+                    quantity: objects.len() as i32,
+                    disabled: objects.is_empty(),
+                };
             })
             .collect()
     }

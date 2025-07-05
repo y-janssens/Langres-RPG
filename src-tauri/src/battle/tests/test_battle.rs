@@ -75,8 +75,8 @@ mod tests {
                 assert!(!system.datas.objects.is_empty());
                 assert!(!system.datas.alterations.is_empty());
                 assert_eq!(system.current, Operator::default());
-                assert_eq!(system.datas.actions, Action::get_list());
-                assert_eq!(system.datas.objects, Object::get_list());
+                assert_eq!(system.datas.actions, Action::get_list(&system.character));
+                assert_eq!(system.datas.objects, Object::get_list(&system.character));
                 assert_eq!(system.datas.alterations, Alteration::get_list());
             });
         });

@@ -32,7 +32,7 @@ pub fn battle_action(
     action_str: &str,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        system.action(action_str)?;
+        system.player_action(action_str)?;
         Ok(system)
     })
 }

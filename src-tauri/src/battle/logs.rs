@@ -148,10 +148,10 @@ impl BattleLog {
     /// Displays the amount of damages taken by any opponent
     pub fn damage_log(initiator: Operator, stat: &str, value: i32) -> Self {
         Self {
-            initiator,
+            initiator: Operator::System,
             r#type: LogType::Damage,
             event: format!("Roll {}", stat),
-            text: format!("{:?} inflicts {} damage(s)", initiator, value),
+            text: format!("{:?} takes {} damage(s)", initiator.get_opponent(), value),
             value: Some(value),
             ..Default::default()
         }
@@ -160,7 +160,7 @@ impl BattleLog {
     /// Displays the amount of health recovered by any opponent
     pub fn heal_log(initiator: Operator, stat: &str, value: i32) -> Self {
         Self {
-            initiator,
+            initiator: Operator::System,
             r#type: LogType::Heal,
             event: format!("Roll {}", stat),
             text: format!("{:?} recovers {} hp(s)", initiator, value),
@@ -188,7 +188,7 @@ impl BattleLog {
             alteration.to_value()
         };
         Self {
-            initiator,
+            initiator: Operator::System,
             alteration: Some(alteration),
             r#type: LogType::Alteration,
             event: String::from("Roll alteration"),

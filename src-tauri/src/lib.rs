@@ -157,6 +157,7 @@ pub fn run() {
             // Battle system commands
             battle::commands::start_battle,
             battle::commands::battle_action,
+            battle::commands::battle_object,
             battle::commands::evaluate_battle_atb,
         ])
         .manage(pool)

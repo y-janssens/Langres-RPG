@@ -12,12 +12,15 @@ use super::{
 use crate::{
     backend::{settings::errors::BATTLE_SYSTEM_ACTION_ERROR, utils::models::Dice},
     battle::{alterations::Alteration, settings::TamperMode},
+    character::models::Character,
 };
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 pub struct ActionInfo {
-    pub name: String,
     pub cost: i32,
+    pub name: String,
+    pub primary: bool,
+    pub disabled: bool,
     pub defensive: bool,
 }
 
@@ -38,12 +41,14 @@ pub enum Action {
 }
 
 impl Action {
-    pub fn get_list() -> Vec<ActionInfo> {
+    pub fn get_list(character: &Character) -> Vec<ActionInfo> {
         Self::iter()
             .map(|action| ActionInfo {
-                name: action.to_string(),
                 cost: action.cost(),
+                name: action.to_string(),
+                primary: action.is_primary(),
                 defensive: action.is_defensive(),
+                disabled: character.ap < action.cost(),
             })
             .collect()
     }
@@ -68,7 +73,7 @@ impl Action {
         match self {
             Self::Init => 0,
             Self::Pray => 1,
-            Self::Flee => 1,
+            Self::Flee => 0,
             Self::Pass => 0,
             Self::Shoot => 1,
             Self::Parry => 1,
@@ -77,6 +82,22 @@ impl Action {
             Self::Expose => 0,
             Self::Protect => 0,
             Self::CounterAttack => 0,
+        }
+    }
+
+    pub fn is_primary(&self) -> bool {
+        match self {
+            Self::Dodge => false,
+            Self::Parry => false,
+            Self::Init => false,
+            Self::Pray => true,
+            Self::Flee => false,
+            Self::Pass => true,
+            Self::Shoot => false,
+            Self::Attack => false,
+            Self::Expose => true,
+            Self::Protect => true,
+            Self::CounterAttack => false,
         }
     }
 
@@ -198,10 +219,9 @@ impl Action {
     fn flee_roll(&self, system: &mut BattleSystem, stat: &Stat) -> Result<(), Error> {
         let result = self.get_result(system, stat);
 
-        if result.failure {
-            return system.action(&Self::CounterAttack.to_string());
+        if result.success {
+            system.end()?;
         }
-        system.end()?;
         Ok(())
     }
 
