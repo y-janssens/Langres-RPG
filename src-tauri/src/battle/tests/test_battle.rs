@@ -8,7 +8,8 @@ mod tests {
     use crate::battle::actions::Action;
     use crate::battle::alterations::Alteration;
     use crate::battle::objects::Object;
-    use crate::battle::tests::test_utils::helpers::setup_battle_system;
+    use crate::battle::settings::TamperMode;
+    use crate::battle::tests::test_utils::helpers::{setup_battle_system, with_tampering};
     use crate::battle::types::{BattleDifficulty, BattleState, Operator};
 
     #[rstest]
@@ -207,6 +208,35 @@ mod tests {
 
             let action = system.player_action("attack");
             assert!(action.is_err());
+        });
+    }
+
+    #[test]
+    fn test_identify_battle_logs() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                with_tampering(TamperMode::Success, || {
+                    let mut system = setup_battle_system(connection);
+
+                    let battle = system.start_default();
+                    assert!(battle.is_ok());
+
+                    // First system logs, not identified
+                    assert!(system.history.iter().all(|log| !log.identified));
+
+                    let first_logs_batch_index = system.history.len();
+                    let action = system.player_action("attack");
+                    assert!(action.is_ok());
+
+                    // System logs are now identified, new action logs aren't
+                    assert!(system
+                        .history
+                        .iter()
+                        .enumerate()
+                        .filter(|(index, _)| index >= &first_logs_batch_index)
+                        .all(|(_, log)| !log.identified));
+                });
+            });
         });
     }
 }

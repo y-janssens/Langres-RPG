@@ -108,6 +108,7 @@ impl BattleSystem {
     /// Takes a registered action string which will resolve itself and perform subsequent rolls and actions
     pub fn player_action(&mut self, action_string: &str) -> Result<(), Error> {
         self.battle_event(|battle| {
+            battle.identify_battle_logs();
             let action = Action::resolve(action_string)?;
             Operator::reset(battle);
             action.trigger(battle)
@@ -127,6 +128,7 @@ impl BattleSystem {
     /// Takes a registered object string which will resolve and trigger itself
     pub fn object(&mut self, object_string: &str) -> Result<(), Error> {
         self.battle_event(|battle| {
+            battle.identify_battle_logs();
             let object = Object::resolve(object_string)?;
             Operator::reset(battle);
             object.trigger(battle)
@@ -188,6 +190,12 @@ impl BattleSystem {
             Action::Init.trigger(self)?;
         }
         Ok(())
+    }
+
+    fn identify_battle_logs(&mut self) {
+        self.history
+            .iter_mut()
+            .for_each(|log| log.identified = true);
     }
 
     /// Validate BattleState transition and log into system

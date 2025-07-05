@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 use std::fmt::{Display, Formatter};
 use strum_macros::{Display, EnumString};
+use uuid::Uuid;
 
 use crate::battle::alterations::Alteration;
 
@@ -26,8 +27,9 @@ pub enum LogType {
     Stand,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize, Default)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct BattleLog {
+    pub id: String,
     pub r#type: LogType,
     pub initiator: Operator,
     pub action: Option<Action>,
@@ -37,6 +39,7 @@ pub struct BattleLog {
     pub text: String,
     pub roll: Option<String>,
     pub value: Option<i32>,
+    pub identified: bool,
 }
 
 impl Display for BattleLog {
@@ -72,7 +75,28 @@ impl Display for BattleLog {
         if let Some(ref value) = self.value {
             write!(f, ", value: {:?}", value)?;
         };
+
+        write!(f, ", identified: {:?}", self.identified)?;
+
         write!(f, " }}")
+    }
+}
+
+impl Default for BattleLog {
+    fn default() -> Self {
+        Self {
+            id: Uuid::now_v7().to_string(),
+            r#type: LogType::default(),
+            initiator: Operator::default(),
+            action: None,
+            object: None,
+            alteration: None,
+            event: String::new(),
+            text: String::new(),
+            roll: None,
+            value: None,
+            identified: false,
+        }
     }
 }
 
