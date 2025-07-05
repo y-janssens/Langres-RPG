@@ -1,0 +1,106 @@
+.battle-item {
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: -webkit-fit-content;
+    text-align: center;
+    color: #505050;
+    border: 1px dashed #505050;
+    cursor: pointer;
+}
+
+.battle-items {
+    position: absolute;
+    height: calc(100% - 70px);
+    bottom: 0px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    overflow-y: auto;
+}
+
+.battle-item-action {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+    font-size: 14px !important;
+    border: 1px solid rgba(80, 80, 80, 0.25);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #505050;
+    background-color: rgba(80, 80, 80, 0.025);
+}
+
+.battle-item-action[datatype='disabled'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.battle-history-container {
+    width: 50%;
+    padding: 10px;
+    color: #505050;
+    overflow-y: auto;
+}
+
+.battle-history-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    font-size: 14px !important;
+    border: 1px solid rgba(80, 80, 80, 0.5);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: rgba(80, 80, 80, 0.05);
+}
+
+.battle-history-item-system {
+    border-left: 4px solid #315cde;
+}
+
+.battle-history-item-character {
+    border-left: 4px solid #578251;
+}
+
+.battle-history-item-npc {
+    border-left: 4px solid #a60f0f;
+}
+
+.battle-history-roll {
+    position: absolute;
+    right: 5px;
+}
+
+.battle-history-result {
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.battle-history-failure,
+.battle-history-critical_failure,
+.battle-history-success,
+.battle-history-critical_success {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.battle-history-success,
+.battle-history-critical_success {
+    color: #90ee90;
+    background-color: #578251;
+}
+
+.battle-history-failure,
+.battle-history-critical_failure {
+    color: #ff9999;
+    background-color: #a60f0f;
+}

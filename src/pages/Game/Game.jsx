@@ -6,6 +6,7 @@ import { Hud } from './Interface/Hud';
 import { LoadingScreen, PauseScreen, OpeningTitle, InGameMenu } from '../../components';
 import { MapLayout } from './MapLayout';
 import { Scene } from './Scene';
+import Battle from './Battle';
 
 export const Game = ({ keyToggles, pause, position, setPosition }) => {
     const { t } = useTranslation();
@@ -19,7 +20,8 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
         id: null,
         environment: {},
         loadingProgress: 0,
-        loadingReady: false
+        loadingReady: false,
+        battle: { npc: null }
     });
 
     const [game, loading, reload] = GameModel.useCommand(
@@ -32,6 +34,47 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 const currentWorld = game.current_world;
                 engine.controls.currentTile = game.current_tile;
 
+                for (let i = 0; i < 5; i++) {
+                    game.character.inventory.objects.push(
+                        {
+                            id: 'obj_torch',
+                            item_type: 'Consumable',
+                            name: { fr: null, en: null },
+                            description: { fr: null, en: null },
+                            armor: null,
+                            damage: 5,
+                            random: 2,
+                            parade: null,
+                            price: null,
+                            weight: 1
+                        },
+                        {
+                            id: 'obj_bandage',
+                            item_type: 'Consumable',
+                            name: { fr: null, en: null },
+                            description: { fr: null, en: null },
+                            armor: null,
+                            damage: 5,
+                            random: 2,
+                            parade: null,
+                            price: null,
+                            weight: 1
+                        },
+                        {
+                            id: 'obj_water_vial',
+                            item_type: 'Consumable',
+                            name: { fr: null, en: null },
+                            description: { fr: null, en: null },
+                            armor: null,
+                            damage: 5,
+                            random: 2,
+                            parade: null,
+                            price: null,
+                            weight: 1
+                        }
+                    );
+                }
+
                 if (!game.has_position || engine.mapId) {
                     game.last_known_position = { ...game.last_known_position, x: currentWorld.starting_point.x, y: currentWorld.starting_point.y };
                 }
@@ -42,7 +85,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 engine.world = currentWorld;
 
                 setPosition(engine.controls.positions);
-                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title });
+                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title, battle: { npc: currentWorld.npcs[0] } });
                 setEngineHotReload(game, reload);
             }
         },
@@ -128,10 +171,16 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             <PauseScreen ready={contextReady} engine={engine} />
             <LoadingScreen form={form} setForm={setForm} engine={engine} loading={isLoading}>
                 {form.loadingReady && <OpeningTitle title={form.openingTitle} environment={form.environment} />}
-                <Hud engine={engine} game={form} display={keyToggles} />
-                <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
-                    <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
-                </Scene>
+                {form.battle.npc ? (
+                    <Battle form={form} />
+                ) : (
+                    <>
+                        <Hud engine={engine} game={form} display={keyToggles} />
+                        <Scene engine={engine} lightRef={pointLightRef} cameraRef={cameraRef} pause={pause}>
+                            <MapLayout form={form} position={position} cameraRef={cameraRef} characterRef={characterRef} lightRef={pointLightRef} handleGateWay={handleGateWay} />
+                        </Scene>
+                    </>
+                )}
             </LoadingScreen>
         </>
     );
