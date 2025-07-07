@@ -26,9 +26,8 @@ pub struct BattleSystem {
     pub character: Character,     // Character instance
     pub result: Option<Operator>, // Battle winner
     pub history: Vec<BattleLog>,  // Battle history logs
-
-    pub cta: ActiveTimeBattle, // Active Time Battle frame
-    pub datas: SystemDatas,    // Battle system serialized datas
+    pub cta: ActiveTimeBattle,    // Active Time Battle frame
+    pub datas: SystemDatas,       // Battle system serialized datas
 }
 
 impl BattleSystem {

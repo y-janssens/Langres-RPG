@@ -37,11 +37,11 @@ impl Object {
         Self::iter()
             .map(|object| {
                 let objects = character.inventory.get_consumables(Some(&object));
-                return ObjectInfo {
+                ObjectInfo {
                     name: object.to_string(),
                     quantity: objects.len() as i32,
                     disabled: objects.is_empty(),
-                };
+                }
             })
             .collect()
     }
