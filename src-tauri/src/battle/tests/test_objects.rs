@@ -34,6 +34,29 @@ mod tests {
         assert!(object.is_err());
     }
 
+    #[test]
+    fn test_object_availability() {
+        let obj = Object::Torch;
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_loot(&obj, connection);
+                let objects = system.datas.objects;
+
+                assert!(
+                    !objects
+                        .iter()
+                        .find(|it| it.name == obj.to_string())
+                        .unwrap()
+                        .disabled
+                );
+                assert!(objects
+                    .iter()
+                    .filter(|it| it.name != obj.to_string())
+                    .all(|it| it.disabled));
+            });
+        });
+    }
+
     #[rstest]
     #[case("dirt", Object::Dirt)]
     #[case("torch", Object::Torch)]

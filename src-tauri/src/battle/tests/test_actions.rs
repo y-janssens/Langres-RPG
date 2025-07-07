@@ -2,6 +2,7 @@
 mod tests {
     use rstest::*;
 
+    use crate::battle::tests::test_utils::helpers::setup_battle_system_with_aps;
     use crate::battle::{
         actions::Action, logs::LogType, settings::TamperMode,
         tests::test_utils::helpers::setup_battle_system,
@@ -36,6 +37,53 @@ mod tests {
     fn test_resolve_action_error() {
         let action = Action::resolve("");
         assert!(action.is_err());
+    }
+
+    #[test]
+    fn test_action_availability_none() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 0);
+                let actions = system.datas.actions;
+
+                assert!(actions
+                    .iter()
+                    .filter(|ac| ac.cost > 0)
+                    .all(|it| it.disabled));
+            });
+        });
+    }
+
+    #[test]
+    fn test_action_availability_all() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 8);
+                let actions = system.datas.actions;
+
+                assert!(!actions.iter().all(|it| it.disabled));
+            });
+        });
+    }
+
+    #[test]
+    fn test_action_availability() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 2);
+                let actions = system.datas.actions;
+
+                assert!(actions
+                    .iter()
+                    .filter(|ac| ac.cost > 2)
+                    .all(|it| it.disabled));
+
+                assert!(!actions
+                    .iter()
+                    .filter(|ac| ac.cost < 2)
+                    .all(|it| it.disabled));
+            });
+        });
     }
 
     #[rstest]
