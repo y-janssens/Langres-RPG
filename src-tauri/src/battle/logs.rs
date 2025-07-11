@@ -9,8 +9,8 @@ use super::{
     actions::Action,
     models::BattleSystem,
     objects::Object,
-    rolls::Roll,
-    types::{Location, Operator, Stat},
+    rolls::{Location, Roll},
+    types::{Operator, Stat},
 };
 
 #[derive(Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
@@ -101,7 +101,7 @@ impl Default for BattleLog {
 }
 
 impl BattleLog {
-    /// Battle state log, displays current battle status
+    /// Battle state log, displays current_operator battle status
     pub fn state_log(system: &mut BattleSystem) -> Self {
         Self {
             event: system.state.display(),
@@ -111,9 +111,9 @@ impl BattleLog {
     }
 
     /// Log each new turn
-    pub fn turn_log(turn: &u8) -> Self {
+    pub fn turn_log(current_turn: &u8) -> Self {
         Self {
-            event: format!("Turn {}", turn),
+            event: format!("Turn {}", current_turn),
             ..Default::default()
         }
     }
@@ -165,6 +165,17 @@ impl BattleLog {
                 Some(obj) => format!("{:?} {}", initiator, obj.to_value()),
                 None => format!("{:?} cannot use this object", initiator),
             },
+            ..Default::default()
+        }
+    }
+
+    /// Log character objects usage
+    pub fn object_unavailability_log(object: &Object, initiator: Operator) -> Self {
+        Self {
+            initiator,
+            r#type: LogType::Object,
+            object: Some(object.clone()),
+            text: format!("{:?} cannot use this object", initiator),
             ..Default::default()
         }
     }

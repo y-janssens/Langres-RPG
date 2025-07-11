@@ -60,7 +60,7 @@ mod tests {
                     assert!(battle.is_ok());
 
                     // First roll and apply alteration
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -73,7 +73,7 @@ mod tests {
                     assert_eq!(system.alterations.get(Operator::Character), alteration);
 
                     // Second use and consume
-                    let action = system.player_action(&Action::Attack.to_string());
+                    let action = system.trigger_player_action(&Action::Attack.to_string());
                     assert!(action.is_ok());
 
                     assert_eq!(system.alterations.get(Operator::Character), result);
@@ -95,7 +95,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();

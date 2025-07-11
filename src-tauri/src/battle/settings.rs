@@ -5,8 +5,10 @@ use serde::{Deserialize, Serialize};
 use strum_macros::{Display, EnumString};
 
 use super::rolls::Roll;
-use super::types::BattleDifficulty;
-use crate::{application::models::ApplicationSettings, backend::permissions::models::Credentials};
+use crate::{
+    application::models::ApplicationSettings,
+    backend::{permissions::models::Credentials, settings::variables::BATTLE_SYSTEM_TAMPERING_ENV},
+};
 
 #[derive(Default, Clone, Debug, Serialize, Deserialize, Display, EnumString)]
 #[strum(serialize_all = "snake_case")]
@@ -31,20 +33,41 @@ impl TamperMode {
     }
 
     pub fn resolve() -> Self {
-        let is_admin = Credentials::is_admin();
-        if is_admin {
-            let key = env::var("TAMPERING_MODE").ok();
+        if Credentials::is_admin() {
+            let key = env::var(BATTLE_SYSTEM_TAMPERING_ENV).ok();
             if let Some(k) = key {
-                return match k.as_str() {
-                    "success" => Self::Success,
-                    "failure" => Self::Failure,
-                    "critical_success" => Self::CriticalSuccess,
-                    "critical_failure" => Self::CriticalFailure,
-                    _ => Self::default(),
-                };
+                return Self::try_from(k.as_str()).unwrap_or(Self::default());
             }
         }
         Self::default()
+    }
+}
+
+#[derive(Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
+#[strum(serialize_all = "snake_case")]
+pub enum BattleDifficulty {
+    #[default]
+    Normal,
+    Hard,
+    Extreme,
+}
+
+impl BattleDifficulty {
+    pub fn resolve(setting: usize) -> Self {
+        match setting {
+            0 => Self::Normal,
+            1 => Self::Hard,
+            2 => Self::Extreme,
+            _ => Self::default(),
+        }
+    }
+
+    pub fn get_value(&self) -> i32 {
+        match self {
+            Self::Normal => 0,
+            Self::Hard => 1,
+            Self::Extreme => 2,
+        }
     }
 }
 
@@ -70,10 +93,10 @@ impl Settings {
     }
 
     pub fn mode(&self) -> String {
-        let mode = match self.realtime {
+        match self.realtime {
             true => "Real time",
             false => "Turn based",
-        };
-        mode.to_string()
+        }
+        .into()
     }
 }

@@ -31,10 +31,10 @@ let battle_system = BattleSystem::init(character, npc);
 battle_system.start_default();
 
 // trigger combat actions
-battle_system.action("attack");
+battle_system.trigger_opponent_action("attack");
 
 // trigger combat objects
-battle_system.object("torch");
+battle_system.trigger_player_object("torch");
 
 // End combat
 battle_system.end();

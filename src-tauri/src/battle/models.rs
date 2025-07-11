@@ -11,23 +11,21 @@ use crate::backend::settings::variables::BATTLE_SYSTEM_HISTORY_LENGTH;
 use crate::battle::alterations::Alterations;
 use crate::battle::cta::ActiveTimeBattle;
 use crate::battle::datas::SystemDatas;
-
 use crate::{character::models::Character, npcs::models::Npc};
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct BattleSystem {
-    pub turn: u8,                 // Current turn
-    pub npc: Npc,                 // Npc instance
-    pub current: Operator,        // Current operator
-    pub next: Operator,           // Next operator
-    pub state: BattleState,       // Battle status
-    pub settings: Settings,       // Core settings
-    pub alterations: Alterations, // Characters status alterations
-    pub character: Character,     // Character instance
-    pub result: Option<Operator>, // Battle winner
-    pub history: Vec<BattleLog>,  // Battle history logs
-    pub cta: ActiveTimeBattle,    // Active Time Battle frame
-    pub datas: SystemDatas,       // Battle system serialized datas
+    pub npc: Npc,                   // Npc instance
+    pub current_turn: u8,           // Current turn
+    pub current_operator: Operator, // Current operator
+    pub state: BattleState,         // Battle status
+    pub settings: Settings,         // Core settings
+    pub alterations: Alterations,   // Characters status alterations
+    pub character: Character,       // Character instance
+    pub result: Option<Operator>,   // Battle winner
+    pub history: Vec<BattleLog>,    // Battle history logs
+    pub cta: ActiveTimeBattle,      // Active Time Battle frame !! EXPERIMENTAL !!
+    pub datas: SystemDatas,         // Battle system serialized datas
 }
 
 impl BattleSystem {
@@ -39,11 +37,10 @@ impl BattleSystem {
     ) -> Result<Self, ResultError> {
         Ok(Self {
             npc,
-            turn: 0,
             result: None,
-            next: Operator::Character,
+            current_turn: 0,
             datas: SystemDatas::get(&character),
-            current: Operator::default(),
+            current_operator: Operator::default(),
             character: character.clone(),
             state: BattleState::default(),
             cta: ActiveTimeBattle::init(),
@@ -53,17 +50,12 @@ impl BattleSystem {
         })
     }
 
-    fn update_datas(&mut self) -> Result<(), Error> {
-        self.datas = SystemDatas::get(&self.character);
-        Ok(())
-    }
-
     /// Setup Battle system for different starting entry points
     fn setup(&mut self) -> Result<(), Error> {
         self.validate_transition_state()?;
-        self.turn += 1;
-        self.increment_history(BattleLog::turn_log(&self.turn));
-        self.cta.pre_allocate(self.current);
+        self.current_turn += 1;
+        self.increment_history(BattleLog::turn_log(&self.current_turn));
+        self.cta.pre_allocate(self.current_operator);
         Ok(())
     }
 
@@ -79,7 +71,7 @@ impl BattleSystem {
         self.setup()?;
 
         while self.state != BattleState::Ended {
-            self.action("attack")?;
+            self.trigger_opponent_action("attack")?;
         }
         Ok(self)
     }
@@ -87,7 +79,7 @@ impl BattleSystem {
     /// Shoot first, ask questions later
     pub fn start_range(&mut self) -> Result<&mut Self, Error> {
         self.setup()?;
-        self.action("shoot")?;
+        self.trigger_opponent_action("shoot")?;
         Ok(self)
     }
 
@@ -105,43 +97,43 @@ impl BattleSystem {
     }
 
     /// Takes a registered action string which will resolve itself and perform subsequent rolls and actions
-    pub fn player_action(&mut self, action_string: &str) -> Result<(), Error> {
+    pub fn trigger_player_action(&mut self, action_string: &str) -> Result<(), Error> {
         self.battle_event(|battle| {
             battle.identify_battle_logs();
             let action = Action::resolve(action_string)?;
             Operator::reset(battle);
             action.trigger(battle)
         })
-        .and_then(|_| self.counter_action())
-    }
-
-    /// Takes a registered action string which will resolve and trigger itself
-    pub fn action(&mut self, action_string: &str) -> Result<(), Error> {
-        self.battle_event(|battle| {
-            let action = Action::resolve(action_string)?;
-            battle.current.switch_operator();
-            action.trigger(battle)
-        })
+        .and_then(|_| self.trigger_counter_action())
     }
 
     /// Takes a registered object string which will resolve and trigger itself
-    pub fn object(&mut self, object_string: &str) -> Result<(), Error> {
+    pub fn trigger_player_object(&mut self, object_string: &str) -> Result<(), Error> {
         self.battle_event(|battle| {
             battle.identify_battle_logs();
             let object = Object::resolve(object_string)?;
             Operator::reset(battle);
             object.trigger(battle)
         })
-        .and_then(|_| self.counter_action())
+        .and_then(|_| self.trigger_counter_action())
     }
 
-    /// Npc automatic response
-    pub fn counter_action(&mut self) -> Result<(), Error> {
+    /// Takes a registered action string which will resolve and trigger itself
+    pub fn trigger_opponent_action(&mut self, action_string: &str) -> Result<(), Error> {
+        self.battle_event(|battle| {
+            let action = Action::resolve(action_string)?;
+            battle.current_operator.switch_operator();
+            action.trigger(battle)
+        })
+    }
+
+    /// Automatic response from previous action
+    fn trigger_counter_action(&mut self) -> Result<(), Error> {
         if self.state.is_valid() {
             self.battle_event(|battle| {
                 let action = Action::resolve(&Action::Attack.to_string())?;
-                if battle.current != Operator::Npc {
-                    battle.current.switch_operator();
+                if battle.current_operator != Operator::Npc {
+                    battle.current_operator.switch_operator();
                 }
                 action.trigger(battle)
             })?;
@@ -183,14 +175,21 @@ impl BattleSystem {
         }
 
         if self.character.ap < 1 && self.npc.ap < 1 {
-            self.turn += 1;
+            self.current_turn += 1;
             self.reset_state();
-            self.increment_history(BattleLog::turn_log(&self.turn));
+            self.increment_history(BattleLog::turn_log(&self.current_turn));
             Action::Init.trigger(self)?;
         }
         Ok(())
     }
 
+    /// Update serialized system datas, actions and objects availability
+    fn update_datas(&mut self) -> Result<(), Error> {
+        self.datas = SystemDatas::get(&self.character);
+        Ok(())
+    }
+
+    /// Mark previous logs as identified
     fn identify_battle_logs(&mut self) {
         self.history
             .iter_mut()
@@ -209,7 +208,7 @@ impl BattleSystem {
     fn reset_state(&mut self) {
         self.character.reset_ap();
         self.npc.reset_ap();
-        self.current = Operator::default();
+        self.current_operator = Operator::default();
     }
 
     /// Parse battle winner
@@ -240,7 +239,6 @@ impl BattleSystem {
                 }
             }
         }
-        // println!("Cta: {:#?}", self.cta);
         println!(
             "Character: Pvs: {} Aps: {}",
             self.character.pv, self.character.ap,

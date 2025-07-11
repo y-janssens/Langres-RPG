@@ -6,23 +6,14 @@ use strum_macros::{Display, EnumIter, EnumString};
 use super::{
     logs::BattleLog,
     models::BattleSystem,
-    rolls::Roll,
-    types::{Location, Operator, Stat},
+    rolls::{Location, Roll},
+    types::{Operator, Stat},
 };
 use crate::{
     backend::{settings::errors::BATTLE_SYSTEM_ACTION_ERROR, utils::models::Dice},
-    battle::{alterations::Alteration, settings::TamperMode},
+    battle::{alterations::Alteration, datas::ActionInfo, settings::TamperMode},
     character::models::Character,
 };
-
-#[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
-pub struct ActionInfo {
-    pub cost: i32,
-    pub name: String,
-    pub primary: bool,
-    pub disabled: bool,
-    pub defensive: bool,
-}
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
@@ -117,7 +108,40 @@ impl Action {
         }
     }
 
-    pub fn get_action(&self) -> fn(&Action, &mut BattleSystem, &Stat) -> Result<(), Error> {
+    pub fn get_alteration(&self) -> Alteration {
+        match self {
+            Self::Pray => Alteration::Enlighten,
+            Self::Expose => Alteration::Expose,
+            Self::Protect => Alteration::Protect,
+            Self::Attack => Alteration::Bleed,
+            _ => unreachable!(),
+        }
+    }
+
+    pub fn to_value(&self) -> String {
+        match self {
+            Action::Pray => "seek the light",
+            Action::Init => "",
+            Action::Flee => "flee",
+            Action::Pass => "",
+            Action::Parry => "parry",
+            Action::Dodge => "dodge",
+            Action::Shoot => "shoot",
+            Action::Attack => "attack",
+            Action::Expose => "expose itself",
+            Action::Protect => "protect itself",
+            Action::CounterAttack => "attack",
+        }
+        .into()
+    }
+
+    pub fn resolve(action: &str) -> Result<Self, Error> {
+        let action =
+            Self::try_from(action).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_ACTION_ERROR))?;
+        Ok(action)
+    }
+
+    fn get_action_roll(&self) -> fn(&Action, &mut BattleSystem, &Stat) -> Result<(), Error> {
         match self {
             Self::Pray => Self::pray_roll,
             Self::Flee => Self::flee_roll,
@@ -133,72 +157,15 @@ impl Action {
         }
     }
 
-    pub fn get_alteration(&self) -> Alteration {
-        match self {
-            Self::Pray => Alteration::Enlighten,
-            Self::Expose => Alteration::Expose,
-            Self::Protect => Alteration::Protect,
-            Self::Attack => Alteration::Bleed,
-            _ => unreachable!(),
-        }
-    }
-
-    fn parse_alteration(&self, current: Operator, system: &mut BattleSystem) {
-        let alteration = self.get_alteration();
-        system.alterations.set(current, alteration);
-        system.increment_history(BattleLog::alteration_log(current, alteration, None));
-    }
-
-    fn process_damages_over_time(&self, system: &mut BattleSystem) {
-        let current = system.current;
-        if current != Operator::default() {
-            let alteration = system.alterations.get(current);
-
-            if alteration.is_ailment() {
-                let damages = alteration.compute();
-                system.increment_history(BattleLog::alteration_log(
-                    system.current,
-                    alteration,
-                    Some(damages),
-                ));
-                system.alterations.consume(current);
-                self.inflict_damages(current.get_opponent(), system, damages);
-            }
-        }
-    }
-
-    pub fn to_value(&self) -> String {
-        let value = match self {
-            Action::Pray => "seek the light",
-            Action::Init => "",
-            Action::Flee => "flee",
-            Action::Pass => "",
-            Action::Parry => "parry",
-            Action::Dodge => "dodge",
-            Action::Shoot => "shoot",
-            Action::Attack => "attack",
-            Action::Expose => "expose itself",
-            Action::Protect => "protect itself",
-            Action::CounterAttack => "attack",
-        };
-        value.to_string()
-    }
-
-    pub fn resolve(action: &str) -> Result<Self, Error> {
-        let action =
-            Self::try_from(action).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_ACTION_ERROR))?;
-        Ok(action)
-    }
-
     pub fn trigger(&self, system: &mut BattleSystem) -> Result<(), Error> {
         let stat = &self.get_stat();
         self.process_damages_over_time(system);
 
-        if self.validate_action_potential(system.current, system) {
-            let action = self.get_action();
-            return action(self, system, stat);
+        if self.validate_action_potential(system.current_operator, system) {
+            let action_roll = self.get_action_roll();
+            return action_roll(self, system, stat);
         }
-        system.increment_history(BattleLog::stand_log(system.current, None));
+        system.increment_history(BattleLog::stand_log(system.current_operator, None));
         Ok(())
     }
 
@@ -206,13 +173,13 @@ impl Action {
         let result = self.get_result(system, stat);
         if result.failure || result.critical_failure {
             Operator::reset(system);
-            system.action(&Self::Attack.to_string())?;
+            system.trigger_opponent_action(&Self::Attack.to_string())?;
         };
         Ok(())
     }
 
     fn stand_roll(&self, system: &mut BattleSystem, _stat: &Stat) -> Result<(), Error> {
-        system.increment_history(BattleLog::stand_log(system.current, Some(self)));
+        system.increment_history(BattleLog::stand_log(system.current_operator, Some(self)));
         Ok(())
     }
 
@@ -228,20 +195,20 @@ impl Action {
     fn pray_roll(&self, system: &mut BattleSystem, stat: &Stat) -> Result<(), Error> {
         let result = self.get_result(system, stat);
         if result.success {
-            self.parse_alteration(system.current, system);
+            self.parse_alteration(system.current_operator, system);
         }
         Ok(())
     }
 
     fn protect_roll(&self, system: &mut BattleSystem, stat: &Stat) -> Result<(), Error> {
         let _ = self.get_result(system, stat);
-        self.parse_alteration(system.current, system);
+        self.parse_alteration(system.current_operator, system);
         Ok(())
     }
 
     fn expose_roll(&self, system: &mut BattleSystem, stat: &Stat) -> Result<(), Error> {
         let _ = self.get_result(system, stat);
-        self.parse_alteration(system.current, system);
+        self.parse_alteration(system.current_operator, system);
         Ok(())
     }
 
@@ -249,14 +216,14 @@ impl Action {
         let result = self.get_result(system, stat);
         if result.success {
             if result.critical_success {
-                self.parse_alteration(system.current.get_opponent(), system);
+                self.parse_alteration(system.current_operator.get_opponent(), system);
                 return self.resolve_damages(system, stat, false);
             }
             return self.defensive_roll(system, stat);
         }
 
         if result.failure && result.critical_failure {
-            system.action(&Self::CounterAttack.to_string())?;
+            system.trigger_opponent_action(&Self::CounterAttack.to_string())?;
         }
         Ok(())
     }
@@ -297,26 +264,26 @@ impl Action {
         }
 
         if result.failure && result.critical_failure {
-            system.action(&Self::CounterAttack.to_string())?;
+            system.trigger_opponent_action(&Self::CounterAttack.to_string())?;
         }
         Ok(())
     }
 
     fn defensive_roll(&self, system: &mut BattleSystem, stat: &Stat) -> Result<(), Error> {
-        let opponent = system.current.get_opponent();
+        let opponent = system.current_operator.get_opponent();
         let opponent_class = opponent.get_class(system);
 
         if opponent_class.can_dodge() {
             let action = Self::Dodge;
             if self.validate_action_potential(opponent, system) {
-                return system.action(&action.to_string());
+                return system.trigger_opponent_action(&action.to_string());
             }
         }
 
         if opponent_class.can_parry() {
             let action = Self::Parry;
             if self.validate_action_potential(opponent, system) {
-                return system.action(&action.to_string());
+                return system.trigger_opponent_action(&action.to_string());
             }
         }
 
@@ -332,20 +299,24 @@ impl Action {
         let damages = self.compute_base_damages(system);
         let reducer = self.compute_damages_reduction(system, parry);
         let result = (damages - reducer).max(0);
-        let current = self.get_current(system);
+        let current_operator = self.get_current(system);
 
-        system.alterations.consume(current);
-        system.increment_history(BattleLog::damage_log(current, &stat.to_string(), result));
-        self.inflict_damages(current, system, result);
+        system.alterations.consume(current_operator);
+        system.increment_history(BattleLog::damage_log(
+            current_operator,
+            &stat.to_string(),
+            result,
+        ));
+        self.inflict_damages(current_operator, system, result);
 
         Ok(())
     }
 
     fn compute_base_damages(&self, system: &mut BattleSystem) -> i32 {
-        let current = self.get_current(system);
-        let alteration = system.alterations.get(current);
+        let current_operator = self.get_current(system);
+        let alteration = system.alterations.get(current_operator);
 
-        match current {
+        match current_operator {
             Operator::Character => {
                 let mut dmg = system.character.r#for + alteration.get_offensive_modifier();
 
@@ -371,9 +342,9 @@ impl Action {
     }
 
     fn compute_damages_reduction(&self, system: &mut BattleSystem, parry: bool) -> i32 {
-        let adversary = system.current.get_opponent();
+        let adversary = system.current_operator.get_opponent();
         let location = self.resolve_strike_location(system);
-        let alteration = system.alterations.get(system.current);
+        let alteration = system.alterations.get(system.current_operator);
 
         let adversary_inventory = match adversary {
             Operator::Character => system.character.inventory.clone(),
@@ -400,23 +371,27 @@ impl Action {
     fn resolve_strike_location(&self, system: &mut BattleSystem) -> Location {
         let roll = Dice::roll(20);
         let location = Location::from_value(roll);
-        let current = self.get_current(system);
+        let current_operator = self.get_current(system);
 
-        system.increment_history(BattleLog::location_log(current, &location));
+        system.increment_history(BattleLog::location_log(current_operator, &location));
         location
     }
 
-    fn validate_action_potential(&self, current: Operator, system: &mut BattleSystem) -> bool {
+    fn validate_action_potential(
+        &self,
+        current_operator: Operator,
+        system: &mut BattleSystem,
+    ) -> bool {
         let cost = self.cost();
-        match current {
+        match current_operator {
             Operator::Character => system.character.validate_and_compute_ap(cost),
             Operator::Npc => system.npc.validate_and_compute_ap(cost),
             Operator::System => true,
         }
     }
 
-    fn inflict_damages(&self, current: Operator, system: &mut BattleSystem, damages: i32) {
-        match current {
+    fn inflict_damages(&self, current_operator: Operator, system: &mut BattleSystem, damages: i32) {
+        match current_operator {
             Operator::Character => system.npc.inflict_damages(damages),
             Operator::Npc => system.character.inflict_damages(damages),
             Operator::System => unreachable!(),
@@ -431,7 +406,7 @@ impl Action {
         };
         system.increment_history(BattleLog::action_log(
             Some(self),
-            system.current,
+            system.current_operator,
             stat,
             Some(&result),
         ));
@@ -440,9 +415,37 @@ impl Action {
 
     fn get_current(&self, system: &mut BattleSystem) -> Operator {
         if self.is_defensive() {
-            system.current.get_opponent()
+            system.current_operator.get_opponent()
         } else {
-            system.current
+            system.current_operator
+        }
+    }
+
+    fn parse_alteration(&self, current_operator: Operator, system: &mut BattleSystem) {
+        let alteration = self.get_alteration();
+        system.alterations.set(current_operator, alteration);
+        system.increment_history(BattleLog::alteration_log(
+            current_operator,
+            alteration,
+            None,
+        ));
+    }
+
+    fn process_damages_over_time(&self, system: &mut BattleSystem) {
+        let current_operator = system.current_operator;
+        if current_operator != Operator::default() {
+            let alteration = system.alterations.get(current_operator);
+
+            if alteration.is_ailment() {
+                let damages = alteration.compute();
+                system.increment_history(BattleLog::alteration_log(
+                    system.current_operator,
+                    alteration,
+                    Some(damages),
+                ));
+                system.alterations.consume(current_operator);
+                self.inflict_damages(current_operator.get_opponent(), system, damages);
+            }
         }
     }
 }

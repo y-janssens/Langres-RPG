@@ -7,21 +7,14 @@ use super::{
     actions::Action,
     logs::BattleLog,
     models::BattleSystem,
-    rolls::Roll,
-    types::{Location, Stat},
+    rolls::{Location, Roll},
+    types::Stat,
 };
 use crate::{
     backend::{settings::errors::BATTLE_SYSTEM_OBJECT_ERROR, utils::models::Dice},
-    battle::{alterations::Alteration, settings::TamperMode},
+    battle::{alterations::Alteration, datas::ObjectInfo, settings::TamperMode},
     character::models::Character,
 };
-
-#[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
-pub struct ObjectInfo {
-    pub name: String,
-    pub quantity: i32,
-    pub disabled: bool,
-}
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
@@ -46,37 +39,49 @@ impl Object {
             .collect()
     }
 
-    pub fn to_value(&self) -> String {
-        let value = match self {
-            Object::Bandage => "tries to use a bandage",
-            Object::Dirt => "tries to throw dirt at it's opponent",
-            Object::WaterVial => "tries to throw a sea water vial",
-            Object::Torch => "tries to throw a flaming torch at it's opponent",
-        };
-        value.to_string()
+    fn get_alteration(&self) -> Alteration {
+        match self {
+            Object::Torch => Alteration::Burn,
+            _ => unreachable!(),
+        }
     }
 
-    pub fn resolve(object: &str) -> Result<Self, Error> {
-        let action =
-            Self::try_from(object).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_OBJECT_ERROR))?;
-        Ok(action)
+    pub fn to_value(&self) -> String {
+        match self {
+            Self::Bandage => "tries to use a bandage",
+            Self::Dirt => "tries to throw dirt at it's opponent",
+            Self::WaterVial => "tries to throw a sea water vial",
+            Self::Torch => "tries to throw a flaming torch at it's opponent",
+        }
+        .into()
+    }
+
+    fn get_object_roll(&self) -> fn(&Object, &mut BattleSystem, &Stat) -> Result<(), Error> {
+        match self {
+            Self::Dirt => Self::dirt_roll,
+            Self::Torch => Self::torch_roll,
+            Self::Bandage => Self::bandage_roll,
+            Self::WaterVial => Self::water_vial_roll,
+        }
+    }
+
+    pub fn resolve(object_str: &str) -> Result<Self, Error> {
+        let object = Self::try_from(object_str)
+            .map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_OBJECT_ERROR))?;
+        Ok(object)
     }
 
     pub fn trigger(&self, system: &mut BattleSystem) -> Result<(), Error> {
+        let stat = Stat::Dexterity;
+
         if self.validate_object_availability(system) {
-            let object = match self {
-                Self::Dirt => Self::dirt_roll,
-                Self::Torch => Self::torch_roll,
-                Self::Bandage => Self::bandage_roll,
-                Self::WaterVial => Self::water_vial_roll,
-            };
-            return object(self, system, &Stat::Dexterity);
+            let object_roll = self.get_object_roll();
+            return object_roll(self, system, &stat);
         }
-        system.increment_history(BattleLog::object_log(
-            None,
-            system.current,
-            &Stat::Dexterity,
-            None,
+
+        system.increment_history(BattleLog::object_unavailability_log(
+            self,
+            system.current_operator,
         ));
         Ok(())
     }
@@ -87,16 +92,10 @@ impl Object {
             let roll = Dice::roll(20);
             let random = Dice::roll(3);
             let location = Location::from_value(roll);
-
-            let damages = match location {
-                Location::Head => 5,
-                Location::Arms => 3,
-                Location::Legs => 2,
-                Location::Torso => 3,
-            } + random;
+            let damages = location.get_damages() + random;
 
             system.increment_history(BattleLog::damage_log(
-                system.current,
+                system.current_operator,
                 &stat.to_string(),
                 damages as i32,
             ));
@@ -104,7 +103,7 @@ impl Object {
             system.npc.inflict_damages(damages as i32);
         }
         if result.failure && result.critical_failure {
-            system.action(&Action::CounterAttack.to_string())?;
+            system.trigger_opponent_action(&Action::CounterAttack.to_string())?;
         }
         Ok(())
     }
@@ -113,10 +112,10 @@ impl Object {
         let result = self.get_result(system, stat);
 
         if result.success {
-            system.action(&Action::Pass.to_string())?;
+            system.trigger_opponent_action(&Action::Pass.to_string())?;
         }
         if result.failure && result.critical_failure {
-            system.action(&Action::CounterAttack.to_string())?;
+            system.trigger_opponent_action(&Action::CounterAttack.to_string())?;
         }
         Ok(())
     }
@@ -128,7 +127,7 @@ impl Object {
             self.parse_alteration(system);
         }
         if result.failure && result.critical_failure {
-            system.action(&Action::CounterAttack.to_string())?;
+            system.trigger_opponent_action(&Action::CounterAttack.to_string())?;
         }
         Ok(())
     }
@@ -140,7 +139,7 @@ impl Object {
             let hps = Dice::roll(10);
             system.character.restore_hps(hps as i32);
             system.increment_history(BattleLog::heal_log(
-                system.current,
+                system.current_operator,
                 &stat.to_string(),
                 hps as i32,
             ));
@@ -168,23 +167,16 @@ impl Object {
         };
         system.increment_history(BattleLog::object_log(
             Some(self),
-            system.current,
+            system.current_operator,
             stat,
             Some(&result),
         ));
         result
     }
 
-    fn get_alteration(&self) -> Alteration {
-        match self {
-            Object::Torch => Alteration::Burn,
-            _ => unreachable!(),
-        }
-    }
-
     fn parse_alteration(&self, system: &mut BattleSystem) {
         let alteration = self.get_alteration();
-        let opponent = system.current.get_opponent();
+        let opponent = system.current_operator.get_opponent();
         system.alterations.set(opponent, alteration);
         system.increment_history(BattleLog::alteration_log(opponent, alteration, None));
     }
