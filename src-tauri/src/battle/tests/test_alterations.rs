@@ -3,7 +3,7 @@ mod tests {
     use rstest::rstest;
 
     use crate::backend::permissions::models::Permission;
-    use crate::backend::tests::database::{allow_db_access, with_permissions};
+    use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
     use crate::battle::actions::Action;
     use crate::battle::logs::LogType;
     use crate::battle::settings::TamperMode;

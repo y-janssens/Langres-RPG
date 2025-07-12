@@ -3,9 +3,9 @@ mod tests {
     use rstest::*;
 
     use crate::backend::{
+        conf_tests::database::with_permissions,
         database::authenticated_command,
         permissions::{commands::load_permissions, models::Permission},
-        tests::database::with_permissions,
     };
 
     #[rstest]

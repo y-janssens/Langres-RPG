@@ -1,11 +1,8 @@
 use crate::backend::permissions::models::{Credentials, Permission};
 
 use super::response::Response;
-use super::settings::database::{
-    APPLICATION_PATH_ERROR, DATABASE_CONNECTION_ERROR, DATABASE_PATH_ERROR, MIGRATION_ERROR,
-};
+use super::settings::database::*;
 use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
-use super::settings::variables::{DATABASE_URL, MIGRATIONS_PATH};
 use super::utils::errors::ValidationError;
 
 use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};

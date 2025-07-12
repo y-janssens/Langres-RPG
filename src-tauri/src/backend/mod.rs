@@ -4,6 +4,6 @@ pub mod fixtures;
 pub mod permissions;
 pub mod response;
 pub mod settings;
-pub mod tests;
+pub mod conf_tests;
 pub mod translations;
 pub mod utils;

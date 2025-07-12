@@ -6,7 +6,7 @@ mod tests {
                 factories::factories_definitions::{GameFactory, LootFactory, StoryLineFactory},
                 factory::factory_models::{ApiFactory, Factory},
             },
-            tests::database::allow_db_access,
+            conf_tests::database::allow_db_access,
         },
         character::models::{Character, Inventory},
         game::models::{Game, Position},

@@ -10,7 +10,7 @@ mod tests {
     use crate::{
         backend::{
             permissions::models::Permission,
-            tests::database::{allow_db_access, with_permissions},
+            conf_tests::database::{allow_db_access, with_permissions},
         },
         battle::alterations::Alteration,
     };

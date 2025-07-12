@@ -3,8 +3,8 @@ mod tests {
     use rstest::*;
 
     use crate::application::models::ApplicationSettings;
-    use crate::backend::tests::database::allow_db_access;
-    use crate::backend::{permissions::models::Permission, tests::database::with_permissions};
+    use crate::backend::conf_tests::database::allow_db_access;
+    use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
     use crate::battle::actions::Action;
     use crate::battle::alterations::Alteration;
     use crate::battle::objects::Object;

@@ -2,7 +2,7 @@
 mod tests {
     use crate::backend::conf::factories::factories_definitions::StatisticFactory;
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::backend::tests::database::allow_db_access;
+    use crate::backend::conf_tests::database::allow_db_access;
     use crate::backend::translations::models::Translations;
     use crate::statistics::models::Statistic;
 

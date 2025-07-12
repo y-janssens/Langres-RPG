@@ -4,8 +4,8 @@ mod tests {
     use std::collections::HashMap;
 
     use crate::application::models::ApplicationSettings;
-    use crate::backend::tests::database::allow_db_access;
-    use crate::backend::{permissions::models::Permission, tests::database::with_permissions};
+    use crate::backend::conf_tests::database::allow_db_access;
+    use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
     use crate::battle::rolls::Roll;
     use crate::battle::tests::test_utils::helpers::setup_battle_system;
     use crate::battle::types::{BattleDifficulty, Stat};

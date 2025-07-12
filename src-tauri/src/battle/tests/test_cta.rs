@@ -4,7 +4,7 @@ mod tests {
 
     use crate::backend::{
         permissions::models::Permission,
-        tests::database::{allow_db_access, with_permissions},
+        conf_tests::database::{allow_db_access, with_permissions},
     };
     use crate::battle::{
         settings::TamperMode, tests::test_utils::helpers::setup_battle_system,

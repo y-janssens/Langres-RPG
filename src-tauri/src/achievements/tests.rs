@@ -3,7 +3,7 @@ mod tests {
     use crate::achievements::models::Achievement;
     use crate::backend::conf::factories::factories_definitions::AchievementFactory;
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::backend::tests::database::allow_db_access;
+    use crate::backend::conf_tests::database::allow_db_access;
 
     #[test]
     fn test_load_achievements() {

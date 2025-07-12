@@ -1,5 +1,6 @@
 #[cfg(test)]
 pub mod database {
+    use diesel::result::Error;
     use diesel::Connection;
     use diesel::{r2d2::ConnectionManager, SqliteConnection};
     use diesel_migrations::MigrationHarness;
@@ -9,22 +10,20 @@ pub mod database {
     use std::panic::{self, AssertUnwindSafe};
 
     use crate::backend::permissions::models::Permission;
-    use crate::backend::settings::database::{DATABASE_ERROR, MIGRATION_ERROR};
+    use crate::backend::settings::database::*;
     use crate::backend::settings::errors::POOL_ERROR;
-    use crate::backend::settings::variables::{
-        MIGRATIONS_PATH, TEST_ADMIN_KEY, TEST_SECRET_KEY, TEST_USER_KEY,
-    };
+    use crate::backend::settings::variables::*;
 
     /// Wrapper to allow unit tests to access local database and rollback transactions
     pub fn allow_db_access<T>(unit_test: T)
     where
         T: FnOnce(&mut SqliteConnection) + panic::UnwindSafe,
     {
-        let db_path = "test_db.db".to_string();
+        let db_path = TEST_DATABASE_URL.to_string();
         let mut connection = get_local_connection(db_path).expect(DATABASE_ERROR);
 
         let result = panic::catch_unwind(AssertUnwindSafe(|| {
-            connection.test_transaction::<_, diesel::result::Error, _>(|conn| {
+            connection.test_transaction::<_, Error, _>(|conn| {
                 unit_test(conn);
                 Ok(())
             });

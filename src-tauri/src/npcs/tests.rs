@@ -3,7 +3,7 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::WorldFactory;
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::settings::errors::BASE_ERROR;
-    use crate::backend::tests::database::allow_db_access;
+    use crate::backend::conf_tests::database::allow_db_access;
     use crate::backend::translations::models::Translations;
     use crate::character::models::Inventory;
     use crate::game::models::Position;

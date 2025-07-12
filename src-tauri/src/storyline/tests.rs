@@ -4,7 +4,7 @@ mod tests {
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::permissions::models::Permission;
     use crate::backend::settings::errors::BASE_ERROR;
-    use crate::backend::tests::database::{allow_db_access, with_permissions};
+    use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
     use crate::events::models::{Event, EventMode, EventStatus, EventType};
     use crate::game::models::{Game, Position};
     use crate::objects::models::Object;

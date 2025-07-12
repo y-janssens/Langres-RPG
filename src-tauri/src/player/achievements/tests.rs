@@ -3,8 +3,8 @@ mod tests {
     use crate::achievements::models::Achievement;
     use crate::backend::conf::factories::factories_definitions::{AchievementFactory, GameFactory};
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
+    use crate::backend::conf_tests::database::allow_db_access;
     use crate::backend::settings::errors::BASE_ERROR;
-    use crate::backend::tests::database::allow_db_access;
     use crate::player::achievements::models::PlayerAchievement;
 
     #[test]

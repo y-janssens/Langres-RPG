@@ -3,7 +3,7 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::GameFactory;
     use crate::backend::conf::factory::factory_models::ApiFactory;
     use crate::backend::permissions::models::Permission;
-    use crate::backend::tests::database::{allow_db_access, with_permissions};
+    use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
     use crate::game::models::{Game, Position};
 
     #[test]

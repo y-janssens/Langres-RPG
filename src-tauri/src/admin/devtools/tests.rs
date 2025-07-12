@@ -7,7 +7,7 @@ mod tests {
     use crate::backend::permissions::models::{Credentials, Permission};
     use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
-    use crate::backend::tests::database::with_permissions;
+    use crate::backend::conf_tests::database::with_permissions;
 
     #[test]
     fn test_load_dev_settings_admin() {

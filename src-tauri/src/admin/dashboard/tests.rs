@@ -4,7 +4,7 @@ mod tests {
         admin::dashboard::commands::load_admin_dashboard,
         backend::{
             permissions::models::Permission, settings::errors::BASE_ERROR,
-            tests::database::with_permissions,
+            conf_tests::database::with_permissions,
         },
     };
     use serde_json::json;

@@ -3,7 +3,7 @@ mod tests {
     use crate::backend::conf::factories::factories_definitions::{GameFactory, StatisticFactory};
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
     use crate::backend::settings::errors::BASE_ERROR;
-    use crate::backend::tests::database::allow_db_access;
+    use crate::backend::conf_tests::database::allow_db_access;
     use crate::player::statistics::models::PlayerStatistic;
     use crate::statistics::models::Statistic;
 
