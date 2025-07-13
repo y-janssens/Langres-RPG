@@ -10,37 +10,9 @@ use crate::{
         BATTLE_SYSTEM_ENDED_ERROR, BATTLE_SYSTEM_PENDING_ERROR, BATTLE_SYSTEM_TRANSITION_ERROR,
     },
     battle::models::BattleSystem,
-    character::models::{Character, Inventory},
+    character::models::Character,
     npcs::models::{Class, Npc},
 };
-
-#[derive(Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
-#[strum(serialize_all = "snake_case")]
-pub enum BattleDifficulty {
-    #[default]
-    Normal,
-    Hard,
-    Extreme,
-}
-
-impl BattleDifficulty {
-    pub fn resolve(setting: usize) -> Self {
-        match setting {
-            0 => Self::Normal,
-            1 => Self::Hard,
-            2 => Self::Extreme,
-            _ => Self::default(),
-        }
-    }
-
-    pub fn get_value(&self) -> i32 {
-        match self {
-            Self::Normal => 0,
-            Self::Hard => 1,
-            Self::Extreme => 2,
-        }
-    }
-}
 
 #[derive(Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
 #[strum(serialize_all = "snake_case")]
@@ -65,7 +37,7 @@ impl Operator {
     }
 
     pub fn reset(system: &mut BattleSystem) {
-        system.current = Self::Character;
+        system.current_operator = Self::Character;
     }
 
     pub fn get_class(&self, system: &mut BattleSystem) -> Class {
@@ -89,11 +61,13 @@ pub enum BattleState {
 impl BattleState {
     pub fn display(&self) -> String {
         match self {
-            BattleState::Ended => "Battle over".to_string(),
-            BattleState::Pending => "Battle initiated".to_string(),
-            BattleState::Ongoing => "Battle started".to_string(),
+            BattleState::Ended => "Battle over",
+            BattleState::Pending => "Battle initiated",
+            BattleState::Ongoing => "Battle started",
         }
+        .into()
     }
+
     pub fn transition(&mut self) -> Result<(), Error> {
         match self {
             Self::Pending => *self = Self::Ongoing,
@@ -112,48 +86,13 @@ impl BattleState {
     }
 
     pub fn is_valid(&self) -> bool {
-        match self {
-            BattleState::Pending => false,
-            BattleState::Ongoing => true,
-            BattleState::Ended => false,
-        }
+        matches!(self, Self::Ongoing)
     }
 
     pub fn flavor_text(&self, result: Option<Operator>) -> String {
         match self {
-            BattleState::Ended => format!("{:?} wins", result.unwrap_or_default()),
-            BattleState::Pending => String::new(),
-            BattleState::Ongoing => String::new(),
-        }
-    }
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
-#[strum(serialize_all = "snake_case")]
-pub enum Location {
-    Head,
-    Arms,
-    Legs,
-    Torso,
-}
-
-impl Location {
-    pub fn from_value(value: u32) -> Self {
-        match value {
-            val if (1..=2).contains(&val) => Self::Head,
-            val if (3..=7).contains(&val) => Self::Arms,
-            val if (8..=11).contains(&val) => Self::Legs,
-            val if (12..=20).contains(&val) => Self::Torso,
-            _ => Self::Torso,
-        }
-    }
-
-    pub fn resolve_parade_reducers(self, inventory: Inventory) -> i32 {
-        match self {
-            Self::Head => inventory.head.and_then(|head| head.parade).unwrap_or(0),
-            Self::Arms => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
-            Self::Legs => inventory.legs.and_then(|legs| legs.parade).unwrap_or(0),
-            Self::Torso => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
+            Self::Ended => format!("{:?} wins", result.unwrap_or_default()),
+            _ => String::new(),
         }
     }
 }
@@ -192,7 +131,7 @@ impl Stat {
     }
 
     pub fn to_value(&self) -> String {
-        let value = match self {
+        match self {
             Stat::Endurance => "",
             Stat::Strength => "",
             Stat::Dexterity => "dodge",
@@ -204,7 +143,7 @@ impl Stat {
             Stat::Marksmanship => "shoot",
             Stat::Actions => "",
             Stat::Health => "",
-        };
-        value.to_string()
+        }
+        .into()
     }
 }

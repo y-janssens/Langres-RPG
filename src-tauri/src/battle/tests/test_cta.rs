@@ -40,11 +40,11 @@ mod tests {
     #[rstest]
     #[case(Operator::Character, Operator::Npc)]
     #[case(Operator::Npc, Operator::Character)]
-    async fn test_evaluate_cta(#[case] current: Operator, #[case] result: Operator) {
+    async fn test_evaluate_cta(#[case] current_operator: Operator, #[case] result: Operator) {
         allow_db_access(|connection| {
             let mut system = setup_battle_system(connection);
 
-            let evaluation = system.cta.evaluate(current);
+            let evaluation = system.cta.evaluate(current_operator);
             assert_eq!(evaluation[0].operator, result);
         });
     }

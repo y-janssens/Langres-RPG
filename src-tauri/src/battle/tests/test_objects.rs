@@ -34,6 +34,29 @@ mod tests {
         assert!(object.is_err());
     }
 
+    #[test]
+    fn test_object_availability() {
+        let obj = Object::Torch;
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_loot(&obj, connection);
+                let objects = system.datas.objects;
+
+                assert!(
+                    !objects
+                        .iter()
+                        .find(|it| it.name == obj.to_string())
+                        .unwrap()
+                        .disabled
+                );
+                assert!(objects
+                    .iter()
+                    .filter(|it| it.name != obj.to_string())
+                    .all(|it| it.disabled));
+            });
+        });
+    }
+
     #[rstest]
     #[case("dirt", Object::Dirt)]
     #[case("torch", Object::Torch)]
@@ -48,7 +71,7 @@ mod tests {
                 let battle = system.start_initiative();
                 assert!(battle.is_ok());
 
-                let object = system.object(object_str);
+                let object = system.trigger_player_object(object_str);
                 assert!(object.is_ok());
 
                 let object_log = &system.history[2];
@@ -77,7 +100,7 @@ mod tests {
                 let battle = system.start_initiative();
                 assert!(battle.is_ok());
 
-                let object = system.object(object_str);
+                let object = system.trigger_player_object(object_str);
                 assert!(object.is_ok());
 
                 let object_log = &system.history[2];
@@ -99,7 +122,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -123,7 +146,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -147,7 +170,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -174,7 +197,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -202,7 +225,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -226,7 +249,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -251,7 +274,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -276,7 +299,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -289,7 +312,7 @@ mod tests {
                     assert_eq!(alteration_log.alteration, Some(Alteration::Burn));
                     assert_eq!(damage_log.alteration, Some(Alteration::Burn));
 
-                    assert!(system.npc.pv < system.npc.max_pv)
+                    assert!(system.npc.pv < system.npc.max_pv);
                 });
             });
         });
@@ -306,7 +329,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let object = system.object(&obj.to_string());
+                    let object = system.trigger_player_object(&obj.to_string());
                     assert!(object.is_ok());
 
                     let roll_log = system.history[2].clone();

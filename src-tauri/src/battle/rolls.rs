@@ -2,10 +2,51 @@ use rand::*;
 use serde::{Deserialize, Serialize};
 use strum_macros::{Display, EnumString};
 
+use crate::character::models::Inventory;
+
 use super::{
     models::BattleSystem,
     types::{Operator, Stat},
 };
+
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
+#[strum(serialize_all = "snake_case")]
+pub enum Location {
+    Head,
+    Arms,
+    Legs,
+    Torso,
+}
+
+impl Location {
+    pub fn get_damages(&self) -> u32 {
+        match self {
+            Self::Head => 5,
+            Self::Arms => 3,
+            Self::Legs => 2,
+            Self::Torso => 3,
+        }
+    }
+
+    pub fn from_value(value: u32) -> Self {
+        match value {
+            val if (1..=2).contains(&val) => Self::Head,
+            val if (3..=7).contains(&val) => Self::Arms,
+            val if (8..=11).contains(&val) => Self::Legs,
+            val if (12..=20).contains(&val) => Self::Torso,
+            _ => Self::Torso,
+        }
+    }
+
+    pub fn resolve_parade_reducers(self, inventory: Inventory) -> i32 {
+        match self {
+            Self::Head => inventory.head.and_then(|head| head.parade).unwrap_or(0),
+            Self::Arms => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
+            Self::Legs => inventory.legs.and_then(|legs| legs.parade).unwrap_or(0),
+            Self::Torso => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
+        }
+    }
+}
 
 #[derive(Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString)]
 #[strum(serialize_all = "snake_case")]
@@ -18,13 +59,13 @@ pub enum RollOutput {
 
 impl RollOutput {
     pub fn get(current_roll: i32, cap: i32) -> String {
-        let value = match current_roll {
+        match current_roll {
             1 => Self::CriticalSuccess,
             20 => Self::CriticalFailure,
             val if val <= cap => Self::Success,
             _ => Self::Failure,
-        };
-        value.to_string()
+        }
+        .to_string()
     }
 
     pub fn default_value(&self) -> i32 {
@@ -75,7 +116,7 @@ impl Roll {
     pub fn launch(stat: &Stat, system: &mut BattleSystem) -> Self {
         let mut rng = rand::thread_rng();
         let stats = stat.get_stats(&system.character, &system.npc);
-        let cap = match system.current {
+        let cap = match system.current_operator {
             Operator::Npc => stats.1,
             _ => stats.0,
         } - system.settings.difficulty.get_value();

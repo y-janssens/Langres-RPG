@@ -8,8 +8,9 @@ mod tests {
     use crate::battle::actions::Action;
     use crate::battle::alterations::Alteration;
     use crate::battle::objects::Object;
-    use crate::battle::tests::test_utils::helpers::setup_battle_system;
-    use crate::battle::types::{BattleDifficulty, BattleState, Operator};
+    use crate::battle::settings::{BattleDifficulty, TamperMode};
+    use crate::battle::tests::test_utils::helpers::{setup_battle_system, with_tampering};
+    use crate::battle::types::{BattleState, Operator};
 
     #[rstest]
     #[case(BattleState::Pending, BattleState::Ongoing)]
@@ -34,13 +35,13 @@ mod tests {
     #[case(Operator::System, Operator::Character)]
     #[case(Operator::Character, Operator::Npc)]
     #[case(Operator::Npc, Operator::Character)]
-    async fn test_switch_operator(#[case] current: Operator, #[case] result: Operator) {
+    async fn test_switch_operator(#[case] current_operator: Operator, #[case] result: Operator) {
         allow_db_access(|connection| {
             let mut system = setup_battle_system(connection);
-            system.current = current;
-            system.current.switch_operator();
+            system.current_operator = current_operator;
+            system.current_operator.switch_operator();
 
-            assert_eq!(system.current, result);
+            assert_eq!(system.current_operator, result);
         });
     }
 
@@ -74,9 +75,9 @@ mod tests {
                 assert!(!system.datas.actions.is_empty());
                 assert!(!system.datas.objects.is_empty());
                 assert!(!system.datas.alterations.is_empty());
-                assert_eq!(system.current, Operator::default());
-                assert_eq!(system.datas.actions, Action::get_list());
-                assert_eq!(system.datas.objects, Object::get_list());
+                assert_eq!(system.current_operator, Operator::default());
+                assert_eq!(system.datas.actions, Action::get_list(&system.character));
+                assert_eq!(system.datas.objects, Object::get_list(&system.character));
                 assert_eq!(system.datas.alterations, Alteration::get_list());
             });
         });
@@ -91,7 +92,7 @@ mod tests {
                 let battle = system.start_default();
                 assert!(battle.is_ok());
 
-                let action = system.player_action("attack");
+                let action = system.trigger_player_action("attack");
                 assert!(action.is_ok());
 
                 assert!(!system.history.is_empty());
@@ -108,7 +109,7 @@ mod tests {
                 let battle = system.start_auto();
                 assert!(battle.is_ok());
 
-                assert!(system.turn > 1);
+                assert!(system.current_turn > 1);
                 assert_eq!(system.state, BattleState::Ended);
             });
         });
@@ -138,7 +139,7 @@ mod tests {
                 let battle = system.start_initiative();
                 assert!(battle.is_ok());
 
-                let action = system.player_action("attack");
+                let action = system.trigger_player_action("attack");
                 assert!(action.is_ok());
 
                 assert_eq!(system.history[2].initiator, Operator::Character);
@@ -155,11 +156,11 @@ mod tests {
                 let battle = system.start_default();
                 assert!(battle.is_ok());
 
-                while system.turn < 2 {
+                while system.current_turn < 2 {
                     if system.state == BattleState::Ended {
                         break;
                     }
-                    let action = system.player_action("attack");
+                    let action = system.trigger_player_action("attack");
                     assert!(action.is_ok());
                 }
             });
@@ -176,7 +177,7 @@ mod tests {
                 assert!(battle.is_ok());
 
                 while system.state != BattleState::Ended {
-                    let action = system.player_action("attack");
+                    let action = system.trigger_player_action("attack");
                     assert!(action.is_ok());
                 }
                 assert_eq!(system.state, BattleState::Ended);
@@ -195,7 +196,7 @@ mod tests {
             let ending = system.end();
             assert!(ending.is_ok());
 
-            let action = system.player_action("attack");
+            let action = system.trigger_player_action("attack");
             assert!(action.is_err());
         });
     }
@@ -205,8 +206,37 @@ mod tests {
         allow_db_access(|connection| {
             let mut system = setup_battle_system(connection);
 
-            let action = system.player_action("attack");
+            let action = system.trigger_player_action("attack");
             assert!(action.is_err());
+        });
+    }
+
+    #[test]
+    fn test_identify_battle_logs() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                with_tampering(TamperMode::Success, || {
+                    let mut system = setup_battle_system(connection);
+
+                    let battle = system.start_default();
+                    assert!(battle.is_ok());
+
+                    // First system logs, not identified
+                    assert!(system.history.iter().all(|log| !log.identified));
+
+                    let first_logs_batch_index = system.history.len();
+                    let action = system.trigger_player_action("attack");
+                    assert!(action.is_ok());
+
+                    // System logs are now identified, new action logs aren't
+                    assert!(system
+                        .history
+                        .iter()
+                        .enumerate()
+                        .filter(|(index, _)| index >= &first_logs_batch_index)
+                        .all(|(_, log)| !log.identified));
+                });
+            });
         });
     }
 }

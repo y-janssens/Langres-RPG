@@ -36,22 +36,22 @@ impl ActiveTimeBattle {
 
     pub fn evaluate(&mut self, operator: Operator) -> Self {
         let mut atb = self.clone();
-        let current = operator.get_opponent();
+        let current_operator = operator.get_opponent();
 
         atb.purge();
         atb.push(Entry {
-            operator: current,
+            operator: current_operator,
             temporary: false,
         });
         for i in 0..BATTLE_SYSTEM_CTA_LENGTH - 1 {
             if i % 2 == 0 {
                 atb.push(Entry {
-                    operator: current.get_opponent(),
+                    operator: current_operator.get_opponent(),
                     temporary: true,
                 });
             } else {
                 atb.push(Entry {
-                    operator: current,
+                    operator: current_operator,
                     temporary: true,
                 });
             }
@@ -59,14 +59,14 @@ impl ActiveTimeBattle {
         atb
     }
 
-    pub fn pre_allocate(&mut self, current: Operator) {
-        let atb = self.evaluate(current);
+    pub fn pre_allocate(&mut self, current_operator: Operator) {
+        let atb = self.evaluate(current_operator);
         *self = atb;
     }
 
     pub fn allocate(&mut self, log: &BattleLog) {
-        let current = self.get_next(log);
-        let atb = self.evaluate(current);
+        let current_operator = self.get_next(log);
+        let atb = self.evaluate(current_operator);
         *self = atb;
     }
 

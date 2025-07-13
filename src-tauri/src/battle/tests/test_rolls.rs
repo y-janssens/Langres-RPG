@@ -7,8 +7,9 @@ mod tests {
     use crate::backend::conf_tests::database::allow_db_access;
     use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
     use crate::battle::rolls::Roll;
+    use crate::battle::settings::BattleDifficulty;
     use crate::battle::tests::test_utils::helpers::setup_battle_system;
-    use crate::battle::types::{BattleDifficulty, Stat};
+    use crate::battle::types::Stat;
 
     #[rstest]
     #[case(BattleDifficulty::Normal, 0, 8)]

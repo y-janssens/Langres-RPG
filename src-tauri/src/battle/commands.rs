@@ -32,7 +32,7 @@ pub fn battle_action(
     action_str: &str,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        system.action(action_str)?;
+        system.trigger_player_action(action_str)?;
         Ok(system)
     })
 }
@@ -43,7 +43,7 @@ pub fn battle_object(
     object_str: &str,
 ) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        system.object(object_str)?;
+        system.trigger_player_object(object_str)?;
         Ok(system)
     })
 }
@@ -51,7 +51,7 @@ pub fn battle_object(
 #[tauri::command]
 pub fn evaluate_battle_atb(mut system: BattleSystem) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
-        let current = system.current;
-        Ok(system.cta.evaluate(current))
+        let current_operator = system.current_operator;
+        Ok(system.cta.evaluate(current_operator))
     })
 }

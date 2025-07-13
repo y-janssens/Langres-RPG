@@ -2,6 +2,7 @@
 mod tests {
     use rstest::*;
 
+    use crate::battle::tests::test_utils::helpers::setup_battle_system_with_aps;
     use crate::battle::{
         actions::Action, logs::LogType, settings::TamperMode,
         tests::test_utils::helpers::setup_battle_system,
@@ -38,6 +39,53 @@ mod tests {
         assert!(action.is_err());
     }
 
+    #[test]
+    fn test_action_availability_none() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 0);
+                let actions = system.datas.actions;
+
+                assert!(actions
+                    .iter()
+                    .filter(|ac| ac.cost > 0)
+                    .all(|it| it.disabled));
+            });
+        });
+    }
+
+    #[test]
+    fn test_action_availability_all() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 8);
+                let actions = system.datas.actions;
+
+                assert!(!actions.iter().all(|it| it.disabled));
+            });
+        });
+    }
+
+    #[test]
+    fn test_action_availability() {
+        with_permissions(Permission::Admin, || {
+            allow_db_access(|connection| {
+                let system = setup_battle_system_with_aps(connection, 2);
+                let actions = system.datas.actions;
+
+                assert!(actions
+                    .iter()
+                    .filter(|ac| ac.cost > 2)
+                    .all(|it| it.disabled));
+
+                assert!(!actions
+                    .iter()
+                    .filter(|ac| ac.cost < 2)
+                    .all(|it| it.disabled));
+            });
+        });
+    }
+
     #[rstest]
     #[case("pass", Action::Pass)]
     #[case("flee", Action::Flee)]
@@ -58,7 +106,7 @@ mod tests {
                 let battle = system.start_initiative();
                 assert!(battle.is_ok());
 
-                let action = system.player_action(action_str);
+                let action = system.trigger_player_action(action_str);
                 assert!(action.is_ok());
 
                 let action_log = &system.history[2];
@@ -79,7 +127,7 @@ mod tests {
                 let battle = system.start_initiative();
                 assert!(battle.is_ok());
 
-                let action = system.player_action(&act.to_string());
+                let action = system.trigger_player_action(&act.to_string());
                 assert!(action.is_ok());
 
                 let roll_log = system.history[2].clone();
@@ -100,7 +148,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -126,7 +174,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -149,7 +197,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -179,7 +227,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -205,13 +253,14 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
                     let result_log = system.history[3].clone();
 
                     assert_eq!(roll_log.action, Some(act));
+                    assert_eq!(roll_log.initiator, Operator::Character);
                     assert_eq!(result_log.initiator, Operator::default());
                     assert_eq!(result_log.event, "Battle over");
                     assert_eq!(system.state, BattleState::Ended);
@@ -231,15 +280,16 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
                     let result_log = system.history[3].clone();
 
                     assert_eq!(roll_log.action, Some(act));
+                    assert_eq!(roll_log.initiator, Operator::Character);
                     assert_eq!(result_log.initiator, Operator::Npc);
-                    assert_eq!(result_log.action, Some(Action::CounterAttack));
+                    assert_eq!(result_log.action, Some(Action::Attack));
                 });
             });
         });
@@ -256,7 +306,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -283,7 +333,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -306,7 +356,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -334,7 +384,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -362,7 +412,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -385,7 +435,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -413,7 +463,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -441,7 +491,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();
@@ -464,7 +514,7 @@ mod tests {
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
-                    let action = system.player_action(&act.to_string());
+                    let action = system.trigger_player_action(&act.to_string());
                     assert!(action.is_ok());
 
                     let roll_log = system.history[2].clone();

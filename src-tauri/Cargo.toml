@@ -56,7 +56,7 @@ tauri-plugin-process = "2"
 tauri-plugin-shell = "2"
 tokio = "1.43.0"
 ucfirst = "0.2.2"
-uuid = { version = "1.10.0", features = ["serde", "v4"] }
+uuid = { version = "1.10.0", features = ["serde", "v4", "v7"] }
 strum = "0.27.1"
 strum_macros = "0.27.1"
 rstest = "0.25.0"
