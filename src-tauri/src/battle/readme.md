@@ -51,6 +51,7 @@ The battle system is a turn-based combat system that handles interactions betwee
 ```
 
 ### Alterations
+
 ```rust
     enum Alteration {
         Expose,     // Buff
@@ -85,8 +86,9 @@ battle_system.end();
 
 ### System Variables
 
-| Variable                       | Description                          |
-| ------------------------------ | ------------------------------------ |
-| `BATTLE_SYSTEM_CTA_LENGTH`     | Maximum length of combat turn queue  |
-| `BATTLE_SYSTEM_HISTORY_LENGTH` | Maximum length of combat history     |
-| `BATTLE_SYSTEM_TAMPERING_ENV`  | Dices tampering environment variable |
+| Variable                       | Description                                              |
+| ------------------------------ | -------------------------------------------------------- |
+| `BATTLE_SYSTEM_CTA_LENGTH`     | Maximum length of combat turn queue                      |
+| `BATTLE_SYSTEM_HISTORY_LENGTH` | Maximum length of combat history                         |
+| `BATTLE_SYSTEM_TAMPERING_ENV`  | Dices tampering environment variable                     |
+| `BATTLE_SYSTEM_BASE_DAMAGES`   | Minimum amount of damages applied to each successful hit |

@@ -18,64 +18,28 @@ lazy_static! {
         price: Some(10),
         weight: None,
     };
-    pub static ref BASE_WEAPON: Loot = Loot {
+    pub static ref CLAWS: Loot = Loot {
         id: Uuid::new_v4().to_string(),
         item_type: ItemTypes::Weapon,
-        name: Translations::generate("Épée longue", "Long sword"),
-        description: Translations::generate("Une simple longue", "A long sword"),
+        name: Translations::generate("Griffes", "Claws"),
+        description: Translations::generate("Des griffes acérées", "Sharp claws"),
         armor: None,
-        damage: Some(14),
-        parade: Some(14),
-        random: Some(6),
-        price: Some(14),
-        weight: Some(4)
+        damage: Some(18),
+        parade: None,
+        random: Some(8),
+        price: None,
+        weight: None
     };
-    pub static ref BASE_SHIELD: Loot = Loot {
+    pub static ref FISTS: Loot = Loot {
         id: Uuid::new_v4().to_string(),
         item_type: ItemTypes::Weapon,
-        name: Translations::generate("Bouclier", "Shield"),
-        description: Translations::generate("Un bouclier d'acier", "A steel shield"),
-        armor: Some(14),
-        damage: Some(2),
-        parade: Some(14),
-        random: None,
-        price: Some(16),
-        weight: Some(5)
-    };
-    pub static ref BASE_HELMET: Loot = Loot {
-        id: Uuid::new_v4().to_string(),
-        item_type: ItemTypes::Equipment,
-        name: Translations::generate("Heaume", "Helmet"),
-        description: Translations::generate("Un heaume d'acier", "A steel helmet"),
-        armor: Some(10),
-        damage: None,
-        parade: Some(10),
-        random: None,
-        price: Some(12),
-        weight: Some(2)
-    };
-    pub static ref BASE_ARMOR: Loot = Loot {
-        id: Uuid::new_v4().to_string(),
-        item_type: ItemTypes::Equipment,
-        name: Translations::generate("Plastron", "Armor"),
-        description: Translations::generate("Une armure d'acier", "A steel armor"),
-        armor: Some(10),
-        damage: None,
-        parade: Some(10),
-        random: None,
-        price: Some(12),
-        weight: Some(2)
-    };
-    pub static ref BASE_LEGS: Loot = Loot {
-        id: Uuid::new_v4().to_string(),
-        item_type: ItemTypes::Equipment,
-        name: Translations::generate("Jambières", "Legs"),
-        description: Translations::generate("Des jambières d'acier", "Steel plated leggings"),
-        armor: Some(10),
-        damage: None,
-        parade: Some(10),
-        random: None,
-        price: Some(12),
-        weight: Some(2)
+        name: Translations::generate("Poings", "Fists"),
+        description: Translations::generate("Des poings nus", "Bare fists"),
+        armor: None,
+        damage: Some(5),
+        parade: None,
+        random: Some(4),
+        price: None,
+        weight: None
     };
 }

@@ -1,4 +1,5 @@
 use crate::backend::utils::functions::to_json;
+use crate::loot::table::base::CLAWS;
 use crate::schema::npc;
 use crate::schema::npc::dsl::*;
 use crate::world::models::World;
@@ -145,7 +146,7 @@ pub struct InsertableNpc {
 
 impl Npc {
     pub fn new(_map_id: i32, position: (f32, f32, u32)) -> Self {
-        Npc {
+        let mut new_npc = Self {
             id: Uuid::new_v4().to_string(),
             first_name: "".to_string(),
             last_name: "".to_string(),
@@ -176,12 +177,11 @@ impl Npc {
             quests: NpcQuests::empty(),
             dialogs: NpcDialogs::empty(),
             starting_point: Position::resolve(position),
-        }
-    }
+        };
+        new_npc.inventory.right_hand = Some(CLAWS.clone());
+        new_npc.inventory.left_hand = Some(CLAWS.clone());
 
-    pub fn with_inventory(&mut self) -> Self {
-        self.inventory = Inventory::new();
-        self.clone()
+        new_npc
     }
 
     pub fn get_for_map(_map_id: i32, connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {

@@ -2,8 +2,8 @@
 mod tests {
     use crate::backend::conf::factories::factories_definitions::WorldFactory;
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::conf_tests::database::allow_db_access;
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::translations::models::Translations;
     use crate::character::models::Inventory;
     use crate::game::models::Position;
@@ -64,7 +64,7 @@ mod tests {
                 hostile: false,
                 is_alive: true,
                 can_be_hostile: true,
-                inventory: Inventory::new(),
+                inventory: Inventory::new(connection).expect(BASE_ERROR),
                 quests: NpcQuests::empty(),
                 dialogs: NpcDialogs::empty(),
                 starting_point: Position::resolve((15.0, 32.0, 1607)),
@@ -72,6 +72,8 @@ mod tests {
 
             let _ = npc.save(connection);
             let patched_npc = Npc::load(npc.id, connection);
+
+            println!("{:#?}", patched_npc);
 
             assert!(patched_npc.is_ok_and(|npc| !npc.unique
                 && npc.inventory.head.is_none()

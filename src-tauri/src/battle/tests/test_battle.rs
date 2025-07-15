@@ -4,13 +4,16 @@ mod tests {
 
     use crate::application::models::ApplicationSettings;
     use crate::backend::conf_tests::database::allow_db_access;
-    use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
+    use crate::backend::settings::variables::BATTLE_SYSTEM_BASE_DAMAGES;
+    use crate::backend::{conf_tests::database::with_permissions, permissions::models::Permission};
     use crate::battle::actions::Action;
     use crate::battle::alterations::Alteration;
+    use crate::battle::logs::LogType;
     use crate::battle::objects::Object;
     use crate::battle::settings::{BattleDifficulty, TamperMode};
     use crate::battle::tests::test_utils::helpers::{setup_battle_system, with_tampering};
     use crate::battle::types::{BattleState, Operator};
+    use crate::character::models::Inventory;
 
     #[rstest]
     #[case(BattleState::Pending, BattleState::Ongoing)]
@@ -208,6 +211,32 @@ mod tests {
 
             let action = system.trigger_player_action("attack");
             assert!(action.is_err());
+        });
+    }
+
+    #[test]
+    fn test_start_battle_minimal_damages() {
+        with_permissions(Permission::Admin, || {
+            with_tampering(TamperMode::CriticalSuccess, || {
+                allow_db_access(|connection| {
+                    let mut system = setup_battle_system(connection);
+                    system.npc.inventory = Inventory::empty();
+
+                    let battle = system.start_initiative();
+                    assert!(battle.is_ok());
+
+                    let action = system.trigger_player_action("attack");
+                    assert!(action.is_ok());
+
+                    let last_log = &system.history[*&system.history.len() - 1];
+                    let last_log_text = last_log.text.to_lowercase();
+
+                    assert_eq!(last_log.r#type, LogType::Damage);
+                    assert_eq!(last_log.initiator, Operator::System);
+                    assert_eq!(last_log.value, Some(BATTLE_SYSTEM_BASE_DAMAGES));
+                    assert!(last_log_text.contains(&Operator::Character.to_string()));
+                });
+            });
         });
     }
 

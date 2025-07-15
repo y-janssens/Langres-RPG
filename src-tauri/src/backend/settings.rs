@@ -6,6 +6,7 @@ pub mod variables {
     // Battle system
     pub const BATTLE_SYSTEM_CTA_LENGTH: usize = 10;
     pub const BATTLE_SYSTEM_HISTORY_LENGTH: usize = 200;
+    pub const BATTLE_SYSTEM_BASE_DAMAGES: i32 = 5;
     pub const BATTLE_SYSTEM_TAMPERING_ENV: &str = "TAMPERING_MODE";
 }
 

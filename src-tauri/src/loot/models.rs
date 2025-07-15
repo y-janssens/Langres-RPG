@@ -139,7 +139,7 @@ impl Loot {
         }
     }
 
-    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Loot>> {
+    pub fn load(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let _load = crate::schema::loot::table.load(connection)?;
         Ok(_load)
     }

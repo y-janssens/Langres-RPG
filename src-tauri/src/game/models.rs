@@ -24,9 +24,19 @@ pub struct Position {
     pub id: u32,
 }
 
+impl Default for Position {
+    fn default() -> Self {
+        Self {
+            x: 0.0,
+            y: 0.0,
+            id: 0,
+        }
+    }
+}
+
 impl Position {
-    pub fn resolve(args: (f32, f32, u32)) -> Position {
-        Position {
+    pub fn resolve(args: (f32, f32, u32)) -> Self {
+        Self {
             x: args.0,
             y: args.1,
             id: args.2,
@@ -86,14 +96,10 @@ impl Game {
             date_created: Self::get_date(),
             last_save_date: Self::get_date(),
             save_count: 0,
-            character: Character::new(name),
+            character: Character::new(name, connection)?,
             storyline: Story::load(connection)?,
             visible: true,
-            last_known_position: Position {
-                x: 0.0,
-                y: 0.0,
-                id: 0,
-            },
+            last_known_position: Position::default(),
         })
     }
 

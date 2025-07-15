@@ -1,4 +1,5 @@
-use diesel::prelude::Queryable;
+use diesel::result::Error;
+use diesel::{prelude::Queryable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 
 use crate::{
@@ -35,7 +36,7 @@ pub struct Character {
 }
 
 impl Character {
-    pub fn new(name: String) -> Character {
+    pub fn new(name: String, connection: &mut SqliteConnection) -> Result<Character, Error> {
         let full_name: Vec<&str> = name.split_whitespace().collect();
 
         let first_name = full_name.first().unwrap_or(&"").to_string();
@@ -45,7 +46,7 @@ impl Character {
             "".to_string()
         };
 
-        Character {
+        Ok(Character {
             first_name,
             last_name,
             end: 8,
@@ -65,8 +66,8 @@ impl Character {
             max_xp: 150,
             lvl: 1,
             class: Class::Knight,
-            inventory: Inventory::new(),
-        }
+            inventory: Inventory::new(connection)?,
+        })
     }
 
     pub fn compute_xp(&mut self, xp: i32) -> &mut Character {
@@ -132,23 +133,31 @@ pub struct Inventory {
     pub objects: Vec<Loot>,
 }
 
-impl Default for Inventory {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 impl Inventory {
-    pub fn new() -> Self {
-        Self {
-            right_hand: Some(BASE_WEAPON.clone()),
-            left_hand: Some(BASE_SHIELD.clone()),
-            head: Some(BASE_HELMET.clone()),
-            torso: Some(BASE_ARMOR.clone()),
-            legs: Some(BASE_LEGS.clone()),
+    pub fn new(connection: &mut SqliteConnection) -> Result<Self, Error> {
+        let loot = Loot::load(connection)?;
+
+        let right_hand = loot
+            .iter()
+            .find(|it| it.id == "item_long_sword")
+            .cloned()
+            .unwrap_or(FISTS.clone());
+
+        let left_hand = loot
+            .iter()
+            .find(|it| it.id == "item_shield")
+            .cloned()
+            .unwrap_or(FISTS.clone());
+
+        Ok(Self {
+            right_hand: Some(right_hand),
+            left_hand: Some(left_hand),
+            head: loot.iter().find(|it| it.id == "item_helmet").cloned(),
+            torso: loot.iter().find(|it| it.id == "item_armor").cloned(),
+            legs: loot.iter().find(|it| it.id == "item_leggings").cloned(),
             gold: BASE_GOLD.clone().price.unwrap() as u32,
             objects: vec![],
-        }
+        })
     }
 
     pub fn empty() -> Self {

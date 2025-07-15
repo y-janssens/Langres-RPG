@@ -84,6 +84,7 @@ tasks:
             - migrate
         cmds:
             - diesel migration redo --all --database-url="langres.db"
+            - diesel migration redo --all --database-url="test_db.db"
         silent: true
 
     shell:

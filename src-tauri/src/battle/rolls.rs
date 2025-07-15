@@ -38,12 +38,12 @@ impl Location {
         }
     }
 
-    pub fn resolve_parade_reducers(self, inventory: Inventory) -> i32 {
+    pub fn resolve_armor_reducers(self, inventory: Inventory) -> i32 {
         match self {
-            Self::Head => inventory.head.and_then(|head| head.parade).unwrap_or(0),
-            Self::Arms => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
-            Self::Legs => inventory.legs.and_then(|legs| legs.parade).unwrap_or(0),
-            Self::Torso => inventory.torso.and_then(|torso| torso.parade).unwrap_or(0),
+            Self::Head => inventory.head.and_then(|head| head.armor).unwrap_or(0),
+            Self::Arms => inventory.torso.and_then(|torso| torso.armor).unwrap_or(0),
+            Self::Legs => inventory.legs.and_then(|legs| legs.armor).unwrap_or(0),
+            Self::Torso => inventory.torso.and_then(|torso| torso.armor).unwrap_or(0),
         }
     }
 }
