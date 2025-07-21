@@ -7,6 +7,7 @@ mod tests {
                 factory::factory_models::{ApiFactory, Factory},
             },
             conf_tests::database::allow_db_access,
+            settings::errors::BASE_ERROR,
         },
         character::models::{Character, Inventory},
         game::models::{Game, Position},
@@ -102,6 +103,9 @@ mod tests {
                 LootFactory.generate(),
             ];
 
+            let mut inventory = Inventory::new(connection).expect(BASE_ERROR);
+            inventory.objects = items.clone();
+
             let mut game = Game {
                 id: "test".to_string(),
                 player: "test".to_string(),
@@ -128,15 +132,7 @@ mod tests {
                     max_xp: 150,
                     lvl: 8,
                     class: Class::Knight,
-                    inventory: Inventory {
-                        right_hand: Some(BASE_WEAPON.clone()),
-                        left_hand: Some(BASE_SHIELD.clone()),
-                        head: Some(BASE_HELMET.clone()),
-                        torso: Some(BASE_ARMOR.clone()),
-                        legs: Some(BASE_LEGS.clone()),
-                        gold: BASE_GOLD.clone().price.unwrap() as u32,
-                        objects: items.clone(),
-                    },
+                    inventory,
                 },
                 storyline: StoryLineFactory.generate(),
                 visible: true,

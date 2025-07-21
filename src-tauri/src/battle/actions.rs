@@ -10,12 +10,15 @@ use super::{
     types::{Operator, Stat},
 };
 use crate::{
-    backend::{settings::errors::BATTLE_SYSTEM_ACTION_ERROR, utils::models::Dice},
+    backend::{
+        settings::{errors::BATTLE_SYSTEM_ACTION_ERROR, variables::BATTLE_SYSTEM_BASE_DAMAGES},
+        utils::models::Dice,
+    },
     battle::{alterations::Alteration, datas::ActionInfo, settings::TamperMode},
     character::models::Character,
 };
 
-#[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum Action {
     Pray,
@@ -296,10 +299,10 @@ impl Action {
         stat: &Stat,
         parry: bool,
     ) -> Result<(), Error> {
-        let damages = self.compute_base_damages(system);
-        let reducer = self.compute_damages_reduction(system, parry);
-        let result = (damages - reducer).max(0);
         let current_operator = self.get_current(system);
+        let damages = self.compute_base_damages(system, current_operator);
+        let reducer = self.compute_damages_reduction(system, parry, current_operator);
+        let result = (damages - reducer).max(BATTLE_SYSTEM_BASE_DAMAGES);
 
         system.alterations.consume(current_operator);
         system.increment_history(BattleLog::damage_log(
@@ -312,8 +315,7 @@ impl Action {
         Ok(())
     }
 
-    fn compute_base_damages(&self, system: &mut BattleSystem) -> i32 {
-        let current_operator = self.get_current(system);
+    fn compute_base_damages(&self, system: &mut BattleSystem, current_operator: Operator) -> i32 {
         let alteration = system.alterations.get(current_operator);
 
         match current_operator {
@@ -341,37 +343,46 @@ impl Action {
         }
     }
 
-    fn compute_damages_reduction(&self, system: &mut BattleSystem, parry: bool) -> i32 {
-        let adversary = system.current_operator.get_opponent();
-        let location = self.resolve_strike_location(system);
+    fn compute_damages_reduction(
+        &self,
+        system: &mut BattleSystem,
+        parry: bool,
+        current_operator: Operator,
+    ) -> i32 {
+        let adversary = current_operator.get_opponent();
+        let location = self.resolve_strike_location(system, current_operator);
         let alteration = system.alterations.get(system.current_operator);
 
         let adversary_inventory = match adversary {
-            Operator::Character => system.character.inventory.clone(),
-            Operator::Npc => system.npc.inventory.clone(),
+            Operator::Character => &system.character.inventory,
+            Operator::Npc => &system.npc.inventory,
             Operator::System => unreachable!(),
         };
 
-        let mut reduce = location.resolve_parade_reducers(adversary_inventory.clone())
+        let mut reduce = location.resolve_armor_reducers(adversary_inventory.clone())
             + alteration.get_defensive_modifier();
 
         if parry {
-            let right_hand = adversary_inventory.right_hand;
-            let left_hand = adversary_inventory.left_hand;
+            let right_hand = &adversary_inventory.right_hand;
+            let left_hand = &adversary_inventory.left_hand;
+
             if let Some(shield) = left_hand {
                 reduce += shield.parade.unwrap_or(0);
-            } else {
-                reduce += right_hand.and_then(|loot| loot.parade).unwrap_or(0);
+            } else if let Some(weapon) = right_hand {
+                reduce += weapon.parade.unwrap_or(0)
             }
         }
 
         reduce / 2
     }
 
-    fn resolve_strike_location(&self, system: &mut BattleSystem) -> Location {
+    fn resolve_strike_location(
+        &self,
+        system: &mut BattleSystem,
+        current_operator: Operator,
+    ) -> Location {
         let roll = Dice::roll(20);
         let location = Location::from_value(roll);
-        let current_operator = self.get_current(system);
 
         system.increment_history(BattleLog::location_log(current_operator, &location));
         location
@@ -439,9 +450,14 @@ impl Action {
             if alteration.is_ailment() {
                 let damages = alteration.compute();
                 system.increment_history(BattleLog::alteration_log(
-                    system.current_operator,
+                    current_operator,
                     alteration,
                     Some(damages),
+                ));
+                system.increment_history(BattleLog::damage_log(
+                    current_operator.get_opponent(),
+                    &Stat::Endurance.to_string(),
+                    damages,
                 ));
                 system.alterations.consume(current_operator);
                 self.inflict_damages(current_operator.get_opponent(), system, damages);

@@ -114,6 +114,7 @@ impl BattleLog {
     pub fn turn_log(current_turn: &u8) -> Self {
         Self {
             event: format!("Turn {}", current_turn),
+            value: Some(*current_turn as i32),
             ..Default::default()
         }
     }

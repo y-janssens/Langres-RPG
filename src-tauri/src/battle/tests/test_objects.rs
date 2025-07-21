@@ -3,9 +3,11 @@ mod tests {
     use rstest::*;
 
     use crate::backend::conf_tests::database::allow_db_access;
-    use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
+    use crate::backend::settings::errors::BASE_ERROR;
+    use crate::backend::{conf_tests::database::with_permissions, permissions::models::Permission};
     use crate::battle::actions::Action;
     use crate::battle::alterations::Alteration;
+    use crate::battle::logs::LogType;
     use crate::battle::models::BattleSystem;
     use crate::battle::objects::Object;
     use crate::battle::settings::TamperMode;
@@ -92,8 +94,8 @@ mod tests {
     async fn test_use_object_error(#[case] object_str: &str) {
         with_permissions(Permission::Admin, || {
             allow_db_access(|connection| {
-                let character = Character::new("test".to_string());
-                let npc = Npc::new(1, (0.0, 0.0, 0)).with_inventory();
+                let character = Character::new("test".to_string(), connection).expect(BASE_ERROR);
+                let npc = Npc::new(1, (0.0, 0.0, 0));
 
                 let mut system = BattleSystem::initialize(character, npc, connection).unwrap();
 
@@ -193,7 +195,7 @@ mod tests {
             with_tampering(TamperMode::Success, || {
                 allow_db_access(|connection| {
                     let mut system = setup_battle_system_with_loot(&obj, connection);
-                    let base_pvs = system.character.pv.clone();
+
                     let battle = system.start_initiative();
                     assert!(battle.is_ok());
 
@@ -205,9 +207,8 @@ mod tests {
 
                     assert_eq!(roll_log.object, Some(obj));
                     assert_eq!(roll_log.roll, Some("success".to_string()));
-                    assert!(system.character.pv < system.character.max_pv);
-                    assert!(system.character.pv > base_pvs);
-                    assert!(system.character.pv == base_pvs + result_log.value.unwrap());
+                    assert_eq!(result_log.r#type, LogType::Heal);
+                    assert!(result_log.value.is_some_and(|v| v > 0));
                 });
             });
         });

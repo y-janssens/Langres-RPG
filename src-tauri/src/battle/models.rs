@@ -71,7 +71,7 @@ impl BattleSystem {
         self.setup()?;
 
         while self.state != BattleState::Ended {
-            self.trigger_opponent_action("attack")?;
+            self.trigger_player_action("attack")?;
         }
         Ok(self)
     }
@@ -79,7 +79,7 @@ impl BattleSystem {
     /// Shoot first, ask questions later
     pub fn start_range(&mut self) -> Result<&mut Self, Error> {
         self.setup()?;
-        self.trigger_opponent_action("shoot")?;
+        self.trigger_player_action("shoot")?;
         Ok(self)
     }
 
