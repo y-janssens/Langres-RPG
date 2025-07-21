@@ -8,5 +8,6 @@ pub mod models;
 pub mod objects;
 pub mod rolls;
 pub mod settings;
+pub mod summary;
 pub mod tests;
 pub mod types;
