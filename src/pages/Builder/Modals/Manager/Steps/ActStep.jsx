@@ -9,8 +9,6 @@ export const ActStep = ({ form, setForm, ...props }) => {
     const { t } = useTranslation();
     const [open, setOpen] = useState(false);
 
-    console.log(form);
-
     const maps = useMemo(() => {
         if (!form.selectedAct) {
             return [];

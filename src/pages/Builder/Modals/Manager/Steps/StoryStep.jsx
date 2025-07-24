@@ -6,8 +6,6 @@ import css from '../manager.module.css';
 export const StoryStep = ({ form, setForm }) => {
     const { t } = useTranslation();
 
-    console.log(form);
-
     const generateUniquePositiveId = useCallback(() => {
         const maxI32 = 2147483647;
         let uniqueId;
