@@ -11,6 +11,7 @@ use crate::backend::settings::variables::BATTLE_SYSTEM_HISTORY_LENGTH;
 use crate::battle::alterations::Alterations;
 use crate::battle::cta::ActiveTimeBattle;
 use crate::battle::datas::SystemDatas;
+use crate::battle::summary::Summary;
 use crate::{character::models::Character, npcs::models::Npc};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -26,6 +27,7 @@ pub struct BattleSystem {
     pub history: Vec<BattleLog>,    // Battle history logs
     pub cta: ActiveTimeBattle,      // Active Time Battle frame !! EXPERIMENTAL !!
     pub datas: SystemDatas,         // Battle system serialized datas
+    pub summary: Summary,           // Battle statistics
 }
 
 impl BattleSystem {
@@ -47,6 +49,7 @@ impl BattleSystem {
             alterations: Alterations::default(),
             settings: Settings::initialize(connection)?,
             history: Vec::with_capacity(BATTLE_SYSTEM_HISTORY_LENGTH),
+            summary: Summary::default(),
         })
     }
 
@@ -93,6 +96,7 @@ impl BattleSystem {
     pub fn end(&mut self) -> Result<&mut BattleSystem, Error> {
         self.get_result();
         self.validate_transition_state()?;
+        self.summary.compute(&self.history);
         Ok(self)
     }
 
