@@ -18,9 +18,7 @@ use crate::world::builder::models::Map;
 use crate::world::builder::settings::*;
 use crate::world::builder::settings::{DIRECTIONAL_VALUES, OFFSET_KEYS};
 
-use models_registry::Model;
-
-#[derive(Debug, Serialize, Deserialize, Clone, Model)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Options {
     pub r#type: String,              // Map type
     pub action: Option<String>,      // Action's name
@@ -51,7 +49,7 @@ impl Options {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct World {
     pub id: i32,
     pub name: String,
@@ -65,7 +63,7 @@ pub struct World {
     pub options: Options,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Item {
     pub id: u32,
     pub x: u32,
@@ -113,7 +111,7 @@ impl Item {
     /// left - right - top_left - top_right - bottom_left - bottom_right
     pub fn get_offset(row: u32) -> HashMap<&'static str, i32> {
         let size = *DEFAULT_MAP_SIZE as i32;
-        let offsets = if row % 2 == 0 {
+        let offsets = if row.is_multiple_of(2) {
             vec![-1, 1, -size, -size + 1, size, size + 1]
         } else {
             vec![-1, 1, -size - 1, -size, size - 1, size]
@@ -209,7 +207,7 @@ impl World {
         for i in 0..grid {
             let col = i % size;
             let y = i / size;
-            let x = if y % 2 == 0 { (col * 2) + 1 } else { col * 2 };
+            let x = if y.is_multiple_of(2) { (col * 2) + 1 } else { col * 2 };
 
             let value = Self::generate_borders(col, y);
             let (display_value, display_color, walkable) = Values::get_value(&value);
@@ -238,6 +236,7 @@ impl World {
         let generator_options = options.unwrap_or_else(|| self.options.clone());
 
         let cleared_content = Self::generate();
+        
         let result =
             tokio::task::spawn_blocking(move || Map::generate(cleared_content, generator_options))
                 .await

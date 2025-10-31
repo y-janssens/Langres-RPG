@@ -24,7 +24,7 @@ impl Queryable<Text, Sqlite> for Story {
 impl Queryable<Text, Sqlite> for Acts {
     type Row = Acts;
 
-    fn build(row: Acts) -> Result<Acts, Box<(dyn serde::ser::StdError + Send + Sync + 'static)>> {
+    fn build(row: Acts) -> Result<Acts, Box<dyn serde::ser::StdError + Send + Sync + 'static>> {
         Ok(row)
     }
 }

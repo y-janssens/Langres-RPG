@@ -20,7 +20,7 @@ impl FromSql<Text, Sqlite> for Languages {
 impl Queryable<Text, Sqlite> for Languages {
     type Row = Languages;
 
-    fn build(row: Languages) -> Result<Languages, Box<(dyn StdError + Send + Sync + 'static)>> {
+    fn build(row: Languages) -> Result<Languages, Box<dyn StdError + Send + Sync + 'static>> {
         Ok(row)
     }
 }

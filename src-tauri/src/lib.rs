@@ -30,16 +30,15 @@ pub mod world;
 pub fn run() {
     dotenv().ok();
     let pool = initialize_db().expect(DATABASE_ERROR);
+    let mut builder = tauri::Builder::default();
 
-    tauri::Builder::default()
-        .plugin(tauri_plugin_global_shortcut::Builder::new().build())
-        .plugin(tauri_plugin_os::init())
-        .plugin(tauri_plugin_notification::init())
-        .plugin(tauri_plugin_clipboard_manager::init())
-        .plugin(tauri_plugin_fs::init())
-        .plugin(tauri_plugin_shell::init())
-        .plugin(tauri_plugin_http::init())
-        .plugin(tauri_plugin_dialog::init())
+    #[cfg(debug_assertions)] // only enable instrumentation in development builds
+    {
+        let devtools = tauri_plugin_devtools::init::<tauri::Wry>();
+        builder = builder.plugin(devtools);
+    }
+
+    builder
         .plugin(tauri_plugin_process::init())
         .invoke_handler(tauri::generate_handler![
             // Achievements commands
