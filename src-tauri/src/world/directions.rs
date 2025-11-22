@@ -7,8 +7,6 @@ use super::builder::settings::{
 };
 use super::models::Item;
 
-use models_registry::Model;
-
 #[derive(Debug, Serialize, Deserialize, Clone, Display, EnumString)]
 #[strum(serialize_all = "snake_case")]
 pub enum Direction {
@@ -39,8 +37,7 @@ impl Direction {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Model)]
-// pub struct Directions(HashMap<String, String>);
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Directions {
     pub values: Option<HashMap<String, String>>,
     pub output: Option<String>,

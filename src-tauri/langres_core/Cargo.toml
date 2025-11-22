@@ -1,8 +1,0 @@
-[package]
-name = "langres_core"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-ctor = "0.3.6"
-lazy_static = "1.5.0"

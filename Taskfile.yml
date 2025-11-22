@@ -87,13 +87,6 @@ tasks:
             - diesel migration redo --all --database-url="test_db.db"
         silent: true
 
-    shell:
-        dir: '{{.RUST_DIR}}'
-        desc: Run interactive shell environment
-        cmds:
-            - cargo run --bin shell
-        silent: true
-
     clear:
         dir: '{{.RUST_DIR}}'
         desc: Clear build artifacts.

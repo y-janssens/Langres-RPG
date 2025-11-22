@@ -13,6 +13,7 @@ dist-ssr
 test_db.db
 *.local
 .env
+target/*
 
 # Editor directories and files
 .vscode/*

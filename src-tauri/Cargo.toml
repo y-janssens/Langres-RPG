@@ -15,45 +15,32 @@ edition = "2021"
 name = "langres_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
-[[bin]]
-name = "shell"
-path = "src/bin/shell/main.rs"
-
-
 [build-dependencies]
-tauri-build = { version = "2", features = [] }
+tauri-build = { version = "2.5.1", features = [] }
 
 [dependencies]
 chrono = "^0.4.38"
-ctor = "0.3.6"
 diesel = { version = "2.2.2", features = ["sqlite", "r2d2"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
 dotenv = "0.15.0"
-eval = "0.4.3"
-evcxr = "0.18.0"
-langres_core = { path = "./langres_core" }
 lazy_static = "1.5.0"
 magic-crypt = "4.0.1"
-models_registry = { path = "./models_registry" }
 noise = "0.8.2"
 r2d2 = "0.8.10"
 rand = "0.8.5"
-regex = "1.11.1"
-rhai = "1.21.0"
 rusqlite = { version = "0.33", features = ["bundled"] }
-rustyline = "15.0.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-tauri = { version = "2", features = [] }
-tauri-plugin-clipboard-manager = "2"
-tauri-plugin-dialog = "2"
-tauri-plugin-fs = "2"
-tauri-plugin-http = "2"
-tauri-plugin-notification = "2"
-tauri-plugin-os = "2"
-tauri-plugin-localhost = "2.2.0"
-tauri-plugin-process = "2"
-tauri-plugin-shell = "2"
+tauri = { version = "2.5.1", features = [] }
+tauri-plugin-clipboard-manager = "2.3.1"
+tauri-plugin-dialog = "2.3.1"
+tauri-plugin-fs = "2.3.1"
+tauri-plugin-http = "2.3.1"
+tauri-plugin-notification = "2.3.1"
+tauri-plugin-os = "2.3.1"
+tauri-plugin-process = "2.3.1"
+tauri-plugin-shell = "2.3.1"
+tauri-plugin-devtools = "2.0.1"
 tokio = "1.43.0"
 ucfirst = "0.2.2"
 uuid = { version = "1.10.0", features = ["serde", "v4", "v7"] }
@@ -61,7 +48,6 @@ strum = "0.27.1"
 strum_macros = "0.27.1"
 rstest = "0.25.0"
 async-std = { version = "1.13.1", features = ["attributes"] }
-comfy-table = "7.1.4"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
