@@ -73,8 +73,6 @@ mod tests {
             let _ = npc.save(connection);
             let patched_npc = Npc::load(npc.id, connection);
 
-            println!("{:#?}", patched_npc);
-
             assert!(patched_npc.is_ok_and(|npc| !npc.unique
                 && npc.inventory.head.is_none()
                 && npc.inventory.torso.is_none()

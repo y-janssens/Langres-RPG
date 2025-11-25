@@ -2,17 +2,14 @@
 pub mod database {
     use diesel::result::Error;
     use diesel::Connection;
-    use diesel::{r2d2::ConnectionManager, SqliteConnection};
-    use diesel_migrations::MigrationHarness;
+    use diesel::SqliteConnection;
     use dotenv::dotenv;
-    use r2d2::{Pool, PooledConnection};
     use std::env;
     use std::panic::{self, AssertUnwindSafe};
 
+    use crate::backend::database::get_local_connection;
     use crate::backend::permissions::models::Permission;
-    use crate::backend::settings::database::*;
-    use crate::backend::settings::errors::POOL_ERROR;
-    use crate::backend::settings::variables::*;
+    use crate::backend::settings::{database::*, variables::*};
 
     /// Wrapper to allow unit tests to access local database and rollback transactions
     pub fn allow_db_access<T>(unit_test: T)
@@ -49,19 +46,5 @@ pub mod database {
 
         env::remove_var("SECRET_KEY");
         env::remove_var("USER_KEY");
-    }
-
-    fn get_local_connection(
-        db_path: String,
-    ) -> Result<PooledConnection<ConnectionManager<SqliteConnection>>, r2d2::Error> {
-        let manager = ConnectionManager::<SqliteConnection>::new(db_path);
-        let pool = Pool::builder().build(manager).expect(POOL_ERROR);
-
-        let mut connection = pool.get()?;
-        connection
-            .run_pending_migrations(MIGRATIONS_PATH)
-            .expect(MIGRATION_ERROR);
-
-        Ok(connection)
     }
 }

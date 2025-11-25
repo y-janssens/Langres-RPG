@@ -25,6 +25,28 @@ pub struct Story {
     pub acts: Acts,
 }
 
+#[derive(Debug, Insertable)]
+#[diesel(table_name = crate::schema::storyline)]
+pub struct InsertableStory {
+    pub id: i32,
+    pub name: String,
+    pub created: String,
+    pub modified: String,
+    pub acts: String,
+}
+
+impl Default for Story {
+    fn default() -> Self {
+        Self {
+            id: 0,
+            name: String::new(),
+            created: String::new(),
+            modified: String::new(),
+            acts: Acts(vec![]),
+        }
+    }
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Acts(pub Vec<Act>);
 
@@ -97,6 +119,17 @@ impl Story {
         Ok(_storyline)
     }
 
+    pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
+        let mut _storyline: Vec<Self> = crate::schema::storyline::table.load(connection)?;
+
+        // for act in _storyline.acts.iter_mut() {
+        //     for map in act.maps.iter_mut() {
+        //         map.npcs = Npc::get_for_map(map.id, connection)?;
+        //     }
+        // }
+        Ok(_storyline)
+    }
+
     pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
         for act in self.acts.iter_mut() {
             act.validate_act();
@@ -125,9 +158,7 @@ impl Story {
             if let Some(value) = &object.value {
                 tile.edit(value.clone());
             }
-        })?;
-
-        Ok(())
+        })
     }
 
     pub fn reset_tiles(

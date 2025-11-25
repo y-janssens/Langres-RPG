@@ -7,3 +7,4 @@ pub mod display;
 pub mod models;
 pub mod tests;
 pub mod types;
+pub mod macros;

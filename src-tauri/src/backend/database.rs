@@ -1,20 +1,42 @@
-use crate::backend::permissions::models::{Credentials, Permission};
+use std::error::Error;
+use std::io::ErrorKind::InvalidData;
+
+use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
+use diesel_migrations::MigrationHarness;
+use r2d2::{Pool, PooledConnection};
+use serde::Serialize;
 
 use super::response::Response;
 use super::settings::database::*;
 use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
 use super::utils::errors::ValidationError;
 
-use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
-use diesel_migrations::MigrationHarness;
-use r2d2::{Pool, PooledConnection};
-use serde::Serialize;
-use std::error::Error;
+use crate::backend::permissions::models::{Credentials, Permission};
+use crate::storyline::models::Story;
 
 pub fn get_connection(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> PooledConnection<ConnectionManager<diesel::SqliteConnection>> {
     connection.get().expect(DATABASE_CONNECTION_ERROR)
+}
+
+pub fn get_local_connection(
+    db_path: String,
+) -> Result<PooledConnection<ConnectionManager<SqliteConnection>>, r2d2::Error> {
+    let manager = ConnectionManager::<SqliteConnection>::new(db_path);
+    let pool = Pool::builder().build(manager).expect(POOL_ERROR);
+
+    let mut connection = pool.get()?;
+    connection
+        .run_pending_migrations(MIGRATIONS_PATH)
+        .expect(MIGRATION_ERROR);
+    parse_initial_datas(&mut connection).expect(INITIAL_DATAS_ERROR);
+    Ok(connection)
+}
+
+fn parse_initial_datas(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
+    Story::get_and_insert_initial_datas(connection)
+        .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))
 }
 
 fn run_migrations(
@@ -43,6 +65,7 @@ pub fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<
 
     let mut conn = pool.get()?;
     run_migrations(&mut *conn).expect(MIGRATION_ERROR);
+    parse_initial_datas(&mut conn).expect(INITIAL_DATAS_ERROR);
 
     Ok(pool)
 }

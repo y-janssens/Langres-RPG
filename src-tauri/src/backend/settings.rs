@@ -17,6 +17,7 @@ pub mod errors {
     pub const NOT_SUPPORTED_LANGUAGE_ERROR: &str = "This language is not supported.";
     pub const VALIDATION_ERROR: &str = "Failed to serialize result";
     pub const PERMISSION_DENIED: &str = "Permission denied";
+    pub const SCRIPT_ERROR: &str = "Invalid or missing script";
 
     // Battle system
     pub const BATTLE_SYSTEM_PENDING_ERROR: &str = "Cannot execute action, battle hasn't started";
@@ -35,6 +36,7 @@ pub mod database {
     pub const MIGRATIONS_PATH: EmbeddedMigrations = embed_migrations!("./migrations/");
 
     pub const MIGRATION_ERROR: &str = "Error while running migrations.";
+    pub const INITIAL_DATAS_ERROR: &str = "Error while inserting initial datas.";
     pub const DATABASE_ERROR: &str = "Failed to initialize database.";
     pub const APPLICATION_PATH_ERROR: &str = "Failed to get current path";
     pub const DATABASE_PATH_ERROR: &str = "Failed to get database path";
