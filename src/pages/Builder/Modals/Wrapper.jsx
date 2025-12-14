@@ -44,7 +44,7 @@ export const BuilderModalWrapper = ({
                         <div className={css['modal-card-body']}>
                             {displaySubtitle && (
                                 <div className={css['modal-card-header']}>
-                                    <div>{_subtitle}</div>
+                                    <div className={css['modal-card-header-subtitle']}>{_subtitle}</div>
                                 </div>
                             )}
 
@@ -66,6 +66,7 @@ export const BuilderModalWrapper = ({
                                         variant="outline"
                                         disabled={it.disabled}
                                         onClick={it.onClick}
+                                        {...it}
                                     >
                                         {it.label}
                                     </Button>

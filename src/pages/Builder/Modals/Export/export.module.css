@@ -1,0 +1,71 @@
+.export-modal-container {
+    height: -webkit-fill-available;
+    overflow-y: auto;
+    padding: 0px 5px;
+}
+
+.export-block-cta {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.export-block button {
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.export-block label {
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 10px;
+}
+
+.export-block-cta button {
+    margin-left: 10px;
+}
+.export-block-cta button {
+    min-width: -webkit-fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.export-sub-block {
+    margin: 0px 10px;
+}
+
+.export-sub-block span,
+.export-block span {
+    width: -webkit-fill-available;
+}
+
+.export-select-toggle {
+    float: right;
+}
+
+.export-select-toggle label {
+    gap: 5px;
+}
+
+.export-select-toggle input {
+    transform: scale(0.8);
+}
+
+.export-select-toggle label:hover {
+    border-radius: unset !important;
+    background-color: unset !important;
+}
+
+.export-toggle-label {
+    line-height: 10px;
+}
+
+.export-sub-block label:hover,
+.export-block label:hover {
+    border-radius: 6px;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.export-toggle-label span {
+    color: #808080;
+}

@@ -85,7 +85,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 engine.world = currentWorld;
 
                 setPosition(engine.controls.positions);
-                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title, battle: { npc: currentWorld.npcs[0] } });
+                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title, battle: { npc: null } });
                 setEngineHotReload(game, reload);
             }
         },

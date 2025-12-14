@@ -69,6 +69,18 @@
       "editor": {
         "title": "Edit your map's content"
       },
+      "export": {
+        "blocks": {
+          "maps": "Select which maps to include in your export. Each map contains locations, encounters, and environmental details.",
+          "maps_label": "Export maps",
+          "npcs": "Choose NPCs to export. NPCs include their dialogues, inventories, and quests.",
+          "npcs_label": "Export Npcs",
+          "storyline": "Export the complete storyline structure including all acts, scenes, and narrative elements",
+          "storyline_label": "Export storyline"
+        },
+        "title": "Export your game's datas",
+        "subtitle": "Select content to export. YML format exports minimal datas for backend processing, JSON format exports complete structured data."
+      },
       "gateway": {
         "subtitle": "Select a map",
         "title": "Manage gateways between your maps"
@@ -172,7 +184,10 @@
     },
     "toasts": {
       "compute_map_directions": "Directions successfully computed!",
-      "export": "Datas successfully exported and copied into clipboard!",
+      "copy": "Export datas successfully copied to clipboard",
+      "copy_error": "An error occurred while copying datas",
+      "export": "Export file successfully saved to {{path}}",
+      "export_error": "An error occurred while exporting datas",
       "fix_map_inconsistencies": "Inconsistent values successfully fixed!"
     },
     "toggles": {
@@ -196,6 +211,7 @@
       "compute": "Compute directions",
       "confirm": "Confirm",
       "continue": "Continue",
+      "copy": "Copy",
       "delete": "Delete",
       "edit": "Edit",
       "export": "Export",
@@ -207,6 +223,7 @@
       "save": "Save",
       "search": "Search",
       "select": "Select",
+      "select_all": "Select all",
       "settings": "Settings",
       "start": "Start",
       "statistics": "Statistics"
@@ -445,6 +462,7 @@
   "npcs": {
     "bandit": "Bandit",
     "soldier": "Soldier",
+    "start": "Starting point",
     "zombie": "Zombie"
   },
   "tools": {

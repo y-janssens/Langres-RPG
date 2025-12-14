@@ -1,5 +1,7 @@
 import Fetcher from './fetcher';
 
+import yaml from 'js-yaml';
+
 export const DIRECTIONS = [null, 'top', 'bottom', 'left', 'right', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
 export const CARDINAL_DIRECTIONS = ['left', 'top_left', 'top_right', 'right', 'bottom_right', 'bottom_left'];
 
@@ -16,6 +18,22 @@ export default class World {
         return data.map((it) => {
             it.y = Number(it.y.toFixed(2));
             return it;
+        });
+    }
+
+    toJson() {
+        return JSON.stringify({ ...this }, null, 2);
+    }
+
+    toYml() {
+        const map = { ...this };
+        const content = map.content.map((it) => it.clean());
+        map.content = content;
+        map.npcs = [];
+        return yaml.dump(map, {
+            indent: 2,
+            lineWidth: -1,
+            noRefs: true
         });
     }
 
@@ -40,6 +58,10 @@ export class Tile {
             return null;
         }
         return this.events.find((ev) => Object.keys(ev.type)[0] === 'GateWay')?.type['GateWay'];
+    }
+
+    clean() {
+        return this.value;
     }
 }
 

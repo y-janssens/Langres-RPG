@@ -1,6 +1,6 @@
 import { toast as notification } from 'react-toastify';
 
-class Toast {
+export class Toast {
     constructor() {
         this.args = {
             position: 'top-right',

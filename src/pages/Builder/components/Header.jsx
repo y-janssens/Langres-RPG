@@ -38,18 +38,6 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         [form]
     );
 
-    const handleExport = useCallback(() => {
-        let _datas = { ...datas }.acts;
-        _datas.map((act) => {
-            return act.maps.map((mp) => {
-                mp.npcs = [];
-                return mp;
-            });
-        });
-        navigator.clipboard.writeText(JSON.stringify(_datas, null, 2));
-        toast.info(t('builder.toasts.export'));
-    }, [datas]);
-
     const handleHistory = useCallback(
         (direction) => {
             switch (direction) {
@@ -127,7 +115,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                     <div className={css['builder-navbar-cta']}>
                         <Divider className={css['builder-navbar-divider']} horizontal />
                         <MultiButton icon="actions" name="displayActions" open={form.displayActions} setOpen={setForm}>
-                            <Actions form={form} setForm={setForm} handleExport={handleExport} handleMapAction={handleMapAction} />
+                            <Actions form={form} setForm={setForm} handleMapAction={handleMapAction} />
                         </MultiButton>
                         <ButtonLabel
                             variant="outline"
@@ -166,15 +154,15 @@ const Toggles = ({ form, disabled, handleCheck }) => {
     ));
 };
 
-const Actions = ({ form, setForm, handleExport, handleMapAction }) => {
+const Actions = ({ form, setForm, handleMapAction }) => {
     const { t } = useTranslation();
 
     const handleAction = useCallback(
         (action) => {
             const actions = {
-                handleExport: () => handleExport(),
                 previewMap: () => setForm('modal', { type: 'preview', open: true, value: form.selectedMap }),
-                displayStatistics: () => setForm('modal', { type: 'statistics', open: true, value: form.selectedMap })
+                displayStatistics: () => setForm('modal', { type: 'statistics', open: true, value: form.selectedMap }),
+                export: () => setForm('modal', { type: 'export', open: true, value: null })
             };
 
             try {
@@ -184,12 +172,12 @@ const Actions = ({ form, setForm, handleExport, handleMapAction }) => {
                 console.error(error);
             }
         },
-        [handleExport, form.selectedMap]
+        [form.selectedMap]
     );
 
     return (
         <>
-            <ButtonLabel fullWidth color="primary" label={t('common.actions.export')} onClick={() => handleAction('handleExport')} />
+            <ButtonLabel fullWidth color="primary" label={t('common.actions.export')} onClick={() => handleAction('export')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.statistics')} onClick={() => handleAction('displayStatistics')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.preview')} onClick={() => handleAction('previewMap')} />
             <ButtonLabel fullWidth color="primary" label={t('common.actions.compute')} onClick={() => handleMapAction('compute_map_directions')} />

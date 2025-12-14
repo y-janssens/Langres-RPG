@@ -1,5 +1,8 @@
-import Fetcher from './fetcher';
 import { invoke } from '@tauri-apps/api/core';
+
+import yaml from 'js-yaml';
+
+import Fetcher from './fetcher';
 import Inventory from './inventory';
 
 export default class Npc extends Fetcher {
@@ -34,5 +37,17 @@ export default class Npc extends Fetcher {
 
     static get statsKeys() {
         return ['end', 'for', 'hab', 'cha', 'int', 'ini', 'pv', 'level'];
+    }
+
+    toJson() {
+        return JSON.stringify(this, null, 2);
+    }
+
+    toYml() {
+        return yaml.dump(this, {
+            indent: 2,
+            lineWidth: -1,
+            noRefs: true
+        });
     }
 }
