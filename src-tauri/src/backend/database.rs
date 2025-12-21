@@ -10,6 +10,7 @@ use super::settings::database::*;
 use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
 use super::utils::errors::ValidationError;
 
+use crate::application::models::ApplicationSettings;
 use crate::backend::permissions::models::{Credentials, Permission};
 
 use crate::functions::models::Function;
@@ -39,6 +40,7 @@ pub fn get_local_connection(
 }
 
 fn post_migrate(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
+    ApplicationSettings::get_and_insert_initial_datas(connection)?;
     Story::get_and_insert_initial_datas(connection)?;
     Object::get_and_insert_initial_datas(connection)?;
     Function::get_and_insert_initial_datas(connection)?;

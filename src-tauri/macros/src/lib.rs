@@ -32,26 +32,31 @@ fn script_parser(module: &str, model: &str) -> TokenStream {
 }
 
 #[proc_macro]
+pub fn settings_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("application", "ApplicationSettings")
+}
+
+#[proc_macro]
 pub fn storyline_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("storyline", "Story")
 }
 
-#[proc_macro] // TODO implement yml parsing
+#[proc_macro]
 pub fn objects_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("objects", "Object")
 }
 
-#[proc_macro] // TODO implement yml parsing
+#[proc_macro]
 pub fn loot_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("loot", "Loot")
 }
 
-#[proc_macro] // TODO implement yml parsing
+#[proc_macro]
 pub fn functions_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("functions", "Function")
 }
 
-#[proc_macro] // TODO implement yml parsing
+#[proc_macro]
 pub fn quests_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("quests", "Quest")
 }

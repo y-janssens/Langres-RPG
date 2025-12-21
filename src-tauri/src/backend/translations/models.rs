@@ -1,5 +1,10 @@
+use std::io::Error;
+
 use diesel::{deserialize::Queryable, sql_types::Text, sqlite::Sqlite};
 use serde::{Deserialize, Serialize};
+use serde_yaml::Mapping;
+
+use crate::backend::utils::parse::get_str_value;
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq, Hash)]
 pub struct Translations {
@@ -38,5 +43,12 @@ impl Translations {
             fr: Some(_fr.to_string()),
             en: Some(_en.to_string()),
         }
+    }
+
+    pub fn from_value(mapping: &Mapping) -> Result<Self, Error> {
+        Ok(Self {
+            fr: Some(get_str_value(mapping, "fr")?),
+            en: Some(get_str_value(mapping, "en")?),
+        })
     }
 }
