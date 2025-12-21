@@ -11,7 +11,7 @@ const SERIALIZE_ERROR: &str = "Failed to serialize script";
 const RUNTIME_PARSE_ERROR: &str = "Failed to parse script as value";
 
 fn script_parser(module: &str, model: &str) -> TokenStream {
-    let script_path = PathBuf::from(&format!("./src/{}/initial_datas.yml", module));
+    let script_path = PathBuf::from(&format!("./initial_datas/{}.yml", module));
 
     let content = fs::read_to_string(&script_path).expect(FILE_ERROR);
 
@@ -34,4 +34,24 @@ fn script_parser(module: &str, model: &str) -> TokenStream {
 #[proc_macro]
 pub fn storyline_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("storyline", "Story")
+}
+
+#[proc_macro] // TODO implement yml parsing
+pub fn objects_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("objects", "Object")
+}
+
+#[proc_macro] // TODO implement yml parsing
+pub fn loot_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("loot", "Loot")
+}
+
+#[proc_macro] // TODO implement yml parsing
+pub fn functions_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("functions", "Function")
+}
+
+#[proc_macro] // TODO implement yml parsing
+pub fn quests_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("quests", "Quest")
 }

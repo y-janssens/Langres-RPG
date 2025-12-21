@@ -3,11 +3,18 @@ use std::io::{Error, ErrorKind::InvalidData};
 
 use crate::backend::settings::errors::SCRIPT_ERROR;
 
+pub fn get_optional_string_value(content: &Value, key: &str) -> Option<String> {
+    match content.get(key) {
+        Some(value) => match value {
+            Value::String(val) => Some(val.to_string()),
+            _ => None,
+        },
+        _ => None,
+    }
+}
+
 pub fn get_string_value(content: &Value, key: &str) -> String {
-    content
-        .get(key)
-        .map(parse_string_value)
-        .unwrap_or("".to_string())
+    get_optional_string_value(content, key).unwrap_or("".to_string())
 }
 
 pub fn get_boolean_value(content: &Value, key: &str) -> bool {
