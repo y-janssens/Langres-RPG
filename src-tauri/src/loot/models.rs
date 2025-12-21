@@ -27,8 +27,9 @@ impl ItemTypes {
     pub fn resolve(kind: &str) -> Self {
         match kind {
             "weapon" => Self::Weapon,
-            "armor" => Self::Equipment,
+            "armor" | "equipment" => Self::Equipment,
             "craftable" => Self::Craftable,
+            "consumable" => Self::Consumable,
             "thrash" => Self::Thrash,
             "gold" => Self::Gold,
             _ => Self::Weapon,
