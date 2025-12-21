@@ -21,9 +21,9 @@ pub struct Function {
 #[diesel(table_name = crate::schema::functions)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableFunction {
-    icon: String,
-    label: String,
-    command: String,
+    pub icon: String,
+    pub label: String,
+    pub command: String,
 }
 
 impl Default for Function {

@@ -1,0 +1,24 @@
+- command: generate_forest
+  icon: trees
+  id: 1
+  label: Generate forest
+
+- command: regenerate
+  icon: reload
+  id: 2
+  label: Regenerate Map
+
+- command: clear
+  icon: clear
+  id: 3
+  label: Clear Map
+
+- command: generate_npcs
+  icon: npc
+  id: 4
+  label: Generate Npcs
+
+- command: clear_npcs
+  icon: clear
+  id: 5
+  label: Clear Npcs

@@ -11,6 +11,8 @@ use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
 use super::utils::errors::ValidationError;
 
 use crate::backend::permissions::models::{Credentials, Permission};
+
+use crate::functions::models::Function;
 use crate::objects::models::Object;
 use crate::storyline::models::Story;
 
@@ -37,6 +39,7 @@ pub fn get_local_connection(
 fn parse_initial_datas(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
     Story::get_and_insert_initial_datas(connection)?;
     Object::get_and_insert_initial_datas(connection)?;
+    Function::get_and_insert_initial_datas(connection)?;
 
     Ok(())
 }
