@@ -13,7 +13,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
+              with:
+                  clean: true
 
             - name: Install Dependencies
               run: sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.1-dev libgtk-3-dev libayatana-appindicator3-dev libjavascriptcoregtk-4.1-dev librsvg2-dev build-essential libsoup-3.0-dev
@@ -25,6 +27,11 @@ jobs:
                   toolchain: stable
                   override: true
                   components: rustfmt, clippy
+
+            - name: Clean build cache
+              run: |
+                  cd src-tauri
+                  cargo clean
 
             - name: Run tests
               run: |
@@ -40,7 +47,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
+              with:
+                  clean: true
 
             - name: Set up Node.js
               uses: actions/setup-node@v2
