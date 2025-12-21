@@ -1,0 +1,130 @@
+- area:
+    x: 1
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 1
+  interactive: false
+  name: start
+  value: 
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 2
+  interactive: false
+  name: gate
+  value: 
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 3
+  interactive: false
+  name: npc
+  value: 
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: "#BDB76B"
+  display_value: grass
+  id: 4
+  interactive: false
+  name: grass
+  value: "-"
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: "#C8FF1380"
+  display_value: border
+  id: 5
+  interactive: false
+  name: clearing
+  value: C
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: "#5EDB35CC"
+  display_value: tree
+  id: 6
+  interactive: false
+  name: tree
+  value: T
+  walkable: false
+- area:
+    x: 1
+    "y": 1
+  display_color: "#DBD257"
+  display_value: road
+  id: 7
+  interactive: false
+  name: road
+  value: R
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: "#87CEFA"
+  display_value: water
+  id: 8
+  interactive: false
+  name: water
+  value: W
+  walkable: false
+- area:
+    x: 1
+    "y": 1
+  display_color: "#DBD257"
+  display_value: shore
+  id: 9
+  interactive: false
+  name: shore
+  value: S
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 10
+  interactive: true
+  name: bridge
+  value: BR
+  walkable: true
+- area:
+    x: 0
+    "y": 0
+  display_color: 
+  display_value: 
+  id: 11
+  interactive: true
+  name: house
+  value: H
+  walkable: true
+- area:
+    x: 1
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 12
+  interactive: true
+  name: house
+  value: H_1
+  walkable: true
+- area:
+    x: 2
+    "y": 2
+  display_color: 
+  display_value: 
+  id: 13
+  interactive: true
+  name: house
+  value: H_2
+  walkable: true
