@@ -8,6 +8,7 @@
   name: start
   value: 
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -18,6 +19,7 @@
   name: gate
   value: 
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -28,6 +30,7 @@
   name: npc
   value: 
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -38,6 +41,7 @@
   name: grass
   value: "-"
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -48,6 +52,7 @@
   name: clearing
   value: C
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -58,6 +63,7 @@
   name: tree
   value: T
   walkable: false
+
 - area:
     x: 1
     "y": 1
@@ -68,6 +74,7 @@
   name: road
   value: R
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -78,6 +85,7 @@
   name: water
   value: W
   walkable: false
+
 - area:
     x: 1
     "y": 1
@@ -88,6 +96,7 @@
   name: shore
   value: S
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -98,6 +107,7 @@
   name: bridge
   value: BR
   walkable: true
+
 - area:
     x: 0
     "y": 0
@@ -108,6 +118,7 @@
   name: house
   value: H
   walkable: true
+
 - area:
     x: 1
     "y": 1
@@ -118,6 +129,7 @@
   name: house
   value: H_1
   walkable: true
+
 - area:
     x: 2
     "y": 2

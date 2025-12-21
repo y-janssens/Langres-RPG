@@ -5,10 +5,7 @@ use crate::backend::settings::errors::SCRIPT_ERROR;
 
 pub fn get_optional_string_value(content: &Value, key: &str) -> Option<String> {
     match content.get(key) {
-        Some(value) => match value {
-            Value::String(val) => Some(val.to_string()),
-            _ => None,
-        },
+        Some(Value::String(val)) => Some(val.to_string()),
         _ => None,
     }
 }

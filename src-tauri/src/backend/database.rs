@@ -1,5 +1,4 @@
 use std::error::Error;
-use std::io::ErrorKind::InvalidData;
 
 use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
 use diesel_migrations::MigrationHarness;
@@ -12,6 +11,7 @@ use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
 use super::utils::errors::ValidationError;
 
 use crate::backend::permissions::models::{Credentials, Permission};
+use crate::objects::models::Object;
 use crate::storyline::models::Story;
 
 pub fn get_connection(
@@ -35,8 +35,10 @@ pub fn get_local_connection(
 }
 
 fn parse_initial_datas(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
-    Story::get_and_insert_initial_datas(connection)
-        .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))
+    Story::get_and_insert_initial_datas(connection)?;
+    Object::get_and_insert_initial_datas(connection)?;
+
+    Ok(())
 }
 
 fn run_migrations(
@@ -101,7 +103,7 @@ pub async fn authenticated_thread<T, Fut, R>(
 ) -> Result<Response, ValidationError>
 where
     T: FnOnce() -> Fut,
-    Fut: std::future::Future<Output = Result<R, Box<dyn std::error::Error>>>,
+    Fut: std::future::Future<Output = Result<R, Box<dyn Error>>>,
     R: Serialize,
 {
     let credentials = Credentials::initialize()

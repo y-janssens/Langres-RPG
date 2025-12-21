@@ -1,4 +1,4 @@
-use std::io::Error;
+use std::io::{Error, ErrorKind::InvalidData};
 
 use diesel::{prelude::*, result::Error as DieselError, SqliteConnection};
 use serde_yaml::Value;
@@ -41,12 +41,12 @@ impl Story {
         Ok(())
     }
 
-    pub fn get_and_insert_initial_datas(
-        connection: &mut SqliteConnection,
-    ) -> Result<(), DieselError> {
+    pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
         let story: Self = storyline_initial_datas!()
-            .map_err(|e| DieselError::DeserializationError(Box::new(e)))?;
+            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
-        story.insert_initial_datas(connection)
+        story
+            .insert_initial_datas(connection)
+            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))
     }
 }

@@ -24,13 +24,13 @@ pub struct Object {
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
 #[diesel(table_name = crate::schema::objects)]
 pub struct InsertableObject {
-    name: String,
-    value: Option<String>,
-    display_value: Option<String>,
-    display_color: Option<String>,
-    area: String,
-    walkable: bool,
-    interactive: bool,
+    pub name: String,
+    pub value: Option<String>,
+    pub display_value: Option<String>,
+    pub display_color: Option<String>,
+    pub area: String,
+    pub walkable: bool,
+    pub interactive: bool,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]

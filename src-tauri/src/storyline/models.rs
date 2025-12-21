@@ -121,12 +121,6 @@ impl Story {
 
     pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
         let mut _storyline: Vec<Self> = crate::schema::storyline::table.load(connection)?;
-
-        // for act in _storyline.acts.iter_mut() {
-        //     for map in act.maps.iter_mut() {
-        //         map.npcs = Npc::get_for_map(map.id, connection)?;
-        //     }
-        // }
         Ok(_storyline)
     }
 
