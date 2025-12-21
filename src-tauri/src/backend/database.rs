@@ -15,6 +15,7 @@ use crate::backend::permissions::models::{Credentials, Permission};
 use crate::functions::models::Function;
 use crate::loot::models::Loot;
 use crate::objects::models::Object;
+use crate::quests::models::Quest;
 use crate::storyline::models::Story;
 
 pub fn get_connection(
@@ -33,15 +34,16 @@ pub fn get_local_connection(
     connection
         .run_pending_migrations(MIGRATIONS_PATH)
         .expect(MIGRATION_ERROR);
-    parse_initial_datas(&mut connection).expect(INITIAL_DATAS_ERROR);
+    post_migrate(&mut connection).expect(INITIAL_DATAS_ERROR);
     Ok(connection)
 }
 
-fn parse_initial_datas(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
+fn post_migrate(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
     Story::get_and_insert_initial_datas(connection)?;
     Object::get_and_insert_initial_datas(connection)?;
     Function::get_and_insert_initial_datas(connection)?;
     Loot::get_and_insert_initial_datas(connection)?;
+    Quest::get_and_insert_initial_datas(connection)?;
 
     Ok(())
 }
@@ -72,7 +74,7 @@ pub fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<
 
     let mut conn = pool.get()?;
     run_migrations(&mut *conn).expect(MIGRATION_ERROR);
-    parse_initial_datas(&mut conn).expect(INITIAL_DATAS_ERROR);
+    post_migrate(&mut conn).expect(INITIAL_DATAS_ERROR);
 
     Ok(pool)
 }
