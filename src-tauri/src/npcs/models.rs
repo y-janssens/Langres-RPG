@@ -1,25 +1,25 @@
-use crate::backend::utils::functions::to_json;
-use crate::loot::table::base::CLAWS;
-use crate::schema::npc;
-use crate::schema::npc::dsl::*;
-use crate::world::models::World;
+use std::io::{Error as BaseError, ErrorKind::NotFound};
+
 use diesel::prelude::AsChangeset;
 use diesel::result::Error;
 use diesel::sqlite::Sqlite;
 use diesel::{
-    ExpressionMethods, Insertable, QueryDsl, QueryResult, Queryable, RunQueryDsl, Selectable,
-    SqliteConnection,
+    ExpressionMethods, Insertable, QueryDsl, QueryResult, Queryable, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
-use strum_macros::{Display, EnumString};
+use strum_macros::{Display, EnumIter, EnumString};
 use uuid::Uuid;
 
-use crate::{
-    backend::translations::models::Translations, character::models::Inventory,
-    game::models::Position, quests::models::Quest,
-};
+use crate::backend::{translations::models::Translations, utils::functions::to_json};
+use crate::character::models::Inventory;
+use crate::game::models::Position;
+use crate::loot::table::base::CLAWS;
+use crate::quests::models::Quest;
+use crate::schema::npc;
+use crate::schema::npc::dsl::*;
+use crate::world::models::World;
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum Gender {
     Male,
@@ -27,7 +27,13 @@ pub enum Gender {
     Unknown,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString)]
+impl Gender {
+    pub fn parse(name: &str) -> Result<Self, BaseError> {
+        Self::try_from(name).map_err(|e| BaseError::new(NotFound, e))
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum Class {
     Human,
@@ -41,6 +47,10 @@ pub enum Class {
 }
 
 impl Class {
+    pub fn parse(name: &str) -> Result<Self, BaseError> {
+        Self::try_from(name).map_err(|e| BaseError::new(NotFound, e))
+    }
+
     pub fn can_dodge(&self) -> bool {
         match self {
             Class::Human => false,
@@ -209,10 +219,13 @@ impl Npc {
         self.pv = (self.pv - damages).max(0)
     }
 
+    pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
+        let _npcs: Vec<Self> = crate::schema::npc::table.load(connection)?;
+        Ok(_npcs)
+    }
+
     pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Self> {
-        let _npc: Npc = crate::schema::npc::table
-            .filter(id.eq(_id))
-            .first::<Npc>(connection)?;
+        let _npc: Npc = crate::schema::npc::table.filter(id.eq(_id)).first::<Npc>(connection)?;
 
         Ok(_npc)
     }
@@ -272,10 +285,7 @@ impl Npc {
             starting_point: starting_point_json,
         };
 
-        let exists = npc
-            .filter(id.eq(_npc.id.clone()))
-            .first::<Npc>(connection)
-            .is_ok();
+        let exists = npc.filter(id.eq(_npc.id.clone())).first::<Npc>(connection).is_ok();
 
         if exists {
             diesel::update(npc.find(_npc.id.clone()))
@@ -301,11 +311,17 @@ impl Npc {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum QuoteType {
     Npc,
     Player,
+}
+
+impl QuoteType {
+    pub fn parse(name: &str) -> Result<Self, BaseError> {
+        Self::try_from(name).map_err(|e| BaseError::new(NotFound, e))
+    }
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]

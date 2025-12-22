@@ -15,10 +15,7 @@ pub fn get_string_value(content: &Value, key: &str) -> String {
 }
 
 pub fn get_boolean_value(content: &Value, key: &str) -> bool {
-    content
-        .get(key)
-        .map(|c| c.as_bool().unwrap_or(false))
-        .unwrap_or(false)
+    content.get(key).map(|c| c.as_bool().unwrap_or(false)).unwrap_or(false)
 }
 
 pub fn parse_string_value(content: &Value) -> String {
@@ -41,6 +38,12 @@ pub fn get_sequence<'a>(content: &'a Value, key: &'a str) -> Result<&'a Vec<Valu
     content
         .get(key)
         .and_then(|v| v.as_sequence())
+        .ok_or_else(|| Error::new(InvalidData, SCRIPT_ERROR))
+}
+
+pub fn get_content<'a>(content: &'a Value, key: &'a str) -> Result<&'a Value, Error> {
+    content
+        .get(key)
         .ok_or_else(|| Error::new(InvalidData, SCRIPT_ERROR))
 }
 

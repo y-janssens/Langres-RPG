@@ -1,7 +1,6 @@
-// pub mod definitions;
-pub mod models;
-// pub mod named;
-// pub mod tables;
 pub mod commands;
+pub mod macros;
+pub mod models;
+pub mod test_macros;
 pub mod tests;
 pub mod types;

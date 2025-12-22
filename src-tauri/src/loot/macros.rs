@@ -13,7 +13,14 @@ impl Loot {
         content.into_iter().map(Self::parse).collect()
     }
 
-    fn parse(content: Value) -> Result<Self, Error> {
+    pub fn try_parse(content: Option<&Value>) -> Result<Option<Self>, Error> {
+        match content {
+            Some(c) => Ok(Some(Self::parse(c.clone())?)),
+            None => Ok(None),
+        }
+    }
+
+    pub fn parse(content: Value) -> Result<Self, Error> {
         Ok(Self {
             id: get_string_value(&content, "id"),
             item_type: ItemTypes::resolve(&get_string_value(&content, "item_type").to_lowercase()),
@@ -29,8 +36,7 @@ impl Loot {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let functions: Vec<Self> =
-            loot_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
+        let functions: Vec<Self> = loot_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
 
         for function in functions {
             function

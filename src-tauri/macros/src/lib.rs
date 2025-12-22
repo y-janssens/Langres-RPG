@@ -60,3 +60,8 @@ pub fn functions_initial_datas(_input: TokenStream) -> TokenStream {
 pub fn quests_initial_datas(_input: TokenStream) -> TokenStream {
     script_parser("quests", "Quest")
 }
+
+#[proc_macro]
+pub fn npcs_initial_datas(_input: TokenStream) -> TokenStream {
+    script_parser("npcs", "Npc")
+}
