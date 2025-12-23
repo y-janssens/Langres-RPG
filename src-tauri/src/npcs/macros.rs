@@ -57,12 +57,10 @@ impl Npc {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let objects: Vec<Self> = npcs_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        let npcs: Vec<Self> = npcs_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
-        for object in objects {
-            object
-                .save(connection)
-                .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        for npc in npcs {
+            npc.save(connection).map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
         }
 
         Ok(())

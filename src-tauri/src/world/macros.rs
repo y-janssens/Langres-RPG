@@ -33,12 +33,14 @@ impl Act {
 
 impl World {
     pub fn parse(content: &Value) -> Result<Self, Error> {
+        let id = get_numeric_value(content, "id") as i32;
         let name = get_string_value(content, "name");
         let size = get_numeric_value(content, "size");
         let order = get_numeric_value(content, "order");
         let primary = get_boolean_value(content, "primary");
         let mut map = World::new(size, name, order, primary);
 
+        map.id = id;
         map.starting_point = Position::parse(get_mapping(content, "starting_point")?)?;
         map.content = Self::parse_content(&mut map.content, get_sequence(content, "content")?);
         map.compute_directions();
