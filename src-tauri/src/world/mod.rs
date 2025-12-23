@@ -4,7 +4,7 @@ pub mod builder;
 pub mod commands;
 pub mod directions;
 pub mod display;
+pub mod macros;
 pub mod models;
 pub mod tests;
 pub mod types;
-pub mod macros;

@@ -85,11 +85,7 @@ pub mod faker_definitions {
     impl Faker for StringFaker {
         type Output = FakeString;
         fn generate(&self) -> Self::Output {
-            let rand_string: String = rand::thread_rng()
-                .sample_iter(&Alphanumeric)
-                .take(10)
-                .map(char::from)
-                .collect();
+            let rand_string: String = rand::thread_rng().sample_iter(&Alphanumeric).take(10).map(char::from).collect();
             FakeString(rand_string)
         }
     }

@@ -1,7 +1,5 @@
 use diesel::result::Error;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -36,8 +34,7 @@ impl PlayerStatistic {
     pub fn generate(_id: String, connection: &mut SqliteConnection) -> Result<(), Error> {
         let base_statistics = Statistic::load(connection)?;
         for statistic in base_statistics {
-            let name_json = serde_json::to_string(&statistic.name)
-                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let name_json = serde_json::to_string(&statistic.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
             let _statistic = InsertablePlayerStatistic {
                 id: Uuid::new_v4().to_string(),
                 game_id: _id.clone(),
@@ -52,10 +49,7 @@ impl PlayerStatistic {
         Ok(())
     }
 
-    pub fn load(
-        _id: String,
-        connection: &mut SqliteConnection,
-    ) -> QueryResult<Vec<PlayerStatistic>> {
+    pub fn load(_id: String, connection: &mut SqliteConnection) -> QueryResult<Vec<PlayerStatistic>> {
         let _load = crate::schema::playerstatistics::table
             .filter(crate::schema::playerstatistics::game_id.eq(_id))
             .load::<PlayerStatistic>(connection)?;
@@ -70,8 +64,7 @@ impl PlayerStatistic {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let name_json = serde_json::to_string(&self.name)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertablePlayerStatistic {
             id: Uuid::new_v4().to_string(),

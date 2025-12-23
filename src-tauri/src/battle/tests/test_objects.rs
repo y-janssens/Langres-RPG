@@ -11,9 +11,7 @@ mod tests {
     use crate::battle::models::BattleSystem;
     use crate::battle::objects::Object;
     use crate::battle::settings::TamperMode;
-    use crate::battle::tests::test_utils::helpers::{
-        setup_battle_system_with_loot, with_tampering,
-    };
+    use crate::battle::tests::test_utils::helpers::{setup_battle_system_with_loot, with_tampering};
     use crate::battle::types::Operator;
     use crate::character::models::Character;
     use crate::npcs::models::Npc;
@@ -44,17 +42,8 @@ mod tests {
                 let system = setup_battle_system_with_loot(&obj, connection);
                 let objects = system.datas.objects;
 
-                assert!(
-                    !objects
-                        .iter()
-                        .find(|it| it.name == obj.to_string())
-                        .unwrap()
-                        .disabled
-                );
-                assert!(objects
-                    .iter()
-                    .filter(|it| it.name != obj.to_string())
-                    .all(|it| it.disabled));
+                assert!(!objects.iter().find(|it| it.name == obj.to_string()).unwrap().disabled);
+                assert!(objects.iter().filter(|it| it.name != obj.to_string()).all(|it| it.disabled));
             });
         });
     }

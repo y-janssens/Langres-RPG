@@ -1,9 +1,7 @@
 use crate::schema::playerquests;
 use crate::schema::playerquests::dsl::*;
 use diesel::result::Error;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -48,12 +46,9 @@ impl PlayerQuest {
         let base_quests = Quest::load(connection)?;
         let mut _quests: Vec<PlayerQuest> = vec![];
         for quest in base_quests {
-            let status_json = serde_json::to_string(&quest.status)
-                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-            let name_json = serde_json::to_string(&quest.name)
-                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-            let description_json = serde_json::to_string(&quest.description)
-                .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let status_json = serde_json::to_string(&quest.status).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let name_json = serde_json::to_string(&quest.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+            let description_json = serde_json::to_string(&quest.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
             let _quest = InsertablePlayerQuest {
                 id: Uuid::new_v4().to_string(),
                 quest_id: quest.id,
@@ -66,9 +61,7 @@ impl PlayerQuest {
                 reward: quest.reward,
                 next: quest.next,
             };
-            diesel::insert_into(playerquests::table)
-                .values(&_quest)
-                .execute(connection)?;
+            diesel::insert_into(playerquests::table).values(&_quest).execute(connection)?;
         }
         Ok(())
     }
@@ -88,12 +81,9 @@ impl PlayerQuest {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let status_json = serde_json::to_string(&self.status)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let name_json = serde_json::to_string(&self.name)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let description_json = serde_json::to_string(&self.description)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let status_json = serde_json::to_string(&self.status).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertablePlayerQuest {
             id: Uuid::new_v4().to_string(),
@@ -118,9 +108,7 @@ impl PlayerQuest {
                 .set(&insertable)
                 .execute(connection)?;
         } else {
-            diesel::insert_into(playerquests::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(playerquests::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())
@@ -144,12 +132,7 @@ impl PlayerQuest {
         Ok(())
     }
 
-    pub fn edit(
-        mut self,
-        _status: &str,
-        value: bool,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), Error> {
+    pub fn edit(mut self, _status: &str, value: bool, connection: &mut SqliteConnection) -> Result<(), Error> {
         match _status {
             "failed" => self.status.failed = value,
             "abandoned" => self.status.abandoned = value,

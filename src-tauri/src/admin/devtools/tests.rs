@@ -4,10 +4,10 @@ mod tests {
 
     use crate::admin::devtools::commands::load_dev_settings;
     use crate::admin::devtools::models::{DevSettings, SettingValue};
+    use crate::backend::conf_tests::database::with_permissions;
     use crate::backend::permissions::models::{Credentials, Permission};
     use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::settings::variables::{TEST_ADMIN_KEY, TEST_SECRET_KEY};
-    use crate::backend::conf_tests::database::with_permissions;
 
     #[test]
     fn test_load_dev_settings_admin() {
@@ -94,8 +94,7 @@ mod tests {
         let secret_key = TEST_SECRET_KEY;
         let configuration_key = TEST_ADMIN_KEY;
 
-        let credentials =
-            Credentials::decrypt_secret_key(&secret_key, &configuration_key).expect(BASE_ERROR);
+        let credentials = Credentials::decrypt_secret_key(&secret_key, &configuration_key).expect(BASE_ERROR);
 
         assert!(credentials.is_admin);
         assert!(credentials.dashboard_enabled);

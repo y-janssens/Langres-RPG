@@ -5,9 +5,9 @@ mod tests {
     use crate::application::models::{ApplicationMenu, ApplicationSettings};
     use crate::backend::conf::factories::factories_definitions::GameFactory;
     use crate::backend::conf::factory::factory_models::ApiFactory;
+    use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
     use crate::backend::permissions::models::Permission;
     use crate::backend::settings::errors::BASE_ERROR;
-    use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
 
     #[test]
     fn test_load_application_datas() {

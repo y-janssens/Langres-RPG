@@ -3,9 +3,7 @@ use std::io::{Error as BaseError, ErrorKind::NotFound};
 use diesel::prelude::AsChangeset;
 use diesel::result::Error;
 use diesel::sqlite::Sqlite;
-use diesel::{
-    ExpressionMethods, Insertable, QueryDsl, QueryResult, Queryable, RunQueryDsl, Selectable, SqliteConnection,
-};
+use diesel::{ExpressionMethods, Insertable, QueryDsl, QueryResult, Queryable, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use strum_macros::{Display, EnumIter, EnumString};
 use uuid::Uuid;
@@ -195,9 +193,7 @@ impl Npc {
     }
 
     pub fn get_for_map(_map_id: i32, connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
-        let npcs: Vec<Npc> = crate::schema::npc::table
-            .filter(map_id.eq(&_map_id))
-            .load::<Npc>(connection)?;
+        let npcs: Vec<Npc> = crate::schema::npc::table.filter(map_id.eq(&_map_id)).load::<Npc>(connection)?;
 
         Ok(npcs)
     }
@@ -288,13 +284,9 @@ impl Npc {
         let exists = npc.filter(id.eq(_npc.id.clone())).first::<Npc>(connection).is_ok();
 
         if exists {
-            diesel::update(npc.find(_npc.id.clone()))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(npc.find(_npc.id.clone())).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(npc::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(npc::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())

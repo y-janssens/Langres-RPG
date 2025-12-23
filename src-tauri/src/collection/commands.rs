@@ -9,9 +9,7 @@ use crate::backend::utils::errors::ValidationError;
 use crate::collection::models::Collection;
 
 #[tauri::command]
-pub fn load_collections(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_collections(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Ok(Collection::load(&mut connection)?)

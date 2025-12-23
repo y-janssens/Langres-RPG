@@ -97,11 +97,7 @@ mod tests {
     #[test]
     fn test_inventory_remove_objects() {
         allow_db_access(|connection| {
-            let items = vec![
-                LootFactory.generate(),
-                LootFactory.generate(),
-                LootFactory.generate(),
-            ];
+            let items = vec![LootFactory.generate(), LootFactory.generate(), LootFactory.generate()];
 
             let mut inventory = Inventory::new(connection).expect(BASE_ERROR);
             inventory.objects = items.clone();
@@ -136,11 +132,7 @@ mod tests {
                 },
                 storyline: StoryLineFactory.generate(),
                 visible: true,
-                last_known_position: Position {
-                    id: 111,
-                    x: 0.0,
-                    y: 0.0,
-                },
+                last_known_position: Position { id: 111, x: 0.0, y: 0.0 },
             };
             let _ = game.save(connection);
             assert_eq!(game.character.inventory.objects.len(), 3);

@@ -19,12 +19,8 @@ impl Story {
         Ok(story)
     }
 
-    pub fn insert_initial_datas(
-        &self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), DieselError> {
-        let acts_json = serde_json::to_string(&self.acts)
-            .map_err(|e| DieselError::DeserializationError(Box::new(e)))?;
+    pub fn insert_initial_datas(&self, connection: &mut SqliteConnection) -> Result<(), DieselError> {
+        let acts_json = serde_json::to_string(&self.acts).map_err(|e| DieselError::DeserializationError(Box::new(e)))?;
 
         let insertion = InsertableStory {
             id: self.id,
@@ -42,8 +38,7 @@ impl Story {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let story: Self = storyline_initial_datas!()
-            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        let story: Self = storyline_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         story
             .insert_initial_datas(connection)

@@ -5,9 +5,7 @@ use serde_yaml::{Sequence, Value};
 use system_macros::settings_initial_datas;
 
 use crate::application::models::{ApplicationSettings, Languages, Values};
-use crate::backend::utils::parse::{
-    get_boolean_value, get_numeric_value, get_sequence, get_string_value,
-};
+use crate::backend::utils::parse::{get_boolean_value, get_numeric_value, get_sequence, get_string_value};
 
 impl ApplicationSettings {
     pub fn from_value(content: Value) -> Result<Self, Error> {
@@ -26,8 +24,7 @@ impl ApplicationSettings {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let settings: Self = settings_initial_datas!()
-            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        let settings: Self = settings_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         settings
             .save(connection)

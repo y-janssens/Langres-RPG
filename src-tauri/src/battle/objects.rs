@@ -66,8 +66,7 @@ impl Object {
     }
 
     pub fn resolve(object_str: &str) -> Result<Self, Error> {
-        let object = Self::try_from(object_str)
-            .map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_OBJECT_ERROR))?;
+        let object = Self::try_from(object_str).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_OBJECT_ERROR))?;
         Ok(object)
     }
 
@@ -79,10 +78,7 @@ impl Object {
             return object_roll(self, system, &stat);
         }
 
-        system.increment_history(BattleLog::object_unavailability_log(
-            self,
-            system.current_operator,
-        ));
+        system.increment_history(BattleLog::object_unavailability_log(self, system.current_operator));
         Ok(())
     }
 
@@ -94,11 +90,7 @@ impl Object {
             let location = Location::from_value(roll);
             let damages = location.get_damages() + random;
 
-            system.increment_history(BattleLog::damage_log(
-                system.current_operator,
-                &stat.to_string(),
-                damages as i32,
-            ));
+            system.increment_history(BattleLog::damage_log(system.current_operator, &stat.to_string(), damages as i32));
 
             system.npc.inflict_damages(damages as i32);
         }
@@ -138,11 +130,7 @@ impl Object {
         if result.success {
             let hps = Dice::roll(10);
             system.character.restore_hps(hps as i32);
-            system.increment_history(BattleLog::heal_log(
-                system.current_operator,
-                &stat.to_string(),
-                hps as i32,
-            ));
+            system.increment_history(BattleLog::heal_log(system.current_operator, &stat.to_string(), hps as i32));
         }
         Ok(())
     }
@@ -150,10 +138,7 @@ impl Object {
     fn validate_object_availability(&self, system: &mut BattleSystem) -> bool {
         let objects = system.character.inventory.get_consumables(Some(self));
         if !objects.is_empty() {
-            system
-                .character
-                .inventory
-                .remove_object(format!("obj_{}", self));
+            system.character.inventory.remove_object(format!("obj_{}", self));
             return true;
         }
         false
@@ -165,12 +150,7 @@ impl Object {
             TamperMode::NoTamper => Roll::launch(stat, system),
             _ => tamper.get_result(),
         };
-        system.increment_history(BattleLog::object_log(
-            Some(self),
-            system.current_operator,
-            stat,
-            Some(&result),
-        ));
+        system.increment_history(BattleLog::object_log(Some(self), system.current_operator, stat, Some(&result)));
         result
     }
 

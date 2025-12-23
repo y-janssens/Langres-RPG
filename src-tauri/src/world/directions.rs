@@ -2,9 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use strum_macros::{Display, EnumString};
 
-use super::builder::settings::{
-    DEFAULT_MAP_SIZE_GRID, DIRECTIONAL_KEYS, DIRECTIONAL_MATCHES, DIRECTIONAL_PRIORITY,
-};
+use super::builder::settings::{DEFAULT_MAP_SIZE_GRID, DIRECTIONAL_KEYS, DIRECTIONAL_MATCHES, DIRECTIONAL_PRIORITY};
 use super::models::Item;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Display, EnumString)]
@@ -140,17 +138,13 @@ impl Directions {
     /// Check neighbour's direction for base directional values
     /// (left, right, top_left, top_right, bottom_left, bottom_right)
     fn check_values(direction: &HashMap<&str, Vec<i32>>, key: &str, id: usize) -> bool {
-        direction
-            .get(key)
-            .is_some_and(|v| v.len() == 1 && v[0] == (id as i32))
+        direction.get(key).is_some_and(|v| v.len() == 1 && v[0] == (id as i32))
     }
 
     /// Check neighbour's direction for computed cardinal values
     /// (top, bottom)
     fn check_cardinals(direction: &HashMap<&str, Vec<i32>>, key: &str, id: usize) -> bool {
-        direction
-            .get(key)
-            .is_some_and(|v| v.len() == 2 && v.contains(&(id as i32)))
+        direction.get(key).is_some_and(|v| v.len() == 2 && v.contains(&(id as i32)))
     }
 
     fn get_neighbours_locations(index: i32, row: i32) -> HashMap<&'static str, Vec<i32>> {
@@ -168,10 +162,7 @@ impl Directions {
         // Computed values for top and bottom neighbours
         for (val, keys) in DIRECTIONAL_KEYS.clone() {
             if keys.iter().all(|key| directions.contains_key(key)) {
-                directions.insert(
-                    val,
-                    keys.iter().map(|k| directions.get(k).unwrap()[0]).collect(),
-                );
+                directions.insert(val, keys.iter().map(|k| directions.get(k).unwrap()[0]).collect());
             }
         }
 

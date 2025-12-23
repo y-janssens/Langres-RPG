@@ -4,9 +4,7 @@ use crate::backend::utils::parse::get_bool_value;
 use crate::backend::{translations::models::Translations, utils::functions::to_json};
 use crate::schema::quests;
 use crate::schema::quests::dsl::*;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use serde_yaml::Mapping;
 use uuid::Uuid;
@@ -113,9 +111,7 @@ impl Quest {
     }
 
     pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<Quest> {
-        let _load = crate::schema::quests::table
-            .filter(quests::id.eq(_id))
-            .first::<Quest>(connection)?;
+        let _load = crate::schema::quests::table.filter(quests::id.eq(_id)).first::<Quest>(connection)?;
         Ok(_load)
     }
 
@@ -137,13 +133,9 @@ impl Quest {
         let exists = quests.filter(id.eq(self.id.clone())).first::<Quest>(connection).is_ok();
 
         if exists {
-            diesel::update(quests.find(&self.id.clone()))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(quests.find(&self.id.clone())).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(quests::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(quests::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())

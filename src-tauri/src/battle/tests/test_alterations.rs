@@ -2,8 +2,8 @@
 mod tests {
     use rstest::rstest;
 
-    use crate::backend::permissions::models::Permission;
     use crate::backend::conf_tests::database::{allow_db_access, with_permissions};
+    use crate::backend::permissions::models::Permission;
     use crate::battle::actions::Action;
     use crate::battle::logs::LogType;
     use crate::battle::settings::TamperMode;
@@ -46,10 +46,7 @@ mod tests {
     #[case(Action::Expose, Alteration::Expose)]
     #[case(Action::Pray, Alteration::Enlighten)]
     #[case(Action::Protect, Alteration::Protect)]
-    async fn test_apply_alteration_action_success(
-        #[case] act: Action,
-        #[case] alteration: Alteration,
-    ) {
+    async fn test_apply_alteration_action_success(#[case] act: Action, #[case] alteration: Alteration) {
         let result = Alteration::Clear;
         with_permissions(Permission::Admin, || {
             with_tampering(TamperMode::Success, || {

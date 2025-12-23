@@ -8,9 +8,7 @@ use super::models::{Class, Gender, Npc};
 use crate::{
     backend::{
         translations::models::Translations,
-        utils::parse::{
-            get_boolean_value, get_content, get_mapping, get_numeric_value, get_sequence, get_string_value,
-        },
+        utils::parse::{get_boolean_value, get_content, get_mapping, get_numeric_value, get_sequence, get_string_value},
     },
     character::models::Inventory,
     game::models::Position,

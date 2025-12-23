@@ -2,8 +2,8 @@
 mod tests {
     use crate::backend::conf::factories::factories_definitions::{GameFactory, StatisticFactory};
     use crate::backend::conf::factory::factory_models::{ApiFactory, Factory};
-    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::conf_tests::database::allow_db_access;
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::player::statistics::models::PlayerStatistic;
     use crate::statistics::models::Statistic;
 
@@ -35,8 +35,7 @@ mod tests {
             let _ = statistic.save(connection);
             let _ = game.save(connection);
 
-            let player_statistics =
-                PlayerStatistic::load(game.id.clone(), connection).expect(BASE_ERROR);
+            let player_statistics = PlayerStatistic::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_statistic = PlayerStatistic {
                 id: player_statistics[0].id.clone(),
                 game_id: game.id,
@@ -47,8 +46,7 @@ mod tests {
 
             let _ = player_statistic.clone().save(connection);
 
-            let patched_statistic =
-                PlayerStatistic::get(player_statistic.id, connection).expect(BASE_ERROR);
+            let patched_statistic = PlayerStatistic::get(player_statistic.id, connection).expect(BASE_ERROR);
             assert_eq!(patched_statistic.value, "1322");
         });
     }

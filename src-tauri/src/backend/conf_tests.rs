@@ -14,16 +14,12 @@ pub mod database {
     use crate::backend::settings::{database::*, errors::POOL_ERROR, variables::*};
 
     /// Initiate local database connection
-    pub fn get_test_connection(
-        db_path: String,
-    ) -> Result<PooledConnection<ConnectionManager<SqliteConnection>>, r2d2::Error> {
+    pub fn get_test_connection(db_path: String) -> Result<PooledConnection<ConnectionManager<SqliteConnection>>, r2d2::Error> {
         let manager = ConnectionManager::<SqliteConnection>::new(db_path);
         let pool = Pool::builder().build(manager).expect(POOL_ERROR);
 
         let mut connection = pool.get()?;
-        connection
-            .run_pending_migrations(MIGRATIONS_PATH)
-            .expect(MIGRATION_ERROR);
+        connection.run_pending_migrations(MIGRATIONS_PATH).expect(MIGRATION_ERROR);
         post_migrate(&mut connection).expect(INITIAL_DATAS_ERROR);
         Ok(connection)
     }

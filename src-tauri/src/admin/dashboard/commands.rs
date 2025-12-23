@@ -1,7 +1,6 @@
 use super::models::AdminDashboard;
 use crate::backend::{
-    database::authenticated_command, permissions::models::Permission, response::Response,
-    utils::errors::ValidationError,
+    database::authenticated_command, permissions::models::Permission, response::Response, utils::errors::ValidationError,
 };
 
 #[tauri::command]

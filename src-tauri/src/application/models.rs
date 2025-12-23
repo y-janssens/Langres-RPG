@@ -54,10 +54,7 @@ impl ApplicationSettings {
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
         let languages_json = serde_json::to_string(&self.languages.0).map_err(|e| {
-            diesel::result::Error::DatabaseError(
-                diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                Box::new(e.to_string()),
-            )
+            diesel::result::Error::DatabaseError(diesel::result::DatabaseErrorKind::UnableToSendCommand, Box::new(e.to_string()))
         })?;
 
         let insertable = InsertableApplicationSettings {
@@ -72,15 +69,10 @@ impl ApplicationSettings {
             battle_automatic: self.battle_automatic,
         };
 
-        let exists = settings
-            .filter(id.eq(self.id))
-            .first::<Self>(connection)
-            .is_ok();
+        let exists = settings.filter(id.eq(self.id)).first::<Self>(connection).is_ok();
 
         if exists {
-            diesel::update(settings.find(&self.id))
-                .set(insertable)
-                .execute(connection)?;
+            diesel::update(settings.find(&self.id)).set(insertable).execute(connection)?;
         } else {
             diesel::insert_into(crate::schema::settings::table)
                 .values(&insertable)
@@ -168,9 +160,7 @@ impl ApplicationMenu {
     pub fn load_main_menu(connection: &mut SqliteConnection) -> Result<Self, Error> {
         let mut menu = Self::new();
         let mut order = MenuOrdering::new();
-        let credentials = Credentials::initialize()
-            .unwrap_or(Credentials::get_default())
-            .config;
+        let credentials = Credentials::initialize().unwrap_or(Credentials::get_default()).config;
         let games = Game::fetch(connection)?;
 
         menu.add_main_menu_items(&mut order, games);
@@ -197,11 +187,7 @@ impl ApplicationMenu {
     }
 
     fn add_common_items(&mut self, order: &mut MenuOrdering) {
-        self.add_item(
-            order,
-            "settings",
-            Some(Func::new(Some("popup"), "settings")),
-        )
+        self.add_item(order, "settings", Some(Func::new(Some("popup"), "settings")))
     }
 
     fn add_ingame_items(&mut self, order: &mut MenuOrdering) {
@@ -210,9 +196,7 @@ impl ApplicationMenu {
     }
 
     fn add_main_menu_items(&mut self, order: &mut MenuOrdering, games: Vec<Game>) {
-        let last_played_game = games
-            .iter()
-            .find(|g| g.visible && !g.last_save_date.is_empty());
+        let last_played_game = games.iter().find(|g| g.visible && !g.last_save_date.is_empty());
 
         if let Some(game) = last_played_game {
             self.add_item(order, "continue", Some(Func::new(None, &game.id)));
@@ -239,11 +223,7 @@ impl ApplicationMenu {
             self.add_item(order, "tools", Some(Func::new(Some("link"), "tools")));
         }
         if credentials.dashboard_enabled {
-            self.add_item(
-                order,
-                "dashboard",
-                Some(Func::new(Some("link"), "dashboard")),
-            );
+            self.add_item(order, "dashboard", Some(Func::new(Some("link"), "dashboard")));
         }
     }
 }

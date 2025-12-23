@@ -118,10 +118,7 @@ impl Credentials {
     }
 
     pub fn is_admin() -> bool {
-        Self::initialize()
-            .unwrap_or(Self::get_default())
-            .config
-            .is_admin
+        Self::initialize().unwrap_or(Self::get_default()).config.is_admin
     }
 
     /// Default config fallback

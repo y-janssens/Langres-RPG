@@ -18,10 +18,7 @@ mod tests {
     #[rstest]
     #[case(BattleState::Pending, BattleState::Ongoing)]
     #[case(BattleState::Ongoing, BattleState::Ended)]
-    async fn test_validate_battle_system_transition(
-        #[case] mut state: BattleState,
-        #[case] result: BattleState,
-    ) {
+    async fn test_validate_battle_system_transition(#[case] mut state: BattleState, #[case] result: BattleState) {
         let transition = state.transition();
         assert!(transition.is_ok());
         assert_eq!(state, result);

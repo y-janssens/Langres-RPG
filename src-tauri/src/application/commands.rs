@@ -8,30 +8,20 @@ use crate::backend::response::Response;
 use crate::backend::utils::errors::ValidationError;
 
 #[tauri::command]
-pub fn load_app_datas(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_app_datas(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::RegularUser, || {
-        Ok(ApplicationSettings::load(&mut connection)?)
-    })
+    authenticated_command(Permission::RegularUser, || Ok(ApplicationSettings::load(&mut connection)?))
 }
 
 #[tauri::command]
-pub fn load_main_menu(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_main_menu(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::RegularUser, || {
-        Ok(ApplicationMenu::load_main_menu(&mut connection)?)
-    })
+    authenticated_command(Permission::RegularUser, || Ok(ApplicationMenu::load_main_menu(&mut connection)?))
 }
 
 #[tauri::command]
 pub fn load_ingame_menu() -> Result<Response, ValidationError> {
-    authenticated_command(Permission::RegularUser, || {
-        Ok(ApplicationMenu::load_ingame_menu())
-    })
+    authenticated_command(Permission::RegularUser, || Ok(ApplicationMenu::load_ingame_menu()))
 }
 
 #[tauri::command]

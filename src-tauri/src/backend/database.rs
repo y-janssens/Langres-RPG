@@ -62,9 +62,7 @@ pub fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<
     let pool = Pool::builder().build(manager).expect(POOL_ERROR);
 
     let mut connection = pool.get()?;
-    connection
-        .run_pending_migrations(MIGRATIONS_PATH)
-        .expect(MIGRATION_ERROR);
+    connection.run_pending_migrations(MIGRATIONS_PATH).expect(MIGRATION_ERROR);
     post_migrate(&mut connection).expect(INITIAL_DATAS_ERROR);
 
     Ok(pool)
@@ -75,9 +73,7 @@ where
     T: FnOnce() -> Result<R, Box<dyn Error>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize()
-        .map_err(|e| ValidationError(e.to_string()))?
-        .config;
+    let credentials = Credentials::initialize().map_err(|e| ValidationError(e.to_string()))?.config;
 
     if credentials.has_permission(permissions) {
         match func() {
@@ -98,9 +94,7 @@ where
     Fut: std::future::Future<Output = Result<R, Box<dyn Error>>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize()
-        .map_err(|e| ValidationError(e.to_string()))?
-        .config;
+    let credentials = Credentials::initialize().map_err(|e| ValidationError(e.to_string()))?.config;
 
     if credentials.has_permission(permissions) {
         match func().await {

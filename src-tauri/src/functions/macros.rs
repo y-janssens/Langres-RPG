@@ -22,8 +22,7 @@ impl Function {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let functions: Vec<Self> = functions_initial_datas!()
-            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        let functions: Vec<Self> = functions_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         for function in functions {
             function

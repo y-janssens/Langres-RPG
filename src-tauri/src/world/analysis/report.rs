@@ -84,12 +84,7 @@ impl MapReport {
         }
     }
 
-    fn parse_entry(
-        &mut self,
-        category: MapReportEntry,
-        item: &Item,
-        parse_details: bool,
-    ) -> Result<(), Error> {
+    fn parse_entry(&mut self, category: MapReportEntry, item: &Item, parse_details: bool) -> Result<(), Error> {
         self.increment_summary(category)?;
         if parse_details {
             self.append_details(category, item.id)?;
@@ -103,9 +98,7 @@ impl MapReport {
     }
 
     fn append_details(&mut self, category: MapReportEntry, item_id: u32) -> Result<(), Error> {
-        self.details
-            .entry(category)
-            .and_modify(|values| values.push(item_id));
+        self.details.entry(category).and_modify(|values| values.push(item_id));
         Ok(())
     }
 }

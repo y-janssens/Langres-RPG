@@ -70,14 +70,9 @@ mod tests {
             let map = act.maps[0].clone();
 
             let objects = Object::load(connection).expect(BASE_ERROR);
-            let object = objects
-                .iter()
-                .find(|it| it.name == "tree")
-                .cloned()
-                .expect(BASE_ERROR);
+            let object = objects.iter().find(|it| it.name == "tree").cloned().expect(BASE_ERROR);
 
-            Story::edit_tiles(connection, act.id, map.id, [3, 4, 5].to_vec(), object.id)
-                .expect(BASE_ERROR);
+            Story::edit_tiles(connection, act.id, map.id, [3, 4, 5].to_vec(), object.id).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let _tiles: Vec<Item> = response.acts[0].maps[0]
@@ -100,17 +95,12 @@ mod tests {
             let story = Story::load(connection).unwrap();
 
             let objects = Object::load(connection).expect(BASE_ERROR);
-            let object = objects
-                .iter()
-                .find(|it| it.name == "water")
-                .cloned()
-                .expect(BASE_ERROR);
+            let object = objects.iter().find(|it| it.name == "water").cloned().expect(BASE_ERROR);
 
             let act = story.acts[0].clone();
             let map = act.maps[0].clone();
 
-            Story::edit_tiles(connection, act.id, map.id, vec![1, 2, 3], object.id)
-                .expect(BASE_ERROR);
+            Story::edit_tiles(connection, act.id, map.id, vec![1, 2, 3], object.id).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let _tiles: Vec<Item> = response.acts[0].maps[0]
@@ -156,12 +146,7 @@ mod tests {
             let initial_npcs_count = map.npcs.len();
             let npc_to_delete = map.npcs[0].clone();
 
-            let _ = Story::delete_tiles_npcs(
-                connection,
-                act.id,
-                map.id,
-                vec![npc_to_delete.starting_point.id],
-            );
+            let _ = Story::delete_tiles_npcs(connection, act.id, map.id, vec![npc_to_delete.starting_point.id]);
             let response = Story::load(connection).unwrap();
 
             let _act = response.acts[0].clone();
@@ -176,38 +161,16 @@ mod tests {
             let story = Story::load(connection).unwrap();
 
             let objects = Object::load(connection).expect(BASE_ERROR);
-            let water = objects
-                .iter()
-                .find(|it| it.name == "water")
-                .cloned()
-                .expect(BASE_ERROR);
-            let grass = objects
-                .iter()
-                .find(|it| it.name == "shore")
-                .cloned()
-                .expect(BASE_ERROR);
+            let water = objects.iter().find(|it| it.name == "water").cloned().expect(BASE_ERROR);
+            let grass = objects.iter().find(|it| it.name == "shore").cloned().expect(BASE_ERROR);
 
             let act = story.acts[0].clone();
             let map = act.maps[0].clone();
             let tile = map.content.iter().find(|t| t.id == 50).unwrap();
 
-            Story::edit_tiles(
-                connection,
-                act.id.clone(),
-                map.id.clone(),
-                tile.neighbours_ids.clone(),
-                water.id,
-            )
-            .expect(BASE_ERROR);
+            Story::edit_tiles(connection, act.id.clone(), map.id.clone(), tile.neighbours_ids.clone(), water.id).expect(BASE_ERROR);
 
-            Story::edit_tiles(
-                connection,
-                act.id.clone(),
-                map.id.clone(),
-                vec![tile.id],
-                grass.id,
-            )
-            .expect(BASE_ERROR);
+            Story::edit_tiles(connection, act.id.clone(), map.id.clone(), vec![tile.id], grass.id).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let _tiles: Vec<Item> = response.acts[0].maps[0]
@@ -221,8 +184,7 @@ mod tests {
                 assert!(tile.display_direction.is_none());
             }
 
-            Story::compute_tiles_directions(connection, act.id, map.id, vec![tile.id])
-                .expect(BASE_ERROR);
+            Story::compute_tiles_directions(connection, act.id, map.id, vec![tile.id]).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let _tiles: Vec<Item> = response.acts[0].maps[0]
@@ -246,8 +208,7 @@ mod tests {
             let act = story.acts[0].clone();
             let map = act.maps[0].clone();
 
-            Story::register_gateway(connection, act.id, map.id, 3, (Some(5325235), true))
-                .expect(BASE_ERROR);
+            Story::register_gateway(connection, act.id, map.id, 3, (Some(5325235), true)).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.acts[0].maps[0].content[3];
@@ -275,8 +236,7 @@ mod tests {
             let act = story.acts[0].clone();
             let map = act.maps[0].clone();
 
-            Story::register_gateway(connection, act.id, map.id, 3, (Some(5325235), true))
-                .expect(BASE_ERROR);
+            Story::register_gateway(connection, act.id, map.id, 3, (Some(5325235), true)).expect(BASE_ERROR);
 
             let response = Story::load(connection).unwrap();
             let tile = &response.acts[0].maps[0].content[3];
@@ -355,33 +315,20 @@ mod tests {
                     .expect(BASE_ERROR);
 
                 // Clear base map content for readability purposes
-                let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true)
-                    .expect(BASE_ERROR);
+                let map = generate(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true).expect(BASE_ERROR);
                 story.acts[0].maps[0] = serde_json::from_value(map.0).expect(BASE_ERROR);
                 story.save(connection).expect(BASE_ERROR);
 
-                let _ = Story::register_object(
-                    connection,
-                    act.id,
-                    story.acts[0].maps[0].id,
-                    1369,
-                    object.id,
-                    true,
-                );
+                let _ = Story::register_object(connection, act.id, story.acts[0].maps[0].id, 1369, object.id, true);
 
                 let response = Story::load(connection).unwrap();
                 let _map = response.acts[0].maps[0].clone();
                 let expected_tiles = [
-                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370,
-                    1371, 1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371, 1417, 1418, 1419, 1420, 1421, 1467,
+                    1468, 1469, 1470, 1471,
                 ];
 
-                let _tiles: Vec<Item> = _map
-                    .content
-                    .iter()
-                    .filter(|t| expected_tiles.contains(&t.id))
-                    .cloned()
-                    .collect();
+                let _tiles: Vec<Item> = _map.content.iter().filter(|t| expected_tiles.contains(&t.id)).cloned().collect();
 
                 for tile in _tiles.iter() {
                     assert_eq!(tile.value, "#");
@@ -400,11 +347,7 @@ mod tests {
                 let act = story.acts[0].clone();
 
                 let objects = Object::load(connection).expect(BASE_ERROR);
-                let object = objects
-                    .iter()
-                    .find(|it| it.name == "house")
-                    .cloned()
-                    .expect(BASE_ERROR);
+                let object = objects.iter().find(|it| it.name == "house").cloned().expect(BASE_ERROR);
 
                 // // Clear base map content for readability purposes
                 let map = World::new(DEFAULT_MAP_SIZE.clone(), "test".to_string(), 0, true);
@@ -416,16 +359,11 @@ mod tests {
                 let response = Story::load(connection).unwrap();
                 let _map = response.acts[0].maps[0].clone();
                 let expected_tiles = [
-                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370,
-                    1371, 1417, 1418, 1419, 1420, 1421, 1467, 1468, 1469, 1470, 1471,
+                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371, 1417, 1418, 1419, 1420, 1421, 1467,
+                    1468, 1469, 1470, 1471,
                 ];
 
-                let _tiles: Vec<Item> = _map
-                    .content
-                    .iter()
-                    .filter(|t| expected_tiles.contains(&t.id))
-                    .cloned()
-                    .collect();
+                let _tiles: Vec<Item> = _map.content.iter().filter(|t| expected_tiles.contains(&t.id)).cloned().collect();
 
                 for tile in _tiles.iter() {
                     assert_eq!(tile.value, "-");
@@ -444,11 +382,7 @@ mod tests {
             let map = act.maps[0].clone();
 
             let objects = Object::load(connection).expect(BASE_ERROR);
-            let object = objects
-                .iter()
-                .find(|it| it.name == "road")
-                .cloned()
-                .expect(BASE_ERROR);
+            let object = objects.iter().find(|it| it.name == "road").cloned().expect(BASE_ERROR);
 
             let response = Story::register_object(connection, act.id, map.id, 3, object.id, true);
             assert!(response.is_err());
@@ -467,11 +401,7 @@ mod tests {
             // Patch storyline
             let mut maps = storyline.acts[0].maps.clone();
             let map = storyline.acts[0].maps[0].content.clone();
-            let tile = maps[0]
-                .content
-                .iter_mut()
-                .find(|tile| tile.id == 709)
-                .unwrap();
+            let tile = maps[0].content.iter_mut().find(|tile| tile.id == 709).unwrap();
 
             tile.value = "W".to_string();
             tile.display_value = "water".to_string();
@@ -493,16 +423,9 @@ mod tests {
             let games = Game::fetch(connection).expect("Failed to fetch games");
             assert_eq!(games.len(), 1);
             assert!(games.iter().all(|game| game.last_known_position.id != 709));
-            assert!(
-                games[0].storyline.acts[0].maps[0].content
-                    [games[0].last_known_position.id as usize]
-                    .walkable
-            );
+            assert!(games[0].storyline.acts[0].maps[0].content[games[0].last_known_position.id as usize].walkable);
             assert_eq!(games[0].storyline.acts[0].maps[0].content[709].value, "W");
-            assert_eq!(
-                games[0].storyline.acts[0].maps[0].content[709].display_value,
-                "water"
-            );
+            assert_eq!(games[0].storyline.acts[0].maps[0].content[709].display_value, "water");
         });
     }
 }

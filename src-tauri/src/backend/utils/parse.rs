@@ -42,9 +42,7 @@ pub fn get_sequence<'a>(content: &'a Value, key: &'a str) -> Result<&'a Vec<Valu
 }
 
 pub fn get_content<'a>(content: &'a Value, key: &'a str) -> Result<&'a Value, Error> {
-    content
-        .get(key)
-        .ok_or_else(|| Error::new(InvalidData, SCRIPT_ERROR))
+    content.get(key).ok_or_else(|| Error::new(InvalidData, SCRIPT_ERROR))
 }
 
 pub fn get_mapping<'a>(content: &'a Value, key: &'a str) -> Result<&'a Mapping, Error> {

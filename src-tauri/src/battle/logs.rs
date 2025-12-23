@@ -120,12 +120,7 @@ impl BattleLog {
     }
 
     /// Log both system and characters actions
-    pub fn action_log(
-        action: Option<&Action>,
-        initiator: Operator,
-        stat: &Stat,
-        result: Option<&Roll>,
-    ) -> Self {
+    pub fn action_log(action: Option<&Action>, initiator: Operator, stat: &Stat, result: Option<&Roll>) -> Self {
         Self {
             r#type: LogType::Action,
             action: action.cloned(),
@@ -135,23 +130,14 @@ impl BattleLog {
             value: result.map(|r| r.output),
             text: match initiator {
                 Operator::System => String::new(),
-                _ => format!(
-                    "{:?} tries to {}",
-                    initiator,
-                    action.map_or(String::new(), |act| act.to_value())
-                ),
+                _ => format!("{:?} tries to {}", initiator, action.map_or(String::new(), |act| act.to_value())),
             },
             ..Default::default()
         }
     }
 
     /// Log character objects usage
-    pub fn object_log(
-        object: Option<&Object>,
-        initiator: Operator,
-        stat: &Stat,
-        result: Option<&Roll>,
-    ) -> Self {
+    pub fn object_log(object: Option<&Object>, initiator: Operator, stat: &Stat, result: Option<&Roll>) -> Self {
         Self {
             initiator,
             r#type: LogType::Object,

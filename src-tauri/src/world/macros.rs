@@ -2,9 +2,7 @@ use std::io::Error;
 
 use serde_yaml::{Sequence, Value};
 
-use crate::backend::utils::parse::{
-    get_boolean_value, get_mapping, get_numeric_value, get_sequence, get_string_value,
-};
+use crate::backend::utils::parse::{get_boolean_value, get_mapping, get_numeric_value, get_sequence, get_string_value};
 use crate::game::models::Position;
 use crate::storyline::models::{Act, Content};
 use crate::world::builder::config::Values;
@@ -28,10 +26,7 @@ impl Act {
     }
 
     fn parse_maps(content: &Sequence) -> Result<Content, Error> {
-        let maps = content
-            .iter()
-            .map(World::parse)
-            .collect::<Result<Vec<World>, Error>>()?;
+        let maps = content.iter().map(World::parse).collect::<Result<Vec<World>, Error>>()?;
         Ok(Content(maps))
     }
 }

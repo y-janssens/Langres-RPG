@@ -36,10 +36,7 @@ impl Conf {
     /// Generate random values for loot table
     /// [gold, weapon, equipment, craftable, thrash]
     fn get_values() -> Vec<i32> {
-        let values: Vec<i32> = BASE_RANGES
-            .iter()
-            .map(|&range| rand::thread_rng().gen_range(0..=range))
-            .collect();
+        let values: Vec<i32> = BASE_RANGES.iter().map(|&range| rand::thread_rng().gen_range(0..=range)).collect();
 
         values
     }
@@ -53,24 +50,21 @@ impl Conf {
         let mut craftable = None;
         let mut thrash = None;
 
-        values
-            .iter()
-            .enumerate()
-            .for_each(|(index, &value)| match index {
-                1 => {
-                    weapon = Self::get_item(value, index, BaseItemType::Weapon);
-                }
-                2 => {
-                    equipment = Self::get_item(value, index, BaseItemType::Equipment);
-                }
-                3 => {
-                    craftable = Self::get_item(value, index, BaseItemType::Craftable);
-                }
-                4 => {
-                    thrash = Self::get_item(value, index, BaseItemType::Thrash);
-                }
-                _ => (),
-            });
+        values.iter().enumerate().for_each(|(index, &value)| match index {
+            1 => {
+                weapon = Self::get_item(value, index, BaseItemType::Weapon);
+            }
+            2 => {
+                equipment = Self::get_item(value, index, BaseItemType::Equipment);
+            }
+            3 => {
+                craftable = Self::get_item(value, index, BaseItemType::Craftable);
+            }
+            4 => {
+                thrash = Self::get_item(value, index, BaseItemType::Thrash);
+            }
+            _ => (),
+        });
 
         Conf {
             values: TableConfig {

@@ -6,9 +6,7 @@ use std::io::{
 use strum_macros::{Display, EnumString};
 
 use crate::{
-    backend::settings::errors::{
-        BATTLE_SYSTEM_ENDED_ERROR, BATTLE_SYSTEM_PENDING_ERROR, BATTLE_SYSTEM_TRANSITION_ERROR,
-    },
+    backend::settings::errors::{BATTLE_SYSTEM_ENDED_ERROR, BATTLE_SYSTEM_PENDING_ERROR, BATTLE_SYSTEM_TRANSITION_ERROR},
     battle::models::BattleSystem,
     character::models::Character,
     npcs::models::{Class, Npc},

@@ -10,9 +10,7 @@ use crate::backend::{
 use super::models::Function;
 
 #[tauri::command]
-pub fn load_functions(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_functions(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Ok(Function::load(&mut connection)?)

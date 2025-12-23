@@ -1,8 +1,5 @@
 use crate::schema::objects::dsl::*;
-use diesel::{
-    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl,
-    Selectable, SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
@@ -60,8 +57,7 @@ impl Object {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let area_json = serde_json::to_string(&self.area)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let area_json = serde_json::to_string(&self.area).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableObject {
             name: self.name,
@@ -73,15 +69,10 @@ impl Object {
             interactive: self.interactive,
         };
 
-        let exists = objects
-            .filter(id.eq(self.id))
-            .first::<Self>(connection)
-            .is_ok();
+        let exists = objects.filter(id.eq(self.id)).first::<Self>(connection).is_ok();
 
         if exists {
-            diesel::update(objects.find(self.id))
-                .set(insertable)
-                .execute(connection)?;
+            diesel::update(objects.find(self.id)).set(insertable).execute(connection)?;
         } else {
             diesel::insert_into(crate::schema::objects::table)
                 .values(&insertable)

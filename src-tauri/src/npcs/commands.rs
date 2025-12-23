@@ -14,9 +14,7 @@ pub fn load_npcs(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Editor, || {
-        Ok(Npc::get_for_map(map_id, &mut connection)?)
-    })
+    authenticated_command(Permission::Editor, || Ok(Npc::get_for_map(map_id, &mut connection)?))
 }
 
 #[tauri::command]
@@ -34,10 +32,7 @@ pub fn new_npc(map_id: i32, position: (f32, f32, u32)) -> Result<Response, Valid
 }
 
 #[tauri::command]
-pub fn save_npc(
-    npc: Npc,
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn save_npc(npc: Npc, connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || Ok(npc.save(&mut connection)?))
 }

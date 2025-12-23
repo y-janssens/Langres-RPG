@@ -9,13 +9,9 @@ use diesel::SqliteConnection;
 use super::models::Statistic;
 
 #[tauri::command]
-pub fn load_statistics(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_statistics(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Ok(Statistic::load(&mut connection)?)
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Statistic::load(&mut connection)?))
 }
 
 #[tauri::command]
@@ -38,7 +34,5 @@ pub fn delete_statistic(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Ok(Statistic::delete(id, &mut connection)?)
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Statistic::delete(id, &mut connection)?))
 }

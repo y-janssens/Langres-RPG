@@ -10,10 +10,7 @@ use crate::{
 };
 
 #[tauri::command]
-pub async fn generate_map_content(
-    mut map: World,
-    options: Options,
-) -> Result<Response, ValidationError> {
+pub async fn generate_map_content(mut map: World, options: Options) -> Result<Response, ValidationError> {
     authenticated_thread(Permission::Editor, || async {
         let result = map.generate_content(Some(options)).await;
         Ok(result)

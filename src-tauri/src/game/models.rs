@@ -28,11 +28,7 @@ pub struct Position {
 
 impl Default for Position {
     fn default() -> Self {
-        Self {
-            x: 0.0,
-            y: 0.0,
-            id: 0,
-        }
+        Self { x: 0.0, y: 0.0, id: 0 }
     }
 }
 
@@ -122,12 +118,10 @@ impl Game {
         self.save_count += 1;
         self.last_save_date = Self::get_date();
 
-        let character_json = serde_json::to_string(&self.character)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let storyline_json = serde_json::to_string(&self.storyline)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let last_known_position_json = serde_json::to_string(&self.last_known_position)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let character_json = serde_json::to_string(&self.character).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let storyline_json = serde_json::to_string(&self.storyline).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let last_known_position_json =
+            serde_json::to_string(&self.last_known_position).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableGame {
             id: self.id.clone(),
@@ -140,20 +134,13 @@ impl Game {
             visible: self.visible,
             last_known_position: last_known_position_json,
         };
-        let exists = games
-            .filter(id.eq(self.id.clone()))
-            .first::<Game>(connection)
-            .is_ok();
+        let exists = games.filter(id.eq(self.id.clone())).first::<Game>(connection).is_ok();
 
         if exists {
-            diesel::update(games.find(self.id.clone()))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(games.find(self.id.clone())).set(&insertable).execute(connection)?;
         } else {
             self.generate_player_datas(connection)?;
-            diesel::insert_into(games::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(games::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())
@@ -190,15 +177,11 @@ impl Game {
     }
 
     pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
-        let credentials = Credentials::initialize()
-            .unwrap_or(Credentials::get_default())
-            .config;
+        let credentials = Credentials::initialize().unwrap_or(Credentials::get_default()).config;
         let _games = if credentials.is_admin {
             crate::schema::games::table.load(connection)?
         } else {
-            crate::schema::games::table
-                .filter(visible.eq(true))
-                .load(connection)?
+            crate::schema::games::table.filter(visible.eq(true)).load(connection)?
         };
         Ok(_games)
     }
@@ -220,9 +203,7 @@ impl Game {
                 act.maps.iter().find_map(|map| {
                     map.content
                         .iter()
-                        .find(|item| {
-                            item.id == self.last_known_position.id && !map.complete && map.primary
-                        })
+                        .find(|item| item.id == self.last_known_position.id && !map.complete && map.primary)
                         .map(|item| (item, map, act))
                 })
             })
@@ -235,11 +216,7 @@ impl Game {
                 act.maps.iter().find_map(|map| {
                     map.content
                         .iter()
-                        .find(|item| {
-                            item.id == self.last_known_position.id
-                                && act.id == current_act.id
-                                && map.id == current_map.id
-                        })
+                        .find(|item| item.id == self.last_known_position.id && act.id == current_act.id && map.id == current_map.id)
                         .map(|item| (item, map))
                 })
             })
@@ -268,15 +245,7 @@ impl Game {
             .iter()
             .find(|tile| tile.id == current_position)
             .cloned()
-            .map(|t| {
-                FrustumCullingUtility::cull_filter(
-                    t.id as i32,
-                    current_map.size,
-                    2_usize,
-                    2_usize,
-                    current_map.content,
-                )
-            })
+            .map(|t| FrustumCullingUtility::cull_filter(t.id as i32, current_map.size, 2_usize, 2_usize, current_map.content))
             .unwrap();
 
         self.get_new_position(neighbours);

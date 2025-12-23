@@ -5,8 +5,7 @@ use serde_yaml::{Mapping, Sequence, Value};
 use system_macros::objects_initial_datas;
 
 use crate::backend::utils::parse::{
-    get_boolean_value, get_mapping, get_num_value, get_numeric_value, get_optional_string_value,
-    get_string_value,
+    get_boolean_value, get_mapping, get_num_value, get_numeric_value, get_optional_string_value, get_string_value,
 };
 use crate::objects::models::{Area, Object};
 
@@ -29,8 +28,7 @@ impl Object {
     }
 
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let objects: Vec<Self> = objects_initial_datas!()
-            .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+        let objects: Vec<Self> = objects_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         for object in objects {
             object

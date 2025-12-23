@@ -15,14 +15,7 @@ pub struct Params {
 }
 
 impl Params {
-    pub fn get(
-        name: &str,
-        scale: f64,
-        factor: f64,
-        mut output: Vec<&str>,
-        filter: &str,
-        pre_process: bool,
-    ) -> Self {
+    pub fn get(name: &str, scale: f64, factor: f64, mut output: Vec<&str>, filter: &str, pre_process: bool) -> Self {
         Self {
             name: name.to_string(),
             scale,
@@ -49,9 +42,7 @@ impl Generator {
         if let Some(ref action) = options.action {
             content = match action.as_str() {
                 "town" => Self::get_action(content, options, TOWN_PARAMS.clone(), NoiseType::Town),
-                "shanty" => {
-                    Self::get_action(content, options, SHANTY_PARAMS.clone(), NoiseType::Shanty)
-                }
+                "shanty" => Self::get_action(content, options, SHANTY_PARAMS.clone(), NoiseType::Shanty),
                 _ => content,
             };
         }
@@ -63,9 +54,7 @@ impl Generator {
         if let Some(ref post_action) = options.post_action {
             content = match post_action.as_str() {
                 "dirt" => Self::get_action(content, options, DIRT_PARAMS.clone(), NoiseType::Dirt),
-                "ground" => {
-                    Self::get_action(content, options, GROUND_PARAMS.clone(), NoiseType::Dirt)
-                }
+                "ground" => Self::get_action(content, options, GROUND_PARAMS.clone(), NoiseType::Dirt),
                 _ => content,
             };
         }
@@ -73,12 +62,7 @@ impl Generator {
     }
 
     /// Get noise generator parameters and generate actions's content
-    fn get_action(
-        content: Vec<Item>,
-        options: &Options,
-        params: Params,
-        noise: NoiseType,
-    ) -> Vec<Item> {
+    fn get_action(content: Vec<Item>, options: &Options, params: Params, noise: NoiseType) -> Vec<Item> {
         let mut generator = Self::init(content, options, params, noise);
 
         generator.generate();
@@ -90,16 +74,10 @@ impl Generator {
     fn generate(&mut self) {
         let params = self.params.clone();
 
-        for item in self
-            .content
-            .iter_mut()
-            .filter(|i| Self::get_filter(&params, &i.value))
-        {
-            let noise_value = self.noise.get([
-                item.x as f64 * self.params.scale,
-                item.y as f64 * self.params.scale,
-                0.0,
-            ]);
+        for item in self.content.iter_mut().filter(|i| Self::get_filter(&params, &i.value)) {
+            let noise_value = self
+                .noise
+                .get([item.x as f64 * self.params.scale, item.y as f64 * self.params.scale, 0.0]);
             let value = ((noise_value + 1.0) * self.params.factor) as i32;
             Self::pre_process_values(self.params.clone(), item, value);
         }
@@ -142,13 +120,7 @@ impl Generator {
             let neighbours: Vec<Vec<String>> = self
                 .content
                 .iter()
-                .map(|it| {
-                    it.clone()
-                        .get_neighbours_values(&self.content)
-                        .values()
-                        .cloned()
-                        .collect()
-                })
+                .map(|it| it.clone().get_neighbours_values(&self.content).values().cloned().collect())
                 .collect();
 
             for (index, item) in self
@@ -157,10 +129,7 @@ impl Generator {
                 .enumerate()
                 .filter(|(_, tile)| tile.value == self.params.output[0])
             {
-                if neighbours[index]
-                    .iter()
-                    .all(|value| value == &self.params.output[0])
-                {
+                if neighbours[index].iter().all(|value| value == &self.params.output[0]) {
                     item.value = "-".to_string();
                 }
             }

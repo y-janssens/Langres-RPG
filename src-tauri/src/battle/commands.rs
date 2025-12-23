@@ -27,10 +27,7 @@ pub fn start_battle(
 }
 
 #[tauri::command]
-pub fn battle_action(
-    mut system: BattleSystem,
-    action_str: &str,
-) -> Result<Response, ValidationError> {
+pub fn battle_action(mut system: BattleSystem, action_str: &str) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         system.trigger_player_action(action_str)?;
         Ok(system)
@@ -38,10 +35,7 @@ pub fn battle_action(
 }
 
 #[tauri::command]
-pub fn battle_object(
-    mut system: BattleSystem,
-    object_str: &str,
-) -> Result<Response, ValidationError> {
+pub fn battle_object(mut system: BattleSystem, object_str: &str) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         system.trigger_player_object(object_str)?;
         Ok(system)

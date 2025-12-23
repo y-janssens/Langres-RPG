@@ -1,10 +1,7 @@
 use crate::schema::statistics::dsl::*;
 use crate::{backend::translations::models::Translations, schema::statistics};
 use diesel::result::Error;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -53,10 +50,8 @@ impl Statistic {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let name_json = serde_json::to_string(&self.name)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let description_json = serde_json::to_string(&self.description)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableStatistic {
             id: Uuid::new_v4().to_string(),
@@ -65,19 +60,12 @@ impl Statistic {
             value: self.clone().value,
             visible: self.clone().visible,
         };
-        let exists = statistics
-            .filter(id.eq(self.clone().id))
-            .first::<Self>(connection)
-            .is_ok();
+        let exists = statistics.filter(id.eq(self.clone().id)).first::<Self>(connection).is_ok();
 
         if exists {
-            diesel::update(statistics.find(self.id))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(statistics.find(self.id)).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(statistics::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(statistics::table).values(&insertable).execute(connection)?;
         }
         Ok(())
     }

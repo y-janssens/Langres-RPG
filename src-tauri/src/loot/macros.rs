@@ -39,9 +39,7 @@ impl Loot {
         let functions: Vec<Self> = loot_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
 
         for function in functions {
-            function
-                .save(connection)
-                .map_err(|e| Error::new(InvalidData, e.to_string()))?;
+            function.save(connection).map_err(|e| Error::new(InvalidData, e.to_string()))?;
         }
 
         Ok(())

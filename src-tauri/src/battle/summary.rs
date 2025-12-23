@@ -37,18 +37,12 @@ impl Summary {
         *self
     }
 
-    fn compute_damages<'a>(
-        &self,
-        history: &'a [BattleLog],
-        operator: Operator,
-    ) -> impl Iterator<Item = i32> + 'a {
+    fn compute_damages<'a>(&self, history: &'a [BattleLog], operator: Operator) -> impl Iterator<Item = i32> + 'a {
         let operator_str = operator.to_string();
 
         history
             .iter()
-            .filter(move |log| {
-                log.r#type == LogType::Damage && log.text.to_lowercase().contains(&operator_str)
-            })
+            .filter(move |log| log.r#type == LogType::Damage && log.text.to_lowercase().contains(&operator_str))
             .map(|log| log.value.unwrap_or(0))
     }
 

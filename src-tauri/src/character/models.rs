@@ -137,17 +137,9 @@ impl Inventory {
     pub fn new(connection: &mut SqliteConnection) -> Result<Self, Error> {
         let loot = Loot::load(connection)?;
 
-        let right_hand = loot
-            .iter()
-            .find(|it| it.id == "item_long_sword")
-            .cloned()
-            .unwrap_or(FISTS.clone());
+        let right_hand = loot.iter().find(|it| it.id == "item_long_sword").cloned().unwrap_or(FISTS.clone());
 
-        let left_hand = loot
-            .iter()
-            .find(|it| it.id == "item_shield")
-            .cloned()
-            .unwrap_or(FISTS.clone());
+        let left_hand = loot.iter().find(|it| it.id == "item_shield").cloned().unwrap_or(FISTS.clone());
 
         Ok(Self {
             right_hand: Some(right_hand),
@@ -207,17 +199,10 @@ impl Inventory {
     }
 
     pub fn get_consumables(&self, object: Option<&Object>) -> Vec<&Loot> {
-        let objects: Vec<&Loot> = self
-            .objects
-            .iter()
-            .filter(|i| i.item_type == ItemTypes::Consumable)
-            .collect();
+        let objects: Vec<&Loot> = self.objects.iter().filter(|i| i.item_type == ItemTypes::Consumable).collect();
 
         if let Some(obj) = object {
-            return objects
-                .into_iter()
-                .filter(|ob| ob.id == format!("obj_{}", obj))
-                .collect();
+            return objects.into_iter().filter(|ob| ob.id == format!("obj_{}", obj)).collect();
         }
 
         objects
