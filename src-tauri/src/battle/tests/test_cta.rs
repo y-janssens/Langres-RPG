@@ -3,12 +3,11 @@ mod tests {
     use rstest::rstest;
 
     use crate::backend::{
-        permissions::models::Permission,
         conf_tests::database::{allow_db_access, with_permissions},
+        permissions::models::Permission,
     };
     use crate::battle::{
-        settings::TamperMode, tests::test_utils::helpers::setup_battle_system,
-        tests::test_utils::helpers::with_tampering, types::Operator,
+        settings::TamperMode, tests::test_utils::helpers::setup_battle_system, tests::test_utils::helpers::with_tampering, types::Operator,
     };
 
     #[test]

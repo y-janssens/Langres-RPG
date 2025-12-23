@@ -43,10 +43,7 @@ impl Distribution {
     fn get_percentiles(&mut self) -> HashMap<String, f64> {
         let mut percentile_dist = HashMap::new();
         for (value, count) in self.values.clone().into_iter() {
-            percentile_dist.insert(
-                value.clone(),
-                (count as f64 / *DEFAULT_MAP_SIZE_GRID as f64) * 100.0,
-            );
+            percentile_dist.insert(value.clone(), (count as f64 / *DEFAULT_MAP_SIZE_GRID as f64) * 100.0);
         }
 
         percentile_dist

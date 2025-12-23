@@ -21,9 +21,7 @@ mod tests {
             .filter(|it| DIRECTIONAL_VALUES.clone().contains(&it.value.as_str()))
             .collect();
 
-        assert!(items_with_directions
-            .into_iter()
-            .all(|it| it.display_direction.is_some()))
+        assert!(items_with_directions.into_iter().all(|it| it.display_direction.is_some()))
     }
 
     #[test]
@@ -93,8 +91,8 @@ mod tests {
         ]);
 
         let water_tiles = Vec::from([
-            1462, 1463, 1464, 1465, 1466, 1467, 1468, 1511, 1512, 1513, 1514, 1515, 1516, 1517,
-            1518, 1562, 1563, 1564, 1565, 1566, 1567, 1568,
+            1462, 1463, 1464, 1465, 1466, 1467, 1468, 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1562, 1563, 1564, 1565, 1566, 1567,
+            1568,
         ]);
 
         world.content.iter_mut().for_each(|i| match i.id {
@@ -114,10 +112,7 @@ mod tests {
         }
 
         for id in water_tiles {
-            assert!(world.content[id as usize]
-                .display_direction
-                .clone()
-                .is_none());
+            assert!(world.content[id as usize].display_direction.clone().is_none());
         }
     }
 
@@ -232,8 +227,8 @@ mod tests {
         ]);
 
         let water_tiles = Vec::from([
-            1462, 1463, 1464, 1465, 1466, 1467, 1468, 1511, 1512, 1513, 1514, 1515, 1516, 1517,
-            1518, 1562, 1563, 1564, 1565, 1566, 1567, 1568,
+            1462, 1463, 1464, 1465, 1466, 1467, 1468, 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1562, 1563, 1564, 1565, 1566, 1567,
+            1568,
         ]);
 
         world.content.iter_mut().for_each(|i| match i.id {
@@ -264,10 +259,7 @@ mod tests {
         }
 
         for id in water_tiles {
-            assert!(world.content[id as usize]
-                .display_direction
-                .clone()
-                .is_none());
+            assert!(world.content[id as usize].display_direction.clone().is_none());
         }
     }
 }

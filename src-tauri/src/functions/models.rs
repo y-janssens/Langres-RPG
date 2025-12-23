@@ -1,8 +1,5 @@
 use crate::schema::functions::dsl::*;
-use diesel::{
-    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl,
-    Selectable, SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 
 use crate::backend::conf::faker::faker_definitions::{Faker, IdFaker};
@@ -21,9 +18,9 @@ pub struct Function {
 #[diesel(table_name = crate::schema::functions)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableFunction {
-    icon: String,
-    label: String,
-    command: String,
+    pub icon: String,
+    pub label: String,
+    pub command: String,
 }
 
 impl Default for Function {
@@ -49,15 +46,10 @@ impl Function {
             command: self.command,
         };
 
-        let exists = functions
-            .filter(id.eq(self.id))
-            .first::<Self>(connection)
-            .is_ok();
+        let exists = functions.filter(id.eq(self.id)).first::<Self>(connection).is_ok();
 
         if exists {
-            diesel::update(functions.find(self.id))
-                .set(insertable)
-                .execute(connection)?;
+            diesel::update(functions.find(self.id)).set(insertable).execute(connection)?;
         } else {
             diesel::insert_into(crate::schema::functions::table)
                 .values(&insertable)

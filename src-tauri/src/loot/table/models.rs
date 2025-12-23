@@ -17,10 +17,7 @@ pub struct TableLoot {
 }
 
 impl TableLoot {
-    pub fn generate(
-        name: Option<String>,
-        connection: &mut SqliteConnection,
-    ) -> Result<Vec<Loot>, Error> {
+    pub fn generate(name: Option<String>, connection: &mut SqliteConnection) -> Result<Vec<Loot>, Error> {
         let config = Conf::get_config();
         let capacity = config.clone().get_level();
         let mut table = Vec::with_capacity(capacity);
@@ -100,10 +97,7 @@ impl TableLoot {
 
     fn resolve_item(kind: &str, table: &[Loot]) -> Option<Loot> {
         let mut rng = thread_rng();
-        let items: Vec<&Loot> = table
-            .iter()
-            .filter(|item| item.item_type == ItemTypes::resolve(kind))
-            .collect();
+        let items: Vec<&Loot> = table.iter().filter(|item| item.item_type == ItemTypes::resolve(kind)).collect();
 
         if let Some(&item) = items.iter().choose(&mut rng) {
             Some(item.clone())

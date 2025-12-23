@@ -32,11 +32,7 @@ pub struct BattleSystem {
 
 impl BattleSystem {
     /// Initialize Battle System with default values
-    pub fn initialize(
-        character: Character,
-        npc: Npc,
-        connection: &mut SqliteConnection,
-    ) -> Result<Self, ResultError> {
+    pub fn initialize(character: Character, npc: Npc, connection: &mut SqliteConnection) -> Result<Self, ResultError> {
         Ok(Self {
             npc,
             result: None,
@@ -195,9 +191,7 @@ impl BattleSystem {
 
     /// Mark previous logs as identified
     fn identify_battle_logs(&mut self) {
-        self.history
-            .iter_mut()
-            .for_each(|log| log.identified = true);
+        self.history.iter_mut().for_each(|log| log.identified = true);
     }
 
     /// Validate BattleState transition and log into system
@@ -243,10 +237,7 @@ impl BattleSystem {
                 }
             }
         }
-        println!(
-            "Character: Pvs: {} Aps: {}",
-            self.character.pv, self.character.ap,
-        );
+        println!("Character: Pvs: {} Aps: {}", self.character.pv, self.character.ap,);
         println!("Npc: Pvs: {} Aps: {}", self.npc.pv, self.npc.ap,);
     }
 }

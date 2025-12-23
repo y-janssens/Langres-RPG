@@ -1,0 +1,33 @@
+- description:
+    en: Kill Sir Herbert
+    fr: Tuez Ser Herbert
+  id: main_quest_0001
+  name:
+    en: Strike the brother while he's deceitful
+    fr: Il faut battre le frère quand il est faux
+  next: main_quest_0002
+  primary: true
+  reward: 0
+  status:
+    abandoned: false
+    completed: false
+    failed: false
+    owned: true
+  visible: true
+
+- description:
+    en: Kill Sir Herbert
+    fr: Tuez Ser Herbert
+  id: main_quest_0002
+  name:
+    en: Renegades
+    fr: Renégats
+  next: 
+  primary: true
+  reward: 150
+  status:
+    abandoned: false
+    completed: false
+    failed: false
+    owned: true
+  visible: true

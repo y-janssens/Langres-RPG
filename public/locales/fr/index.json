@@ -69,6 +69,18 @@
       "editor": {
         "title": "Éditez le contenu de vos cartes"
       },
+      "export": {
+        "blocks": {
+          "maps": "Sélectionnez les cartes à inclure dans votre export. Chaque carte contient des lieux, des rencontres et des détails environnementaux.",
+          "maps_label": "Exportez les cartes",
+          "npcs": "Choisissez les PNJ à exporter. Les PNJ incluent leurs dialogues, inventaires et quêtes.",
+          "npcs_label": "Exportez les PNJs",
+          "storyline": "Exportez la structure complète du scénario incluant tous les actes, scènes et éléments narratifs.",
+          "storyline_label": "Exportez le scénario"
+        },
+        "title": "Exporter les données de votre jeu",
+        "subtitle": "Sélectionnez le contenu à exporter. Le format YML exporte des données minimales pour le traitement backend, le format JSON exporte des données structurées complètes."
+      },
       "gateway": {
         "subtitle": "Sélectionner une carte",
         "title": "Éditez et organisez les passages entre vos cartes"
@@ -172,7 +184,10 @@
     },
     "toasts": {
       "compute_map_directions": "Directions calculées avec succès!",
-      "export": "Données exportées avec succès et copiées dans le presse-papiers!",
+      "copy": "Données d'export copiées avec succès dans le presse papiers",
+      "copy_error": "Une erreur est survenue lors de la copie des données",
+      "export": "Fichier d'export enregistré avec succès vers {{path}}",
+      "export_error": "Une erreur est survenue lors de l'export des données",
       "fix_map_inconsistencies": "Valeurs incohérentes corrigées avec succès!"
     },
     "toggles": {
@@ -196,6 +211,7 @@
       "compute": "Calculer les directions",
       "confirm": "Confirmer",
       "continue": "Continuer",
+      "copy": "Copy",
       "delete": "Supprimer",
       "edit": "Modifier",
       "export": "Exporter",
@@ -207,6 +223,7 @@
       "save": "Enregistrer",
       "search": "Rechercher",
       "select": "Sélectionner",
+      "select_all": "Sélectionner tout",
       "settings": "Paramètres",
       "start": "Commencer",
       "statistics": "Statistiques"
@@ -445,6 +462,7 @@
   "npcs": {
     "bandit": "Bandit",
     "soldier": "Soldat",
+    "start": "Point de départ",
     "zombie": "Zombie"
   },
   "tools": {

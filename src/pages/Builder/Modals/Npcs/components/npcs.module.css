@@ -1,6 +1,7 @@
 .npc-modal-container {
     height: -webkit-fill-available;
     overflow-y: auto;
+    padding: 0px 5px;
 }
 
 .npc-sub-section {

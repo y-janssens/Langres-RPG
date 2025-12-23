@@ -11,9 +11,7 @@ use crate::backend::{
 use super::models::Quest;
 
 #[tauri::command]
-pub fn load_quests(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_quests(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || Ok(Quest::load(&mut connection)?))
 }
@@ -38,7 +36,5 @@ pub fn delete_quest(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Ok(Quest::delete(id, &mut connection)?)
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Quest::delete(id, &mut connection)?))
 }

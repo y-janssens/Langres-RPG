@@ -116,21 +116,13 @@ impl Item {
         } else {
             vec![-1, 1, -size - 1, -size, size - 1, size]
         };
-        OFFSET_KEYS
-            .iter()
-            .zip(offsets.iter())
-            .map(|(&key, &value)| (key, value))
-            .collect()
+        OFFSET_KEYS.iter().zip(offsets.iter()).map(|(&key, &value)| (key, value)).collect()
     }
 
     /// Get each item's neighbours and return values and indices
     pub fn get_neighbours_values(&self, items: &[Item]) -> HashMap<usize, String> {
         let ids = &self.neighbours_ids;
-        let neighbours_items: Vec<Self> = items
-            .iter()
-            .filter(|&it| self.neighbours_ids.contains(&it.id))
-            .cloned()
-            .collect();
+        let neighbours_items: Vec<Self> = items.iter().filter(|&it| self.neighbours_ids.contains(&it.id)).cloned().collect();
         let mut values: HashMap<usize, String> = HashMap::new();
 
         for tile in neighbours_items.iter() {
@@ -236,11 +228,10 @@ impl World {
         let generator_options = options.unwrap_or_else(|| self.options.clone());
 
         let cleared_content = Self::generate();
-        
-        let result =
-            tokio::task::spawn_blocking(move || Map::generate(cleared_content, generator_options))
-                .await
-                .unwrap();
+
+        let result = tokio::task::spawn_blocking(move || Map::generate(cleared_content, generator_options))
+            .await
+            .unwrap();
 
         tx.send(result).await.unwrap();
         self.content = rx.recv().await.unwrap();
@@ -277,20 +268,14 @@ impl World {
     pub fn generate_forest(mut content: Vec<Item>) -> Vec<Item> {
         let values = to_weighted_map([("T", 1), ("-", 7)].to_vec());
 
-        for item in content
-            .iter_mut()
-            .filter(|i| WALKABLE_VALUES.contains(&i.value.as_str()))
-        {
+        for item in content.iter_mut().filter(|i| WALKABLE_VALUES.contains(&i.value.as_str())) {
             let value = get_weighted_random_value(&values);
             item.edit(value);
         }
         content
     }
 
-    pub fn generate_npcs(
-        &self,
-        connection: &mut SqliteConnection,
-    ) -> Result<Vec<Npc>, diesel::result::Error> {
+    pub fn generate_npcs(&self, connection: &mut SqliteConnection) -> Result<Vec<Npc>, diesel::result::Error> {
         let mut rng = thread_rng();
         let count = rng.gen_range(1..50);
 
@@ -302,11 +287,8 @@ impl World {
             .content
             .iter()
             .filter(|it| {
-                it.walkable
-                    && !it
-                        .neighbours_ids
-                        .iter()
-                        .any(|id| npcs_positions.contains(id)) // Limit npcs packs as much as possible
+                it.walkable && !it.neighbours_ids.iter().any(|id| npcs_positions.contains(id))
+                // Limit npcs packs as much as possible
             })
             .cloned()
             .collect();
@@ -319,10 +301,7 @@ impl World {
         Npc::get_for_map(self.id, connection)
     }
 
-    pub fn clear_npcs(
-        &mut self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), diesel::result::Error> {
+    pub fn clear_npcs(&mut self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
         Npc::clear(self, connection)?;
         self.npcs = vec![];
         Ok(())
@@ -335,9 +314,7 @@ impl World {
 
     pub fn fix_inconsistencies(&mut self) {
         let original_content = self.content.clone();
-        let report = MapReport::new()
-            .generate(&original_content, &self.options)
-            .unwrap();
+        let report = MapReport::new().generate(&original_content, &self.options).unwrap();
 
         for item in &mut self.content {
             let value = Map::get_value(&report, item, &original_content);

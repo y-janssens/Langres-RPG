@@ -9,9 +9,7 @@ use diesel::r2d2::ConnectionManager;
 use diesel::SqliteConnection;
 
 #[tauri::command]
-pub fn load_objects(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_objects(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Dashboard, || Ok(Object::load(&mut connection)?))
 }
@@ -36,7 +34,5 @@ pub fn delete_object(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
 ) -> Result<Response, ValidationError> {
     let mut connection = get_connection(connection);
-    authenticated_command(Permission::Dashboard, || {
-        Ok(Object::delete(id, &mut connection)?)
-    })
+    authenticated_command(Permission::Dashboard, || Ok(Object::delete(id, &mut connection)?))
 }

@@ -11,13 +11,13 @@ mod tests {
     use crate::storyline::models::Story;
 
     #[test]
-    fn test_get_map_no_npcs() {
+    fn test_get_map_npcs() {
         allow_db_access(|connection| {
             let story = Story::load(connection).expect(BASE_ERROR);
             let map_id = story.acts[0].maps[0].clone().id;
             let npcs = Npc::get_for_map(map_id, connection);
 
-            assert!(npcs.is_ok_and(|res| res.is_empty()));
+            assert!(npcs.is_ok_and(|res| !res.is_empty()));
         });
     }
 
@@ -72,8 +72,6 @@ mod tests {
 
             let _ = npc.save(connection);
             let patched_npc = Npc::load(npc.id, connection);
-
-            println!("{:#?}", patched_npc);
 
             assert!(patched_npc.is_ok_and(|npc| !npc.unique
                 && npc.inventory.head.is_none()

@@ -89,9 +89,7 @@ pub mod env {
             }
 
             let mut rng = thread_rng();
-            *possible_weathers
-                .choose(&mut rng)
-                .unwrap_or(&WeatherState::Sunny)
+            *possible_weathers.choose(&mut rng).unwrap_or(&WeatherState::Sunny)
         }
 
         fn get_environmental_factors(weather: &WeatherState) -> (u32, u32) {
@@ -148,11 +146,7 @@ pub mod env {
             };
             let range = rng.gen_range(0..=5);
             let adjusted_min = min - range;
-            let adjusted_max = if *daytime {
-                max + range
-            } else {
-                max + range - 10
-            };
+            let adjusted_max = if *daytime { max + range } else { max + range - 10 };
 
             rng.gen_range(adjusted_min..=adjusted_max)
         }

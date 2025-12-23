@@ -1,11 +1,12 @@
+use std::io::Error;
+
+use crate::backend::utils::parse::get_bool_value;
 use crate::backend::{translations::models::Translations, utils::functions::to_json};
 use crate::schema::quests;
 use crate::schema::quests::dsl::*;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
+use serde_yaml::Mapping;
 use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
@@ -39,6 +40,15 @@ impl Status {
             failed: false,
             abandoned: false,
         }
+    }
+
+    pub fn from_value(mapping: &Mapping) -> Result<Self, Error> {
+        Ok(Self {
+            owned: get_bool_value(mapping, "owned")?,
+            completed: get_bool_value(mapping, "completed")?,
+            failed: get_bool_value(mapping, "failed")?,
+            abandoned: get_bool_value(mapping, "abandoned")?,
+        })
     }
 }
 
@@ -101,9 +111,7 @@ impl Quest {
     }
 
     pub fn get(_id: String, connection: &mut SqliteConnection) -> QueryResult<Quest> {
-        let _load = crate::schema::quests::table
-            .filter(quests::id.eq(_id))
-            .first::<Quest>(connection)?;
+        let _load = crate::schema::quests::table.filter(quests::id.eq(_id)).first::<Quest>(connection)?;
         Ok(_load)
     }
 
@@ -122,19 +130,12 @@ impl Quest {
             reward: self.reward,
             next: self.next.clone(),
         };
-        let exists = quests
-            .filter(id.eq(self.id.clone()))
-            .first::<Quest>(connection)
-            .is_ok();
+        let exists = quests.filter(id.eq(self.id.clone())).first::<Quest>(connection).is_ok();
 
         if exists {
-            diesel::update(quests.find(&self.id.clone()))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(quests.find(&self.id.clone())).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(quests::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(quests::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())

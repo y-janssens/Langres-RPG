@@ -21,8 +21,7 @@ mod tests {
 
             let mut game = GameFactory.generate(connection);
             let _ = game.save(connection);
-            let player_achievements =
-                PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
+            let player_achievements = PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
 
             assert_eq!(player_achievements.len(), 25);
             assert!(!player_achievements[0].completed);
@@ -37,15 +36,12 @@ mod tests {
             let _ = achievement.save(connection);
             let _ = game.save(connection);
 
-            let player_achievements =
-                PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
+            let player_achievements = PlayerAchievement::load(game.id, connection).expect(BASE_ERROR);
             let player_achievement = &player_achievements[0];
 
             PlayerAchievement::activate(player_achievement.clone(), connection);
 
-            let patched_achievement =
-                PlayerAchievement::get(player_achievement.clone().id, connection)
-                    .expect(BASE_ERROR);
+            let patched_achievement = PlayerAchievement::get(player_achievement.clone().id, connection).expect(BASE_ERROR);
             assert!(patched_achievement.completed);
         });
     }

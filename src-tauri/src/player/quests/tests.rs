@@ -2,8 +2,8 @@
 mod tests {
     use crate::backend::conf::factories::factories_definitions::GameFactory;
     use crate::backend::conf::factory::factory_models::ApiFactory;
-    use crate::backend::settings::errors::BASE_ERROR;
     use crate::backend::conf_tests::database::allow_db_access;
+    use crate::backend::settings::errors::BASE_ERROR;
     use crate::game::models::Game;
     use crate::player::quests::models::PlayerQuest;
     use crate::quests::models::Quest;
@@ -34,8 +34,7 @@ mod tests {
 
             PlayerQuest::activate(player_quest.clone(), connection);
 
-            let patched_quest =
-                PlayerQuest::get(player_quest.clone().id, connection).expect(BASE_ERROR);
+            let patched_quest = PlayerQuest::get(player_quest.clone().id, connection).expect(BASE_ERROR);
             assert!(patched_quest.status.owned);
         });
     }
@@ -49,9 +48,7 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_quest = &player_quests[1];
 
-            let _ = player_quest
-                .clone()
-                .validate(player_quest.reward, connection);
+            let _ = player_quest.clone().validate(player_quest.reward, connection);
 
             let player = Game::load(game.id, connection).expect(BASE_ERROR).character;
             assert_eq!(player.lvl, 2);
@@ -69,9 +66,7 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
             let player_quest = &player_quests[0];
 
-            let _ = player_quest
-                .clone()
-                .validate(player_quest.reward, connection);
+            let _ = player_quest.clone().validate(player_quest.reward, connection);
 
             let patched_quests = PlayerQuest::load(game.id.clone(), connection).expect(BASE_ERROR);
 
@@ -91,13 +86,9 @@ mod tests {
             let player_quests = PlayerQuest::load(game.id, connection).expect(BASE_ERROR);
             let player_quest = &player_quests[0];
 
-            player_quest
-                .clone()
-                .edit("failed", true, connection)
-                .expect(BASE_ERROR);
+            player_quest.clone().edit("failed", true, connection).expect(BASE_ERROR);
 
-            let patched_quest =
-                PlayerQuest::get(player_quest.clone().id, connection).expect(BASE_ERROR);
+            let patched_quest = PlayerQuest::get(player_quest.clone().id, connection).expect(BASE_ERROR);
             assert!(patched_quest.status.failed);
         });
     }

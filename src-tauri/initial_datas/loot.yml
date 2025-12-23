@@ -1,0 +1,164 @@
+- armor: 
+  damage: 14
+  description:
+    en: A simple long sword
+    fr: Une simple épée longue
+  id: item_long_sword
+  item_type: Weapon
+  name:
+    en: Long sword
+    fr: Épée longue
+  parade: 6
+  price: 14
+  random: 14
+  weight: 4
+
+- armor: 
+  damage: 12
+  description:
+    en: A simple short sword
+    fr: Une simple épée courte
+  id: item_sword
+  item_type: Weapon
+  name:
+    en: Short sword
+    fr: Épée courte
+  parade: 4
+  price: 12
+  random: 12
+  weight: 3
+
+- armor: 
+  damage: 10
+  description:
+    en: A simple short dagger
+    fr: Une simple dague courte
+  id: item_dagger
+  item_type: Weapon
+  name:
+    en: Dagger
+    fr: Dague
+  parade: 3
+  price: 8
+  random: 8
+  weight: 1
+
+- armor: 14
+  damage: 2
+  description:
+    en: A steel shield
+    fr: Un bouclier d'acier
+  id: item_shield
+  item_type: Weapon
+  name:
+    en: Shield
+    fr: Bouclier
+  parade: 
+  price: 16
+  random: 14
+  weight: 5
+
+- armor: 10
+  damage: 
+  description:
+    en: A steel helmet
+    fr: Un heaume d'acier
+  id: item_helmet
+  item_type: Equipment
+  name:
+    en: Helmet
+    fr: Heaume
+  parade: 
+  price: 12
+  random: 10
+  weight: 2
+
+- armor: 10
+  damage: 
+  description:
+    en: A steel armor
+    fr: Une armure d'acier
+  id: item_armor
+  item_type: Equipment
+  name:
+    en: Armor
+    fr: Plastron
+  parade: 
+  price: 12
+  random: 10
+  weight: 2
+
+- armor: 10
+  damage: 
+  description:
+    en: Steel plated leggings
+    fr: Des jambières de plates
+  id: item_leggings
+  item_type: Equipment
+  name:
+    en: Leggings
+    fr: Jambières
+  parade: 
+  price: 12
+  random: 10
+  weight: 2
+
+- armor: 
+  damage: 5
+  description:
+    en: An offering to the Goddess
+    fr: Une offrande à la Déesse
+  id: obj_water_vial
+  item_type: Consumable
+  name:
+    en: Sea water vial
+    fr: Fiole d'eau de mer
+  parade: 
+  price: 
+  random: 2
+  weight: 1
+
+- armor: 
+  damage: 
+  description:
+    en: A fistful of dirt
+    fr: Une poignée de poussière
+  id: obj_dirt
+  item_type: Consumable
+  name:
+    en: Dirt
+    fr: Poussière
+  parade: 
+  price: 
+  random: 
+  weight: 1
+
+- armor: 10
+  damage: 
+  description:
+    en: A combat bandage
+    fr: Un bandage de combat
+  id: obj_bandage
+  item_type: Consumable
+  name:
+    en: Bandage
+    fr: Bandage
+  parade: 
+  price: 12
+  random: 10
+  weight: 2
+
+- armor: 10
+  damage: 
+  description:
+    en: A torch
+    fr: Une torche
+  id: obj_torch
+  item_type: Consumable
+  name:
+    en: Torch
+    fr: Torche
+  parade: 
+  price: 12
+  random: 10
+  weight: 2

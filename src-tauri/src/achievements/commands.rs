@@ -8,9 +8,7 @@ use diesel::SqliteConnection;
 use super::models::Achievement;
 
 #[tauri::command]
-pub fn load_achievements(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_achievements(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     authenticated_command(Permission::Dashboard, || {
         let mut connection = get_connection(connection);
         Ok(Achievement::load(&mut connection)?)

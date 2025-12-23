@@ -11,15 +11,8 @@ use crate::backend::{
 use super::models::World;
 
 #[tauri::command]
-pub fn generate(
-    size: u32,
-    name: String,
-    order: u32,
-    primary: bool,
-) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::DevTools, || {
-        Ok(World::new(size, name, order, primary))
-    })
+pub fn generate(size: u32, name: String, order: u32, primary: bool) -> Result<Response, ValidationError> {
+    authenticated_command(Permission::DevTools, || Ok(World::new(size, name, order, primary)))
 }
 
 #[tauri::command]

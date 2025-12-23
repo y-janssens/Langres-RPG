@@ -1,8 +1,5 @@
 use crate::{
-    backend::{
-        database::authenticated_command, permissions::models::Permission, response::Response,
-        utils::errors::ValidationError,
-    },
+    backend::{database::authenticated_command, permissions::models::Permission, response::Response, utils::errors::ValidationError},
     world::models::World,
 };
 

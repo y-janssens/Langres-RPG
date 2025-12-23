@@ -7,9 +7,7 @@ use crate::{
     battle::{datas::AlterationInfo, types::Operator},
 };
 
-#[derive(
-    Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter,
-)]
+#[derive(Default, Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum Alteration {
     #[default]

@@ -5,7 +5,7 @@ mod tests {
 
     use crate::application::models::ApplicationSettings;
     use crate::backend::conf_tests::database::allow_db_access;
-    use crate::backend::{permissions::models::Permission, conf_tests::database::with_permissions};
+    use crate::backend::{conf_tests::database::with_permissions, permissions::models::Permission};
     use crate::battle::rolls::Roll;
     use crate::battle::settings::BattleDifficulty;
     use crate::battle::tests::test_utils::helpers::setup_battle_system;
@@ -15,11 +15,7 @@ mod tests {
     #[case(BattleDifficulty::Normal, 0, 8)]
     #[case(BattleDifficulty::Hard, 1, 7)]
     #[case(BattleDifficulty::Extreme, 2, 6)]
-    async fn test_roll_with_difficulty(
-        #[case] difficulty: BattleDifficulty,
-        #[case] value: i32,
-        #[case] result: i32,
-    ) {
+    async fn test_roll_with_difficulty(#[case] difficulty: BattleDifficulty, #[case] value: i32, #[case] result: i32) {
         with_permissions(Permission::Admin, || {
             allow_db_access(|connection| {
                 let mut application_settings = ApplicationSettings::load(connection).unwrap();
@@ -57,9 +53,7 @@ mod tests {
 
                 assert_eq!(system.settings.difficulty, difficulty);
 
-                let results: Vec<Roll> = (0..1000)
-                    .map(|_| Roll::launch(&Stat::Attack, &mut system))
-                    .collect();
+                let results: Vec<Roll> = (0..1000).map(|_| Roll::launch(&Stat::Attack, &mut system)).collect();
 
                 let mut distribution: HashMap<&str, usize> = HashMap::new();
 

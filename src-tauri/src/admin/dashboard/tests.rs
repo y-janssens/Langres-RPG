@@ -2,10 +2,7 @@
 mod tests {
     use crate::{
         admin::dashboard::commands::load_admin_dashboard,
-        backend::{
-            permissions::models::Permission, settings::errors::BASE_ERROR,
-            conf_tests::database::with_permissions,
-        },
+        backend::{conf_tests::database::with_permissions, permissions::models::Permission, settings::errors::BASE_ERROR},
     };
     use serde_json::json;
 

@@ -1,13 +1,14 @@
-import React, { useCallback, useMemo } from 'react';
-import { Header, SideBar, Theme } from './components';
+import React, { Suspense, useCallback, useMemo } from 'react';
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction, DIRECTIONS } from '../../models';
 
-import Map from './Map';
+import { Header, SideBar, Theme } from './components';
 import { BuilderModal } from './Modals';
+import BuilderContextualMenus from './Contextual/ContextualMenus';
+
+const Map = React.lazy(() => import('./Map'));
 
 import css from './builder.module.css';
-import BuilderContextualMenus from './Contextual/ContextualMenus';
 
 export const Builder = () => {
     const [form, setForm, setFormObject, resetForm] = useDynamicForm({
@@ -137,16 +138,18 @@ export const Builder = () => {
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <div id="builder-body-block" className={css['builder-body-container']}>
                 {display && (
-                    <Map
-                        flatDisplay={form.flatDisplay}
-                        history={history}
-                        index={index}
-                        loading={loadingStoryline && !form.storyLine.id}
-                        form={form}
-                        setForm={setForm}
-                        setFormObject={setFormObject}
-                        sync={handleSync}
-                    />
+                    <Suspense>
+                        <Map
+                            flatDisplay={form.flatDisplay}
+                            history={history}
+                            index={index}
+                            loading={loadingStoryline && !form.storyLine.id}
+                            form={form}
+                            setForm={setForm}
+                            setFormObject={setFormObject}
+                            sync={handleSync}
+                        />
+                    </Suspense>
                 )}
                 <BuilderModal form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
                 <BuilderContextualMenus form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />

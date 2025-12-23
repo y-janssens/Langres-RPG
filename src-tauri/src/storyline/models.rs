@@ -25,6 +25,28 @@ pub struct Story {
     pub acts: Acts,
 }
 
+#[derive(Debug, Insertable)]
+#[diesel(table_name = crate::schema::storyline)]
+pub struct InsertableStory {
+    pub id: i32,
+    pub name: String,
+    pub created: String,
+    pub modified: String,
+    pub acts: String,
+}
+
+impl Default for Story {
+    fn default() -> Self {
+        Self {
+            id: 0,
+            name: String::new(),
+            created: String::new(),
+            modified: String::new(),
+            acts: Acts(vec![]),
+        }
+    }
+}
+
 #[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
 pub struct Acts(pub Vec<Act>);
 
@@ -55,12 +77,7 @@ pub struct Act {
 
 impl Act {
     pub fn validate_act(&mut self) {
-        let all_primary_maps_complete = self
-            .maps
-            .iter()
-            .filter_map(Some)
-            .filter(|map| map.primary)
-            .all(|map| map.complete);
+        let all_primary_maps_complete = self.maps.iter().filter_map(Some).filter(|map| map.primary).all(|map| map.complete);
 
         if !self.maps.is_empty() && all_primary_maps_complete {
             self.complete = true;
@@ -97,12 +114,16 @@ impl Story {
         Ok(_storyline)
     }
 
+    pub fn fetch(connection: &mut SqliteConnection) -> QueryResult<Vec<Self>> {
+        let mut _storyline: Vec<Self> = crate::schema::storyline::table.load(connection)?;
+        Ok(_storyline)
+    }
+
     pub fn save(&mut self, connection: &mut SqliteConnection) -> Result<(), Error> {
         for act in self.acts.iter_mut() {
             act.validate_act();
         }
-        let updated_json = serde_json::to_string(&self.acts)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let updated_json = serde_json::to_string(&self.acts).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let _ = diesel::update(storyline.find(self.id))
             .set(crate::schema::storyline::acts.eq(updated_json.clone()))
@@ -112,30 +133,17 @@ impl Story {
         Ok(())
     }
 
-    pub fn edit_tiles(
-        connection: &mut SqliteConnection,
-        act_id: i32,
-        map_id: i32,
-        tiles: Vec<u32>,
-        object_id: i32,
-    ) -> Result<(), Error> {
+    pub fn edit_tiles(connection: &mut SqliteConnection, act_id: i32, map_id: i32, tiles: Vec<u32>, object_id: i32) -> Result<(), Error> {
         let object = Object::get(object_id, connection)?;
 
         StoryUtils::get_tile(act_id, map_id, tiles, false, connection, |tile, _| {
             if let Some(value) = &object.value {
                 tile.edit(value.clone());
             }
-        })?;
-
-        Ok(())
+        })
     }
 
-    pub fn reset_tiles(
-        connection: &mut SqliteConnection,
-        act_id: i32,
-        map_id: i32,
-        tiles: Vec<u32>,
-    ) -> Result<(), Error> {
+    pub fn reset_tiles(connection: &mut SqliteConnection, act_id: i32, map_id: i32, tiles: Vec<u32>) -> Result<(), Error> {
         StoryUtils::get_tile(act_id, map_id, tiles, false, connection, |tile, _| {
             tile.reset();
         })?;
@@ -143,12 +151,7 @@ impl Story {
         Ok(())
     }
 
-    pub fn delete_tiles_npcs(
-        connection: &mut SqliteConnection,
-        act_id: i32,
-        map_id: i32,
-        tiles: Vec<u32>,
-    ) -> Result<(), Error> {
+    pub fn delete_tiles_npcs(connection: &mut SqliteConnection, act_id: i32, map_id: i32, tiles: Vec<u32>) -> Result<(), Error> {
         let mut npcs = vec![];
         StoryUtils::get_map(act_id, map_id, false, connection, |map| {
             for npc in map.npcs.clone() {
@@ -165,12 +168,7 @@ impl Story {
         Ok(())
     }
 
-    pub fn compute_tiles_directions(
-        connection: &mut SqliteConnection,
-        act_id: i32,
-        map_id: i32,
-        tiles: Vec<u32>,
-    ) -> Result<(), Error> {
+    pub fn compute_tiles_directions(connection: &mut SqliteConnection, act_id: i32, map_id: i32, tiles: Vec<u32>) -> Result<(), Error> {
         StoryUtils::get_tile(act_id, map_id, tiles, false, connection, |tile, map| {
             let original_content = map.content.clone();
             let neighbours: Vec<Item> = original_content
@@ -192,29 +190,21 @@ impl Story {
         tile_id: u32,
         gateway: (Option<i32>, bool),
     ) -> Result<(), Error> {
-        StoryUtils::get_tile(
-            act_id,
-            map_id,
-            [tile_id].to_vec(),
-            false,
-            connection,
-            |tile, _| {
-                if let Some(gateway_id) = gateway.0 {
-                    let gateway_event = Event::get_gateway(gateway_id, gateway.1);
-                    let pos = tile
-                        .events
-                        .iter()
-                        .position(|event| matches!(event.r#type, EventType::GateWay(_, _)));
-                    match pos {
-                        Some(idx) => tile.events[idx] = gateway_event,
-                        None => tile.events.push(gateway_event),
-                    }
-                } else {
-                    tile.events
-                        .retain(|event| !matches!(event.r#type, EventType::GateWay(_, _)));
+        StoryUtils::get_tile(act_id, map_id, [tile_id].to_vec(), false, connection, |tile, _| {
+            if let Some(gateway_id) = gateway.0 {
+                let gateway_event = Event::get_gateway(gateway_id, gateway.1);
+                let pos = tile
+                    .events
+                    .iter()
+                    .position(|event| matches!(event.r#type, EventType::GateWay(_, _)));
+                match pos {
+                    Some(idx) => tile.events[idx] = gateway_event,
+                    None => tile.events.push(gateway_event),
                 }
-            },
-        )?;
+            } else {
+                tile.events.retain(|event| !matches!(event.r#type, EventType::GateWay(_, _)));
+            }
+        })?;
         Ok(())
     }
 
@@ -225,29 +215,21 @@ impl Story {
         tile_id: u32,
         checkpoint: Option<i32>,
     ) -> Result<(), Error> {
-        StoryUtils::get_tile(
-            act_id,
-            map_id,
-            [tile_id].to_vec(),
-            false,
-            connection,
-            |tile, _| {
-                if let Some(checkpoint_id) = checkpoint {
-                    let checkpoint_event = Event::get_checkpoint(checkpoint_id);
-                    let pos = tile
-                        .events
-                        .iter()
-                        .position(|event| matches!(event.r#type, EventType::CheckPoint(_)));
-                    match pos {
-                        Some(idx) => tile.events[idx] = checkpoint_event,
-                        None => tile.events.push(checkpoint_event),
-                    }
-                } else {
-                    tile.events
-                        .retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
+        StoryUtils::get_tile(act_id, map_id, [tile_id].to_vec(), false, connection, |tile, _| {
+            if let Some(checkpoint_id) = checkpoint {
+                let checkpoint_event = Event::get_checkpoint(checkpoint_id);
+                let pos = tile
+                    .events
+                    .iter()
+                    .position(|event| matches!(event.r#type, EventType::CheckPoint(_)));
+                match pos {
+                    Some(idx) => tile.events[idx] = checkpoint_event,
+                    None => tile.events.push(checkpoint_event),
                 }
-            },
-        )?;
+            } else {
+                tile.events.retain(|event| !matches!(event.r#type, EventType::CheckPoint(_)));
+            }
+        })?;
         Ok(())
     }
 
@@ -267,18 +249,9 @@ impl Story {
         }
         StoryUtils::get_map(act_id, map_id, false, connection, |map| {
             // Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
-            let neighbours_ids = FrustumCullingUtility::cull(
-                tile_id as i32,
-                map.size,
-                obj.area.x as usize,
-                obj.area.y as usize,
-            );
+            let neighbours_ids = FrustumCullingUtility::cull(tile_id as i32, map.size, obj.area.x as usize, obj.area.y as usize);
 
-            for _tile in map
-                .content
-                .iter_mut()
-                .filter(|t| neighbours_ids.contains(&(t.id as i32)))
-            {
+            for _tile in map.content.iter_mut().filter(|t| neighbours_ids.contains(&(t.id as i32))) {
                 if enable {
                     _tile.value = if _tile.id == tile_id {
                         obj.value.clone().unwrap_or_else(|| String::from("#"))
@@ -308,12 +281,7 @@ impl Story {
         let obj = Object::get(object_id, connection)?;
         let mut result = Vec::new();
         StoryUtils::get_map(act_id, map_id, true, connection, |map| {
-            result = FrustumCullingUtility::cull(
-                tile_id as i32,
-                map.size,
-                obj.area.x as usize,
-                obj.area.y as usize,
-            )
+            result = FrustumCullingUtility::cull(tile_id as i32, map.size, obj.area.x as usize, obj.area.y as usize)
         })?;
         Ok(result)
     }

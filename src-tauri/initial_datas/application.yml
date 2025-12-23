@@ -1,0 +1,13 @@
+id: 1
+battle_automatic: false
+battle_realtime: false
+difficulty: 0
+language: en
+languages:
+- key: en
+  value: English
+- key: fr
+  value: Français
+music: 100
+sound: true
+volume: 100

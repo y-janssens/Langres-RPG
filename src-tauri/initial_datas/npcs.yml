@@ -1,0 +1,150 @@
+- 
+  id: acf08bb6-7251-4ff6-9983-5e192cbe9cb7
+  class: Soldier
+  first_name: Herbert
+  last_name: De Conques
+  gender: Unknown
+  title:
+    en: Sir
+    fr: Ser
+  can_be_hostile: true
+  hostile: false
+  static: true
+  unique: true
+  is_alive: false
+  ap: 8
+  att: 8
+  cha: 8
+  end: 8
+  for: 8
+  hab: 8
+  ini: 8
+  int: 8
+  tir: 8
+  lvl: 4
+  map_id: 1555296621
+  max_ap: 60
+  max_pv: 1
+  par: 8
+  pv: 60
+  starting_point:
+    id: 2442
+    x: 85
+    'y': 48
+  dialogs:
+    - order: 1
+      quote:
+        en: Adam?!
+        fr: Adam?!
+      type: Npc
+    - order: 1
+      quote:
+        en: Die traitor!
+        fr: Meurs traître!
+      type: Player
+    - order: 2
+      quote:
+        en: What?!
+        fr: Quoi?!
+      type: Npc
+    - order: 2
+      quote:
+        en: I said die traitor...
+        fr: J’ai dis meurs traître...
+      type: Player
+  inventory:
+    gold: 0
+    objects: []
+    head:
+      armor: 10
+      damage: null
+      description:
+        en: A steel helmet
+        fr: Un heaume d'acier
+      id: 295f7780-9332-406a-be78-ec40041f3f6e
+      item_type: Equipment
+      name:
+        en: Helmet
+        fr: Heaume
+      parade: null
+      price: 12
+      random: 10
+      weight: 2
+    left_hand:
+      armor: 14
+      damage: 2
+      description:
+        en: A steel shield
+        fr: Un bouclier d'acier
+      id: 72a51c15-991b-48b5-80a8-ecf4c83e0190
+      item_type: Weapon
+      name:
+        en: Shield
+        fr: Bouclier
+      parade: null
+      price: 16
+      random: 14
+      weight: 5
+    legs:
+      armor: 10
+      damage: null
+      description:
+        en: Steel plated leggings
+        fr: Des jambières de plates
+      id: 0d75db96-2bdf-4ee1-b2bc-212e1b9cc635
+      item_type: Equipment
+      name:
+        en: Leggings
+        fr: Jambières
+      parade: null
+      price: 12
+      random: 10
+      weight: 2
+    right_hand:
+      armor: null
+      damage: 12
+      description:
+        en: A simple short sword
+        fr: Une simple épée courte
+      id: 7198ad0b-1475-4b5b-b179-4d51ef7ef8f2
+      item_type: Weapon
+      name:
+        en: Short sword
+        fr: Épée courte
+      parade: 4
+      price: 12
+      random: 12
+      weight: 3
+    torso:
+      armor: 10
+      damage: null
+      description:
+        en: A steel armor
+        fr: Une armure d'acier
+      id: b2a7e3c1-b3c3-4df3-b961-a8cd753c3b26
+      item_type: Equipment
+      name:
+        en: Armor
+        fr: Plastron
+      parade: null
+      price: 12
+      random: 10
+      weight: 2
+  quests:
+    - description:
+        en: Kill Sir Herbert
+        fr: Tuez Ser Herbert
+      id: main_quest_0001
+      name:
+        en: Strike the brother while he's deceitful
+        fr: Il faut battre le frère quand il est faux
+      next: main_quest_0002
+      primary: true
+      reward: 0
+      status:
+        abandoned: false
+        completed: false
+        failed: false
+        owned: true
+      visible: true
+  

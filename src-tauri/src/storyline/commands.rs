@@ -9,9 +9,7 @@ use crate::backend::response::Response;
 use crate::backend::utils::errors::ValidationError;
 
 #[tauri::command]
-pub fn load_storyline(
-    connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> Result<Response, ValidationError> {
+pub fn load_storyline(connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>) -> Result<Response, ValidationError> {
     authenticated_command(Permission::RegularUser, || {
         let mut connection = get_connection(connection);
         Ok(Story::load(&mut connection)?)

@@ -4,8 +4,7 @@ mod tests {
 
     use crate::battle::tests::test_utils::helpers::setup_battle_system_with_aps;
     use crate::battle::{
-        actions::Action, logs::LogType, settings::TamperMode,
-        tests::test_utils::helpers::setup_battle_system,
+        actions::Action, logs::LogType, settings::TamperMode, tests::test_utils::helpers::setup_battle_system,
         tests::test_utils::helpers::with_tampering, types::BattleState, types::Operator,
     };
     use crate::{
@@ -46,10 +45,7 @@ mod tests {
                 let system = setup_battle_system_with_aps(connection, 0);
                 let actions = system.datas.actions;
 
-                assert!(actions
-                    .iter()
-                    .filter(|ac| ac.cost > 0)
-                    .all(|it| it.disabled));
+                assert!(actions.iter().filter(|ac| ac.cost > 0).all(|it| it.disabled));
             });
         });
     }
@@ -73,15 +69,9 @@ mod tests {
                 let system = setup_battle_system_with_aps(connection, 2);
                 let actions = system.datas.actions;
 
-                assert!(actions
-                    .iter()
-                    .filter(|ac| ac.cost > 2)
-                    .all(|it| it.disabled));
+                assert!(actions.iter().filter(|ac| ac.cost > 2).all(|it| it.disabled));
 
-                assert!(!actions
-                    .iter()
-                    .filter(|ac| ac.cost < 2)
-                    .all(|it| it.disabled));
+                assert!(!actions.iter().filter(|ac| ac.cost < 2).all(|it| it.disabled));
             });
         });
     }

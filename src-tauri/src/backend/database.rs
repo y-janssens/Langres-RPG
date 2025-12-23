@@ -1,26 +1,46 @@
-use crate::backend::permissions::models::{Credentials, Permission};
+use std::error::Error;
+
+use diesel::{r2d2::ConnectionManager, SqliteConnection};
+use diesel_migrations::MigrationHarness;
+use r2d2::{Pool, PooledConnection};
+use serde::Serialize;
 
 use super::response::Response;
 use super::settings::database::*;
 use super::settings::errors::{PERMISSION_DENIED, POOL_ERROR, VALIDATION_ERROR};
 use super::utils::errors::ValidationError;
 
-use diesel::{r2d2::ConnectionManager, sqlite::Sqlite, SqliteConnection};
-use diesel_migrations::MigrationHarness;
-use r2d2::{Pool, PooledConnection};
-use serde::Serialize;
-use std::error::Error;
+use crate::application::models::ApplicationSettings;
+use crate::backend::permissions::models::{Credentials, Permission};
+
+use crate::functions::models::Function;
+use crate::loot::models::Loot;
+use crate::npcs::models::Npc;
+use crate::objects::models::Object;
+use crate::quests::models::Quest;
+use crate::storyline::models::Story;
 
 pub fn get_connection(
     connection: tauri::State<r2d2::Pool<ConnectionManager<SqliteConnection>>>,
-) -> PooledConnection<ConnectionManager<diesel::SqliteConnection>> {
+) -> PooledConnection<ConnectionManager<SqliteConnection>> {
     connection.get().expect(DATABASE_CONNECTION_ERROR)
 }
 
-fn run_migrations(
-    connection: &mut impl MigrationHarness<Sqlite>,
-) -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    connection.run_pending_migrations(MIGRATIONS_PATH)?;
+pub fn post_migrate(connection: &mut SqliteConnection) -> Result<(), std::io::Error> {
+    // Base application settings
+    ApplicationSettings::get_and_insert_initial_datas(connection)?;
+
+    // Storyline and maps initial datas
+    Story::get_and_insert_initial_datas(connection)?;
+
+    // Builder initial_datas
+    Object::get_and_insert_initial_datas(connection)?;
+    Function::get_and_insert_initial_datas(connection)?;
+
+    // Game initial datas
+    Loot::get_and_insert_initial_datas(connection)?;
+    Quest::get_and_insert_initial_datas(connection)?;
+    Npc::get_and_insert_initial_datas(connection)?;
 
     Ok(())
 }
@@ -41,23 +61,19 @@ pub fn initialize_db() -> Result<Pool<ConnectionManager<SqliteConnection>>, Box<
     let manager = ConnectionManager::<SqliteConnection>::new(database_url);
     let pool = Pool::builder().build(manager).expect(POOL_ERROR);
 
-    let mut conn = pool.get()?;
-    run_migrations(&mut *conn).expect(MIGRATION_ERROR);
+    let mut connection = pool.get()?;
+    connection.run_pending_migrations(MIGRATIONS_PATH).expect(MIGRATION_ERROR);
+    post_migrate(&mut connection).expect(INITIAL_DATAS_ERROR);
 
     Ok(pool)
 }
 
-pub fn authenticated_command<T, R>(
-    permissions: Permission,
-    func: T,
-) -> Result<Response, ValidationError>
+pub fn authenticated_command<T, R>(permissions: Permission, func: T) -> Result<Response, ValidationError>
 where
     T: FnOnce() -> Result<R, Box<dyn Error>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize()
-        .map_err(|e| ValidationError(e.to_string()))?
-        .config;
+    let credentials = Credentials::initialize().map_err(|e| ValidationError(e.to_string()))?.config;
 
     if credentials.has_permission(permissions) {
         match func() {
@@ -72,18 +88,13 @@ where
     }
 }
 
-pub async fn authenticated_thread<T, Fut, R>(
-    permissions: Permission,
-    func: T,
-) -> Result<Response, ValidationError>
+pub async fn authenticated_thread<T, Fut, R>(permissions: Permission, func: T) -> Result<Response, ValidationError>
 where
     T: FnOnce() -> Fut,
-    Fut: std::future::Future<Output = Result<R, Box<dyn std::error::Error>>>,
+    Fut: std::future::Future<Output = Result<R, Box<dyn Error>>>,
     R: Serialize,
 {
-    let credentials = Credentials::initialize()
-        .map_err(|e| ValidationError(e.to_string()))?
-        .config;
+    let credentials = Credentials::initialize().map_err(|e| ValidationError(e.to_string()))?.config;
 
     if credentials.has_permission(permissions) {
         match func().await {

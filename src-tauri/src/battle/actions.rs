@@ -139,8 +139,7 @@ impl Action {
     }
 
     pub fn resolve(action: &str) -> Result<Self, Error> {
-        let action =
-            Self::try_from(action).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_ACTION_ERROR))?;
+        let action = Self::try_from(action).map_err(|_| Error::new(NotFound, BATTLE_SYSTEM_ACTION_ERROR))?;
         Ok(action)
     }
 
@@ -293,23 +292,14 @@ impl Action {
         self.resolve_damages(system, stat, false)
     }
 
-    fn resolve_damages(
-        &self,
-        system: &mut BattleSystem,
-        stat: &Stat,
-        parry: bool,
-    ) -> Result<(), Error> {
+    fn resolve_damages(&self, system: &mut BattleSystem, stat: &Stat, parry: bool) -> Result<(), Error> {
         let current_operator = self.get_current(system);
         let damages = self.compute_base_damages(system, current_operator);
         let reducer = self.compute_damages_reduction(system, parry, current_operator);
         let result = (damages - reducer).max(BATTLE_SYSTEM_BASE_DAMAGES);
 
         system.alterations.consume(current_operator);
-        system.increment_history(BattleLog::damage_log(
-            current_operator,
-            &stat.to_string(),
-            result,
-        ));
+        system.increment_history(BattleLog::damage_log(current_operator, &stat.to_string(), result));
         self.inflict_damages(current_operator, system, result);
 
         Ok(())
@@ -323,32 +313,21 @@ impl Action {
                 let mut dmg = system.character.r#for + alteration.get_offensive_modifier();
 
                 let right_hand = &system.character.inventory.right_hand;
-                dmg += right_hand
-                    .clone()
-                    .map(|weapon| weapon.resolve_damages())
-                    .unwrap_or(0);
+                dmg += right_hand.clone().map(|weapon| weapon.resolve_damages()).unwrap_or(0);
 
                 dmg - system.npc.end
             }
             Operator::Npc => {
                 let mut dmg = system.npc.r#for + alteration.get_offensive_modifier();
                 let right_hand = &system.npc.inventory.right_hand;
-                dmg += right_hand
-                    .clone()
-                    .map(|weapon| weapon.resolve_damages())
-                    .unwrap_or(0);
+                dmg += right_hand.clone().map(|weapon| weapon.resolve_damages()).unwrap_or(0);
                 dmg - system.character.end
             }
             Operator::System => unreachable!(),
         }
     }
 
-    fn compute_damages_reduction(
-        &self,
-        system: &mut BattleSystem,
-        parry: bool,
-        current_operator: Operator,
-    ) -> i32 {
+    fn compute_damages_reduction(&self, system: &mut BattleSystem, parry: bool, current_operator: Operator) -> i32 {
         let adversary = current_operator.get_opponent();
         let location = self.resolve_strike_location(system, current_operator);
         let alteration = system.alterations.get(system.current_operator);
@@ -359,8 +338,7 @@ impl Action {
             Operator::System => unreachable!(),
         };
 
-        let mut reduce = location.resolve_armor_reducers(adversary_inventory.clone())
-            + alteration.get_defensive_modifier();
+        let mut reduce = location.resolve_armor_reducers(adversary_inventory.clone()) + alteration.get_defensive_modifier();
 
         if parry {
             let right_hand = &adversary_inventory.right_hand;
@@ -376,11 +354,7 @@ impl Action {
         reduce / 2
     }
 
-    fn resolve_strike_location(
-        &self,
-        system: &mut BattleSystem,
-        current_operator: Operator,
-    ) -> Location {
+    fn resolve_strike_location(&self, system: &mut BattleSystem, current_operator: Operator) -> Location {
         let roll = Dice::roll(20);
         let location = Location::from_value(roll);
 
@@ -388,11 +362,7 @@ impl Action {
         location
     }
 
-    fn validate_action_potential(
-        &self,
-        current_operator: Operator,
-        system: &mut BattleSystem,
-    ) -> bool {
+    fn validate_action_potential(&self, current_operator: Operator, system: &mut BattleSystem) -> bool {
         let cost = self.cost();
         match current_operator {
             Operator::Character => system.character.validate_and_compute_ap(cost),
@@ -415,12 +385,7 @@ impl Action {
             TamperMode::NoTamper => Roll::launch(stat, system),
             _ => tamper.get_result(),
         };
-        system.increment_history(BattleLog::action_log(
-            Some(self),
-            system.current_operator,
-            stat,
-            Some(&result),
-        ));
+        system.increment_history(BattleLog::action_log(Some(self), system.current_operator, stat, Some(&result)));
         result
     }
 
@@ -435,11 +400,7 @@ impl Action {
     fn parse_alteration(&self, current_operator: Operator, system: &mut BattleSystem) {
         let alteration = self.get_alteration();
         system.alterations.set(current_operator, alteration);
-        system.increment_history(BattleLog::alteration_log(
-            current_operator,
-            alteration,
-            None,
-        ));
+        system.increment_history(BattleLog::alteration_log(current_operator, alteration, None));
     }
 
     fn process_damages_over_time(&self, system: &mut BattleSystem) {
@@ -449,11 +410,7 @@ impl Action {
 
             if alteration.is_ailment() {
                 let damages = alteration.compute();
-                system.increment_history(BattleLog::alteration_log(
-                    current_operator,
-                    alteration,
-                    Some(damages),
-                ));
+                system.increment_history(BattleLog::alteration_log(current_operator, alteration, Some(damages)));
                 system.increment_history(BattleLog::damage_log(
                     current_operator.get_opponent(),
                     &Stat::Endurance.to_string(),

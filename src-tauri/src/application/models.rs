@@ -8,16 +8,16 @@ use crate::{
     schema::settings::dsl::*,
 };
 
-#[derive(Debug, Clone, Serialize, Deserialize, Queryable)]
+#[derive(Debug, Clone, Serialize, Deserialize, Queryable, PartialEq)]
 pub struct Values {
     pub key: String,
     pub value: String,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize, Queryable)]
+#[derive(Debug, Clone, Serialize, Deserialize, Queryable, PartialEq)]
 pub struct Languages(pub Vec<Values>);
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, PartialEq)]
 #[diesel(table_name = crate::schema::settings)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct ApplicationSettings {
@@ -32,32 +32,53 @@ pub struct ApplicationSettings {
     pub battle_automatic: bool,
 }
 
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Insertable, AsChangeset)]
+#[diesel(table_name = crate::schema::settings)]
+pub struct InsertableApplicationSettings {
+    pub id: i32,
+    pub language: String,
+    pub languages: String,
+    pub sound: bool,
+    pub volume: i32,
+    pub music: i32,
+    pub difficulty: i32,
+    pub battle_realtime: bool,
+    pub battle_automatic: bool,
+}
+
 impl ApplicationSettings {
     pub fn load(connection: &mut SqliteConnection) -> QueryResult<ApplicationSettings> {
         let _load = crate::schema::settings::table.first(connection)?;
         Ok(_load)
     }
 
-    pub fn save(self, connection: &mut SqliteConnection) -> QueryResult<usize> {
+    pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
         let languages_json = serde_json::to_string(&self.languages.0).map_err(|e| {
-            diesel::result::Error::DatabaseError(
-                diesel::result::DatabaseErrorKind::UnableToSendCommand,
-                Box::new(e.to_string()),
-            )
+            diesel::result::Error::DatabaseError(diesel::result::DatabaseErrorKind::UnableToSendCommand, Box::new(e.to_string()))
         })?;
 
-        diesel::update(settings.find(&self.id))
-            .set((
-                language.eq(&self.language),
-                languages.eq(&languages_json),
-                sound.eq(self.sound),
-                volume.eq(self.volume),
-                music.eq(self.music),
-                difficulty.eq(self.difficulty),
-                battle_realtime.eq(self.battle_realtime),
-                battle_automatic.eq(self.battle_automatic),
-            ))
-            .execute(connection)
+        let insertable = InsertableApplicationSettings {
+            id: self.id,
+            language: self.language,
+            languages: languages_json,
+            sound: self.sound,
+            volume: self.volume,
+            music: self.music,
+            difficulty: self.difficulty,
+            battle_realtime: self.battle_realtime,
+            battle_automatic: self.battle_automatic,
+        };
+
+        let exists = settings.filter(id.eq(self.id)).first::<Self>(connection).is_ok();
+
+        if exists {
+            diesel::update(settings.find(&self.id)).set(insertable).execute(connection)?;
+        } else {
+            diesel::insert_into(crate::schema::settings::table)
+                .values(&insertable)
+                .execute(connection)?;
+        }
+        Ok(())
     }
 }
 
@@ -139,9 +160,7 @@ impl ApplicationMenu {
     pub fn load_main_menu(connection: &mut SqliteConnection) -> Result<Self, Error> {
         let mut menu = Self::new();
         let mut order = MenuOrdering::new();
-        let credentials = Credentials::initialize()
-            .unwrap_or(Credentials::get_default())
-            .config;
+        let credentials = Credentials::initialize().unwrap_or(Credentials::get_default()).config;
         let games = Game::fetch(connection)?;
 
         menu.add_main_menu_items(&mut order, games);
@@ -168,11 +187,7 @@ impl ApplicationMenu {
     }
 
     fn add_common_items(&mut self, order: &mut MenuOrdering) {
-        self.add_item(
-            order,
-            "settings",
-            Some(Func::new(Some("popup"), "settings")),
-        )
+        self.add_item(order, "settings", Some(Func::new(Some("popup"), "settings")))
     }
 
     fn add_ingame_items(&mut self, order: &mut MenuOrdering) {
@@ -181,9 +196,7 @@ impl ApplicationMenu {
     }
 
     fn add_main_menu_items(&mut self, order: &mut MenuOrdering, games: Vec<Game>) {
-        let last_played_game = games
-            .iter()
-            .find(|g| g.visible && !g.last_save_date.is_empty());
+        let last_played_game = games.iter().find(|g| g.visible && !g.last_save_date.is_empty());
 
         if let Some(game) = last_played_game {
             self.add_item(order, "continue", Some(Func::new(None, &game.id)));
@@ -210,11 +223,7 @@ impl ApplicationMenu {
             self.add_item(order, "tools", Some(Func::new(Some("link"), "tools")));
         }
         if credentials.dashboard_enabled {
-            self.add_item(
-                order,
-                "dashboard",
-                Some(Func::new(Some("link"), "dashboard")),
-            );
+            self.add_item(order, "dashboard", Some(Func::new(Some("link"), "dashboard")));
         }
     }
 }

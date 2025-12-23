@@ -68,39 +68,19 @@ impl Event {
     }
 
     pub fn start_quest(quest_id: String) -> Event {
-        Self::get_base_event((
-            EventType::Quest(quest_id),
-            EventMode::Start,
-            EventStatus::Pending,
-            EventType::None,
-        ))
+        Self::get_base_event((EventType::Quest(quest_id), EventMode::Start, EventStatus::Pending, EventType::None))
     }
 
     pub fn end_quest(quest_id: String) -> Event {
-        Self::get_base_event((
-            EventType::Quest(quest_id),
-            EventMode::End,
-            EventStatus::Done,
-            EventType::None,
-        ))
+        Self::get_base_event((EventType::Quest(quest_id), EventMode::End, EventStatus::Done, EventType::None))
     }
 
     pub fn start_dialog(npc_id: String) -> Event {
-        Self::get_base_event((
-            EventType::Dialog(npc_id),
-            EventMode::Start,
-            EventStatus::Pending,
-            EventType::None,
-        ))
+        Self::get_base_event((EventType::Dialog(npc_id), EventMode::Start, EventStatus::Pending, EventType::None))
     }
 
     pub fn start_combat(npc_id: String) -> Event {
-        Self::get_base_event((
-            EventType::Combat(npc_id),
-            EventMode::Start,
-            EventStatus::Pending,
-            EventType::None,
-        ))
+        Self::get_base_event((EventType::Combat(npc_id), EventMode::Start, EventStatus::Pending, EventType::None))
     }
 
     pub fn get_cutscene(cutscene_id: String) -> Event {

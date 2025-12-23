@@ -1,8 +1,5 @@
 use crate::{
-    backend::{
-        database::authenticated_command, permissions::models::Permission, response::Response,
-        utils::errors::ValidationError,
-    },
+    backend::{database::authenticated_command, permissions::models::Permission, response::Response, utils::errors::ValidationError},
     loot::models::Loot,
 };
 
@@ -10,9 +7,7 @@ use super::models::{Character, Inventory};
 
 #[tauri::command]
 pub fn compute_xp(mut character: Character, xp: i32) -> Result<Response, ValidationError> {
-    authenticated_command(Permission::RegularUser, || {
-        Ok(Character::compute_xp(&mut character, xp).clone())
-    })
+    authenticated_command(Permission::RegularUser, || Ok(Character::compute_xp(&mut character, xp).clone()))
 }
 
 #[tauri::command]

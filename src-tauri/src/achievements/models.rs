@@ -1,10 +1,7 @@
 use crate::schema::achievements;
 use crate::schema::achievements::dsl::*;
 use diesel::result::Error;
-use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -55,10 +52,8 @@ impl Achievement {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let name_json = serde_json::to_string(&self.name)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let description_json = serde_json::to_string(&self.description)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableAchievement {
             id: Uuid::new_v4().to_string(),
@@ -67,19 +62,12 @@ impl Achievement {
             completed: self.completed,
             visible: self.visible,
         };
-        let exists = achievements
-            .filter(id.eq(self.clone().id))
-            .first::<Achievement>(connection)
-            .is_ok();
+        let exists = achievements.filter(id.eq(self.clone().id)).first::<Achievement>(connection).is_ok();
 
         if exists {
-            diesel::update(achievements.find(self.id))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(achievements.find(self.id)).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(achievements::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(achievements::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())

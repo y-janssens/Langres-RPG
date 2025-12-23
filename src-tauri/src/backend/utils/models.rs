@@ -56,13 +56,7 @@ impl FrustumCullingUtility {
         rationalizer.resolve()
     }
 
-    pub fn cull_filter(
-        value: i32,
-        size: u32,
-        horizontal: usize,
-        vertical: usize,
-        content: Vec<Item>,
-    ) -> Vec<Item> {
+    pub fn cull_filter(value: i32, size: u32, horizontal: usize, vertical: usize, content: Vec<Item>) -> Vec<Item> {
         let ids = Self::cull(value, size, horizontal, vertical);
         content
             .iter()

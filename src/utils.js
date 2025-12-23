@@ -98,6 +98,14 @@ export const resolveOptions = (options, name = null, id = null) => {
     });
 };
 
+export const listSelection = (source, value) => {
+    if (!source.includes(value)) {
+        return [...source, value];
+    }
+
+    return source.filter((it) => it !== value);
+};
+
 export const uniqueSelection = (source, value) => {
     let selection = new Set(source);
     if (!Array.isArray(value)) {

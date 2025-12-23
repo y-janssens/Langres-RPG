@@ -3,8 +3,8 @@ use std::collections::{HashMap, HashSet};
 use super::{
     config::Conf,
     settings::{
-        BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND,
-        INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE, WATER,
+        BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND, INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE,
+        TREE, WATER,
     },
 };
 use crate::world::models::Item;
@@ -16,13 +16,7 @@ pub struct Constraints {
 impl Constraints {
     /// Get all possible tiles list with weight
     /// Soil - Trees - Water- Shore - Borders - Roads - Fences - Ground
-    pub fn get_tiles(
-        grass: u32,
-        trees: u32,
-        water: u32,
-        shore: u32,
-        border: u32,
-    ) -> HashMap<String, u32> {
+    pub fn get_tiles(grass: u32, trees: u32, water: u32, shore: u32, border: u32) -> HashMap<String, u32> {
         let factor = *DEFAULT_MAP_SIZE / *DEFAULT_MAP_SIZE_FACTOR;
         HashMap::from([
             (GRASS.value(), grass * factor),
@@ -77,17 +71,11 @@ impl Constraints {
     }
 
     /// Check all item's neighbours to eliminate forbidden values
-    pub fn apply(
-        neighbours: HashMap<usize, String>,
-        settings: &Conf,
-    ) -> (HashMap<String, u32>, Vec<String>) {
+    pub fn apply(neighbours: HashMap<usize, String>, settings: &Conf) -> (HashMap<String, u32>, Vec<String>) {
         let mut filtered_values = HashMap::new();
         let mut remaining = HashSet::new();
 
-        let neighbours_constraints: HashSet<String> = neighbours
-            .iter()
-            .flat_map(|item| Self::get(item.1))
-            .collect();
+        let neighbours_constraints: HashSet<String> = neighbours.iter().flat_map(|item| Self::get(item.1)).collect();
 
         for (key, value) in settings.values.clone().into_iter() {
             if !neighbours_constraints.contains(&key) && value > 0 {
@@ -119,11 +107,7 @@ impl Constraints {
             return value.to_string();
         }
 
-        let neighbours = item
-            .get_neighbours_values(items)
-            .values()
-            .cloned()
-            .collect();
+        let neighbours = item.get_neighbours_values(items).values().cloned().collect();
         match value {
             val if val == SHORE.val() => Self::ensure_no_stranded_shores(value, neighbours),
             val if val == BORDER.val() => Self::ensure_no_stranded_borders(value, neighbours),
@@ -144,24 +128,14 @@ impl Constraints {
     fn ensure_no_stranded_borders(value: &str, neighbours: Vec<String>) -> String {
         match value {
             _ if !neighbours.contains(&TREE.value()) => TREE.value(),
-            _ if neighbours
-                .iter()
-                .all(|x| x == GRASS.val() || x == TREE.val()) =>
-            {
-                TREE.value()
-            }
+            _ if neighbours.iter().all(|x| x == GRASS.val() || x == TREE.val()) => TREE.value(),
             _ => value.to_string(),
         }
     }
 
     fn ensure_roads_consistency(value: &str, neighbours: Vec<String>) -> String {
         match value {
-            _ if ROAD_VALUES
-                .iter()
-                .any(|item| neighbours.contains(&item.to_string())) =>
-            {
-                TREE.value()
-            }
+            _ if ROAD_VALUES.iter().any(|item| neighbours.contains(&item.to_string())) => TREE.value(),
             _ => value.to_string(),
         }
     }

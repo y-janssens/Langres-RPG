@@ -10,11 +10,7 @@ pub struct StoryUtils {
 }
 
 impl StoryUtils {
-    fn init(
-        tiles: Option<&Vec<u32>>,
-        read_only: bool,
-        connection: &mut SqliteConnection,
-    ) -> Result<Self, Error> {
+    fn init(tiles: Option<&Vec<u32>>, read_only: bool, connection: &mut SqliteConnection) -> Result<Self, Error> {
         let story = Story::load(connection)?;
         Ok(Self {
             story,
@@ -51,11 +47,7 @@ impl StoryUtils {
             .and_then(|act| act.maps.iter_mut().find(|map| map.id == map_id))
         {
             let mut _map = map.clone();
-            for item in map
-                .content
-                .iter_mut()
-                .filter(|tile| tiles.contains(&tile.id))
-            {
+            for item in map.content.iter_mut().filter(|tile| tiles.contains(&tile.id)) {
                 operation(item, &_map);
             }
             if utility.compute {
@@ -66,13 +58,7 @@ impl StoryUtils {
         Ok(())
     }
 
-    pub fn get_map<F>(
-        act_id: i32,
-        map_id: i32,
-        read_only: bool,
-        connection: &mut SqliteConnection,
-        mut operation: F,
-    ) -> Result<(), Error>
+    pub fn get_map<F>(act_id: i32, map_id: i32, read_only: bool, connection: &mut SqliteConnection, mut operation: F) -> Result<(), Error>
     where
         F: FnMut(&mut World),
     {

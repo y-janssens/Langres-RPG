@@ -41,11 +41,7 @@ impl Values {
     }
 
     pub fn get_value(value: &str) -> (String, String, bool) {
-        let value = VALUES
-            .clone()
-            .into_iter()
-            .find(|v| v.value == value)
-            .unwrap();
+        let value = VALUES.clone().into_iter().find(|v| v.value == value).unwrap();
         (value.display_value, value.display_color, value.walkable)
     }
 

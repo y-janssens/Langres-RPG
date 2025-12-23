@@ -9,7 +9,8 @@ const MODALS = [
     { name: 'npc', component: React.lazy(() => import('./Npcs')) },
     { name: 'onboarding', component: React.lazy(() => import('./Onboarding')) },
     { name: 'preview', component: React.lazy(() => import('./Preview')) },
-    { name: 'statistics', component: React.lazy(() => import('./Statistics')) }
+    { name: 'statistics', component: React.lazy(() => import('./Statistics')) },
+    { name: 'export', component: React.lazy(() => import('./Export')) }
 ];
 
 class ModalGenerator {
@@ -35,7 +36,7 @@ class ModalGenerator {
 const BuilderModal = ({ form, setForm, setFormObject, sync }) => {
     const { type, open, value } = useMemo(() => ({ ...form.modal }), [form.modal]);
 
-    if (!type || !open) {
+    if (!type || !open || !form.storyLine) {
         return null;
     }
     const ActionComponent = new ModalGenerator(type).get_component();

@@ -9,6 +9,7 @@
     "core:default",
     "fs:allow-read-file",
     "fs:allow-write-file",
+    "fs:allow-write-text-file",
     "fs:allow-read-dir",
     "fs:allow-copy-file",
     "fs:allow-mkdir",
@@ -16,6 +17,10 @@
     "fs:allow-remove",
     "fs:allow-rename",
     "fs:allow-exists",
+    {
+      "identifier": "fs:scope",
+      "allow": ["$DESKTOP/**", "$DOCUMENT/**", "$DOWNLOAD/**", "$HOME/**"]
+    },
     "core:window:allow-create",
     "core:window:allow-center",
     "core:window:allow-request-user-attention",

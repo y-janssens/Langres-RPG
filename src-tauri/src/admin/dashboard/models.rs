@@ -244,9 +244,7 @@ impl AdminDashboard {
         let models: Vec<AdminModelSerializer> = self
             .models
             .iter()
-            .map(|model| AdminModelSerializer {
-                model: model.as_ref(),
-            })
+            .map(|model| AdminModelSerializer { model: model.as_ref() })
             .collect();
 
         serde_json::to_value(models)

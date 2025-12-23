@@ -1,18 +1,13 @@
 use crate::schema::loot::dsl::*;
 use crate::{backend::utils::models::Dice, schema::loot};
-use diesel::{
-    deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, RunQueryDsl,
-    SqliteConnection,
-};
+use diesel::{deserialize::Queryable, prelude::*, result::Error, sqlite::Sqlite, RunQueryDsl, SqliteConnection};
 use serde::{Deserialize, Serialize};
 use strum_macros::{Display, EnumIter, EnumString};
 use uuid::Uuid;
 
 use crate::backend::translations::models::Translations;
 
-#[derive(
-    Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash, Display, EnumString, EnumIter,
-)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, Hash, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
 pub enum ItemTypes {
     Gold,
@@ -27,8 +22,9 @@ impl ItemTypes {
     pub fn resolve(kind: &str) -> Self {
         match kind {
             "weapon" => Self::Weapon,
-            "armor" => Self::Equipment,
+            "armor" | "equipment" => Self::Equipment,
             "craftable" => Self::Craftable,
+            "consumable" => Self::Consumable,
             "thrash" => Self::Thrash,
             "gold" => Self::Gold,
             _ => Self::Weapon,
@@ -145,12 +141,9 @@ impl Loot {
     }
 
     pub fn save(self, connection: &mut SqliteConnection) -> Result<(), Error> {
-        let item_type_json = serde_json::to_string(&self.item_type)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let name_json = serde_json::to_string(&self.name)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
-        let description_json = serde_json::to_string(&self.description)
-            .map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let item_type_json = serde_json::to_string(&self.item_type).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| Error::DeserializationError(Box::new(e)))?;
+        let description_json = serde_json::to_string(&self.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableLoot {
             id: Uuid::new_v4().to_string(),
@@ -165,19 +158,12 @@ impl Loot {
             weight: self.weight,
         };
 
-        let exists = loot
-            .filter(id.eq(self.clone().id))
-            .first::<Loot>(connection)
-            .is_ok();
+        let exists = loot.filter(id.eq(self.clone().id)).first::<Loot>(connection).is_ok();
 
         if exists {
-            diesel::update(loot.find(self.id))
-                .set(&insertable)
-                .execute(connection)?;
+            diesel::update(loot.find(self.id)).set(&insertable).execute(connection)?;
         } else {
-            diesel::insert_into(loot::table)
-                .values(&insertable)
-                .execute(connection)?;
+            diesel::insert_into(loot::table).values(&insertable).execute(connection)?;
         }
 
         Ok(())

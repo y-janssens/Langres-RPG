@@ -143,14 +143,8 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Achievement {
                 id: UUIdFaker.generate().value(),
-                name: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
-                description: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
+                name: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
+                description: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
                 completed: false,
                 visible: true,
             }
@@ -163,14 +157,8 @@ pub mod factories_definitions {
         fn generate(&self) -> Self::Output {
             Statistic {
                 id: UUIdFaker.generate().value(),
-                name: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
-                description: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
+                name: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
+                description: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
                 value: StringFaker.generate().value(),
                 visible: BoolFaker.generate().value(),
             }
@@ -187,14 +175,8 @@ pub mod factories_definitions {
             Loot {
                 id: UUIdFaker.generate().value(),
                 item_type: ItemTypes::resolve(item),
-                name: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
-                description: Translations::generate(
-                    &StringFaker.generate().value(),
-                    &StringFaker.generate().value(),
-                ),
+                name: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
+                description: Translations::generate(&StringFaker.generate().value(), &StringFaker.generate().value()),
                 armor: Some(IntFaker.generate().value()),
                 damage: Some(IntFaker.generate().value()),
                 random: Some(IntFaker.generate().value()),
