@@ -5,8 +5,7 @@ use crate::backend::{translations::models::Translations, utils::functions::to_js
 use crate::schema::quests;
 use crate::schema::quests::dsl::*;
 use diesel::{
-    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable,
-    SqliteConnection,
+    deserialize::Queryable, prelude::*, sqlite::Sqlite, QueryResult, RunQueryDsl, Selectable, SqliteConnection,
 };
 use serde::{Deserialize, Serialize};
 use serde_yaml::Mapping;
@@ -135,10 +134,7 @@ impl Quest {
             reward: self.reward,
             next: self.next.clone(),
         };
-        let exists = quests
-            .filter(id.eq(self.id.clone()))
-            .first::<Quest>(connection)
-            .is_ok();
+        let exists = quests.filter(id.eq(self.id.clone())).first::<Quest>(connection).is_ok();
 
         if exists {
             diesel::update(quests.find(&self.id.clone()))

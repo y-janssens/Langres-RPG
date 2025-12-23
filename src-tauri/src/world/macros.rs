@@ -3,7 +3,7 @@ use std::io::Error;
 use serde_yaml::{Sequence, Value};
 
 use crate::backend::utils::parse::{
-    get_boolean_value, get_mapping, get_numeric_value, get_sequence, get_string_value, get_value,
+    get_boolean_value, get_mapping, get_numeric_value, get_sequence, get_string_value,
 };
 use crate::game::models::Position;
 use crate::storyline::models::{Act, Content};
@@ -44,12 +44,7 @@ impl World {
         let primary = get_boolean_value(content, "primary");
         let mut map = World::new(size, name, order, primary);
 
-        let starting_point = get_mapping(content, "starting_point")?;
-        let x = get_value(starting_point, "x")? as f32;
-        let y = get_value(starting_point, "y")? as f32;
-        let id = get_value(starting_point, "id")? as u32;
-
-        map.starting_point = Position::resolve((x, y, id));
+        map.starting_point = Position::parse(get_mapping(content, "starting_point")?)?;
         map.content = Self::parse_content(&mut map.content, get_sequence(content, "content")?);
         map.compute_directions();
 

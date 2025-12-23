@@ -1,19 +1,21 @@
-use crate::schema::games;
-use crate::schema::games::dsl::*;
 use chrono::{DateTime, Local};
 use diesel::prelude::*;
 use diesel::result::Error;
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
+use serde_yaml::Mapping;
 use uuid::Uuid;
 
 use crate::backend::permissions::models::Credentials;
 use crate::backend::utils::models::FrustumCullingUtility;
+use crate::backend::utils::parse::get_num_value;
 use crate::character::models::Character;
 use crate::player::achievements::models::PlayerAchievement;
 use crate::player::journal::models::PlayerJournal;
 use crate::player::quests::models::PlayerQuest;
 use crate::player::statistics::models::PlayerStatistic;
+use crate::schema::games;
+use crate::schema::games::dsl::*;
 use crate::storyline::models::Story;
 use crate::world::models::{Item, World};
 
@@ -41,6 +43,14 @@ impl Position {
             y: args.1,
             id: args.2,
         }
+    }
+
+    pub fn parse(content: &Mapping) -> Result<Self, std::io::Error> {
+        Ok(Self {
+            x: get_num_value(content, "x")? as f32,
+            y: get_num_value(content, "y")? as f32,
+            id: get_num_value(content, "id")? as u32,
+        })
     }
 }
 

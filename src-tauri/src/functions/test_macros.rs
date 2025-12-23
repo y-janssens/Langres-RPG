@@ -18,7 +18,7 @@ mod tests {
             let functions: Vec<Function> = functions_initial_datas!().expect(BASE_ERROR);
 
             for function in functions {
-                let insertion = function.insert_initial_datas(connection);
+                let insertion = function.save(connection);
                 assert!(insertion.is_ok());
             }
 

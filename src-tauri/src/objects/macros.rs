@@ -1,14 +1,14 @@
 use std::io::{Error, ErrorKind::InvalidData};
 
-use diesel::{prelude::*, result::Error as DieselError, SqliteConnection};
+use diesel::SqliteConnection;
 use serde_yaml::{Mapping, Sequence, Value};
 use system_macros::objects_initial_datas;
 
 use crate::backend::utils::parse::{
-    get_boolean_value, get_mapping, get_numeric_value, get_optional_string_value, get_string_value,
-    get_value,
+    get_boolean_value, get_mapping, get_num_value, get_numeric_value, get_optional_string_value,
+    get_string_value,
 };
-use crate::objects::models::{Area, InsertableObject, Object};
+use crate::objects::models::{Area, Object};
 
 impl Object {
     pub fn from_value(content: Sequence) -> Result<Vec<Self>, Error> {
@@ -28,37 +28,13 @@ impl Object {
         })
     }
 
-    pub fn insert_initial_datas(
-        &self,
-        connection: &mut SqliteConnection,
-    ) -> Result<(), DieselError> {
-        let area = serde_json::to_string(&self.area)
-            .map_err(|e| DieselError::DeserializationError(Box::new(e)))?;
-
-        let insertion = InsertableObject {
-            area,
-            walkable: self.walkable,
-            name: self.name.clone(),
-            value: self.value.clone(),
-            interactive: self.interactive,
-            display_value: self.display_value.clone(),
-            display_color: self.display_color.clone(),
-        };
-
-        diesel::insert_or_ignore_into(crate::schema::objects::table)
-            .values(&insertion)
-            .execute(connection)?;
-
-        Ok(())
-    }
-
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
         let objects: Vec<Self> = objects_initial_datas!()
             .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         for object in objects {
             object
-                .insert_initial_datas(connection)
+                .save(connection)
                 .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
         }
 
@@ -69,8 +45,8 @@ impl Object {
 impl Area {
     pub fn parse(starting_point: &Mapping) -> Result<Self, Error> {
         let area = Self {
-            x: get_value(starting_point, "x")? as i32,
-            y: get_value(starting_point, "y")? as i32,
+            x: get_num_value(starting_point, "x")? as i32,
+            y: get_num_value(starting_point, "y")? as i32,
         };
         Ok(area)
     }

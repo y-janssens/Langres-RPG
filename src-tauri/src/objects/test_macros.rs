@@ -18,7 +18,7 @@ mod tests {
             let objects: Vec<Object> = objects_initial_datas!().expect(BASE_ERROR);
 
             for object in objects {
-                let insertion = object.insert_initial_datas(connection);
+                let insertion = object.save(connection);
                 assert!(insertion.is_ok());
             }
 

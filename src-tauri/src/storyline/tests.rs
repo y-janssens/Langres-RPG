@@ -461,7 +461,7 @@ mod tests {
             // Setup initial storyline and game
             let storyline = Story::load(connection).unwrap();
             let mut game = Game::new("test".to_string(), connection).expect(BASE_ERROR);
-            game.last_known_position = Position::resolve((10.0, 16.0, 707));
+            game.last_known_position = Position::resolve((19.0, 14.0, 709));
             game.save(connection).unwrap();
 
             // Patch storyline
@@ -470,15 +470,15 @@ mod tests {
             let tile = maps[0]
                 .content
                 .iter_mut()
-                .find(|tile| tile.id == 707)
+                .find(|tile| tile.id == 709)
                 .unwrap();
 
             tile.value = "W".to_string();
             tile.display_value = "water".to_string();
             tile.walkable = false;
 
-            assert_eq!(map[707].value, "-".to_string());
-            assert_eq!(map[707].display_value, "grass".to_string());
+            assert_eq!(map[709].value, "-".to_string());
+            assert_eq!(map[709].display_value, "grass".to_string());
 
             let mut patch_story = storyline.clone();
             patch_story.acts[0].maps = maps;
@@ -486,21 +486,21 @@ mod tests {
 
             // Retrieve patched storyline and check datas consistency
             let _act = Story::load(connection).unwrap().acts[0].clone();
-            assert_eq!(&_act.maps[0].content[707].value, "W");
-            assert_eq!(&_act.maps[0].content[707].display_value, "water");
+            assert_eq!(&_act.maps[0].content[709].value, "W");
+            assert_eq!(&_act.maps[0].content[709].display_value, "water");
 
             // Retrieve games and ensure that character has been properly moved
             let games = Game::fetch(connection).expect("Failed to fetch games");
             assert_eq!(games.len(), 1);
-            assert!(games.iter().all(|game| game.last_known_position.id != 707));
+            assert!(games.iter().all(|game| game.last_known_position.id != 709));
             assert!(
                 games[0].storyline.acts[0].maps[0].content
                     [games[0].last_known_position.id as usize]
                     .walkable
             );
-            assert_eq!(games[0].storyline.acts[0].maps[0].content[707].value, "W");
+            assert_eq!(games[0].storyline.acts[0].maps[0].content[709].value, "W");
             assert_eq!(
-                games[0].storyline.acts[0].maps[0].content[707].display_value,
+                games[0].storyline.acts[0].maps[0].content[709].display_value,
                 "water"
             );
         });
