@@ -2,7 +2,7 @@ use std::io::{Error, ErrorKind::InvalidData};
 
 use diesel::SqliteConnection;
 use serde_yaml::{Sequence, Value};
-use system_macros::quests_initial_datas;
+use core_macros::quests_initial_datas;
 
 use crate::backend::translations::models::Translations;
 use crate::backend::utils::parse::{get_boolean_value, get_mapping, get_numeric_value, get_optional_string_value, get_string_value};

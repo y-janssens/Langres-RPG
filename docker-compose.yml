@@ -1,19 +1,16 @@
-
 services:
-  base:
-    &base
+  base: &base
     build:
-        context: .
+      context: .
     volumes:
       - .:/code
       - cargo-target:/code/src-tauri/target
-  langres:
-    &langres
+  core:
     <<: *base
     entrypoint: bash
   migrate:
     <<: *base
-    entrypoint: diesel migration redo --all --database-url="langres.db"
+    entrypoint: diesel migration redo --all --database-url="database.db"
     working_dir: /code/src-tauri
   shell:
     <<: *base

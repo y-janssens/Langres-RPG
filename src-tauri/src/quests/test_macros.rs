@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         quests::models::Quest,
     };
-    use system_macros::quests_initial_datas;
+    use core_macros::quests_initial_datas;
 
     #[test]
     fn test_resolve_quests_from_script() {

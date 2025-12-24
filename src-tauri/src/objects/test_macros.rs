@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         objects::models::Object,
     };
-    use system_macros::objects_initial_datas;
+    use core_macros::objects_initial_datas;
 
     #[test]
     fn test_resolve_objects_from_script() {

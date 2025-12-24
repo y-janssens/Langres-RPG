@@ -49,12 +49,12 @@ You can run most of the engine's features and utilities through Docker, altough 
 
 #### **Backend commands (within src-tauri dir)**
 
-| Operation      | Command                                                   | Description           |
-| -------------- | --------------------------------------------------------- | --------------------- |
-| Run migrations | `diesel migration redo --all --database-url="langres.db"` | Apply migrations      |
-| Run linter     | `cargo clippy`                                            | Run Rust linter       |
-| Run tests      | `cargo test -- --test-threads=1`                          | Run unit tests        |
-| Run shell      | `cargo run --bin shell`                                   | Run interactive shell |
+| Operation      | Command                                                    | Description           |
+| -------------- | ---------------------------------------------------------- | --------------------- |
+| Run migrations | `diesel migration redo --all --database-url="database.db"` | Apply migrations      |
+| Run linter     | `cargo clippy`                                             | Run Rust linter       |
+| Run tests      | `cargo test -- --test-threads=1`                           | Run unit tests        |
+| Run shell      | `cargo run --bin shell`                                    | Run interactive shell |
 
 #### **Docker commands**
 

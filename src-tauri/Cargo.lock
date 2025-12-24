@@ -784,6 +784,45 @@ dependencies = [
 ]
 
 [[package]]
+name = "core"
+version = "0.0.1"
+dependencies = [
+ "async-std",
+ "chrono",
+ "core_macros",
+ "diesel",
+ "diesel_migrations",
+ "dotenv",
+ "lazy_static",
+ "magic-crypt",
+ "noise",
+ "r2d2",
+ "rand 0.8.5",
+ "rstest",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "strum",
+ "strum_macros",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-clipboard-manager",
+ "tauri-plugin-devtools",
+ "tauri-plugin-dialog",
+ "tauri-plugin-fs",
+ "tauri-plugin-global-shortcut",
+ "tauri-plugin-http",
+ "tauri-plugin-notification",
+ "tauri-plugin-os",
+ "tauri-plugin-process",
+ "tauri-plugin-shell",
+ "tokio",
+ "ucfirst",
+ "uuid",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -831,6 +870,16 @@ dependencies = [
  "bitflags 2.10.0",
  "core-foundation 0.10.1",
  "libc",
+]
+
+[[package]]
+name = "core_macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "serde_yaml",
+ "syn 2.0.108",
 ]
 
 [[package]]
@@ -2621,45 +2670,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0de8b303297635ad57c9f5059fd9cee7a47f8e8daa09df0fcd07dd39fb22977f"
 dependencies = [
  "log",
-]
-
-[[package]]
-name = "langres"
-version = "0.0.1"
-dependencies = [
- "async-std",
- "chrono",
- "diesel",
- "diesel_migrations",
- "dotenv",
- "lazy_static",
- "magic-crypt",
- "noise",
- "r2d2",
- "rand 0.8.5",
- "rstest",
- "rusqlite",
- "serde",
- "serde_json",
- "serde_yaml",
- "strum",
- "strum_macros",
- "system-macros",
- "tauri",
- "tauri-build",
- "tauri-plugin-clipboard-manager",
- "tauri-plugin-devtools",
- "tauri-plugin-dialog",
- "tauri-plugin-fs",
- "tauri-plugin-global-shortcut",
- "tauri-plugin-http",
- "tauri-plugin-notification",
- "tauri-plugin-os",
- "tauri-plugin-process",
- "tauri-plugin-shell",
- "tokio",
- "ucfirst",
- "uuid",
 ]
 
 [[package]]
@@ -5160,16 +5170,6 @@ dependencies = [
  "pkg-config",
  "toml 0.8.2",
  "version-compare",
-]
-
-[[package]]
-name = "system-macros"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "serde_yaml",
- "syn 2.0.108",
 ]
 
 [[package]]

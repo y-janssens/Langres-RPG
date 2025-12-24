@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         npcs::models::Npc,
     };
-    use system_macros::npcs_initial_datas;
+    use core_macros::npcs_initial_datas;
 
     #[test]
     fn test_resolve_npcs_from_script() {

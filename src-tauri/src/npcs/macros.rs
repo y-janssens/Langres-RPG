@@ -2,7 +2,7 @@ use std::io::{Error, ErrorKind::InvalidData};
 
 use diesel::SqliteConnection;
 use serde_yaml::{Sequence, Value};
-use system_macros::npcs_initial_datas;
+use core_macros::npcs_initial_datas;
 
 use super::models::{Class, Gender, Npc};
 use crate::{

@@ -1,18 +1,15 @@
 [package]
-name = "langres"
-default-run = "langres"
+name = "core"
+default-run = "core"
 version = "0.0.1"
-description = "Isometric medieval RPG game"
-authors = ["Y.janssens"]
 license = ""
-repository = "https://github.com/y-janssens/Langres-RPG"
 edition = "2021"
 
 [lib]
 # The `_lib` suffix may seem redundant but it is necessary
 # to make the lib name unique and wouldn't conflict with the bin name.
 # This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
-name = "langres_lib"
+name = "core_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
@@ -20,7 +17,7 @@ tauri-build = { version = "2.5.1", features = [] }
 
 [dependencies]
 chrono = "^0.4.38"
-system-macros = { path = "./macros" }
+core_macros = { path = "./macros" }
 diesel = { version = "2.2.2", features = ["sqlite", "r2d2"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
 dotenv = "0.15.0"

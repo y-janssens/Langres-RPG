@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         loot::models::Loot,
     };
-    use system_macros::loot_initial_datas;
+    use core_macros::loot_initial_datas;
 
     #[test]
     fn test_resolve_loot_from_script() {

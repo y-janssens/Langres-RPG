@@ -83,7 +83,7 @@ tasks:
         aliases:
             - migrate
         cmds:
-            - diesel migration redo --all --database-url="langres.db"
+            - diesel migration redo --all --database-url="database.db"
             - diesel migration redo --all --database-url="test_db.db"
         silent: true
 
@@ -111,7 +111,7 @@ tasks:
         aliases:
             - docker-bash
         cmds:
-            - docker compose run --rm langres
+            - docker compose run --rm core
         silent: true
 
     docker-init:

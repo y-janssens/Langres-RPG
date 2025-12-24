@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         storyline::models::Story,
     };
-    use system_macros::storyline_initial_datas;
+    use core_macros::storyline_initial_datas;
 
     #[test]
     fn test_resolve_storyline_from_script() {

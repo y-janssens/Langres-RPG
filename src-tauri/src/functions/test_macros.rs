@@ -4,7 +4,7 @@ mod tests {
         backend::{conf_tests::database::allow_db_access, settings::errors::BASE_ERROR},
         functions::models::Function,
     };
-    use system_macros::functions_initial_datas;
+    use core_macros::functions_initial_datas;
 
     #[test]
     fn test_resolve_functions_from_script() {

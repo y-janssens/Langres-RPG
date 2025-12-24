@@ -2,7 +2,7 @@ use std::io::{Error, ErrorKind::InvalidData};
 
 use diesel::{prelude::*, result::Error as DieselError, SqliteConnection};
 use serde_yaml::Value;
-use system_macros::storyline_initial_datas;
+use core_macros::storyline_initial_datas;
 
 use crate::backend::utils::parse::{get_numeric_value, get_sequence, get_string_value};
 use crate::storyline::models::{Act, Acts, InsertableStory, Story};
