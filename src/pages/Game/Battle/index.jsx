@@ -6,7 +6,7 @@ import { BattleSystem } from '../../../models';
 import { Canvas } from '@react-three/fiber';
 import { Grid } from '@react-three/drei';
 
-import { Loading } from '../../../components/Ui/Loading';
+import { Loading } from '../../../components/ui/Loading';
 import Hud from './Hud';
 
 import css from './battle.module.css';

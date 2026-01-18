@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useGameContext, useTranslation } from '../../hooks';
 import { exit } from '@tauri-apps/plugin-process';
 
-import { Title, MainTitle } from '../Ui';
+import { Title, MainTitle } from '../ui';
 import { MenuItems } from './MenuItems';
 import MenuModals from './MenuModals';
 

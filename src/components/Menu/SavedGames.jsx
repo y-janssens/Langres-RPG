@@ -3,7 +3,7 @@ import { useGameContext, useTranslation } from '../../hooks';
 
 import { GameModel } from '../../models';
 
-import { Modal, Icon, DeletionModal } from '../Ui';
+import { Modal, Icon, DeletionModal } from '../ui';
 
 import css from './menu.module.css';
 

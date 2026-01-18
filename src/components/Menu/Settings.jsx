@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDynamicForm, useGameContext, useTranslation } from '../../hooks';
 
-import { Modal, VolumeBar, Icon } from '../Ui';
+import { Modal, VolumeBar, Icon } from '../ui';
 
 import css from './menu.module.css';
 

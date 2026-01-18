@@ -1,4 +1,4 @@
 export * from './Menu';
-export * from './Ui';
-export * from './Images';
-export { QuickSettings } from './Settings';
+export * from './ui';
+export * from './images';
+export { QuickSettings } from './settings';
