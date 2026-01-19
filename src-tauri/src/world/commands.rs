@@ -44,7 +44,7 @@ pub fn clear(
     let mut connection = get_connection(connection);
     authenticated_command(Permission::Editor, || {
         map.clear_npcs(&mut connection)?;
-        map.content = World::generate();
+        map.generate();
         Ok(map)
     })
 }

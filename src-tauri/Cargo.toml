@@ -50,6 +50,7 @@ strum_macros = "0.27.1"
 rstest = "0.25.0"
 async-std = { version = "1.13.1", features = ["attributes"] }
 serde_yaml = "0.9.34"
+round = "0.1.2"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

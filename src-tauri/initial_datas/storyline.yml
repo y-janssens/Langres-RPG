@@ -2965,6 +2965,7 @@ acts:
         order: 0
         primary: true
         size: 50
+        type: hexagonal
         starting_point:
           x: 18
           'y': 38

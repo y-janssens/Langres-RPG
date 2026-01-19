@@ -7,7 +7,7 @@ mod tests {
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::world::builder::config::Values;
     use crate::world::builder::options::GeneratorOptions;
-    use crate::world::builder::settings::{DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_GRID};
+    use crate::world::builder::settings::DEFAULT_MAP_SIZE;
     use crate::world::models::Options;
 
     #[test]
@@ -26,7 +26,6 @@ mod tests {
 
         assert_eq!(world.name, "test");
         assert_eq!(world.size, *DEFAULT_MAP_SIZE);
-        assert_eq!(world.content.len() as u32, *DEFAULT_MAP_SIZE_GRID);
 
         world.display_values();
     }

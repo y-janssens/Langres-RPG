@@ -1,3 +1,5 @@
+use crate::world::models::MapType;
+
 use super::directions::Directions;
 use super::models::World;
 
@@ -16,7 +18,7 @@ impl World {
                     "G" => "\x1b[38;2;210;180;140m",
                     _ => "\x1b[0m",
                 };
-                if item.y % 2 == 0 && index == 0 {
+                if item.y % 2 == 0 && index == 0 && self.r#type == MapType::Hexagonal {
                     print!("  {}{}\x1b[0m", color_code, item.value);
                 } else {
                     print!(" {}{}\x1b[0m", color_code, item.value);
@@ -41,7 +43,7 @@ impl World {
                     "G" => "\x1b[38;2;210;180;140m",
                     _ => "\x1b[0m",
                 };
-                if item.y % 2 == 0 && index == 0 {
+                if item.y % 2 == 0 && index == 0 && self.r#type == MapType::Hexagonal {
                     print!("  {}{}\x1b[0m", color_code, value);
                 } else {
                     print!(" {}{}\x1b[0m", color_code, value);
@@ -65,7 +67,7 @@ impl World {
                     _ => "\x1b[0m",
                 };
 
-                if item.y % 2 == 0 && index == 0 {
+                if item.y % 2 == 0 && index == 0 && self.r#type == MapType::Hexagonal {
                     print!("  {}{}\x1b[0m", color_code, item.z);
                 } else {
                     print!(" {}{}\x1b[0m", color_code, item.z);

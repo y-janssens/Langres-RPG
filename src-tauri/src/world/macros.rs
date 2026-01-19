@@ -6,7 +6,7 @@ use crate::backend::utils::parse::{get_boolean_value, get_mapping, get_numeric_v
 use crate::game::models::Position;
 use crate::storyline::models::{Act, Content};
 use crate::world::builder::config::Values;
-use crate::world::models::{Item, World};
+use crate::world::models::{Item, MapType, World};
 
 impl Act {
     pub fn parse(content: &Sequence) -> Result<Vec<Self>, Error> {
@@ -38,9 +38,11 @@ impl World {
         let size = get_numeric_value(content, "size");
         let order = get_numeric_value(content, "order");
         let primary = get_boolean_value(content, "primary");
+        let r#type = MapType::parse(get_string_value(content, "type").to_lowercase().as_str())?;
         let mut map = World::new(size, name, order, primary);
 
         map.id = id;
+        map.r#type = r#type;
         map.starting_point = Position::parse(get_mapping(content, "starting_point")?)?;
         map.content = Self::parse_content(&mut map.content, get_sequence(content, "content")?);
         map.compute_directions();
