@@ -202,10 +202,19 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(29, 35, 42);
-    background-image: linear-gradient(rgba(150, 150, 150, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 2px, transparent 2px),
+    background-image:
+        linear-gradient(rgba(150, 150, 150, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 2px, transparent 2px),
         linear-gradient(rgba(150, 150, 150, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    background-size:
+        50px 50px,
+        50px 50px,
+        10px 10px,
+        10px 10px;
+    background-position:
+        -2px -2px,
+        -2px -2px,
+        -1px -1px,
+        -1px -1px;
 }
 
 .builder-body {
@@ -245,11 +254,32 @@
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
+.builder-map-tile span,
+.builder-map-tile-active span {
+    user-select: none;
+}
+
 .builder-map-tile-active,
 .builder-map-tile:hover,
 .builder-map-tile-active:hover {
     background: linear-gradient(135deg, rgba(31, 131, 178, 0.5) 0%, rgb(39, 52, 70) 100%);
     background-color: #314a6e;
+}
+
+.builder-map-tile-invalid {
+    cursor: not-allowed;
+}
+
+/* .builder-map-tile-forbidden,
+.builder-map-tile-forbidden:hover {
+    background: linear-gradient(135deg, rgba(178, 31, 31, 0.5) 0%, rgb(70, 39, 39) 100%);
+    background-color: #b53c3c;
+} */
+
+.builder-map-tile-forbidden .builder-map-tile-hex path {
+    stroke: #b22222 !important;
+    stroke-dasharray: 2;
+    stroke-width: 1px;
 }
 
 .builder-map-tile-hex {
@@ -283,6 +313,7 @@
     position: absolute;
     bottom: 2px;
     opacity: 0.35;
+    pointer-events: none;
 }
 
 .builder-sidebar-block {

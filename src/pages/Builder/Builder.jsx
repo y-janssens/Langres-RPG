@@ -31,7 +31,7 @@ export const Builder = () => {
         selectedTiles: [],
         modal: { type: null, open: false, value: null },
         contextual: { type: null, open: false, value: null, position: { x: null, y: null } },
-        interactiveMode: { toggle: false, object: null, neighours: [] },
+        interactiveMode: { toggle: false, object: null, neighours: [], isValid: true },
         directions: DIRECTIONS.map((dir) => ({ display_direction: dir ? { output: dir, custom: true, values: null } : null }))
     });
 
@@ -68,6 +68,7 @@ export const Builder = () => {
                                 selectedMap: map,
                                 modal: { type: null, open: false, value: null },
                                 contextual: { type: null, open: false, value: null },
+                                interactiveMode: { toggle: false, object: null, neighours: [], isValid: true },
                                 selectedTiles: []
                             });
                         }
@@ -77,6 +78,8 @@ export const Builder = () => {
         },
         []
     );
+
+    console.log(form);
 
     const [, , syncObjects] = MapObject.useCommand({
         onSuccess: (response) => {
@@ -118,7 +121,7 @@ export const Builder = () => {
             return false;
         }
         return !form.modal.type && !form.modal.open;
-    }, [form]);
+    }, [form.storyLine, form.modal.type, form.modal.open]);
 
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>

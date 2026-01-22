@@ -146,7 +146,7 @@ const Toggles = ({ form, disabled, handleCheck }) => {
             { key: 'meshes', value: 'showObjects', disabled: disabled || form.flatDisplay },
             { key: 'directions', value: 'showDirections', disabled: disabled || !form.flatDisplay }
         ],
-        [form, disabled]
+        [form.flatDisplay, disabled]
     );
 
     return toggles.map((it, index) => (

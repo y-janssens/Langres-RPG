@@ -1,8 +1,41 @@
 import { useState, useRef, memo, useMemo } from 'react';
+
 import { Vector2, BufferAttribute, BufferGeometry } from 'three';
 import { useGameContext, useSettingsProperties } from '../../../hooks';
+
 import { Tree } from './Tree';
 import { Text } from '@react-three/drei';
+
+const createHexagonGeometry = () => {
+    const points = [];
+    for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI / 3) * i;
+        const x = Math.cos(angle);
+        const y = Math.sin(angle);
+        points.push(new Vector2(x, y));
+    }
+    const vertices = new Float32Array(points.flatMap((p) => [p.x, p.y, 0]));
+
+    const uvVectors = [
+        [0.5, 1],
+        [1, 0.75],
+        [1, 0.25],
+        [0.5, 0],
+        [0, 0.25],
+        [0, 0.75],
+        [0.5, 0.5]
+    ];
+    const uvPoints = uvVectors.map((vec) => new Vector2(vec[0], vec[1]));
+    const uvs = new Float32Array(uvPoints.flatMap((p) => [p.x, p.y]));
+
+    const geometry = new BufferGeometry();
+    geometry.setAttribute('position', new BufferAttribute(vertices, 3));
+    geometry.setAttribute('uv', new BufferAttribute(uvs, 2));
+    geometry.setIndex([0, 1, 2, 2, 3, 0, 3, 4, 0, 4, 5, 0]);
+    geometry.computeVertexNormals();
+    geometry.computeBoundingSphere();
+    return geometry;
+};
 
 export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();
@@ -15,67 +48,35 @@ export const Tiles = memo(({ data }) => {
     const settings = useSettingsProperties({ keys: engine.settings.keys.game }, [engine]);
     const { performances } = useSettingsProperties({ keys: 'performances' }, [engine]);
 
-    return data
-        .filter((it) => (settings.displayObstacles ? it : it.walkable))
-        .filter((it) => (settings.displayWater ? it : it.value !== 'W'))
-        .map((item, index) => (
-            <group key={index}>
-                {settings.displayMeshes && (item.value === 'T' || item.value === 'F') && (
-                    <Tree position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]} colorMap={colorMaps.trees} />
-                )}
-                {settings.displayText && item.value !== 'W' && item.Value !== 'S' && (
-                    <Text scale={[-0.25, 0.25, 0.25]} position={[-item.x / 1.5, 0.1, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]} color="white">
-                        {item.id}
-                    </Text>
-                )}
-                <Hexagon
-                    item={item}
-                    grayscale={performances}
-                    builder={!settings.displayTextures}
-                    position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
-                    colorMap={settings.displayTextures ? (item.value === 'W' ? colorMaps.water : colorMaps.grass) : null}
-                />
-            </group>
-        ));
+    const filteredData = useMemo(() => {
+        return data.filter((it) => (settings.displayObstacles ? it : it.walkable)).filter((it) => (settings.displayWater ? it : it.value !== 'W'));
+    }, [data, settings.displayObstacles, settings.displayWater]);
+
+    return filteredData.map((item) => (
+        <group key={item.id}>
+            {settings.displayMeshes && (item.value === 'T' || item.value === 'F') && (
+                <Tree position={[-item.x / 1.5 + 0.35, 1, item.y === 0 ? -item.y - 0.5 : -item.y * (Math.sqrt(3) / 1.5) - 0.5]} colorMap={colorMaps.trees} />
+            )}
+            {settings.displayText && item.value !== 'W' && item.value !== 'S' && (
+                <Text scale={[-0.25, 0.25, 0.25]} position={[-item.x / 1.5, 0.1, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]} color="white">
+                    {item.id}
+                </Text>
+            )}
+            <Hexagon
+                item={item}
+                grayscale={performances}
+                builder={!settings.displayTextures}
+                position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
+                colorMap={settings.displayTextures ? (item.value === 'W' ? colorMaps.water : colorMaps.grass) : null}
+            />
+        </group>
+    ));
 });
 
 export const Hexagon = memo(({ position, colorMap, item, grayscale = false, builder = false, form = {}, onClick = () => {} }) => {
     const meshRef = useRef();
 
-    const vertices = useMemo(() => {
-        const points = [];
-        for (let i = 0; i < 6; i++) {
-            const angle = (Math.PI / 3) * i;
-            const x = Math.cos(angle);
-            const y = Math.sin(angle);
-            points.push(new Vector2(x, y));
-        }
-        return new Float32Array(points.flatMap((p) => [p.x, p.y, 0]));
-    }, []);
-
-    const uvs = useMemo(() => {
-        const vectors = [
-            [0.5, 1],
-            [1, 0.75],
-            [1, 0.25],
-            [0.5, 0],
-            [0, 0.25],
-            [0, 0.75],
-            [0.5, 0.5]
-        ];
-        const uvPoints = vectors.map((vec) => new Vector2(vec[0], vec[1]));
-        return new Float32Array(uvPoints.flatMap((p) => [p.x, p.y]));
-    }, []);
-
-    const geometry = useMemo(() => {
-        const geometry = new BufferGeometry();
-        geometry.setAttribute('position', new BufferAttribute(vertices, 3));
-        geometry.setAttribute('uv', new BufferAttribute(uvs, 2));
-        geometry.setIndex([0, 1, 2, 2, 3, 0, 3, 4, 0, 4, 5, 0]);
-        geometry.computeVertexNormals();
-        geometry.computeBoundingSphere();
-        return geometry;
-    }, [vertices, uvs]);
+    const geometry = useMemo(() => createHexagonGeometry(), []);
 
     const color = useMemo(() => {
         if (!builder) {

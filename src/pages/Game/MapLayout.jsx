@@ -100,7 +100,11 @@ export const MapLayout = memo(({ form, position, characterRef, cameraRef, lightR
     );
 
     useFrame(({ scene }) => {
-        computeMovements(scene);
+        if (engine.controls.isMoving) {
+            computeMovements(scene);
+        } else {
+            computePositions();
+        }
     });
 
     useEffect(() => {

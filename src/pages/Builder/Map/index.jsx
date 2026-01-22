@@ -17,10 +17,13 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
         let map = form.selectedMap;
         map.content = history[index];
         return new World(map);
-    }, [form, history, index]);
+    }, [form.selectedMap, history, index]);
 
     const handleRegister = useCallback(
         async (item) => {
+            if (!form.interactiveMode.toggle) return;
+            if (!form.interactiveMode.isValid) return;
+
             const act = form.storyLine.acts.find((act) => act.id === form.selectedAct.id);
             const map = act.maps.find((mp) => mp.name === form.selectedMap.name);
             await invoke('register_object', {
@@ -29,14 +32,7 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
                 tileId: item.id,
                 objectId: form.interactiveMode.object.id,
                 enable: true
-            }).then(() => {
-                sync();
-                setForm('interactiveMode', {
-                    toggle: form.interactiveMode.toggle,
-                    object: form.interactiveMode.object,
-                    neighours: []
-                });
-            });
+            }).then(() => sync());
         },
         [form, sync]
     );
