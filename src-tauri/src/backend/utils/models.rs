@@ -1,7 +1,6 @@
 use rand::*;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
-use std::iter::FromIterator;
 
 use super::functions::{array_from_set, clamp};
 use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
@@ -65,38 +64,50 @@ impl FrustumCullingUtility {
             .collect()
     }
 
-    fn vertical_ids(&self) -> Vec<i32> {
-        let mut ids = HashSet::new();
-        let size = *DEFAULT_MAP_SIZE;
-        ids.insert(self.value);
+    fn get_hex_neighbors(&self, tile_id: i32) -> Vec<i32> {
+        let size = *DEFAULT_MAP_SIZE as i32;
+        let row = tile_id / size;
 
-        for i in 0..=self.vertical_threshold {
-            ids.insert((self.value - (i as i32) * size as i32).abs());
-        }
+        let offsets = if row % 2 == 0 {
+            vec![-1, 1, -size, -size + 1, size, size + 1]
+        } else {
+            vec![-1, 1, -size - 1, -size, size - 1, size]
+        };
 
-        for i in 0..=self.vertical_threshold {
-            ids.insert(self.value + (i as i32) * size as i32);
-        }
-
-        array_from_set(ids)
-    }
-
-    fn horizontal_ids(&self) -> Vec<i32> {
-        let mut ids = HashSet::new();
-
-        for id in self.vertical_ids() {
-            for i in 0..=self.horizontal_threshold {
-                ids.insert(id + i as i32);
-                ids.insert((-id + i as i32).abs());
-            }
-        }
-
-        array_from_set(ids)
+        offsets.iter().map(|&offset| tile_id + offset).collect()
     }
 
     fn resolve(&self) -> Vec<i32> {
-        let horizontal_ids = self.horizontal_ids();
-        let resolves_ids: HashSet<i32> = HashSet::from_iter(horizontal_ids);
-        array_from_set(resolves_ids)
+        let mut result = HashSet::new();
+
+        let mut current_ring: HashSet<i32> = self.get_hex_neighbors(self.value).into_iter().collect();
+        result.extend(&current_ring);
+
+        for _ in 1..self.vertical_threshold {
+            let mut next_ring = HashSet::new();
+            for &tile_id in &current_ring {
+                for neighbor in self.get_hex_neighbors(tile_id) {
+                    if neighbor != self.value && !result.contains(&neighbor) {
+                        next_ring.insert(neighbor);
+                    }
+                }
+            }
+            result.extend(&next_ring);
+            current_ring = next_ring;
+        }
+
+        if self.horizontal_threshold > self.vertical_threshold {
+            let horizontal_expansion = self.horizontal_threshold - self.vertical_threshold;
+            let current_tiles: Vec<i32> = result.iter().cloned().collect();
+
+            for &tile_id in &current_tiles {
+                for i in 1..=horizontal_expansion {
+                    result.insert(tile_id + i as i32);
+                    result.insert(tile_id - i as i32);
+                }
+            }
+        }
+
+        array_from_set(result)
     }
 }

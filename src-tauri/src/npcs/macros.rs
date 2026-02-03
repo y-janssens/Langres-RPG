@@ -1,6 +1,6 @@
 use std::io::{Error, ErrorKind::InvalidData};
 
-use diesel::SqliteConnection;
+use diesel::{prelude::*, SqliteConnection};
 use serde_yaml::{Sequence, Value};
 use system_macros::npcs_initial_datas;
 
@@ -8,7 +8,10 @@ use super::models::{Class, Gender, Npc};
 use crate::{
     backend::{
         translations::models::Translations,
-        utils::parse::{get_boolean_value, get_content, get_mapping, get_numeric_value, get_sequence, get_string_value},
+        utils::{
+            functions::to_json,
+            parse::{get_boolean_value, get_content, get_mapping, get_numeric_value, get_sequence, get_string_value},
+        },
     },
     character::models::Inventory,
     game::models::Position,
@@ -56,11 +59,74 @@ impl Npc {
         })
     }
 
+    pub fn insert_initial_datas(&self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+        let _npc = &mut self.clone();
+
+        if !_npc.unique {
+            _npc.title = crate::backend::translations::models::Translations::blank();
+            _npc.inventory = crate::character::models::Inventory::empty();
+            _npc.quests = crate::npcs::models::NpcQuests::empty();
+            _npc.dialogs = crate::npcs::models::NpcDialogs::empty();
+        }
+
+        if _npc.hostile {
+            _npc.can_be_hostile = true;
+        }
+
+        let title_json = to_json(&_npc.title)?;
+        let class_json = to_json(&_npc.class)?;
+        let inventory_json = to_json(&_npc.inventory)?;
+        let gender_json = to_json(&_npc.gender)?;
+        let quests_json = to_json(&_npc.quests)?;
+        let dialogs_json = to_json(&_npc.dialogs)?;
+        let starting_point_json = to_json(&_npc.starting_point)?;
+
+        let insertion = crate::npcs::models::InsertableNpc {
+            id: _npc.id.clone(),
+            first_name: _npc.first_name.clone(),
+            last_name: _npc.last_name.clone(),
+            title: title_json,
+            class: class_json,
+            end: _npc.end,
+            r#for: _npc.r#for,
+            hab: _npc.hab,
+            cha: _npc.cha,
+            int: _npc.int,
+            ini: _npc.ini,
+            att: _npc.att,
+            par: _npc.par,
+            tir: _npc.tir,
+            ap: _npc.ap,
+            max_ap: _npc.max_ap,
+            max_pv: _npc.max_pv,
+            pv: _npc.pv,
+            lvl: _npc.lvl,
+            gender: gender_json,
+            map_id: _npc.map_id,
+            unique: _npc.unique,
+            r#static: _npc.r#static,
+            hostile: _npc.hostile,
+            is_alive: _npc.is_alive,
+            can_be_hostile: _npc.can_be_hostile,
+            inventory: inventory_json,
+            quests: quests_json,
+            dialogs: dialogs_json,
+            starting_point: starting_point_json,
+        };
+
+        diesel::insert_or_ignore_into(crate::schema::npc::table)
+            .values(&insertion)
+            .execute(connection)?;
+
+        Ok(())
+    }
+
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
         let npcs: Vec<Self> = npcs_initial_datas!().map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
 
         for npc in npcs {
-            npc.save(connection).map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
+            npc.insert_initial_datas(connection)
+                .map_err(|e| std::io::Error::new(InvalidData, e.to_string()))?;
         }
 
         Ok(())

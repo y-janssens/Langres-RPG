@@ -1,10 +1,11 @@
 use std::io::{Error, ErrorKind::InvalidData};
 
-use diesel::SqliteConnection;
+use diesel::{prelude::*, SqliteConnection};
 use serde_yaml::{Sequence, Value};
 use system_macros::quests_initial_datas;
 
 use crate::backend::translations::models::Translations;
+use crate::backend::utils::functions::to_json;
 use crate::backend::utils::parse::{get_boolean_value, get_mapping, get_numeric_value, get_optional_string_value, get_string_value};
 use crate::quests::models::{Quest, Status};
 
@@ -26,11 +27,36 @@ impl Quest {
         })
     }
 
+    pub fn insert_initial_datas(&self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+        let name_json = to_json(&self.name)?;
+        let description_json = to_json(&self.description)?;
+        let status_json = to_json(&self.status)?;
+
+        let insertion = crate::quests::models::InsertableQuest {
+            id: self.id.clone(),
+            name: name_json,
+            description: description_json,
+            primary: self.primary,
+            status: status_json,
+            visible: self.visible,
+            reward: self.reward,
+            next: self.next.clone(),
+        };
+
+        diesel::insert_or_ignore_into(crate::schema::quests::table)
+            .values(&insertion)
+            .execute(connection)?;
+
+        Ok(())
+    }
+
     pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
         let quests: Vec<Self> = quests_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
 
         for quest in quests {
-            quest.save(connection).map_err(|e| Error::new(InvalidData, e.to_string()))?;
+            quest
+                .insert_initial_datas(connection)
+                .map_err(|e| Error::new(InvalidData, e.to_string()))?;
         }
 
         Ok(())
