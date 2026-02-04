@@ -121,16 +121,25 @@ impl Item {
 
     /// Get each item's neighbours and return values and indices
     pub fn get_neighbours_values(&self, items: &[Item]) -> HashMap<usize, String> {
-        let ids = &self.neighbours_ids;
-        let neighbours_items: Vec<Self> = items.iter().filter(|&it| self.neighbours_ids.contains(&it.id)).cloned().collect();
-        let mut values: HashMap<usize, String> = HashMap::new();
+        self.neighbours_ids
+            .iter()
+            .filter_map(|&id| items.get(id as usize).map(|item| (id as usize, item.value.clone())))
+            .collect()
+    }
 
-        for tile in neighbours_items.iter() {
-            if ids.binary_search(&tile.id).is_ok() {
-                values.insert(tile.id as usize, tile.value.clone());
-            }
-        }
-        values
+    /// Get each item's neighbours
+    pub fn get_neighbours(&self, items: &[Self]) -> Vec<Self> {
+        let size = &self.neighbours_ids.len();
+        let mut neighbours: Vec<Self> = Vec::with_capacity(*size);
+
+        neighbours.extend(
+            self.neighbours_ids
+                .clone()
+                .into_iter()
+                .filter_map(|id| items.get(id as usize).cloned())
+                .collect::<Vec<Self>>(),
+        );
+        neighbours
     }
 
     pub fn get_display_direction(&mut self, items: &[Self]) -> Option<Directions> {
@@ -252,11 +261,7 @@ impl World {
     pub fn compute_directions(&mut self) {
         let original_content = self.content.clone();
         for item in &mut self.content {
-            let neighbours: Vec<Item> = original_content
-                .iter()
-                .filter(|it| item.neighbours_ids.contains(&it.id))
-                .cloned()
-                .collect();
+            let neighbours = item.get_neighbours(&original_content);
 
             if item.display_direction.clone().is_none_or(|dir| !dir.custom) {
                 item.get_display_direction(&neighbours);

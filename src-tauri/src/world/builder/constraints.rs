@@ -71,7 +71,7 @@ impl Constraints {
     }
 
     /// Check all item's neighbours to eliminate forbidden values
-    pub fn apply(neighbours: HashMap<usize, String>, settings: &Conf) -> (HashMap<String, u32>, Vec<String>) {
+    pub fn apply(neighbours: &HashMap<usize, String>, settings: &Conf) -> (HashMap<String, u32>, Vec<String>) {
         let mut filtered_values = HashMap::new();
         let mut remaining = HashSet::new();
 

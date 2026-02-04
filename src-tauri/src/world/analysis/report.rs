@@ -57,7 +57,7 @@ impl MapReport {
 
         for item in items.iter() {
             let neighbours = item.get_neighbours_values(items);
-            let constraints = Constraints::apply(neighbours, &settings);
+            let constraints = Constraints::apply(&neighbours, &settings);
 
             self.parse_entries(item, constraints, &expected_values)?;
         }
