@@ -5,8 +5,8 @@ use lazy_static::lazy_static;
 use super::{actions::generator::Params, config::Values};
 
 lazy_static! {
-    pub static ref DEFAULT_MAP_SIZE : u32 = 1000;
-    pub static ref DEFAULT_MAP_SIZE_FACTOR : u32 = 1000;
+    pub static ref DEFAULT_MAP_SIZE : u32 = 50;
+    pub static ref DEFAULT_MAP_SIZE_FACTOR : u32 = 50;
     pub static ref DEFAULT_MAP_SIZE_ROWS : u32 = ((*DEFAULT_MAP_SIZE as f32 + (*DEFAULT_MAP_SIZE as f32).sqrt()).ceil() + 1_f32) as u32;
     pub static ref DEFAULT_MAP_SIZE_THRESHOLD : u32 =  *DEFAULT_MAP_SIZE_ROWS - *DEFAULT_MAP_SIZE;
     pub static ref DEFAULT_MAP_SIZE_GRID : u32 = *DEFAULT_MAP_SIZE * *DEFAULT_MAP_SIZE_ROWS;

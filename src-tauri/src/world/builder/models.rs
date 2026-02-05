@@ -1,7 +1,7 @@
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::mem::take;
 
 use super::actions::generator::Generator;
@@ -44,54 +44,57 @@ impl Map {
     fn collapse(&mut self) {
         let mut rng = thread_rng();
 
-        // Group tiles by entropy for fast minimum lookup
-        let mut entropy_buckets: HashMap<u32, Vec<usize>> = HashMap::new();
+        // Keep seeding new regions until nothing is left to collapse
+        while let Some(seed_idx) = self.content.iter().position(|tile| tile.entropy > 0) {
+            let mut entropy_buckets: HashMap<u32, Vec<usize>> = HashMap::new();
+            let mut visited = HashSet::new();
 
-        for tile in self.content.iter() {
-            if tile.entropy > 0 {
-                entropy_buckets.entry(tile.entropy).or_default().push(tile.id as usize);
-            }
-        }
+            // Seed this region
+            let seed_entropy = self.content[seed_idx].entropy;
+            entropy_buckets.entry(seed_entropy).or_default().push(seed_idx);
+            visited.insert(seed_idx);
 
-        while !entropy_buckets.is_empty() {
-            // Pick random tile from lowest entropy bucket
-            let min_entropy = *entropy_buckets.keys().min().unwrap();
-            let candidates = entropy_buckets.get_mut(&min_entropy).unwrap();
-            let &index = candidates.choose(&mut rng).unwrap();
+            // Collapse this region
+            while !entropy_buckets.is_empty() {
+                let min_entropy = *entropy_buckets.keys().min().unwrap();
+                let candidates = entropy_buckets.get_mut(&min_entropy).unwrap();
+                let &index = candidates.choose(&mut rng).unwrap();
 
-            // Remove collapsed tile from bucket, clear bucket if empty
-            candidates.retain(|&idx| idx != index);
-            if candidates.is_empty() {
-                entropy_buckets.remove(&min_entropy);
-            }
+                candidates.retain(|&idx| idx != index);
+                if candidates.is_empty() {
+                    entropy_buckets.remove(&min_entropy);
+                }
 
-            // Collapse the tile
-            let neighbours = self.content[index].get_neighbours_values(&self.content);
-            let constraints = Constraints::apply(&neighbours, &self.settings);
-            let value = Self::get_random_value(&constraints.0);
+                let neighbours = self.content[index].get_neighbours_values(&self.content);
+                let constraints = Constraints::apply(&neighbours, &self.settings);
+                let value = Self::get_random_value(&constraints.0);
 
-            self.content[index].edit(value);
-            self.content[index].entropy = 0;
+                self.content[index].edit(value);
+                self.content[index].entropy = 0;
 
-            // Update neighbour entropies and rebucket them
-            if !constraints.0.is_empty() {
-                let local_entropy = constraints.1.len() as u32;
+                if !constraints.0.is_empty() {
+                    let local_entropy = constraints.1.len() as u32;
 
-                for &neighbour_idx in neighbours.keys() {
-                    let neighbour = &mut self.content[neighbour_idx];
+                    for &neighbour_idx in neighbours.keys() {
+                        let neighbour = &mut self.content[neighbour_idx];
 
-                    if neighbour.entropy > 0 && neighbour.entropy != local_entropy {
-                        // Move from old bucket to new bucket
-                        if let Some(old_bucket) = entropy_buckets.get_mut(&neighbour.entropy) {
-                            old_bucket.retain(|&idx| idx != neighbour_idx);
+                        if neighbour.entropy > 0 {
+                            if visited.insert(neighbour_idx) {
+                                entropy_buckets.entry(neighbour.entropy).or_default().push(neighbour_idx);
+                            }
 
-                            if old_bucket.is_empty() {
-                                entropy_buckets.remove(&neighbour.entropy);
+                            if neighbour.entropy != local_entropy {
+                                if let Some(old_bucket) = entropy_buckets.get_mut(&neighbour.entropy) {
+                                    old_bucket.retain(|&idx| idx != neighbour_idx);
+                                    if old_bucket.is_empty() {
+                                        entropy_buckets.remove(&neighbour.entropy);
+                                    }
+                                }
+
+                                neighbour.entropy = local_entropy;
+                                entropy_buckets.entry(local_entropy).or_default().push(neighbour_idx);
                             }
                         }
-
-                        neighbour.entropy = local_entropy;
-                        entropy_buckets.entry(local_entropy).or_default().push(neighbour_idx);
                     }
                 }
             }

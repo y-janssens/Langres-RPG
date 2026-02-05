@@ -77,6 +77,25 @@ tasks:
             - cargo test {{.CLI_ARGS}} -- {{.TEST_ARGS}} {{if ne .CLI_ARGS ""}}--nocapture{{end}}
         silent: true
 
+    benchmark_tests:
+        desc: Run tests set multiple times to check against flakies.
+        dir: '{{.RUST_DIR}}'
+        cmds:
+            - |
+                set -- {{.CLI_ARGS}}
+                ITERATIONS=${1:-100}
+                TEST_FILTER="$2"
+                for i in $(seq 1 $ITERATIONS); do
+                    printf "\rTest run $i/$ITERATIONS"
+                    if [ -n "$TEST_FILTER" ]; then
+                        cargo test "$TEST_FILTER" -- {{.TEST_ARGS}} --quiet || { echo -e "\nFAILED on run $i"; exit 1; }
+                    else
+                        cargo test -- {{.TEST_ARGS}} --quiet || { echo -e "\nFAILED on run $i"; exit 1; }
+                    fi
+                done
+                echo -e "\nAll $ITERATIONS test runs passed successfully!"
+        silent: true
+
     migrations:
         dir: '{{.RUST_DIR}}'
         desc: Run project's migrations
