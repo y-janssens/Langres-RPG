@@ -45,7 +45,6 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             let mapIndex = act.maps.findIndex((mp) => mp.id === form.selectedMap.id);
             let newMap = { ...act.maps[mapIndex] };
 
-            console.log(item, primary, form.selectedTiles, newMap);
             if (!primary) {
                 if (!item.value && form.selectedTiles.length === 1) {
                     newMap.starting_point = { x: form.selectedTiles[0].x, y: form.selectedTiles[0].y, id: form.selectedTiles[0].id };

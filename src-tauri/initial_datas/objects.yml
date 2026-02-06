@@ -117,7 +117,7 @@
   interactive: true
   name: house
   value: H
-  walkable: true
+  walkable: false
 
 - area:
     x: 1
@@ -128,7 +128,7 @@
   interactive: true
   name: house
   value: H_1
-  walkable: true
+  walkable: false
 
 - area:
     x: 2
@@ -139,4 +139,26 @@
   interactive: true
   name: house
   value: H_2
-  walkable: true
+  walkable: false
+
+- area:
+    x: 2
+    "y": 1
+  display_color: 
+  display_value: 
+  id: 14
+  interactive: true
+  name: house
+  value: H_3
+  walkable: false
+
+- area:
+    x: 4
+    "y": 2
+  display_color: 
+  display_value: 
+  id: 15
+  interactive: true
+  name: house
+  value: H_4
+  walkable: false

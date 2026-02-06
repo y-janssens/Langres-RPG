@@ -2,7 +2,7 @@ use rand::*;
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
 
-use super::functions::array_from_set;
+use super::functions::{array_from_set, clamp};
 use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -40,6 +40,7 @@ pub struct FrustumCullingUtility {
     size: u32,
     horizontal_threshold: usize,
     vertical_threshold: usize,
+    vertical_bias: usize,
 }
 
 impl FrustumCullingUtility {
@@ -49,6 +50,7 @@ impl FrustumCullingUtility {
             size,
             vertical_threshold: vertical,
             horizontal_threshold: horizontal,
+            vertical_bias: clamp(vertical),
         };
         rationalizer.resolve()
     }
@@ -76,42 +78,36 @@ impl FrustumCullingUtility {
     }
 
     fn resolve(&self) -> Vec<i32> {
-        let mut result = HashSet::new();
-
         if self.horizontal_threshold == 0 && self.vertical_threshold == 0 {
             return Vec::new();
         }
 
-        let max_threshold = self.horizontal_threshold.max(self.vertical_threshold);
-
-        let mut all_tiles = HashSet::new();
-        all_tiles.insert(self.value);
-
         let mut current_ring: HashSet<i32> = self.get_hex_neighbors(self.value).into_iter().collect();
+        let mut result = current_ring.clone();
 
-        // If symmetric, include all rings. If asymmetric, only the outermost
-        let include_all = self.horizontal_threshold == self.vertical_threshold;
-
-        if include_all || max_threshold == 1 {
-            result.extend(&current_ring);
-        }
-        all_tiles.extend(&current_ring);
-
-        for ring_num in 2..=max_threshold {
+        for _ in 1..self.vertical_threshold {
             let mut next_ring = HashSet::new();
             for &tile_id in &current_ring {
                 for neighbor in self.get_hex_neighbors(tile_id) {
-                    if neighbor != self.value && !all_tiles.contains(&neighbor) {
+                    if neighbor != self.value && !result.contains(&neighbor) {
                         next_ring.insert(neighbor);
                     }
                 }
             }
-
-            if include_all || ring_num == max_threshold {
-                result.extend(&next_ring);
-            }
-            all_tiles.extend(&next_ring);
+            result.extend(&next_ring);
             current_ring = next_ring;
+        }
+
+        if self.horizontal_threshold > self.vertical_threshold {
+            let horizontal_expansion = self.horizontal_threshold - self.vertical_threshold;
+            let current_tiles: Vec<i32> = result.iter().cloned().collect();
+
+            for &tile_id in &current_tiles {
+                for i in 1..=horizontal_expansion {
+                    result.insert(tile_id + i as i32);
+                    result.insert(tile_id - i as i32);
+                }
+            }
         }
 
         array_from_set(result)

@@ -261,10 +261,8 @@ impl World {
     pub fn compute_directions(&mut self) {
         let original_content = self.content.clone();
         for item in &mut self.content {
-            let neighbours = item.get_neighbours(&original_content);
-
             if item.display_direction.clone().is_none_or(|dir| !dir.custom) {
-                item.get_display_direction(&neighbours);
+                item.get_display_direction(&original_content);
             }
         }
     }

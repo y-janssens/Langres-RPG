@@ -79,8 +79,6 @@ export const Builder = () => {
         []
     );
 
-    console.log(form);
-
     const [, , syncObjects] = MapObject.useCommand({
         onSuccess: (response) => {
             setForm('objects', response);

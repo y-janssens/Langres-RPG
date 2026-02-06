@@ -40,14 +40,6 @@ export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHov
         return `hue-rotate(${item.start ? '-25deg' : '25deg'}) brightness(1.25) saturate(1.5)`;
     }, [item, isGateway]);
 
-    const className = useMemo(() => {
-        let cls = active ? 'builder-map-tile-active' : 'builder-map-tile';
-        if (!form.interactiveMode.isValid && !item.walkable && (form.interactiveMode.neighours?.includes(item.id) || hover === item.id)) {
-            cls = `${cls}, builder-map-tile-invalid`;
-        }
-        return cls;
-    }, [hover, item, form.interactiveMode]);
-
     const color = useMemo(() => {
         if (!form.showConstraints) {
             if (form.selectedMap.npcs.some((npc) => npc.starting_point.id === item.id)) {

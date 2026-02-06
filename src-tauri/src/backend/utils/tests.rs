@@ -7,11 +7,11 @@ mod tests {
     use crate::backend::utils::models::FrustumCullingUtility;
 
     #[rstest]
-    #[case(0, 0, 0)] // Actual test result: 0 - Ux result: 0
-    #[case(1, 1, 6)] // Actual test result: 6 - Ux result: 6
-    #[case(1, 2, 12)] // Actual test result: 12 - Ux result: 12
-    #[case(2, 1, 12)] // Actual test result: 13 - Ux result: 18
-    #[case(2, 2, 18)] // Actual test result: 18 - Ux result: 18
+    #[case(0, 0, 0)]
+    #[case(1, 1, 6)]
+    #[case(2, 1, 13)]
+    #[case(2, 2, 18)]
+    #[case(4, 2, 39)]
     fn test_frustum_cull(#[case] horizontal: usize, #[case] vertical: usize, #[case] result: usize) {
         let map = WorldFactory.generate();
         let ids = FrustumCullingUtility::cull(1122, 50, horizontal, vertical);
