@@ -70,14 +70,14 @@ pub struct Quest {
 #[diesel(table_name = crate::schema::quests)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct InsertableQuest {
-    id: String,
-    name: String,
-    description: String,
-    primary: bool,
-    status: String,
-    visible: bool,
-    reward: i32,
-    next: Option<String>,
+    pub id: String,
+    pub name: String,
+    pub description: String,
+    pub primary: bool,
+    pub status: String,
+    pub visible: bool,
+    pub reward: i32,
+    pub next: Option<String>,
 }
 
 impl Default for Quest {

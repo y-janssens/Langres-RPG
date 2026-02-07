@@ -1,7 +1,7 @@
 use rand::seq::SliceRandom;
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::mem::take;
 
 use super::actions::generator::Generator;
@@ -24,14 +24,13 @@ impl Map {
     pub fn generate(tiles: Vec<Item>, options: Options) -> Vec<Item> {
         let settings = Conf::get_config(&options.r#type);
         let mut config = Self {
-            settings: settings.clone(),
-            options: options.clone(),
+            settings,
+            options,
             content: vec![],
         };
         config.get_content(tiles);
         config.collapse();
         config.post_process();
-
         config.export()
     }
 
@@ -44,30 +43,62 @@ impl Map {
     /// WFC core algorithm, randomly loops over each tile and assign values according to neighbouring constraints
     fn collapse(&mut self) {
         let mut rng = thread_rng();
-        let items = &mut self.content;
 
-        while items.iter().any(|tile| tile.entropy > 0) {
-            let filtered_indices = Self::get_items_indices(items);
+        // Keep seeding new regions until nothing is left to collapse
+        while let Some(seed_idx) = self.content.iter().position(|tile| tile.entropy > 0) {
+            let mut entropy_buckets: HashMap<u32, Vec<usize>> = HashMap::new();
+            let mut visited = HashSet::new();
 
-            if let Some(&index) = filtered_indices.choose(&mut rng) {
-                let neighbours = items[index].get_neighbours_values(items);
-                let constraints = Constraints::apply(neighbours.clone(), &self.settings);
+            // Seed this region
+            let seed_entropy = self.content[seed_idx].entropy;
+            entropy_buckets.entry(seed_entropy).or_default().push(seed_idx);
+            visited.insert(seed_idx);
+
+            // Collapse this region
+            while !entropy_buckets.is_empty() {
+                let min_entropy = *entropy_buckets.keys().min().unwrap();
+                let candidates = entropy_buckets.get_mut(&min_entropy).unwrap();
+                let &index = candidates.choose(&mut rng).unwrap();
+
+                candidates.retain(|&idx| idx != index);
+                if candidates.is_empty() {
+                    entropy_buckets.remove(&min_entropy);
+                }
+
+                let neighbours = self.content[index].get_neighbours_values(&self.content);
+                let constraints = Constraints::apply(&neighbours, &self.settings);
                 let value = Self::get_random_value(&constraints.0);
 
-                items[index].edit(value);
-                items[index].entropy = 0;
+                self.content[index].edit(value);
+                self.content[index].entropy = 0;
 
-                for neighbour_index in neighbours.keys().cloned().collect::<Vec<usize>>() {
-                    if items[neighbour_index].entropy > 0 && !constraints.0.is_empty() {
-                        // Assign entropy value based on remaining possibilities
-                        items[neighbour_index].entropy = constraints.1.len() as u32;
+                if !constraints.0.is_empty() {
+                    let local_entropy = constraints.1.len() as u32;
+
+                    for &neighbour_idx in neighbours.keys() {
+                        let neighbour = &mut self.content[neighbour_idx];
+
+                        if neighbour.entropy > 0 {
+                            if visited.insert(neighbour_idx) {
+                                entropy_buckets.entry(neighbour.entropy).or_default().push(neighbour_idx);
+                            }
+
+                            if neighbour.entropy != local_entropy {
+                                if let Some(old_bucket) = entropy_buckets.get_mut(&neighbour.entropy) {
+                                    old_bucket.retain(|&idx| idx != neighbour_idx);
+                                    if old_bucket.is_empty() {
+                                        entropy_buckets.remove(&neighbour.entropy);
+                                    }
+                                }
+
+                                neighbour.entropy = local_entropy;
+                                entropy_buckets.entry(local_entropy).or_default().push(neighbour_idx);
+                            }
+                        }
                     }
                 }
-            } else {
-                break;
             }
         }
-        self.content = items.to_vec();
     }
 
     fn post_process(&mut self) {
@@ -87,23 +118,6 @@ impl Map {
                 tile.edit(value);
                 tile
             })
-            .collect()
-    }
-
-    /// Reduce items list to a list of lowest entropy indices for random picking
-    fn get_items_indices(items: &[Item]) -> Vec<usize> {
-        let min_entropy = items
-            .iter()
-            .filter(|tile| tile.entropy > 0)
-            .map(|tile| tile.entropy)
-            .min()
-            .unwrap_or(0);
-
-        items
-            .iter()
-            .enumerate()
-            .filter(|&(_, tile)| tile.entropy == min_entropy)
-            .map(|(index, _)| index)
             .collect()
     }
 

@@ -5,15 +5,15 @@ import { Icon, Hex } from '../../../../components';
 
 import css from '../../builder.module.css';
 
-export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, item, handleSelect }) => {
+export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHover, ds, item, handleSelect }) => {
     const tileRef = useRef();
 
     const active = useMemo(() => {
-        if (!form.selectedTiles.length) {
+        if (!form.selectedTiles.length || form.interactiveMode.toggle) {
             return false;
         }
         return form.selectedTiles.find((tile) => tile.id === item.id);
-    }, [item, form]);
+    }, [item.id, form.selectedTiles, form.interactiveMode.toggle]);
 
     const icon = useMemo(() => {
         const name = form.objects.find((it) => it.value === item.value)?.name;
@@ -24,7 +24,7 @@ export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, ite
             return 'npc';
         }
         return name;
-    }, [form, item, item.value]);
+    }, [form.objects, form.selectedMap.npcs, item.value, item.id]);
 
     const isGateway = useMemo(() => {
         if (!item.events.length) {
@@ -51,13 +51,14 @@ export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, ite
         if (Boolean(hover) && hover === item.id) {
             return '#019ae6';
         }
+
         if (form.interactiveMode) {
-            if (form.interactiveMode.neighours?.includes(item.id)) {
+            if (form.interactiveMode.neighours?.includes(item.id) && item.walkable) {
                 return 'rgba(1, 154, 230, .5)';
             }
         }
         return item.walkable ? '#909090' : '#404040';
-    }, [form, item, hover]);
+    }, [form.showConstraints, form.interactiveMode, form.selectedMap.npcs, form.interactiveMode, item.id, item.display_color, item.walkable, hover]);
 
     const handleHover = useCallback(
         async (_hover) => {
@@ -72,7 +73,8 @@ export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, ite
                     setForm('interactiveMode', {
                         toggle: form.interactiveMode.toggle,
                         object: form.interactiveMode.object,
-                        neighours: response
+                        neighours: response,
+                        isValid: form.selectedMap.content.filter((it) => response.includes(it.id)).every((it) => it.walkable)
                     });
                 });
             } else {
@@ -86,19 +88,36 @@ export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, ite
                 }
             }
         },
-        [form, item, hover]
+        [form.interactiveMode.toggle, form.selectedAct.id, form.selectedMap.id, item.id, hover, setHover, setForm]
     );
+
+    const tileStyle = useMemo(() => {
+        const scaledSize = form.zoom / 100;
+        return {
+            filter: filters,
+            backgroundColor: color,
+            marginLeft: item.y % 2 === 0 ? `${30 * scaledSize + 1}px` : undefined,
+            height: `${70 * scaledSize}px`,
+            width: `${((70 * Math.sqrt(3)) / 2) * scaledSize}px`
+        };
+    }, [filters, color, item.y, form.zoom]);
 
     useEffect(() => {
         const element = tileRef.current;
         if (!element || !ds) return;
         element.tile = item;
         ds.addSelectables(element);
-    }, [ds, tileRef]);
+    }, [ds, tileRef, item]);
 
     return (
         <div
-            className={css[active ? 'builder-map-tile-active' : 'builder-map-tile']}
+            className={[
+                css[active ? 'builder-map-tile-active' : 'builder-map-tile'],
+                css[!form.interactiveMode.isValid ? 'builder-map-tile-invalid' : ''],
+                css[!form.interactiveMode.isValid && form.interactiveMode.neighours?.includes(item.id) && !item.walkable ? 'builder-map-tile-forbidden' : '']
+            ]
+                .filter(Boolean)
+                .join(' ')}
             ref={tileRef}
             onClick={() => handleSelect(item)}
             onMouseEnter={() => handleHover(true)}
@@ -109,19 +128,13 @@ export const Maptile = ({ form, setForm, setFormObject, hover, setHover, ds, ite
                 setFormObject({ ...form, contextual: { type: null, open: true, value: item, position: { x: e.clientX, y: e.clientY } }, selectedTiles: [item] });
             }}
             aria-labelledby="Selectable"
-            style={{
-                filter: filters,
-                backgroundColor: color,
-                marginLeft: item.y % 2 === 0 && `${30 * (form.zoom / 100) + 1}px`,
-                height: `${70 * (form.zoom / 100)}px`,
-                width: `${((70 * Math.sqrt(3)) / 2) * (form.zoom / 100)}px`
-            }}
+            style={tileStyle}
         >
             <Hex className={css['builder-map-tile-hex']} />
             {form.showIcons && <Icon name={icon} />}
             {form.showDirections && item.display_direction && item.display_direction.output !== '-' ? <Icon name={item.display_direction.output} /> : ''}
-            {form.showValues && !form.showIcons && <span>{Boolean(hover) && hover === item.id ? form.interactiveMode.object.value : item.value}</span>}
+            {form.showValues && !form.showIcons && <span>{Boolean(hover) && hover === item.id ? form.interactiveMode.object?.value : item.value}</span>}
             {form.showIds && <span className={css['builder-map-tile-id']}>{item.start ? 'Start' : item.id}</span>}
         </div>
     );
-};
+});

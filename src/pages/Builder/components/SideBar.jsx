@@ -14,7 +14,20 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             return null;
         }
         return form.selectedMap;
-    }, [form]);
+    }, [form.selectedMap]);
+
+    // Memoize filtered object lists
+    const itemObjects = useMemo(() => {
+        return form.objects.filter((it) => !it.interactive && it.value);
+    }, [form.objects]);
+
+    const utilityObjects = useMemo(() => {
+        return form.objects.filter((it) => !it.value);
+    }, [form.objects]);
+
+    const interactiveObjects = useMemo(() => {
+        return form.objects.filter((it) => it.interactive);
+    }, [form.objects]);
 
     const handleChange = useCallback(
         (item, primary = false) => {
@@ -29,7 +42,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             }
 
             let act = { ...form.storyLine.acts.find((act) => act.id === form.selectedAct.id) };
-            let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
+            let mapIndex = act.maps.findIndex((mp) => mp.id === form.selectedMap.id);
             let newMap = { ...act.maps[mapIndex] };
 
             if (!primary) {
@@ -91,7 +104,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
         (object) => {
             setFormObject({
                 ...form,
-                interactiveMode: { toggle: !form.interactiveMode.toggle, object: !form.interactiveMode.object ? object : null, neighbours: [] },
+                interactiveMode: { toggle: !form.interactiveMode.toggle, object: !form.interactiveMode.object ? object : null, neighbours: [], isValid: true },
                 showConstraints: !form.interactiveMode.object,
                 showValues: !form.interactiveMode.object,
                 showIcons: Boolean(form.interactiveMode.object)
@@ -173,44 +186,38 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 </MenuBlock>
             )}
             <MenuBlock title={t('builder.menu.items.items')}>
-                {form.objects
-                    .filter((it) => !it.interactive && it.value)
-                    .map((it) => (
-                        <MenuItem
-                            key={it.id}
-                            icon={it.name}
-                            label={t(`builder.menu.objects.${it.name}`)}
-                            disabled={!form.selectedMap || !form.selectedTiles.length}
-                            onClick={() => handleChange(it)}
-                        />
-                    ))}
+                {itemObjects.map((it) => (
+                    <MenuItem
+                        key={it.id}
+                        icon={it.name}
+                        label={t(`builder.menu.objects.${it.name}`)}
+                        disabled={!form.selectedMap || !form.selectedTiles.length}
+                        onClick={() => handleChange(it)}
+                    />
+                ))}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.items.utilities')}>
-                {form.objects
-                    .filter((it) => !it.value)
-                    .map((it) => (
-                        <MenuItem
-                            key={it.id}
-                            icon={it.name}
-                            label={t(`builder.menu.objects.${it.name}`)}
-                            disabled={!form.selectedMap || !form.selectedTiles.length || form.selectedTiles.length > 1}
-                            onClick={() => handleChange(it)}
-                        />
-                    ))}
+                {utilityObjects.map((it) => (
+                    <MenuItem
+                        key={it.id}
+                        icon={it.name}
+                        label={t(`builder.menu.objects.${it.name}`)}
+                        disabled={!form.selectedMap || !form.selectedTiles.length || form.selectedTiles.length > 1}
+                        onClick={() => handleChange(it)}
+                    />
+                ))}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.items.objects')} open={!form.showDirections}>
-                {form.objects
-                    .filter((it) => it.interactive)
-                    .map((it) => (
-                        <MenuItem
-                            key={it.id}
-                            icon={it.name}
-                            label={t(`builder.menu.objects.${it.name}`)}
-                            active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
-                            disabled={(form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id) || form.showDirections}
-                            onClick={() => handleObject(it)}
-                        />
-                    ))}
+                {interactiveObjects.map((it) => (
+                    <MenuItem
+                        key={it.id}
+                        icon={it.name}
+                        label={t(`builder.menu.objects.${it.name}`)}
+                        active={form.interactiveMode.toggle && form.interactiveMode.object.id === it.id}
+                        disabled={(form.interactiveMode.toggle && form.interactiveMode.object.id !== it.id) || form.showDirections}
+                        onClick={() => handleObject(it)}
+                    />
+                ))}
             </MenuBlock>
             <MenuBlock title={t('builder.menu.functions.label')} open={!form.showDirections}>
                 <MenuItem

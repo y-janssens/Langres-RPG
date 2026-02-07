@@ -23,12 +23,11 @@ const Dialogs = ({ index, active, handleToggle, npcForm, setNpcForm, settings })
         if (!npcForm.dialogs?.length) {
             return [];
         }
-        return Object.entries(
-            [...npcForm.dialogs].reduce((acc, qt) => {
-                (acc[qt.order] ??= []).push(qt);
-                return acc;
-            }, {})
-        );
+        const grouped = npcForm.dialogs.reduce((acc, qt) => {
+            (acc[qt.order] ??= []).push(qt);
+            return acc;
+        }, {});
+        return Object.entries(grouped);
     }, [npcForm.dialogs]);
 
     const highestOrder = useMemo(() => {
@@ -139,7 +138,7 @@ const DialogBlock = ({ order, sequence, language, languagesOptions, handleChange
             label={
                 <div className={css['npc-dialogs-label']}>
                     <span className={css['npc-dialogs-label-header']}>
-                        <div className={css['npc-dialogs-label-id']}>{order + 1}</div>
+                        <div className={css['npc-dialogs-label-id']}>{order}</div>
                         <span>{t('builder.modals.npc.dialogs.sequence')}</span>
                     </span>
                     <span className={css['npc-dialogs-cta']}>

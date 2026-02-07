@@ -7,6 +7,7 @@ mod tests {
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::world::builder::config::Values;
     use crate::world::builder::options::GeneratorOptions;
+    use crate::world::builder::settings::EMPTY;
     use crate::world::builder::settings::{DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_GRID};
     use crate::world::models::Options;
 
@@ -48,7 +49,7 @@ mod tests {
                 let expected_values = Values::get_tiles_values();
                 let (display_value, _, _) = Values::get_value(&item.value);
                 assert!(expected_values.contains(&item.value));
-                assert!(!["null"].contains(&item.value.as_str()));
+                assert!(&item.value != EMPTY.val());
                 assert_eq!(item.display_value, display_value);
             }
             world.display_values();

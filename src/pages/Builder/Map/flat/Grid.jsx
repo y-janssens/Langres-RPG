@@ -10,12 +10,21 @@ export const MapGrid = ({ form, setForm, setFormObject, data, handleSelect }) =>
         return item.x / 1.5 === startingPoint.x && item.y + 2 === startingPoint.y;
     }, []);
 
+    const objectsMap = useMemo(() => {
+        return new Map(form.objects.map((obj) => [obj.value, obj]));
+    }, [form.objects]);
+
+    const npcTileIds = useMemo(() => {
+        return new Set(form.selectedMap?.npcs?.map((npc) => npc.starting_point.id) || []);
+    }, [form.selectedMap?.npcs]);
+
     const mapItems = useMemo(() => {
-        return data.content?.map((item) => {
-            item.start = isStartingPoint(item, data.starting_point);
-            return item;
-        });
-    }, [data.content, data.starting_point]);
+        if (!data.content) return [];
+        return data.content.map((item) => ({
+            ...item,
+            start: isStartingPoint(item, data.starting_point)
+        }));
+    }, [data.content, data.starting_point, isStartingPoint]);
 
     useEffect(() => {
         if (!ds) return;
@@ -36,9 +45,21 @@ export const MapGrid = ({ form, setForm, setFormObject, data, handleSelect }) =>
         };
     }, [ds]);
 
-    return mapItems?.map((item, index) => {
+    return mapItems?.map((item) => {
         return (
-            <Maptile key={index} ds={ds} item={item} form={form} setForm={setForm} setFormObject={setFormObject} hover={hover} setHover={setHover} handleSelect={handleSelect} />
+            <Maptile
+                key={item.id}
+                ds={ds}
+                item={item}
+                form={form}
+                setForm={setForm}
+                setFormObject={setFormObject}
+                hover={hover}
+                setHover={setHover}
+                handleSelect={handleSelect}
+                objectsMap={objectsMap}
+                npcTileIds={npcTileIds}
+            />
         );
     });
 };

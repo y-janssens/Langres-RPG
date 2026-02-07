@@ -324,8 +324,7 @@ mod tests {
                 let response = Story::load(connection).unwrap();
                 let _map = response.acts[0].maps[0].clone();
                 let expected_tiles = [
-                    1267, 1268, 1269, 1270, 1271, 1317, 1318, 1319, 1320, 1321, 1367, 1368, 1370, 1371, 1417, 1418, 1419, 1420, 1421, 1467,
-                    1468, 1469, 1470, 1471,
+                    1268, 1269, 1270, 1317, 1318, 1319, 1320, 1367, 1368, 1370, 1371, 1417, 1418, 1419, 1420, 1468, 1469, 1470,
                 ];
 
                 let _tiles: Vec<Item> = _map.content.iter().filter(|t| expected_tiles.contains(&t.id)).cloned().collect();

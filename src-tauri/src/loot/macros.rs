@@ -1,6 +1,6 @@
 use std::io::{Error, ErrorKind::InvalidData};
 
-use diesel::SqliteConnection;
+use diesel::{prelude::*, SqliteConnection};
 use serde_yaml::{Sequence, Value};
 use system_macros::loot_initial_datas;
 
@@ -35,11 +35,39 @@ impl Loot {
         })
     }
 
-    pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
-        let functions: Vec<Self> = loot_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
+    pub fn insert_initial_datas(&self, connection: &mut SqliteConnection) -> Result<(), diesel::result::Error> {
+        let item_type_json =
+            serde_json::to_string(&self.item_type).map_err(|e| diesel::result::Error::DeserializationError(Box::new(e)))?;
+        let name_json = serde_json::to_string(&self.name).map_err(|e| diesel::result::Error::DeserializationError(Box::new(e)))?;
+        let description_json =
+            serde_json::to_string(&self.description).map_err(|e| diesel::result::Error::DeserializationError(Box::new(e)))?;
 
-        for function in functions {
-            function.save(connection).map_err(|e| Error::new(InvalidData, e.to_string()))?;
+        let insertion = crate::loot::models::InsertableLoot {
+            id: self.id.clone(),
+            item_type: item_type_json,
+            name: name_json,
+            description: description_json,
+            armor: self.armor,
+            damage: self.damage,
+            random: self.random,
+            parade: self.parade,
+            price: self.price,
+            weight: self.weight,
+        };
+
+        diesel::insert_or_ignore_into(crate::schema::loot::table)
+            .values(&insertion)
+            .execute(connection)?;
+
+        Ok(())
+    }
+
+    pub fn get_and_insert_initial_datas(connection: &mut SqliteConnection) -> Result<(), Error> {
+        let loots: Vec<Self> = loot_initial_datas!().map_err(|e| Error::new(InvalidData, e.to_string()))?;
+
+        for loot in loots {
+            loot.insert_initial_datas(connection)
+                .map_err(|e| Error::new(InvalidData, e.to_string()))?;
         }
 
         Ok(())

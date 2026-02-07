@@ -146,7 +146,7 @@ impl Loot {
         let description_json = serde_json::to_string(&self.description).map_err(|e| Error::DeserializationError(Box::new(e)))?;
 
         let insertable = InsertableLoot {
-            id: Uuid::new_v4().to_string(),
+            id: self.id.clone(),
             item_type: item_type_json,
             name: name_json,
             description: description_json,

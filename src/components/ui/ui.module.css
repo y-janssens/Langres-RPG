@@ -78,8 +78,14 @@
     left: 0;
     background-color: #5f9ea0;
     transition: 250ms all;
-    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
-    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    -webkit-box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
     z-index: 5;
 }
 
@@ -304,8 +310,14 @@
     transition: 350ms all;
     letter-spacing: 2px;
     font-size: 16px;
-    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
-    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    -webkit-box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
 }
 
 .menu-item-modal {
@@ -331,8 +343,13 @@
     width: 100%;
 }
 
-.ui-icon-small svg {
-    font-size: 12px !important;
+.ui-icon-small,
+.ui-icon-medium,
+.ui-icon-default,
+.ui-icon-large,
+.ui-icon-xl,
+.ui-icon-small {
+    pointer-events: none;
 }
 
 .ui-icon-medium svg {
@@ -368,8 +385,14 @@
     transition: 350ms all;
     letter-spacing: 2px;
     font-size: 16px;
-    -webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
-    box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85), inset -1px 3px 8px 5px #1fdaff, inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    -webkit-box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
+    box-shadow:
+        inset 0px 0px 10px 2px rgba(0, 0, 0, 0.85),
+        inset -1px 3px 8px 5px #1fdaff,
+        inset 0px 0px 15px 10px rgba(255, 255, 255, 0);
 }
 
 .game-input {

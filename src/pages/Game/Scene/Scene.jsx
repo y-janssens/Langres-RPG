@@ -20,7 +20,7 @@ const Scene = ({ lightRef, cameraRef, pause, children }) => {
                 gl: { antialias: false }
             }}
         >
-            <color attach="background" args={[0.5, 0.5, 0.5]} />
+            <color attach="background" args={[0, 0, 0]} />
             <fogExp2 attach="fog" color="black" density={0.05} />
             <ambientLight intensity={2.5} />
             <pointLight castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} intensity={2500} position={[0, 10, 0]} decay={2.25} distance={12} ref={lightRef} />

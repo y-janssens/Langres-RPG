@@ -10,7 +10,7 @@ use crate::game::models::Game;
 use crate::npcs::models::Npc;
 use crate::objects::models::Object;
 use crate::schema::storyline::dsl::storyline;
-use crate::world::models::{Item, World};
+use crate::world::models::World;
 
 use super::utils::StoryUtils;
 
@@ -170,14 +170,7 @@ impl Story {
 
     pub fn compute_tiles_directions(connection: &mut SqliteConnection, act_id: i32, map_id: i32, tiles: Vec<u32>) -> Result<(), Error> {
         StoryUtils::get_tile(act_id, map_id, tiles, false, connection, |tile, map| {
-            let original_content = map.content.clone();
-            let neighbours: Vec<Item> = original_content
-                .iter()
-                .filter(|it| tile.neighbours_ids.contains(&it.id))
-                .cloned()
-                .collect();
-
-            tile.get_display_direction(&neighbours);
+            tile.get_display_direction(&map.content);
         })?;
 
         Ok(())
@@ -250,8 +243,11 @@ impl Story {
         StoryUtils::get_map(act_id, map_id, false, connection, |map| {
             // Use FrustumCullingUtility to filter tiles based on object's area instead of expanding from tile
             let neighbours_ids = FrustumCullingUtility::cull(tile_id as i32, map.size, obj.area.x as usize, obj.area.y as usize);
-
-            for _tile in map.content.iter_mut().filter(|t| neighbours_ids.contains(&(t.id as i32))) {
+            for _tile in map
+                .content
+                .iter_mut()
+                .filter(|t| neighbours_ids.contains(&(t.id as i32)) || t.id == tile_id)
+            {
                 if enable {
                     _tile.value = if _tile.id == tile_id {
                         obj.value.clone().unwrap_or_else(|| String::from("#"))
