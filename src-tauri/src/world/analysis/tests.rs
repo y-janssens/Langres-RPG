@@ -7,7 +7,7 @@ mod tests {
     use crate::backend::conf::factory::factory_models::Factory;
     use crate::backend::settings::errors::BASE_ERROR;
     use crate::world::analysis::report::MapReportEntry;
-    use crate::world::builder::settings::DEFAULT_MAP_SIZE_GRID;
+    use crate::world::settings::DEFAULT_MAP_SIZE_GRID;
 
     #[rstest]
     async fn test_map_generation_report() {

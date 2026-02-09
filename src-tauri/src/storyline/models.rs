@@ -138,7 +138,7 @@ impl Story {
 
         StoryUtils::get_tile(act_id, map_id, tiles, false, connection, |tile, _| {
             if let Some(value) = &object.value {
-                tile.edit(value.clone());
+                tile.edit(value);
             }
         })
     }

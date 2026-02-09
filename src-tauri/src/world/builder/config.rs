@@ -1,55 +1,8 @@
 use serde::{Deserialize, Serialize};
-use std::{collections::HashMap, ops::Deref};
+use std::collections::HashMap;
 
-use super::{
-    constraints::Constraints,
-    settings::{GRASS, VALUES, WATER},
-};
-
-#[derive(Clone)]
-pub struct Values {
-    pub value: String,
-    pub display_value: String,
-    pub walkable: bool,
-    pub display_color: String,
-}
-
-impl Deref for Values {
-    type Target = str;
-
-    fn deref(&self) -> &Self::Target {
-        &self.value
-    }
-}
-
-impl Values {
-    pub fn store(value: &str, display_value: &str, walkable: bool, display_color: &str) -> Self {
-        Self {
-            walkable,
-            value: value.to_string(),
-            display_value: display_value.to_string(),
-            display_color: display_color.to_string(),
-        }
-    }
-
-    pub fn value(&self) -> String {
-        self.to_string()
-    }
-
-    pub fn val(&self) -> &str {
-        self.as_ref()
-    }
-
-    pub fn get_value(value: &str) -> (String, String, bool) {
-        let value = VALUES.clone().into_iter().find(|v| v.value == value).unwrap();
-        (value.display_value, value.display_color, value.walkable)
-    }
-
-    /// Get all possible tiles list with only values
-    pub fn get_tiles_values() -> Vec<String> {
-        VALUES.iter().map(|tile| tile.value.to_string()).collect()
-    }
-}
+use super::constraints::Constraints;
+use crate::world::settings::{GRASS, WATER};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Conf {

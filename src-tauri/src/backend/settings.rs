@@ -26,6 +26,11 @@ pub mod errors {
     pub const BATTLE_SYSTEM_OBJECT_ERROR: &str = "Object not recognized";
     pub const BATTLE_SYSTEM_TRANSITION_ERROR: &str = "Transition not valid";
     pub const BATTLE_SYSTEM_AUTOMATIC_ERROR: &str = "Cannot run automatic battle";
+
+    // Drawer
+    pub const DRAWER_BRUSH_ERROR: &str = "Brush not recognized";
+    pub const DRAWER_INPUT_ERROR: &str = "Drawer cannot be initialized with empty datas";
+    pub const DRAWER_BRUSH_DENSITY_ERROR: &str = "Density can only be applied to Tree brush";
 }
 
 pub mod database {

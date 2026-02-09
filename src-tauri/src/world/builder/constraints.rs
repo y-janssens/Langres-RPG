@@ -1,13 +1,11 @@
 use std::collections::{HashMap, HashSet};
 
-use super::{
-    config::Conf,
-    settings::{
-        BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND, INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE,
-        TREE, WATER,
-    },
-};
+use super::config::Conf;
 use crate::world::models::Item;
+use crate::world::settings::{
+    BORDER, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_FACTOR, EMPTY, FENCE, GRASS, GROUND, INCONSISTENT_VALUES, ROAD, ROAD_VALUES, SHORE, TREE,
+    WATER,
+};
 
 pub struct Constraints {
     values: Vec<String>,

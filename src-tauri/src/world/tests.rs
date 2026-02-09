@@ -4,9 +4,10 @@ mod tests {
 
     use crate::backend::conf::factories::factories_definitions::WorldFactory;
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::world::builder::{models::Map, settings::DIRECTIONAL_VALUES};
+    use crate::world::builder::models::Map;
     use crate::world::directions::Directions;
     use crate::world::models::{Item, Options};
+    use crate::world::settings::DIRECTIONAL_VALUES;
 
     #[test]
     fn test_get_map_directions() {

@@ -14,7 +14,7 @@ pub mod factories_definitions {
     use crate::objects::models::{Area, Object};
     use crate::statistics::models::Statistic;
     use crate::storyline::models::{Act, Acts, Content, Story};
-    use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::World};
+    use crate::world::{models::World, settings::DEFAULT_MAP_SIZE};
 
     pub struct StoryLineFactory;
     pub struct ActsFactory;

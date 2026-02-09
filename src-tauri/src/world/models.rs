@@ -13,10 +13,9 @@ use crate::events::models::Event;
 use crate::game::models::Position;
 use crate::npcs::models::Npc;
 use crate::world::analysis::report::MapReport;
-use crate::world::builder::config::Values;
 use crate::world::builder::models::Map;
-use crate::world::builder::settings::*;
-use crate::world::builder::settings::{DIRECTIONAL_VALUES, OFFSET_KEYS};
+use crate::world::settings::*;
+use crate::world::values::Values;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Options {
@@ -153,10 +152,10 @@ impl Item {
         direction
     }
 
-    pub fn edit(&mut self, value: String) {
-        let (display_value, display_color, walkable) = Values::get_value(&value);
+    pub fn edit(&mut self, value: &str) {
+        let (display_value, display_color, walkable) = Values::get_value(value);
 
-        self.value = value;
+        self.value = value.to_string();
         self.walkable = walkable;
         self.display_value = display_value;
         self.display_color = display_color;
@@ -255,7 +254,7 @@ impl World {
         if (x < 1 || x > size - 2) || (y < 1 || y > size + threshold - 2) {
             return TREE.value();
         }
-        GRASS.value()
+        DEFAULT_MAP_VALUE.value()
     }
 
     pub fn compute_directions(&mut self) {
@@ -273,7 +272,7 @@ impl World {
 
         for item in content.iter_mut().filter(|i| WALKABLE_VALUES.contains(&i.value.as_str())) {
             let value = get_weighted_random_value(&values);
-            item.edit(value);
+            item.edit(&value);
         }
         content
     }
@@ -321,7 +320,7 @@ impl World {
 
         for item in &mut self.content {
             let value = Map::get_value(&report, item, &original_content);
-            item.edit(value);
+            item.edit(&value);
         }
     }
 }

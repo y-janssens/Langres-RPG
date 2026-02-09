@@ -1,6 +1,6 @@
 #[allow(dead_code)]
 pub mod tests_fixtures {
-    use crate::world::{builder::settings::DEFAULT_MAP_SIZE, models::Item};
+    use crate::world::{models::Item, settings::DEFAULT_MAP_SIZE};
 
     /// Run "cargo test -- --nocapture" to visualize output
     pub fn render_map_output(map: Vec<Item>) {

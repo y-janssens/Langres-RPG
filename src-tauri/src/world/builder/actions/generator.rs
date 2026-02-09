@@ -1,8 +1,8 @@
 use rand::Rng;
 
-use super::super::settings::{DIRT_PARAMS, GROUND_PARAMS, SHANTY_PARAMS, TOWN_PARAMS};
 use super::noise::{Noise, NoiseType};
 use crate::world::models::{Item, Options};
+use crate::world::settings::{DIRT_PARAMS, GROUND_PARAMS, SHANTY_PARAMS, TOWN_PARAMS};
 
 #[derive(Clone)]
 pub struct Params {

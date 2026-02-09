@@ -1,11 +1,9 @@
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
-use crate::world::builder::{
-    config::Values,
-    settings::{DEFAULT_MAP_SIZE_GRID, GRASS},
-};
 use crate::world::models::Item;
+use crate::world::settings::{DEFAULT_MAP_SIZE_GRID, DEFAULT_MAP_VALUE};
+use crate::world::values::Values;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Distribution {
@@ -56,7 +54,7 @@ impl Distribution {
 
     fn get_free_space(&mut self) {
         let values = self.get_percentiles();
-        self.free_space = format!("{:.2}%", *values.get(&GRASS.value).unwrap());
+        self.free_space = format!("{:.2}%", *values.get(&DEFAULT_MAP_VALUE.value).unwrap());
     }
 
     fn get_values(&mut self, items: &[Item]) {
