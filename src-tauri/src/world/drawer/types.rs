@@ -1,4 +1,3 @@
-use serde::{Deserialize, Serialize};
 use std::{
     collections::HashMap,
     io::{
@@ -7,11 +6,19 @@ use std::{
     },
 };
 
+use serde::{Deserialize, Serialize};
+use strum::IntoEnumIterator;
 use strum_macros::{Display, EnumIter, EnumString};
 
 use crate::backend::settings::errors::{DRAWER_BRUSH_DENSITY_ERROR, DRAWER_BRUSH_ERROR};
 use crate::world::settings::*;
 use crate::world::values::Values;
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BrushSettings {
+    pub name: String,
+    pub settings: Values,
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
 #[strum(serialize_all = "snake_case")]
@@ -45,10 +52,10 @@ impl Brush {
     }
 
     pub fn get_density(&self, density: Option<u8>) -> Option<u8> {
-        match self {
-            Brush::Tree => density.map(|d| d.clamp(1, 100)),
-            _ => None,
+        if !self.value().supports_density {
+            return None;
         }
+        density.map(|d| d.clamp(1, 100))
     }
 
     pub fn get_density_values(&self, density: u8) -> Result<HashMap<String, u32>, Error> {
@@ -75,5 +82,14 @@ impl Brush {
 
     pub fn is_empty(&self) -> bool {
         *self == Self::Empty
+    }
+
+    pub fn get_brushes() -> Vec<BrushSettings> {
+        Self::iter()
+            .map(|brush| BrushSettings {
+                name: brush.to_string(),
+                settings: brush.value(),
+            })
+            .collect()
     }
 }

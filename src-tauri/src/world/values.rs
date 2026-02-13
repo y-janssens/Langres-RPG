@@ -11,6 +11,7 @@ pub struct Values {
     pub side_value: Option<String>,
     pub walkable: bool,
     pub display_color: String,
+    pub supports_density: bool,
 }
 
 impl Deref for Values {
@@ -22,13 +23,14 @@ impl Deref for Values {
 }
 
 impl Values {
-    pub fn store(value: &str, display_value: &str, side_value: Option<&str>, display_color: &str, walkable: bool) -> Self {
+    pub fn store(value: &str, display_value: &str, side_value: Option<&str>, display_color: &str, walkable: bool, density: bool) -> Self {
         Self {
             walkable,
             value: value.to_string(),
             side_value: side_value.map(|v| v.to_string()),
             display_value: display_value.to_string(),
             display_color: display_color.to_string(),
+            supports_density: density,
         }
     }
 
