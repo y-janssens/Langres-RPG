@@ -9,6 +9,7 @@ export { default as Inventory } from './inventory';
 export { default as World, Tile, DIRECTIONS, CARDINAL_DIRECTIONS, WorldStatistics } from './world';
 export { default as Environment } from './environment';
 export { default as MapAssets } from './map';
+export { default as Brush } from './brushes';
 export { default as Collection } from './collections';
 export { default as AdminModel } from './admin';
 export { default as Storyline } from './storyline';

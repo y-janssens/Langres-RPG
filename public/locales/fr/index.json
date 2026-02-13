@@ -47,6 +47,7 @@
       "objects": {
         "bridge": "Pont",
         "clearing": "Sol",
+        "empty": "Effacer",
         "gate": "Portail",
         "grass": "Herbe",
         "house": "Maison",

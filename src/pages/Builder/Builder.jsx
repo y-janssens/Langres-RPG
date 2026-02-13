@@ -1,8 +1,8 @@
 import React, { Suspense, useCallback, useMemo } from 'react';
 import { useDynamicForm, useStateHistory } from '../../hooks';
-import { Storyline, MapObject, MapFunction, DIRECTIONS } from '../../models';
+import { Storyline, MapObject, MapFunction, Brush, DIRECTIONS } from '../../models';
 
-import { Header, SideBar, Theme } from './components';
+import { Header, Palette, SideBar, Theme } from './components';
 import { BuilderModal } from './Modals';
 import BuilderContextualMenus from './Contextual/ContextualMenus';
 
@@ -26,11 +26,14 @@ export const Builder = () => {
         displayActions: false,
         displaySelector: false,
         showConstraints: false,
+        brushes: [],
         objects: [],
         functions: [],
         selectedTiles: [],
+        selectedBrush: null,
         modal: { type: null, open: false, value: null },
         contextual: { type: null, open: false, value: null, position: { x: null, y: null } },
+        drawingMode: { toggle: false, object: null },
         interactiveMode: { toggle: false, object: null, neighours: [], isValid: true },
         directions: DIRECTIONS.map((dir) => ({ display_direction: dir ? { output: dir, custom: true, values: null } : null }))
     });
@@ -78,6 +81,12 @@ export const Builder = () => {
         },
         []
     );
+
+    Brush.useCommand({
+        onSuccess: (response) => {
+            setForm('brushes', response);
+        }
+    });
 
     const [, , syncObjects] = MapObject.useCommand({
         onSuccess: (response) => {
@@ -136,8 +145,9 @@ export const Builder = () => {
                 datas={form.storyLine}
                 setObject={setFormObject}
             />
+            <Palette form={form} setForm={setForm} />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
-            <div id="builder-body-block" className={css['builder-body-container']}>
+            <div id="builder-body-block" className={css['builder-body-container']} datatype={form.drawingMode.toggle ? 'reduced' : ''}>
                 {display && (
                     <Suspense>
                         <Map

@@ -67,6 +67,11 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         [form]
     );
 
+    const handleDrawingMode = useCallback(() => {
+        if (!form.brushes.length) return;
+        setForm('drawingMode', { toggle: !form.drawingMode.toggle, object: null });
+    }, [form.brushes, form.drawingMode]);
+
     const disabled = useMemo(() => {
         return !form.selectedMap;
     }, [form]);
@@ -108,6 +113,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                                     <Toggles form={form} handleCheck={handleCheck} disabled={disabled} />
                                 </MultiButton>
                             </div>
+                            <ButtonIcon icon={<Icon name="brush" />} disabled={!form.selectedMap || !form.brushes.length} onClick={handleDrawingMode} />
                         </div>
                         <Zoom form={form} setObject={setObject} disabled={!form.flatDisplay || !form.selectedMap} />
                     </div>

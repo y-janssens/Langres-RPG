@@ -129,7 +129,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
     );
 
     return (
-        <div className={css['builder-sidebar-container']}>
+        <div className={css['builder-sidebar-container']} datatype={form.drawingMode.toggle ? 'reduced' : ''}>
             {form.selectedMap && (
                 <MenuBlock title={t('builder.menu.map.label')} grid={false}>
                     <div className={css['builder-map-infos']}>
@@ -243,7 +243,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
     );
 };
 
-export const MenuItem = ({ icon = null, label = null, active = false, disabled, onClick = () => {} }) => {
+export const MenuItem = ({ icon = null, label = null, active = false, disabled, onClick = () => {}, ...props }) => {
     return (
         <div
             className={css['builder-sidebar-functions-item']}
@@ -262,8 +262,9 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
                 style={{
                     opacity: disabled ? '0.5' : 1
                 }}
+                {...props}
             >
-                <Icon name={icon} />
+                <Icon name={icon} {...props} />
             </Button>
             {label && (
                 <div

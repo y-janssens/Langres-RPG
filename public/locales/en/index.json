@@ -47,6 +47,7 @@
       "objects": {
         "bridge": "Bridge",
         "clearing": "Ground",
+        "empty": "Erase",
         "gate": "Gate",
         "grass": "Grass",
         "house": "House",
