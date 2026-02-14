@@ -25,9 +25,9 @@ mod tests {
     #[case::grass("grass", Brush::Grass, Some(0), None, false)]
     #[case::grass("grass", Brush::Grass, Some(50), None, false)]
     #[case::grass("grass", Brush::Grass, Some(200), None, false)]
-    #[case::ground("ground", Brush::Ground, Some(50), None, false)]
-    #[case::mud("mud", Brush::Mud, Some(50), None, false)]
-    #[case::fence("fence", Brush::Fence, Some(50), None, false)]
+    // #[case::ground("ground", Brush::Ground, Some(50), None, false)]
+    // #[case::mud("mud", Brush::Mud, Some(50), None, false)]
+    // #[case::fence("fence", Brush::Fence, Some(50), None, false)]
     #[case::water("water", Brush::Water, Some(50), None, false)]
     #[case::road("road", Brush::Road, Some(50), None, false)]
     #[case::road("empty", Brush::Empty, Some(50), None, true)]
@@ -96,7 +96,7 @@ mod tests {
         assert!(drawer
             .iter()
             .filter(|it| neighbours.contains(&it.id))
-            .all(|it| it.value == DEFAULT_MAP_VALUE.value()));
+            .all(|it| it.value == SHORE.value()));
     }
 
     #[test]
@@ -159,5 +159,58 @@ mod tests {
             .iter()
             .filter(|it| !tiles.contains(&it.id))
             .all(|it| it.value == WATER.value()));
+    }
+
+    #[test]
+    fn test_drawer_link_areas() {
+        use std::collections::{HashMap, HashSet};
+
+        let mut map = WorldFactory.generate();
+        map.content = World::generate();
+
+        let water_tiles = vec![
+            455, 456, 457, 458, 459, 466, 467, 468, 469, 470, 505, 506, 507, 508, 516, 517, 518, 519, 555, 556, 557, 558, 559, 566, 567,
+            568, 569, 570, 605, 606, 607, 608, 616, 617, 618, 619,
+        ];
+        let shore_tiles = vec![
+            404, 405, 406, 407, 408, 409, 415, 416, 417, 418, 419, 420, 454, 460, 465, 471, 504, 509, 515, 520, 554, 560, 565, 571, 604,
+            609, 615, 620, 655, 656, 657, 658, 659, 666, 667, 668, 669, 670,
+        ];
+
+        for item in map.content.iter_mut() {
+            if water_tiles.contains(&item.id) {
+                item.edit("W");
+            }
+            if shore_tiles.contains(&item.id) {
+                item.edit("S");
+            }
+        }
+
+        let tiles = vec![508, 509, 510, 511, 512, 559, 560, 561, 562, 563, 513, 564, 514, 565, 515, 566, 516];
+
+        let content_map: HashMap<u32, _> = map.content.iter().map(|it| (it.id, it)).collect();
+        let tiles_set: HashSet<u32> = tiles.iter().copied().collect();
+        let expected_shore_tiles: HashSet<u32> = tiles_set
+            .iter()
+            .filter_map(|id| content_map.get(id))
+            .flat_map(|it| it.neighbours_ids.iter().copied())
+            .filter(|id| !tiles_set.contains(id))
+            .filter(|id| content_map.get(id).is_some_and(|it| it.walkable))
+            .collect();
+
+        let drawer = Drawer::execute(map.clone(), tiles.clone(), "water", false, None).expect(BASE_ERROR);
+
+        assert!(drawer
+            .iter()
+            .filter(|it| tiles.contains(&it.id))
+            .all(|it| it.value == WATER.value()));
+        assert!(drawer
+            .iter()
+            .filter(|it| water_tiles.contains(&it.id))
+            .all(|it| it.value == WATER.value()));
+        assert!(drawer
+            .iter()
+            .filter(|it| expected_shore_tiles.contains(&it.id))
+            .all(|it| it.value == SHORE.value()));
     }
 }

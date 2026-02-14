@@ -74,13 +74,13 @@ impl Drawer {
     }
 
     fn draw_boundaries(&self, content: &mut HashMap<u32, Item>, neighbours_ids: HashSet<u32>) {
-        if neighbours_ids.is_empty() || !self.overwrite {
+        if neighbours_ids.is_empty() {
             return;
         }
         if let Some(value) = self.brush.get_side_value() {
             content
                 .iter_mut()
-                .filter(|(_, it)| neighbours_ids.contains(&it.id))
+                .filter(|(_, it)| it.walkable && neighbours_ids.contains(&it.id))
                 .for_each(|(_, it)| {
                     it.edit(&value);
                 });

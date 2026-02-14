@@ -24,12 +24,12 @@ pub struct BrushSettings {
 #[strum(serialize_all = "snake_case")]
 pub enum Brush {
     Grass,
-    Ground,
-    Mud,
     Tree,
-    Fence,
     Water,
     Road,
+    // Ground,
+    // Mud,
+    // Fence,
     Empty,
 }
 
@@ -41,12 +41,12 @@ impl Brush {
     pub fn value(&self) -> Values {
         match self {
             Self::Grass => GRASS.clone(),
-            Self::Ground => GROUND.clone(),
-            Self::Mud => MUD.clone(),
             Self::Tree => TREE.clone(),
-            Self::Fence => FENCE.clone(),
             Self::Water => WATER.clone(),
             Self::Road => ROAD.clone(),
+            // Self::Mud => MUD.clone(),
+            // Self::Fence => FENCE.clone(),
+            // Self::Ground => GROUND.clone(),
             Self::Empty => DEFAULT_MAP_VALUE.clone(),
         }
     }
