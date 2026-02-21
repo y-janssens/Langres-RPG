@@ -16,6 +16,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
     const { t } = useTranslation();
     const toast = useToast();
     const navigate = useNavigate();
+    const disabled = !form.selectedMap;
 
     const handleSave = useCallback(() => {
         invoke('save_storyline', { story: datas }).then(() => {
@@ -67,15 +68,6 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
         [form]
     );
 
-    const handleDrawingMode = useCallback(() => {
-        if (!form.brushes.length) return;
-        setForm('drawingMode', { toggle: !form.drawingMode.toggle, object: null });
-    }, [form.brushes, form.drawingMode]);
-
-    const disabled = useMemo(() => {
-        return !form.selectedMap;
-    }, [form]);
-
     const selectLabel = useMemo(() => {
         if (disabled) {
             return t('builder.selector.map');
@@ -113,7 +105,12 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                                     <Toggles form={form} handleCheck={handleCheck} disabled={disabled} />
                                 </MultiButton>
                             </div>
-                            <ButtonIcon icon={<Icon name="brush" />} disabled={!form.selectedMap || !form.brushes.length} onClick={handleDrawingMode} />
+                            <ButtonLabel
+                                color="neutral"
+                                variant="outline"
+                                label={t('builder.toggles.palette')}
+                                onClick={() => setForm('drawingMode', (prev) => ({ ...prev, toggle: !prev.toggle, object: null }))}
+                            />
                         </div>
                         <Zoom form={form} setObject={setObject} disabled={!form.flatDisplay || !form.selectedMap} />
                     </div>
@@ -155,8 +152,8 @@ const Toggles = ({ form, disabled, handleCheck }) => {
         [form.flatDisplay, disabled]
     );
 
-    return toggles.map((it, index) => (
-        <Toggle key={index} title={t(`builder.toggles.${it.key}`)} active={form[it.value]} onChange={() => handleCheck(it.value, !form[it.value])} disabled={it.disabled} />
+    return toggles.map((it) => (
+        <Toggle key={it.key} title={t(`builder.toggles.${it.key}`)} active={form[it.value]} onChange={() => handleCheck(it.value, !form[it.value])} disabled={it.disabled} />
     ));
 };
 

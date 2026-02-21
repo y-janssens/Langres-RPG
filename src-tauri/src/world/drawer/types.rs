@@ -18,6 +18,8 @@ use crate::world::values::Values;
 pub struct BrushSettings {
     pub name: String,
     pub settings: Values,
+    pub default_density: Option<u8>,
+    pub default_size: u8,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Display, EnumString, EnumIter)]
@@ -27,9 +29,6 @@ pub enum Brush {
     Tree,
     Water,
     Road,
-    // Ground,
-    // Mud,
-    // Fence,
     Empty,
 }
 
@@ -44,10 +43,22 @@ impl Brush {
             Self::Tree => TREE.clone(),
             Self::Water => WATER.clone(),
             Self::Road => ROAD.clone(),
-            // Self::Mud => MUD.clone(),
-            // Self::Fence => FENCE.clone(),
-            // Self::Ground => GROUND.clone(),
             Self::Empty => DEFAULT_MAP_VALUE.clone(),
+        }
+    }
+
+    pub fn get_default_density(&self) -> Option<u8> {
+        if !self.value().supports_density {
+            return None;
+        }
+        Some(50)
+    }
+
+    pub fn get_default_size(&self) -> u8 {
+        match self {
+            Brush::Tree => 100,
+            Brush::Road => 25,
+            _ => 50,
         }
     }
 
@@ -89,6 +100,8 @@ impl Brush {
             .map(|brush| BrushSettings {
                 name: brush.to_string(),
                 settings: brush.value(),
+                default_density: brush.get_default_density(),
+                default_size: brush.get_default_size(),
             })
             .collect()
     }

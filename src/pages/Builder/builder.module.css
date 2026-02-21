@@ -196,7 +196,8 @@
     min-height: 3rem;
 }
 
-.builder-sidebar-container {
+.builder-sidebar-container-active,
+.builder-sidebar-container-reduced {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -211,11 +212,12 @@
     z-index: 2;
 }
 
-.builder-sidebar-container[datatype='reduced'] {
+.builder-sidebar-container-reduced {
     width: 0px;
 }
 
-.builder-body-container {
+.builder-body-container-active,
+.builder-body-container-reduced {
     width: calc(100% - 250px);
     display: flex;
     height: calc(100% - 91px);
@@ -223,12 +225,13 @@
     transition: 250ms all;
 }
 
-.builder-body-container[datatype='reduced'] {
+.builder-body-container-reduced {
     width: 100%;
 }
 
-.builder-body-container[datatype='reduced'] .builder-body {
+.builder-body-container-reduced .builder-body {
     height: calc(85% - 100px);
+    width: 90%;
 }
 
 .builder-body {
@@ -250,6 +253,38 @@
 .builder-map-grid {
     display: grid;
     row-gap: 0px;
+}
+
+.builder-map-grid-wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+}
+
+.builder-map-grid-drawing,
+.builder-map-grid-drawing * {
+    cursor: none !important;
+}
+
+.builder-map-brush-cursor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(44, 183, 255, 0.95);
+    border-radius: 50%;
+    background: rgba(44, 183, 255, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.builder-map-brush-center {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .builder-map-tile,
@@ -274,7 +309,8 @@
 
 .builder-map-tile-active,
 .builder-map-tile:hover,
-.builder-map-tile-active:hover {
+.builder-map-tile-active:hover,
+.builder-map-tile-brush-hover {
     background: linear-gradient(135deg, rgba(31, 131, 178, 0.5) 0%, rgb(39, 52, 70) 100%);
     background-color: #314a6e;
 }
@@ -359,18 +395,6 @@
     align-items: center;
 }
 
-.builder-sidebar-functions-item .btn div {
-    margin-top: 0px !important;
-}
-
-.builder-sidebar-functions-item div {
-    width: -webkit-fill-available;
-    line-height: 13px;
-    text-align: center;
-    margin-top: 5px;
-    font-size: 10px !important;
-}
-
 .builder-map-infos {
     display: flex;
     flex-direction: column;
@@ -443,7 +467,29 @@
     margin-right: 10px;
 }
 
-.builder-palette-container {
+.builder-footer-container-active,
+.builder-footer-container-reduced {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: 250ms all;
+}
+
+.builder-footer-container-reduced {
+    width: calc(100% - 250px);
+}
+
+.builder-footer-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px;
+}
+
+.builder-palette-container-active,
+.builder-palette-container-reduced {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -455,9 +501,10 @@
     border-top: 1px solid rgba(229, 231, 235, 0.25);
     transition: 250ms all;
     z-index: 1;
+    overflow: hidden;
 }
 
-.builder-palette-container[datatype='reduced'] {
+.builder-palette-container-reduced {
     height: 0px;
 }
 
@@ -466,8 +513,45 @@
     gap: 35px;
     width: -webkit-fill-available;
     justify-content: center;
+    align-items: self-end;
+}
+
+.builder-palette-brushes .builder-sidebar-functions-item :global(.btn[datatype='active'] svg path) {
+    fill: rgb(26, 147, 137);
+}
+.builder-palette-brushes .builder-sidebar-functions-item:hover :global(.btn[datatype='active'] svg path) {
+    fill: rgb(29, 35, 42);
 }
 
 .builder-palette-settings {
-    width: 355px;
+    width: 455px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+}
+
+.builder-palette-settings-item input[type='range']::-webkit-slider-thumb {
+    border-radius: 50%;
+}
+
+.builder-palette-settings-item input[type='range'] {
+    border-radius: 10px;
+    height: 12px;
+}
+
+.builder-palette-settings-item {
+    display: contents;
+}
+
+.builder-palette-settings-item label {
+    padding: unset;
+}
+
+.builder-palette-settings-item :global(.range) {
+    width: 100%;
+    box-shadow: none;
 }

@@ -29,7 +29,7 @@ lazy_static! {
     pub static ref WATER: Values = Values::store("W", "water", Some("S"), "#87CEFA", false, false);
     pub static ref SHORE: Values = Values::store("S", "shore", None, "#DBD257", true, false);
     pub static ref ROAD : Values= Values::store("R", "road", None, "#808080", true, false);
-    pub static ref EMPTY: Values = Values::store("null", "null", None, "#000000", true, false);
+    pub static ref EMPTY: Values = Values::store("null", "null", None, "#cf747a", true, false);
 
     pub static ref DEFAULT_MAP_VALUE: Values = GRASS.clone();
     pub static ref INCONSISTENT_VALUES: Vec<&'static str> = vec![BORDER.val(), SHORE.val()];

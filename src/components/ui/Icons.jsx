@@ -3,8 +3,8 @@ import { GiForest, GiStoneBlock, GiDungeonGate, GiRiver, GiFallingLeaf, GiGrass,
 import { IoVolumeHigh, IoVolumeMuteSharp, IoVolumeMedium, IoHome, IoStopOutline } from 'react-icons/io5';
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine, RiLandscapeFill } from 'react-icons/ri';
 import { FaBridgeWater, FaMagnifyingGlass, FaPlus, FaRegCircleQuestion } from 'react-icons/fa6';
-import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { RxHamburgerMenu, RxDotsHorizontal, RxCross2 } from 'react-icons/rx';
+import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi2';
 import { BsTrash, BsWater, BsHexagonFill } from 'react-icons/bs';
 import { FaFlagCheckered, FaCog, FaEye } from 'react-icons/fa';
 import { GrView, GrPowerReset } from 'react-icons/gr';

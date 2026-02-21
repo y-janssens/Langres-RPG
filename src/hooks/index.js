@@ -1,6 +1,7 @@
 export { useDynamicForm } from './useDynamicForm';
 export { useNew } from './useNew';
 export { useMapBatch } from './useMapBatch';
+export { useMapDraw } from './useMapDraw';
 export { useToast } from './useToast';
 export { useDice } from './useDice';
 export { useStateHistory } from './useStateHistory';

@@ -179,6 +179,11 @@
         }
       }
     },
+    "palette": {
+      "density": "Densité",
+      "overwrite": "Écraser les valeurs existantes",
+      "size": "Taille"
+    },
     "selector": {
       "act": "Sélectionner un acte",
       "map": "Sélectionner une carte"
@@ -199,6 +204,7 @@
       "icons": "Afficher les icônes",
       "ids": "Afficher les ids",
       "meshes": "Afficher les meshs",
+      "palette": "Outils de dessin",
       "values": "Afficher les valeurs",
       "viewport": "Plan 3D"
     }

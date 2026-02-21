@@ -157,6 +157,7 @@ pub fn run() {
             world::builder::commands::load_generator_options,
             // Map drawer commands
             world::drawer::commands::load_drawer_brushes,
+            world::drawer::commands::draw_map_content,
             // Battle system commands
             battle::commands::start_battle,
             battle::commands::battle_action,

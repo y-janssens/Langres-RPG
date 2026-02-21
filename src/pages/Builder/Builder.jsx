@@ -1,12 +1,9 @@
-import React, { Suspense, useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+
 import { useDynamicForm, useStateHistory } from '../../hooks';
 import { Storyline, MapObject, MapFunction, Brush, DIRECTIONS } from '../../models';
 
-import { Header, Palette, SideBar, Theme } from './components';
-import { BuilderModal } from './Modals';
-import BuilderContextualMenus from './Contextual/ContextualMenus';
-
-const Map = React.lazy(() => import('./Map'));
+import { Content, Header, Palette, SideBar, Theme } from './components';
 
 import css from './builder.module.css';
 
@@ -30,11 +27,10 @@ export const Builder = () => {
         objects: [],
         functions: [],
         selectedTiles: [],
-        selectedBrush: null,
         modal: { type: null, open: false, value: null },
-        contextual: { type: null, open: false, value: null, position: { x: null, y: null } },
-        drawingMode: { toggle: false, object: null },
+        drawingMode: { toggle: false, object: null, size: 50, density: 50, overwrite: false },
         interactiveMode: { toggle: false, object: null, neighours: [], isValid: true },
+        contextual: { type: null, open: false, value: null, position: { x: null, y: null } },
         directions: DIRECTIONS.map((dir) => ({ display_direction: dir ? { output: dir, custom: true, values: null } : null }))
     });
 
@@ -83,21 +79,15 @@ export const Builder = () => {
     );
 
     Brush.useCommand({
-        onSuccess: (response) => {
-            setForm('brushes', response);
-        }
+        onSuccess: (response) => setForm('brushes', response)
     });
 
-    const [, , syncObjects] = MapObject.useCommand({
-        onSuccess: (response) => {
-            setForm('objects', response);
-        }
+    MapObject.useCommand({
+        onSuccess: (response) => setForm('objects', response)
     });
 
-    const [, , syncFunctions] = MapFunction.useCommand({
-        onSuccess: (response) => {
-            setForm('functions', response);
-        }
+    MapFunction.useCommand({
+        onSuccess: (response) => setForm('functions', response)
     });
 
     const currentMap = useMemo(() => {
@@ -117,25 +107,12 @@ export const Builder = () => {
         clearHistory();
     }, [resetForm, clearHistory]);
 
-    const handleSync = useCallback(() => {
-        syncStory();
-        syncObjects();
-        syncFunctions();
-    }, [syncStory, syncObjects, syncFunctions]);
-
-    const display = useMemo(() => {
-        if (!form.storyLine) {
-            return false;
-        }
-        return !form.modal.type && !form.modal.open;
-    }, [form.storyLine, form.modal.type, form.modal.open]);
-
     return (
         <Theme dataTheme="night" className={css['builder-main-container']}>
             <Header
                 form={form}
                 index={index}
-                sync={handleSync}
+                sync={syncStory}
                 forward={forward}
                 setForm={setForm}
                 history={history}
@@ -145,26 +122,9 @@ export const Builder = () => {
                 datas={form.storyLine}
                 setObject={setFormObject}
             />
-            <Palette form={form} setForm={setForm} />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
-            <div id="builder-body-block" className={css['builder-body-container']} datatype={form.drawingMode.toggle ? 'reduced' : ''}>
-                {display && (
-                    <Suspense>
-                        <Map
-                            flatDisplay={form.flatDisplay}
-                            history={history}
-                            index={index}
-                            loading={loadingStoryline && !form.storyLine.id}
-                            form={form}
-                            setForm={setForm}
-                            setFormObject={setFormObject}
-                            sync={handleSync}
-                        />
-                    </Suspense>
-                )}
-                <BuilderModal form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
-                <BuilderContextualMenus form={form} setForm={setForm} sync={handleSync} setFormObject={setFormObject} />
-            </div>
+            <Content form={form} setForm={setForm} setFormObject={setFormObject} history={history} sync={syncStory} loadingStoryline={loadingStoryline} index={index} />
+            <Palette form={form} setForm={setForm} />
         </Theme>
     );
 };
