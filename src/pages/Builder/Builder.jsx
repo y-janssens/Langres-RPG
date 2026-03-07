@@ -49,18 +49,18 @@ export const Builder = () => {
                     default:
                         // Pre-select default values to avoid loading an empty builder
                         if (!form.selectedAct && !form.selectedMap) {
-                            setFormObject({
-                                ...form,
+                            setFormObject((prev) => ({
+                                ...prev,
                                 displayActions: false,
                                 storyLine: response,
                                 selectedAct: response.acts[0],
                                 selectedMap: response.acts[0].maps[0]
-                            });
+                            }));
                         } else {
                             const act = response.acts.find((act) => act.id === form.selectedAct.id);
                             const map = act.maps.find((mp) => mp.name === form.selectedMap.name);
-                            setFormObject({
-                                ...form,
+                            setFormObject((prev) => ({
+                                ...prev,
                                 displayActions: false,
                                 storyLine: response,
                                 selectedAct: act,
@@ -69,7 +69,7 @@ export const Builder = () => {
                                 contextual: { type: null, open: false, value: null },
                                 interactiveMode: { toggle: false, object: null, neighours: [], isValid: true },
                                 selectedTiles: []
-                            });
+                            }));
                         }
                         break;
                 }
@@ -120,7 +120,7 @@ export const Builder = () => {
                 backward={backward}
                 clear={clearHistory}
                 datas={form.storyLine}
-                setObject={setFormObject}
+                setFormObject={setFormObject}
             />
             <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
             <Content form={form} setForm={setForm} setFormObject={setFormObject} history={history} sync={syncStory} loadingStoryline={loadingStoryline} index={index} />

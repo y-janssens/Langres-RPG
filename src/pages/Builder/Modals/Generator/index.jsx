@@ -50,7 +50,7 @@ const Generator = ({ type, form, setForm, setFormObject, onClose }) => {
 
         newMap = selectedMap.map;
         act.maps[mapIndex] = newMap;
-        setFormObject({ ...form, selectedMap: newMap });
+        setFormObject((prev) => ({ ...prev, selectedMap: newMap }));
         onClose();
     }, [form, selectedMap, onClose]);
 

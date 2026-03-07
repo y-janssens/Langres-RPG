@@ -5,7 +5,7 @@ import css from './selector.module.css';
 import { ButtonIcon } from '../ButtonLabel';
 import { Icon } from '../../../../components';
 
-export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }) => {
+export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {}, setFormObject = () => {} }) => {
     const { t } = useTranslation();
     const [search, setSearch] = useState('');
 
@@ -41,8 +41,11 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {} }
                 open={form.displaySelector}
                 label={label}
                 onClick={() => {
-                    setForm('displaySelector', !form.displaySelector);
-                    setForm('modal', { type: null, open: false, value: null });
+                    setFormObject((prev) => ({
+                        ...prev,
+                        displaySelector: !prev.displaySelector,
+                        modal: { type: null, open: false, value: null }
+                    }));
                 }}
             />
             {form.displaySelector && datas && (

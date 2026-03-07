@@ -12,7 +12,7 @@ import Zoom from './Zoom';
 
 import css from '../builder.module.css';
 
-export const Header = ({ datas, form, setForm, setObject, reset, sync, history, index, forward, backward, clear }) => {
+export const Header = ({ datas, form, setForm, setFormObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
     const toast = useToast();
     const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
 
             await invoke(action, { map: form.selectedMap }).then((result) => {
                 act.maps[mapIndex] = result;
-                setObject({ ...form, displayActions: false, selectedMap: result, selectedTiles: [] });
+                setFormObject((prev) => ({ ...prev, displayActions: false, selectedMap: result, selectedTiles: [] }));
                 toast.info(t(`builder.toasts.${action}`));
             });
         },
@@ -51,22 +51,18 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                 default:
                     break;
             }
-            let map = { ...form }.selectedMap;
-            map.content = history[index];
-            setForm('selectedMap', map);
+            setForm('selectedMap', (prev) => ({ ...prev, content: history[index] }));
         },
-        [form, backward, forward]
+        [backward, forward]
     );
 
-    const handleCheck = useCallback(
-        (value, checked) => {
-            const values = ['showIcons', 'showValues', 'showDirections'].filter((v) => v !== value);
-            // Complicated switch, but can easily evolve later if needed
-            const toggles = values.reduce((a, v) => ({ ...a, [v]: !checked }), {});
-            setObject({ ...form, [value]: checked, ...toggles });
-        },
-        [form]
-    );
+    const handleCheck = useCallback((value, checked) => {
+        const values = ['showIcons', 'showValues', 'showDirections'].filter((v) => v !== value);
+        // Complicated switch, but can easily evolve later if needed
+        const toggles = values.reduce((a, v) => ({ ...a, [v]: !checked }), {});
+
+        setFormObject((prev) => ({ ...prev, [value]: checked, ...toggles }));
+    }, []);
 
     const selectLabel = useMemo(() => {
         if (disabled) {
@@ -82,7 +78,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                     <div className={css['builder-navbar-left']}>
                         <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modal', { type: 'manager', open: true, value: null })} />
                         <ButtonLabel color="primary" label={t('builder.collections')} onClick={() => setForm('modal', { type: 'collections', open: true, value: null })} />
-                        <MultiSelect label={selectLabel} datas={datas} setForm={setForm} form={form} />
+                        <MultiSelect label={selectLabel} datas={datas} form={form} setForm={setForm} setFormObject={setFormObject} />
                     </div>
 
                     <div className={css['builder-navbar-toggles']}>
@@ -112,7 +108,7 @@ export const Header = ({ datas, form, setForm, setObject, reset, sync, history, 
                                 onClick={() => setForm('drawingMode', (prev) => ({ ...prev, toggle: !prev.toggle, object: null }))}
                             />
                         </div>
-                        <Zoom form={form} setObject={setObject} disabled={!form.flatDisplay || !form.selectedMap} />
+                        <Zoom form={form} setFormObject={setFormObject} disabled={!form.flatDisplay || !form.selectedMap} />
                     </div>
 
                     <div className={css['builder-navbar-cta']}>

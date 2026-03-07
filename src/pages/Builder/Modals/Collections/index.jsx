@@ -20,7 +20,7 @@ const Collections = ({ type, form, setForm, setFormObject, onClose }) => {
 
         newMap.content = selectedMap.map.content;
         act.maps[mapIndex] = newMap;
-        setFormObject({ ...form, selectedMap: newMap });
+        setFormObject((prev) => ({ ...prev, selectedMap: newMap }));
         onClose();
     }, [form, selectedMap, onClose]);
 

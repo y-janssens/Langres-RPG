@@ -81,25 +81,23 @@ export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHov
                     objectId: form.interactiveMode.object.id
                 }).then((response) => {
                     setHover(item.id);
-                    setForm('interactiveMode', {
-                        toggle: form.interactiveMode.toggle,
-                        object: form.interactiveMode.object,
+                    setForm('interactiveMode', (prev) => ({
+                        ...prev,
                         neighours: response,
                         isValid: form.selectedMap.content.filter((it) => response.includes(it.id)).every((it) => it.walkable)
-                    });
+                    }));
                 });
             } else {
                 if (hover === item.id) {
                     setHover(null);
-                    setForm('interactiveMode', {
-                        toggle: form.interactiveMode.toggle,
-                        object: form.interactiveMode.object,
+                    setForm('interactiveMode', (prev) => ({
+                        ...prev,
                         neighours: []
-                    });
+                    }));
                 }
             }
         },
-        [form.interactiveMode.toggle, form.selectedAct.id, form.selectedMap.id, item.id, hover, setHover, setForm]
+        [form.interactiveMode, form.selectedAct.id, form.selectedMap.id, item.id, hover, setHover, setForm]
     );
 
     const handleRef = useCallback(
@@ -138,7 +136,7 @@ export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHov
             onContextMenu={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                setFormObject({ ...form, contextual: { type: null, open: true, value: item, position: { x: e.clientX, y: e.clientY } }, selectedTiles: [item] });
+                setFormObject((prev) => ({ ...prev, contextual: { type: null, open: true, value: item, position: { x: e.clientX, y: e.clientY } }, selectedTiles: [item] }));
             }}
             aria-labelledby="Selectable"
             style={tileStyle}

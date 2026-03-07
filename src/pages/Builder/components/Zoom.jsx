@@ -10,28 +10,29 @@ const MIN = 40;
 const MAX = 100;
 const DEFAULT = 80;
 
-const Zoom = ({ form, setObject, disabled }) => {
+const Zoom = ({ form, setFormObject, disabled }) => {
     const handleZoom = useCallback(
-        (zoom) => {
-            let newValue = form.zoom;
+        (zoom) =>
+            setFormObject((prev) => {
+                let newValue = prev.zoom;
 
-            switch (zoom) {
-                case true:
-                    newValue = Math.min(Math.max(form.zoom + GAP, MIN), MAX);
-                    break;
-                case false:
-                    newValue = Math.min(Math.max(form.zoom - GAP, MIN), MAX);
-                    break;
-                case undefined:
-                    newValue = DEFAULT;
-                    break;
-                default:
-                    break;
-            }
+                switch (zoom) {
+                    case true:
+                        newValue = Math.min(Math.max(prev.zoom + GAP, MIN), MAX);
+                        break;
+                    case false:
+                        newValue = Math.min(Math.max(prev.zoom - GAP, MIN), MAX);
+                        break;
+                    case undefined:
+                        newValue = DEFAULT;
+                        break;
+                    default:
+                        break;
+                }
 
-            return setObject({ ...form, zoom: newValue, showIds: Boolean(newValue > 60) });
-        },
-        [form]
+                return { ...prev, zoom: newValue, showIds: Boolean(newValue > 60) };
+            }),
+        []
     );
 
     return (

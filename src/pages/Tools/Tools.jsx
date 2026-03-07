@@ -44,18 +44,18 @@ export const Tools = () => {
             const start = response.content.find((it) => it.id === 403);
             const end = response.content.find((it) => it.id === 716);
             setIndex(0);
-            setFormObject({ ...form, start, end, map: new World(response), baseObstacles: obstacles, obstacles, borderCount, path: [], output: {} });
+            setFormObject((prev) => ({ ...prev, start, end, map: new World(response), baseObstacles: obstacles, obstacles, borderCount, path: [], output: {} }));
         });
-    }, [form]);
+    }, []);
 
     const handleRandomize = useCallback(async () => {
         await invoke('generate_forest', {
             map: form.map
         }).then((response) => {
             const obstacles = response.content.filter((it) => !it.walkable).map((it) => it.id);
-            setFormObject({ ...form, start: null, end: null, map: response, obstacles, path: [], output: {} });
+            setFormObject((prev) => ({ ...prev, start: null, end: null, map: response, obstacles, path: [], output: {} }));
         });
-    }, [form]);
+    }, [form.map]);
 
     const handleclick = useCallback(
         (item) => {
@@ -79,7 +79,7 @@ export const Tools = () => {
                         ...it,
                         walkable: it.id === item.id ? !it.walkable : !obstacles.includes(it.id)
                     }));
-                    setFormObject({ ...form, map: { ...form.map, content }, obstacles });
+                    setFormObject((prev) => ({ ...prev, map: { ...prev.map, content }, obstacles }));
                     break;
                 }
                 default:
@@ -92,13 +92,13 @@ export const Tools = () => {
 
     const handleStart = useCallback(() => {
         const { result: path, time } = executionTime(() => new Path({ ...form }).find_path(form.start, form.end).map((it) => it.id));
-        setFormObject({ ...form, path, algorithm: 'Astar', output: { time, operations: path.length } });
+        setFormObject((prev) => ({ ...prev, path, algorithm: 'Astar', output: { time, operations: path.length } }));
     }, [form]);
 
     const handleCull = useCallback(() => {
         const directions = CARDINAL_DIRECTIONS;
         const { result: cull, time } = executionTime(() => new FieldOfView({ item: form.start, map: form.map, direction: directions[index] }).process());
-        setFormObject({ ...form, algorithm: 'FieldOfView', path: cull, output: { time, operations: 0 } });
+        setFormObject((prev) => ({ ...prev, algorithm: 'FieldOfView', path: cull, output: { time, operations: 0 } }));
         setIndex((prev) => (prev < 5 ? prev + 1 : 0));
     }, [form, index]);
 

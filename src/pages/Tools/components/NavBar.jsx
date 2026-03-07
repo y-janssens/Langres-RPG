@@ -25,8 +25,8 @@ const NavBar = ({ form, setForm }) => {
                 </span>
             </div>
             <div className={css['tools-navtitle']}>
-                <Toggle title={t('builder.toggles.ids')} active={form.displayIds} onChange={() => setForm('displayIds', !form.displayIds)} />
-                <Toggle title={t('builder.toggles.coordinates')} active={form.displayCoordinates} onChange={() => setForm('displayCoordinates', !form.displayCoordinates)} />
+                <Toggle title={t('builder.toggles.ids')} active={form.displayIds} onChange={() => setForm('displayIds', (prev) => !prev)} />
+                <Toggle title={t('builder.toggles.coordinates')} active={form.displayCoordinates} onChange={() => setForm('displayCoordinates', (prev) => !prev)} />
             </div>
         </div>
     );

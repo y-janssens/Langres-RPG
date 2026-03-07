@@ -85,7 +85,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 engine.world = currentWorld;
 
                 setPosition(engine.controls.positions);
-                setFormObject({ ...form, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title, battle: { npc: null } });
+                setFormObject((prev) => ({ ...prev, ...game, world: currentWorld, act: game.current_act, openingTitle: game.title, battle: { npc: null } }));
                 setEngineHotReload(game, reload);
             }
         },
@@ -118,7 +118,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
                 } else {
                     removeFromEngine('mapId');
                 }
-                setFormObject({ ...form, loadingProgress: 0, loadingReady: false });
+                setFormObject((prev) => ({ ...prev, loadingProgress: 0, loadingReady: false }));
             });
         },
         [form]
@@ -130,7 +130,7 @@ export const Game = ({ keyToggles, pause, position, setPosition }) => {
             id: engine.gameId,
             launch: game,
             onSuccess: (response) => {
-                setFormObject({ ...form, journal: response });
+                setForm('journal', response);
             }
         },
         [game]
