@@ -2,12 +2,10 @@ use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, hash::Hash, io::Error};
 use strum_macros::{Display, EnumString};
 
-use crate::world::builder::{
-    config::{Conf, Values},
-    constraints::Constraints,
-    settings::EMPTY,
-};
+use crate::world::builder::{config::Conf, constraints::Constraints};
 use crate::world::models::{Item, Options};
+use crate::world::settings::EMPTY;
+use crate::world::values::Values;
 
 use super::distribution::Distribution;
 

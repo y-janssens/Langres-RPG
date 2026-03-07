@@ -4,12 +4,12 @@ import { invoke } from '@tauri-apps/api/core';
 import { World } from '../../../models';
 
 import { Loading } from '../../../components';
-import { FlatMap } from './flat/FlatMap';
-import { Scene } from './3D/Scene';
+import { FlatMap, DrawMap } from './2D';
+import { Scene } from './3D';
 
 import css from '../builder.module.css';
 
-export default function Map({ loading, flatDisplay, form, setForm, setFormObject, history, index, sync }) {
+export default function Map({ loading, form, setForm, setFormObject, history, index, sync }) {
     const world = useMemo(() => {
         if (!form.selectedMap || !history.length) {
             return [];
@@ -18,6 +18,13 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
         map.content = history[index];
         return new World(map);
     }, [form.selectedMap, history, index]);
+
+    const Component = useMemo(() => {
+        if (form.flatDisplay) {
+            return form.drawingMode.toggle ? DrawMap : FlatMap;
+        }
+        return Scene;
+    }, [form.flatDisplay, form.drawingMode.toggle]);
 
     const handleRegister = useCallback(
         async (item) => {
@@ -39,7 +46,7 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
 
     const handleSelect = useCallback(
         async (item) => {
-            if (form.contextual.open) return;
+            if (form.contextual.open || form.drawingMode.toggle) return;
             if (!form.interactiveMode.toggle) {
                 let selected = [...form.selectedTiles];
                 const isAlreadySelected = selected.find((it) => it.id === item.id);
@@ -55,11 +62,7 @@ export default function Map({ loading, flatDisplay, form, setForm, setFormObject
     return (
         <div className={css[`builder-body`]}>
             <Loading loading={loading}>
-                {flatDisplay ? (
-                    <FlatMap form={form} setForm={setForm} setFormObject={setFormObject} world={world} handleSelect={handleSelect} />
-                ) : (
-                    <Scene form={form} world={world} handleSelect={handleSelect} />
-                )}
+                <Component form={form} setForm={setForm} setFormObject={setFormObject} world={world} handleSelect={handleSelect} />
             </Loading>
         </div>
     );

@@ -2,8 +2,8 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use strum_macros::{Display, EnumString};
 
-use super::builder::settings::{DEFAULT_MAP_SIZE_GRID, DIRECTIONAL_KEYS, DIRECTIONAL_MATCHES, DIRECTIONAL_PRIORITY};
 use super::models::Item;
+use crate::world::settings::{DEFAULT_MAP_SIZE_GRID, DIRECTIONAL_KEYS, DIRECTIONAL_MATCHES, DIRECTIONAL_PRIORITY};
 
 #[derive(Debug, Serialize, Deserialize, Clone, Display, EnumString)]
 #[strum(serialize_all = "snake_case")]

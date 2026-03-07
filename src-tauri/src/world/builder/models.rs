@@ -7,10 +7,10 @@ use std::mem::take;
 use super::actions::generator::Generator;
 use super::config::Conf;
 use super::constraints::Constraints;
-use super::settings::GRASS;
 use crate::backend::utils::functions::get_weighted_random_value;
 use crate::world::analysis::report::{MapReport, MapReportEntry};
 use crate::world::models::{Item, Options};
+use crate::world::settings::DEFAULT_MAP_VALUE;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Map {
@@ -69,7 +69,7 @@ impl Map {
                 let constraints = Constraints::apply(&neighbours, &self.settings);
                 let value = Self::get_random_value(&constraints.0);
 
-                self.content[index].edit(value);
+                self.content[index].edit(&value);
                 self.content[index].entropy = 0;
 
                 if !constraints.0.is_empty() {
@@ -115,7 +115,7 @@ impl Map {
             .into_iter()
             .map(|mut tile| {
                 let value = Self::get_value(&report, &tile, &items);
-                tile.edit(value);
+                tile.edit(&value);
                 tile
             })
             .collect()
@@ -126,7 +126,7 @@ impl Map {
         let keys: Vec<&str> = values.keys().map(|k| k.as_str()).collect();
 
         match keys.len() {
-            0 => GRASS.value(),
+            0 => DEFAULT_MAP_VALUE.value(),
             1 => String::from(keys[0]),
             _ => get_weighted_random_value(values),
         }

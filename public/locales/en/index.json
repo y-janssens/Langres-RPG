@@ -47,6 +47,7 @@
       "objects": {
         "bridge": "Bridge",
         "clearing": "Ground",
+        "empty": "Erase",
         "gate": "Gate",
         "grass": "Grass",
         "house": "House",
@@ -178,6 +179,11 @@
         }
       }
     },
+    "palette": {
+      "density": "Density",
+      "overwrite": "Overwrite existing values",
+      "size": "Size"
+    },
     "selector": {
       "act": "Select an act",
       "map": "Select a map"
@@ -198,6 +204,7 @@
       "icons": "Display icons",
       "ids": "Display ids",
       "meshes": "Display meshes",
+      "palette": "Drawing tools",
       "values": "Display values",
       "viewport": "3D Viewport"
     }

@@ -5,8 +5,8 @@ use serde_yaml::{Sequence, Value};
 use crate::backend::utils::parse::{get_boolean_value, get_mapping, get_numeric_value, get_sequence, get_string_value};
 use crate::game::models::Position;
 use crate::storyline::models::{Act, Content};
-use crate::world::builder::config::Values;
 use crate::world::models::{Item, World};
+use crate::world::values::Values;
 
 impl Act {
     pub fn parse(content: &Sequence) -> Result<Vec<Self>, Error> {

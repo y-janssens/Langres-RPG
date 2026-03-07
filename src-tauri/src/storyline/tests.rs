@@ -9,7 +9,7 @@ mod tests {
     use crate::game::models::{Game, Position};
     use crate::objects::models::Object;
     use crate::storyline::models::Story;
-    use crate::world::builder::settings::DEFAULT_MAP_SIZE;
+    use crate::world::settings::DEFAULT_MAP_SIZE;
     use crate::world::commands::generate;
     use crate::world::models::{Item, World};
 

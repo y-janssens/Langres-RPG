@@ -1,11 +1,11 @@
-import React, { useCallback, useMemo, useRef, useEffect } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 
 import { Icon, Hex } from '../../../../components';
 
 import css from '../../builder.module.css';
 
-export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHover, ds, item, handleSelect }) => {
+export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHover, ds, item, handleSelect, brushHovered, registerTileRef }) => {
     const tileRef = useRef();
 
     const active = useMemo(() => {
@@ -60,6 +60,17 @@ export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHov
         return item.walkable ? '#909090' : '#404040';
     }, [form.showConstraints, form.interactiveMode, form.selectedMap.npcs, form.interactiveMode, item.id, item.display_color, item.walkable, hover]);
 
+    const tileStyle = useMemo(() => {
+        const scaledSize = form.zoom / 100;
+        return {
+            filter: filters,
+            backgroundColor: color,
+            marginLeft: item.y % 2 === 0 ? `${30 * scaledSize + 1}px` : undefined,
+            height: `${70 * scaledSize}px`,
+            width: `${((70 * Math.sqrt(3)) / 2) * scaledSize}px`
+        };
+    }, [filters, color, item.y, form.zoom]);
+
     const handleHover = useCallback(
         async (_hover) => {
             if (_hover && form.interactiveMode.toggle) {
@@ -91,34 +102,36 @@ export const Maptile = React.memo(({ form, setForm, setFormObject, hover, setHov
         [form.interactiveMode.toggle, form.selectedAct.id, form.selectedMap.id, item.id, hover, setHover, setForm]
     );
 
-    const tileStyle = useMemo(() => {
-        const scaledSize = form.zoom / 100;
-        return {
-            filter: filters,
-            backgroundColor: color,
-            marginLeft: item.y % 2 === 0 ? `${30 * scaledSize + 1}px` : undefined,
-            height: `${70 * scaledSize}px`,
-            width: `${((70 * Math.sqrt(3)) / 2) * scaledSize}px`
-        };
-    }, [filters, color, item.y, form.zoom]);
+    const handleRef = useCallback(
+        (node) => {
+            const previous = tileRef.current;
+            if (previous && ds?.removeSelectables) {
+                ds.removeSelectables(previous);
+            }
 
-    useEffect(() => {
-        const element = tileRef.current;
-        if (!element || !ds) return;
-        element.tile = item;
-        ds.addSelectables(element);
-    }, [ds, tileRef, item]);
+            tileRef.current = node;
+            if (node) {
+                node.tile = item;
+                if (ds) {
+                    ds.addSelectables(node);
+                }
+            }
+            registerTileRef?.(item.id, node);
+        },
+        [ds, item, item.id, registerTileRef]
+    );
 
     return (
         <div
             className={[
                 css[active ? 'builder-map-tile-active' : 'builder-map-tile'],
+                css[brushHovered ? 'builder-map-tile-brush-hover' : ''],
                 css[!form.interactiveMode.isValid ? 'builder-map-tile-invalid' : ''],
                 css[!form.interactiveMode.isValid && form.interactiveMode.neighours?.includes(item.id) && !item.walkable ? 'builder-map-tile-forbidden' : '']
             ]
                 .filter(Boolean)
                 .join(' ')}
-            ref={tileRef}
+            ref={handleRef}
             onClick={() => handleSelect(item)}
             onMouseEnter={() => handleHover(true)}
             onMouseLeave={() => handleHover(false)}

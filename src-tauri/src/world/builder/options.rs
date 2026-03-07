@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use super::settings::{AVAILABLE_ACTIONS, AVAILABLE_PARAMS};
+use crate::world::settings::{AVAILABLE_ACTIONS, AVAILABLE_PARAMS};
 
 #[derive(Debug, Serialize)]
 pub struct GeneratorOptions<'a> {

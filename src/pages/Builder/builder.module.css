@@ -3,7 +3,20 @@
     width: 100%;
     height: 100%;
     color: #000;
-    background-color: white !important;
+    background-color: rgb(29, 35, 42) !important;
+    background-image:
+        linear-gradient(rgba(150, 150, 150, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 2px, transparent 2px),
+        linear-gradient(rgba(150, 150, 150, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 1px, transparent 1px);
+    background-size:
+        50px 50px,
+        50px 50px,
+        10px 10px,
+        10px 10px;
+    background-position:
+        -2px -2px,
+        -2px -2px,
+        -1px -1px,
+        -1px -1px;
     overflow: hidden;
 }
 
@@ -183,7 +196,8 @@
     min-height: 3rem;
 }
 
-.builder-sidebar-container {
+.builder-sidebar-container-active,
+.builder-sidebar-container-reduced {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -191,30 +205,33 @@
     height: calc(100% - 91px);
     width: 255px;
     background-color: rgb(39, 41, 53);
+    border-left: 1px solid rgba(229, 231, 235, 0.25);
     align-items: center;
     overflow-y: auto;
+    transition: 250ms all;
+    z-index: 2;
 }
 
-.builder-body-container {
+.builder-sidebar-container-reduced {
+    width: 0px;
+}
+
+.builder-body-container-active,
+.builder-body-container-reduced {
     width: calc(100% - 250px);
     display: flex;
     height: calc(100% - 91px);
-    align-items: center;
     justify-content: center;
-    background-color: rgb(29, 35, 42);
-    background-image:
-        linear-gradient(rgba(150, 150, 150, 0.05) 2px, transparent 2px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 2px, transparent 2px),
-        linear-gradient(rgba(150, 150, 150, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(150, 150, 150, 0.05) 1px, transparent 1px);
-    background-size:
-        50px 50px,
-        50px 50px,
-        10px 10px,
-        10px 10px;
-    background-position:
-        -2px -2px,
-        -2px -2px,
-        -1px -1px,
-        -1px -1px;
+    transition: 250ms all;
+}
+
+.builder-body-container-reduced {
+    width: 100%;
+}
+
+.builder-body-container-reduced .builder-body {
+    height: calc(85% - 100px);
+    width: 90%;
 }
 
 .builder-body {
@@ -223,20 +240,51 @@
     position: relative;
     display: flex;
     overflow: auto;
+    margin-top: 50px;
     -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.builder-body {
     height: 85%;
     width: 85%;
     max-height: unset;
     max-width: unset;
+    transition: 250ms all;
 }
 
 .builder-map-grid {
     display: grid;
     row-gap: 0px;
+}
+
+.builder-map-grid-wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+}
+
+.builder-map-grid-drawing,
+.builder-map-grid-drawing * {
+    cursor: none !important;
+}
+
+.builder-map-brush-cursor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(44, 183, 255, 0.95);
+    border-radius: 50%;
+    background: rgba(44, 183, 255, 0.15);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.builder-map-brush-center {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .builder-map-tile,
@@ -261,7 +309,8 @@
 
 .builder-map-tile-active,
 .builder-map-tile:hover,
-.builder-map-tile-active:hover {
+.builder-map-tile-active:hover,
+.builder-map-tile-brush-hover {
     background: linear-gradient(135deg, rgba(31, 131, 178, 0.5) 0%, rgb(39, 52, 70) 100%);
     background-color: #314a6e;
 }
@@ -269,12 +318,6 @@
 .builder-map-tile-invalid {
     cursor: not-allowed;
 }
-
-/* .builder-map-tile-forbidden,
-.builder-map-tile-forbidden:hover {
-    background: linear-gradient(135deg, rgba(178, 31, 31, 0.5) 0%, rgb(70, 39, 39) 100%);
-    background-color: #b53c3c;
-} */
 
 .builder-map-tile-forbidden .builder-map-tile-hex path {
     stroke: #b22222 !important;
@@ -352,18 +395,6 @@
     align-items: center;
 }
 
-.builder-sidebar-functions-item .btn div {
-    margin-top: 0px !important;
-}
-
-.builder-sidebar-functions-item div {
-    width: -webkit-fill-available;
-    line-height: 13px;
-    text-align: center;
-    margin-top: 5px;
-    font-size: 10px !important;
-}
-
 .builder-map-infos {
     display: flex;
     flex-direction: column;
@@ -434,4 +465,93 @@
 .translatable-field input {
     width: -webkit-fill-available;
     margin-right: 10px;
+}
+
+.builder-footer-container-active,
+.builder-footer-container-reduced {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: 250ms all;
+}
+
+.builder-footer-container-reduced {
+    width: calc(100% - 250px);
+}
+
+.builder-footer-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 15px;
+}
+
+.builder-palette-container-active,
+.builder-palette-container-reduced {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    bottom: 0;
+    padding: 10px;
+    background-color: rgb(39, 41, 53);
+    border-top: 1px solid rgba(229, 231, 235, 0.25);
+    transition: 250ms all;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.builder-palette-container-reduced {
+    height: 0px;
+}
+
+.builder-palette-brushes {
+    display: flex;
+    gap: 35px;
+    width: -webkit-fill-available;
+    justify-content: center;
+    align-items: self-end;
+}
+
+.builder-palette-brushes .builder-sidebar-functions-item :global(.btn[datatype='active'] svg path) {
+    fill: rgb(26, 147, 137);
+}
+.builder-palette-brushes .builder-sidebar-functions-item:hover :global(.btn[datatype='active'] svg path) {
+    fill: rgb(29, 35, 42);
+}
+
+.builder-palette-settings {
+    width: 455px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: start;
+    justify-items: start;
+    align-items: center;
+}
+
+.builder-palette-settings-item input[type='range']::-webkit-slider-thumb {
+    border-radius: 50%;
+}
+
+.builder-palette-settings-item input[type='range'] {
+    border-radius: 10px;
+    height: 12px;
+}
+
+.builder-palette-settings-item {
+    display: contents;
+}
+
+.builder-palette-settings-item label {
+    padding: unset;
+}
+
+.builder-palette-settings-item :global(.range) {
+    width: 100%;
+    box-shadow: none;
 }

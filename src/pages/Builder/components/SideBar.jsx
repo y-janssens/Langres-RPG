@@ -16,7 +16,6 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
         return form.selectedMap;
     }, [form.selectedMap]);
 
-    // Memoize filtered object lists
     const itemObjects = useMemo(() => {
         return form.objects.filter((it) => !it.interactive && it.value);
     }, [form.objects]);
@@ -54,10 +53,10 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                         tile.id,
                         {
                             ...tile,
-                            value: item.value || tile.value,
-                            walkable: item.walkable || tile.walkable,
-                            display_value: item.display_value || tile.display_value,
-                            display_color: item.display_color || tile.display_color
+                            value: item.value,
+                            walkable: item.walkable,
+                            display_value: item.display_value,
+                            display_color: item.display_color
                         }
                     ])
                 );
@@ -129,7 +128,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
     );
 
     return (
-        <div className={css['builder-sidebar-container']}>
+        <div className={css[`builder-sidebar-container-${!form.drawingMode.toggle ? 'active' : 'reduced'}`]}>
             {form.selectedMap && (
                 <MenuBlock title={t('builder.menu.map.label')} grid={false}>
                     <div className={css['builder-map-infos']}>
@@ -174,10 +173,10 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             )}
             {form.showDirections && (
                 <MenuBlock title={t('builder.menu.items.directions')} gridSize={3}>
-                    {form.directions.map((it, index) => (
+                    {form.directions.map((it) => (
                         <MenuItem
-                            key={index}
-                            icon={it.display_direction?.output || 'erase'}
+                            key={it.display_direction?.output ?? 'erase'}
+                            icon={it.display_direction?.output ?? 'erase'}
                             label={t(`builder.menu.directions.${it.display_direction?.output || null}`)}
                             disabled={!form.selectedMap || !form.selectedTiles.length}
                             onClick={() => handleDirections(it)}
@@ -243,7 +242,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
     );
 };
 
-export const MenuItem = ({ icon = null, label = null, active = false, disabled, onClick = () => {} }) => {
+export const MenuItem = ({ icon = null, label = null, active = false, disabled, onClick = () => {}, ...props }) => {
     return (
         <div
             className={css['builder-sidebar-functions-item']}
@@ -262,8 +261,9 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
                 style={{
                     opacity: disabled ? '0.5' : 1
                 }}
+                {...props}
             >
-                <Icon name={icon} />
+                <Icon name={icon} {...props} />
             </Button>
             {label && (
                 <div
@@ -279,7 +279,7 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
 };
 
 export const MenuBlock = ({ title = '', children, grid = true, open = true, gridSize = 4, ...props }) => {
-    const [toggle, setToggle] = useState(open);
+    const [toggle, setToggle] = useState(() => open);
 
     const active = useMemo(() => {
         if (!open) {
