@@ -124,6 +124,13 @@ tasks:
             - grep -rn "TODO" ./src
         silent: true
 
+    shell:
+        dir: '{{.RUST_DIR}}'
+        desc: Run interactive shell environment
+        cmds:
+            - cargo run --bin shell
+        silent: true
+
     # Docker commands
     docker:
         desc: Run migrations through docker environment

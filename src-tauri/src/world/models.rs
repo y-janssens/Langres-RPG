@@ -1,5 +1,6 @@
 use diesel::prelude::Queryable;
 use diesel::SqliteConnection;
+use models_registry::Model;
 use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
 use serde::{Deserialize, Serialize};
@@ -17,7 +18,7 @@ use crate::world::builder::models::Map;
 use crate::world::settings::*;
 use crate::world::values::Values;
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, Model)]
 pub struct Options {
     pub r#type: String,              // Map type
     pub action: Option<String>,      // Action's name
@@ -48,7 +49,7 @@ impl Options {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct World {
     pub id: i32,
     pub name: String,
@@ -62,7 +63,7 @@ pub struct World {
     pub options: Options,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct Item {
     pub id: u32,
     pub x: u32,

@@ -2,6 +2,7 @@ use std::ops::{Deref, DerefMut};
 
 use diesel::result::Error;
 use diesel::{prelude::*, sqlite::Sqlite};
+use models_registry::Model;
 use serde::{Deserialize, Serialize};
 
 use crate::backend::utils::models::FrustumCullingUtility;
@@ -14,7 +15,7 @@ use crate::world::models::World;
 
 use super::utils::StoryUtils;
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Selectable, Model)]
 #[diesel(table_name = crate::schema::storyline)]
 #[diesel(check_for_backend(Sqlite))]
 pub struct Story {
@@ -47,7 +48,7 @@ impl Default for Story {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct Acts(pub Vec<Act>);
 
 impl Deref for Acts {
@@ -64,7 +65,7 @@ impl DerefMut for Acts {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct Act {
     pub id: i32,
     pub order: u32,
@@ -85,7 +86,7 @@ impl Act {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Queryable)]
+#[derive(Debug, Serialize, Deserialize, Clone, Queryable, Model)]
 pub struct Content(pub Vec<World>);
 
 impl Deref for Content {

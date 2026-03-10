@@ -20,6 +20,9 @@ tauri-build = { version = "2.5.1", features = [] }
 
 [dependencies]
 chrono = "^0.4.38"
+ctor = "0.3.6"
+langres_core = { path = "./langres_core" }
+models_registry = { path = "./models_registry" }
 system-macros = { path = "./macros" }
 diesel = { version = "2.2.2", features = ["sqlite", "r2d2"] }
 diesel_migrations = { version = "2.2.0", features = ["sqlite"] }
@@ -50,6 +53,9 @@ strum_macros = "0.27.1"
 rstest = "0.25.0"
 async-std = { version = "1.13.1", features = ["attributes"] }
 serde_yaml = "0.9.34"
+regex = "1.11.1"
+rustyline = "15.0.0"
+evcxr = "0.21.1"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
