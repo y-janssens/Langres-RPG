@@ -48,15 +48,17 @@ export default function Map({ loading, form, setForm, setFormObject, history, in
         async (item) => {
             if (form.contextual.open || form.drawingMode.toggle) return;
             if (!form.interactiveMode.toggle) {
-                let selected = [...form.selectedTiles];
-                const isAlreadySelected = selected.find((it) => it.id === item.id);
-
-                return setForm('selectedTiles', isAlreadySelected ? selected.filter((it) => it.id !== item.id) : [...selected, item]);
+                return setForm('selectedTiles', (prev) => {
+                    if (prev.find((it) => it.id === item.id)) {
+                        return prev.filter((it) => it.id !== item.id);
+                    }
+                    return [...prev, item];
+                });
             }
 
             return handleRegister(item);
         },
-        [form.interactiveMode, form.selectedTiles, form.contextual.open, handleRegister]
+        [form.interactiveMode, form.drawingMode, form.contextual.open, handleRegister]
     );
 
     return (

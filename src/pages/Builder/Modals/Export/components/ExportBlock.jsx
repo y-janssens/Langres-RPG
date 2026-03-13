@@ -11,13 +11,7 @@ import css from '../export.module.css';
 export const ExportBlock = ({ label, text, formKey, form, setForm, children }) => {
     const [toggle, setToggle] = useState(true);
 
-    const handleClick = useCallback(
-        (key) => {
-            const value = form[formKey] === key ? null : key;
-            setForm(formKey, value);
-        },
-        [form, formKey]
-    );
+    const handleClick = useCallback((key) => setForm(formKey, (prev) => (prev === key ? null : key)), [formKey]);
 
     return (
         <div className={css['export-block']}>

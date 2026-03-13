@@ -25,7 +25,7 @@ const TranslatableField = ({ form, setForm, label, entry }) => {
                         dataTheme="dark"
                         placeholder={`${label} ${selectedLanguage}`}
                         value={form[entry][selectedLanguage] || ''}
-                        onChange={({ target: { value } }) => setForm(entry, { ...form[entry], [selectedLanguage]: value || null })}
+                        onChange={({ target: { value } }) => setForm(entry, (prev) => ({ ...prev, [selectedLanguage]: value || null }))}
                     />
                     <Select options={languagesOptions} value={selectedLanguage} onSelect={setSelectedLanguage} />
                 </div>

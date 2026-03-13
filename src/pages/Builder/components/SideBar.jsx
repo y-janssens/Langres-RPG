@@ -68,7 +68,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 newMap.primary = item;
             }
             act.maps[mapIndex] = newMap;
-            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
+            setFormObject((prev) => ({ ...prev, selectedMap: newMap, selectedTiles: [] }));
         },
         [form]
     );
@@ -94,23 +94,20 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
             newMap.content = newContent;
 
             act.maps[mapIndex] = newMap;
-            setFormObject({ ...form, selectedMap: newMap, selectedTiles: [] });
+            setFormObject((prev) => ({ ...prev, selectedMap: newMap, selectedTiles: [] }));
         },
         [form]
     );
 
-    const handleObject = useCallback(
-        (object) => {
-            setFormObject({
-                ...form,
-                interactiveMode: { toggle: !form.interactiveMode.toggle, object: !form.interactiveMode.object ? object : null, neighbours: [], isValid: true },
-                showConstraints: !form.interactiveMode.object,
-                showValues: !form.interactiveMode.object,
-                showIcons: Boolean(form.interactiveMode.object)
-            });
-        },
-        [form]
-    );
+    const handleObject = useCallback((object) => {
+        setFormObject((prev) => ({
+            ...prev,
+            interactiveMode: { toggle: !prev.interactiveMode.toggle, object: !prev.interactiveMode.object ? object : null, neighbours: [], isValid: true },
+            showConstraints: !prev.interactiveMode.object,
+            showValues: !prev.interactiveMode.object,
+            showIcons: Boolean(prev.interactiveMode.object)
+        }));
+    }, []);
 
     const handleFunction = useCallback(
         async (command) => {
@@ -121,7 +118,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 let mapIndex = act.maps.findIndex((mp) => mp.name === form.selectedMap.name);
                 act.maps[mapIndex] = data;
 
-                setFormObject({ ...form, selectedMap: data, selectedTiles: [] });
+                setFormObject((prev) => ({ ...prev, selectedMap: data, selectedTiles: [] }));
             });
         },
         [form]

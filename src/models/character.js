@@ -38,9 +38,3 @@ export default class Character {
         return Math.round(150 + (this.lvl * 100) / 3);
     }
 }
-
-// const handleXp = useCallback(() => {
-//   let char = new Character(form.character);
-//   char.compute_xp(153);
-//   setFormObject({ ...form, character: char });
-// }, [form, form.character, setFormObject]);

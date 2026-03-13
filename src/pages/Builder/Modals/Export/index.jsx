@@ -55,8 +55,8 @@ const Export = ({ type, storyline, onClose }) => {
         const maps = story?.maps;
         const npcs = story?.npcs;
 
-        setFormObject({ ...form, storyline: story, maps, npcs, selectedMaps: maps?.map((mp) => mp.id), selectedNpcs: npcs?.map((npc) => npc.id) });
-    }, [form, storyline]);
+        setFormObject((prev) => ({ ...prev, storyline: story, maps, npcs, selectedMaps: maps?.map((mp) => mp.id), selectedNpcs: npcs?.map((npc) => npc.id) }));
+    }, [storyline]);
 
     useEffect(() => {
         if (!storyline || !Object.keys(storyline).length) return;

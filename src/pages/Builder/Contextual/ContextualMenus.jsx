@@ -25,16 +25,9 @@ class ContextualMenusGenerator {
 const BuilderContextualMenus = ({ form, setForm, setFormObject, sync }) => {
     const { type, open, value } = useMemo(() => ({ ...form.contextual }), [form.contextual]);
 
-    const handleSwitch = useCallback(
-        (type) => {
-            setForm('contextual', { ...form.contextual, type });
-        },
-        [form.contextual]
-    );
-
     const handleClose = useCallback(() => {
-        setFormObject({ ...form, contextual: { type: null, open: false, value: null, position: { x: null, y: null } }, selectedTiles: [] });
-    }, [form]);
+        setFormObject((prev) => ({ ...prev, contextual: { type: null, open: false, value: null, position: { x: null, y: null } }, selectedTiles: [] }));
+    }, []);
 
     if (!open) {
         return null;
@@ -48,7 +41,7 @@ const BuilderContextualMenus = ({ form, setForm, setFormObject, sync }) => {
                 sync={sync}
                 value={value}
                 setForm={setForm}
-                handleSwitch={handleSwitch}
+                handleSwitch={(type) => setForm('contextual', (prev) => ({ ...prev, type }))}
                 setFormObject={setFormObject}
                 items={MENUS.filter((it) => Boolean(it.name))}
                 onClose={handleClose}
