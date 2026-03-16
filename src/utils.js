@@ -1,5 +1,7 @@
 import i18next from 'i18next';
 
+import { Vector2, BufferAttribute, BufferGeometry } from 'three';
+
 export const IsBoolean = (value) => typeof value === 'boolean';
 export const isObject = (value) => typeof value === 'object';
 export const isArray = (value) => Array.isArray(value);
@@ -141,4 +143,35 @@ export const capitalizeFirstLetter = (string) => {
     }
 
     return `${string.charAt(0).toUpperCase()}${string.slice(1).toLowerCase()}`;
+};
+
+export const createHexagonGeometry = () => {
+    const points = [];
+    for (let i = 0; i < 6; i++) {
+        const angle = (Math.PI / 3) * i;
+        const x = Math.cos(angle);
+        const y = Math.sin(angle);
+        points.push(new Vector2(x, y));
+    }
+    const vertices = new Float32Array(points.flatMap((p) => [p.x, p.y, 0]));
+
+    const uvVectors = [
+        [0.5, 1],
+        [1, 0.75],
+        [1, 0.25],
+        [0.5, 0],
+        [0, 0.25],
+        [0, 0.75],
+        [0.5, 0.5]
+    ];
+    const uvPoints = uvVectors.map((vec) => new Vector2(vec[0], vec[1]));
+    const uvs = new Float32Array(uvPoints.flatMap((p) => [p.x, p.y]));
+
+    const geometry = new BufferGeometry();
+    geometry.setAttribute('position', new BufferAttribute(vertices, 3));
+    geometry.setAttribute('uv', new BufferAttribute(uvs, 2));
+    geometry.setIndex([0, 1, 2, 2, 3, 0, 3, 4, 0, 4, 5, 0]);
+    geometry.computeVertexNormals();
+    geometry.computeBoundingSphere();
+    return geometry;
 };

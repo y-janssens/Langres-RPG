@@ -12,18 +12,18 @@ import Zoom from './Zoom';
 
 import css from '../builder.module.css';
 
-export const Header = ({ datas, form, setForm, setFormObject, reset, sync, history, index, forward, backward, clear }) => {
+export const Header = ({ form, setForm, setFormObject, reset, sync, history, index, forward, backward, clear }) => {
     const { t } = useTranslation();
     const toast = useToast();
     const navigate = useNavigate();
     const disabled = !form.selectedMap;
 
     const handleSave = useCallback(() => {
-        invoke('save_storyline', { story: datas }).then(() => {
+        invoke('save_storyline', { story: form.storyLine }).then(() => {
             sync();
             clear();
         });
-    }, [sync, clear, datas]);
+    }, [sync, clear, form.storyLine]);
 
     const handleMapAction = useCallback(
         async (action) => {
@@ -78,7 +78,7 @@ export const Header = ({ datas, form, setForm, setFormObject, reset, sync, histo
                     <div className={css['builder-navbar-left']}>
                         <ButtonLabel color="primary" label={t('builder.manager')} onClick={() => setForm('modal', { type: 'manager', open: true, value: null })} />
                         <ButtonLabel color="primary" label={t('builder.collections')} onClick={() => setForm('modal', { type: 'collections', open: true, value: null })} />
-                        <MultiSelect label={selectLabel} datas={datas} form={form} setForm={setForm} setFormObject={setFormObject} />
+                        <MultiSelect label={selectLabel} form={form} setForm={setForm} setFormObject={setFormObject} />
                     </div>
 
                     <div className={css['builder-navbar-toggles']}>

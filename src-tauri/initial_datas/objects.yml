@@ -36,6 +36,7 @@
     "y": 1
   display_color: "#BDB76B"
   display_value: grass
+  texture: grass/grass-1.jpg
   id: 4
   interactive: false
   name: grass
@@ -47,6 +48,7 @@
     "y": 1
   display_color: "#C8FF1380"
   display_value: border
+  texture: grass/grass-1.jpg
   id: 5
   interactive: false
   name: clearing
@@ -58,6 +60,7 @@
     "y": 1
   display_color: "#5EDB35CC"
   display_value: tree
+  texture: grass/grass-1.jpg
   id: 6
   interactive: false
   name: tree
@@ -69,6 +72,7 @@
     "y": 1
   display_color: "#DBD257"
   display_value: road
+  texture: grass/grass-1.jpg
   id: 7
   interactive: false
   name: road
@@ -80,6 +84,7 @@
     "y": 1
   display_color: "#87CEFA"
   display_value: water
+  texture: water/water_b.png
   id: 8
   interactive: false
   name: water
@@ -91,6 +96,7 @@
     "y": 1
   display_color: "#DBD257"
   display_value: shore
+  texture: grass/grass-1.jpg
   id: 9
   interactive: false
   name: shore

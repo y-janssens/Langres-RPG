@@ -54,11 +54,12 @@ impl World {
             .enumerate()
             .map(|(index, it)| {
                 if let Some(value) = values[index].as_str() {
-                    let (display_value, display_color, walkable) = Values::get_value(value);
+                    let (display_value, display_color, texture, walkable) = Values::get_value(value);
                     it.walkable = walkable;
                     it.value = value.to_string();
                     it.display_value = display_value;
                     it.display_color = display_color;
+                    it.texture = texture;
                     it.neighbours_ids = Item::get_neighbours_ids(index as i32, it.y as i32);
                 }
                 it.clone()

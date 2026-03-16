@@ -5,6 +5,7 @@ CREATE TABLE objects (
     value TEXT,
     display_value TEXT,
     display_color TEXT,
+    texture TEXT,
     area TEXT NOT NULL,
     walkable BOOLEAN NOT NULL,
     interactive BOOLEAN NOT NULL

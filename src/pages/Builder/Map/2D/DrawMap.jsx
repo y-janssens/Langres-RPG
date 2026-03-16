@@ -6,7 +6,7 @@ import { MapGrid } from './Grid';
 
 import css from '../../builder.module.css';
 
-export const DrawMap = ({ form, setForm, setFormObject, world, handleSelect }) => {
+const DrawMap = ({ form, setForm, setFormObject, world, handleSelect }) => {
     const [brush, setBrush] = useState({ x: 0, y: 0, visible: false });
     const [hoveredIds, setHoveredIds] = useState(new Set());
     const [draw, setDraw] = useState(false);
@@ -98,3 +98,5 @@ export const DrawMap = ({ form, setForm, setFormObject, world, handleSelect }) =
         </div>
     );
 };
+
+export default DrawMap;

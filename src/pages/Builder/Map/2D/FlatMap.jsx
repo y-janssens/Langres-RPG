@@ -4,7 +4,7 @@ import { MapGrid } from './Grid';
 
 import css from '../../builder.module.css';
 
-export const FlatMap = ({ form, setForm, setFormObject, world, handleSelect }) => {
+const FlatMap = ({ form, setForm, setFormObject, world, handleSelect }) => {
     const gridStyle = useMemo(() => {
         const scaledTileSize = 55 * (form.zoom / 100);
         return {
@@ -22,3 +22,5 @@ export const FlatMap = ({ form, setForm, setFormObject, world, handleSelect }) =
         </DragSelectProvider>
     );
 };
+
+export default FlatMap;

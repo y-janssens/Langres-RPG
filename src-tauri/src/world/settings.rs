@@ -20,16 +20,16 @@ lazy_static! {
     pub static ref DIRECTIONAL_PRIORITY: Vec<&'static str> = ["top", "bottom"].iter().chain(OFFSET_KEYS.iter()).cloned().collect();
 
     // Base map types definitions
-    pub static ref GRASS: Values = Values::store("-", "grass", None, "#BDB76B", true, false);
-    pub static ref GROUND: Values = Values::store("G", "ground", None, "#D2B48C", true, false);
-    pub static ref MUD : Values = Values::store("M", "mud", None, "#654321", true, false);
-    pub static ref TREE : Values = Values::store("T", "tree",  Some("C"), "#5EDB35CC", false, true);
-    pub static ref FENCE: Values = Values::store("F", "fence",  None, "#D2B48C", false, false);
-    pub static ref BORDER: Values = Values::store("C", "border",  None, "#C8FF1380", true, false);
-    pub static ref WATER: Values = Values::store("W", "water", Some("S"), "#87CEFA", false, false);
-    pub static ref SHORE: Values = Values::store("S", "shore", None, "#DBD257", true, false);
-    pub static ref ROAD : Values= Values::store("R", "road", None, "#808080", true, false);
-    pub static ref EMPTY: Values = Values::store("null", "null", None, "#cf747a", true, false);
+    pub static ref GRASS: Values = Values::store("-", "grass", None, "#BDB76B", "grass/grass-1.jpg", true, false);
+    pub static ref GROUND: Values = Values::store("G", "ground", None, "#D2B48C", "grass/grass-1.jpg", true, false);
+    pub static ref MUD : Values = Values::store("M", "mud", None, "#654321", "grass/grass-1.jpg", true, false);
+    pub static ref TREE : Values = Values::store("T", "tree",  Some("C"), "#5EDB35CC", "grass/grass-1.jpg", false, true);
+    pub static ref FENCE: Values = Values::store("F", "fence",  None, "#D2B48C", "grass/grass-1.jpg", false, false);
+    pub static ref BORDER: Values = Values::store("C", "border",  None, "#C8FF1380", "grass/grass-1.jpg", true, false);
+    pub static ref WATER: Values = Values::store("W", "water", Some("S"), "#87CEFA", "water/water_b.png", false, false);
+    pub static ref SHORE: Values = Values::store("S", "shore", None, "#DBD257", "grass/grass-1.jpg", true, false);
+    pub static ref ROAD : Values= Values::store("R", "road", None, "#808080", "grass/grass-1.jpg", true, false);
+    pub static ref EMPTY: Values = Values::store("null", "null", None, "#cf747a", "grass/grass-1.jpg", true, false);
 
     pub static ref DEFAULT_MAP_VALUE: Values = GRASS.clone();
     pub static ref INCONSISTENT_VALUES: Vec<&'static str> = vec![BORDER.val(), SHORE.val()];
