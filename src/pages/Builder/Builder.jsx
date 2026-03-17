@@ -16,9 +16,9 @@ export const Builder = () => {
         showIds: true,
         showIcons: true,
         showDirections: false,
-        flatDisplay: true,
+        flatDisplay: false,
         showValues: false,
-        showObjects: false,
+        showObjects: true,
         displayOptions: false,
         displayActions: false,
         displaySelector: false,
@@ -119,11 +119,10 @@ export const Builder = () => {
                 reset={handleReset}
                 backward={backward}
                 clear={clearHistory}
-                datas={form.storyLine}
                 setFormObject={setFormObject}
             />
-            <SideBar form={form} setForm={setForm} setFormObject={setFormObject} storyline={form.storyLine} />
-            <Content form={form} setForm={setForm} setFormObject={setFormObject} history={history} sync={syncStory} loadingStoryline={loadingStoryline} index={index} />
+            <SideBar form={form} setForm={setForm} setFormObject={setFormObject} />
+            <Content form={form} setForm={setForm} setFormObject={setFormObject} history={history} sync={syncStory} loading={loadingStoryline} index={index} />
             <Palette form={form} setForm={setForm} />
         </Theme>
     );

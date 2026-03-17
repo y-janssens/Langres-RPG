@@ -53,10 +53,11 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                         tile.id,
                         {
                             ...tile,
-                            value: item.value,
-                            walkable: item.walkable,
-                            display_value: item.display_value,
-                            display_color: item.display_color
+                            value: item.value || tile.value,
+                            walkable: item.walkable || tile.walkable,
+                            display_value: item.display_value || tile.display_value,
+                            display_color: item.display_color || tile.display_color,
+                            texture: item.texture || tile.texture
                         }
                     ])
                 );
@@ -215,9 +216,9 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                     />
                 ))}
             </MenuBlock>
-            <MenuBlock title={t('builder.menu.functions.label')} open={!form.showDirections}>
-                <MenuItem
-                    icon={'map'}
+            <MenuBlock title={t('builder.menu.functions.label')} open={!form.showDirections} gridSize={2}>
+                <MenuItemLabel
+                    icon="map"
                     disabled={!form.selectedMap || form.interactiveMode.toggle}
                     label={t('builder.menu.functions.generate-maps')}
                     onClick={() => setForm('modal', { type: 'generator', open: true })}
@@ -225,7 +226,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
                 {form.functions.map((it) => {
                     const label = it.label.toLowerCase().replaceAll(' ', '-');
                     return (
-                        <MenuItem
+                        <MenuItemLabel
                             key={it.id}
                             icon={it.icon}
                             disabled={!form.selectedMap || form.interactiveMode.toggle}
@@ -242,7 +243,7 @@ export const SideBar = ({ form, setForm, setFormObject }) => {
 export const MenuItem = ({ icon = null, label = null, active = false, disabled, onClick = () => {}, ...props }) => {
     return (
         <div
-            className={css['builder-sidebar-functions-item']}
+            className={css['builder-sidebar-item']}
             style={{
                 pointerEvents: disabled ? 'none' : 'initial'
             }}
@@ -264,6 +265,7 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
             </Button>
             {label && (
                 <div
+                    className={css['builder-sidebar-item-label']}
                     style={{
                         opacity: disabled ? '0.5' : 1
                     }}
@@ -271,6 +273,43 @@ export const MenuItem = ({ icon = null, label = null, active = false, disabled, 
                     {label}
                 </div>
             )}
+        </div>
+    );
+};
+
+export const MenuItemLabel = ({ icon = null, label = null, active = false, disabled, onClick = () => {}, ...props }) => {
+    return (
+        <div
+            className={css['builder-sidebar-item']}
+            style={{
+                pointerEvents: disabled ? 'none' : 'initial'
+            }}
+        >
+            <Button
+                dataTheme="dark"
+                disabled={disabled}
+                startIcon={<Icon name={icon} {...props} />}
+                color={active ? 'accent' : 'default'}
+                variant="outline"
+                size="md"
+                fullWidth
+                onClick={onClick}
+                style={{
+                    opacity: disabled ? '0.5' : 1
+                }}
+                {...props}
+            >
+                {label && (
+                    <div
+                        className={css['builder-sidebar-item-label']}
+                        style={{
+                            opacity: disabled ? '0.5' : 1
+                        }}
+                    >
+                        {label}
+                    </div>
+                )}
+            </Button>
         </div>
     );
 };

@@ -71,6 +71,7 @@ pub struct Item {
     pub value: String,
     pub display_value: String,
     pub display_color: String,
+    pub texture: String,
     pub display_direction: Option<Directions>,
     pub events: Vec<Event>,
     pub walkable: bool,
@@ -153,22 +154,24 @@ impl Item {
     }
 
     pub fn edit(&mut self, value: &str) {
-        let (display_value, display_color, walkable) = Values::get_value(value);
+        let (display_value, display_color, texture, walkable) = Values::get_value(value);
 
         self.value = value.to_string();
         self.walkable = walkable;
         self.display_value = display_value;
         self.display_color = display_color;
+        self.texture = texture;
     }
 
     pub fn reset(&mut self) {
         let value = GRASS.val();
-        let (display_value, display_color, walkable) = Values::get_value(value);
+        let (display_value, display_color, texture, walkable) = Values::get_value(value);
 
         self.value = value.to_string();
         self.walkable = walkable;
         self.display_value = display_value;
         self.display_color = display_color;
+        self.texture = texture;
     }
 }
 
@@ -210,7 +213,7 @@ impl World {
             let x = if y.is_multiple_of(2) { (col * 2) + 1 } else { col * 2 };
 
             let value = Self::generate_borders(col, y);
-            let (display_value, display_color, walkable) = Values::get_value(&value);
+            let (display_value, display_color, texture, walkable) = Values::get_value(&value);
 
             let item = Item {
                 id: i,
@@ -220,6 +223,7 @@ impl World {
                 value,
                 display_value,
                 display_color,
+                texture,
                 display_direction: None,
                 events: vec![],
                 walkable,

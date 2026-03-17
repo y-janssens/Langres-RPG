@@ -26,7 +26,6 @@ const Npc = ({ npc, target, map }) => {
     const [ia, setIa] = useState(null);
     const [frameId, setFrameId] = useState();
 
-    // const [position] = useState([9, 0.75, 6]); // Test and debug datas
     const [position] = useState([npc.starting_point.x, 0.75, npc.starting_point.y]);
 
     const [alpha] = useState(() => useLoader(TextureLoader, './assets/map/outline.jpg'));

@@ -5,7 +5,7 @@ import css from './selector.module.css';
 import { ButtonIcon } from '../ButtonLabel';
 import { Icon } from '../../../../components';
 
-export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {}, setFormObject = () => {} }) => {
+export const MultiSelect = ({ label = '', form = {}, setForm = () => {}, setFormObject = () => {} }) => {
     const { t } = useTranslation();
     const [search, setSearch] = useState('');
 
@@ -15,23 +15,23 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {}, 
     });
 
     const groups = useMemo(() => {
-        if (!Object.keys(datas).length) {
+        if (!Object.keys(form.storyLine).length) {
             return [];
         }
         if (!search || search === '') {
-            return datas.acts.filter((act) => !act.temp).map((act) => act);
+            return form.storyLine.acts.filter((act) => !act.temp).map((act) => act);
         }
-        return datas.acts.filter((act) => !act.temp && act.maps.filter((mp) => !mp.temp).some((wrl) => matchSearch(wrl.name, search)));
-    }, [datas, search, matchSearch]);
+        return form.storyLine.acts.filter((act) => !act.temp && act.maps.filter((mp) => !mp.temp).some((wrl) => matchSearch(wrl.name, search)));
+    }, [form.storyLine, search, matchSearch]);
 
     const disabled = useMemo(() => {
-        if (!Object.keys(datas).length) {
+        if (!Object.keys(form.storyLine).length) {
             return true;
         }
-        return datas?.acts.every((act) => !act.maps.length);
-    }, [datas]);
+        return form.storyLine?.acts.every((act) => !act.maps.length);
+    }, [form.storyLine]);
 
-    if (!Object.keys(datas).length) {
+    if (!Object.keys(form.storyLine).length) {
         return null;
     }
 
@@ -48,7 +48,7 @@ export const MultiSelect = ({ datas, label = '', form = {}, setForm = () => {}, 
                     }));
                 }}
             />
-            {form.displaySelector && datas && (
+            {form.displaySelector && form.storyLine && (
                 <div className={css['select-multi-content']}>
                     <Input
                         className={css['select-multi-searchbar']}

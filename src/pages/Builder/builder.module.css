@@ -115,16 +115,20 @@
     font-size: 14px !important;
 }
 
-.builder-sidebar-functions-item svg {
+.builder-sidebar-item-label {
+    white-space: nowrap;
+}
+
+.builder-sidebar-item svg {
     font-size: 18px !important;
 }
 
-.builder-sidebar-functions-item svg path {
+.builder-sidebar-item svg path {
     fill: rgb(166, 173, 186);
 }
 
 .builder-icon-btn:hover svg path,
-.builder-sidebar-functions-item:hover svg path {
+.builder-sidebar-item button:hover svg path {
     fill: rgb(29, 35, 42);
 }
 
@@ -248,6 +252,8 @@
     max-height: unset;
     max-width: unset;
     transition: 250ms all;
+    /* content-visibility: auto;
+    contain-intrinsic-size: 200px; */
 }
 
 .builder-map-grid {
@@ -388,7 +394,7 @@
     margin: 0 5px 0 5px;
 }
 
-.builder-sidebar-functions-item {
+.builder-sidebar-item {
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -516,10 +522,10 @@
     align-items: self-end;
 }
 
-.builder-palette-brushes .builder-sidebar-functions-item :global(.btn[datatype='active'] svg path) {
+.builder-palette-brushes .builder-sidebar-item :global(.btn[datatype='active'] svg path) {
     fill: rgb(26, 147, 137);
 }
-.builder-palette-brushes .builder-sidebar-functions-item:hover :global(.btn[datatype='active'] svg path) {
+.builder-palette-brushes .builder-sidebar-item:hover :global(.btn[datatype='active'] svg path) {
     fill: rgb(29, 35, 42);
 }
 

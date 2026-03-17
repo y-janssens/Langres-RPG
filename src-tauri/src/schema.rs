@@ -102,6 +102,7 @@ diesel::table! {
         value -> Nullable<Text>,
         display_value -> Nullable<Text>,
         display_color -> Nullable<Text>,
+        texture -> Nullable<Text>,
         area -> Text,
         walkable -> Bool,
         interactive -> Bool,

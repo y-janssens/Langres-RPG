@@ -1,41 +1,11 @@
 import { useState, useRef, memo, useMemo } from 'react';
 
-import { Vector2, BufferAttribute, BufferGeometry } from 'three';
 import { useGameContext, useSettingsProperties } from '../../../hooks';
 
 import { Tree } from './Tree';
 import { Text } from '@react-three/drei';
 
-const createHexagonGeometry = () => {
-    const points = [];
-    for (let i = 0; i < 6; i++) {
-        const angle = (Math.PI / 3) * i;
-        const x = Math.cos(angle);
-        const y = Math.sin(angle);
-        points.push(new Vector2(x, y));
-    }
-    const vertices = new Float32Array(points.flatMap((p) => [p.x, p.y, 0]));
-
-    const uvVectors = [
-        [0.5, 1],
-        [1, 0.75],
-        [1, 0.25],
-        [0.5, 0],
-        [0, 0.25],
-        [0, 0.75],
-        [0.5, 0.5]
-    ];
-    const uvPoints = uvVectors.map((vec) => new Vector2(vec[0], vec[1]));
-    const uvs = new Float32Array(uvPoints.flatMap((p) => [p.x, p.y]));
-
-    const geometry = new BufferGeometry();
-    geometry.setAttribute('position', new BufferAttribute(vertices, 3));
-    geometry.setAttribute('uv', new BufferAttribute(uvs, 2));
-    geometry.setIndex([0, 1, 2, 2, 3, 0, 3, 4, 0, 4, 5, 0]);
-    geometry.computeVertexNormals();
-    geometry.computeBoundingSphere();
-    return geometry;
-};
+import { createHexagonGeometry } from '../../../utils';
 
 export const Tiles = memo(({ data }) => {
     const [engine] = useGameContext();
@@ -65,7 +35,6 @@ export const Tiles = memo(({ data }) => {
             <Hexagon
                 item={item}
                 grayscale={performances}
-                builder={!settings.displayTextures}
                 position={[-item.x / 1.5, 0, item.y === 0 ? -item.y : -item.y * (Math.sqrt(3) / 1.5)]}
                 colorMap={settings.displayTextures ? (item.value === 'W' ? colorMaps.water : colorMaps.grass) : null}
             />
@@ -73,32 +42,10 @@ export const Tiles = memo(({ data }) => {
     ));
 });
 
-export const Hexagon = memo(({ position, colorMap, item, grayscale = false, builder = false, form = {}, onClick = () => {} }) => {
+export const Hexagon = memo(({ position, colorMap, item, onClick = () => {} }) => {
     const meshRef = useRef();
 
     const geometry = useMemo(() => createHexagonGeometry(), []);
-
-    const color = useMemo(() => {
-        if (!builder) {
-            return 'white';
-        }
-        if (!form.showConstraints) {
-            switch (item.value) {
-                case 'C':
-                    return grayscale ? '#B7B7B7' : 'lightgreen';
-                case 'T':
-                    return grayscale ? '#555555' : 'green';
-                case 'S':
-                    return grayscale ? '#AAAAAA' : 'yellow';
-                case 'W':
-                    return grayscale ? '#555555' : 'blue';
-                case '-':
-                default:
-                    return grayscale ? '#FFFFFF' : 'white';
-            }
-        }
-        return item.walkable ? 'white' : '#808080';
-    }, [form, item, builder, grayscale]);
 
     return (
         <mesh
@@ -112,7 +59,7 @@ export const Hexagon = memo(({ position, colorMap, item, grayscale = false, buil
             rotation={[-(Math.PI / 2), 0, -(Math.PI / 2)]}
             userData={{ tile: item, castable: item.walkable }}
         >
-            <meshStandardMaterial color={color} map={colorMap} />
+            <meshStandardMaterial color={'white'} map={colorMap} />
         </mesh>
     );
 });

@@ -5,10 +5,10 @@ mod tests {
 
     use crate::backend::conf::factories::factories_definitions::WorldFactory;
     use crate::backend::conf::factory::factory_models::Factory;
-    use crate::world::values::Values;
     use crate::world::builder::options::GeneratorOptions;
     use crate::world::models::Options;
     use crate::world::settings::{DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE_GRID, EMPTY};
+    use crate::world::values::Values;
 
     #[test]
     fn test_load_generator_options() {
@@ -46,7 +46,7 @@ mod tests {
 
             for item in world.content.iter() {
                 let expected_values = Values::get_tiles_values();
-                let (display_value, _, _) = Values::get_value(&item.value);
+                let (display_value, _, _, _) = Values::get_value(&item.value);
                 assert!(expected_values.contains(&item.value));
                 assert!(&item.value != EMPTY.val());
                 assert_eq!(item.display_value, display_value);

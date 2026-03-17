@@ -1,15 +1,20 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { Suspense, useCallback, useMemo } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 
 import { World } from '../../../models';
+import { useMousePressed } from '../../../hooks';
 
 import { Loading } from '../../../components';
-import { FlatMap, DrawMap } from './2D';
-import { Scene } from './3D';
+
+const FlatMap = React.lazy(() => import('./2D/FlatMap'));
+const DrawMap = React.lazy(() => import('./2D/DrawMap'));
+const Scene = React.lazy(() => import('./3D'));
 
 import css from '../builder.module.css';
 
 export default function Map({ loading, form, setForm, setFormObject, history, index, sync }) {
+    const [dragging, startCounter, stopCounter] = useMousePressed();
+
     const world = useMemo(() => {
         if (!form.selectedMap || !history.length) {
             return [];
@@ -46,6 +51,7 @@ export default function Map({ loading, form, setForm, setFormObject, history, in
 
     const handleSelect = useCallback(
         async (item) => {
+            if (!form.flatDisplay && dragging) return;
             if (form.contextual.open || form.drawingMode.toggle) return;
             if (!form.interactiveMode.toggle) {
                 return setForm('selectedTiles', (prev) => {
@@ -58,13 +64,15 @@ export default function Map({ loading, form, setForm, setFormObject, history, in
 
             return handleRegister(item);
         },
-        [form.interactiveMode, form.drawingMode, form.contextual.open, handleRegister]
+        [form.interactiveMode, form.drawingMode, form.contextual.open, dragging, handleRegister]
     );
 
     return (
-        <div className={css[`builder-body`]}>
+        <div className={css[`builder-body`]} onMouseDown={startCounter} onMouseUp={stopCounter} onMouseLeave={stopCounter}>
             <Loading loading={loading}>
-                <Component form={form} setForm={setForm} setFormObject={setFormObject} world={world} handleSelect={handleSelect} />
+                <Suspense>
+                    <Component form={form} setForm={setForm} setFormObject={setFormObject} world={world} handleSelect={handleSelect} />
+                </Suspense>
             </Loading>
         </div>
     );
